@@ -91,6 +91,8 @@ Now that you have a PR, you'll use that for getting approvals and asking questio
 
 From this point on, each person in a pair doesn't need to submit things for approval. Just one person can do it, and that'll count for both partners.
 
+---
+
 #### Phase 1
 
 ##### (Part 1)
@@ -112,3 +114,5 @@ Once you have gotten approval for your database design, you can begin adding _cr
 Once you have create actions for two of your tables, submit for approval. (Obviously you can submit for feedback before that.)
 
 Progress up to this point is due Wednesday morning.
+
+---
