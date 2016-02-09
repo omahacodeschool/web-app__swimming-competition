@@ -74,6 +74,8 @@ If all competitors' times for an event have been entered, the application can in
 
 **Note:** Feel free to imagine a world where colleges are actually space stations, and the competitors are all aliens. And the events are things like "100-Parsec Space Walk". Etc. That is, you are free to flavor this application to suit your interests. But please keep it "work-safe" (whatever that might mean to you--ask if you're unsure).
 
+---
+
 #### Phase 0
 
 This Phase is about getting this project set up.
