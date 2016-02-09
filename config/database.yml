@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  database: competition
+  host: localhost
+test:
+  adapter: postgresql
+  database: competition-test
+  host: localhost
