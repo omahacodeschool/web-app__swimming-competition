@@ -115,6 +115,6 @@ Once you have gotten approval for your database design, you can begin adding _cr
 
 Once you have create actions for two of your tables, submit for approval. (Obviously you can submit for feedback before that.)
 
-Progress up to this point is due Wednesday morning.
+Progress up to this point is due Wednesday morning, but don't stay up so late getting it done that you're a zombie. Just aim for completion by then, but know that you can get help tomorrow if needed.
 
 ---
