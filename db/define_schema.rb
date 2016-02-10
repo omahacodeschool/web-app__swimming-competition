@@ -1,5 +1,6 @@
 require_relative "./_configure"
 
+
 # Define your tables and their columns below this line.
 # -----------------------------------------------------------------------------
 
