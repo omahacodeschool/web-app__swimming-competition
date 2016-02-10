@@ -2,10 +2,10 @@ MyApp.get "/conferences/create" do
   x = Conference.new
   x.name = params["new_conference"]
   x.save
-  erb :"new_conference"
+  erb :"conferences/new_conference"
 end
 
 MyApp.get "/conferences" do
   @conferences = Conference.all
-  erb :"all_conferences"
+  erb :"conferences/all_conferences"
 end

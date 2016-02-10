@@ -20,6 +20,7 @@ DB.define_table("penguins")
 DB.define_column("penguins", "last_name", "string")
 DB.define_column("penguins", "first_name", "string")
 DB.define_column("penguins", "rookery_id", "integer")
+DB.define_column("penguins", "age", "integer")
 
 #Make "events" table
 #needs the following columns:
