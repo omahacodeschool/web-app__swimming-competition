@@ -1,3 +1,4 @@
+require 'pry'
 #main controller goes here
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
@@ -19,16 +20,31 @@ MyApp.get "/competitors" do
   erb :"/cv/competitors"
 end
 
-MyApp.get "/create_event" do
-  
-  e = Event.new
-  e.event_name = params[:neweventname]
-  e.save
+#MyApp.get "/newevent" do
+#  
+#  e = Event.new
+#  e.event_name = params[:neweventname]
+#  e.save
+#  binding.pry
+#
+#  erb :"/ev/events"
+#end
+#
+#MyApp.get "/events" do
+#  
+#  @events = Event.all
+#  erb :"/ev/events"
+#  
+#end
+#
+#MyApp.get "/newswimmer" do
+#  
+#  s = Swimmer.new
+#  s.event_name = params[:newswimmername]
+#  s.save
+#  binding.pry
+#
+#  erb :"/ev/events"
+#end
 
-  erb :"/ev/events"
-end
 
-MyApp.get "/events" do
-  erb :"/ev/events"
-  @events = Event.all
-end
