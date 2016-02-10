@@ -10,3 +10,25 @@ MyApp.get "/" do
   # combined document back to the client.
   erb :"/admin"
 end
+
+MyApp.get "/swimmingevents" do
+  erb :"/ev/swimmingevents"
+end
+
+MyApp.get "/competitors" do
+  erb :"/cv/competitors"
+end
+
+MyApp.get "/create_event" do
+  
+  e = Event.new
+  e.event_name = params[:neweventname]
+  e.save
+
+  erb :"/ev/events"
+end
+
+MyApp.get "/events" do
+  erb :"/ev/events"
+  @events = Event.all
+end
