@@ -7,6 +7,8 @@
 #   erb :"admin/add_student"
 # end
 
+#############################
+
 # MyApp.get "/college/create" do
 #   @s = 
 
@@ -14,6 +16,21 @@
 
 #   erb :"admin/add_student"
 # end
+
+#######################
+
+# MyApp.get "/student/create" do
+#   @s = 
+
+
+
+#   erb :"admin/add_student"
+# end
+
+
+
+
+
 
 # MyApp.get "/main/show_words" do
 #   words = StringSegmenter.new(params[:entered_string])

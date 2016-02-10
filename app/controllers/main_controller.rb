@@ -10,3 +10,15 @@ end
 MyApp.get "/add/college" do
   erb :"admin/add_college"
 end
+
+MyApp.get "/add/conference" do
+  erb :"admin/add_conference"
+end
+
+MyApp.get "/add/activity" do
+  erb :"admin/add_activity"
+end
+
+MyApp.get "/add/result" do
+  erb :"admin/add_result"
+end
