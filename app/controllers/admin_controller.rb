@@ -20,31 +20,4 @@ MyApp.get "/competitors" do
   erb :"/cv/competitors"
 end
 
-#MyApp.get "/newevent" do
-#  
-#  e = Event.new
-#  e.event_name = params[:neweventname]
-#  e.save
-#  binding.pry
-#
-#  erb :"/ev/events"
-#end
-#
-#MyApp.get "/events" do
-#  
-#  @events = Event.all
-#  erb :"/ev/events"
-#  
-#end
-#
-#MyApp.get "/newswimmer" do
-#  
-#  s = Swimmer.new
-#  s.event_name = params[:newswimmername]
-#  s.save
-#  binding.pry
-#
-#  erb :"/ev/events"
-#end
-
 
