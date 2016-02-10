@@ -1,1 +1,13 @@
-Results here!
+Here are the results for each event:
+
+<p>
+<% @events.each do |e| %>
+In event with id# <%= e %>,
+<% end %>
+<% @competitors.each do |c| %>
+the competitor with id# <%= c %>
+<% end %>
+<% @results.each do |r| %>
+finished in <%= r %> seconds.
+<% end %>
+</p>

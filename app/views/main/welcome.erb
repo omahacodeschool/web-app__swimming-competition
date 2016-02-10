@@ -1,4 +1,4 @@
-<h1>Hello admin! Welcome to your fancy swim meet database.</h1>
+<h1>Hello admin! Welcome to your swim meet database.</h1>
 
 <p>Please enter information about each competitor here:</p>
 
@@ -10,7 +10,13 @@
   <input type="text" name="lastname"><br><br>
 
   School:<br>
-  <input type="text" name="school"><br><br>
+  <select name="school">
+    <option value="creighton">Creighton University</option>
+    <option value="doane">Doane College</option>
+    <option value="wesleyan">Wesleyan University</option>
+    <option value="ccc">Central Community College</option>
+    <option value="unl">University of Nebraska-Lincoln</option>
+  </select><br><br>
 
   Conference:<br>
   <select name="conference">
@@ -25,12 +31,12 @@
   </select><br><br>
 
   <input type="submit" value="Submit">
-</form> <br><br>
+</form> <br>
 
 
 <p>Please enter each competitor's results here:</p>
 
-<form action="">
+<form action="/result_added">
   Competitor id:<br>
   <input type="integer" name="competitor_id"><br><br>
 
@@ -38,7 +44,10 @@
   <input type="integer" name="event_id"><br><br>
 
   Result (in seconds):<br>
-  <input type="decimal" name="results"><br><br>
+  <input type="decimal" name="final_time"><br><br>
 
   <input type="submit" value="Submit">
 </form><br><br>
+
+
+View all <a href="/competitors">Competitors</a>, <a href="/events">Events</a>, or <a href="/results">Results</a>.
