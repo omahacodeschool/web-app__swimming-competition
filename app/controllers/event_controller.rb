@@ -13,3 +13,20 @@ MyApp.get "/add_event" do
 	x.save
   erb :"success"
 end
+
+MyApp.get "/event_info/:event_id" do
+  @event = Event.find(params[:event_id])
+  erb :"events/event_info"
+end
+
+MyApp.get "/events/edit/:event_id" do
+  	@event = Event.find(params[:event_id])
+	erb :"events/edit_event"
+end
+
+MyApp.get "/edit_event/:event_id" do
+	@event = Event.find(params[:event_id])
+	@event.update_attributes({name: params['name']})
+	@event.save
+	erb :"success"
+end

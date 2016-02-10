@@ -1,9 +1,10 @@
 <h1> Events </h1>
 
 <h3> List of Events goes here: </h3>
-<% @list_events.each do |e| %>
-  <p><%= e.name %></p>
-<% end %>
+	<% @list_events.each do |e| %>
+		<p><a href = "/event_info/<%= e.id %>"> <%= e.name %> </a></p>
+	<% end %>
+	
 <p><a href="/events/add_new"> Add new event. </a></p>
 
 <p><a href="/"> Home </a></p>

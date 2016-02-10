@@ -1,8 +1,8 @@
-<h1>Add result:</h1>
+<h1>Edit result:</h1>
 
-<form action="/add_result">
+<form action="/edit_result/<%= @result.id %>">
 
-  <select name="event_id">
+<select name="event_id">
         <option selected disabled>Choose event</option>
   			<% @list_events.each do |e| %>
   				<option value= "<%=e.id%>"> <%=e.name%> </option>
@@ -12,7 +12,7 @@
   <select name="competitor_id">
 	   <option selected disabled>Choose competitor</option>
 			<% @list_competitors.each do |c| %>
-				<option value= "<%=c.id%>"> <%=c.first_name%> <%=c.last_name%> </option>
+				<option value= "<%=c.id%>"> <%=c.first_name%> <%=c.last_name%></option>
 			<%end%>
   </select>
 

@@ -2,7 +2,7 @@
 
 <h3> List of Results goes here: </h3>
 	<% @list_results.each do |r| %>
-	  <p><%= r.event_id %>, <%= r.competitor_id %>, <%= r.time %></p>
+	<p><a href = "/result_details/<%= r.id %>"> <%= r.event_id %>, <%= r.competitor_id %>, <%= r.time %> </a></p>
 	<% end %>
 
 <p><a href="/results/add_new"> Add new result. </a></p>
