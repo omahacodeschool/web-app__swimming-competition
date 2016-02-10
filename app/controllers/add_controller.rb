@@ -19,13 +19,12 @@
 
 #######################
 
-# MyApp.get "/student/create" do
-#   @s = 
-
-
-
-#   erb :"admin/add_student"
-# end
+MyApp.get "/conference/create" do
+  @conference = Conference.new
+  @conference.conference_name = params["conference_name"]
+  @conference.save
+  erb :"admin/confirm_submission"
+end
 
 
 
