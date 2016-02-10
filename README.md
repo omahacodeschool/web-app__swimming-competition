@@ -122,6 +122,8 @@ Once you have gotten approval for your database design, you can begin adding _cr
 3. Building controllers and views that facilitate adding new rows to each table.
   - It can be helpful to create a new controller file for each table. That way, the controller actions related to--for example--adding a new student to the `students` table are all in one file (e.g. **students_controller.rb**).
 
+**NOTE: A form should only add/edit one row in one table.** So don't try to create a form that will register a competitor and also add them to 3 events, because that would mean the form is adding to the `competitors` table _and_ the `signups` table (for example). We will make more complex forms _later_ (This week!), but for now you should keep it very, very simple.
+
 Once you have accomplished this for any **two** of your tables, submit for approval. (Obviously you can submit for feedback before that.)
 
 Progress up to this point is due Wednesday morning, but don't stay up so late getting it done that you're a zombie. Just aim for completion by then, but know that you can get help tomorrow if needed.
