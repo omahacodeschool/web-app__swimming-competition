@@ -18,9 +18,10 @@ end
 
 MyApp.get "/add_university" do
   u = University.new
-  u.university_name = params["input_univerity"]
+  u.university_name = params["input_university"]
   u.conference_id = params[:conference] #This is how I think I will access the conference ID.  Since 'input_conference' is already used and theoritcally everytime a conference is added it will have an ID. I believe this is how I would access that ID. 
   u.save
+  
 
   erb :"/success/success_university"
 end
