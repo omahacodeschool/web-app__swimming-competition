@@ -18,14 +18,12 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "conferences", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "conference_id"
     t.string   "conference_name"
   end
 
   create_table "events", force: :cascade do |t|
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "event_id"
     t.string   "event_name"
     t.integer  "first_place_swimmer"
     t.integer  "second_place_swimmer"
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "schools", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "school_id"
     t.string   "school_name"
     t.integer  "conference_id"
   end
@@ -50,7 +47,6 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "swimmers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "swimmer_id"
     t.string   "name"
     t.integer  "school_id"
   end

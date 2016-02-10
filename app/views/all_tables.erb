@@ -1,1 +1,27 @@
-displays all the data in the database
+
+<h1>Here are the events in the Tournament</h1>
+<ul>
+<% @events.each do |events| %>
+  <li><%= events.event_name %>---<%= @events.ids %></li>
+<% end %>
+</ul>
+<h1>Here are the Schools currently competing in the Tournament</h1>
+<ul>
+<% @schools.each do |schools| %>
+  <li><%= schools.school_name %>---<%= @schools.ids %></li>
+<% end %>
+</ul>
+<h1>Here are the Conferences currently competing in the Tournament</h1>
+<ul>
+<% @conference.each do |conference| %>
+  <li><%= conference.conference_name %>---<%= @conference.ids %></li>
+<% end %>
+</ul>
+Here is a list of swimmers, click to see their results
+<%= @swimmers %>
+<h1>Here are the Swimmers currently competing in the Tournament</h1>
+<ul>
+<% @swimmers.each do |swimmers| %>
+  <li><%= swimmers.name %>---<%= @swimmers.ids %></li>
+<% end %>
+</ul>

@@ -1,1 +1,17 @@
-Here are all the schools competing, click to see their results
+
+<h1>Here are the Schools currently competing in the Tournament</h1>
+<ul>
+<% @schools.each do |schools| %>
+  <li><%= schools.school_name %>---<%= @schools.ids %></li>
+<% end %>
+</ul>
+
+
+
+
+<h1>Here are the Conferences currently competing in the Tournament</h1>
+<ul>
+<% @conference.each do |conference| %>
+  <li><%= conference.conference_name %>---<%= @conference.ids %></li>
+<% end %>
+</ul>

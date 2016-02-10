@@ -1,1 +1,6 @@
-Here is a list of Events, pick one to see the results
+<h1>Here are the events in the Tournament</h1>
+<ul>
+<% @events.each do |events| %>
+  <li><%= events.event_name %>---<%= @events.ids %></li>
+<% end %>
+</ul>
