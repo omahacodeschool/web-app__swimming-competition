@@ -4,9 +4,9 @@
 
   <input type="text" name="first_name" placeholder="First name">
   <input type="text" name="last_name" placeholder="Last name">
-  <input type="text" name="school_id">
+<!--   <input type="text" name="school_id"> -->
      <select name="school_id">
-  		<% @list_school.each do |s| %>
+  		<% @list_schools.each do |s| %>
   		<option value= "<%=s.id%>"> <%=s.name%> </option> %>
   	<%end%>
 	</select>
