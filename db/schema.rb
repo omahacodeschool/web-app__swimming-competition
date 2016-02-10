@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "conference_id"
   end
 
+  create_table "signups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "swimmer_id"
+    t.integer  "event_id"
+  end
+
   create_table "swimmers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

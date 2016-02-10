@@ -3,32 +3,19 @@ MyApp.get "/" do
 
   erb :"home"
 end
-MyApp.get "/swimmers" do
+MyApp.get "/swimmer" do
   @swimmers = Swimmer.all
+  erb :"swimmers"
 end
-MyApp.get "events" do
+MyApp.get "/event" do
   @events = Event.all
+  erb :"events"
 end
-MyApp.get "/schools" do
+MyApp.get "/school" do
   @schools = School.all
+  erb :"schools"
 end
+MyApp.get "/administrator" do
 
-MyApp.get "/page2" do
-  x = StringSegmenter.new(params["a"])
-  x.run_program
-  ray = x.final_words
-  
-  @result = ray.join(", ")
-  
-  @y = Apple.new
-  @y.nospace = params["a"]
-  @y.words = @result
-  
-  @y.save
-
-  erb :"page2"
-end
-MyApp.get "/all_words" do
-  @apples = Apple.all
-  erb :"allwords"
+  erb :"administrator"
 end
