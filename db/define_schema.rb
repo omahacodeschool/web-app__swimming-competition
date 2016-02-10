@@ -21,8 +21,6 @@ DB.define_column("penguins", "last_name", "string")
 DB.define_column("penguins", "first_name", "string")
 DB.define_column("penguins", "rookery_id", "integer")
 
-
-
 #Make "events" table
 #needs the following columns:
 #name, num_entries, start_time
@@ -30,7 +28,7 @@ DB.define_column("penguins", "rookery_id", "integer")
 DB.define_table("events")
 DB.define_column("events", "name", "string")
 DB.define_column("events", "num_entries", "integer")
-DB.define_column("events", "start_time", "integer")
+DB.define_column("events", "start_time", "time")
 
 
 #Make "rookeries" table
@@ -53,4 +51,4 @@ DB.define_column("conferences", "name", "string")
 DB.define_table("results")
 DB.define_column("results", "penguin_id", "integer")
 DB.define_column("results", "event_id", "integer")
-DB.define_column("results", "time", "integer")
+DB.define_column("results", "time", "time")
