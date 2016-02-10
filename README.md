@@ -111,9 +111,18 @@ And, as always, post a message with a link to your PR in any _help_ channel so t
 
 ##### (Part 2)
 
-Once you have gotten approval for your database design, you can begin adding _create_ actions for each table.
+Once you have gotten approval for your database design, you can begin adding _create_ actions for each table. You'll achieve this by:
 
-Once you have create actions for two of your tables, submit for approval. (Obviously you can submit for feedback before that.)
+1. Adding code to the **db/define_schema.rb** file to create in your real database the tables you designed.
+2. Adding a file to **app/models/** for _each_ table being created.
+  - Remember that the model must be singular, and the table must be plural. Examples:
+    - `Student` for table `students`
+    - `Potato` for table `potatoes`
+    - `AcademyAward` for table `academy_awards`
+3. Building controllers and views that facilitate adding new rows to each table.
+  - It can be helpful to create a new controller file for each table. That way, the controller actions related to--for example--adding a new student to the `students` table are all in one file (e.g. **students_controller.rb**).
+
+Once you have accomplished this for any **two** of your tables, submit for approval. (Obviously you can submit for feedback before that.)
 
 Progress up to this point is due Wednesday morning, but don't stay up so late getting it done that you're a zombie. Just aim for completion by then, but know that you can get help tomorrow if needed.
 
