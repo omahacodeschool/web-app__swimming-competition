@@ -5,7 +5,7 @@ MyApp.get "/add_swimmer" do
   s.university_id = params[:university]
   s.save
 
-  erb :"/success_swimmer"
+  erb :"/success/success_swimmer"
 end
 
 MyApp.get "/add_conference" do
@@ -13,7 +13,7 @@ MyApp.get "/add_conference" do
   c.conference_name = params["input_conference"]
   c.save
 
-  erb :"/success_conference"
+  erb :"/success/success_conference"
 end
 
 MyApp.get "/add_university" do
@@ -22,7 +22,7 @@ MyApp.get "/add_university" do
   u.conference_id = params[:conference] #This is how I think I will access the conference ID.  Since 'input_conference' is already used and theoritcally everytime a conference is added it will have an ID. I believe this is how I would access that ID. 
   u.save
 
-  erb :"/success_university"
+  erb :"/success/success_university"
 end
 
 MyApp.get "/add_event" do
@@ -30,7 +30,7 @@ MyApp.get "/add_event" do
   e.event_name = params["input_event"]
   e.save
 
-  erb :"/success_event"
+  erb :"/success/success_event"
 end
 
 MyApp.get "/add_result" do
@@ -40,7 +40,7 @@ MyApp.get "/add_result" do
   r.recorded_time = params["input_time"] #Because this is the first time a swimmers time is added somewhere I think I need to use this form of a param.  "input_time" is a hypothetical variable I think I'll use.  
   r.save
 
-  erb :"/success_result"
+  erb :"/success/success_result"
 end
 
 MyApp.get "/current_standings" do
@@ -52,7 +52,7 @@ MyApp.get "/current_standings" do
   #Note: :result I think might need to change this since this controller may need some Ruby to figure out the 3 fastest times per event. 
   c.save
 
-  erb :"/show_standings"
+  erb :"/success/show_standings"
 end
 
 
