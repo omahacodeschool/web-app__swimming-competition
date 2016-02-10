@@ -13,3 +13,20 @@ MyApp.get "/add_conference" do
 	x.save
 	erb :"success"
 end
+
+MyApp.get "/conference_info/:conference_id" do
+  @conference = Conference.find(params[:conference_id])
+  erb :"conferences/conference_info"
+end
+
+MyApp.get "/conferences/edit/:conference_id" do
+  	@conference = Conference.find(params[:conference_id])
+	erb :"conferences/edit_conference"
+end
+
+MyApp.get "/edit_conference/:conference_id" do
+	@conference = Conference.find(params[:conference_id])
+	@conference.update_attributes({name: params['name']})
+	@conference.save
+	erb :"success"
+end

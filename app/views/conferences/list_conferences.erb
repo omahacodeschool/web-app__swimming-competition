@@ -1,10 +1,12 @@
 <h1>Conferences</h1>
 
 <h3> List of Conferences goes here: </h3>
-<% @list_conferences.each do |c| %>
-  <p><%= c.name %></p>
-<% end %>
+	<% @list_conferences.each do |c| %>
+		<p><a href = "/conference_info/<%= c.id %>"> <%= c.name %> </a></p>
+<!-- 	  	add list of schools in each conference
+ -->	<% end %>
 
 <p><a href="/conferences/add_new"> Add new conference. </a></p>
 
 <p><a href="/"> Home </a></p>
+
