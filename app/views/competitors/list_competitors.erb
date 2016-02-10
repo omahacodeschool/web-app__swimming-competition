@@ -1,9 +1,9 @@
 <h1>Competitors</h1>
 
 <h3> List of Competitors goes here: </h3>
-<% @list_competitors.each do |c| %>
-  <p><a href = "/profile/<%= c.id %>"> <%= c.first_name %> <%= c.last_name %> </a></p>
-<% end %>
+	<% @list_competitors.each do |c| %>
+	  <p><a href = "/profile/<%= c.id %>"> <%= c.first_name %> <%= c.last_name %> </a></p>
+	<% end %>
 
 <p><a href="/competitors/add_new"> Add new competitor. </a></p>
 

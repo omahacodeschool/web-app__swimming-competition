@@ -1,11 +1,11 @@
 <h1>Edit competitor:</h1>
 
-<form action="/edit/<%= @competitor.id %>">
+<form action="/edit/<%= @competitor.id %>" method="post" enctype="multipart/form-data">
 
   <input type="text" name="first_name" placeholder="<%= @competitor.first_name %>">
   <input type="text" name="last_name" placeholder="<%= @competitor.last_name %>">
   <select name="school_id">
-        <option selected><%= @competitor.school_id%></option>
+        <option selected disabled>Choose school</option>
   			<% @list_schools.each do |s| %>
   				<option value= "<%=s.id%>"> <%=s.name%> </option>
   			<%end%>
