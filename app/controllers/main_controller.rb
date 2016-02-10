@@ -19,6 +19,9 @@ MyApp.get "/" do
 end
 
 MyApp.get "/college_info" do
+  x=College.new
+  x.name = params[:college_name]
+  x.save
   erb :"college_info"
 end
 
