@@ -1,7 +1,7 @@
 Here you can manipulate information in the Database
 
 
-<h1>Add Events, Schools, and Swimmers!</h1>
+<h1>Add Events, Schools, Conferences and Swimmers!</h1>
 
 
 <p>Enter a swimmer that you would like to add to the comepition</p>
@@ -9,8 +9,50 @@ Here you can manipulate information in the Database
 <input type = "text" name = "new_swimmer">
 <input type = "submit">
 </form>
+<p>Add that swimmers school ID</p>
+<form action="/add_swimmer_school">
+<input type = "text" name = "swimmer_school">
+<input type = "submit">
+</form>
+
+
+</body>
+</html>
+<p>Enter an event that you would like to add to the comepition</p>
+<form action="/add_event">
+<input type = "text" name = "new_event">
+<input type = "submit">
+</form>
 
 
 
 </body>
 </html>
+<p>Enter a school that you would like to add to the comepition</p>
+<form action="/add_school">
+<input type = "text" name = "new_school">
+<input type = "submit">
+</form>
+<p>Add the school's conference id</p>
+<form action="/school_conf">
+<input type = "text" name = "new_conf">
+<input type = "submit">
+</form>
+
+
+
+</body>
+</html>
+<p>Enter a conference that you would like to add to the comepition</p>
+<form action="/add_conference">
+<input type = "text" name = "new_conference">
+<input type = "submit">
+</form>
+
+
+
+</body>
+</html>
+<a href= "swimmers">Click here for a look at all the swimmers!</a>
+<a href= "schools">Click here for a look at all the schools!</a>
+<a href= "events">Click here for a look all the events!</a>
