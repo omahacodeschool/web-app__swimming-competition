@@ -12,3 +12,12 @@ require_relative "./_configure"
 
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
+
+DB.define_table("events")
+DB.define_column("events", "gender", "string")
+DB.define_column("events", "distance", "string")
+DB.define_column("events", "style id", "integer")
+
+DB.define_table("styles")
+DB.define_column("styles", "style", "string")
+
