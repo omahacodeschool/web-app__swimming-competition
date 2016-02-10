@@ -14,11 +14,25 @@ MyApp.get "/" do
   erb :"main"
 end
 
-MyApp.get "/competitor_info"
-  erb :"competitor_info"
+MyApp.get "/college_info" do
+  erb :"college_info"
+end
 
+MyApp.get "/conference_info" do
+  erb :"conference_info"
+end
 
+MyApp.get "/event_info" do
+  erb :"event_info"
+end
 
+MyApp.get "/results" do
+  erb :"results"
+end
+
+MyApp.get "/winners" do
+  erb :"winners"
+end
 
 
 

@@ -13,9 +13,9 @@ require_relative "./_configure"
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
 DB.define_table("competitors")
-DB.define_column("competitors","first_name","string")
-DB.define_column("competitors","last_name","string")
-DB.define_column("competitors","college_id","integer")
+DB.define_column("competitors","first_name", "string")
+DB.define_column("competitors","last_name", "string")
+DB.define_column("competitors","college_id", "integer")
 
 DB.define_table("colleges")
 DB.define_column("colleges","name","string")
