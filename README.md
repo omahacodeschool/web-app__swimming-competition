@@ -85,7 +85,7 @@ Here are the specific next steps you should take immediately:
 1. If you haven't already, _Fork_ this repository to make your own copy. (And clone it locally.)
 2. Open your local copy in Sublime Text.
 3. If you are working alone, skip to the next step. If you are working with a partner, create a new file in the project's root directory called **Partner** and type your partner's full name and their GitHub username into the file. Both partners should do this in their local copies.
-4. Add a space to some file. Any file--it shouldn't matter.
+4. Add a space  to some file. Any file--it shouldn't matter.
 5. Add, commit, and push to GitHub.
 6. Now create a PR. For the title of the PR, enter your name. (If you're working as a pair, that's fine--each partner should do this step.)
 
