@@ -18,3 +18,19 @@ DB.define_column("students", "first_name", "string")
 DB.define_column("students", "last_name", "string")
 DB.define_column("students", "age", "integer")
 DB.define_column("students", "college_id", "integer")
+
+DB.define_table("events")
+DB.define_column("events", "event_name", "string")
+DB.define_column("events", "max_possible_score_for_activity", "integer")
+
+DB.define_table("results")
+DB.define_column("results", "student_id", "integer")
+DB.define_column("results", "event_id", "integer")
+DB.define_column("results", "student_score", "integer")
+
+DB.define_table("colleges")
+DB.define_column("colleges", "college_name", "string")
+DB.define_column("colleges", "conference_id", "integer")
+
+DB.define_table("conferences")
+DB.define_column("conferences", "conference_name", "string")
