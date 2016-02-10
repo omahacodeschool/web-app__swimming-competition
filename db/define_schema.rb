@@ -22,7 +22,9 @@ DB.define_table("swimmers")
 DB.define_column("swimmers", "team_id", "integer")
 DB.define_column("swimmers", "swimmer_name", "string")
 DB.define_column("swimmers", "dob", "string")
-DB.define_column("swimmers", "payment_status", "integer")
+DB.define_column("swimmers", "swimmer_gender", "string")
+DB.define_column("swimmers", "swimmer_events", "string")
+DB.define_column("swimmers", "payment_status", "string")
 
 DB.define_table("events")
 

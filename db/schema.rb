@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "swimmer_name"
     t.string   "dob"
     t.integer  "payment_status"
+    t.string   "swimmer_gender"
+    t.string   "swimmer_events"
   end
 
   create_table "teams", force: :cascade do |t|
