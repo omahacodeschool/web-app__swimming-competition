@@ -1,4 +1,4 @@
 MyApp.get "/" do
-  erb :"/admin_page"
+  erb :"/admin/admin_page"
 end
 

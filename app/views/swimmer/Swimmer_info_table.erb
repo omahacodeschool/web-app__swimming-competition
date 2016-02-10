@@ -1,0 +1,20 @@
+
+<center>
+<table border="1">
+  <thead>
+    <tr>
+      <th>First Name  </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info.each do |info| %>
+      <tr>
+        <td><%= info.first_name %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</center>
+
+<a href="http://localhost:9292/">Admin Page</a>
