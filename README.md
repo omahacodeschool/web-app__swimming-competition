@@ -1,7 +1,7 @@
 # App - Web
 
 ## Swimming Competition
-
+ 
 The goal of this assignment is to build a basic--but comprehensive--database-driven web application.
 
 You may work with a partner on this project, if you want to. But no groups larger than two people are allowed. If you're working in pairs, definitely read **How Pairs Work** below.
@@ -127,3 +127,56 @@ Once you have accomplished this for any **two** of your tables, submit for appro
 Progress up to this point is due Wednesday morning, but don't stay up so late getting it done that you're a zombie. Just aim for completion by then, but know that you can get help tomorrow if needed.
 
 ---
+
+#### Phase 2
+
+##### Part 1
+
+First, make sure you have completed the views/controllers needed for adding rows to _all_ of your tables. (Lots of copy-pasting, yes.)
+
+Now let's make sure things are organized before moving too far down.
+
+  - You should have one file per model. (This isn't required by ActiveRecord, but it's a very good practice.)
+  - You should have a few controllers, where all of the controller action inside of each are somewhat related. E.g. a controller for things an administrator does _before_ the tournament starts and another for what they do _while_ the tournament is going on. Or one controller per model. Or something else that is systematic and makes sense to you.
+  - Organize your views the same way you've organized your controller actions. So you should have folders in **app/views/** that relate to each controller file. E.g. if you have a *swimmers_controller.rb*, you should have a **app/views/swimmers** folder. And in that folder, put the view files that relate to that controller.
+    - If you have some views that don't fit anywhere, add them to a **app/views/misc/** folder.
+
+There is also a rule that ActiveRecord will enforce later, so let's get aligned with it now: All "foreign keys" (like `school_id` in the 'swimmers' table) should be named in **exact** accordance to these steps:
+
+1. Take the name of the **model** - e.g. `Competitor`, `Conference`, `School`, `Result`, etc and **lowercase it**. So `competitor`, `conference`, `school`, etc.
+2. Add `_id` to the end. So `competitor_id`, `conference_id`, `school_id`, etc.
+
+Make sure all of your foreign keys are named accordingly in **db/define_schema.rb**. Also make the changes to your views and controllers where needed, since changing the name of a column will change what methods ActiveRecord has gifted to your models.
+
+Additionally, any extraneous files? Delete them. And, of course, make sure your code is 100% indented perfectly.
+
+Submit for approval the usual way.
+
+##### Part 2
+
+So at this point, you should have the **C** of **CRUD** done. You can create records for each of your models.
+
+Move on to **R**. Build pages for viewing _all_ records of a particular model as well as for viewing just one record. Put links to these pages in sensible places in your web application.
+
+Once you have those simple[r] pages built, implement the following features as well. Note: These features can be part of a view you already have. You don't necessarily have to build brand new view files for the instructions below.
+
+  - List all **competitors** for just one event (which is identified by its ID). Example path for such a page: `/events/4/competitors`.
+    - This could also just be some new content you add to the view for one event's details page.
+- Everywhere that a school's name is displayed, also show the name of the conference. E.g. if a competitor's details page shows their school's name, it should also show the conference.
+- List the top three performers in an event. You can choose where this information goes--think of a sensible place.
+
+**After finishing those,** think of one more feature to add and get approval for it. Then implement that feature. (Make it something similar in complexity to the above features.)
+
+##### Part 3
+
+Let's. Get. _Logical._
+
+The list of the top three performers in an event should not be available until the event is complete. Add whatever new code is needed to make it so that the feature works like this:
+
+  - Administrator tries to view the top 3 performers for an event.
+    - If all competitors for that event have finished, and if all of their times have been entered, then show the top 3 performers.
+    - But if _not_, then show a message on the page that the event is not over yet.
+
+**After that...**
+
+Where else on the website is information not supposed to be accessible until (or after) a certain point? Think of a new feature related to this and get approval for it. Then implement it.
