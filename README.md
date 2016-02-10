@@ -1,7 +1,7 @@
 # App - Web
 
 ## Swimming Competition
-
+ 
 The goal of this assignment is to build a basic--but comprehensive--database-driven web application.
 
 You may work with a partner on this project, if you want to. But no groups larger than two people are allowed. If you're working in pairs, definitely read **How Pairs Work** below.
