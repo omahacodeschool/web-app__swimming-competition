@@ -20,8 +20,8 @@ end
 
 MyApp.get "/profile/:competitor_id" do
   @competitor = Competitor.find(params[:competitor_id])
-  id_of_school = @competitor.school_id
-  @school = School.find(:id_of_school)
+  school_id = @competitor.school_id
+  @school = School.find(params["school_id"])
   erb :"competitors/profile"
 end
 
