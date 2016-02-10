@@ -15,4 +15,51 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "conferences", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "conference"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "distance"
+    t.string   "stroke"
+  end
+
+  create_table "genders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "gender"
+  end
+
+  create_table "signup_results", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "swimmer_id"
+    t.integer  "event"
+    t.float    "time"
+    t.integer  "rank"
+  end
+
+  create_table "swimmer_infos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "last_name"
+    t.string   "first_name"
+    t.integer  "team_id"
+    t.integer  "age"
+    t.integer  "gender_id"
+    t.integer  "height"
+    t.integer  "weight"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "team"
+    t.integer  "conference_id"
+  end
+
 end

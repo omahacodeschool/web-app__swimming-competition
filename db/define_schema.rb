@@ -14,32 +14,32 @@ require_relative "./_configure"
 # What columns do you need in that table?
 
 DB.define_table("swimmer_infos")
-DB.define_column("swimmer_infos")("last_name")("string")
-DB.define_column("swimmer_infos")("first_name")("string")
-DB.define_column("swimmer_infos")("team_id")("integer")
-DB.define_column("swimmer_infos")("age")("integer")
-DB.define_column("swimmer_infos")("gender_id")("integer")
-DB.define_column("swimmer_infos")("height")("integer")
-DB.define_column("swimmer_infos")("weight")("integer")
+DB.define_column("swimmer_infos", "last_name", "string")
+DB.define_column("swimmer_infos", "first_name", "string")
+DB.define_column("swimmer_infos", "team_id", "integer")
+DB.define_column("swimmer_infos", "age", "integer")
+DB.define_column("swimmer_infos", "gender_id", "integer")
+DB.define_column("swimmer_infos", "height", "integer")
+DB.define_column("swimmer_infos", "weight", "integer")
 
 
 DB.define_table("genders")
-DB.define_column("genders")("gender")("string")
+DB.define_column("genders", "gender", "string")
 
 
 DB.define_table("events")
-DB.define_column("events")("distance")("string")
-DB.define_column("events")("stroke")("string")
+DB.define_column("events", "distance", "string")
+DB.define_column("events", "stroke", "string")
 
 DB.define_table("signup_results")
-DB.define_column("signup_results")()("integer")
-DB.define_column("signup_results")()("integer")
-DB.define_column("signup_results")()("float")
-DB.define_column("signup_results")()("integer")
+DB.define_column("signup_results", "swimmer_id", "integer")
+DB.define_column("signup_results", "event", "integer")
+DB.define_column("signup_results", "time", "float")
+DB.define_column("signup_results", "rank", "integer")
 
 DB.define_table("teams")
-DB.define_column("teams")("team")("string")
-DB.define_column("teams")("conference_id")("integer")
+DB.define_column("teams", "team", "string")
+DB.define_column("teams", "conference_id", "integer")
 
 DB.define_table("conferences")
-DB.define_column("conferences")("conference")("string")
+DB.define_column("conferences", "conference", "string")
