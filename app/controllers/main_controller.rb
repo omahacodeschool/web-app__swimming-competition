@@ -11,6 +11,10 @@
 # -----------------------------------------------------------------------------
 
 MyApp.get "/" do
+  x=Competitor.new
+  x.first_name = params[:first_name]
+  x.last_name = params[:last_name]
+  x.save
   erb :"main"
 end
 
@@ -43,21 +47,21 @@ end
 
 
 
-# MyApp.get "/admin" do
-#   @searches = Search.all
-#   erb :"main/admin"
-# end
+MyApp.get "/admin" do
+  @searches = Search.all
+  erb :"main/admin"
+end
 
 
-# MyApp.get "/segmented_text" do
-#   x = StringSegmenter.new(params[:smooshed_text])
-#   x.run_program
-#   segmented_arr = x.final_words
-#   segmented_words_now_string = segmented_arr.join(", ")
+MyApp.get "/segmented_text" do
+  x = StringSegmenter.new(params[:smooshed_text])
+  x.run_program
+  segmented_arr = x.final_words
+  segmented_words_now_string = segmented_arr.join(", ")
 
-#   @s = Search.new
-#   @s.smooshed_words = params[:smooshed_text]
-#   @s.seperated_words = segmented_words_now_string
-#   @s.save
-#   erb :"main/segmented_text"
-# end
+  @s = Search.new
+  @s.smooshed_words = params[:smooshed_text]
+  @s.seperated_words = segmented_words_now_string
+  @s.save
+  erb :"main/segmented_text"
+end
