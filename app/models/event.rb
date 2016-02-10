@@ -1,1 +1,0 @@
-# Event Class gets defined here

@@ -19,9 +19,9 @@ DB.define_column("students", "last_name", "string")
 DB.define_column("students", "age", "integer")
 DB.define_column("students", "college_id", "integer")
 
-DB.define_table("events")
-DB.define_column("events", "event_name", "string")
-DB.define_column("events", "max_possible_score_for_activity", "integer")
+DB.define_table("activities")
+DB.define_column("activities", "event_name", "string")
+DB.define_column("activities", "max_possible_score_for_activity", "integer")
 
 DB.define_table("results")
 DB.define_column("results", "student_id", "integer")
@@ -34,3 +34,22 @@ DB.define_column("colleges", "conference_id", "integer")
 
 DB.define_table("conferences")
 DB.define_column("conferences", "conference_name", "string")
+
+# Below is some copy and pasted code for how to make seeds
+
+# rps = Assignment.create(title: "Rock-Paper-Scissors", difficulty: 52)
+# str = Assignment.create(title: "String Segementer", difficulty: 89)
+# prp = Assignment.create(title: "Prep Work", difficulty: 71)
+# sst = Assignment.create(title: "Sinatra Starter", difficulty: 67)
+# dbb = Assignment.create(title: "Database Starter", difficulty: 59)
+
+# assignments = [rps, str, prp, sst, dbb]
+
+
+
+
+
+
+
+
+
