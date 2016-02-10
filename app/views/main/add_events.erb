@@ -1,0 +1,22 @@
+<h1>Please add your desired events below:</h1>
+
+<br />
+
+<form action="/events_form">
+  Event Name:
+  <br />
+  <input type="text" name="event_to_add">
+  <br />
+  <input type="submit" value="Add Event">
+</form>
+
+<br />
+
+<hX>Added Events:</hX>
+<ul>
+  <% @events.each do |event| %>
+  <li><%= event.event_name %></li>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>
