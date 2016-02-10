@@ -4,7 +4,7 @@
 #
 MyApp.get "/add_events" do
   @events = Event.all
-
+  
   erb :"main/add_events"
 end
 #

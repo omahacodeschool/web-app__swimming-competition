@@ -13,9 +13,9 @@ require_relative "./_configure"
 # What columns do you need in that table?
 DB.define_table("teams")
 
-DB.define_column("teams", "conference", "string")
-DB.define_column("teams", "swimmer_count", "string")
 DB.define_column("teams", "team_name", "string")
+DB.define_column("teams", "conference", "string")
+DB.define_column("teams", "team_member_count", "integer")
 
 DB.define_table("swimmers")
 

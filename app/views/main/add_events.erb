@@ -1,5 +1,6 @@
-<h1>Please add your desired events below:</h1>
+<h2>Please add your desired events below:</h2>
 
+<a href="/">Home</a>
 <br />
 
 <form action="/events_form">
@@ -25,7 +26,7 @@
   </p>
   <p>
   Standing Time Record (in seconds):
-  <input type="number" name="best_time_to_add">
+  <input type="number" step="any" name="best_time_to_add">
   </p>
   <p>
   <input type="submit" value="Add Event">
@@ -33,13 +34,13 @@
 </form>
 
 <br />
-<hX>Added Events:</hX>
+<h3>Added Events:</h3>
 <table border="1">
   <thead>
     <tr>
-      <th>Event</th>
-      <th>Swimmer Count</th>
-      <th>Current Record</th>
+      <th> Event </th>
+      <th> Swimmer Count </th>
+      <th> Current Record (sec.) </th>
     </tr>
   </thead>
 
@@ -47,11 +48,9 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.event_name %></td>
-        <td><%= event.swimmers_in %></td>
-        <td><%= event.best_time %></td>
+        <td><center><%= event.swimmers_in %></center></td>
+        <td><center><%= event.best_time %></center></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<a href="/">Home</a>

@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "conference"
     t.string   "swimmer_count"
     t.string   "team_name"
+    t.integer  "team_member_count"
   end
 
 end
