@@ -10,10 +10,6 @@ DB.define_column("competitors", "school_id", "integer")
 DB.define_table("conferences")
 DB.define_column("conferences", "conference", "string")
 
-DB.define_table("schools")
-DB.define_column("schools", "school", "string")
-DB.define_column("schools", "conference_id", "integer")
-
 DB.define_table("events")
 DB.define_column("events", "event", "string")
 DB.define_column("events", "first", "string")
@@ -24,6 +20,10 @@ DB.define_table("results")
 DB.define_column("results", "event_id", "integer")
 DB.define_column("results", "competitor_id", "integer")
 DB.define_column("results", "time", "time")
+
+DB.define_table("schools")
+DB.define_column("schools", "school", "string")
+DB.define_column("schools", "conference_id", "integer")
 # Column names should be all lowercase and have no spaces or any other special
 # characters--except for underscores. So "running_time" is valid, but
 # "running time" and "running_time!" are not vaild.
