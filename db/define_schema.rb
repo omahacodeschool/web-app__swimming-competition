@@ -15,19 +15,19 @@ require_relative "./_configure"
 DB.define_table("competitors")
 DB.define_column("competitors","first_name","string")
 DB.define_column("competitors","last_name","string")
-DB.define_column("competitors","college_id",'Integer')
+DB.define_column("competitors","college_id","integer")
 
 DB.define_table("colleges")
 DB.define_column("colleges","name","string")
-DB.define_column("colleges","conference_id",'Integer')
+DB.define_column("colleges","conference_id","integer")
 
 DB.define_table("conferences")
-DB.define_column("conferences","region")
+DB.define_column("conferences","region", "string")
 
 DB.define_table("results")
 DB.define_column("results","time","time")
-DB.define_column("results","competitor_id",'Integer')
-DB.define_column("results","event_id",'Integer')
+DB.define_column("results","competitor_id","integer")
+DB.define_column("results","event_id","integer")
 
 DB.define_table("events")
-DB.define_column("events", "stroke",string')
+DB.define_column("events", "stroke","integer")
