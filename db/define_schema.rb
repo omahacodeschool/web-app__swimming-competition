@@ -23,7 +23,7 @@ DB.define_column("events", "third", "string")
 DB.define_table("results")
 DB.define_column("results", "event_id", "integer")
 DB.define_column("results", "competitor_id", "integer")
-DB.define_column("results", "time", "")
+DB.define_column("results", "time", "time")
 # Column names should be all lowercase and have no spaces or any other special
 # characters--except for underscores. So "running_time" is valid, but
 # "running time" and "running_time!" are not vaild.
