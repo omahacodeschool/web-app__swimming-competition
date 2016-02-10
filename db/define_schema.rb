@@ -36,7 +36,7 @@ DB.define_column("colleges","conference_id","integer")
 
 #the conferences the colleges belong to
 DB.define_table("conferences")
-DB.define_table("conferences","conference_name","string")
+DB.define_column("conferences","conference_name","string")
 
 #finish refers to the TIME that the swimmer FINISHED a match
 DB.define_table("finishes")
@@ -49,5 +49,6 @@ DB.define_column("ranks","rank_name","string")
 
 #who won!
 DB.define_table("winners")
-DB.define_column("winner","rank_id","finish_id")
+DB.define_column("winners","rank_id","integer")
+DB.define_column("winners","finish_id","integer")
 
