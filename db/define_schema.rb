@@ -25,7 +25,7 @@ DB.define_column("competitors", "last_name", "string")
 DB.define_column("competitors", "school_id", "integer")
 
 DB.define_table("schools")
-DB.define_column("schools", "school_name", "string")
+DB.define_column("schools", "name", "string")
 DB.define_column("schools", "conference_id", "integer")
 
 DB.define_table("conferences")

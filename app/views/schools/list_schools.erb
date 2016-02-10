@@ -1,6 +1,9 @@
 <h1>Schools</h1>
 
 <h3> List of Schools goes here: </h3>
+<% @list_schools.each do |s| %>
+  <p><%= s.name %></p>
+<% end %>
 
 <p><a href="/schools/add_new"> Add new school. </a></p>
 

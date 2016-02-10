@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",    null: false
     t.string   "school_name"
     t.integer  "conference_id"
+    t.string   "name"
   end
 
 end
