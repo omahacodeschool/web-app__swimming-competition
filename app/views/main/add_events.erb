@@ -3,20 +3,55 @@
 <br />
 
 <form action="/events_form">
+  <p>
   Event Name:
-  <br />
   <input type="text" name="event_to_add">
-  <br />
+  </p>
+  <p>
+  Number of Swimmers Participating:
+  <select name="swimmers_in_to_add">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  </p>
+  <p>
+  Standing Time Record (in seconds):
+  <input type="number" name="best_time_to_add">
+  </p>
+  <p>
   <input type="submit" value="Add Event">
+  </p>
 </form>
 
 <br />
-
 <hX>Added Events:</hX>
-<ul>
-  <% @events.each do |event| %>
-  <li><%= event.event_name %></li>
-  <% end %>
-</ul>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Swimmer Count</th>
+      <th>Current Record</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_name %></td>
+        <td><%= event.swimmers_in %></td>
+        <td><%= event.best_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <a href="/">Home</a>

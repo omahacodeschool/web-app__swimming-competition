@@ -16,6 +16,8 @@ MyApp.get "/events_form" do
   @events = Event.all
   @e = Event.new
   @e.event_name = (params["event_to_add"])
+  @e.swimmers_in = (params["swimmers_in_to_add"])
+  @e.best_time = (params["best_time_to_add"])
   @e.save
 
   erb :"main/add_events"
