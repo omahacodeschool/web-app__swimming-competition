@@ -12,3 +12,10 @@ require_relative "./_configure"
 
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
+
+DB.define_table("swimmers")
+DB.define_column("swimmers", "swimmer_name", "string")
+DB.define_column("swimmers", "university_id", "integer")
+
+DB.define_table("conferences")
+DB.define_column("conferences", "conference_name", "string")
