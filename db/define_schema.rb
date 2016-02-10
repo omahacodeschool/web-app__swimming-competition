@@ -12,3 +12,9 @@ require_relative "./_configure"
 
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
+
+DB.define_table("students")
+DB.define_column("students", "first_name", "string")
+DB.define_column("students", "last_name", "string")
+DB.define_column("students", "age", "integer")
+DB.define_column("students", "college_id", "integer")
