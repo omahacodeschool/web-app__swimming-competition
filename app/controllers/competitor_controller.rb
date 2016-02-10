@@ -8,6 +8,7 @@ MyApp.get "/competitors/add_new" do
 end
 
 MyApp.get "/add_competitor" do
+	@list_schools = School.all
 	x = Competitor.new
 	x.first_name = params[:first_name]
 	x.last_name = params[:last_name]

@@ -1,0 +1,18 @@
+<h1>Edit competitor:</h1>
+
+<form action="/edit_competitor">
+
+  <input type="text" name="first_name" placeholder="first_name">
+  <input type="text" name="last_name" placeholder="last_name">
+  <input type="text" name="school_id">
+   <select name="school_id">
+  		<% @list_school_id.each do |s| %>
+  		<option value= "<%=s.school_id%>"><%=s.name%></option> %>
+  	<%end%>
+	</select>
+  <input type="submit">
+  
+
+</form>
+
+   
