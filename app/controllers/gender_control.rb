@@ -4,3 +4,8 @@ MyApp.get "/gender_form" do
   @g.save
   erb :"gender_form"
 end
+
+MyApp.get "/gender_table" do
+  @info = Gender.all
+  erb :"/gender_table"
+end
