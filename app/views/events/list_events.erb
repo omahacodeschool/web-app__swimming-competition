@@ -1,7 +1,9 @@
 <h1> Events </h1>
 
 <h3> List of Events goes here: </h3>
-
+<% @list_events.each do |e| %>
+  <p><%= e.name %></p>
+<% end %>
 <p><a href="/events/add_new"> Add new event. </a></p>
 
 <p><a href="/"> Home </a></p>

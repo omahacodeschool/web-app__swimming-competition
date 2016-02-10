@@ -3,7 +3,7 @@ MyApp.get "/competitors" do
   erb :"competitors/list_competitors"
 end
 
-MyApp.get "/competitor/add_new" do
+MyApp.get "/competitors/add_new" do
   erb :"competitors/add_competitor"
 end
 

@@ -2,7 +2,7 @@
 
 <h3> List of Competitors goes here: </h3>
 <% @list_competitors.each do |c| %>
-  <p><%= c.first_name %> <%= c.last_name %></p>
+  <p><%= c.first_name %> <%= c.last_name %>, <%= c.school_id %></p>
 <% end %>
 
 <p><a href="/competitors/add_new"> Add new competitor. </a></p>

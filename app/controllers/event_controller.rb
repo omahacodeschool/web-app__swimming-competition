@@ -9,8 +9,7 @@ end
 
 MyApp.get "/add_event" do
 	x = Event.new
-	x.name = params[:school_name]
-	x.conference_id = params[:conference_id]
+	x.name = params[:name]
 	x.save
   erb :"success"
 end
