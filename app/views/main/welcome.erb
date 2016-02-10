@@ -1,11 +1,44 @@
-<h1>Hello, and welcome to our swimming competition.</h1>
+<h1>Hello admin! Welcome to your fancy swim meet database.</h1>
 
-<p>Please enter your personal information here:</p>
+<p>Please enter information about each competitor here:</p>
 
- <form action="">
+<form action="/competitor_added">
   First name:<br>
-  <input type="text" name="firstname" value=""><br>
+  <input type="text" name="firstname"><br><br>
+
   Last name:<br>
-  <input type="text" name="lastname" value=""><br><br>
+  <input type="text" name="lastname"><br><br>
+
+  School:<br>
+  <input type="text" name="school"><br><br>
+
+  Conference:<br>
+  <select name="conference">
+    <option value="east">East</option>
+    <option value="west">West</option>
+  </select><br><br>
+
+  Gender:<br>
+  <select name="gender">
+    <option value="f">F</option>
+    <option value="m">M</option>
+  </select><br><br>
+
   <input type="submit" value="Submit">
-</form> 
+</form> <br><br>
+
+
+<p>Please enter each competitor's results here:</p>
+
+<form action="">
+  Competitor id:<br>
+  <input type="integer" name="competitor_id"><br><br>
+
+  Event id:<br>
+  <input type="integer" name="event_id"><br><br>
+
+  Result (in seconds):<br>
+  <input type="decimal" name="results"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>

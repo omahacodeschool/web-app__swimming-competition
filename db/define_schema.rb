@@ -36,4 +36,4 @@ DB.define_column("conferences", "conference_name", "string")
 
 DB.define_table("results")
 DB.define_column("results", "competitor_id", "integer")
-DB.define_column("results", "final_time", "integer")
+DB.define_column("results", "final_time", "decimal")
