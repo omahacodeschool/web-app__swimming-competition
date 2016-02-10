@@ -1,7 +1,3 @@
-MyApp.get "/events" do
-  erb :"main/events"
-end
-
-MyApp.get "/styles" do
-  erb :"main/styles"
+MyApp.get "/" do
+  erb :"main/welcome"
 end

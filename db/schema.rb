@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "gender"
     t.string   "distance"
     t.integer  "style id"
+    t.integer  "style_id"
   end
 
   create_table "styles", force: :cascade do |t|
