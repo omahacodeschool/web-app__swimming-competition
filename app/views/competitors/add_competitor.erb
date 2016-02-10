@@ -3,14 +3,15 @@
 <form action="/add_competitor">
 
   <input type="text" name="first_name" placeholder="First name">
+
   <input type="text" name="last_name" placeholder="Last name">
-<!--   <input type="text" name="school_id"> -->
-     <select name="school_id">
-         <option selected disabled>Choose school</option>
-  		<% @list_schools.each do |s| %>
-  		<option value= "<%=s.id%>"> <%=s.name%> </option>
-  	<%end%>
-	</select>
+
+  <select name="school_id">
+        <option selected disabled>Choose school</option>
+  			<% @list_schools.each do |s| %>
+  				<option value= "<%=s.id%>"> <%=s.name%> </option>
+  			<%end%>
+  </select>
   <input type="submit">
   
 </form>
