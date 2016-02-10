@@ -1,6 +1,6 @@
 <h1>Results</h1>
 
-<h3> List of Results goes here: </h3>
+<h3> List of Results: </h3>
 	<% @list_results.each do |r| %>
 	<p><a href = "/result_details/<%= r.id %>"> <%= r.event_id %>, <%= r.competitor_id %>, <%= r.time %> </a></p>
 	<% end %>

@@ -1,8 +1,8 @@
 <h1>Schools</h1>
 
-<h3> List of Schools goes here: </h3>
+<h3> List of Schools: </h3>
 <% @list_schools.each do |s| %>
-  <p><%= s.name %></p>
+<p><a href = "/school_info/<%= s.id %>"> <%= s.name %> </a></p>
 <% end %>
 
 <p><a href="/schools/add_new"> Add new school. </a></p>

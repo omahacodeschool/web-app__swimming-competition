@@ -1,6 +1,6 @@
 <h1>Competitors</h1>
 
-<h3> List of Competitors goes here: </h3>
+<h3> List of Competitors: </h3>
 	<% @list_competitors.each do |c| %>
 	  <p><a href = "/profile/<%= c.id %>"> <%= c.first_name %> <%= c.last_name %> </a></p>
 	<% end %>
