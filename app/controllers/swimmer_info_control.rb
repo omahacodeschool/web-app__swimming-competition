@@ -4,3 +4,8 @@ MyApp.get "/swimmer_info_form" do
   @s.save
   erb :"/swimmer_info_form"
 end
+
+MyApp.get "/swimmer_info_table" do
+  @info = SwimmerInfo.all
+  erb :"/swimmer_info_table"
+end
