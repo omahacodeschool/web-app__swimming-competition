@@ -1,8 +1,16 @@
-MyApp.get "/results" do
-#get list of results
-@xxxxxxxxx = XXXXXXXX.all
+MyApp.get "/view_add_swimmer_confirmation" do
+#get confirmation
+@swim_1 = Swimmer.new
+@swim_1.swimmer_name = (params["swim_1_name"])
+@swim_1.save
+@show_added_name = (params["swim_1_name"])
 
-erb :"view_results"
+@swim_2 = School.new
+@swim_2.school_name = (params["swim_1_school"])
+@swim_2.save
+@show_added_school = (params["swim_1_school"])
+
+erb :"view_add_swimmer_confirmation"
 end
 
 
@@ -10,26 +18,4 @@ end
 MyApp.get "/" do
  
   erb :"view_home_page"
-
 end
-
-#_____________________________________________________________________________
-
-# Process form.
-MyApp.get "/result" do
-  # Use the StringSegmenter to get the final words array.
-  x = StringSegmenter.new(params[:unsegmented_text])
-  x.run_program
-  segmented_arr = x.final_words # Returns an Array of the segmented words.
-  segmented_words_as_string = segmented_arr.join(", ")
-
-   #Use the ActiveRecord 'Search' class to access the database.
-  @s = Search.new
-  @s.unsegmented_text = params[:unsegmented_text]
-  @s.words_segmented_out = segmented_words_as_string
-  @s.save
-
-  erb :"result"
-end  
-
-
