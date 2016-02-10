@@ -7,4 +7,6 @@ MyApp.get "/swimmer" do
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
 
+  # DO I NEED TO DISPLAY THE WHOLE TABLE FOR THE ADMIN TO VERIFY THEIR SWIMMER ADD? 
+  @swimmer = Swim.all
   erb :"swimmer"
