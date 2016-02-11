@@ -1,8 +1,8 @@
 <center><h1> Debate Meet </h1>
-<a href="/admin/amd_competitor>">Add Competitor</a>&emsp;|&emsp;
-<a href="/admin/amd_activity>">Add Activity</a>&emsp;|&emsp;
-<a href="/admin/amd_college>">Add College</a>&emsp;|&emsp;
-<a href="/admin/amd_competitor>">Add Conference</a>
+<a href="/competitors/add_competitor">Add Competitor</a>&emsp;|&emsp;
+<a href="/activities/add_activity">Add Activity</a>&emsp;|&emsp;
+<a href="/colleges/add_college">Add College</a>&emsp;|&emsp;
+<a href="/conferences/add_conference">Add Conference</a>
 <br>
 <br>
 <br>
@@ -23,7 +23,7 @@
     <tbody>
     <% @competitors.each do |s| %>
       <tr>
-        <td><a href="/competitors/<%= s.id %>"><%= s.name %></a></td>
+        <td><a href="/competitors/competitor/<%= s.id %>"><%= s.name %></a></td>
         <td><%= s.age %></td>
         <td>meep</td>
         <td>meep</td>
@@ -47,9 +47,9 @@
   <tbody>
     <% @activites.each do |s| %>
     <tr>
-      <td><a href="/activities/<%= s.id %>"><%= s.activity_name %></a></td>
-      <td><a href="/admin/amd_activity/"> Modify </a></td>
-      <td><a href="/admin/amd_activity/"> Delete </a></td>
+      <td><a href="/activities/activity/<%= s.id %>"><%= s.name %></a></td>
+      <td><a href="/activites/add_activity/"> Modify </a></td>
+      <td><a href="/activites/add_activity/"> Delete </a></td>
 
     </tr>
     <% end %>

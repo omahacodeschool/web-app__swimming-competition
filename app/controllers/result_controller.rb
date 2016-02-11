@@ -1,5 +1,5 @@
-MyApp.get "/admin/amd_result" do
+MyApp.get "/competitors/add_result" do
 
 
-  erb :"/admin/amd_result"
+  erb :"/competitors/add_result"
 end

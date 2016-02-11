@@ -1,5 +1,5 @@
-MyApp.get "/admin/amd_college" do
+MyApp.get "/colleges/add_college" do
 
 
-  erb :"/admin/amd_college"
+  erb :"/colleges/add_college"
 end

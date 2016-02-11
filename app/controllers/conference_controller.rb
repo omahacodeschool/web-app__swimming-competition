@@ -1,5 +1,5 @@
-MyApp.get "/admin/amd_conference" do
+MyApp.get "/conferences/add_conference" do
 
 
-  erb :"/admin/amd_conference"
+  erb :"/conferences/add_conference"
 end
