@@ -5,6 +5,7 @@ end
 
 MyApp.get "/results/add_new" do
 	@list_events =  Event.all
+	@list_competitors = Competitor.all
   erb :"results/add_result"
 end
 
