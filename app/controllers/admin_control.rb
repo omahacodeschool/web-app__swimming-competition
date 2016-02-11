@@ -3,5 +3,9 @@ MyApp.get "/" do
 end
 
 MyApp.get "/gender_form" do
-  erb :"gender/gender_form"
+  erb :"/gender/gender_form"
+end
+
+MyApp.get "/sign_up/new" do
+  erb :"sign_up_form"
 end

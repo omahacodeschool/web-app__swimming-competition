@@ -1,5 +1,5 @@
-MyApp.get "/sign_up/new" do
-  erb :"sign_up_form"
+MyApp.get "/sign_up_form/new" do
+  erb :"sign_result/sign_up_form"
 end
 
 MyApp.get "/sign_up/create" do
