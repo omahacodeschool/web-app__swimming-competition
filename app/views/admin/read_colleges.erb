@@ -3,11 +3,25 @@
 <h2>List of Colleges:</h2>
 
 
-  <% @colleges.each do |c| %>
+<table border="1">
+  <thead>
     <tr>
-      <td><%= c.id %></td>
-      <td><%= c.college_name %></td>
-      <td><%= c.conference_id %></td>
-      <br>
-  <% end %>
+      <th>College ID</th>
+      <th>College Name</th>
+      <th>Conference</th>
     </tr>
+  </thead>
+
+  <tbody>
+    <% @colleges.each do |c| %>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.college_name %></td>
+        <td><% if c.conference_id == nil %> Not entered
+            <% else %><%= c.conference_name %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

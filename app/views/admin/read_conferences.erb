@@ -1,11 +1,21 @@
 
-
 <h2>List of Conferences:</h2>
 
 
-<% @conferences.each do |c| %>
-  <tr>
-      <td><%= c.id %></td>
-      <td><%= c.conference_name %></td>
-<% end %>
-  </tr>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Conference ID</th>
+      <th>Conference Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |c| %>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.conference_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
