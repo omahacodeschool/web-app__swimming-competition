@@ -1,8 +1,31 @@
 <h1>Event Info</h1>
 
 <h3> <%= @event.name %> </h3>
+	<ul>
+	competitor.each do |c|
+		<li>
+			<a href="/profile/<%= c.id %>"> c.first_name c.last_name </a>
+		</li>
+	</ul>
+
+<h4> Winners </h4>
+	<ul>
+		<li> First Place: 
+			 <%= @event.name_of_first %> 
+		</li>
+
+		<li> Second Place: 
+			 <%= @event.name_of_second %> 
+		</li>
+
+		<li> Third Place: 
+			 <%= @event.name_of_third %>  
+		</li>
+	</ul>
 
 <p><a href="/events/edit/<%= @event.id %>"> Edit this event. </a></p>
+
+<p><a href="/results/add_new"> Add entries. </a></p>
 
 <p><a href="/"> Home </a></p>
 
