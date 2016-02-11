@@ -1,20 +1,26 @@
 
 <center>
-<table border="1">
-  <thead>
-    <tr>
-      <th>First Name  </th>
+
+<TABLE  BORDER="5" WIDTH="25%" >
+   <TR>
+      
+    <H1><BR><SPAN>CONFERENCES</SPAN></H1>
+      
+   </TR>
+      <th>Conference</th>
     </tr>
   </thead>
 
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.first_name %></td>
-        </tr>
+        <td><%= info.conference %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 </center>
+<br>
+<br>
 
-<a href="http://localhost:9292/">Admin Page</a>
+<center><a href="http://localhost:9292/">Admin Page</a></center>

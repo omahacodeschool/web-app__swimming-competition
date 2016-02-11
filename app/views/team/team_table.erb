@@ -1,20 +1,24 @@
+<center><h1>TEAMS</h1></center>
 
 <center>
 <table border="1">
   <thead>
     <tr>
-      <th>First Name </th>
+      <th>Team</th>
+      <th>Conference ID</th>
     </tr>
   </thead>
 
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.first_name %></td>
+        <td><%= info.team %></td>
+        <td><%= info.conference_id %></td>
         </tr>
     <% end %>
   </tbody>
 </table>
 </center>
-
-<a href="http://localhost:9292/">Admin Page</a>
+<br>
+<br>
+<center><a href="/">Admin Page</a></center>
