@@ -1,4 +1,5 @@
 #colleges controller goes here
+require 'pry'
 
 MyApp.get "/colleges" do 
   @conferences = Conference.all
@@ -6,7 +7,7 @@ MyApp.get "/colleges" do
   erb :"cv/colleges" 
 end
 
-MyApp.get "newcollege" do
+MyApp.get "/newcollege" do
   @conferences = Conference.all
   c = College.new
   c.college_name = params[:collegename]
