@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",    null: false
     t.integer  "competitor_id"
     t.integer  "activity_id"
-    t.integer  "student_score"
+    t.float    "score"
   end
 
 end

@@ -12,7 +12,7 @@ DB.define_column("activities", "max_score", "integer")
 DB.define_table("results")
 DB.define_column("results", "competitor_id", "integer")
 DB.define_column("results", "activity_id", "integer")
-DB.define_column("results", "student_score", "integer")
+DB.define_column("results", "score", "float")
 
 DB.define_table("colleges")
 DB.define_column("colleges", "name", "string")
