@@ -50,5 +50,7 @@ MyApp.get "/city_added_successful" do
   @obj = Region.new
   @obj.city = params[:city_name]
   @obj.save
+  @regions = Region.all
+
   erb :"city_added"
 end
