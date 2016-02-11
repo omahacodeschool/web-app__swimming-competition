@@ -1,4 +1,4 @@
-MyApp.get "penguins/new" do
+MyApp.get "/penguins/new" do
   erb :"penguins/new_penguin"
 end
 

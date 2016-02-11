@@ -1,5 +1,20 @@
 <h1>Rookeries</h1>
 
-<% @rookeries.each do |r| %>
-<p> The name of the rookery is <%= r.name %></p>
-<%end%>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Rookery Name</th>
+      <th>Conference</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rookeries.each do |r| %>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.conference_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
