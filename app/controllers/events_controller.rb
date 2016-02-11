@@ -1,4 +1,4 @@
-MyApp.get "events/new" do
+MyApp.get "/events/new" do
   erb :"events/new_event"
 end
 

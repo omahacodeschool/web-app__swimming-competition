@@ -1,4 +1,5 @@
 MyApp.get "/penguins/new" do
+  @penguins = Penguin.all
   erb :"penguins/new_penguin"
 end
 
@@ -17,4 +18,3 @@ MyApp.get "/penguins" do
   @penguins = Penguin.all
   erb :"penguins/all_penguins"
 end
-

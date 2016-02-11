@@ -11,9 +11,11 @@
   <input type="number" name="new_age">
   </br>
   <p>Enter Rookery ID</p>
-  <input type="number" name="new_rookery_id">
-
+  <select name="new_rookery_id">
+  <% @penguins.each do |p| %>
+    <option value="<%= p.rookery_access.id %>">
+    <%= p.rookery_access.name %></option>
+  <% end %>
+  </select>
   <input type="submit">
-
 </form>
-
