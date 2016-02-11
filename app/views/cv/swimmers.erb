@@ -1,6 +1,10 @@
 <h1>Swimmers</h1>
 <h2>Enrolled Kitties:<h2>
-
+<ul>
+  <% @swimmers.each do |post| %>
+    <li><%= post.id%>. <%=post.first_name%> <%=post.last_name%></li>
+  <% end %>
+</ul>
 <form action="/newswimmername">
   <fieldset>
     <legend>Add New Kitty</legend>
@@ -8,8 +12,16 @@
         <input type="text" name="swimmerfirstname">
       <label for="swimmer_last_name">Swimmer Last Name</label>
         <input type="text" name="swimmerlastname">
-      <label for="swimmer_college_id">College I.D. (see below)</label>
+      <label for="swimmer_college_id">College I.D. see below</label>
         <input type="text" name="collegeid">
       <input type="submit">
   </fieldset>
 </form>
+
+Schools Represented in the Conference:
+
+<ul>
+  <% @colleges.each do |list| %>
+    <li><%= list.id%>. <%=list.college_name%></li>
+  <% end %>
+</ul>

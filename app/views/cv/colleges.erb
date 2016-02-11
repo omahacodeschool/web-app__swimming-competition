@@ -2,8 +2,8 @@
 
 Schools Represented in the Conference:
 <ul>
-  <%= @colleges.each do |list| %>
-    <li><%=list.id%>. <%=list.college_name%></li>
+  <% @colleges.each do |list| %>
+    <li><%= list.id%>. <%=list.college_name%></li>
   <% end %>
 </ul>
 

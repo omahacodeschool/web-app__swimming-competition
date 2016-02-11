@@ -5,6 +5,5 @@ class College < ActiveRecord::Base
     x = self.conference_id
     y = Conference.find_by_id(x)
     return y.conference_name
-  end
-  
+  end  
 end

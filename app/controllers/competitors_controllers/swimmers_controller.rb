@@ -2,6 +2,8 @@ require 'pry'
 #both the swimmer name AND the swimmer college goes here
 
 MyApp.get "/swimmers" do
+  @swimmers = Swimmer.all
+  @colleges = College.all
   erb :"cv/swimmers"
 end
 

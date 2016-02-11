@@ -1,10 +1,9 @@
-
+require 'pry'
 MyApp.get "/newevent" do
   
   e = Event.new
   e.event_name = params[:neweventname]
   e.save
-
   erb :"/ev/events"
 end
 
