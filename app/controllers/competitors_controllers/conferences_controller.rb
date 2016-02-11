@@ -1,7 +1,9 @@
 #conferences controller goes here
+require 'pry'
 
 MyApp.get "/superadmin/conferences" do
 #create new conferences
+  @conferences = Conference.all
   erb :"cv/superadmin_conferences"
 end
 
@@ -9,7 +11,6 @@ MyApp.get "/newconference" do
   c = Conference.new
   c.conference_name = params[:conferencename]
   c.save
-
   erb :"/cv/conferences"
 end
 

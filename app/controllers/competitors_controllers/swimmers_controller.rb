@@ -5,15 +5,21 @@ MyApp.get "/swimmers" do
   erb :"cv/swimmers"
 end
 
-MyApp.get "/newswimmer" do
+MyApp.get "/newswimmername" do
   s = Swimmer.new
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
+  s.college_id= params[:collegeid]
   s.save
-  @currentswimmername = s.first_name + " " + s.last_name
-  @currentswimmerid = s.id
-  erb :"cv/colleges"
+  erb :"cv/swimmers"
 end
+
+
+
+#example from class::
+#MyApp.get "/view_movie/:id' do    # <-- know that :id here is not special; #could be called anything
+#    @movie = Movie.find_by_id(params[:id])
+#end
 
 #DB.define_table("swimmers")
 #DB.define_column("swimmers","first_name","string")
