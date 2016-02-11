@@ -26,7 +26,7 @@ DB.define_column("swimmers","college_id","integer")
 
 #what events the swimmers registered for
 DB.define_table("signups")
-DB.define_column("signups","signup_id","integer")
+DB.define_column("signups","event_id","integer")
 DB.define_column("signups","swimmer_id","integer")
 
 #the colleges participating in the tournament

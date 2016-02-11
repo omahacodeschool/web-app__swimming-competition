@@ -1,8 +1,7 @@
 #colleges controller goes here
 
 MyApp.get "/colleges" do 
-  erb :"cv/signups"
-  
+  erb :"cv/signups" 
 end
 #DB.define_table("colleges")
 #DB.define_column("colleges","college_name","string")

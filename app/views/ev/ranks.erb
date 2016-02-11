@@ -1,1 +1,20 @@
-ranks
+Here you can add another "rank", if you REALLY need to
+
+<form action="/newrank">
+  <fieldset>
+    <legend>Add New Rank</legend>
+      <label for="rank_name">New Rank Title</label>
+        <input type="text" name="rankname">
+      <input type="submit">
+  </fieldset>
+</form>
+
+<ul>
+  <% @ranks.each do |post| %>
+    <li><%= post.id%>. <%=post.rank_name %></li>
+  <% end %>
+</ul>
+
+Get it?
+
+<p><a href="/">Home</a></p>

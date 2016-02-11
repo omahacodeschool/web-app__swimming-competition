@@ -9,15 +9,17 @@ MyApp.get "/" do
   # 
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
-  erb :"/admin"
+  erb :"admin"
 end
 
 MyApp.get "/swimmingevents" do
-  erb :"/ev/swimmingevents"
+  erb :"ev/swimmingevents"
 end
 
 MyApp.get "/competitors" do
-  erb :"/cv/competitors"
+  erb :"cv/competitors"
 end
+
+#ADD SOMETHING FOR SUPERADMIN
 
 

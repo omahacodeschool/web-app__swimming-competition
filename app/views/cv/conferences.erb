@@ -1,1 +1,9 @@
-conferences.erb
+#cat swimming tourney name#
+<p>Conferences</p>
+
+<ul>
+  <% @conferences.each do |post| %>
+    <li><%= post.conference_name %></li>
+  <% end %>
+</ul>
+
