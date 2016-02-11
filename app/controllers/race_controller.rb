@@ -39,7 +39,8 @@ MyApp.get "/race/create" do
   g = Race.new
   g.event_name
   g.start_time
+  g.save
  
   
-  erb :"race"
+  erb :"success_race_add"
 end

@@ -39,7 +39,8 @@ MyApp.get "/swim_entry/create" do
   e = SwimEntry.new
   e.swimmer_id = params[:swimmer_id]
   e.race_id = params[:race_id]
+  e.save
  
   
-  erb :"swim_entry"
+  erb :"success_swim_entry"
 end

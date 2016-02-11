@@ -37,11 +37,12 @@ MyApp.get "/college/create" do
 
   c = College.new
   c.college_name = params[:college_name]
-  c.college_id = params[:college_id]
+  c.conference_id = params[:conference_id]
   c.contact = params[:contact]
   c.contact_email = params[:contact_email]
   c.contact_ph = params[:contact_ph]
+  c.save
 
-  
-  erb :"college"
+
+  erb :"success_college_add"
 end

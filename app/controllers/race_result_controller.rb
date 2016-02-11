@@ -36,12 +36,13 @@ MyApp.get "/race_result/create" do
 
   # Accepts the form entry data and creates the swimmer in the table. 
   r = RaceResult.new
-  r.swimmer_entry_id
+  r.swim_entry_id
   r.swimmer_time
   r.swimmer_race_rank
+  r.save
 
-  
+
  
   
-  erb :"race_result"
+  erb :"success_race_res_add"
 end

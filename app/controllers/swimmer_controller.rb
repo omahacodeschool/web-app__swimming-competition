@@ -42,12 +42,10 @@ MyApp.get "/swimmer/create" do
   s.last_name = params[:last_name]
   s.first_name = params[:first_name]
   s.college_id = params[:college_id]
-
-
-
+  s.save
 
   
-  erb :"new_swimmer"
+  erb :"success_new_swimmer_add"
 end
 
 

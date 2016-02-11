@@ -49,7 +49,7 @@ MyApp.get "/conference/create" do
   c = Conference.new
 
   c.conference_name = params[:conference_name]
- 
+  c.save
   
-  erb :"conference"
+  erb :"success_conference_add"
 end
