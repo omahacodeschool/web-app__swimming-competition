@@ -1,10 +1,18 @@
 <h1> Events </h1>
 
 <h3> List of Events: </h3>
-	<% @list_events.each do |e| %>
-		<p><a href = "/event_info/<%= e.id %>"> <%= e.name %> </a></p>
-	<% end %>
-	
+	<ul>
+		<% @list_events.each do |e| %>
+			<li>
+				<a href = "/event_info/<%= e.id %>"> <%= e.name %>
+				</a>
+				-
+				<a href = "/event_delete/<%= e.id%>">
+		  		delete
+		  		</a>
+			</li>
+		<% end %>
+	</ul>
 <p><a href="/events/add_new"> Add new event. </a></p>
 
 <p><a href="/"> Home </a></p>

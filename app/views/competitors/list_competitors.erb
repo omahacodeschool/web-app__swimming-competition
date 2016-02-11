@@ -1,17 +1,19 @@
 <h1>Competitors</h1>
 
 <h3> List of Competitors: </h3>
-	<% @list_competitors.each do |c| %>
-	  <p>
-	  	<a href = "/profile/<%= c.id %>">
-	  		<%= c.first_name %> <%= c.last_name %>
-	  	</a>
-	  	-
-	  	<a href = "competitor_delete/<%= c.id%>">
-	  	delete
-	  	</a>
-	  </p>
-	<% end %>
+	<ul>
+		<% @list_competitors.each do |c| %>
+		  <li>
+		  	<a href = "/profile/<%= c.id %>">
+		  		<%= c.first_name %> <%= c.last_name %>
+		  	</a>
+		  	-
+		  	<a href = "competitor_delete/<%= c.id%>">
+		  	delete
+		  	</a>
+		  </li>
+		<% end %>
+	</ul>
 
 <p><a href="/competitors/add_new"> Add new competitor. </a></p>
 

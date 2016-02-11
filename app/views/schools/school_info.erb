@@ -1,6 +1,10 @@
 <h1>School Info</h1>
 
-<h3> <%= @school.name %> - <%= @school.conference_id %> conference </h3>
+<h3> <%= @school.name %> </h3>
+ <h4> <%= @school.conference_name %> </h4>
+ 	<ul>
+	list competitors here
+ 	</ul>
 
 <p><a href="/school/edit/<%= @school.id %>"> Edit this school. </a></p>
 

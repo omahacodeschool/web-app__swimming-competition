@@ -30,3 +30,9 @@ MyApp.get "/edit_conference/:conference_id" do
 	@conference.save
 	erb :"success"
 end
+
+MyApp.get "/conference_delete/:conference_id" do
+	@conference = Conference.find(params[:conference_id])
+	@conference.delete
+	erb :"success"
+end

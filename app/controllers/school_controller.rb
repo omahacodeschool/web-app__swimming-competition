@@ -33,3 +33,10 @@ MyApp.get "/edit_school/:school_id" do
 	@school.save
 	erb :"success"
 end
+
+MyApp.get "/school_delete/:school_id" do
+	@school = School.find(params[:school_id])
+	@school.delete
+	erb :"success"
+end
+

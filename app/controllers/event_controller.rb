@@ -30,3 +30,9 @@ MyApp.get "/edit_event/:event_id" do
 	@event.save
 	erb :"success"
 end
+
+MyApp.get "/event_delete/:event_id" do
+	@event = Event.find(params[:event_id])
+	@event.delete
+	erb :"success"
+end
