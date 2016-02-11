@@ -1,2 +1,2 @@
-class Competitor < ActiveRecord::Base
+class Chili < ActiveRecord::Base
 end

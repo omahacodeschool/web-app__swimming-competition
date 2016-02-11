@@ -30,16 +30,24 @@ MyApp.get "/competition" do
   erb :"add_competition"
 end
 
+MyApp.get "/scores" do
+  erb :"add_scores"
+end
+
 MyApp.get "/winners" do
   erb :"winners_by_year"
 end
 
 MyApp.get "/2015" do
-  erb :"2015_winners.erb"
+  erb :"2015_winners"
 end
 
 MyApp.get "/2016" do
-  erb :"2016_winners.erb"
+  erb :"2016_winners"
+end
+
+MyApp.get "city_added" do
+  erb :"city_added"
 end
 
 

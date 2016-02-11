@@ -1,2 +1,2 @@
-class College < ActiveRecord::Base
+class Contestant < ActiveRecord::Base
 end
