@@ -1,5 +1,5 @@
 MyApp.get "/penguins/new" do
-  @penguins = Penguin.all
+  @rookeries = Rookery.all
   erb :"penguins/new_penguin"
 end
 

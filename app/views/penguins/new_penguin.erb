@@ -12,9 +12,9 @@
   </br>
   <p>Enter Rookery ID</p>
   <select name="new_rookery_id">
-  <% @penguins.each do |p| %>
-    <option value="<%= p.rookery_access.id %>">
-    <%= p.rookery_access.name %></option>
+  <% @rookeries.each do |r| %>
+    <option value="<%= r.id %>">
+    <%= r.name %></option>
   <% end %>
   </select>
   <input type="submit">
