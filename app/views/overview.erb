@@ -1,0 +1,58 @@
+<center><h1> Debate Meet </h1>
+<a href="/admin/amd_competitor>">Add Competitor</a>&emsp;|&emsp;
+<a href="/admin/amd_activity>">Add Activity</a>&emsp;|&emsp;
+<a href="/admin/amd_college>">Add College</a>&emsp;|&emsp;
+<a href="/admin/amd_competitor>">Add Conference</a>
+<br>
+<br>
+<br>
+<br>
+
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Age&emsp;</th>
+      <th>College&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>Total Activites&emsp;</th>
+      <th>Total Accrued Points&emsp;</th>
+      <th>Total Possible Points&emsp;</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @competitors.each do |s| %>
+      <tr>
+        <td><a href="/competitors/<%= s.id %>"><%= s.name %></a></td>
+        <td><%= s.age %></td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> </center>
+<br>
+<br>
+<h2> Activities </h2>
+<table border="0">
+  <thead>
+    <tr>
+      <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @activites.each do |s| %>
+    <tr>
+      <td><a href="/activities/<%= s.id %>"><%= s.activity_name %></a></td>
+      <td><a href="/admin/amd_activity/"> Modify </a></td>
+      <td><a href="/admin/amd_activity/"> Delete </a></td>
+
+    </tr>
+    <% end %>
+  </tbody>
+</table> 
+
