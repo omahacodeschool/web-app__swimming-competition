@@ -1,0 +1,9 @@
+<h1>Competitor List</h1>
+
+<% @competitors.each do |competitor| %>
+  <p>
+    <a href = "/view_competitor/<%= competitor.id %>">
+      <%= competitor.first_name + " " + competitor.last_name %>
+    </a>
+  </p>
+<% end %>

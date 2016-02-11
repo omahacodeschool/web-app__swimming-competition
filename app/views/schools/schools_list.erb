@@ -1,0 +1,9 @@
+<h1>School List</h1>
+
+<% @schools.each do |school| %>
+  <p>
+      <a href = "/view_school/<%= school.id %>">
+        <%= school.school %>
+      </a>
+  </p>
+<% end %>

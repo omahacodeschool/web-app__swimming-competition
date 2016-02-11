@@ -7,3 +7,13 @@ MyApp.get "/results" do
   @y = [x.event_id, x.competitor_id, x.time]
   erb :"results/results"
 end
+
+MyApp.get "/all_results" do 
+  @results = Result.all
+  erb :"results/results_list"
+end 
+
+MyApp.get "/view_result/:result_id" do 
+  @result = Result.find_by_id(params[:result_id])
+  erb :"results/single_result"
+end

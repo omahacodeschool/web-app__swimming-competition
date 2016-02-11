@@ -1,0 +1,9 @@
+<h1>Results List</h1>
+
+<% @results.each do |result| %>
+  <p>
+    <a href = "/view_result/<%= result.id %>">
+      <%= result.event_id %>
+    </a>  
+  </p>
+<% end %>
