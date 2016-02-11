@@ -5,7 +5,14 @@
 
 College Name:<br>
 <input type="text" name="college_name"><br>
+
+
 Conference ID:<br>
-<input type="number" name="conference_id"><br>
+
+<select name="conference_id">
+ <% @conferences.each do |c| %>
+  <option value="<%= c.id %>"> <%= c.conference_name %></option>
+  <% end %>
+</select>
 <input type="submit">
 </form></p>

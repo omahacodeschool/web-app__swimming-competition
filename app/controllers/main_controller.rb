@@ -8,6 +8,7 @@ MyApp.get "/add/student" do
 end
 
 MyApp.get "/add/college" do
+  @conferences = Conference.all
   erb :"admin/add_college"
 end
 
