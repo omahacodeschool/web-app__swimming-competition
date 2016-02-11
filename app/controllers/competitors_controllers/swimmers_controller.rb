@@ -11,7 +11,8 @@ MyApp.get "/newswimmer" do
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
   s.save
-  @currentswimmer = s.swimmer_id
+  #@currentswimmername = s.first_name
+  #@currentswimmerid = s.swimmer_id
   erb :"/cv/colleges"
 end
 
