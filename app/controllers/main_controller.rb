@@ -46,32 +46,9 @@ MyApp.get "/2016" do
   erb :"2016_winners"
 end
 
-MyApp.get "city_added" do
+MyApp.get "/city_added_successful" do
+  @obj = Region.new
+  @obj.city = params[:city_name]
+  @obj.save
   erb :"city_added"
 end
-
-
-
-
-
-
-
-
-# MyApp.get "/admin" do
-#   @searches = Search.all
-#   erb :"main/admin"
-# end
-
-
-# MyApp.get "/segmented_text" do
-#   x = StringSegmenter.new(params[:smooshed_text])
-#   x.run_program
-#   segmented_arr = x.final_words
-#   segmented_words_now_string = segmented_arr.join(", ")
-
-#   @s = Search.new
-#   @s.smooshed_words = params[:smooshed_text]
-#   @s.seperated_words = segmented_words_now_string
-#   @s.save
-#   erb :"main/segmented_text"
-# end
