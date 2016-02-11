@@ -6,5 +6,5 @@ MyApp.get "/events" do
   x.third = params["third"]
   x.save
   @y = [x.event, x.first, x.second, x.third]
-  erb :"/events"
+  erb :"events/events"
 end

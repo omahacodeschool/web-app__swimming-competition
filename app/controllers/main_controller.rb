@@ -1,3 +1,3 @@
 MyApp.get "/" do
-  erb :"/main"
+  erb :"main/main"
 end

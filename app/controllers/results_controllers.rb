@@ -5,5 +5,5 @@ MyApp.get "/results" do
   x.time = params["time"]
   x.save
   @y = [x.event_id, x.competitor_id, x.time]
-  erb :"/results"
+  erb :"results/results"
 end

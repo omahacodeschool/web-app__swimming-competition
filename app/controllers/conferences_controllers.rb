@@ -3,5 +3,5 @@ MyApp.get "/conferences" do
   x.conference = params["conf"]
   x.save
   @y = [x.conference]
-  erb :"/conferences"
+  erb :"conferences/conferences"
 end

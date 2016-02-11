@@ -5,5 +5,5 @@ MyApp.get "/competitors" do
   x.school_id = params["school"]
   x.save
   @y = [x.first_name, x.last_name, x.school_id]
-  erb :"/competitors"
+  erb :"competitors/competitors"
 end
