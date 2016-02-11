@@ -18,3 +18,4 @@ MyApp.get "/conference" do
   # @s.save
 
   erb :"conference"
+end

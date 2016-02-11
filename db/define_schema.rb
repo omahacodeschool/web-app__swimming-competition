@@ -38,5 +38,5 @@ DB.define_column("colleges", "contact_email", "string")
 DB.define_column("colleges", "contact_ph", "string")
 
 DB.define_table("races")
-DB.define_table("races", "event_name", "string")
-DB.define_table("races", "start_time", "time")
+DB.define_column("races", "event_name", "string")
+DB.define_column("races", "start_time", "time")

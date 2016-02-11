@@ -1,4 +1,4 @@
-MyApp.get "race" do
+MyApp.get "/race" do
 
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given

@@ -8,3 +8,4 @@ MyApp.get "/college" do
   # combined document back to the client.
 
   erb :"college"
+end

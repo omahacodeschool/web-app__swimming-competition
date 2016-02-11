@@ -6,6 +6,5 @@ MyApp.get "/" do
   # 
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
-  erb :"homepage" #/This should go to the main page, where the input is.
+  erb :"main" #/This should go to the main page, where the input is.
 end
-

@@ -8,3 +8,4 @@ MyApp.get "/swim_entry" do
   # combined document back to the client.
 
   erb :"swim_entry"
+end
