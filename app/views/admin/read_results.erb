@@ -1,0 +1,11 @@
+<h2>List of Results:</h2>
+
+
+ <% @results.each do |r| %>
+      <tr>
+        <td><%= r.id %></td>
+        <td><%= r.student_id %></td>
+        <td><%= r.event_id %></td>
+        <td><%= r.student_score %></td>
+        <% end %>
+        </tr>

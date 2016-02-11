@@ -5,7 +5,6 @@ MyApp.get "/result/create" do
   @result.event_id = params["activity_id"]
   @result.student_score = params["student_score"]
   @result.save
-  binding.pry
   erb :"admin/confirm_submission"
 end
 
