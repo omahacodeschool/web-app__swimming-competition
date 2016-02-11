@@ -182,3 +182,45 @@ The list of the top three performers in an event should not be available until t
 **After that...**
 
 Where else on the website is information not supposed to be accessible until (or after) a certain point? Think of a new feature related to this and get approval for it. Then implement it.
+
+#### Phase 3
+
+The administrator should be able to perform all basic CRUD operations using all models. Implement these features.
+
+#### Phase 4
+
+If the administrator deletes a competitor, the system should automatically delete all of that competitor's signups/awards/results/etc.
+
+Similarly, if the administrator deletes a team, the system should automatically delete all of that team's competitors. (Which means that then all of those competitors' signups/awards/results/etc get deleted!)
+
+Not-so-similarly, if the administrator tries to delete a _conference_, then the system should first check if there are any teams in that conference. If there are none, then the system should delete the conference. But if there are teams in the conference, then the system should **not** delete the conference--it should tell the administrator to first go manually delete those teams (or change their conference).
+
+#### Phase 5
+
+Even the administrator is prone to nepotism (and less nefarious kinds of mistake-making). But the administrator is also aware of their flawed personality. So they have requested a feature in the system that lets them "lock" an event--after which point that event's information cannot be altered.
+
+To clarify: An event does not ever get automatically locked. For example, after all of an events' competitors' results have been inputted, that does **not** mean the event is locked now. "Locking" is something the administrator must do manually to an event.
+
+To lock an event, the administrator should click a link on that event's page. Now that event is locked!
+
+For this to work, there must be some column in the events table called "locked" (for example), which stores **boolean** data. (This is a valid data type for the **define_schema.rb** file.) You will need to add this column at some point.
+
+To be clear, after an event is locked, the administrator should not be able to:
+
+  - Add a new result for that event
+  - Alter the values of any results for that event
+  - Sign up a new competitor for that event
+  - Delete the event
+
+##### Note
+
+Currently the system has some contradictory functionality:
+
+  - After an event is locked, it can't be altered.
+  - Deleting a competitor should automatically delete all of that competitors event data (e.g. results for events they competed in).
+
+So what happens if the administrator deletes a competitor who has results for a locked event? Right now, probably that competitor's results would be deleted. That's okay. We're fine with that for now.
+
+#### Phase 6
+
+This phase will be about improving the UX of the application. Stay tuned.
