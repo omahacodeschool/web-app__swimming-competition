@@ -1,6 +1,33 @@
 <p>Current Swimmers</p>
 <% @swimmers.each do |y| %>
-<p> <%= y.id %>. <%= y.swimmer_name %> Date Added: <%= y.created_at %>  <p>
+<p> <%= y.id %>. <%= y.swimmer_name %> University ID: <%= y.university_id %><p>
 <% end %>
 
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer</th>
+      <th>Swimmer's University</th>
+      <th>University's Conference</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swimmers.each do |y| %>
+      <tr>
+        <td><%= y.swimmer_name %></a></td>
+        <td><%= s.percentage_assignments_turned_in %>%</td>
+        <td><%= s.overall_grade %></td>
+
+        <!-- You will need to add the overall adjusted grade yourself: -->
+        <td><%= s.overall_grade_adjusted %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <a href="/">Return Home</a>
+
+<!-- Save this for later if you want to make any of these into links
+ --><!-- <a href="/students/<%= s.id %>"> -->

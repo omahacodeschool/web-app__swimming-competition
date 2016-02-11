@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "swimmer_id"
     t.integer  "event_id"
     t.time     "recorded_time"
+    t.decimal  "swimmer_time"
   end
 
   create_table "standings", force: :cascade do |t|

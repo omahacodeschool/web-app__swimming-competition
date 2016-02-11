@@ -1,1 +1,6 @@
-Show Conferences Here!
+<p>Current Conferences</p>
+<% @conferences.each do |y| %>
+<p> <%= y.id %>. <%= y.conference_name %> Date Added: <%= y.created_at %>  <p>
+<% end %>
+
+<a href="/">Return Home</a>

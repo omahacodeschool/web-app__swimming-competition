@@ -1,5 +1,11 @@
-Display a list of results here!
+<p>Current Results</p>
+<% @results.each do |y| %>
+  <p> 
+    <%= y.id %>.
+    Swimmer ID <%= y.swimmer_id %> - 
+    Event ID <%= y.event_id %>  
+    Recorded Time: <%= y.swimmer_time %>
+  <p>
+<% end %>
 
-This will need a way to display the swimmer, the event, and the individuals time for that event.  
-
-Note: Start with idividual events first, figure out relays and possibly splits later.
+<a href="/">Return Home</a>
