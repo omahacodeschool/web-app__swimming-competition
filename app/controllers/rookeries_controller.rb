@@ -8,7 +8,7 @@ MyApp.get "/rookeries/create" do
   x.name = params["new_rookery"]
   x.conference_id = params["new_conference_id"]
   x.save
-  redirect_to "/rookeries"
+  redirect "/rookeries"
 end
 
 MyApp.get "/rookeries" do

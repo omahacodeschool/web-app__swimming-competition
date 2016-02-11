@@ -1,3 +1,7 @@
+MyApp.get "penguins/new" do
+  erb :"penguins/new_penguin"
+end
+
 MyApp.get "/penguins/create" do
   x = Penguin.new
   x.last_name = params["new_last_name"]
@@ -5,7 +9,8 @@ MyApp.get "/penguins/create" do
   x.age = params["new_age"]
   x.rookery_id = params["new_rookery_id"]
   x.save
-  erb :"penguins/new_penguin"
+
+  redirect "/penguins"
 end
 
 MyApp.get "/penguins" do
