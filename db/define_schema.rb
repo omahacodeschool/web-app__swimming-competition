@@ -21,7 +21,7 @@ DB.define_column("gamers", "squad_id", "integer")
 
 #Set up Games table
 DB.define_table("games")
-DB.define_column("games", "game_name")
+DB.define_column("games", "game_name", "string")
 
 
 #Set up Squads table
@@ -31,7 +31,7 @@ DB.define_column("squads", "division_id", "integer")
 
 #Set up Divison table
 DB.define_table("divisions")
-DB.define_column("divisions", "division")
+DB.define_column("divisions", "division", "string")
 
 #Set up Results table
 DB.define_table("results")
