@@ -6,7 +6,7 @@ MyApp.get "/swimmers" do
 end
 
 MyApp.get "/newswimmer" do
-  
+  binding.pry
   s = Swimmer.new
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
