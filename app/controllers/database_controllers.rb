@@ -1,4 +1,4 @@
-
+#Add Swimmer to DB
 MyApp.get "/add_swimmer" do
   s = Swimmer.new
   s.swimmer_name = params["input_swimmer"]
@@ -6,6 +6,14 @@ MyApp.get "/add_swimmer" do
   s.save
 
   erb :"/success/success_swimmer"
+end
+
+#Delete Swimmer from DB
+MyApp.get "/delete_swimmer/:id_of_swimmer" do
+  @s = Swimmer.find_by_id(params[:id_of_swimmer])
+  @s.delete
+
+  erb :"/success/delete_swimmer"
 end
 
 MyApp.get "/add_conference" do

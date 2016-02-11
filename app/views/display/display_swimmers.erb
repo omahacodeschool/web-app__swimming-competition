@@ -7,6 +7,7 @@
     <tr>
       <th>Swimmer</th>
       <th>Swimmer's University</th>
+      <th>Delete Swimmer</th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
       <tr>
         <td><a href="swimmer_bio/<%= y.id %>"> <%= y.swimmer_name %> </a> </td>
         <td><%= y.university_id %></td>
+        <td><a href="delete_swimmer/<%= y.id %>"> Delete Swimmer </a></td>
       </tr>
     <% end %>
   </tbody>
