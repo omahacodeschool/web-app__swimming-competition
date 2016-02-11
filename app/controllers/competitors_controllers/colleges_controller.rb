@@ -1,6 +1,7 @@
 #colleges controller goes here
 
 MyApp.get "/colleges" do 
+  @conferences = Conference.all
   @colleges = College.all 
   erb :"cv/colleges" 
 end
