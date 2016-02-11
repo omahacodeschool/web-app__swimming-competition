@@ -47,7 +47,7 @@ MyApp.get "/swimmer/create" do
 
 
   
-  erb 
+  erb :"new_swimmer"
 end
 
 
