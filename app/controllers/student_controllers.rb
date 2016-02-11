@@ -7,6 +7,10 @@ MyApp.get "/student/create" do
   @student.age = params["student_age"]
   @student.college_id = params["college_id"]
   @student.save
-  binding.pry
   erb :"admin/confirm_submission"
+end
+
+MyApp.get "/read/students" do
+  @students = Student.all
+  erb :"admin/read_students"
 end

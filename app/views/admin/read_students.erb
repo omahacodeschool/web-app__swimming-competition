@@ -1,0 +1,13 @@
+
+<h2>List of Students:</h2>
+
+
+ <% @students.each do |s| %>
+      <tr>
+        <td><%= s.id %></td>
+        <td><%= s.first_name %></td>
+        <td><%= s.last_name %></td>
+        <td><%= s.age %></td>
+        <td><%= s.college_id %></td>
+        <% end %>
+        </tr>
