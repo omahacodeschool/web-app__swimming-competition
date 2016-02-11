@@ -1,3 +1,3 @@
 MyApp.get "/team_form" do
-  erb :"/team/team_form"
+  erb :"team_form"
 end

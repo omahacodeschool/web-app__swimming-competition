@@ -37,11 +37,10 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "signup_results", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "swimmer_id"
-    t.integer  "event"
+    t.integer  "swimmer_info_id"
+    t.integer  "event_id"
     t.float    "time"
     t.integer  "rank"
-    t.integer  "swimmer_info_id"
   end
 
   create_table "swimmer_infos", force: :cascade do |t|
@@ -52,7 +51,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "team_id"
     t.integer  "age"
     t.integer  "gender_id"
-    t.integer  "height"
+    t.float    "height"
     t.integer  "weight"
   end
 

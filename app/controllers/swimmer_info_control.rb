@@ -8,10 +8,10 @@ MyApp.get "/swimmer_info_form" do
   @s.height = params["height"]
   @s.weight = params["weight"]
   @s.save
-  erb :"/swimmer/swimmer_info_form"
+  erb :"swimmer_info_form"
 end
 
 MyApp.get "/swimmer_info_table" do
   @info = SwimmerInfo.all
-  erb :"/swimmer/swimmer_info_table"
+  erb :"swimmer_info_table"
 end

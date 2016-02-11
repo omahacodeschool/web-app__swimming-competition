@@ -31,7 +31,7 @@ DB.define_column("events", "stroke", "string")
 
 DB.define_table("signup_results")
 DB.define_column("signup_results", "swimmer_info_id", "integer")
-DB.define_column("signup_results", "event", "integer")
+DB.define_column("signup_results", "event_id", "integer")
 DB.define_column("signup_results", "time", "float")
 DB.define_column("signup_results", "rank", "integer")
 

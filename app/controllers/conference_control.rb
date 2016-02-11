@@ -1,5 +1,5 @@
 MyApp.get "/conference_form" do
   
-  erb :"/conference/conference_form"
+  erb :"conference_form"
 end
 
