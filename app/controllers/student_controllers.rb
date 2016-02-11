@@ -12,10 +12,18 @@ MyApp.get "/student/create" do
   @student.age = params["student_age"]
   @student.college_id = params["college_id"]
   @student.save
+  @confirm_message = "Success! Created #{@student.first_name} #{@student.last_name}!"
   erb :"admin/confirm_submission"
 end
 
 MyApp.get "/read/students" do
   @students = Student.all
   erb :"admin/read_students"
+end
+
+MyApp.get "/delete/student/:student_id" do
+  @student = Student.find_by_id(params[:student_id])
+  @confirm_message = "Success! Deleted #{@student.first_name} #{@student.last_name}!"
+  @student.delete
+  erb :"admin/confirm_submission"
 end

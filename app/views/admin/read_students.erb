@@ -10,6 +10,8 @@
       <th>Last Name</th>
       <th>Age</th>
       <th>College</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -21,6 +23,7 @@
         <td><%= s.last_name %></td>
         <td><%= s.age %></td>
         <td><%= s.college_name %></td>
+        <td> <a href="/delete/student/<%=s.id%>">Delete</a></td>
       </tr>
     <% end %>
   </tbody>
