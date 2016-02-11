@@ -1,0 +1,8 @@
+<h1> Welcome</h1>
+
+
+<% @competitors.each do |competitor| %>
+  <p>
+  <%= competitor.first_name + " " + competitor.last_name %>
+  </p>
+<% end %>
