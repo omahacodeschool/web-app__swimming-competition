@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",    null: false
     t.integer  "competitor_id"
     t.decimal  "final_time"
+    t.integer  "event_id"
   end
 
   create_table "schools", force: :cascade do |t|

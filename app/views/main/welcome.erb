@@ -1,5 +1,29 @@
 <h1>Hello admin! Welcome to your swim meet database.</h1>
 
+<p>Please enter information about each event here:</p>
+
+<form action="/event_added">
+  Gender:<br>
+  <input type="string" name="race_gender"><br><br>
+
+  Distance:<br>
+  <input type="integer" name="ract_distance"><br><br>
+
+  Style id:<br>
+  <input type="integer" name="style_id"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>
+
+<p>Please enter information about each style here:</p>
+
+<form action="/style_added">
+  Style:<br>
+  <input type="string" name="race_style"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>
+
 <p>Please enter information about each competitor here:</p>
 
 <form action="/competitor_added">
@@ -33,6 +57,23 @@
   <input type="submit" value="Submit">
 </form> <br>
 
+<p>Please enter information about each school here:</p>
+
+<form action="/school_added">
+  School name:<br>
+  <input type="string" name="school_name"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>
+
+<p>Please enter information about each conference here:</p>
+
+<form action="/conference_added">
+  Conference name:<br>
+  <input type="string" name="conference_name"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>
 
 <p>Please enter each competitor's results here:</p>
 
