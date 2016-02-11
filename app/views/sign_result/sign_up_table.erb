@@ -1,0 +1,32 @@
+
+<center>
+
+<TABLE  BORDER="5" WIDTH="80%" >
+   <TR>
+      
+    <H1><BR><SPAN>SIGN UP / COMPETITION RESULTS</SPAN></H1>
+      
+   </TR>
+      <th>Swimmer ID</th>
+      <th>Event ID</th>
+      <th>Time</th>
+      <th>Rank</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info.each do |info| %>
+      <tr>
+        <td><%= info.swimmer_id %></td>
+        <td><%= info.event_id %></td>
+        <td><%= info.time %></td>
+        <td><%= info.rank %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</center>
+<br>
+<br>
+
+<center><a href="http://localhost:9292/">Admin Page</a></center>
