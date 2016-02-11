@@ -8,8 +8,19 @@ class Competitor < ActiveRecord::Base
 		return y.name
 	end
 
-	def event_entry
-		x = self.id
-		y = Result.where({"competitor_id" => self.id})
-	end
+	# def event_entry
+	# 	list_results= Result.where({"competitor_id" => self.id})
+	# 	event_id_arr =[]
+	# 	list_results.each do |result|
+	# 		event_id_arr << result.event_id
+	# 	end
+
+	# 	if event_id_arr.empty?
+	# 		return nil
+	# 	else
+			
+	# 	return event_id_arr
+	# end
+
 end
+

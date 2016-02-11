@@ -23,7 +23,11 @@ class Event < ActiveRecord::Base
 		else
 			#with the competitor.id find each Competitor object in the competitor table
 			 id_arr.each do |c|
-				competitors << Competitor.find_by_id(c)
+			 	x = Competitor.find_by_id(c)
+
+			 	if x != nil
+					competitors << x
+				end
 			end
 		end
 
@@ -32,6 +36,7 @@ class Event < ActiveRecord::Base
 
 	#this method will return the Competitor object who is the first place winner of each event
 	def name_of_first
+		
 	end
 
 	#this method will return the Competitor object who is the second place winner of each event
