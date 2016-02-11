@@ -1,1 +1,8 @@
-Events and ids here!
+Here is information about each event:
+
+<p>
+<% @events.each do |e| %>
+  The event for gender <%= e.gender %> of <%= e.distance %> meters
+  has id # <%= e.id %>.<br>
+<% end %>
+</p>

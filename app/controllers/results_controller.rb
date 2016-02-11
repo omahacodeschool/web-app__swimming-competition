@@ -1,7 +1,5 @@
 MyApp.get "/results" do
   @results = Result.all
-  @competitors = Competitor.all
-  @events = Event.all
   erb :"main/results"
 end
 

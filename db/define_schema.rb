@@ -15,7 +15,7 @@ require_relative "./_configure"
 
 DB.define_table("events")
 DB.define_column("events", "gender", "string")
-DB.define_column("events", "distance", "string")
+DB.define_column("events", "distance", "integer")
 DB.define_column("events", "style_id", "integer")
 
 DB.define_table("styles")
@@ -24,8 +24,8 @@ DB.define_column("styles", "style", "string")
 DB.define_table("competitors")
 DB.define_column("competitors", "first_name", "string")
 DB.define_column("competitors", "last_name", "string")
-DB.define_column("competitors", "school_id", "integer")
-DB.define_column("competitors", "conference_id", "integer")
+DB.define_column("competitors", "school_name", "string")
+DB.define_column("competitors", "conference_name", "string")
 DB.define_column("competitors", "gender", "string")
 
 DB.define_table("schools")

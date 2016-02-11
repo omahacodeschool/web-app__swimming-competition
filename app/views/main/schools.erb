@@ -1,1 +1,8 @@
-Schools and ids here!
+Here is information about each school:
+
+<p>
+<% @schools.each do |s| %>
+  <%= s.school_name %>
+  has id # <%= s.id %>.<br>
+<% end %>
+</p>

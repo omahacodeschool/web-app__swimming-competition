@@ -1,1 +1,10 @@
-Competitors and ids here!
+Here is information about each competitor:
+
+<p>
+<% @competitors.each do |c| %>
+  The competitor <%= c.first_name %>
+  <%= c.last_name%>
+  from <%= c.school_name %> (<%= c.conference_name %> conference)
+  has id # <%= c.id %>.<br>
+<% end %>
+</p>
