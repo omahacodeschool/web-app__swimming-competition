@@ -1,0 +1,10 @@
+<h2>List of Activities:</h2>
+
+
+ <% @activities.each do |a| %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.event_name %></td>
+        <td><%= a.max_possible_score_for_activity %></td>
+        <% end %>
+        </tr>

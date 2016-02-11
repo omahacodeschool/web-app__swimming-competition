@@ -22,5 +22,7 @@ MyApp.get "/add/activity" do
 end
 
 MyApp.get "/add/result" do
+  @students = Student.all
+  @activities = Activity.all
   erb :"admin/add_result"
 end
