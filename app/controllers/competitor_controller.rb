@@ -38,8 +38,6 @@ end
 
 MyApp.get "/competitor_delete/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
-	@competitor.update_attributes({first_name: params['first_name'], last_name: params['last_name'], school_id: params['school id']})
-	@competitor.save
+	@competitor.delete
 	erb :"success"
 end
-"competitor_delete/<%= c.id%>"

@@ -2,6 +2,10 @@
 
 <h3> <%= @conference.name %> </h3>
 
+<% @conference.schools_members.each do |s| %>
+		<p><a href = "/school_info/<%= s.id %>"> <%= s.name %> </a></p>
+	<% end %>
+
 <p><a href="/conferences/edit/<%= @conference.id %>"> Edit this conference. </a></p>
 
 <p><a href="/"> Home </a></p>
