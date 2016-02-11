@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "swimmer_id"
     t.integer  "event_id"
-    t.time     "recorded_time"
     t.decimal  "swimmer_time"
   end
 
