@@ -29,3 +29,26 @@ MyApp.get "/delete/student/:student_id" do
   @student.delete
   erb :"admin/confirm_submission"
 end
+
+MyApp.get "/update/student/:student_id" do
+  @student = Student.find_by_id(params[:student_id])
+  @colleges = College.all
+  erb :"admin/update_student"
+end
+
+MyApp.get "/process_update_student_form/:student_id" do
+  @student = Student.find_by_id(params[:student_id])
+  @student.first_name = params["student_first_name"]
+  @student.last_name = params["student_last_name"]
+  @student.age = params["student_age"]
+  @student.college_id = params["college_id"]
+  @student.save
+  @confirm_message = "Success! Updated #{@student.first_name} #{@student.last_name}!"
+  erb :"admin/confirm_submission"
+end
+
+
+
+
+
+
