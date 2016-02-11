@@ -3,12 +3,16 @@
 <h3> <%= @event.name %> </h3>
 
 	<ul>
-	<% @event.list_of_results.each do |c| %>
-		<li>
-			<a href="/profile/<%= c.id %>">
-				<%=c.first_name %> <%= c.last_name %>
-			</a>
-		</li>
+	<% if @events.list_of_results == nil %>
+		No competitors have been added.
+		<% else %>
+		<% @event.list_of_results.each do |c| %>
+			<li>
+				<a href="/profile/<%= c.id %>">
+					<%=c.first_name %> <%= c.last_name %>
+				</a>
+			</li>
+			<% end %>
 		<% end %>
 	</ul>
 
