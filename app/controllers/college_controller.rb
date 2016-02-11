@@ -20,8 +20,6 @@ MyApp.get "/college/new" do
   # combined document back to the client.
 
   # Accepts the form entry data and creates the swimmer in the table. 
-
-
   
   erb :"college"
 end
@@ -35,7 +33,8 @@ MyApp.get "/college/create" do
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
 
-  # Accepts the form entry data and creates the swimmer in the table. 
+  # Accepts the form entry data and creates the college in the table. 
+
   c = College.new
   c.college_name = params[:college_name]
   c.college_id = params[:college_id]

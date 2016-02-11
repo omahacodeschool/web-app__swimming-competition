@@ -39,6 +39,8 @@ MyApp.get "/race_result/create" do
   r.swimmer_entry_id
   r.swimmer_time
   r.swimmer_race_rank
+
+  
  
   
   erb :"race_result"
