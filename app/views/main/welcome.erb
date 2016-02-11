@@ -1,13 +1,26 @@
+<center>
 <h1>Hello admin! Welcome to your swim meet database.</h1>
 
+View all <a href="/competitors">Competitors</a>,
+<a href="/events">Events</a>,
+<a href="/results">Results</a>,
+<a href="/conferences">Conferences</a>,
+<a href="/schools">Schools</a>,
+or <a href="/styles">Styles</a>.
+</center>
+<hr>
 <p>Please enter information about each event here:</p>
 
 <form action="/event_added">
   Gender:<br>
-  <input type="string" name="race_gender"><br><br>
+  <select name="gender">
+    <option value="F">F</option>
+    <option value="M">M</option>
+  </select>
+  <br><br>
 
   Distance:<br>
-  <input type="integer" name="race_distance"><br><br> meters
+  <input type="integer" name="race_distance"> meters<br><br>
 
   Style id:<br>
   <input type="integer" name="style_id"><br><br>
@@ -15,6 +28,7 @@
   <input type="submit" value="Submit">
 </form><br><br>
 
+<hr>
 <p>Please enter information about each style here:</p>
 
 <form action="/style_added">
@@ -24,6 +38,7 @@
   <input type="submit" value="Submit">
 </form><br><br>
 
+<hr>
 <p>Please enter information about each competitor here:</p>
 
 <form action="/competitor_added">
@@ -35,17 +50,17 @@
 
   School:<br>
   <select name="school">
-    <option value="creighton">Creighton University</option>
-    <option value="doane">Doane College</option>
-    <option value="wesleyan">Wesleyan University</option>
-    <option value="ccc">Central Community College</option>
-    <option value="unl">University of Nebraska-Lincoln</option>
+    <option value="Creighton University">Creighton University</option>
+    <option value="Doane">Doane College</option>
+    <option value="Wesleyan">Wesleyan University</option>
+    <option value="CCC">Central Community College</option>
+    <option value="UNL">University of Nebraska-Lincoln</option>
   </select><br><br>
 
   Conference:<br>
   <select name="conference">
-    <option value="east">East</option>
-    <option value="west">West</option>
+    <option value="East">East</option>
+    <option value="West">West</option>
   </select><br><br>
 
   Gender:<br>
@@ -57,6 +72,7 @@
   <input type="submit" value="Submit">
 </form> <br>
 
+<hr>
 <p>Please enter information about each school here:</p>
 
 <form action="/school_added">
@@ -66,6 +82,7 @@
   <input type="submit" value="Submit">
 </form><br><br>
 
+<hr>
 <p>Please enter information about each conference here:</p>
 
 <form action="/conference_added">
@@ -75,6 +92,7 @@
   <input type="submit" value="Submit">
 </form><br><br>
 
+<hr>
 <p>Please enter each competitor's results here:</p>
 
 <form action="/result_added">
@@ -90,10 +108,11 @@
   <input type="submit" value="Submit">
 </form><br><br>
 
-
-View all <a href="/competitors">Competitors</a>,
+<hr>
+<center> View all <a href="/competitors">Competitors</a>,
 <a href="/events">Events</a>,
 <a href="/results">Results</a>,
 <a href="/conferences">Conferences</a>,
 <a href="/schools">Schools</a>,
 or <a href="/styles">Styles</a>.
+</center>
