@@ -3,7 +3,7 @@
 <h3> <%= @event.name %> </h3>
 
 	<ul>
-	<% if @events.list_of_results == nil %>
+	<% if @event.list_of_results.empty? %>
 		No competitors have been added.
 		<% else %>
 		<% @event.list_of_results.each do |c| %>

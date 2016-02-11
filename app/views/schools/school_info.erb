@@ -1,9 +1,20 @@
 <h1>School Info</h1>
 
 <h3> <%= @school.name %> </h3>
- <h4> <%= @school.conference_name %> </h4>
+ <h4>
+ 	<a href="/conference_info/<%= @school.conference_id %>">
+ 	<%= @school.conference_name %> 
+ 	conference
+ 	</a>
+ 	</h4>
+
  	<ul>
-	list competitors here
+ 	<%= @school.school_members.each do |c| %>
+ 		<li> 
+ 			<a href="/profile/<%= c.id %>">
+ 			<%= c.first_name %> <%= c.last_name %>
+ 			</a>
+ 		</li>
  	</ul>
 
 <p><a href="/school/edit/<%= @school.id %>"> Edit this school. </a></p>

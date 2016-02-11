@@ -7,4 +7,9 @@ class Competitor < ActiveRecord::Base
 		y = School.find_by_id(x)
 		return y.name
 	end
+
+	def event_entry
+		x = self.id
+		y = Result.where({"competitor_id" => self.id})
+	end
 end

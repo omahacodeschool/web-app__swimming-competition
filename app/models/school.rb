@@ -10,4 +10,15 @@ class School < ActiveRecord::Base
 					return y.name
 				end
 		end
+
+		#returns which Competitors belong to this School object
+		def school_members
+		list_competitors = Competitor.where({"school_id" => self.id})
+		if list_competitors.empty?
+			return nil
+		else
+			return list_competitors
+		end
+		end
+
 end

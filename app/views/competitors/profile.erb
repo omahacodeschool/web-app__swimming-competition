@@ -5,10 +5,20 @@
 	<p>
 		<a href="/school_info/<%= @competitor.school_id %>">
 		<%= @competitor.school_name %>
+		: 
+		<%= @school.conference_name%>
+		conference
 	</p>
 
-<!-- add list of events
- -->
+ 	<ul>
+ 	<%= @competitor.event_entry.each do |e| %>
+ 		<li> 
+ 			<a href="/event_info/<%= e.id %>">
+ 			<%= e.name %>
+ 			</a>
+ 		</li>
+ 	</ul> 
+
 <p><a href="/competitors/edit/<%= @competitor.id %>"> Edit this competitor. </a></p>
 
 <p><a href="/"> Home </a></p>
