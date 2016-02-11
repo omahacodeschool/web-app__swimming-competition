@@ -1,6 +1,19 @@
 <p>To add a new rookery to the system, type the name of the rookery in the form below.</p>
 
+
 <form action="/rookeries/create">
-  <input type="text" name ="new_rookery">
-  <input type="submit">
-</form>
+
+Rookery Name:<br>
+<input type="text" name="new_rookery">
+<br>
+
+
+Conference ID:<br>
+
+<select name="new_conference_id">
+ <% @conferences.each do |c| %>
+  <option value="<%= c.id %>"> <%= c.name %></option>
+  <% end %>
+</select>
+<input type="submit">
+</form></p>

@@ -1,3 +1,22 @@
 <h1>Results</h1>
 
-<!-- Not sure what to do here due to the fact that it's time we're working with AND also because we need to use other id's --> 
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Penguin ID/<th>
+      <th>Event ID</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |r| %>
+      <tr>
+        <td><%= r.penguin_id %></td>
+        <td><%= r.event_id %></td>
+        <td><%= r.time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

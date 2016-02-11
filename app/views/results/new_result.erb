@@ -1,7 +1,15 @@
-<p>To add a new result to the system, type the time of the result in the form below.</p>
+<p>To add a new result to the system, type the result information in the form below.</p>
 
 <form action="/results/create">
-  <input type="text" name ="new_time">
+  <p>Enter Penguin ID</p>
+  <input type="number" name ="new_penguin_id">
+  <br>
+  <p>Enter Event ID</p>
+  <input type="number" name ="new_event_id">
+  </br>
+  <p>Enter Time<p>
+  <input type="time" step="any" name="new_time">
+  </br>
 
   <input type="submit">
 

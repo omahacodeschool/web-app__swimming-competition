@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "last_name"
     t.string   "first_name"
     t.integer  "rookery_id"
+    t.integer  "age"
   end
 
   create_table "results", force: :cascade do |t|
