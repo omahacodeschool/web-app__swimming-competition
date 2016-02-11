@@ -20,11 +20,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",      null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "school_id"
-    t.integer  "conference_id"
-    t.string   "gender"
     t.string   "school_name"
     t.string   "conference_name"
+    t.string   "gender"
   end
 
   create_table "conferences", force: :cascade do |t|
@@ -37,7 +35,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "gender"
-    t.string   "distance"
+    t.integer  "distance"
     t.integer  "style_id"
   end
 

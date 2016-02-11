@@ -1,5 +1,6 @@
 MyApp.get "/results" do
   @results = Result.all
+  @test = Result.new
   erb :"main/results"
 end
 
