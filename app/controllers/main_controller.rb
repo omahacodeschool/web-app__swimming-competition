@@ -14,27 +14,33 @@ MyApp.get "/" do
   erb :"homepage"
 end
 
-MyApp.get "/college_info" do
-  erb :"college_info"
+MyApp.get "/region" do
+  erb :"add_city"
 end
 
-MyApp.get "/conference_info" do
-  erb :"conference_info"
+MyApp.get "/contestant" do
+  erb :"add_contestant"
 end
 
-MyApp.get "/event_info" do
-  erb :"event_info"
+MyApp.get "/chili" do
+  erb :"add_chili"
 end
 
-MyApp.get "/results" do
-  erb :"results"
+MyApp.get "/competition" do
+  erb :"add_competition"
 end
 
 MyApp.get "/winners" do
-  erb :"winners"
+  erb :"winners_by_year"
 end
 
+MyApp.get "/2015" do
+  erb :"2015_winners.erb"
+end
 
+MyApp.get "/2016" do
+  erb :"2016_winners.erb"
+end
 
 
 
