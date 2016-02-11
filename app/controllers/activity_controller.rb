@@ -1,5 +1,9 @@
 # ALL ACTIVITY CONTROLLERS GO HERE
 
+MyApp.get "/add/activity" do
+  erb :"admin/add_activity"
+end
+
 MyApp.get "/activity/create" do
   @activity = Activity.new
   @activity.event_name = params["activity_name"]

@@ -1,5 +1,10 @@
 # STUDENT CONTROLLERS GO HERE
 
+MyApp.get "/add/student" do
+  @colleges = College.all
+  erb :"admin/add_student"
+end
+
 MyApp.get "/student/create" do
   @student = Student.new
   @student.first_name = params["student_first_name"]

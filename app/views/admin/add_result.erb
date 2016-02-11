@@ -1,24 +1,22 @@
 <h1>Add Result:</h1>
 
 <h2>Please enter the result:</h2><br>
-<form action="/result/create">
-
-Student:<br>
-
-<select name="student_id">
- <% @students.each do |s| %>
-  <option value="<%= s.id %>"><%= s.first_name %><%= s.last_name %></option>
-  <% end %>
-</select><br>
-
-Activity:<br>
-<select name="activity_id">
- <% @activities.each do |a| %>
-  <option value="<%= a.id %>"><%= a.event_name %></option>
-  <% end %>
-</select><br>
-
-Score:<br>
-<input type="number" name="student_score"><br>
-<input type="submit">
-</form></p>
+  
+  <form action="/result/create">
+    Student:<br>
+    <select name="student_id">
+      <% @students.each do |s| %>
+        <option value="<%= s.id %>"><%= s.first_name %><%= s.last_name %>
+        </option>
+      <% end %>
+    </select><br>
+    Activity:<br>
+    <select name="activity_id">
+      <% @activities.each do |a| %>
+        <option value="<%= a.id %>"><%= a.event_name %></option>
+      <% end %>
+    </select><br>
+    Score:<br>
+    <input type="number" name="student_score"><br>
+    <input type="submit">
+  </form></p>

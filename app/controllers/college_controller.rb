@@ -1,5 +1,10 @@
 # ALL COLLEGE CONTROLLERS GO HERE
 
+MyApp.get "/add/college" do
+  @conferences = Conference.all
+  erb :"admin/add_college"
+end
+
 MyApp.get "/college/create" do
   @college = College.new
   @college.college_name = params["college_name"]
