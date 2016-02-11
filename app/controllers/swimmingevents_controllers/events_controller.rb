@@ -1,4 +1,3 @@
-#events controller goes here
 
 MyApp.get "/newevent" do
   

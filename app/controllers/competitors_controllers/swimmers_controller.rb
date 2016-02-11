@@ -1,4 +1,5 @@
 require 'pry'
+#both the swimmer name AND the swimmer college goes here
 
 MyApp.get "/swimmers" do
   erb :"/cv/swimmers"
@@ -10,9 +11,8 @@ MyApp.get "/newswimmer" do
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
   s.save
-  binding.pry
-
-  erb :"/cv/swimmers"
+  @currentswimmer = s.swimmer_id
+  erb :"/cv/colleges"
 end
 
 #DB.define_table("swimmers")
