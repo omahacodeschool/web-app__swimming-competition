@@ -183,9 +183,13 @@ The list of the top three performers in an event should not be available until t
 
 Where else on the website is information not supposed to be accessible until (or after) a certain point? Think of a new feature related to this and get approval for it. Then implement it.
 
+---
+
 #### Phase 3
 
 The administrator should be able to perform all basic CRUD operations using all models. Implement these features.
+
+---
 
 #### Phase 4
 
@@ -194,6 +198,8 @@ If the administrator deletes a competitor, the system should automatically delet
 Similarly, if the administrator deletes a team, the system should automatically delete all of that team's competitors. (Which means that then all of those competitors' signups/awards/results/etc get deleted!)
 
 Not-so-similarly, if the administrator tries to delete a _conference_, then the system should first check if there are any teams in that conference. If there are none, then the system should delete the conference. But if there are teams in the conference, then the system should **not** delete the conference--it should tell the administrator to first go manually delete those teams (or change their conference).
+
+---
 
 #### Phase 5
 
@@ -220,6 +226,8 @@ Currently the system has some contradictory functionality:
   - Deleting a competitor should automatically delete all of that competitors event data (e.g. results for events they competed in).
 
 So what happens if the administrator deletes a competitor who has results for a locked event? Right now, probably that competitor's results would be deleted. That's okay. We're fine with that for now.
+
+---
 
 #### Phase 6
 
