@@ -2,7 +2,14 @@
 
 <h3> <%= @event.name %> </h3>
 
-<!-- list each competitor and their school here -->
+<% @event.list_of_results.each do |r| %>
+	@list
+		<p>
+			<a href = "/profile/<%= c.id %>">
+				<%= c.first_name %> <%= c.last_name %> - <%= c.school_name %>
+			</a>
+		</p>
+	<% end %>
 
 <p><a href="/events/edit/<%= @event.id %>"> Edit this event. </a></p>
 
