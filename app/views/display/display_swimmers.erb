@@ -13,7 +13,7 @@
   <tbody>
     <% @swimmers.each do |y| %>
       <tr>
-        <td><%= y.swimmer_name %></a></td>
+        <td><a href="swimmer_bio/<%= y.id %>"> <%= y.swimmer_name %> </a> </td>
         <td><%= y.university_id %></td>
       </tr>
     <% end %>
