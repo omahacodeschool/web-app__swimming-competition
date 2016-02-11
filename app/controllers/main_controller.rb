@@ -4,6 +4,7 @@ MyApp.get "/" do
 end
 
 MyApp.get "/add/student" do
+  @colleges = College.all
   erb :"admin/add_student"
 end
 

@@ -1,21 +1,6 @@
 
 
 
-MyApp.get "/conference/create" do
-  @conference = Conference.new
-  @conference.conference_name = params["conference_name"]
-  @conference.save
-  erb :"admin/confirm_submission"
-end
-
-MyApp.get "/college/create" do
-  @college = College.new
-  @college.college_name = params["college_name"]
-  @college.conference_id = params["conference_id"]
-  @college.save
-  binding.pry
-  erb :"admin/confirm_submission"
-end
 
 
 
