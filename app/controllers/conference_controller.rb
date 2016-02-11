@@ -1,12 +1,11 @@
 MyApp.get "/create_conference" do
-  erb :"data_entry/conference_new"
+  erb :"/create/create_conference"
 end
 
-MyApp.get "/conference_created" do
+MyApp.get "/create_conference/success" do
   x = Conference.new
   x.name = params["conference"]
-  # x.school = params["school_id"]
   x.save
 
-  erb :"created/created_conference"
+  erb :"/create/create_conference_success"
 end

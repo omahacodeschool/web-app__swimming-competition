@@ -1,12 +1,12 @@
 MyApp.get "/create_event" do
-  erb :"data_entry/event_new"
+  erb :"/create/create_event"
 end
 
-MyApp.get "/event_created" do
+MyApp.get "/create_event/success" do
   x = Event.new
   x.name = params["event"]
   # x.event = params["event"]
   x.save
 
-  erb :"created/created_event"
+  erb :"/create/create_event_success"
 end

@@ -1,12 +1,11 @@
 MyApp.get "/create_competitor" do
-  erb :"data_entry/competitor_new"
+  erb :"/create/create_competitor"
 end
 
-MyApp.get "/competitor_created" do
+MyApp.get "/create_competitor/success" do
   x = Competitor.new
   x.name = params["name"]
-  # x.school = params["school_id"]
   x.save
 
-  erb :"created/created_competitor"
+  erb :"/create/create_competitor_success"
 end
