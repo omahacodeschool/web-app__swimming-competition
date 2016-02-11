@@ -1,9 +1,14 @@
 <h1>Results</h1>
 
 <h3> List of Results: </h3>
+<ul>
 	<% @list_results.each do |r| %>
-	<p><a href = "/result_details/<%= r.id %>"> <%= r.event_id %>, <%= r.competitor_id %>, <%= r.time %> </a></p>
+		<li>
+			<a href = "/result_details/<%= r.id %>"> <%= r.name_of_event %> : <%= r.name_of_competitor %>, <%= r.time %>
+			</a>
+		</li>
 	<% end %>
+</ul>
 
 <p><a href="/results/add_new"> Add new result. </a></p>
 

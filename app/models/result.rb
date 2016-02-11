@@ -1,8 +1,27 @@
 class Result < ActiveRecord::Base
 	
 		#This method takes the list_of_results methods and pulls the competitor_id out of each Result
-	def names_of_competitors
+	def name_of_competitor
 		x = self.id
-		@list_of_competitors = Competitor.find_by_id(x)
+		y = Competitor.find_by_id(x)
+
+		if y == nil
+			return nil
+
+		else
+			y.first_name + " " + y.last_name
+		end
+	end
+
+	def name_of_event
+		x = self.id
+		y = Event.find_by_id(x)
+
+		if y == nil
+			return nil
+
+		else
+			return y.name
+		end
 	end
 end
