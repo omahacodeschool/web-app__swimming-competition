@@ -2,7 +2,10 @@
 
 <h3> <%= @competitor.first_name %> <%= @competitor.last_name %> </h3>
 
-<p> <%= @competitor.school_name %> </p>
+	<p>
+		<a href="/school_info/<%= @competitor.school_id %>">
+		<%= @competitor.school_name %>
+	</p>
 
 <!-- add list of events
  -->

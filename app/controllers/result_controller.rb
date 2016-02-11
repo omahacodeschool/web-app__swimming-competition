@@ -36,3 +36,9 @@ MyApp.get "/edit_result/:result_id" do
 	@result.save
 	erb :"success"
 end
+
+MyApp.get "/delete_result/:result_id" do
+	@result = Result.find(params[:result_id])
+	@result.delete
+	erb :"success"
+end
