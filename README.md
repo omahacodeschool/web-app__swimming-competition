@@ -2,7 +2,14 @@
 
 ## Swimming Competition
  
-The goal of this assignment is to build a basic--but comprehensive--database-driven web application.
+The goal of this assignment is to build a basic--but comprehensive--database-driven web application. It's broken into Phases:
+
+  1. [Phase 1](#phase-1)
+  2. [Phase 2](#phase-2)
+  3. [Phase 3](#phase-3)
+  4. [Phase 4](#phase-4)
+  5. [Phase 5](#phase-5)
+  6. [Phase 6](#phase-6)
 
 You may work with a partner on this project, if you want to. But no groups larger than two people are allowed. If you're working in pairs, definitely read **How Pairs Work** below.
 
