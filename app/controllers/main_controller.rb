@@ -19,6 +19,7 @@ MyApp.get "/region" do
 end
 
 MyApp.get "/contestant" do
+  @regions = Region.all
   erb :"add_contestant"
 end
 
@@ -51,6 +52,5 @@ MyApp.get "/city_added_successful" do
   @obj.city = params[:city_name]
   @obj.save
   @regions = Region.all
-
   erb :"city_added"
 end

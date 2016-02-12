@@ -1,5 +1,8 @@
 <p>Success your city has been added</p>
 <p>Here is a list of all of the cities we have so far:<br>
 <% @regions.each do |x|%>
-  <%= x.city %>
+  <p><%= x.city %></p>
 <% end %>
+
+<p><a href="/">Home</a></p>
+<p><a href="/contestant">Add Contestant</a></p>

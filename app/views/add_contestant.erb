@@ -1,0 +1,17 @@
+<form action="/contestant_added_successful">
+
+  <p>Please type the first name of the contestant to be added</p>
+  <p><input type="text" name="contestant_first_name"></p>
+  <p>Please type the last name of the contestant to be added</p>
+  <p><input type="text" name="contestant_last_name"></p>
+  <p>Please type the city ID of the contestants city from the table below.</p>
+  <p><input type="text" name="city_id"></p>
+  <p><input type="submit"></p>
+
+</form>
+
+<p>Here is a list of all of the cities in the database and their IDs:</p>
+
+<% @regions.each do |x|%>
+  <p><%= x %></p>
+<% end %>
