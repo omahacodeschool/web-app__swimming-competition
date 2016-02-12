@@ -12,6 +12,11 @@ MyApp.get "/result_added" do
   erb :"main/result_added"
 end
 
+MyApp.get "/results_top_three" do
+  
+  erb :"main/results_top_three"
+end
+
 MyApp.get "/competitors_by_event_result/:kittenmitten" do
   @competitor = Competitor.find_by_id(params[:kittenmitten])
 end
