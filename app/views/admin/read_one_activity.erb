@@ -4,22 +4,24 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Registered Students</th>
+      <th>Registered Student</th>
+      <th>Score for Activity</th>
     </tr>
   </thead>
 
   <tbody>
     <tr>
-      <td>
         <%if @results == []%>
-          No Students Registered Yet 
+          <td>No Students Registered Yet</td>
         <%else @results.each do |r| %>
-                <%= r.access_student.first_name %> 
-                <%= r.access_student.last_name %>
-                <br>
-                <%end%>
+                <td><a href="/read/student/<%=r.student_id%>"><%= r.access_student.first_name %> 
+                <%= r.access_student.last_name %></td>
+                <td><%= r.student_score %></td>
+                </tr>
+              <%end%>
         <%end%>
       </td>
     </tr>
   </tbody>
 </table>
+

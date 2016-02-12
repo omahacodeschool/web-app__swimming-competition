@@ -1,24 +1,24 @@
 <h2><%=@student.first_name%> <%=@student.last_name%></h2>
 
+<h3>Debate Tournament Registration Details:</h3>
+
       
 <table border="1">
   <thead>
-    <tr>
-      <th>All Events for <%=@student.first_name%> <%=@student.last_name%></th>
-    </tr>
+      <th>Event</th>
+      <th>Score</th>
   </thead>
 
   <tbody>
-    <tr>
-      <td>
+      <tr>
         <%if @results == []%>
-          No Events Yet 
+          <td>No Events Yet </td>
         <%else @results.each do |r| %>
-                <%= r.access_event.event_name %>
-                <br>
-                <% end %>
-        <% end %>
-      </td>
-    </tr>
+          <td><%= r.access_event.event_name %></td>
+          <td><%= r.student_score %></td>
+      </tr>
+            <%end%>
+          <%end%>
+      
   </tbody>
 </table>
