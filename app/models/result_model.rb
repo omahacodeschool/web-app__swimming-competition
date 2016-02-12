@@ -1,6 +1,7 @@
 
 
 class Result <ActiveRecord::Base
+
   def display_competitor_first_name
     x = self.competitor_id
     y = Competitor.find_by_id(x)
