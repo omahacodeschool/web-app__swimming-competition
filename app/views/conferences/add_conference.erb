@@ -1,37 +1,9 @@
-<center><h1> Add/Modify/Delete Conference</center></h1>
+<center><h1> Add Conference</center></h1>
 
-<h2>Add Activity:</h2>
-<form action="">
-  Activity :&emsp;<input type="text" name="add_conference_textbox" value=""><br><br>  
+<form method="GET" action="/conferences/added_new_conference">
+  Conference :&emsp;<input type="text" name="add_conference_name_textbox" value=""><br><br>  
   <input type="submit" value="Add">
 </form>
-<br><br<>
-<h2>Update Conference Description:</h2>
-<p>Please select the desired conference. Next, type out the change <br>
-you would like to make in the text field below.<br></p>
-<form action="">
-<select name="update_conference_dropdown">
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-</select>
-<br><br>
-Activity :&emsp;<input type="text" name="update_conference_textbox" value=""><br> <br><br>
-<input type="submit" value="Update">
-</form>
-
-<br><br>
-
-<h2>Remove Conference:</h2>
-<form action="">
-  <select name="delete_conference_dropdown">
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-  </select>
-  <input type="submit" value="Delete">
-</form>
-
-<center><a href="/admin/admin_overview">Admin</a> | <a href="/">Home</a></center> 
+<br>
+<br>
+<center><a href="/">Home</a></center> 

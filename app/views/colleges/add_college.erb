@@ -1,8 +1,7 @@
 <center><h1> Add College</center></h1>
 
-<h2>Add College:</h2>
 <form method="GET" action="/colleges/added_new_college">
-  Activity :&emsp;<input type="text" name="add_college_name_textbox" value=""><br><br>
+  College :&emsp;<input type="text" name="add_college_name_textbox" value=""><br><br>
   Conference:&emsp;<select name="college_conference_dropdown">
     <% @conference.each do |c| %>
       <option value="<%= c.id %>"><%= c.name %></option>
@@ -11,33 +10,7 @@
   <br>  
   <input type="submit" value="Add">
 </form>
-<br><br<>
-<h2>Update College Description:</h2>
-<p>Please select the desired college. Next, type out the change <br>
-you would like to make in the text field below.<br></p>
-<form action="">
-<select name="update_college_dropdown">
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-</select>
 <br><br>
-Activity :&emsp;<input type="text" name="update_college_textbox" value=""><br> <br><br>
-<input type="submit" value="Update">
-</form>
+<center><a href="/">Home</a></center> 
 
-<br><br>
 
-<h2>Remove College:</h2>
-<form action="">
-  <select name="delete_college_dropdown">
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-  </select>
-  <input type="submit" value="Delete">
-</form>
-
-<center><a href="/admin/admin_overview">Admin</a> | <a href="/">Home</a></center> 

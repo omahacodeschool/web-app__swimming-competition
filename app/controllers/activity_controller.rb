@@ -11,6 +11,12 @@ MyApp.get "/activities/added_new_activity" do
   erb :"/activities/added_activity_confirmation"
 end
 
+MyApp.get "/activities/delete_activity/:id" do 
+    @activity = Activity.find_by_id(params[:id])
+    @activity.delete
+    erb :"/activities/deleted_activity_confirmation"
+end
+
 MyApp.get "/activities/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   erb :"/activities/activity"
