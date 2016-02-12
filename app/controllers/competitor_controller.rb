@@ -34,11 +34,24 @@ MyApp.post "/competitors/competitor/delete_competitor_age/:id" do
   erb :"/competitors/deleted_competitor_confirmation"
 end
 
+MyApp.post "/competitors/competitor/updated_college/:id" do
+  @c = Competitor.find_by_id(params[:id])
+  @c.college_id = params["update_competitor_college_dropdown"]
+  @c.save
+  erb :"/competitors/update_competitor_confirmation"
+end
+
+MyApp.post "/competitors/competitor/delete_competitor_college/:id" do
+  @c = Competitor.find_by_id(params[:id])
+  @c.college_id = nil
+  @c.save
+  erb :"/competitors/deleted_competitor_confirmation"
+end
 
 
 MyApp.get "/competitors/competitor/:id" do
   @competitor = Competitor.find_by_id(params[:id])
-  @competitor_info = Competitor.all
+  @colleges = College.all
   erb :"/competitors/competitor"
 end
 
