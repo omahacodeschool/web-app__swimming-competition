@@ -44,17 +44,21 @@ end
 # Go to a view that only displays the current list of events.
 MyApp.get "/show_events" do
   @events = Event.all
+  @swimmers = Swimmer.all
   erb :"display/display_events"
 end
 
 # Go to a view with a form for adding results.
 MyApp.get "/new_result" do
+  @events = Event.all
+  @swimmers = Swimmer.all
   erb :"create/create_result"
 end
 
 # Go to a view that only displays the current list of results.
 MyApp.get "/show_results" do
   @results = Result.all
+  @swimmers = Swimmer.all
   erb :"display/display_results"
 end
 

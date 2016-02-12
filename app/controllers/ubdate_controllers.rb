@@ -27,7 +27,6 @@ MyApp.get "/process_update_university/:id" do
   @s = University.find_by_id(params[:id])
   @s.university_name = params["new_university_name"]
   @s.conference_id = params["new_university_conference_id"]
-  #binding.pry
   @s.save
   erb :"/success/update_university"
 end

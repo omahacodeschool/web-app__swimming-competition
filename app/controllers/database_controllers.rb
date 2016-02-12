@@ -16,7 +16,7 @@ MyApp.get "/delete_swimmer/:id_of_swimmer" do
   erb :"/success/delete_swimmer"
 end
 
-MyApp.get "/add_conference" do
+MyApp.post "/add_conference" do
   c = Conference.new
   c.conference_name = params["input_conference"]
   c.save
@@ -24,7 +24,7 @@ MyApp.get "/add_conference" do
   erb :"/success/success_conference"
 end
 
-MyApp.get "/add_university" do
+MyApp.post "/add_university" do
   u = University.new
   u.university_name = params["input_university"]
   u.conference_id = params[:conference_id]  
@@ -41,7 +41,7 @@ MyApp.get "/delete_university/:id_of_university" do
   erb :"/success/delete_university"
 end
 
-MyApp.get "/add_event" do
+MyApp.post "/add_event" do
   e = Event.new
   e.event_name = params["input_event"]
   e.save
