@@ -4,7 +4,7 @@ MyApp.get "/add/conference" do
   erb :"admin/conference/add_conference"
 end
 
-MyApp.get "/conference/create" do
+MyApp.post "/conference/create" do
   @conference = Conference.new
   @conference.conference_name = params["conference_name"]
   @conference.save

@@ -7,7 +7,7 @@ MyApp.get "/add/result" do
   erb :"admin/result/add_result"
 end
 
-MyApp.get "/result/create" do
+MyApp.post "/result/create" do
   @result = Result.new
   @result.student_id = params["student_id"]
   @result.activity_id = params["activity_id"]

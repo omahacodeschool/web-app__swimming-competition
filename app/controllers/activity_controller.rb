@@ -4,7 +4,7 @@ MyApp.get "/add/activity" do
   erb :"admin/activity/add_activity"
 end
 
-MyApp.get "/activity/create" do
+MyApp.post "/activity/create" do
   @activity = Activity.new
   @activity.event_name = params["activity_name"]
   @activity.max_possible_score_for_activity = params["activity_max_possible_score"]

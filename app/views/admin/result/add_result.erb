@@ -2,7 +2,7 @@
 
 <h2>Please enter the result:</h2><br>
   
-  <form action="/result/create">
+  <form method="post" action="/result/create">
     Student:<br>
     <select name="student_id">
       <% @students.each do |s| %>

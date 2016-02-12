@@ -5,7 +5,7 @@ MyApp.get "/add/college" do
   erb :"admin/college/add_college"
 end
 
-MyApp.get "/college/create" do
+MyApp.post "/college/create" do
   @college = College.new
   @college.college_name = params["college_name"]
   @college.conference_id = params["conference_id"]

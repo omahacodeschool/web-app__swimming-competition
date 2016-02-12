@@ -8,7 +8,7 @@
       <th>Student ID</th>
       <th>Name</th>
       <th>Age</th>
-      <th>College</th>
+      <th>College - Conference</th>
       <th>Update</th>
       <th>Delete</th>
     </tr>
@@ -21,7 +21,8 @@
         <td><a href="/read/student/<%=s.id%>"><%= s.first_name %> 
         <%= s.last_name %></a></td>
         <td><%= s.age %></td>
-        <td><%= s.college_name %></td>
+        <td><%= s.access_college.college_name %> -
+        <%= s.access_college.conference_name %></td>
         <th><a href="/update/student/<%=s.id%>">Update</a></th>
         <td><form method = "post" action = "/delete/student/<%=s.id%>">
         <input type="submit" value="delete" onClick="alert('Are you sure? Deleting a student competitor will delete all of the corresponding results entered for that student');return true;">
