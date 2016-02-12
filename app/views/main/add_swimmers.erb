@@ -48,13 +48,12 @@
   
   <p>
   Desired Events:
-  <br />    
+  <br /> 
     <% Event.all.each do |event| %>
       <input type="checkbox" value="<% event.id %>">
       <%= event.event_name %>
       <br />
     <% end %>
-  </select>
   </p>
   
   <p>
