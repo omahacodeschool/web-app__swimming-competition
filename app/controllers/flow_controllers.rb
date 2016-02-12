@@ -4,6 +4,7 @@ end
 
 # Go to a view with a form for adding swimmers.
 MyApp.get "/new_swimmer" do
+  @universities = University.all
   erb :"create/create_swimmer"
 end
 

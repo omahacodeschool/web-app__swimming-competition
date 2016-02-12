@@ -1,5 +1,5 @@
 #Add Swimmer to DB
-MyApp.get "/add_swimmer" do
+MyApp.post "/add_swimmer" do
   s = Swimmer.new
   s.swimmer_name = params["input_swimmer"]
   s.university_id = params[:university_id]

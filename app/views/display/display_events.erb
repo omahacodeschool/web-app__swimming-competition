@@ -1,6 +1,20 @@
 <p>Current List of Events</p>
-<% @events.each do |y| %>
-<p> <%= y.id %>. <%= y.event_name %> Date Added: <%= y.created_at %>  <p>
-<% end %>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |y| %>
+      <tr>
+        <td> <%= y.event_name %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <a href="/">Return Home</a>
