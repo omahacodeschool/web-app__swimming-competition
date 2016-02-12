@@ -1,1 +1,10 @@
-finishes
+<h1>Tournament Admin: Swim Times</h1>
+<h2>Choose an Event to View or Update Swimmer Times<h2>
+
+<h2>Tournament Events:<h2>
+<ul>
+  <% @events.each do |post| %>
+    <li><%= post.id%>. <%=post.event_name%>
+    <a href="/view_finishes/<%=post.id%>">see more</a></li>
+  <% end %>
+</ul>
