@@ -2,14 +2,19 @@
 <p>Here's a list of the scores so far</p>
 
 <% @scores.each do |x|%>
-  <p><%= x.chili_id %>
-     <%= x.competition_id %>
-     <%= x.appearance %>
-     <%= x.aroma %>
-     <%= x.flavor %>
-     <%= x.texture %>
-     <%= x.heat %>
-     <%= x.overall %></p>
+  <p>first and last name from contestant table
+     chili name from chili table 
+     participated in the 
+
+     <%= x.chili_id %>
+     <%= x.competition_id %> category name and received the following rankings<br>
+     
+     <strong>Appearance - <%= x.appearance %><br>
+     Aroma - <%= x.aroma %><br>
+     Flavor - <%= x.flavor %><br>
+     Texture - <%= x.texture %><br>
+     Heat - <%= x.heat %><br>
+     Overall - <%= x.overall %></strong></p>
 <% end %>
 
 <p><a href="/scores">Add Another Contestant's Scores</a></p>

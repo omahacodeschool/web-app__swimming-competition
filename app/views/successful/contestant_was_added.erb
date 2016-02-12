@@ -2,8 +2,9 @@
 <p>Here is a list of all of the contestants we have so far:</p>
 
 <% @con.each do |x|%>
-  <p><%= x.first_name %>
-     <%= x.last_name %></p>
+  <p>Contestant <%= x.first_name %> 
+     <%= x.last_name %>'s ID is
+     <%= x.id %></p>
 <% end %>
 
 <p><a href="/contestant">Add Another Contestant</a></p>

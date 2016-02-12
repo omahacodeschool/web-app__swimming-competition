@@ -43,6 +43,7 @@ MyApp.get "/submit_scores" do
   @score.heat = params[:heat]
   @score.overall = params[:overall]
   @score.appearance = params[:appearance]
+  @score.save
   @scores = Result.all
   erb :"successful/scores_was_added"
 end

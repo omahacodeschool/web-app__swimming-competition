@@ -2,7 +2,8 @@
 <p>Here is a list of all of the cities we have so far:</p>
 
 <% @regions.each do |x|%>
-  <p><%= x.city %></p>
+  <p><%= x.city %> 's ID is
+     <%= x.id %></p>
 <% end %>
 
 <p><a href="/region">Add Another City</a></p>
