@@ -1,5 +1,9 @@
-<center><h1><%= @conference.name %>Conference</h1>
-<br>
+<center><form  method="POST" action="/conferences/conference/update_name/<%= @conference.id %>">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_conference_name_textbox" value="<%= @conference.name %>">
+<br>&emsp;|&emsp;
+<input type="submit" value="Update Conference Name">&emsp;|&emsp;
+</form>
+
 <br>
 <table border="0">
   <thead>

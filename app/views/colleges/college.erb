@@ -1,5 +1,17 @@
-<center><h1><%= @college.name %></h1>
-<p>Conference: <b><%= @college.get_conference_name %></b></p>
+<center><form  method="POST" action="/colleges/college/update_name/<%= @college.id %>">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_college_name_textbox" value="<%= @college.name %>">
+<br>&emsp;|&emsp;
+<input type="submit" value="Update College Name">&emsp;|&emsp;
+</form>
+
+<form method="POST" action="/colleges/college/updated_conference/<%= @college.id %>">
+    <select name="update_college_conference_dropdown">
+      <option value="<%= @college.get_conference_name %>"><%= @college.get_conference_name %></option>
+      <% @conferences.each do |c| %>
+        <option value="<%= c.id %>"><%= c.name %></option>
+      <% end %> 
+    </select>&emsp;|&emsp;
+    <input type="submit" value="Update Conference">
 <br>
 <br>
 <table border="0">
@@ -23,4 +35,5 @@
 <br>
 <br>
 <br>
-<center><a href="/">Main Page</a></center> 
+
+<a href="/">Main Page</a></center> 
