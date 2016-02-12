@@ -14,7 +14,7 @@
         <%if @results == []%>
           <td>No Events Yet </td>
         <%else @results.each do |r| %>
-          <td><%= r.access_event.event_name %></td>
+          <td><a href="/read/activity/<%=r.event_id%>"><%= r.access_event.event_name %></a></td>
           <td><%= r.student_score %></td>
       </tr>
             <%end%>
