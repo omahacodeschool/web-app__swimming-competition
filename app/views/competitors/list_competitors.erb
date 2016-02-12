@@ -7,11 +7,9 @@
 		  	<a href = "/profile/<%= c.id %>">
 		  		<b><%= c.first_name %> <%= c.last_name %></b>
 		  	</a>
-		  	-
-		  	<a href = "competitor_delete/<%= c.id%>">
-		  	<i>delete</i>
-		  	</a>
 		  </li>
+		  	<form action="competitor_delete/<%= c.id%>" method="post">
+		  	<input type="submit" value="delete">
 		<% end %>
 	</ul>
 

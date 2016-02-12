@@ -15,7 +15,7 @@ MyApp.post "/add_competitor" do
 	@x.last_name = params[:last_name]
 	@x.school_id = params[:school_id]
 	@x.save
-	redirect "/profile/#{@x.id}"
+
 end
 
 MyApp.get "/profile/:competitor_id" do
@@ -30,15 +30,15 @@ MyApp.get "/competitors/edit/:competitor_id" do
 	erb :"competitors/edit_competitor"
 end
 
-MyApp.get "/edit/:competitor_id" do
+MyApp.post "/edit/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
 	@competitor.update_attributes({first_name: params['first_name'], last_name: params['last_name'], school_id: params['school id']})
 	@competitor.save
-	erb :"success"
+	redirect "/profile/#{@competitor.id}"
 end
 
-MyApp.post "/competitor_delete/:competitor_id" do
+MyApp.get "/competitor_delete/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
 	@competitor.delete
-	erb :"success"
+	redirect "/competitors"
 end

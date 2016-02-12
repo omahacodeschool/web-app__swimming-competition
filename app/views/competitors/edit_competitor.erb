@@ -1,6 +1,6 @@
 <h1 style="color:green;">Edit competitor:</h1>
 
-<form action="/edit/<%= @competitor.id %>">
+<form action="/edit/<%= @competitor.id %>" method="post">
 
   <input type="text" name="first_name" placeholder="<%= @competitor.first_name %>">
   <input type="text" name="last_name" placeholder="<%= @competitor.last_name %>">
@@ -13,5 +13,9 @@
   <input type="submit">
   
 </form>
+
+<p><a href="/competitors"> Back </a></p>
+
+<p><a href="/"> Home </a></p>
 
    
