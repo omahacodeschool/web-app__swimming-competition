@@ -1,5 +1,18 @@
 <h1>Conferences</h1>
 
-<% @conferences.each do |c| %>
-<p> The name of the conference is <%= c.name %></p>
-<%end%>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Conference</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

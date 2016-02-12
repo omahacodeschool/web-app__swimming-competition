@@ -18,3 +18,20 @@ MyApp.get "/penguins" do
   @penguins = Penguin.all
   erb :"penguins/all_penguins"
 end
+
+MyApp.get "/penguins/edit/:id" do
+  @penguin = Penguin.find_by_id(params[:id])
+  @rookeries = Rookery.all
+  erb :"penguins/edit_penguin"
+end
+
+MyApp.get "/penguins/process_edit/:id" do
+  @penguin = Penguin.find_by_id(params[:id])
+  @penguin.last_name = params["new_last_name"]
+  @penguin.first_name = params["new_first_name"]
+  @penguin.age = params["new_age"]
+  @penguin.rookery_id = params["new_rookery_id"]
+  @penguin.save
+
+  erb :"updated"
+end
