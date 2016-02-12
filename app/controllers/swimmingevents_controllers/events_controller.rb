@@ -17,6 +17,18 @@ MyApp.get "/events" do
   
 end
 
+MyApp.get "/view_event/:id" do
+  @currentevent = Event.find_by_id(params[:id])
+  @signups = Signup.all
+  z = Signup.where({"event_id" => (params[:id])})
+  @swimmers = []
+  z.each do |banana|
+    @swimmers << banana.find_swimmer_name
+  end
+  #binding.pry
+  erb :"/ev/view_event"
+end
+
 
 
 #DB.define_table("events")
