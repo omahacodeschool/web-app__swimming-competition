@@ -3,6 +3,7 @@ class Swimmer < ActiveRecord::Base
 
   def swimmer_team
     x = self.team_id
+    binding.pry
     y = Team.find_by_id(x)
 
     return y.team_name
