@@ -2,7 +2,10 @@
 <h2>Enrolled Kitties:<h2>
 <ul>
   <% @swimmers.each do |post| %>
-    <li><%= post.id%>. <%=post.first_name%> <%=post.last_name%></li>
+    <li><%= post.id%>. 
+    <%=post.first_name%> 
+    <%=post.last_name%>  
+    (<%=post.find_college_name%>)</li>
   <% end %>
 </ul>
 <form action="/newswimmername">
