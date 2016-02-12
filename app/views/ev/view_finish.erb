@@ -1,0 +1,14 @@
+<h1><%=@currentevent.event_name%><h1>
+
+<p>Event ID: <%=@currentevent.id%></p>
+
+<h2>Enrolled Kitties:<h2>
+<ul>
+  <% @z.each do |post| %>
+    <li><%= post.id%>. 
+    <%=post.first_name%> 
+    <%=post.last_name%>  
+    (<%=post.find_college_name%>) 
+    <a href="/updatefinish/<%=post.id%>">Add/Update Time for This Event</a></li>
+  <% end %>
+</ul>
