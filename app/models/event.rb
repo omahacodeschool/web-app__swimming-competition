@@ -37,19 +37,24 @@ class Event < ActiveRecord::Base
 
 		if list_results.empty?
 			return nil
-		else
-			# event_id   | competitor_id  | time
-			#-------------------------------------
-			# 2 	     | 	1			  | 105
-			# 2 	     | 	3			  | 110
-			# 2 	     | 	5			  | 108
-			# 2 	     | 	6			  | 103
-
-			top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
-			if top_three.length < 3
+		else 
+			time_arr = []
+			competitor_arr = []
+				list_results.each do |results|
+					competitor_arr << result.competitor_id
+					if result.time != nil
+					time_arr << result.time
+					end
+				end
+			
+			if time_arr.length < competitor_arr.length
 				return nil
+
 			else
+				top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
+				# if top_three.length < 3 
 				return top_three
+				end
 			end
 		end
 	end
@@ -57,3 +62,11 @@ class Event < ActiveRecord::Base
 
 
 end
+
+
+				# event_id   | competitor_id  | time
+				#-------------------------------------
+				# 2 	     | 	1			  | 105
+				# 2 	     | 	3			  | 110
+				# 2 	     | 	5			  | 108
+				# 2 	     | 	6			  | 103

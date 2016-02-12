@@ -16,18 +16,41 @@
 		<% end %>
 	</ul>
 
+<form action="/add_entry" method="post">
+
+  <select name="event_id">
+        <option selected disabled>Choose event</option>
+  			<% @list_events.each do |e| %>
+  				<option value= "<%=e.id%>"> <%=e.name%> </option>
+  			<%end%>
+  </select>
+
+  <select name="competitor_id">
+	   <option selected disabled>Choose competitor</option>
+			<% @list_competitors.each do |c| %>
+				<option value= "<%=c.id%>"> <%=c.first_name%> <%=c.last_name%> </option>
+			<%end%>
+  </select>
+  
+  <input type="submit">
+  
+</form>
+
+
+
+
 <h4> Winners </h4>
 	<ol>
 		<% if @event.top_three == nil%>
 		This event is not over.
-		<% else %>
-			<% @event.top_three.each do |result| %>
-				<li>
-					<a href="/profile/<%= result.competitor_id %>">
-					<%= result.name_of_competitor %> 
-					</a>
-				</li>
-		<% end %>
+			<% else %>
+				<% @event.top_three.each do |result| %>
+					<li>
+						<a href="/profile/<%= result.competitor_id %>">
+						<%= result.name_of_competitor %> 
+						</a>
+					</li>
+			<% end %>
 		<% end %>
 	</ol>
 

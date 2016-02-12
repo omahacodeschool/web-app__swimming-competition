@@ -19,6 +19,14 @@ MyApp.get "/event_info/:event_id" do
   erb :"events/event_info"
 end
 
+MyApp.post "/add_entry" do
+	x = Result.new
+	x.event_id = params[:event_id]
+	x.competitor_id = params[:competitor_id]
+	x.save
+  erb :"success"
+end
+
 MyApp.get "/events/edit/:event_id" do
   	@event = Event.find(params[:event_id])
 	erb :"events/edit_event"
