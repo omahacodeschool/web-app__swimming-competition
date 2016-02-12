@@ -13,6 +13,8 @@ MyApp.post "/view_add_swimmer_confirmation" do
   @swim_1.save
   @show_added_name = (params["swim_1_name"])
 
+  binding.pry
+
   erb :"view_add_swimmer_confirmation"
 end
 

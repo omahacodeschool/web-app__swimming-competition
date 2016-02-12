@@ -1,10 +1,7 @@
-#get swimmer info (id)
-#get event info (id)
-#insert into signups.swimmer_id and event_id
-
 MyApp.post "/view_add_signup_confirmation" do
 
   @signup_1 = Signup.new
+  
 
   x = params["swim_signup_name"]
 
@@ -21,7 +18,6 @@ MyApp.post "/view_add_signup_confirmation" do
 
 
   @signup_1.save
-
 
   erb :"view_add_signup_confirmation"
 end

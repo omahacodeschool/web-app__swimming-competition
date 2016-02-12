@@ -1,0 +1,60 @@
+<center>
+  <br>
+  <br>
+  <br>
+  <br>
+    <h1>
+      This will 
+        <font color = "red">
+          DELETE
+        </font>
+      all records from the system.  
+    </h1>
+  <br>
+    <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th>Name</th>
+        <th>School</th>
+        <th>Event</th>
+        <th>Swim Time</th>
+      </tr>
+
+      <tr>
+        <td>Name</td>
+        <td>School</td>
+        <td>Event</td>
+        <td>Swim Time</td>
+      </tr>
+
+      <tr>
+        <td>Name</td>
+        <td>School</td>
+        <td>Event</td>
+        <td>Swim Time</td>
+      </tr>
+    </table>
+    
+
+    Swimmers: <%= @all_swim_names.join(", ")%>
+  <br>
+  <br>
+    Events: <%= @all_event_names.join(", ")%>
+  <br>
+  <br>
+    Schools: <%= @all_school_names.join(", ")%>
+  <br>
+  <br>
+  <br>
+    Are you sure?
+  <br>
+  <br>
+    <form action= "/view_delete_data_confirmation" method="post">  
+      <input type="submit" value="DELETE ALL DATA">
+    </form>
+  <br>
+    (or)
+  <br>
+   <a href = "/"> 
+     Get me out of here!
+   </a>
+</center>

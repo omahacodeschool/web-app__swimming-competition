@@ -9,5 +9,24 @@ end
 
 MyApp.get "/view_delete_data" do
 
+  @all_swim_names = []
+  @all_event_names = []
+  @all_school_names = []
+
+
+  Swimmer.all.each do |s|
+    x = s.swimmer_name
+    @all_swim_names << x
+  end
+
+  Event.all.each do |s|
+    x = s.event_name
+    @all_event_names << x
+  end
+
+  School.all.each do |s|
+    x = s.school_name
+    @all_school_names << x
+  end
   erb :"view_delete_data"
 end

@@ -1,4 +1,4 @@
-MyApp.get "/view_add_event_confirmation" do
+MyApp.post "/view_add_event_confirmation" do
 
   @event_1 = Event.new
   @event_1.event_name = (params["event_1_name"])
