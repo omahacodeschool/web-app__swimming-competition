@@ -15,42 +15,42 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "event_name"
-    t.integer  "swimmers_in"
-    t.float    "best_time"
+  create_table "conferences", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "conference_name"
   end
 
-  create_table "runs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "event_name"
+    t.float    "event_best_time"
+  end
+
+  create_table "swimmer_runs", force: :cascade do |t|
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "event_id"
-    t.integer  "team_id"
     t.integer  "swimmer_id"
-    t.float    "run_time"
-    t.integer  "run_place"
+    t.float    "swimmer_run_time"
   end
 
   create_table "swimmers", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "team_id"
     t.string   "swimmer_name"
-    t.string   "dob"
-    t.integer  "payment_status"
+    t.string   "swimmer_dob"
     t.string   "swimmer_gender"
-    t.string   "swimmer_events"
+    t.boolean  "swimmer_payment_status"
   end
 
   create_table "teams", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "conference"
-    t.string   "swimmer_count"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "conference_id"
     t.string   "team_name"
-    t.integer  "team_member_count"
   end
 
 end

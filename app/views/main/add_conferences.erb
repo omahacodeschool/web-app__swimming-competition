@@ -1,0 +1,38 @@
+<h2>Go Ahead and Add the Conferences Below</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_events">Go To Add Events</a>
+<br />
+<a href="/add_teams">Go To Add Teams</a>
+<br />
+<a href="/add_swimmers">Go To Add Swimmers</a>
+<br />
+
+<form action="/conferences_form">
+  <p>
+  Conference Name:
+  <input type="text" name="conference_to_add">
+  </p>
+  <p>
+  <input type="submit" value="Add Conference">
+  </p>
+</form>
+
+<br />
+<h3>Added Conferences:</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th> Name </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |conference| %>
+      <tr>
+        <td><%= conference.conference_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,8 @@
 <h2>Add All That Team Info Below</h2>
 <a href="/">Home</a>
 <br />
+<a href="/add_conferences">Go To Add Conferences</a>
+<br />
 <a href="/add_events">Go To Add Events</a>
 <br />
 <a href="/add_swimmers">Go To Add Swimmers</a>
@@ -14,26 +16,14 @@
   <p>
   Conference:
   <br />
-  <input type="radio" name="conference_to_add" value="Evil" checked> Evil<br />
-  <input type="radio" name="conference_to_add" value="Not-So-Evil"> Not-As-Evil<br />
+  <!--I need the values and visible names of these radio options to be drawn from the conference names collected previously-->
+  <% Conference.all.each do |conference| %>
+
+  <input type="radio" name="select_conference" value="<%= conference.id %>" checked> <%= conference.conference_name %><br />
+
+  <% end %>
+
   </p>
-  <p>
-  Team Member Count:
-  <select name="team_member_to_add">
-  <option value="0">0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-  </select>
-  </p>
-  <p>
   <input type="submit" value="Add Team">
   </p>
 </form>
@@ -45,7 +35,6 @@
     <tr>
       <th> Team </th>
       <th> Conference </th>
-      <th> Member Count </th>
     </tr>
   </thead>
 
@@ -53,8 +42,7 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.team_name %></td>
-        <td><center><%= team.conference %></center></td>
-        <td><center><%= team.team_member_count %></center></td>
+        <td><center><%= team.team_conference %></center></td>
       </tr>
     <% end %>
   </tbody>
