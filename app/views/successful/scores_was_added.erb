@@ -2,13 +2,11 @@
 <p>Here's a list of the scores so far</p>
 
 <% @scores.each do |x|%>
-  <p>first and last name from contestant table
-     chili name from chili table 
-     participated in the 
+  <!-- <p><%= x.contestant_first_name %> NONE OF THIS CODE RUNS!!!! NEED TO MAKE METHODS
+     <%= x.contestant_last_name %> entered
+     <%= x.chili_name %> into the 
+     <%= x.competition_name %> category and received the following rankings<br> --> 
 
-     <%= x.chili_id %>
-     <%= x.competition_id %> category name and received the following rankings<br>
-     
      <strong>Appearance - <%= x.appearance %><br>
      Aroma - <%= x.aroma %><br>
      Flavor - <%= x.flavor %><br>
