@@ -8,9 +8,14 @@
     </tr>
   </thead>
 
-
-
-
+  <tbody>
+    <% @divisions.each do |d| %>
+      <tr>
+        <td><center><%= d.id %></center></td>
+        <td><a href="/division/<%=d.id%>"><%= d.division %></a></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <br>
 <br>

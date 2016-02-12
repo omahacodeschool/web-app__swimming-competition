@@ -4,5 +4,6 @@ class Gamer < ActiveRecord::Base
     x = self.squad_id
     y = Squad.find_by_id(x)
     return y
-    
+  end
+
 end
