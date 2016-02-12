@@ -13,11 +13,11 @@ end
 #Returns all of the information in the Races table.
 MyApp.get "/race/:id" do
 
-  @races = Race.all
+  #@races = Race.all
   @records = []
   #locate object in races table
   @w = Race.find_by_id(params[:id])
-  swimmer_ids = w.swimmer_ids_one_race 
+  swimmer_ids = @w.swimmer_ids_one_race 
   swimmer_ids.each do |number| 
     record = Swimmer.find_by_id(number)
     @records.push(record) #should return all of the relevant objects for display
