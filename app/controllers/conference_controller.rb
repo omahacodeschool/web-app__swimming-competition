@@ -19,6 +19,6 @@ MyApp.get "/conferences" do
   # .all gets back a list of all conferences from class Conference
   # @conferences can be used in a view
   @conferences = Conference.all
-  binding.pry # what is @conferences?
+  # binding.pry # what is '@conferences'?
   erb :"lists/all_conferences"
 end
