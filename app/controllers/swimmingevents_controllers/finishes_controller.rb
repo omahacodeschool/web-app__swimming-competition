@@ -20,7 +20,6 @@ MyApp.get "/view_finish/:id" do
 end
 
 MyApp.get "/updatefinish/:id" do
-  @currentevent = @currentevent
   @swimmer = Swimmer.find_by_id(params[:id])
   #:id here is the SWIMMER in this EVENT
   ##@currentswimmer = Swimmer.find_by_id(params[:id])
