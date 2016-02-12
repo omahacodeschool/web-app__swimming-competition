@@ -18,12 +18,9 @@ DB.define_column("swimmer_infos", "last_name", "string")
 DB.define_column("swimmer_infos", "first_name", "string")
 DB.define_column("swimmer_infos", "team_id", "integer")
 DB.define_column("swimmer_infos", "age", "integer")
-DB.define_column("swimmer_infos", "gender_id", "integer")
 DB.define_column("swimmer_infos", "height", "float")
 DB.define_column("swimmer_infos", "weight", "integer")
 
-DB.define_table("genders")
-DB.define_column("genders", "gender", "string")
 
 DB.define_table("events")
 DB.define_column("events", "swimmer_info_id", "integer")
