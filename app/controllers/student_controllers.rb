@@ -2,7 +2,7 @@
 
 MyApp.get "/add/student" do
   @colleges = College.all
-  erb :"admin/add_student"
+  erb :"admin/student/add_student"
 end
 
 MyApp.get "/student/create" do
@@ -18,7 +18,7 @@ end
 
 MyApp.get "/read/students" do
   @students = Student.all
-  erb :"admin/read_students"
+  erb :"admin/student/read_students"
 end
 
 MyApp.get "/delete/student/:student_id" do
@@ -33,7 +33,7 @@ end
 MyApp.get "/update/student/:student_id" do
   @student = Student.find_by_id(params[:student_id])
   @colleges = College.all
-  erb :"admin/update_student"
+  erb :"admin/student/update_student"
 end
 
 MyApp.get "/process_update_student_form/:student_id" do
@@ -50,5 +50,5 @@ end
 MyApp.get "/read/student/:student_id" do
   @student = Student.find_by_id(params[:student_id])
   @results = Result.where({"student_id" => params[:student_id]})
-  erb :"admin/read_one_student"
+  erb :"admin/student/read_one_student"
 end

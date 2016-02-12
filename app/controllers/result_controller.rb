@@ -4,7 +4,7 @@
 MyApp.get "/add/result" do
   @students = Student.all
   @activities = Activity.all
-  erb :"admin/add_result"
+  erb :"admin/result/add_result"
 end
 
 MyApp.get "/result/create" do
@@ -18,5 +18,5 @@ end
 
 MyApp.get "/read/results" do
   @results = Result.all
-  erb :"admin/read_results"
+  erb :"admin/result/read_results"
 end

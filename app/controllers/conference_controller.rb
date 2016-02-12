@@ -1,7 +1,7 @@
 # ALL CONFERENCE CONTROLLERS GO HERE
 
 MyApp.get "/add/conference" do
-  erb :"admin/add_conference"
+  erb :"admin/conference/add_conference"
 end
 
 MyApp.get "/conference/create" do
@@ -13,5 +13,5 @@ end
 
 MyApp.get "/read/conferences" do
   @conferences = Conference.all
-  erb :"admin/read_conferences"
+  erb :"admin/conference/read_conferences"
 end

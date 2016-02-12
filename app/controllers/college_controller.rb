@@ -2,7 +2,7 @@
 
 MyApp.get "/add/college" do
   @conferences = Conference.all
-  erb :"admin/add_college"
+  erb :"admin/college/add_college"
 end
 
 MyApp.get "/college/create" do
@@ -15,5 +15,5 @@ end
 
 MyApp.get "/read/colleges" do
   @colleges = College.all
-  erb :"admin/read_colleges"
+  erb :"admin/college/read_colleges"
 end

@@ -1,7 +1,7 @@
 # ALL ACTIVITY CONTROLLERS GO HERE
 
 MyApp.get "/add/activity" do
-  erb :"admin/add_activity"
+  erb :"admin/activity/add_activity"
 end
 
 MyApp.get "/activity/create" do
@@ -14,11 +14,11 @@ end
 
 MyApp.get "/read/activities" do
   @activities = Activity.all
-  erb :"admin/read_activities"
+  erb :"admin/activity/read_activities"
 end
 
 MyApp.get "/read/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   @results = Result.where({"event_id" => params[:id]})
-  erb :"admin/read_one_activity"
+  erb :"admin/activity/read_one_activity"
 end
