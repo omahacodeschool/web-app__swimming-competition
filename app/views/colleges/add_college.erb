@@ -1,8 +1,14 @@
-<center><h1> Add/Modify/Delete College</center></h1>
+<center><h1> Add College</center></h1>
 
 <h2>Add College:</h2>
-<form action="">
-  Activity :&emsp;<input type="text" name="add_college_textbox" value=""><br><br>   
+<form method="GET" action="/colleges/added_new_college">
+  Activity :&emsp;<input type="text" name="add_college_name_textbox" value=""><br><br>
+  Conference:&emsp;<select name="college_conference_dropdown">
+    <% @conference.each do |c| %>
+      <option value="<%= c.id %>"><%= c.name %></option>
+    <% end %>  
+  </select>
+  <br>  
   <input type="submit" value="Add">
 </form>
 <br><br<>

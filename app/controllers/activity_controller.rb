@@ -4,6 +4,13 @@ MyApp.get "/activities/add_activity" do
   erb :"/activities/add_activity"
 end
 
+MyApp.get "/activities/added_new_activity" do
+  a = Activity.new
+  a.name = params["add_activity_textbox"]
+  a.save
+  erb :"/activities/added_activity_confirmation"
+end
+
 MyApp.get "/activities/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   erb :"/activities/activity"
