@@ -22,7 +22,6 @@ MyApp.get "/view_swimmer/:id" do
   @signups = Signup.all
   z = Signup.where({"swimmer_id" => (params[:id])})
   @events = []
-  
   z.each do |banana|
     @events << banana.find_event_name
   end
