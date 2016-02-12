@@ -1,4 +1,4 @@
-MyApp.get "/competitors" do
+MyApp.post "/competitors" do
   x = Competitor.new
   x.first_name = params["fname"]
   x.last_name = params["lname"]

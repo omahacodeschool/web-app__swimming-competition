@@ -19,7 +19,7 @@ DB.define_column("events", "third", "string")
 DB.define_table("results")
 DB.define_column("results", "event_id", "integer")
 DB.define_column("results", "competitor_id", "integer")
-DB.define_column("results", "time", "time")
+DB.define_column("results", "time", "integer")
 
 DB.define_table("schools")
 DB.define_column("schools", "school", "string")

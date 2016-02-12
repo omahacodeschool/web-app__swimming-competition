@@ -1,4 +1,4 @@
-MyApp.get "/events" do
+MyApp.post "/events" do
   x = Event.new
   x.event = params["event"]
   x.first = params["first"]

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "school_id"
+    t.integer  "event_id"
   end
 
   create_table "conferences", force: :cascade do |t|

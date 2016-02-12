@@ -1,4 +1,4 @@
-MyApp.get "/schools" do 
+MyApp.post "/schools" do 
   x = School.new
   x.school = params["school"]
   x.conference_id = params["conf_id"]

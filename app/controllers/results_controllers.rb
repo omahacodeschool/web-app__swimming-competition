@@ -1,4 +1,4 @@
-MyApp.get "/results" do
+MyApp.post "/results" do
   x = Result.new
   x.event_id = params["event_id"]
   x.competitor_id = params["comp_id"]

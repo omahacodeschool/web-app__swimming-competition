@@ -1,4 +1,4 @@
-MyApp.get "/conferences" do
+MyApp.post "/conferences" do
   x = Conference.new
   x.conference = params["conf"]
   x.save

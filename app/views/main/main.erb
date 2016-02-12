@@ -1,6 +1,6 @@
 <h1>Welcome Contestants!</h1>
 
-<form action = "/competitors">
+<form action = "/competitors" method = "post">
   <p>
     First Name: <input type = "text" name = "fname">
   </p>
@@ -12,17 +12,18 @@
   <p>
     School_id: <input type = "number" name = "school">
   </p>
+
   <input type = "submit">
 </form>
 
-<form action = "/conferences">
+<form action = "/conferences" method = "post">
   <p>
     Conference: <input type = "text" name = "conf">
   </p>
   <input type = "submit">
 </form>
 
-<form action = "/events">
+<form action = "/events" method = "post">
   <p>
     Event: <input type = "text" name = "event">
   </p>
@@ -41,7 +42,7 @@
   <input type = "submit">
 </form>
 
-<form action = "/results">
+<form action = "/results" method = "post">
   <p>
     Event_id: <input type = "number" name = "event_id">
   </p>
@@ -51,12 +52,12 @@
   </p>
 
   <p>
-    Time: <input type = "text" name = "time">
+    Time: <input type = "number" name = "time">
   </p>
   <input type = "submit">
 </form>
 
-<form action = "/schools">
+<form action = "/schools" method = "post">
   <p>
     School: <input type = "text" name = "school">
   </p>
