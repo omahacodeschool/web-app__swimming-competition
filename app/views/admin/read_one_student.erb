@@ -1,0 +1,23 @@
+<h2><%=@student.first_name%> <%=@student.last_name%></h2>
+
+      
+<table border="1">
+  <thead>
+    <tr>
+      <th>All Events for <%=@student.first_name%> <%=@student.last_name%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%if @results == []%>
+          No Events Yet 
+        <%else @results.each do |r| %>
+                <%= r.access_event.event_name %>
+                <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

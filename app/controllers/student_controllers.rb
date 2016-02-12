@@ -47,8 +47,8 @@ MyApp.get "/process_update_student_form/:student_id" do
   erb :"admin/confirm_submission"
 end
 
-
-
-
-
-
+MyApp.get "/read/student/:student_id" do
+  @student = Student.find_by_id(params[:student_id])
+  @results = Result.where({"student_id" => params[:student_id]})
+  erb :"admin/read_one_student"
+end

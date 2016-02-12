@@ -14,7 +14,7 @@
     <% @activities.each do |a| %>
       <tr>
         <td><%= a.id %></td>
-        <td><%= a.event_name %></td>
+        <td><a href="/read/activity/<%=a.id%>"><%= a.event_name %></a></td>
         <td><%= a.max_possible_score_for_activity %></td>
       </tr>
     <% end %>
