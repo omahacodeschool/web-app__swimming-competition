@@ -17,9 +17,4 @@ MyApp.get "/sign_up_table" do
   erb :"sign_result/sign_up_table"
 end
 
-MyApp.get "/swimmer/:id" do
-  x = SignupResult.find_by_id(params[:id])
-  @z = x.swimmer_info_id.first_name
-  binding.pry
-  erb :"swimmer/1"
-end
+

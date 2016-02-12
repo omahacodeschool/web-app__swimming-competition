@@ -15,9 +15,8 @@ MyApp.get "/event_table" do
   erb :"event/event_table"
 end
 
-MyApp.get "/event/butterfly" do
-  @x = Event.find_by_id(1)
+MyApp.get "/event/:id" do
+  @x = Event.find_by_id(params[:id])
   binding.pry
-  
- erb :"event/butterfly"
+  erb :"event/butterfly"
 end
