@@ -1,6 +1,10 @@
 <h1>Here are the events in the Tournament</h1>
-<ul>
-<% @events.each do |events| %>
-  <li><%= events.event_name %>---<%= @events.ids %></li>
+<p>
+  <% @events.each do |event| %>
+    <a href="view_event/<%= event.id%>">
+    <%= event.event_name %> </a></p>
+  <a href="delete_event/<%= event.id%>">
+  Delete
+  </a>
+</p>
 <% end %>
-</ul>

@@ -1,58 +1,48 @@
-Here you can manipulate information in the Database
+<h1>Here you can manipulate information in the Database</h1>
 
 
-<h1>Add Events, Schools, Conferences and Swimmers!</h1>
+<h3>Add Events, Schools, Conferences and Swimmers!</h3>
 
 
-<p>Enter a swimmer that you would like to add to the comepition</p>
+<p>Enter a swimmer, along with that swimmers school ID that you would like to add to the comepition</p>
 <form action="/add_swimmer">
 <input type = "text" name = "new_swimmer">
 <input type = "submit">
-</form>
-<p>Add that swimmers school ID</p>
 <form action="/add_swimmer_school">
 <input type = "text" name = "swimmer_school">
-<input type = "submit">
 </form>
-
-
 </body>
 </html>
 <p>Enter an event that you would like to add to the comepition</p>
 <form action="/add_event">
 <input type = "text" name = "new_event">
-<input type = "submit">
 </form>
-
-
-
-</body>
-</html>
-<p>Enter a school that you would like to add to the comepition</p>
+<p>Enter a school along with that schools Conference ID that you would like to add to the comepition</p>
 <form action="/add_school">
 <input type = "text" name = "new_school">
 <input type = "submit">
-</form>
-<p>Add the school's conference id</p>
 <form action="/school_conf">
 <input type = "text" name = "new_conf">
-<input type = "submit">
 </form>
-
-
-
-</body>
-</html>
 <p>Enter a conference that you would like to add to the comepition</p>
 <form action="/add_conference">
 <input type = "text" name = "new_conference">
-<input type = "submit">
 </form>
-
-
-
+<p>Enter a swimmers ID along with the events ID to sign up swimmers for an event</p>
+<form action="/add_signup_swimmer">
+<input type = "text" name = "new_signup">
+<input type = "submit">
+<form action="/add_signup_event">
+<input type = "text" name = "event_id">
+</form>
 </body>
 </html>
-<a href= "swimmer">Click here for a look at all the swimmers!</a>
-<a href= "school">Click here for a look at all the schools!</a>
-<a href= "event">Click here for a look all the events!</a>
+-
+-
+-
+-
+<h3>Manage Entries<h3>
+      <li><a href="/swimmer">Swimmer</a></li>
+      <li><a href="/event">Event</a></li>
+      <li><a href="/school">School</a></li>
+      <li><a href="/signup">Signups</a></li>

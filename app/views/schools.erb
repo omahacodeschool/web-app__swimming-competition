@@ -1,17 +1,24 @@
 
 <h1>Here are the Schools currently competing in the Tournament</h1>
-<ul>
-<% @schools.each do |schools| %>
-  <li><%= schools.school_name %>---<%= @schools.ids %></li>
+<p>
+  <% @schools.each do |school| %>
+    <a href="/view_school/<%= school.id%>">
+    <%= school.school_name %> </a></p>
+  <a href="delete_school/<%= school.id%>">
+  Delete
+  </a>
+</p>
 <% end %>
-</ul>
-
-
-
 
 <h1>Here are the Conferences currently competing in the Tournament</h1>
 <ul>
-<% @conference.each do |conference| %>
-  <li><%= conference.conference_name %>---<%= @conference.ids %></li>
+
+<p>
+  <% @conference.each do |conference| %>
+    <a href="view_conferences/<%= conference.id%>">
+    <%= conference.conference_name %> </a></p>
+  <a href="delete_conference/<%= conference.id%>">
+  Delete
+  </a>
+</p>
 <% end %>
-</ul>

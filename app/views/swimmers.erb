@@ -1,8 +1,10 @@
-Here is a list of swimmers, click to see their results
-<%= @swimmers %>
 <h1>Here are the Swimmers currently competing in the Tournament</h1>
-<ul>
-<% @swimmers.each do |swimmers| %>
-  <li><%= swimmers.name %>---<%= @swimmers.ids %></li>
+<p>
+  <% @swimmers.each do |swimmer| %>
+    <a href="view_swimmers/<%= swimmer.id%>">
+    <%= swimmer.name %> </a></p>
+  <a href="delete_swimmers/<%= swimmer.id%>">
+  Delete
+  </a>
+</p>
 <% end %>
-</ul>

@@ -1,0 +1,10 @@
+<p>
+  <% @signup.each do |signup| %>
+    <a href="view_signup/<%= signup.id%>">
+    <%= signup.swimmer_id %> </a></p>
+  <a href="delete_signup/<%= signup.id%>">
+  Delete
+  </a>
+</p>
+<% end %>
+
