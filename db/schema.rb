@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chilies", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "name"
-    t.integer  "contestant_id"
-  end
-
   create_table "chilis", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -29,32 +22,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "contestant_id"
   end
 
-  create_table "colleges", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "name"
-    t.integer  "conference_id"
-  end
-
   create_table "competitions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "category"
     t.string   "name"
-  end
-
-  create_table "competitors", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "college_id"
-  end
-
-  create_table "conferences", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "region"
   end
 
   create_table "contestants", force: :cascade do |t|
@@ -62,18 +33,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "city_id"
     t.integer  "region_id"
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "stroke"
-    t.string   "hottest_chili"
-    t.string   "best_red_chili"
-    t.string   "best_white_chili"
-    t.string   "peoples_choice_chili"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -85,10 +45,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "results", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.time     "time"
-    t.integer  "competitor_id"
-    t.integer  "event_id"
-    t.integer  "contestant_id"
+    t.integer  "chili_id"
     t.integer  "competition_id"
     t.integer  "appearance"
     t.integer  "aroma"
@@ -96,7 +53,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "flavor"
     t.integer  "heat"
     t.integer  "overall"
-    t.integer  "chili_id"
   end
 
 end
