@@ -2,7 +2,7 @@ MyApp.get "/gamer_form" do
   erb :"gamers_views/gamer_form"
 end
 
-MyApp.get "/add_gamer" do
+MyApp.post "/add_gamer" do
   x = Gamer.new
   x.last_name = params["last_name"]
   x.first_name = params["first_name"]
@@ -12,3 +12,6 @@ MyApp.get "/add_gamer" do
   erb :"gamers_views/add_success"
 end
 
+MyApp.get "/gamers_list" do
+  erb :"gamers_views/gamers_list"
+end

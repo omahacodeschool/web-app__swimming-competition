@@ -2,7 +2,7 @@ MyApp.get "/results_form" do
   erb :"results_views/results_form"
 end
 
-MyApp.get "/add_results" do
+MyApp.post "/add_results" do
   x = Result.new
   x.game_id = params["results"]
   x.gamer_id = params["gamer_id"]
@@ -12,3 +12,6 @@ MyApp.get "/add_results" do
   erb :"results_views/add_success"
 end
 
+MyApp.get "/results_list" do
+  erb :"results_views/results_list"
+end
