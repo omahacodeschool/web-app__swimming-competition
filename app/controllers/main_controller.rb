@@ -33,6 +33,9 @@ MyApp.get "/competition" do
 end
 
 MyApp.get "/scores" do
+  @contestants = Contestant.all
+  @chilis = Chili.all
+  @competitions = Competition.all
   erb :"add_scores"
 end
 
