@@ -12,17 +12,19 @@ class Competitor < ActiveRecord::Base
     return y.name
   end
 
-  def get_conference
+ def set_conference_name
     x = self.college_id
     y = College.find_by_id(x)
-    return Conference.find_by_id(y)
+    z = y.conference_id
+    zz = Conference.find_by_id(z)
   end
 
- def conference_name
+ def get_conference_name
     x = self.college_id
     y = College.find_by_id(x)
-    z = Conference.find_by_id(y)
-    return z.name
+    z = y.conference_id
+    zz = Conference.find_by_id(z)
+    return zz.name
   end
 
 end

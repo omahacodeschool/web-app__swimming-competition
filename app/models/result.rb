@@ -14,13 +14,60 @@ class Result < ActiveRecord::Base
   def get_conference
     x = self.competitor_id
     y = Competitor.find_by_id(x)
-    z = College.find_by_id(y)
-    return Conference.find_by_id(z) 
+    z = y.college_id
+    a = College.find_by_id(z)
+    return Conference.find_by_id(a) 
   end
 
-   def get_activity
+  def get_conference_name
+    x = self.competitor_id
+    y = Competitor.find_by_id(x)
+    z = y.college_id
+    a = College.find_by_id(z)
+    b = Conference.find_by_id(a)
+    return b.name 
+  end
+
+  def set_conference_name(var)
+    x = self.competitor_id
+    y = Competitor.find_by_id(x)
+    z = y.college_id
+    a = College.find_by_id(z)
+    b = Conference.find_by_id(a)
+    b.name = var
+  end
+  
+  def get_conference_id
+    x = self.competitor_id
+    y = Competitor.find_by_id(x)
+    z = y.college_id
+    a = College.find_by_id(z)
+    b = Conference.find_by_id(a)
+    return b.id 
+  end
+
+  def activity
     x = self.activity_id
     return Activity.find_by_id(x)
   end
+
+  def get_activity_name
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    return y.name
+  end
+
+  def set_activity_name(var)
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    y.name = var
+  end
+
+  def get_activity_name
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    return y.name
+  end
+
 
 end
