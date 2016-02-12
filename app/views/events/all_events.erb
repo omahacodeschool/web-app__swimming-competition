@@ -1,5 +1,22 @@
 <h1>Events</h1>
 
-<% @events.each do |e| %>
-<p> The name of the event is <%= e.name %></p>
-<%end%>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Number of Entries</th>
+      <th>Start Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |e| %>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.num_entries %></td>
+        <td><%= e.start_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

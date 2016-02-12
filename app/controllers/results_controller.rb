@@ -15,3 +15,8 @@ MyApp.get "/results" do
   @results = Result.all
   erb :"results/all_results"
 end
+
+MyApp.get "/results/edit/:id" do
+  @result = Result.find_by_id(params[:id])
+  erb :"results/edit_result"
+end
