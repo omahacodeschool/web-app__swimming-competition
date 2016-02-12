@@ -16,12 +16,13 @@ end
 
 MyApp.get "/event_info/:event_id" do
   @event = Event.find(params[:event_id])
+  @list_competitors = Competitor.all
   erb :"events/event_info"
 end
 
 MyApp.post "/add_entry" do
 	x = Result.new
-	x.event_id = params[:event_id]
+	x.event_id = self.id
 	x.competitor_id = params[:competitor_id]
 	x.save
   erb :"success"

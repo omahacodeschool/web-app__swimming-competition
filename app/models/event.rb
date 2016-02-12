@@ -31,16 +31,17 @@ class Event < ActiveRecord::Base
 		return competitors
 	end
 
-
+	#returns the Competitor objects with the three best times
 	def top_three
 		list_results = Result.where({"event_id" => self.id})
 
 		if list_results.empty?
 			return nil
 		else 
-			time_arr = []
+
 			competitor_arr = []
-				list_results.each do |results|
+			time_arr = []
+				list_results.each do |result|
 					competitor_arr << result.competitor_id
 					if result.time != nil
 					time_arr << result.time
@@ -54,7 +55,6 @@ class Event < ActiveRecord::Base
 				top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
 				# if top_three.length < 3 
 				return top_three
-				end
 			end
 		end
 	end
