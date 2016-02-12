@@ -24,3 +24,11 @@ MyApp.get "/submit_chili" do
   @noms = Chili.all
   erb :"successful/chili_was_added"
 end
+
+MyApp.get "/submit_competition" do
+  @cat = Competition.new
+  @cat.name = params[:category]
+  @cat.save
+  @all_cats = Competition.all
+  erb :"successful/competition_was_added"
+end

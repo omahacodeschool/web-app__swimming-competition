@@ -35,4 +35,4 @@ DB.define_column("results","heat","integer")
 DB.define_column("results","overall","integer")
 
 DB.define_table("competitions")
-DB.define_column("competitions", "category","string")
+DB.define_column("competitions", "name","string")
