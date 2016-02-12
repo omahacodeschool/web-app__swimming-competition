@@ -32,3 +32,17 @@ MyApp.get "/submit_competition" do
   @all_cats = Competition.all
   erb :"successful/competition_was_added"
 end
+
+MyApp.get "/submit_scores" do
+  @score = Result.new
+  @score.chili_id = params[:chili_id]
+  @score.competition_id = params[:competition_id]
+  @score.aroma = params[:aroma]
+  @score.flavor = params[:flavor]
+  @score.texture = params[:texture]
+  @score.heat = params[:heat]
+  @score.overall = params[:overall]
+  @score.appearance = params[:appearance]
+  @scores = Result.all
+  erb :"successful/scores_was_added"
+end

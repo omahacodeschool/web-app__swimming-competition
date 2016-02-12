@@ -1,20 +1,21 @@
 <form action="/submit_scores">
 
-  <p>Please enter the Contestant ID</p>
-  <p><input type="text" name="contestant_id"></p>
-  <% @contestants.each do |x|%>
-    <p><%= x.first_name %>
-       <%= x.last_name %>
+  <p>Please enter the Competition ID</p>
+  <p><input type="text" name="competiton_id"></p>
+  <% @competitions.each do |x|%>
+    <p><%= x.name %>
        <%= x.id %></p>
   <%end%>
 
-  <p>Please enter the Competition ID</p>
-  <p><input type="text" name="competiton_id"></p>
-  display competition table
-
   <p>Please enter the Chili ID</p>
   <p><input type="text" name="chili_id"></p>
- display chili table
+  <% @chilis.each do |x|%>
+    <p><%= x.name %>
+       <%= x.id %></p>
+  <%end%>
+
+  <p>Please enter the rating for the Appearance Category</p>
+  <p><input type="text" name="appearance"></p>
 
   <p>Please enter the rating for the Aroma Category</p>
   <p><input type="text" name="aroma"></p>
@@ -28,4 +29,8 @@
   <p>Please enter the rating for the Overall Category</p>
   <p><input type="text" name="overall"></p>
 
+  <p>Please enter the rating for the Heat Category</p>
+  <p><input type="text" name="heat"></p>
+
+  <p><input type="submit"></p>
 </form>

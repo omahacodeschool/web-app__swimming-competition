@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "flavor"
     t.integer  "heat"
     t.integer  "overall"
+    t.integer  "chili_id"
   end
 
 end

@@ -25,7 +25,7 @@ DB.define_table("regions")
 DB.define_column("regions","city", "string")
 
 DB.define_table("results")
-DB.define_column("results","contestant_id","integer")
+DB.define_column("results","chili_id","integer")
 DB.define_column("results","competition_id","integer")
 DB.define_column("results","appearance","integer")
 DB.define_column("results","aroma","integer")
