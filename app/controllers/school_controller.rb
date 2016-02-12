@@ -1,6 +1,6 @@
 # view that shows the form for adding a 'school'
 MyApp.get "/create_school" do
-  erb :"/create/create_school"
+  erb :"create/create_school"
 end
 
 # view that shows the user they have successfully created a new 'school'.
@@ -11,13 +11,13 @@ MyApp.get "/create_school/success" do
   # x.save is a new Active Recored method that saves that School Object to the 'schools' table.
   x.save
   # binding.pry # what is 'x'?
-  erb :"/create/create_school_success"
+  erb :"create/create_school_success"
 end
 
 # show all the schools
 MyApp.get "/schools" do
   @schools = School.all
-  erb :"/lists/all_schools"
+  erb :"lists/all_schools"
 end
 
 # view a single school

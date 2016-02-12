@@ -1,6 +1,6 @@
 # view that shows the form for adding a 'competitor'.
 MyApp.get "/create_competitor" do
-  erb :"/create/create_competitor"
+  erb :"create/create_competitor"
 end
 
 # view that shows the user they have successfully created a competitor. 
@@ -11,5 +11,5 @@ MyApp.get "/create_competitor/success" do
   # x.save is a new Active Record method that saves that Competitor Object to the 'competitors' table.
   x.save
   # binding.pry # what is 'x'?
-  erb :"/create/create_competitor_success"
+  erb :"create/create_competitor_success"
 end

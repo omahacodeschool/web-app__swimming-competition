@@ -3,7 +3,7 @@ MyApp.get "/create_conference" do
   erb :"create/create_conference"
 end
 
-# view that shows the user they have successfully created a conference.
+# view tha shows the user they have successfully created a conference.
 MyApp.get "/create_conference/success" do
   x = Conference.new
   # x.conference_name is a new Active Record method that sets a Conference Object attribute name to "conference_name".
@@ -19,6 +19,6 @@ MyApp.get "/conferences" do
   # .all gets back a list of all conferences from class Conference
   # @conferences can be used in a view
   @conferences = Conference.all
-  # binding.pry # what is @conferences?
+  binding.pry # what is @conferences?
   erb :"lists/all_conferences"
 end
