@@ -1,3 +1,9 @@
-This is where you'll see all the competitors in whichever event you choose.
+Here are the competitors in this event:
 
-<%= @juggalos %>
+<p>
+<% @juggalos.each do |j| %>
+  <%= j.first_name %>
+  <%= j.last_name %>
+  <br>
+  <br>
+<% end %>
