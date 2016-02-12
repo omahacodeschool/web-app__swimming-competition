@@ -3,11 +3,13 @@
 <form action="/results/process_edit/<%= @result.id %>" method="post">
   <label>Select Penguin Name</label>
   <select name ="new_penguin_id">
-    <% @pengins.each do |p| %>
+    <% @penguins.each do |p| %>
       <option value="<%= p.id%>">
-        <%= p.name%>
+        <%= p.first_name%> <%=p.last_name %>
       </option>
     <% end %>
+      <option selected> <%=@result.penguin_access.first_name%> <%=@result.penguin_access.last_name%>
+      </option>    
   </select>
 
   <label>Select Event</label>
@@ -20,7 +22,7 @@
   </select>
 
   <label>Enter Time</label>
-  <input type="number" step="any" name="new_time">
+  <input type="number" step="any" name="new_time" value="<%= @result.time %>">
 
   <input type="submit">
 
