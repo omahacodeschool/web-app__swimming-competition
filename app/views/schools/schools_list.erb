@@ -3,7 +3,7 @@
 <% @schools.each do |school| %>
   <p>
       <a href = "/view_school/<%= school.id %>">
-        <%= school.school %>
+        <%= school.school + "\t" + school.conference %>
       </a>
   </p>
 <% end %>
