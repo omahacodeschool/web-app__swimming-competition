@@ -26,10 +26,10 @@ MyApp.get "/results/edit/:id" do
 end
 
 MyApp.post "/results/process_edit/:id" do
-  @event = Event.find_by_id(params[:id])
-  @event.penguin_id = params["edit_penguin_id"]
-  @event.event_id = params["edit_event_id"]
-  @event.time = params["edit_time"]
+  @result = Result.find_by_id(params[:id])
+  @result.penguin_id = params["edit_penguin_id"]
+  @result.event_id = params["edit_event_id"]
+  @result.time = params["edit_time"]
 erb :"updated"
 end
 

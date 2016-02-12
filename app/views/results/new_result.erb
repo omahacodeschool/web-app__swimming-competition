@@ -3,9 +3,9 @@
 <form action="/results/create" method="post">
   <label>Select Penguin Name</label>
   <select name ="new_penguin_id">
-    <% @pengins.each do |p| %>
+    <% @penguins.each do |p| %>
       <option value="<%= p.id%>">
-        <%= p.name%>
+        <%= p.last_name%> <%=p.first_name %>
       </option>
     <% end %>
   </select>
