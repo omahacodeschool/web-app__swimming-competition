@@ -3,6 +3,7 @@ Here is information about each school:
 <p>
 <% @schools.each do |s| %>
   <%= s.school_name %>
+  <%= s.display_conference_of_school %>
   has id # <%= s.id %>.<br>
 <% end %>
 </p>
