@@ -1,5 +1,31 @@
-<h2><%=@activity.event_name%></h2>
-<h2><%= @sorted_scores%></h2>
+<h1><%=@activity.event_name%></h1>
+
+<h2>Top Three Student Competitors for <%=@activity.event_name%></h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Student Name</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <tr>
+    <% @top_three_results_for_activity.each_with_index do |r, i|%>
+      <td><%= i + 1 %></td>
+      <td><a href="/read/student/<%=r.student_id%>">
+      <%= r.access_student.first_name %> <%= r.access_student.last_name %></a>
+      </td>
+    </tr>
+      <%end%>
+  </tbody>
+</table>
+  
+<br>
+
+<h2>All Students Registered for <%=@activity.event_name%></h2>
       
 <table border="1">
   <thead>

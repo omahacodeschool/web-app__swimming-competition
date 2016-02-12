@@ -21,6 +21,7 @@ MyApp.get "/read/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   @results = Result.where({"activity_id" => params[:id]})
   sorted_results = @results.order(student_score: :desc)
+  @top_three_results_for_activity = sorted_results.first(3)
   binding.pry
   # @scores = []
   # @results.each do |r|
