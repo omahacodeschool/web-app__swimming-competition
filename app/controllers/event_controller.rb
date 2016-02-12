@@ -15,7 +15,9 @@ end
 
 # shows all conferences
 MyApp.get "/events" do
+  # .all must be run on the class Event itself.
+  # @events can be used in the view.
   @events = Event.all
-  binding.pry # what is '@events'?
+  # binding.pry # what is '@events'?
   erb :"lists/all_events"
 end

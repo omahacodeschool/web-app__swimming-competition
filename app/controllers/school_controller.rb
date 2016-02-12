@@ -16,7 +16,10 @@ end
 
 # show all the schools
 MyApp.get "/schools" do
+  # .all must be run on the class School itself.
+  # @schools can be used in the view.
   @schools = School.all
+  # binding.pry # what is '@schools'?
   erb :"lists/all_schools"
 end
 
