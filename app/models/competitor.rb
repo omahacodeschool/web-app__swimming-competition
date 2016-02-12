@@ -6,7 +6,8 @@ class Competitor < ActiveRecord::Base
 		x = self.school_id
 		y = School.find_by_id(x)
 		if y != nil
-		return y.name
+			return y.name
+		end
 	end
 
 	def event_entry
@@ -37,5 +38,6 @@ class Competitor < ActiveRecord::Base
 	def conference_name
 		
 	end
+
 end
 
