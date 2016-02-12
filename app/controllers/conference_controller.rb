@@ -1,21 +1,24 @@
-# shows the form for adding a conference.
+# view that shows the form for adding a conference.
 MyApp.get "/create_conference" do
   erb :"create/create_conference"
 end
 
-# shows the user they have successfully created a conference.
+# view tha shows the user they have successfully created a conference.
 MyApp.get "/create_conference/success" do
   x = Conference.new
+  # x.name is a new Active Record method that sets a Conference Object attribute name to "conference_name".
   x.conference_name = params["conference_name"]
-  # this should be a new Active Record method that sets a Conference Object attribute name to the information passed through params
+  # x.save is a new Active Record method that saves that Conference Object to the "conferences" table.
   x.save
-  # this should be a new Active Record method that saves that Conference Object to the conferences table
+  binding.pry # what is 'x'?
   erb :"create/create_conference_success"
 end
 
-# shows all conferences
+# view that shows all conferences
 MyApp.get "/conferences" do
+  # .all gets back a list of all conferences from class Conference
+  # @conferences can be used in a view
   @conferences = Conference.all
-  binding.pry
+  binding.pry # what is @conferences?
   erb :"lists/all_conferences"
 end
