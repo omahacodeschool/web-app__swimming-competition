@@ -11,7 +11,8 @@ MyApp.get "/newconference" do
   c = Conference.new
   c.conference_name = params[:conferencename]
   c.save
-  erb :"/cv/conferences"
+  @newconferencename = params[:conferencename]
+  erb :"/cv/conferencesuccess"
 end
 
 MyApp.get "/conferences" do

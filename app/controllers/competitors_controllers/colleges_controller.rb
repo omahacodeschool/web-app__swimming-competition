@@ -8,12 +8,12 @@ MyApp.get "/colleges" do
 end
 
 MyApp.get "/newcollege" do
-  @conferences = Conference.all
   c = College.new
   c.college_name = params[:collegename]
   c.conference_id = params[:conferenceid]
   c.save
-  erb :"cv/colleges"
+  @newcollegename = params[:collegename]
+  erb :"cv/collegeaddsuccess"
 end
 
 

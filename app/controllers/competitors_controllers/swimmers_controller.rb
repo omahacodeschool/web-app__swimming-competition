@@ -13,7 +13,8 @@ MyApp.get "/newswimmername" do
   s.last_name = params[:swimmerlastname]
   s.college_id= params[:collegeid]
   s.save
-  erb :"cv/swimmers"
+  @newswimmername = params[swimmerfirstname] + " " + params[:swimmerlastname]
+  erb :"cv/swimmeraddsuccess"
 end
 
 

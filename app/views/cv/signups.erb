@@ -1,1 +1,25 @@
-signups
+<h1>Event Registration</h1>
+
+<form action="/newsignup">
+  <fieldset>
+    <legend>Register for Event</legend>
+      <label for="swimmer_id">Kitty ID: see below</label>
+        <input type="integer" name="swimmerid">
+      <label for="event_id">Event ID: see below</label>
+        <input type="integer" name="eventid">
+      <input type="submit">
+  </fieldset>
+</form>
+<h2>Enrolled Kitties:<h2>
+<ul>
+  <% @swimmers.each do |post| %>
+    <li><%= post.id%>. <%=post.first_name%> <%=post.last_name%> Registered for:</li>
+      
+  <% end %>
+</ul>
+<h2>Events:<h2>
+<ul>
+  <% @events.each do |post| %>
+    <li><%= post.id%>. <%=post.event_name%></li>
+  <% end %>
+</ul>

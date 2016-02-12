@@ -20,6 +20,11 @@ MyApp.get "/competitors" do
   erb :"cv/competitors"
 end
 
+MyApp.get "/superadmin" do
+  erb :"superadmin"
+end
+
+
 #ADD SOMETHING FOR SUPERADMIN
 
 
