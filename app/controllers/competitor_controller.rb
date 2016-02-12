@@ -48,6 +48,13 @@ MyApp.post "/competitors/competitor/delete_competitor_college/:id" do
   erb :"/competitors/deleted_competitor_confirmation"
 end
 
+MyApp.post "/competitors/competitor/update_name/:id" do
+  @c = Competitor.find_by_id(params[:id])
+  @c.name = params["update_competitor_name_textbox"]
+  @c.save
+  erb :"/competitors/update_competitor_confirmation"
+end
+
 
 MyApp.get "/competitors/competitor/:id" do
   @competitor = Competitor.find_by_id(params[:id])
