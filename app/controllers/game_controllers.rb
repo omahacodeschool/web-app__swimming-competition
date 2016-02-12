@@ -3,8 +3,8 @@ MyApp.get "/game_form" do
 end
 
 MyApp.get "/add_game" do
-  x = Gamer.new
-  x.name = params["game_name"]
+  x = Game.new
+  x.game_name = params["game_name"]
   x.save
 
   erb :"game_views/add_success"

@@ -4,7 +4,9 @@ end
 
 MyApp.get "/add_gamer" do
   x = Gamer.new
-  x.name = params["gamer_name"]
+  x.last_name = params["last_name"]
+  x.first_name = params["first_name"]
+  x.squad_id = params["squad_id"]
   x.save
 
   erb :"gamers_views/add_success"
