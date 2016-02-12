@@ -5,10 +5,11 @@ end
 # shows the user they have successfully created a conference.
 MyApp.get "/create_event/success" do
   x = Event.new
-  x.event_name = params["event_name"]
+  x.event_name = params["event"]
   # this should be a new Active Record method that sets an Event Object attribute name to the information passed through params
   x.save
   # this should be a new Active Record method that saves that Event Object to the "events" table
+  binding.pry
   erb :"create/create_event_success"
 end
 
