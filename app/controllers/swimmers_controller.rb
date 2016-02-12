@@ -1,4 +1,4 @@
-MyApp.get "/view_add_swimmer_confirmation" do
+MyApp.post "/view_add_swimmer_confirmation" do
 
 
   @school_1 = School.new
@@ -13,10 +13,6 @@ MyApp.get "/view_add_swimmer_confirmation" do
   @swim_1.save
   @show_added_name = (params["swim_1_name"])
 
-  #need to link these two ^
-
-  #get school_id, and save it into Swimmer.school_id
-
   erb :"view_add_swimmer_confirmation"
 end
 
@@ -27,6 +23,5 @@ end
 
 # Show form.
 MyApp.get "/" do
-binding.pry
   erb :"view_home_page"
 end

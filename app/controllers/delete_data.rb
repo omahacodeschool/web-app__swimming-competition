@@ -1,6 +1,4 @@
-MyApp.get "/view_delete_data_confirmation" do
-
- 
+MyApp.post "/view_delete_data_confirmation" do
   Swimmer.delete_all
   Event.delete_all
   School.delete_all

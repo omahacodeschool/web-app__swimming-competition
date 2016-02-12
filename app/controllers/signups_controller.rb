@@ -2,7 +2,7 @@
 #get event info (id)
 #insert into signups.swimmer_id and event_id
 
-MyApp.get "/view_add_signup_confirmation" do
+MyApp.post "/view_add_signup_confirmation" do
 
   @signup_1 = Signup.new
 
