@@ -5,6 +5,11 @@ class Signup < ActiveRecord::Base
     return y.event_name
   end
 
+  def find_swimmer
+    x = self.swimmer_id
+    y = Swimmer.find_by_id(x)
+  end
+
   def find_swimmer_name
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)

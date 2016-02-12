@@ -4,8 +4,8 @@
 
 <h2>Enrolled Kitties:<h2>
 <ul>
-  <% @z.each do |post| %>
-    <li><%= post.id%>. 
+  <% @kitties.each do |post| %>
+    <li>
     <%=post.first_name%> 
     <%=post.last_name%>  
     (<%=post.find_college_name%>) 
