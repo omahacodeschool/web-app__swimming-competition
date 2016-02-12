@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "school_id"
-    t.integer  "event_id"
   end
 
   create_table "conferences", force: :cascade do |t|
@@ -44,7 +43,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",    null: false
     t.integer  "event_id"
     t.integer  "competitor_id"
-    t.time     "time"
+    t.integer  "time"
   end
 
   create_table "schools", force: :cascade do |t|

@@ -1,5 +1,9 @@
 <h1><%= @event.event.capitalize %></h1>
 
+<p><% @event.results.each do |r| %>
+<%= r.competitor_name %>
+<% end %>
+</p>
 
 <p><a href="/all_events">Back</a></p>
 <p><a href="/">Home</a></p>
