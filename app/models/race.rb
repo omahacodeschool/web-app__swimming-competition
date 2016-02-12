@@ -10,8 +10,16 @@ class Race < ActiveRecord:: Base
 
   def swimmer_ids_one_race
     r = self.id #
-    s = SwimEntry.where({race.id => r}) #(would that give me back the swimmer ids for all of the swimmers in one race?)
-    return s
+
+
+    s = SwimEntry.where({race_id => r}) #(would that give me back the swimmer ids for all of the swimmers in one race?)
+    g=[]
+    s.each do |swim_entry|
+      x = swim_entry.swimmer_id
+      g.push(x)
+      #y = Swimmer.find_by_id(x)
+    end
+    return g   #array of swimmer ids for one race
   end
   
 
