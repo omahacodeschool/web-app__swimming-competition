@@ -18,9 +18,7 @@ MyApp.get "/competitors" do
   # .all must be run on the class Competitor itself
   # @competitors can be used in the view.
   @competitors = Competitor.all
-
-
-  binding.pry # what is '@competitors'?
+  # binding.pry # what is '@competitors'?
   erb :"lists/all_competitors"
 end
 

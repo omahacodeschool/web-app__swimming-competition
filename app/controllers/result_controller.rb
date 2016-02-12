@@ -13,3 +13,11 @@ MyApp.get "/create_result/success" do
   # binding.pry # what is 'x'?
   erb :"create/create_result_success"
 end
+
+MyApp.get "/results" do
+  # .all must be run on the class Result itself.
+  # @results can be used in the view.
+  @results = Result.all
+# binding.pry # what is '@results'?
+erb :"lists/all_results"
+end
