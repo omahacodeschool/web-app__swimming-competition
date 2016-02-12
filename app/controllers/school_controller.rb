@@ -10,9 +10,10 @@ MyApp.get "/create_school/success" do
   erb :"/create/create_school_success"
 end
 
-MyApp.get "/list_schools" do
+# show all the schools
+MyApp.get "/schools" do
   @schools = School.all
-  erb :"list_schools"
+  erb :"/lists/all_schools"
 end
 
 # view a single school
