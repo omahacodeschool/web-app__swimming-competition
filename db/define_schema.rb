@@ -11,7 +11,6 @@ DB.define_column("competitors", "school_id", "integer")
 DB.define_table("conferences")
 DB.define_column("conferences", "conference", "string")
 
-
 DB.define_table("events")
 DB.define_column("events", "event", "string")
 DB.define_column("events", "first", "string")

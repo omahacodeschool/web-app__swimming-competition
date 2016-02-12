@@ -1,0 +1,11 @@
+<h1>Event List</h1>
+
+<% @events.each do |event| %>
+  <p>
+    <a href = "/view_event/<%= event.id %>">
+      <%= event.event %>
+    </a>    
+  </p>
+<% end %>
+
+<center><a href = "/">Home</a></center>
