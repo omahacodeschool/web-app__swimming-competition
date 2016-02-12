@@ -17,9 +17,9 @@ DB.define_column("contestants","first_name", "string")
 DB.define_column("contestants","last_name", "string")
 DB.define_column("contestants","city_id", "integer")
 
-DB.define_table("chilies")
-DB.define_column("chilies","name","string")
-DB.define_column("chilies","contestant_id","integer")
+DB.define_table("chilis")
+DB.define_column("chilis","name","string")
+DB.define_column("chilis","contestant_id","integer")
 
 DB.define_table("regions")
 DB.define_column("regions","city", "string")

@@ -24,6 +24,7 @@ MyApp.get "/contestant" do
 end
 
 MyApp.get "/chili" do
+  @people = Contestant.all
   erb :"add_chili"
 end
 
@@ -47,26 +48,4 @@ MyApp.get "/2016" do
   erb :"2016_winners"
 end
 
-# MyApp.get "/city_added_successfully" do
-#   @obj = Region.new
-#   @obj.city = params[:city_name]
-#   @obj.save
-#   @regions = Region.all
-#   erb :"successful/city_added"
-# end
 
-MyApp.get "/contestant_added_successful" do
-  @obj = Region.new
-  @obj.city = params[:city_name]
-  @obj.save
-  @regions = Region.all
-  erb :"successful/contestant_was_added"
-end
-
-MyApp.get "/submit_city" do
-  @obj = Region.new
-  @obj.city = params[:city_name]
-  @obj.save
-  @regions = Region.all
-  erb :"successful/city_was_added"
-end

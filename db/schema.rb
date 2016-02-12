@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "contestant_id"
   end
 
+  create_table "chilis", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.integer  "contestant_id"
+  end
+
   create_table "colleges", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
