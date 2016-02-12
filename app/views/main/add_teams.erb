@@ -11,19 +11,21 @@
 <form action="/teams_form">
   <p>
   Team Name:
+  <br />
   <input type="text" name="team_to_add">
   </p>
+  
   <p>
   Conference:
   <br />
-  <!--I need the values and visible names of these radio options to be drawn from the conference names collected previously-->
-  <% Conference.all.each do |conference| %>
+    <% Conference.all.each do |conference| %>
 
-  <input type="radio" name="select_conference" value="<%= conference.id %>" checked> <%= conference.conference_name %><br />
+      <input type="radio" name="select_conference" value="<%= conference.id %>" checked> <%= conference.conference_name %><br />
 
-  <% end %>
-
+    <% end %>
   </p>
+
+  <p>
   <input type="submit" value="Add Team">
   </p>
 </form>

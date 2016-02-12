@@ -1,4 +1,5 @@
 <h2>Sign Up Them Swimmers</h2>
+
 <a href="/">Home</a>
 <br />
 <a href="/add_conferences">Go To Add Conferences</a>
@@ -9,3 +10,78 @@
 <br />
 
 <!--Create a form to collect the swimmer name (text collect), gender (radio), team (dropdown with team names collected from the teams table), desired events (checkbox with event names collected from the events table), payment status (radio)-->
+<form action="/swimmers_form">
+  <p>
+  Name:
+  <br />
+  <input type="text" name="swimmer_to_add">
+  </p>
+  
+  <p>
+  Date of Birth:
+  <br />
+  <input type="date" name="swimmer_dob">
+  </p>
+  
+  <p>
+  Gender:
+  <br />
+  <input type="radio" name="swimmer_gender" value="Male"> Male<br />
+  <input type="radio" name="swimmer_gender" value="Female"> Female<br />
+  <input type="radio" name="swimmer_gender" value="Other" checked> Other<br />
+  </p>
+  
+  <p>
+  Team:
+  <br />
+  <select>
+    <% Team.all.each do |team| %>
+      <option value="<%= team.id %>"><%= team.team_name %></option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+  
+  <p>
+  Desired Events:
+  <br />    
+    <% Event.all.each do |event| %>
+      <input type="checkbox" value="<% event.id %>"><%= event.event_name %>
+      <br />
+    <% end %>
+  </select>
+  </p>
+  
+  <p>
+  Payment?:
+  <br />
+  <input type="radio" name="swimmer_payment_status" value="1" checked> Pay Now
+  <br />
+  <input type="radio" name="swimmer_payment_status" value="0"> Pay Later
+  <br />
+  </p>
+  
+  <p>
+  <input type="submit" value="Sign Up">
+  </p>
+</form>
+
+<br />
+<h3>Added Swimmers:</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th> Swimmer </th>
+      <th> Team </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swimmers.each do |swimmer| %>
+      <tr>
+        <td><%= swimmer.swimmer_name %></td>
+        <td><center><%= swimmer.swimmer_team %></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
