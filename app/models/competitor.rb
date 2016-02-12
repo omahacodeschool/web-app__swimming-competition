@@ -33,5 +33,8 @@ class Competitor < ActiveRecord::Base
 		end
 	end
 
+	def conference_name
+		
+	end
 end
 

@@ -9,13 +9,13 @@ MyApp.get "/competitors/add_new" do
   erb :"competitors/add_competitor"
 end
 
-MyApp.get "/add_competitor" do
-	x = Competitor.new
-	x.first_name = params[:first_name]
-	x.last_name = params[:last_name]
-	x.school_id = params[:school_id]
-	x.save
-	erb :"success"
+MyApp.post "/add_competitor" do
+	@x = Competitor.new
+	@x.first_name = params[:first_name]
+	@x.last_name = params[:last_name]
+	@x.school_id = params[:school_id]
+	@x.save
+	redirect "/profile/#{@x.id}"
 end
 
 MyApp.get "/profile/:competitor_id" do
@@ -37,7 +37,7 @@ MyApp.get "/edit/:competitor_id" do
 	erb :"success"
 end
 
-MyApp.get "/competitor_delete/:competitor_id" do
+MyApp.post "/competitor_delete/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
 	@competitor.delete
 	erb :"success"

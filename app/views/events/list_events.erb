@@ -1,14 +1,15 @@
-<h1> Events </h1>
+<h1 style="color:green;"> Events </h1>
 
 <h3> List of Events: </h3>
 	<ul>
 		<% @list_events.each do |e| %>
 			<li>
-				<a href = "/event_info/<%= e.id %>"> <%= e.name %>
+				<a href = "/event_info/<%= e.id %>">
+				<b><%= e.name %></b>
 				</a>
 				-
 				<a href = "/event_delete/<%= e.id%>">
-		  		delete
+		  		<i>delete</i>
 		  		</a>
 			</li>
 		<% end %>

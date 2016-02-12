@@ -1,10 +1,11 @@
-<h1>Schools</h1>
+<h1 style="color:green;">Schools</h1>
 
 <h3> List of Schools: </h3>
 	<ul>
 	<% @list_schools.each do |s| %>
 		<li>
-			<a href = "/school_info/<%= s.id %>"> <%= s.name %> 
+			<a href = "/school_info/<%= s.id %>"> 
+				<b><%= s.name %> </b>
 			</a>
 			: 
 			<a href = "/conference_info/<%= s.conference_id %>"> <%= s.conference_name %>

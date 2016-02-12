@@ -1,24 +1,34 @@
-<h1>Competitor Profile</h1>
+<h1 style="color:green;">Competitor Profile</h1>
 
 <h3> <%= @competitor.first_name %> <%= @competitor.last_name %> </h3>
 
 	<p>
 		<a href="/school_info/<%= @competitor.school_id %>">
-		<%= @competitor.school_name %>
+		<b><%= @competitor.school_name %></b>
+		</a>
 		: 
+		<a href="/conference_info/<%= @school.conference_id %>">
 		<%= @school.conference_name%>
-		conference
+		Conference
+		</a>
 	</p>
 
+
  	<ul>
- 	<% @competitor.event_entry.each do |e| %>
+ 	<% if @competitor.event_entry == nil %>
+	<p>This competitor hasn't been entered in any events yet.</p>
+
+ 		<% else @competitor.event_entry.each do |e| %>
  		<li>
  			<a href="/event_info/<%= e.id %>"> <%= e.name %> 
  			</a>
  		</li>
  		<% end %>
+ 		<% end %>
   	</ul> 
 
 <p><a href="/competitors/edit/<%= @competitor.id %>"> Edit this competitor. </a></p>
+
+<p><a href="/competitors"> Back </a></p>
 
 <p><a href="/"> Home </a></p>

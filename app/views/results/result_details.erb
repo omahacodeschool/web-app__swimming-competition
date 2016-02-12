@@ -1,6 +1,12 @@
-<h1>Result Details</h1>
+<h1 style="color:green;">Result Details</h1>
 
-<h3> <%= @result.name_of_event %> : <%= @result.name_of_competitor %>, <%= @result.time %> </h3>
+	<h3>
+		<a href="/event_info/<%= @result.event_id %>">
+			<b><%= @result.name_of_event %>: </b>
+		<a href="/profile/<%= @result.competitor_id %>">
+			<%= @result.name_of_competitor %>, 
+		<%= @result.time %> 
+	</h3>
 
 <p><a href="/results/edit/<%= @result.id %>"> Edit this result. </a></p>
 

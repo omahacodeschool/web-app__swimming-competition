@@ -1,15 +1,15 @@
-<h1>Competitors</h1>
+<h1 style="color:green;">Competitors</h1>
 
 <h3> List of Competitors: </h3>
 	<ul>
 		<% @list_competitors.each do |c| %>
 		  <li>
 		  	<a href = "/profile/<%= c.id %>">
-		  		<%= c.first_name %> <%= c.last_name %>
+		  		<b><%= c.first_name %> <%= c.last_name %></b>
 		  	</a>
 		  	-
 		  	<a href = "competitor_delete/<%= c.id%>">
-		  	delete
+		  	<i>delete</i>
 		  	</a>
 		  </li>
 		<% end %>
