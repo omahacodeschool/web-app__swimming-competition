@@ -23,7 +23,7 @@ MyApp.get "/results/edit/:id" do
   erb :"results/edit_result"
 end
 
-MyApp.post "/results/process_edit/:id"
+MyApp.post "/results/process_edit/:id" do
   @event = Event.find_by_id(params[:id])
   @event.penguin_id = params["edit_penguin_id"]
   @event.event_id = params["edit_event_id"]

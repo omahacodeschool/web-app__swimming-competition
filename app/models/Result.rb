@@ -4,6 +4,7 @@ class Result < ActiveRecord::Base
     y = Penguin.find_by_id(x)
     y
   end
+  
   def event_access
     x = self.event_id
     y = Event.find_by_id(x)

@@ -4,7 +4,7 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Penguin ID/<th>
+      <th>Penguin ID</th>
       <th>Event ID</th>
       <th>Time</th>
     </tr>
@@ -13,9 +13,16 @@
   <tbody>
     <% @results.each do |r| %>
       <tr>
-        <td><%= r.penguin_id %></td>
-        <td><%= r.event_id %></td>
-        <td><%= r.time %></td>
+        <% if r.penguin_access != nil %>
+        <td>
+          <%= r.penguin_access.first_name %> 
+          <% end %> 
+          <%= r.penguin_access.last_name %>
+        </td>       
+        <% if r.event_access != nil %>
+        <td><%= r.event_access.name %></td>
+        <% end %>
+        <td><%= r.time %> (seconds)</td> 
       </tr>
     <% end %>
   </tbody>
