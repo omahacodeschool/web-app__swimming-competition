@@ -3,3 +3,14 @@
 
 <p><a href="/scores">Add Another Contestant's Scores</a></p>
 <p><a href="/">Home</a></p>
+
+<% @scores.each do |x|%>
+  <p><%= x.chili_id %>
+     <%= x.competition_id %>
+     <%= x.appearance %>
+     <%= x.aroma %>
+     <%= x.flavor %>
+     <%= x.texture %>
+     <%= x.heat %>
+     <%= x.overall %></p>
+<% end %>
