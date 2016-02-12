@@ -14,18 +14,18 @@ require_relative "./_configure"
 # What columns do you need in that table?
 
 DB.define_table("events")
-DB.define_column("events", "event", "string")
+DB.define_column("events", "event_name", "string")
 
 DB.define_table("competitors")
-DB.define_column("competitors", "name", "string")
+DB.define_column("competitors", "competitor_name", "string")
 DB.define_column("competitors", "school_id", "integer")
 
 DB.define_table("schools")
-DB.define_column("schools", "school", "string")
+DB.define_column("schools", "school_name", "string")
 DB.define_column("schools", "conference_id", "integer")
 
 DB.define_table("conferences")
-DB.define_column("conferences", "conference", "string")
+DB.define_column("conferences", "conference_name", "string")
 
 DB.define_table("results")
 DB.define_column("results", "event_id", "integer")
