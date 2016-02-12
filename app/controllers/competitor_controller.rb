@@ -13,3 +13,14 @@ MyApp.get "/create_competitor/success" do
   # binding.pry # what is 'x'?
   erb :"create/create_competitor_success"
 end
+
+MyApp.get "/competitors" do
+  # .all must be run on the class Competitor itself
+  # @competitors can be used in the view.
+  @competitors = Competitor.all
+
+
+  binding.pry # what is '@competitors'?
+  erb :"lists/all_competitors"
+end
+
