@@ -1,0 +1,8 @@
+<h1><%=@currentswimmer.first_name%> <%=@currentswimmer.last_name%><h1>
+
+<p>Swimmer ID: <%=@currentswimmer.id%></p>
+
+<p>College: <%=@currentswimmer.find_college_name%><p>
+
+<p>Upcoming Events:<p>
+<%= @x.find_event_name %>

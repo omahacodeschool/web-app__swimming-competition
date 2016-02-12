@@ -17,10 +17,23 @@ MyApp.get "/newswimmername" do
   erb :"cv/swimmeraddsuccess"
 end
 
+MyApp.get "/view_swimmer/:id" do
+  @currentswimmer = Swimmer.find_by_id(params[:id])
+  @signups = Signup.all
+  z = Signup.where({"swimmer_id" => (params[:id])})
+  @events = []
+  
+  z.each do |banana|
+    @events << banana.find_event_name
+  end
+  #binding.pry
+  erb :"cv/view_swimmer"
+end
+
 
 
 #example from class::
-#MyApp.get "/view_movie/:id' do    # <-- know that :id here is not special; #could be called anything
+#MyApp.get "/view_movie/:id' do
 #    @movie = Movie.find_by_id(params[:id])
 #end
 

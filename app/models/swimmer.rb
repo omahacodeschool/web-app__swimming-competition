@@ -6,9 +6,8 @@ class Swimmer < ActiveRecord::Base
     return y.college_name
   end
 
-  def find_registered_events
-    x = self.id
-    banana = Signup.where({swimmer_id => x})
-    return bannana.event_id
-  end
+#  def find_registered_events
+#    x = self.id
+#    return Signup.where({"swimmer_id" => x})
+#  end
 end

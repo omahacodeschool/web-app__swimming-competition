@@ -1,5 +1,5 @@
 class Signup < ActiveRecord::Base
-  def event_name
+  def find_event_name
     x = self.event_id
     y = Event.find_by_id(x)
     return y.event_name

@@ -5,7 +5,8 @@
     <li><%= post.id%>. 
     <%=post.first_name%> 
     <%=post.last_name%>  
-    (<%=post.find_college_name%>)</li>
+    (<%=post.find_college_name%>) 
+    <a href="/view_swimmer/<%=post.id%>">see more</a></li>
   <% end %>
 </ul>
 <form action="/newswimmername">
