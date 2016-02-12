@@ -25,7 +25,7 @@ MyApp.get "/penguins/edit/:id" do
   erb :"penguins/edit_penguin"
 end
 
-MyApp.get "/penguins/process_edit/:id" do
+MyApp.post "/penguins/process_edit/:id" do
   @penguin = Penguin.find_by_id(params[:id])
   @penguin.last_name = params["new_last_name"]
   @penguin.first_name = params["new_first_name"]

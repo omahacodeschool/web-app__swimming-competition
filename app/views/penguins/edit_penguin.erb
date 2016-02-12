@@ -1,4 +1,4 @@
-<form action="/penguins/process_edit/<%= @penguin.id %>">
+<form action="/penguins/process_edit/<%= @penguin.id %>" method="post">
   <label> Last Name </label>
     <input type="text" name ="new_last_name" value="<%= @penguin.last_name %>">
 
