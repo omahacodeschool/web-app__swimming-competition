@@ -31,12 +31,16 @@
   <input type="radio" name="swimmer_gender" value="Other" checked> Other<br />
   </p>
   
+<!--This dropdown part of my form doesn't appear to collect the team selection as thought-->
+<!--I receive a NilClass error for my Swimmer model specifying that team_name is nil-->
   <p>
   Team:
   <br />
-  <select>
+  <select name="swimmer_team">
     <% Team.all.each do |team| %>
-      <option value="<%= team.id %>"><%= team.team_name %></option>
+      <option value="<%= team.id %>">
+      <%= team.team_name %>
+      </option>
     <% end %>
   </select>
   <br />
@@ -46,7 +50,8 @@
   Desired Events:
   <br />    
     <% Event.all.each do |event| %>
-      <input type="checkbox" value="<% event.id %>"><%= event.event_name %>
+      <input type="checkbox" value="<% event.id %>">
+      <%= event.event_name %>
       <br />
     <% end %>
   </select>
@@ -55,9 +60,11 @@
   <p>
   Payment?:
   <br />
-  <input type="radio" name="swimmer_payment_status" value="1" checked> Pay Now
+  <input type="radio" name="swimmer_payment_status" value="true" checked> 
+  Pay Now
   <br />
-  <input type="radio" name="swimmer_payment_status" value="0"> Pay Later
+  <input type="radio" name="swimmer_payment_status" value="false"> 
+  Pay Later
   <br />
   </p>
   
@@ -73,6 +80,7 @@
     <tr>
       <th> Swimmer </th>
       <th> Team </th>
+      <th> Conference </th>
     </tr>
   </thead>
 
@@ -81,6 +89,7 @@
       <tr>
         <td><%= swimmer.swimmer_name %></td>
         <td><center><%= swimmer.swimmer_team %></center></td>
+        <td><center><%= swimmer.swimmer_conference %></center></td>
       </tr>
     <% end %>
   </tbody>

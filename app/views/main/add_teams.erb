@@ -19,9 +19,9 @@
   Conference:
   <br />
     <% Conference.all.each do |conference| %>
-
-      <input type="radio" name="select_conference" value="<%= conference.id %>" checked> <%= conference.conference_name %><br />
-
+      <input type="radio" name="select_conference" value="<%= conference.id %>" checked> 
+      <%= conference.conference_name %>
+      <br />
     <% end %>
   </p>
 
