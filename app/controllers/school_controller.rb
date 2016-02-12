@@ -1,12 +1,16 @@
-# take user to page to create a school
+# view that shows the form for adding a 'school'
 MyApp.get "/create_school" do
   erb :"/create/create_school"
 end
 
+# view that shows the user they have successfully created a new 'school'.
 MyApp.get "/create_school/success" do
   x = School.new
-  x.name = params["school"]
+  # x.school_name is a new Active Record method that sets a School Object attribute name to 'school_name'.
+  x.school_name = params["school_entered"]
+  # x.save is a new Active Recored method that saves that School Object to the 'schools' table.
   x.save
+  # binding.pry # what is 'x'?
   erb :"/create/create_school_success"
 end
 
