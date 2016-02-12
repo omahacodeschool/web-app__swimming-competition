@@ -11,13 +11,13 @@
 	</p>
 
  	<ul>
- 	<%= @competitor.event_entry.each do |e| %>
- 		<li> 
- 			<a href="/event_info/<%= e.id %>">
- 			<%= e.name %>
+ 	<% @competitor.event_entry.each do |e| %>
+ 		<li>
+ 			<a href="/event_info/<%= e.id %>"> <%= e.name %> 
  			</a>
  		</li>
- 	</ul> 
+ 		<% end %>
+  	</ul> 
 
 <p><a href="/competitors/edit/<%= @competitor.id %>"> Edit this competitor. </a></p>
 

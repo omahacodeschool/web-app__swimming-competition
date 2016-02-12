@@ -17,19 +17,19 @@
 	</ul>
 
 <h4> Winners </h4>
-	<ul>
-<!-- 		<li> First Place: 
-			 <%= @event.name_of_first %> 
-		</li>
-
-		<li> Second Place: 
-			 <%= @event.name_of_second %> 
-		</li>
-
-		<li> Third Place: 
-			 <%= @event.name_of_third %>  
-		</li> -->
-	</ul>
+	<ol>
+		<% if @event.top_three == nil%>
+		This event is not over.
+		<% else %>
+			<% @event.top_three.each do |result| %>
+				<li>
+					<a href="/profile/<%= result.competitor_id %>">
+					<%= result.name_of_competitor %> 
+					</a>
+				</li>
+		<% end %>
+		<% end %>
+	</ol>
 
 <p><a href="/events/edit/<%= @event.id %>"> Edit this event. </a></p>
 

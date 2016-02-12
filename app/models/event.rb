@@ -4,10 +4,7 @@ class Event < ActiveRecord::Base
 	#this method returns a list of Results object
 	# that contain the event_id of the current Event
 	def list_of_results
-		x = self.id
-		#get the results that have this event_id
-		list_results = Result.where({"event_id" => x})
-		#with each of those results get the competitor_id
+		list_results = Result.where({"event_id" => self.id})
 		if list_results.empty?
 			return nil
 		else
@@ -34,17 +31,29 @@ class Event < ActiveRecord::Base
 		return competitors
 	end
 
-	#this method will return the Competitor object who is the first place winner of each event
-	def name_of_first
-		
+
+	def top_three
+		list_results = Result.where({"event_id" => self.id})
+
+		if list_results.empty?
+			return nil
+		else
+			# event_id   | competitor_id  | time
+			#-------------------------------------
+			# 2 	     | 	1			  | 105
+			# 2 	     | 	3			  | 110
+			# 2 	     | 	5			  | 108
+			# 2 	     | 	6			  | 103
+
+			top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
+			if top_three.length < 3
+				return nil
+			else
+				return top_three
+			end
+		end
 	end
 
-	#this method will return the Competitor object who is the second place winner of each event
-	def name_of_second
-	end
 
-	#this method will return the Competitor object who is the third place winner of each event
-	def name_of_third
-	end
 
 end

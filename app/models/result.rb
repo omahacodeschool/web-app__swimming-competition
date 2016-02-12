@@ -2,7 +2,7 @@ class Result < ActiveRecord::Base
 	
 		#This method takes the list_of_results methods and pulls the competitor_id out of each Result
 	def name_of_competitor
-		x = self.id
+		x = self.competitor_id
 		y = Competitor.find_by_id(x)
 
 		if y == nil
@@ -14,7 +14,7 @@ class Result < ActiveRecord::Base
 	end
 
 	def name_of_event
-		x = self.id
+		x = self.event_id
 		y = Event.find_by_id(x)
 
 		if y == nil
