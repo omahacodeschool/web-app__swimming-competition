@@ -1,14 +1,14 @@
-<p>To add a new result to the system, type the result information in the form below.</p>
+<p>To edit new result to the system, make the changes in the form below.</p>
 
 <form action="/results/process_edit/<%= @result.id %>" method="post">
   <p>Enter Penguin ID</p>
-  <input type="number" name ="edit_penguin_id">
+  <input type="number" name ="edit_penguin_id" value="<%= @event.penguin_id %>">
   <br>
   <p>Enter Event ID</p>
-  <input type="number" name ="edit_event_id">
+  <input type="number" name ="edit_event_id" value="<%= @event.last_name %>">
   </br>
   <p>Enter Time<p>
-  <input type="number" step="any" name="new_time">
+  <input type="number" step="any" name="edit_time" value="<%= @event.time %>">
   </br>
 
   <input type="submit">
