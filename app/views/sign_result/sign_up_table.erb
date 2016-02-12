@@ -4,7 +4,7 @@
 <TABLE  BORDER="5" WIDTH="80%" >
    <TR>
       
-    <H1><BR><SPAN>SIGN UP / COMPETITION RESULTS</SPAN></H1>
+    <H1><BR><SPAN>SPRING SWIMMING TOURNAMENT</SPAN></H1>
       
    </TR>
       <th>Swimmer ID</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.swimmer_info_id %></td>
+        <td><a href="/swimmer_info_table"><%= info.swimmer_info_id %></a></td>
         <td><%= info.event_id %></td>
         <td><%= info.time %></td>
         <td><%= info.rank %></td>

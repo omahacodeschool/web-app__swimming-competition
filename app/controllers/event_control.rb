@@ -14,3 +14,10 @@ MyApp.get "/event_table" do
   @info = Event.all
   erb :"event/event_table"
 end
+
+MyApp.get "/event/butterfly" do
+  @x = Event.find_by_id(1)
+  binding.pry
+  
+ erb :"event/butterfly"
+end
