@@ -1,38 +1,25 @@
 <center><h1> Add New Competitor</center></h1>
 
 <h2>Add Competitor:</h2>
-<form  method="GET" action="/competitors/added_new_competitor">
-  First & Last Name:&emsp;<input type="text" name="add_competitor_name_textbox" value=""><br>    
+  <form  method="GET" action="/competitors/added_new_competitor">
+  First & Last Name:&emsp;<input type="text" name="add_competitor_name_textbox" value="">
+  <br>
+
+  Age:&emsp;<select name="competitor_age_dropdown">
+    <% for i in 1..100 %>
+       <option value="<%= i %>"><%= i %></option>
+    <% end %>  
+  </select>&emsp;&emsp;
+
+  College:&emsp;<select name="competitor_college_dropdown">
+    <% @colleges.each do |c| %>
+      <option value="<%= c.id %>"><%= c.name %></option>
+    <% end %>  
+  </select>
+  <br>
   <input type="submit" value="Add">
 </form>
+
 <br><br<>
-<h2>Update Competitor Name:</h2>
-<p>Please select the competitor you wish to update. <br>
-Type out the change you would like to make in the text fields below.<br></p>
-<form action="">
-<select name="update_competitor_dropdown">
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-</select>
-<br><br>
-First name:&emsp;<input type="text" name="update_first_name_textbox" value=""><br>    
-Last name:&emsp;<input type="text" name="update_last_name_textbox" value=""><br><br>
-<input type="submit" value="Update">
-</form>
-
-<br><br>
-
-<h2>Remove Competitor:</h2>
-<form action="">
-  <select name="delete_competitor_dropdown">
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-    <option value="PLACEHOLDER">PLACEHOLDER</option>
-  </select>
-  <input type="submit" value="Delete">
-</form>
 
 <center><a href="/admin/admin_overview">Admin</a> | <a href="/">Home</a></center> 
