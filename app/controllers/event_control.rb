@@ -18,5 +18,11 @@ end
 
 MyApp.get "/event/:id" do
   @x = Event.find_by_id(params[:id])
+ 
+
+  @y = SwimmerInfo.all
+  binding.pry
+
+
   erb :"event/1"
 end
