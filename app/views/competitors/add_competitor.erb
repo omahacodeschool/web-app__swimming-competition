@@ -1,25 +1,28 @@
-<center><h1> Add New Competitor</center></h1>
-
-<h2>Add Competitor:</h2>
+<center><h1> Add New Competitor</h1>
+<br>
+<br>
   <form  method="GET" action="/competitors/added_new_competitor">
   First & Last Name:&emsp;<input type="text" name="add_competitor_name_textbox" value="">
-  <br>
+  &emsp;&emsp;
 
   Age:&emsp;<select name="competitor_age_dropdown">
+    <option value="<%= nil %>"><%= "---" %></option>
     <% for i in 1..100 %>
        <option value="<%= i %>"><%= i %></option>
     <% end %>  
   </select>&emsp;&emsp;
 
   College:&emsp;<select name="competitor_college_dropdown">
+    <option value="<%= nil %>"><%= "---" %></option>
     <% @colleges.each do |c| %>
       <option value="<%= c.id %>"><%= c.name %></option>
     <% end %>  
   </select>
   <br>
-  <input type="submit" value="Add">
+  <br>
+  <input type="submit" value="Add New User">
 </form>
+<br>
+<br>
 
-<br><br<>
-
-<center><a href="/">Home</a></center> 
+<a href="/">Home</a></center> 

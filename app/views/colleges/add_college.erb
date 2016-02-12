@@ -4,6 +4,7 @@
   College :&emsp;<input type="text" name="add_college_name_textbox" value=""><br><br>
   Conference:&emsp;<select name="college_conference_dropdown">
     <% @conference.each do |c| %>
+      <option value="<%= nil %>"><%= "---" %></option>
       <option value="<%= c.id %>"><%= c.name %></option>
     <% end %>  
   </select>

@@ -7,6 +7,8 @@ end
 MyApp.get "/activities/added_new_activity" do
   a = Activity.new
   a.name = params["add_activity_textbox"]
+  max_score = params["activity_max_score_dropdown"]
+  a.max_score = max_score.to_i
   a.save
   erb :"/activities/added_activity_confirmation"
 end

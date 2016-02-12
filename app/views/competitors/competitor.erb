@@ -1,7 +1,30 @@
 <center><h1><%= @competitor.name %></h1>
-<p><%= @competitor.age %>&emsp;|&emsp;
-<%= @competitor_get_college_name %>&emsp;|&emsp;
-<%= @competitor_get_conference_name %></p>
+<table border="0">
+  <thead>
+    <tr>
+  <th><form method="POST" action="/competitors/competitor/updated_competitor_age/<%= @competitor.id %>">
+  <select name="update_competitor_age_dropdown">
+  <option value="<%= @competitor.age %>"><%= @competitor.age %></option>
+    <option value="<%= nil %>"><%= "---" %></option>
+    <% for i in 1..100 %>
+       <option value="<%= i %>"><%= i %></option>
+    <% end %>  
+    </select>
+    <input type="submit" value="Update Age">
+    </form></th>
+    <th><form method="POST" action="/competitors/competitor/delete_competitor_age/<%= @competitor.id %>">
+      <input type="submit" value="Delete Age">
+    </form></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      </tr>
+      </tr>
+  </tbody>
+</table> 
+    <%= @competitor.get_college_name %>
+    <%= @competitor.get_conference_name %>
 <br>
 <br>
 <table border="0">
