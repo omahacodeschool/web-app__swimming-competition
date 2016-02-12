@@ -1,15 +1,26 @@
-<p>To edit new result to the system, make the changes in the form below.</p>
+<p>To edit a result to the system, type the result information in the form below.</p>
 
 <form action="/results/process_edit/<%= @result.id %>" method="post">
-  <p>Enter Penguin ID</p>
-  <input type="number" name ="edit_penguin_id" value="<%= @event.penguin_id %>">
-  <br>
-  <p>Enter Event ID</p>
-  <input type="number" name ="edit_event_id" value="<%= @event.last_name %>">
-  </br>
-  <p>Enter Time<p>
-  <input type="number" step="any" name="edit_time" value="<%= @event.time %>">
-  </br>
+  <label>Select Penguin Name</label>
+  <select name ="new_penguin_id">
+    <% @pengins.each do |p| %>
+      <option value="<%= p.id%>">
+        <%= p.name%>
+      </option>
+    <% end %>
+  </select>
+
+  <label>Select Event</label>
+  <select name ="new_event_id">
+    <% @events.each do |e| %>
+      <option value="<%= e.id%>">
+        <%= e.name%>
+      </option>
+    <% end %>
+  </select>
+
+  <label>Enter Time</label>
+  <input type="number" step="any" name="new_time">
 
   <input type="submit">
 

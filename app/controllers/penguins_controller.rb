@@ -3,7 +3,7 @@ MyApp.get "/penguins/new" do
   erb :"penguins/new_penguin"
 end
 
-MyApp.get "/penguins/create" do
+MyApp.post "/penguins/create" do
   x = Penguin.new
   x.last_name = params["new_last_name"]
   x.first_name = params["new_first_name"]

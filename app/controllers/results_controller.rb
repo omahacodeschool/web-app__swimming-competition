@@ -1,8 +1,10 @@
 MyApp.get "/results/new" do
+  @penguins = Penguin.all
+  @events = Event.all
   erb :"results/new_result" 
 end
 
-MyApp.get "/results/create" do
+MyApp.post "/results/create" do
   x = Result.new
   x.penguin_id = params["new_penguin_id"]
   x.event_id = params["new_event_id"]
