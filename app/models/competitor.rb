@@ -35,8 +35,8 @@ class Competitor < ActiveRecord::Base
 		end
 	end
 
-	def conference_name
-		
+	def delete_competitor_info
+		Result.where("competitor_id" => self.id).delete_all
 	end
 
 end

@@ -1,17 +1,39 @@
 <h1 style="color:green;">Conference Info</h1>
 
 <h3> <%= @conference.name %> </h3>
+
 	<ul>
-	<% @conference.schools_members.each do |s| %>
-			<li>
-				<a href = "/school_info/<%= s.id %>"> <%= s.name %>
-				</a>
-			</li>
+		<% if @conference.schools_members == nil %>
+				<p>
+					<i>There are currently no members of this conference.</i>
+				</p>
+				
+		<% else %>
+			<% @conference.schools_members.each do |s| %>
+				<li>
+					<a href = "/school_info/<%= s.id %>">
+						<%= s.name %>
+					</a>
+				</li>
+			<% end %>
 		<% end %>
 	</ul>
-<p><a href="/conferences/edit/<%= @conference.id %>"> Edit this conference. </a></p>
+
+	<p>
+		<a href="/conferences/edit/<%= @conference.id %>">
+			Edit this conference.
+		</a>
+	</p>
 
 
-<p><a href="/conferences"> Back </a></p>
+	<p>
+		<a href="/conferences">
+			Back
+		</a>
+	</p>
 
-<p><a href="/"> Home </a></p>
+	<p>
+		<a href="/">
+			Home
+		</a>
+	</p>
