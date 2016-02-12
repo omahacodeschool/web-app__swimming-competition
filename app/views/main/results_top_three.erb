@@ -1,11 +1,7 @@
 Here are the top three finishers in each event:
 
-<p>
-<% 
-<% @results.each do |r| %>
-  <%= x = r.event_id %>
-
-  <br>
-<% end %>
+<p> 
+<!-- add loop here to iterate through each event id -->
+<%= Result.find_top_three_in_event %>
 </p>
 

@@ -33,4 +33,15 @@ class Result <ActiveRecord::Base
     a = Style.find_by_id(z)
     return a.style
   end
+
+  def find_top_three_in_event
+    empty_hash = {}
+    @results.each do |r|
+      #add each time to hash where event_id is key?
+      end
+
+
+      #master.group_by{|h| h[:group]}
+    end
+  end
 end
