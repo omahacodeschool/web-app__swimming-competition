@@ -19,12 +19,18 @@ MyApp.get "/view_finish/:id" do
   erb :"/ev/view_finish"
 end
 
-MyApp.get "/updatefinish/:id" do
-  erb :"ev/updatefinish"
+MyApp.post "/updatefinish" do
+  f = finish.new
+  f.swimmer_id = params[:swimmerid]
+  f.event_id = params[:eventid]
+  f.finish_time = params[:finishtime]
+
+  erb :"ev/finishes"
 end
 
 
 #finish refers to the TIME that the swimmer FINISHED a match
 #DB.define_table("finishes")
-#DB.define_column("finishes","","integer")
+#DB.define_column("finishes","swimmer_id","integer")
+#DB.define_column("finishes","event_id","integer")
 #DB.define_column("finishes","finish_time","time")

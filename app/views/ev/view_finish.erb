@@ -1,6 +1,6 @@
 <h1><%=@currentevent.event_name%><h1>
 
-<p>Event ID: <%=@currentevent.id%></p>
+<h3>Event ID: <%=@currentevent.id%><h3>
 
 <h2>Enrolled Kitties:<h2>
 <ul>
@@ -10,13 +10,13 @@
     <%=post.first_name%> 
     <%=post.last_name%>  
     (<%=post.find_college_name%>) 
-    <form action="/updatefinish">
+    <form action="/updatefinish" method="post">
       <fieldset>
         <legend>Add/Update Time</legend>
           <label for="swimmer_id">Swimmer ID</label>
-            <input type="integer" name="swimmerid">
+            <input type="integer" name="swimmerid" value="<%=post.id%>">
           <label for="event_id">Event ID</label>
-            <input type="integer" name="eventid">
+            <input type="integer" name="eventid" value="<%=@currentevent.id%>">
           <label for="time">Time (in seconds)</label>
             <input type="time" name="finishtime">
           <input type="submit">
