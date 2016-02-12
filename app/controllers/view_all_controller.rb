@@ -1,5 +1,7 @@
 #Shows all awards added
 MyApp.get "/all_awards" do 
+  @awards = Award.all
+  
   erb :"review/view_all_awards"
 end
 
