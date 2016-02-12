@@ -14,13 +14,7 @@ MyApp.get "/edit_swimmer/finish_update_swimmer/:place" do
   @swimmer.name = params[:edit_title]
   @swimmer.school_id = params[:edit_number]
   @swimmer.save
-  erb :"swimmers"
-end
-MyApp.get "finish_update_swimmer_school/:place" do
-  @swimmer = Swimmer.find_by_id(params[:place])
-  @swimmer.school_id = params[:edit_number]  
-  @swimmer.save
-  erb :"swimmers"
+  erb :"administrator"
 end
 MyApp.get "/view_swimmers/:place" do
   @swimmer = Swimmer.find_by_id(params[:place])

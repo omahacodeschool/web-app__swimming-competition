@@ -14,3 +14,13 @@ MyApp.get "/delete_event/:place" do
   @event.delete
   erb :"administrator"
 end
+MyApp.get "/edit_event/:place" do
+  @event = Event.find_by_id(params[:place])
+  erb :"edit_event"
+end
+MyApp.get "/edit_event/finish_update_event/:place" do
+  @event = Event.find_by_id(params[:place])
+  @event.event_name = params[:edit_name]
+  @event.save
+  erb :"administrator"
+end

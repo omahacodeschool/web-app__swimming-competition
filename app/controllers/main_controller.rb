@@ -28,5 +28,6 @@ MyApp.get "/all_tables" do
   @schools = School.all
   @signups = Signup.all
   @swimmers = Swimmer.all
+  
   erb :"all_tables"
 end
