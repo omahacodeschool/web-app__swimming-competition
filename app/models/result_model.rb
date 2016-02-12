@@ -1,3 +1,5 @@
+
+
 class Result <ActiveRecord::Base
   def display_competitor_first_name
     x = self.competitor_id
@@ -11,15 +13,23 @@ class Result <ActiveRecord::Base
     return y.last_name
   end
 
-#   def display_event_gender
-#     x = self.event_id
-#     y = Event.find_by_id(x)
-#     return y.gender
-#   end
+  def display_event_gender
+    x = self.event_id
+    y = Event.find_by_id(x)
+    return y.gender
+  end
 
-#   def display_event_distance
-#     x = self.event_id
-#     y = Event.find_by_id(x)
-#     return y.distance
-#   end
- end
+  def display_event_distance
+    x = self.event_id
+    y = Event.find_by_id(x)
+    return y.distance
+  end
+
+  def display_event_style
+    x = self.event_id
+    y = Event.find_by_id(x)
+    z = y.style_id
+    a = Style.find_by_id(z)
+    return a.style
+  end
+end
