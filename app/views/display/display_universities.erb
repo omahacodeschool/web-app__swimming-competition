@@ -6,6 +6,8 @@
     <tr>
       <th>University</th>
       <th>Conference</th>
+      <th>Delete University</th>
+      <th>Update University</th>
     </tr>
   </thead>
 
@@ -14,6 +16,12 @@
       <tr>
         <td> <%= y.university_name %> </td>
         <td> <%= y.conference_id %> </td>
+        <td>
+          <a href="delete_university/<%= y.id %>"> Delete University </a>
+        </td>
+        <td>
+          <a href="form_update_university/<%= y.id %>"> Update University </a>
+        </td>
       </tr>
     <% end %>
   </tbody>
