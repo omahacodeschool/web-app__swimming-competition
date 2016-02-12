@@ -29,7 +29,8 @@ end
 
 MyApp.post "/competitors/competitor/delete_competitor_age/:id" do
   @c = Competitor.find_by_id(params[:id])
-  @c.age.delete
+  @c.age = nil
+  @c.save
   erb :"/competitors/deleted_competitor_confirmation"
 end
 

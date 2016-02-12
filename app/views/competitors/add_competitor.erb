@@ -6,14 +6,12 @@
   &emsp;&emsp;
 
   Age:&emsp;<select name="competitor_age_dropdown">
-    <option value="<%= nil %>"><%= "---" %></option>
     <% for i in 1..100 %>
        <option value="<%= i %>"><%= i %></option>
     <% end %>  
   </select>&emsp;&emsp;
 
   College:&emsp;<select name="competitor_college_dropdown">
-    <option value="<%= nil %>"><%= "---" %></option>
     <% @colleges.each do |c| %>
       <option value="<%= c.id %>"><%= c.name %></option>
     <% end %>  
