@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "city_id"
+    t.integer  "region_id"
   end
 
   create_table "events", force: :cascade do |t|

@@ -2,8 +2,10 @@
 
   <p>Please type the first name of the chili being entered</p>
   <p><input type="text" name="name_of_chili"></p>
+
   <p>Please type the contestant ID from the table below.</p>
   <p><input type="text" name="contestant_id"></p>
+
   <p><input type="submit"></p>
 
 </form>
@@ -13,5 +15,5 @@
 <% @people.each do |x|%>
   <p><%= x.first_name %>
      <%= x.last_name %>
-     <%= x.id %>
+     <%= x.id %></p>
 <% end %>

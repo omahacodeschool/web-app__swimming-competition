@@ -15,7 +15,7 @@ require_relative "./_configure"
 DB.define_table("contestants")
 DB.define_column("contestants","first_name", "string")
 DB.define_column("contestants","last_name", "string")
-DB.define_column("contestants","city_id", "integer")
+DB.define_column("contestants","region_id", "integer")
 
 DB.define_table("chilis")
 DB.define_column("chilis","name","string")

@@ -2,6 +2,7 @@
 
   <p>Please enter the Competition ID</p>
   <p><input type="text" name="competiton_id"></p>
+
   <% @competitions.each do |x|%>
     <p><%= x.name %>
        <%= x.id %></p>
@@ -9,6 +10,7 @@
 
   <p>Please enter the Chili ID</p>
   <p><input type="text" name="chili_id"></p>
+
   <% @chilis.each do |x|%>
     <p><%= x.name %>
        <%= x.id %></p>

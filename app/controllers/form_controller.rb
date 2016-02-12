@@ -2,7 +2,7 @@ MyApp.get "/submit_contestant" do
   @c = Contestant.new
   @c.first_name = params[:contestant_first_name]
   @c.last_name = params[:contestant_last_name]
-  @c.city_id = params[:city_id]
+  @c.region_id = params[:city_id]
   @c.save
   @con = Contestant.all
   erb :"successful/contestant_was_added"
