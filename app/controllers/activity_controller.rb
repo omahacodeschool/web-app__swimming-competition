@@ -19,6 +19,6 @@ end
 
 MyApp.get "/read/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
-  @results = Result.where({"event_id" => params[:id]})
+  @results = Result.where({"activity_id" => params[:id]})
   erb :"admin/activity/read_one_activity"
 end
