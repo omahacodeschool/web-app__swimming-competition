@@ -17,8 +17,3 @@ MyApp.get "/sign_up_table" do
   erb :"sign_result/sign_up_table"
 end
 
-MyApp.get "/event/:id" do
-  @x = Event.find_by_id(params[:id])
-  binding.pry
-  erb :"event/1"
-end

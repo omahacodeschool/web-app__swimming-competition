@@ -16,3 +16,7 @@ MyApp.get "/event_table" do
 end
 
 
+MyApp.get "/event/:id" do
+  @x = Event.find_by_id(params[:id])
+  erb :"event/1"
+end
