@@ -16,6 +16,6 @@ end
 # shows all conferences
 MyApp.get "/conferences" do
   @conferences = Conference.all
-  # binding.pry
+  binding.pry
   erb :"lists/all_conferences"
 end

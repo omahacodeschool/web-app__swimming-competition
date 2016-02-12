@@ -18,22 +18,19 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "competitors", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "name"
-    t.integer  "school_id"
     t.string   "competitor_name"
+    t.integer  "school_id"
   end
 
   create_table "conferences", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "conference"
     t.string   "conference_name"
   end
 
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "event"
     t.string   "event_name"
   end
 
@@ -42,16 +39,15 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",    null: false
     t.integer  "event_id"
     t.integer  "competitor_id"
-    t.string   "time"
+    t.integer  "time"
     t.integer  "rank"
   end
 
   create_table "schools", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "school"
-    t.integer  "conference_id"
     t.string   "school_name"
+    t.integer  "conference_id"
   end
 
 end
