@@ -16,6 +16,6 @@ end
 
 MyApp.get "/division/:division_id" do
   @division = Division.find_by_id(params[:division_id])
-  erb :":division_views/view_division"
+  erb :"division_views/view_division"
 end
 

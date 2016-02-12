@@ -7,9 +7,10 @@
     <label for="squad_name"><sub><i>Squad Name:</i></sub></label>
     <input type="text" name="squad_name">
     <label for="division_id"><sub><i>Division ID:</i></sub></label>
-    <input type="integer" name="division_id">
-    <br>
-    <br>
+    <select name="division_id">
+      <% @divisions.each do |d| %>
+      <option value="<%=d.id %>"><%= d.id%>: <%= d.division %></option>
+      <% end %>
     <input type="submit">
 </form>
 <br>

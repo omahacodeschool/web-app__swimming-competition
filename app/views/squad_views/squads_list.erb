@@ -9,8 +9,15 @@
     </tr>
   </thead>
 
-
-
+  <tbody>
+    <% @squads.each do |s| %>
+    <tr>
+      <td><center><%=s.id%></center></td>
+      <td><a href="/squad/<%=s.id%>"><%= s.squad_name %></a></td>
+      <td><%=s.division_access.divsion%></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 <br>
 <br>
