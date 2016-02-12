@@ -35,13 +35,14 @@ class Result <ActiveRecord::Base
   end
 
   def find_top_three_in_event
-    empty_hash = {}
+    empty_array = []
+    #somehow separate results into one array for each event
     @results.each do |r|
-      #add each time to hash where event_id is key?
-      end
+      empty_aray << r.
+      #create new array for each to push three largest values into
+    end
 
 
       #master.group_by{|h| h[:group]}
-    end
   end
 end
