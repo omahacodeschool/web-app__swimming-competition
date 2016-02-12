@@ -20,5 +20,15 @@ end
 MyApp.get "/read/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   @results = Result.where({"activity_id" => params[:id]})
+  sorted_results = @results.order(student_score: :desc)
+  binding.pry
+  # @scores = []
+  # @results.each do |r|
+  #   @scores << r.student_score
+  # end
+
+  # @sorted_scores = @scores.sort
+  #@sorted_results = @results.sort_by(student_score)
+  #binding.pry
   erb :"admin/activity/read_one_activity"
 end
