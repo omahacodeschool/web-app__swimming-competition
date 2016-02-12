@@ -1,16 +1,16 @@
 <form action="/penguins/process_edit/<%= @penguin.id %>" method="post">
   <label> Last Name </label>
-    <input type="text" name ="new_last_name" value="<%= @penguin.last_name %>">
+    <input type="text" name ="edit_last_name" value="<%= @penguin.last_name %>">
 
   <label> First Name </label>
-    <input type="text" name ="new_first_name" value="<%= @penguin.first_name %>">
+    <input type="text" name ="edit_first_name" value="<%= @penguin.first_name %>">
 
   <label>Age</label>
-  <input type="number" name="new_age" value="<%= @penguin.age%>">
+  <input type="number" name="edit_age" value="<%= @penguin.age%>">
 
   <p>
     <label>Rookery</label>
-    <select name="new_rookery_id">
+    <select name="edit_rookery_id">
   <% @rookeries.each do |r| %>
     <option value="<%= r.id %>">
     <%= r.name %></option>
