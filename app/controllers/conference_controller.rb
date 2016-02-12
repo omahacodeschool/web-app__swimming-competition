@@ -33,6 +33,5 @@ end
 
 MyApp.post "/conference_delete/:conference_id" do
 	@conference = Conference.find(params[:conference_id])
-	@conference.delete
 	erb :"success"
 end

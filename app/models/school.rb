@@ -23,3 +23,18 @@ class School < ActiveRecord::Base
 		end
 
 end
+
+#If the administrator tries to delete a school, 
+#then the system should first check if there are any teams in that school. 
+#If there are none, then the system should delete the school. 
+#But if there are teams in the school, 
+#then the system should not delete the school--
+#it should tell the administrator to first 
+#go manually delete those teams (or change their school).
+#returns true or false
+	def	there_are_competitors_in_school
+		x = Competitor.where("school_id" => self.id)
+		if x != nil
+			return true
+		end
+	end

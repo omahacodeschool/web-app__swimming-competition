@@ -1,5 +1,8 @@
 class Event < ActiveRecord::Base
 
+	def delete_result_info
+		Result.where("event_id" => self.id).delete_all
+	end
 
 	#this method returns a list of Results object
 	# that contain the event_id of the current Event
@@ -41,23 +44,35 @@ class Event < ActiveRecord::Base
 
 			competitor_arr = []
 			time_arr = []
-				list_results.each do |result|
-					competitor_arr << result.competitor_id
-					if result.time != nil
-					time_arr << result.time
-					end
-				end
-			
-			if time_arr.length < competitor_arr.length
-				return nil
+			list_results.each do |result|
+				
+				if result.time == nil
+					return nil
+						# competitor_arr << result.competitor_id
+						# time_arr << result.time
 
-			else
-				top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
-				# if top_three.length < 3 
-				return top_three
+				  #   elsif result.competitor_id != nil && result.time == nil
+				  #   	competitor_arr << result.competitor_id
+
+				  #   elsif result.competitor_id == nil && result.time != nil
+				  #   	time_arr << result.time
+					
+			
+			# if time_arr.length < competitor_arr.length
+			# 	return nil
+
+				else
+					top_three = list_results.sort {|a,b| a.time <=> b.time}[0..2]
+					 # if top_three.length < 3 
+					 # 	return nil
+					 # else
+						return top_three
+					# end
+				end
 			end
 		end
 	end
+
 
 
 

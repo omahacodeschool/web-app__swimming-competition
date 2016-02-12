@@ -27,7 +27,7 @@ end
 MyApp.get "/competitors/edit/:competitor_id" do
   	@competitor = Competitor.find(params[:competitor_id])
   	@list_schools = School.all
-	erb :"success"
+	erb :"competitors/edit_competitor"
 end
 
 MyApp.post "/edit/:competitor_id" do

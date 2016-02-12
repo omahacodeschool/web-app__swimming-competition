@@ -11,9 +11,9 @@
 			<a href = "/conference_info/<%= s.conference_id %>"> <%= s.conference_name %>
 			conference
 			</a>
-			 -
-		  	<a href = "school_delete/<%= s.id%>">
-		  	delete
+				<form action="school_delete/<%= e.id%>" method="post">
+		  			<input type="submit" value="delete">
+		  		</form>
 		  </li>
 		</p>
 	<% end %>

@@ -8,7 +8,7 @@ MyApp.get "/schools/add_new" do
   erb :"schools/add_school"
 end
 
-MyApp.get "/add_school" do
+MyApp.post "/add_school" do
 	x = School.new
 	x.name = params[:school_name]
 	x.conference_id = params[:conference_id]
@@ -27,14 +27,14 @@ MyApp.get "/school/edit/:school_id" do
 	erb :"schools/edit_school"
 end
 
-MyApp.get "/edit_school/:school_id" do
+MyApp.post "/edit_school/:school_id" do
 	@school = School.find(params[:school_id])
 	@school.update_attributes({name: params['name'], conference_id: params['confernce_id']})
 	@school.save
 	erb :"success"
 end
 
-MyApp.get "/school_delete/:school_id" do
+MyApp.post "/school_delete/:school_id" do
 	@school = School.find(params[:school_id])
 	@school.delete
 	erb :"success"

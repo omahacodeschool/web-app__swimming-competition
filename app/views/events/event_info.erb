@@ -3,7 +3,7 @@
 <h3> <%= @event.name %> </h3>
 
 	<ul>
-	<% if @event.list_of_results.empty? %>
+	<% if @event.list_of_results == nil %>
 		No competitors have been added.
 		<% else %>
 		<% @event.list_of_results.each do |c| %>
@@ -11,16 +11,22 @@
 				<a href="/profile/<%= c.id %>">
 					<%=c.first_name %> <%= c.last_name %>
 				</a>
+				-
+				<a href="/results/add_time/<%= c.id %>/ <%= e.id %>">
+				<i>add result</i>
+				</a>
+				
+				</a>
 			</li>
 			<% end %>
 		<% end %>
 	</ul>
 
 
-<form action="/add_entry" method="post">
+<form action="/add_entry/<%= @event.id %>" method="post">
 
   <select name="competitor_id">
-  
+
 	   <option selected disabled>Choose competitor</option>
 			<% @list_competitors.each do |c| %>
 				<option value= "<%=c.id%>">
@@ -51,7 +57,8 @@
 
 <p><a href="/events/edit/<%= @event.id %>"> Edit this event. </a></p>
 
-<p><a href="/results/add_new"> Add entries. </a></p>
+<p><a href="/events"> Back </a></p>
+
 
 <p><a href="/"> Home </a></p>
 

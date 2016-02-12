@@ -18,6 +18,17 @@ MyApp.get "/add_result" do
   erb :"success"
 end
 
+MyApp.get "/results/add_time/:competitor_id/:event_id" do
+  erb :"results/add_time"
+end
+
+MyApp.get "/add_result/time/:competitor_id/event_id" do
+	x = Result.where(competitor_id: => params[:competitor_id], event_id: => params[:event_id])
+	x.time = params[:time]
+	x.save
+  erb :"success"
+end
+
 MyApp.get "/result_details/:result_id" do
   @result = Result.find(params[:result_id])
   erb :"results/result_details"

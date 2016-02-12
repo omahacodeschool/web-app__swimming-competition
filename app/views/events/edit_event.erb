@@ -1,9 +1,13 @@
 <h1 style="color:green;">Edit event:</h1>
 
-<form action="/edit_event/<%= @event.id %>">
+<form action="/edit_event/<%= @event.id %>" method="post">
 
   <input type="text" name="name" placeholder="<%= @event.name %>">
 
   <input type="submit">
   
 </form>
+
+<p><a href="/events"> Back </a></p>
+
+<p><a href="/"> Home </a></p>
