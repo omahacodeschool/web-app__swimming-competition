@@ -9,9 +9,9 @@ class Result < ActiveRecord::Base
   end
 
   def access_event
-    x = self.event_id
+    x = self.activity_id
     y = Activity.find_by_id(x)
     return y
   end
-  
+
 end

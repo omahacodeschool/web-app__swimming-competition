@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "student_id"
     t.integer  "event_id"
     t.integer  "student_score"
+    t.integer  "activity_id"
   end
 
   create_table "students", force: :cascade do |t|

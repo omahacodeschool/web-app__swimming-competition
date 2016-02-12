@@ -25,7 +25,7 @@ DB.define_column("activities", "max_possible_score_for_activity", "integer")
 
 DB.define_table("results")
 DB.define_column("results", "student_id", "integer")
-DB.define_column("results", "event_id", "integer")
+DB.define_column("results", "activity_id", "integer")
 DB.define_column("results", "student_score", "integer")
 
 DB.define_table("colleges")

@@ -5,7 +5,7 @@ MyApp.get "/add/student" do
   erb :"admin/student/add_student"
 end
 
-MyApp.get "/student/create" do
+MyApp.post "/student/create" do
   @student = Student.new
   @student.first_name = params["student_first_name"]
   @student.last_name = params["student_last_name"]
@@ -21,7 +21,7 @@ MyApp.get "/read/students" do
   erb :"admin/student/read_students"
 end
 
-MyApp.get "/delete/student/:student_id" do
+MyApp.post "/delete/student/:student_id" do
   @student = Student.find_by_id(params[:student_id])
   @confirm_message = "Success! Deleted #{@student.first_name} #{@student.last_name}!"
   @corresponding_results = Result.where({"student_id" => params[:student_id]})
@@ -36,7 +36,7 @@ MyApp.get "/update/student/:student_id" do
   erb :"admin/student/update_student"
 end
 
-MyApp.get "/process_update_student_form/:student_id" do
+MyApp.post "/process_update_student_form/:student_id" do
   @student = Student.find_by_id(params[:student_id])
   @student.first_name = params["student_first_name"]
   @student.last_name = params["student_last_name"]

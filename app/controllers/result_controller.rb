@@ -10,7 +10,7 @@ end
 MyApp.get "/result/create" do
   @result = Result.new
   @result.student_id = params["student_id"]
-  @result.event_id = params["activity_id"]
+  @result.activity_id = params["activity_id"]
   @result.student_score = params["student_score"]
   @result.save
   erb :"admin/confirm_submission"

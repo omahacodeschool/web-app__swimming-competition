@@ -1,6 +1,6 @@
 
 <p>
-  <form action="/process_update_student_form/<%=@student.id%>">
+  <form method = "post" action="/process_update_student_form/<%=@student.id%>">
     Student First Name:<br>
     <input type="text" name="student_first_name" 
     value="<%=@student.first_name%>"><br>
