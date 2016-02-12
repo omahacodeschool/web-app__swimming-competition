@@ -13,5 +13,6 @@
 <p>Here is a list of all of the cities in the database and their IDs:</p>
 
 <% @regions.each do |x|%>
-  <p><%= x %></p>
+  <p><%= x.id %>
+     <%= x.city %>
 <% end %>
