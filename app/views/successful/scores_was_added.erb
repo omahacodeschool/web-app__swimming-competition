@@ -1,8 +1,5 @@
 <p>Success your scores have been added</p>
-<p><a href="/">Home</a></p>
-
-<p><a href="/scores">Add Another Contestant's Scores</a></p>
-<p><a href="/">Home</a></p>
+<p>Here's a list of the scores so far</p>
 
 <% @scores.each do |x|%>
   <p><%= x.chili_id %>
@@ -14,3 +11,7 @@
      <%= x.heat %>
      <%= x.overall %></p>
 <% end %>
+
+<p><a href="/scores">Add Another Contestant's Scores</a></p>
+<p><a href="/">Home</a></p>
+
