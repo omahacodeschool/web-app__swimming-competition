@@ -6,9 +6,22 @@
 <ul>
   <% @kitties.each do |post| %>
     <li>
+    <%=post.id%>
     <%=post.first_name%> 
     <%=post.last_name%>  
     (<%=post.find_college_name%>) 
-    <a href="/updatefinish/<%=post.id%>">Add/Update Time for This Event</a></li>
+    <form action="/updatefinish">
+      <fieldset>
+        <legend>Add/Update Time</legend>
+          <label for="swimmer_id">Swimmer ID</label>
+            <input type="integer" name="swimmerid">
+          <label for="event_id">Event ID</label>
+            <input type="integer" name="eventid">
+          <label for="time">Time (in seconds)</label>
+            <input type="time" name="finishtime">
+          <input type="submit">
+      </fieldset>
+    </form>
+   </li>
   <% end %>
 </ul>
