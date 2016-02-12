@@ -10,6 +10,6 @@ MyApp.post "/add_game" do
   erb :"game_views/add_success"
 end
 
-MyApp.get "/game_list" do
+MyApp.get "/games_list" do
   erb :"game_views/games_list"
 end
