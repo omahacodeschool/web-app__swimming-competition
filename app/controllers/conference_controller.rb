@@ -7,7 +7,7 @@ end
 MyApp.get "/create_conference/success" do
   x = Conference.new
   # x.name is a new Active Record method that sets a Conference Object attribute name to "conference_name".
-  x.name = params["conference_name"]
+  x.conference_name = params["conference"]
   # x.save is a new Active Record method that saves that Conference Object to the "conferences" table.
   x.save
   binding.pry # what is 'x'?
