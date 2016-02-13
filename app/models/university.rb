@@ -7,7 +7,7 @@ class University < ActiveRecord::Base
   end
 
   #Return Aray of conference names.
-  def conference_name
+  def conference
     x = self.conference_id
     y = Conference.find_by(x)
     return y.conference_name

@@ -15,7 +15,8 @@
     <% @universities.each do |y| %>
       <tr>
         <td> <%= y.university_name %> </td>
-        <td> <%= y.conference_name %> </td>
+        <td> <%= y.conference %> </td>
+        <% binding.pry %>
         <td>
           <a href="delete_university/<%= y.id %>"> Delete University </a>
         </td>

@@ -27,7 +27,8 @@ end
 MyApp.post "/add_university" do
   u = University.new
   u.university_name = params["input_university"]
-  u.conference_id = params[:conference_id]  
+  u.conference_id = params[:conference_id] 
+  binding.pry 
   u.save
 
   erb :"/success/success_university"
