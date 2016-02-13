@@ -20,3 +20,10 @@ MyApp.get "/update/style_update_form/:popsicle" do
   @style = Style.find_by_id(params[:popsicle])
   erb :"main/update/style_update_form"
 end
+
+MyApp.get "/update/style_updated/:stopsign" do
+  @style = Style.find_by_id(params[:stopsign])
+  @style.style = params[:race_style]
+  @style.save
+  erb :"main/update/style_updated"
+end
