@@ -27,6 +27,7 @@ end
 
 # Go to a view with a form for adding universities.
 MyApp.get "/new_university" do
+  @conferences = Conference.all
   erb :"create/create_university"
 end
 
