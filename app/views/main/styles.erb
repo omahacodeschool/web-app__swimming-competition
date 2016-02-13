@@ -4,6 +4,8 @@ Here is information about each style:
 <% @styles.each do |s| %>
   The style <%= s.style %>
   has id # <%= s.id %>. - 
-  <a href= "/delete/style_deleted/<%= s.id %>"> Delete style</a><br>
+  <a href= "/delete/style_deleted/<%= s.id %>"> Delete style</a> - 
+  <a href= "/update/style_update_form/<%= s.id %>"> Update style</a>
+  <br>
 <% end %>
 </p>

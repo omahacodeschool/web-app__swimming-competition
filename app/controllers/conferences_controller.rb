@@ -15,3 +15,8 @@ MyApp.get "/delete/conference_deleted/:dogfood" do
   @conference.delete
   erb :"main/delete/conference_deleted"
 end
+
+MyApp.get "/update/conference_update_form/:popsicle" do
+  @conference = Conference.find_by_id(params[:popsicle])
+  erb :"main/update/conference_update_form"
+end

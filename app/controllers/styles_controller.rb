@@ -15,3 +15,8 @@ MyApp.get "/delete/style_deleted/:dogfood" do
   @style.delete
   erb :"main/delete/style_deleted"
 end
+
+MyApp.get "/update/style_update_form/:popsicle" do
+  @style = Style.find_by_id(params[:popsicle])
+  erb :"main/update/style_update_form"
+end

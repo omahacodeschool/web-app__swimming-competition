@@ -26,3 +26,8 @@ MyApp.get "/delete/result_deleted/:dogfood" do
   @result.delete
   erb :"main/delete/result_deleted"
 end
+
+MyApp.get "/update/result_update_form/:popsicle" do
+  @result = Result.find_by_id(params[:popsicle])
+  erb :"main/update/result_update_form"
+end

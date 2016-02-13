@@ -29,3 +29,8 @@ MyApp.get "/delete/event_deleted/:dogfood" do
   @event.delete
   erb :"main/delete/event_deleted"
 end
+
+MyApp.get "/update/event_update_form/:popsicle" do
+  @event = Event.find_by_id(params[:popsicle])
+  erb :"main/update/event_update_form"
+end

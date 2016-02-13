@@ -19,3 +19,8 @@ MyApp.get "/delete/competitor_deleted/:dogfood" do
   @competitor.delete
   erb :"main/delete/competitor_deleted"
 end
+
+MyApp.get "/update/competitor_update_form/:popsicle" do
+  @competitor = Competitor.find_by_id(params[:popsicle])
+  erb :"main/update/competitor_update_form"
+end

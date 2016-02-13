@@ -12,7 +12,9 @@ Here are the results for each event:
   <%= r.display_competitor_last_name %>
   (id # <%= r.competitor_id %>)
   finished in <%= r.final_time %> seconds. - 
-  <a href= "/delete/result_deleted/<%= r.id %>"> Delete result</a><br>
+  <a href= "/delete/result_deleted/<%= r.id %>"> Delete result</a> - 
+  <a href= "/update/result_update_form/<%= c.id %>"> Update result</a>
+  <br>
 <% end %>
 </p>
 

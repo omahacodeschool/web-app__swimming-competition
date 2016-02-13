@@ -15,3 +15,8 @@ MyApp.get "/delete/school_deleted/:dogfood" do
   @school.delete
   erb :"main/delete/school_deleted"
 end
+
+MyApp.get "/update/school_update_form/:popsicle" do
+  @school = School.find_by_id(params[:popsicle])
+  erb :"main/update/school_update_form"
+end

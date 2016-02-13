@@ -4,6 +4,8 @@ Here is information about each event:
 <% @events.each do |e| %>
   The event for gender <%= e.gender %> of <%= e.distance %> meters
   has id # <%= e.id %>. - 
-  <a href= "/delete/event_deleted/<%= e.id %>"> Delete event</a><br>
+  <a href= "/delete/event_deleted/<%= e.id %>"> Delete event</a> - 
+  <a href= "/update/event_update_form/<%= e.id %>"> Update event</a>
+  <br>
 <% end %>
 </p>
