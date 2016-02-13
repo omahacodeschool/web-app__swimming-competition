@@ -18,7 +18,7 @@
           <label for="event_id">Event ID</label>
             <input type="integer" name="eventid" value="<%=@currentevent.id%>">
           <label for="time">Time (in seconds)</label>
-            <input type="time" name="finishtime">
+            <input type="integer" name="finishtime" value="<%=post.finishtime(@currentevent.id)%>">
           <input type="submit">
       </fieldset>
     </form>
