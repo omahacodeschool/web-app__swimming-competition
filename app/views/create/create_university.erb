@@ -8,39 +8,23 @@
 
   <p>Conference ID<p>
 
-  <input type="number" name="conference_id">
-
+  <select name="conference_id">
+    <option value="1">East</option>
+    <option value="2">West</option>
+    <option value="3">North</option>
+    <option value="4">South</option>
+  </select>
   <input type="submit">
 </form>
 
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>Conference ID </th>
-      <th>Conference</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @conferences.each do |y| %>
-      <tr>
-        <td> <%= y.id %> </td>
-        <td> <%= y.conference_name %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <a href="/show_universities">View all Universities</a>
 <a href="/">Return Home</a>
 
 
 
-<!--   <select name="conference_id">
-  
-    <option value="1">East</option>
-    <option value="2">West</option>
-    <option value="3">North</option>
-    <option value="4">South</option>
-  </select> -->
+
+
+

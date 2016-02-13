@@ -13,13 +13,21 @@ class Result < ActiveRecord::Base
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
     z = University.find_by_id(y)
-    return z.university_name
+    if z!= nil
+      return z.university_name
+    else
+      return nil
+    end 
   end
   def conference
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
     z = University.find_by_id(y)
     a = Conference.find_by_id(z)
-    return a.conference_name
+    if a!= nil
+      return a.conference_name
+    else
+      return nil
+    end
   end
 end
