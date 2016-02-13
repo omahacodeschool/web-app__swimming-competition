@@ -13,3 +13,9 @@ MyApp.get "/competitor_added" do
   x.save
   erb :"main/competitor_added"
 end
+
+MyApp.get "/delete/competitor_deleted/:dogfood" do
+  @competitor = Competitor.find_by_id(params[:dogfood])
+  @competitor.delete
+  erb :"main/delete/competitor_deleted"
+end

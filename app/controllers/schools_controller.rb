@@ -9,3 +9,9 @@ MyApp.get "/school_added" do
   x.save
   erb :"main/school_added"
 end
+
+MyApp.get "/delete/school_deleted/:dogfood" do
+  @school = School.find_by_id(params[:dogfood])
+  @school.delete
+  erb :"main/delete/school_deleted"
+end

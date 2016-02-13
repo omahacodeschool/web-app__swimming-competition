@@ -9,3 +9,9 @@ MyApp.get "/conference_added" do
   x.save
   erb :"main/conference_added"
 end
+
+MyApp.get "/delete/conference_deleted/:dogfood" do
+  @conference = Conference.find_by_id(params[:dogfood])
+  @conference.delete
+  erb :"main/delete/conference_deleted"
+end

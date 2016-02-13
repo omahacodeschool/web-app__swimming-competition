@@ -3,6 +3,7 @@ Here is information about each style:
 <p>
 <% @styles.each do |s| %>
   The style <%= s.style %>
-  has id # <%= s.id %>.<br>
+  has id # <%= s.id %>. - 
+  <a href= "/delete/style_deleted/<%= s.id %>"> Delete style</a><br>
 <% end %>
 </p>

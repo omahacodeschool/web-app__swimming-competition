@@ -20,3 +20,9 @@ end
 MyApp.get "/competitors_by_event_result/:kittenmitten" do
   @competitor = Competitor.find_by_id(params[:kittenmitten])
 end
+
+MyApp.get "/delete/result_deleted/:dogfood" do
+  @result = Result.find_by_id(params[:dogfood])
+  @result.delete
+  erb :"main/delete/result_deleted"
+end

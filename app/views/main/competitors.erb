@@ -5,6 +5,7 @@ Here is information about each competitor:
   The competitor <%= c.first_name %>
   <%= c.last_name%>
   from <%= c.school_name %> (<%= c.conference_name %> conference)
-  has id # <%= c.id %>.<br>
+  has id # <%= c.id %>. - 
+  <a href= "/delete/competitor_deleted/<%= c.id %>"> Delete competitor</a><br>
 <% end %>
 </p>

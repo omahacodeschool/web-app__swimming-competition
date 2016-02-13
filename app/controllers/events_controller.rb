@@ -23,3 +23,9 @@ MyApp.get "/competitors_in_event/:blah" do
   end
   erb :"main/competitors_by_event_result"
 end
+
+MyApp.get "/delete/event_deleted/:dogfood" do
+  @event = Event.find_by_id(params[:dogfood])
+  @event.delete
+  erb :"main/delete/event_deleted"
+end

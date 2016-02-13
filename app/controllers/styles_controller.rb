@@ -9,3 +9,9 @@ MyApp.get "/style_added" do
   x.save
   erb :"main/style_added"
 end
+
+MyApp.get "/delete/style_deleted/:dogfood" do
+  @style = Style.find_by_id(params[:dogfood])
+  @style.delete
+  erb :"main/delete/style_deleted"
+end

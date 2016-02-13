@@ -3,6 +3,7 @@ Here is information about each conference:
 <p>
 <% @conferences.each do |c| %>
   <%= c.conference_name %> conference
-  has id # <%= c.id %>.<br>
+  has id # <%= c.id %>. - 
+  <a href= "/delete/conference_deleted/<%= c.id %>"> Delete conference</a><br>
 <% end %>
 </p>

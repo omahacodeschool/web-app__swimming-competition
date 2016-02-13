@@ -3,6 +3,7 @@ Here is information about each event:
 <p>
 <% @events.each do |e| %>
   The event for gender <%= e.gender %> of <%= e.distance %> meters
-  has id # <%= e.id %>.<br>
+  has id # <%= e.id %>. - 
+  <a href= "/delete/event_deleted/<%= e.id %>"> Delete event</a><br>
 <% end %>
 </p>
