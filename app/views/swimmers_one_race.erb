@@ -1,4 +1,4 @@
-something
+<!-- something
 
 #access to @w - race object
 #access to @records - collection of swimmer objects
@@ -7,7 +7,7 @@ should be able to call methods on those objects to get what I want to display on
 
 watch for getting to the right controller action
 
-just put links on home page that take you to this for race 1, race 2, etc. and gives you the entries
+just put links on home page that take you to this for race 1, race 2, etc. and giv -->
 
 
 <a href="/">Home</a><br>
@@ -17,21 +17,6 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 <p>Information about all of the swimmmers in this event.</p>
 
 <% @races.each do |event| %>
-<p><a href="/race/<%event.id%>"<%event.name%</a></p>
+<p><a href="/race/<%event.id%>"<%race.event_name%</a></p>#link for each race
 
-
-
-
-
-
-
-<form action = "/race/:race_id">
-  <input type ="integer" name="race_id"
-  <input type ="string" name="start_time" 
-  <input type ="string" name="event_name"
-  <input type ="string" name="swimmer_first_name"
-  <input type ="string" name="swimmer_last_name"
-
-  <input type ="integer" name="race_id" placeholder="race # from list">
-  <input type ="submit">
-</form>
+end

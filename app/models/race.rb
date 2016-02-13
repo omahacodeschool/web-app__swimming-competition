@@ -6,22 +6,17 @@ class Race < ActiveRecord:: Base
 #SwimEntry table has race ids paired with swimmer ids for any instance of one swimmer entering one race. It does not have swimmer names, only ids. 
 #Swimmer has swimmer names (and other information) and swimmer ids. No races.
 
-#So will I need another method in SwimEntry to return a hash of swimmer names and their swimmer ids? 
+#So will I need another method in SwimEntry to return a hash of swimmer names and their swimmer ids? Yes.
 
   def swimmer_ids_one_race
-    r = self.id #
-
-
-    s = SwimEntry.where({race_id => r}) #(would that give me back the swimmer ids for all of the swimmers in one race?)
-    g=[]
-    s.each do |swim_entry|
-      x = swim_entry.swimmer_id
-      g.push(x)
-      #y = Swimmer.find_by_id(x)
-    end
+    r = self.id #a race_id we want to have swimmer info about.
+    s = SwimEntry.where({race_id => r}) #anticipaing a hash where the key is the race_id and the value is the swim_entry_id
+    g=[] #empty array to populate with swimmer ids for race "r"
+    s.each do |swim_entry| #iterate through the swim_entry_ids
+      x = swim_entry.swimmer_id #to get just the swimmer_ids for race "r" for use in querying the swimmer table. "x" is the array object with all of the swimmer ids.
+      g.push(x) #push swimmer_ids "x" for race "r" into an Array
+    end #end of each do loop
     return g   #array of swimmer ids for one race
-  end
+  end #end of swimmer_ids_one_race method
   
-
-
-end
+end #end of Race class
