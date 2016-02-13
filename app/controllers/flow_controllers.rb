@@ -22,7 +22,6 @@ end
 # Go to a view that only displays the current conferences.
 MyApp.get "/show_conferences" do
   @conferences = Conference.all
-  binding.pry
   erb :"display/display_conferences"
 end
 

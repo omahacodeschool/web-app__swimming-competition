@@ -3,13 +3,13 @@ class University < ActiveRecord::Base
   def swimmer_name
     x = self.swimmer_id
     y = Swimmer.find_by(x)
-    return y.name
+    return y.swimmer_name
   end
 
   #Return Aray of conference names.
   def conference
     x = self.conference_id
-    y = Conference.find_by(x)
+    y = Conference.where({"conference.id" => x})
     return y.conference_name
   end
 end
