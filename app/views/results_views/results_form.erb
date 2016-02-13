@@ -5,14 +5,21 @@
 <form action="/add_results" method="post">
 
     <label for="game_id"><sub><i>Game ID:</i></sub></label>
-    <input type="integer" name="game_id">
+    <select name="game_id">
+        <% @games.each do |g| %>
+        <option value="<%=g.id%>"><%= g.id %>: <%= g.game_name %></option>
+        <% end %>
+    </select>
     <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label>
-    <input type="integer" name="gamer_id">
+    <select name="gamer_id">
+        <% @gamers.each do |m| %>
+        <option value="<%=m.id%>"><%= m.id %>: <%= m.last_name %>, <%= m.first_name %></option>
+        <% end %>
+    </select>
+    <br>
     <br>
     <label for="completion_time"><sub><i>Completion Time:</i></sub></label>
-    <input type="integer" name="completion_time">
-    <br>
-    <br>
+    <input type="text" name="completion_time">
     <input type="submit">
 
 </form>

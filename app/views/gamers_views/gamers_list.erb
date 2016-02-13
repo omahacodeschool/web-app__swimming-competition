@@ -12,7 +12,7 @@
   <tbody>
     <% @gamers.each do |g| %>
     <tr>
-      <td><%= g.id %></td>
+      <td><center><%= g.id %></center></td>
       <td><a href="gamer/<%=g.id%>">
           <%= g.last_name %>, <%= g.first_name %></a></td>
       <td><a href="squad/<%=g.squad_id%>">
