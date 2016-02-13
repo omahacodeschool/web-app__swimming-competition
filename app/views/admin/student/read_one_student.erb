@@ -16,6 +16,38 @@
   </tbody>
 </table>
 <br>
+
+<h2>Top 3 Best Performances for 
+  <%=@student.first_name%> <%=@student.last_name%></h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Performance</th>
+      <th>Activity Name</th>
+      <th><%=@student.first_name%> <%=@student.last_name%>'s Score</th>
+      <th>Overall Rank in Activity</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <tr>
+    <%if @top_three_activities == []%>
+      <td>No Performances Yet</td>
+    <%else @top_three_activities.each_with_index do |r, i|%>
+      <td><%= i + 1 %></td>
+      <td><a href="/read/activity/<%=r.access_event.id%>">
+      <%= r.access_event.event_name %></a></td>
+      <td><%= r.student_score %></td>
+      <td>Overall Rank in Activity</td>
+    </tr>
+        <%end%>
+      <%end%>
+  </tbody>
+</table>
+
+
 <h3>Debate Tournament Registration Details:</h3>
 <br>   
 <table border="1">

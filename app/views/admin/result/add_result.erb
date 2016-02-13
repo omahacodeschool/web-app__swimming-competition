@@ -6,7 +6,7 @@
     Student:<br>
     <select name="student_id">
       <% @students.each do |s| %>
-        <option value="<%= s.id %>"><%= s.first_name %><%= s.last_name %>
+        <option value="<%= s.id %>"><%= s.first_name %> <%= s.last_name %>
         </option>
       <% end %>
     </select><br>

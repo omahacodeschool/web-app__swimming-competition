@@ -6,7 +6,7 @@
   <form method="post" action="/college/create">
     College Name:<br>
     <input type="text" name="college_name"><br>
-    Conference ID:<br>
+    Conference:<br>
     <select name="conference_id">
       <% @conferences.each do |c| %>
         <option value="<%= c.id %>"> <%= c.conference_name %></option>
