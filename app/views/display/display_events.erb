@@ -11,7 +11,7 @@
   <tbody>
     <% @events.each do |y| %>
       <tr>
-        <td> <%= y.event_name %> </td>
+        <td><a href="event_bio/<%= y.id %>"> <%= y.event_name %></a> </td>
       </tr>
     <% end %>
   </tbody>
