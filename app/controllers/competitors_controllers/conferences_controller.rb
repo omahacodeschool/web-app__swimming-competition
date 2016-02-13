@@ -4,15 +4,15 @@ require 'pry'
 MyApp.get "/superadmin/conferences" do
 #create new conferences
   @conferences = Conference.all
-  erb :"cv/superadmin_conferences"
+  erb :"/cv/superadmin_conferences"
 end
 
-MyApp.get "/newconference" do
+MyApp.post "/newconference" do
   c = Conference.new
   c.conference_name = params[:conferencename]
   c.save
   @newconferencename = params[:conferencename]
-  erb :"/cv/conferencesuccess"
+  erb :"/cv/conferenceaddsuccess"
 end
 
 MyApp.get "/conferences" do

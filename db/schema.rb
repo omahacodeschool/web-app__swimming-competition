@@ -37,10 +37,9 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "finishes", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "signup_id"
-    t.time     "finish_time"
     t.integer  "swimmer_id"
     t.integer  "event_id"
+    t.integer  "finish_time"
   end
 
   create_table "ranks", force: :cascade do |t|

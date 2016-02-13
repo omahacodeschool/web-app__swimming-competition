@@ -1,10 +1,10 @@
 require 'pry'
-MyApp.get "/newevent" do
+MyApp.post "/newevent" do
   
   e = Event.new
   e.event_name = params[:neweventname]
   e.save
-  neweventname = params[:neweventname]
+  @neweventname = params[:neweventname]
   erb :"/ev/eventaddsuccess"
 
 end

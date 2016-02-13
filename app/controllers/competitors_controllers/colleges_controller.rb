@@ -7,7 +7,7 @@ MyApp.get "/colleges" do
   erb :"cv/colleges" 
 end
 
-MyApp.get "/newcollege" do
+MyApp.post "/newcollege" do
   c = College.new
   c.college_name = params[:collegename]
   c.conference_id = params[:conferenceid]

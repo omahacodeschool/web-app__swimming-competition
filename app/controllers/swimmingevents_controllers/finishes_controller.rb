@@ -20,11 +20,13 @@ MyApp.get "/view_finish/:id" do
 end
 
 MyApp.post "/updatefinish" do
-  f = finish.new
+  f = Finish.new
   f.swimmer_id = params[:swimmerid]
   f.event_id = params[:eventid]
   f.finish_time = params[:finishtime]
-
+  f.save
+  binding.pry
+  @events = Event.all
   erb :"ev/finishes"
 end
 

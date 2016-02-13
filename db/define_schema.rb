@@ -42,7 +42,7 @@ DB.define_column("conferences","conference_name","string")
 DB.define_table("finishes")
 DB.define_column("finishes","swimmer_id","integer")
 DB.define_column("finishes","event_id","integer")
-DB.define_column("finishes","finish_time","time")
+DB.define_column("finishes","finish_time","integer")
 
 #who won in what order
 DB.define_table("ranks")
