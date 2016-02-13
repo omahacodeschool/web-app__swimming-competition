@@ -2,12 +2,20 @@ class Result < ActiveRecord::Base
   def swimmer
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
-    return y.swimmer_name
+    if y!= nil
+      return y.swimmer_name
+    else
+      return nil
+    end
   end
   def event
     x = self.event_id
     y = Event.find_by_id(x)
-    return y.event_name
+    if y!= nil
+      return y.event_name
+    else
+      return nil
+    end
   end
   def university
     x = self.swimmer_id

@@ -15,11 +15,10 @@ MyApp.get "/event_bio/:id" do
   erb :"/bios/event_bio"
 end
 
-# Trying to make a link from event bio to take users to swimmer's bio, not perfect. For some reason it confuses the swimmer id and dispalays the wrong bio.
-# MyApp.get "/event_bio/swimmer_bio/:id" do
-#   @swimmer = Swimmer.find_by_id(params[:id])
-#   @result = Result.where({"swimmer_id" => params[:id]})
-#   binding.pry
-#   erb :"/bios/swimmer_bio"
-# end
+#Trying to make a link from event bio to take users to swimmer's bio, not perfect. For some reason it confuses the swimmer id and dispalays the wrong bio.
+MyApp.get "/event_bio/swimmer_bio/:id" do
+  @swimmer = Swimmer.find_by_id(params[:id])
+  @result = Result.where({"swimmer_id" => params[:id]})
+  erb :"/bios/swimmer_bio"
+end
 

@@ -2,7 +2,11 @@ class Swimmer < ActiveRecord::Base
   def university
     x = self.university_id
     y = University.find_by_id(x)
-    return y.university_name
+    if y != nil
+      return y.university_name
+    else
+      return 
+    end
   end
   def conference
     x = self.university_id
