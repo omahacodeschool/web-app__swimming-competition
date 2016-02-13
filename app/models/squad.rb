@@ -6,5 +6,4 @@ class Squad < ActiveRecord::Base
     return y
   end
 
-  
 end

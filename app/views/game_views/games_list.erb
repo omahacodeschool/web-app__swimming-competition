@@ -8,7 +8,14 @@
     <tr>
   </thead>
 
-
+  <tbody>
+    <% @games.each do |g| %>
+      <tr>
+        <td><center><%= g.id %></center></td>
+        <td><a href="game/<%=g.id%>"><%= g.game_name %></a></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <br>
 <br>
