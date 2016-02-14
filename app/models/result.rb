@@ -8,4 +8,10 @@ class Result < ActiveRecord::Base
     return f_name.first_name + " " + l_name.last_name
   end
 
+  def event_name
+    event_name = Event.find_by_id(self.event_id)
+    event = event_name.event
+    return event
+  end
+
 end
