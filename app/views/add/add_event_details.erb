@@ -1,6 +1,14 @@
 <p>Please enter the event details:</p>
 
 <form action="/event_detail_added">
-  <input type="text" name="event_detail">
-  <input type="submit">
+  <fieldset>
+    <legend>Event Details</legend>
+    <br>Select the event id: <br>
+    <input type="number" name="event_id"> <br><br>    
+    Select the competitor's id:<br>
+    <input type="number" name="competitor_id"><br><br>
+    Enter the competitor's finish time <i>(format: 1.4532)</i>: <br>
+    <input type="number" step="any" name="finish_time"><br><br>
+    <input type="submit">
+  </fieldset>
 </form>

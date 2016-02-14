@@ -1,6 +1,12 @@
-<p>Please enter the college/university:</p>
+<p>Please enter a college/university:</p>
 
 <form action="/college_added">
-  <input type="text" name="college">
-  <input type="submit">
+  <fieldset>
+    <legend>College</legend>
+    <br>Enter the name of the collge or university: <br>
+    <input type="text" name="college_name"> <br><br>    
+    Select the college's conference id:<br>
+    <input type="number" name="conference_id"><br><br>
+    <input type="submit">
+  </fieldset>
 </form>

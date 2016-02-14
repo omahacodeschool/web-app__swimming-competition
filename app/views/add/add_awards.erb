@@ -1,6 +1,14 @@
-<p>Please enter the award:</p>
+<p>Please enter the award details:</p>
 
 <form action="/award_added">
-  <input type="text" name="award">
-  <input type="submit">
+  <fieldset>
+    <legend>Award Details</legend>
+    <br>Select the event id: <br>
+    <input type="number" name="event_id"> <br><br>    
+    Select the competitor's id:<br>
+    <input type="number" name="competitor_id"><br><br>
+    Select the competitor's rank: <br>
+    <input type="number" name="rank"><br><br>
+    <input type="submit">
+  </fieldset>
 </form>
