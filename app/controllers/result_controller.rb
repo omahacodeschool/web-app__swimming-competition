@@ -23,9 +23,9 @@ MyApp.get "/results/add_time/:competitor_id/:event_id" do
 end
 
 MyApp.get "/add_result/time/:competitor_id/:event_id" do
-	x = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id])
-	x.time = params[:time]
-	x.save
+	result = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id]).first
+	result.time = params[:time]
+	result.save
   erb :"success"
 end
 
