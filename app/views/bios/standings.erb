@@ -12,6 +12,7 @@
 
   <tbody>
     <% @results.each do |y| %>
+    <%binding.pry%>
       <tr>
         <td>
           <a href="swimmer_bio/<%= y.id %>"> <%= y.swimmer %> </a>

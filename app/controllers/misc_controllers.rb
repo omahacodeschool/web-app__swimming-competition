@@ -28,9 +28,12 @@ MyApp.get "/show_standings" do
 end
 
 MyApp.get "/top_three/:id" do
-  @events = Event.all
-  @swimmer = Swimmer.find_by_id(params[:id])
+  @events = Event.find_by_id(params[:id])
   @results = Result.where({"event_id" => params[:id]})
+  # @sorted = @results.sort_by do |t|
+  #   t[t.swimmer_time]
+  #end
+#binding.pry
 
   erb :"/bios/standings"
 end
