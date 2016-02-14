@@ -9,7 +9,7 @@
   <input type="number" name="edit_entries" value="<%= @event.num_entries %>">
 
   <label>Start Time</label>
-  <input type="time" name="edit_time" value="<%= @event.start_time %>">
+  <input type="time" name="edit_time" value="<%= @event.start_time.strftime("%H:%M") %>">
 
   <input type="submit" value="update">
 

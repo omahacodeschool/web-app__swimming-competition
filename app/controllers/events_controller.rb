@@ -23,9 +23,9 @@ end
 
 MyApp.post "/events/process_edit/:id" do
   @event = Event.find_by_id(params[:id])
-  @conference.name = params["edit_event"]
-  @conference.num_entries = params["edit_entries"]
-  @conference.start_time = params["edit_time"]
-  @conference.save
+  @event.name = params["edit_event"]
+  @event.num_entries = params["edit_entries"]
+  @event.start_time = params["edit_time"]
+  @event.save
   erb :"updated"
 end
