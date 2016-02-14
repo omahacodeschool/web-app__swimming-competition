@@ -1,21 +1,50 @@
 <center>
   <br>
+ <h1>
+      Current Sign-ups:
+    </h1>
+  <br>
+   <br>
+  <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>School</th>
+        <th>Event</th>
+        <th>Swim Time</th>
+      </tr>
+      <% @sorted_signup_records.each do |n| %>   
+      <tr>  
+        <td><%= n[0] %></td>
+        <td><%= n[1] %></td>
+        <td><%= n[2] %></td>
+        <td><%= n[3] %></td>
+        <td><%= n[4] %></td>
+      </tr>
+        <% end %>
+      
+    </table>
+
   <br>
   <br>
   <br>
     <h1>
-      This will add a score to the database.
+      This will add a new time record to the database.
     </h1>
   <br>
   <br>
   <br>
-    <form action="/view_add_event_confirmation" method="post">
-      Name of event:
+    <form action="/view_add_score_confirmation" method="post">
+      Sign-up ID:
   <br>
   <br>
-      <input type="text" name="event_1_name">
+      <input type="integer" name="signup_1_id">
   <br>
   <br>
+      Final Time (eg: "012345")
+  <br>
+  <br>
+      <input type="integer" name="signup_1_time">
   <br>
   <br>
       <input type="submit">

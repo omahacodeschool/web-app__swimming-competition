@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.integer  "sevent_id"
     t.string   "event_name"
+    t.binary   "locked?"
   end
 
   create_table "schools", force: :cascade do |t|

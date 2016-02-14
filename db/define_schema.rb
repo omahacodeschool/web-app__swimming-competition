@@ -20,10 +20,11 @@ DB.define_column("swimmers", "school_id", "integer")
 DB.define_table("signups")
 DB.define_column("signups", "swimmer_id", "integer")
 DB.define_column("signups", "event_id", "integer")
-DB.define_column("signups", "completed_swim_time", "integer")
+DB.define_column("signups", "completed_swim_time", "string")
 
 DB.define_table("events")
 DB.define_column("events", "event_name", "string")
+DB.define_column("events", "locked?", "binary")
 
 DB.define_table("schools")
 DB.define_column("schools", "school_name", "string")
