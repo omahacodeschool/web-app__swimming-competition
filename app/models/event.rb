@@ -1,7 +1,8 @@
 class Event < ActiveRecord::Base
-  #return an array that displays all those in this event
-  def all_swimmers
-    x = self.id
-    return Swimmer.where({"event_id" => x})
+  def name
+      x = self.first_place_swimmer
+      y = Swimmer.find_by_id(x)
+    return y.name
+    end
   end
 end

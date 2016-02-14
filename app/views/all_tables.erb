@@ -10,12 +10,7 @@
 <% end %>
 <h1>Here are the events in the Tournament</h1>
 <p>
-  <% @events.each do |event| %>
-    <%= event.event_name %> 
-    <%= event.id         %>
-  </a>
-</p>
-<% end %>
+
 <h1>Here are the Swimmers currently competing in the Tournament</h1>
 <p>
   <% @swimmers.each do |swimmer| %>
@@ -25,4 +20,29 @@
   </a>
 </p>
 <% end %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>First Place Winner</th>
+      <th>Second Place Winner</th>
+      <th>Third Place Winner</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_name %></a></td>
+        <td><a href="/place/<%= event.id %>">First Place</td>
+        <td><a href="/place/<%= event.id %>">Second Place</td>
+        <td><a href="/place/<%= event.id %>">Third Place</td>
+        <!-- You will need to add the overall adjusted grade yourself: -->
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 

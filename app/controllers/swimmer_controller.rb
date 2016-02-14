@@ -18,6 +18,7 @@ MyApp.get "/edit_swimmer/finish_update_swimmer/:place" do
 end
 MyApp.get "/view_swimmers/:place" do
   @swimmer = Swimmer.find_by_id(params[:place])
+  @signup = Signup.find_by_id(params[:place])
   erb :"swimmer_list"
 end
 MyApp.get "/delete_swimmers/:place" do

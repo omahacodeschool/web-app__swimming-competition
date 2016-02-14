@@ -1,10 +1,23 @@
-<p>
-  <% @signup.each do |signup| %>
-    <a href="view_signup/<%= signup.id%>">
-    <%= signup.swimmer_id %> </a></p>
-  <a href="delete_signup/<%= signup.id%>">
-  Delete
-  </a>
-</p>
-<% end %>
 
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Swimmer</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @signup.each do |y| %>
+      <tr>
+        <td><%= y.event_name %></a></td>
+        <td><%= y.name %></td>
+        
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>

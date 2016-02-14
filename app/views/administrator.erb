@@ -12,10 +12,24 @@
 </form>
 </body>
 </html>
-<p>Enter an event that you would like to add to the comepition</p>
+<p>Enter an event and the top three finishers by ID</p>
 <form action="/add_event">
-<input type = "text" name = "new_event">
+Event:<input type = "text" name = "new_event">
+<input type = "submit">
+First Place:<input type = "number" name = "first">
+Second Place:<input type = "number" name = "second">
+Third Place:<input type = "number" name = "third" >
+
+
+
+
+
+
 </form>
+
+</body>
+</html>
+
 <p>Enter a school along with that schools Conference ID that you would like to add to the comepition</p>
 <form action="/add_school">
 <input type = "text" name = "new_school">
@@ -28,13 +42,11 @@
 </form>
 <p>Enter a swimmers ID along with the events ID to sign up swimmers for an event</p>
 <form action="/add_signup_swimmer">
-<input type = "text" name = "new_signup">
+<input type = "number" name = "new_signup">
 <input type = "submit">
-<form action="/add_signup_event">
-<input type = "text" name = "event_id">
+<input type = "number" name = "event_id">
 </form>
-</body>
-</html>
+
 -
 -
 -

@@ -1,5 +1,25 @@
-<h3>Swimmers Competing!<h3>
-<%= @swimmer.name %>
--
-<%= @swimmer.id %>
-<%= @swimmer.school_name %>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer</th>
+      <th>School</th>
+      <th>ID</th>
+      <th>Event</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  
+      <tr>
+        <td><%= @swimmer.name %></td>
+        <td><%= @swimmer.school_name%></td>
+        <td><%= @swimmer.id %></td>
+        <td><%= @signup.event_name %></td>
+    
+        
+      </tr>
+    
+  </tbody>
+</table>

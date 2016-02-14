@@ -1,8 +1,10 @@
 MyApp.get "/add_event" do
-  event_add = Event.new
-  event_add.event_name = params[:new_event]
-  event_add.save
-  allevents = Event.all
+  @event_add = Event.new
+  @event_add.event_name = params[:new_event]
+  @event_add.first_place_swimmer = params[:first]
+  @event_add.second_place_swimmer = params[:second]
+  @event_add.third_place_swimmer = params[:third]
+  @event_add.save
   erb :"administrator"
 end
 MyApp.get "/view_event/:place" do

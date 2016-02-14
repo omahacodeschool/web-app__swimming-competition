@@ -1,17 +1,13 @@
 class Swimmer < ActiveRecord::Base
   #returns all school information that I found relation to the school id
-  def school_info
-    x = self.school_id
-    y = School.find_by_id(x)
-    return y
-  end
 
   #returns the school name when referencing the school id
+
   def school_name
-  x = self.school_id
-  y = School.find_by_id(x)
-  return y.school_name
-end
+    x = self.school_id
+    y = School.find_by_id(x)
+    return y.school_name
+  end
 end
 
 # a = all events swimmer was in
