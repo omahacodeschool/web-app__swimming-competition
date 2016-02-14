@@ -30,10 +30,8 @@ end
 MyApp.get "/top_three/:id" do
   @events = Event.find_by_id(params[:id])
   @results = Result.where({"event_id" => params[:id]})
-  # @sorted = @results.sort_by do |t|
-  #   t[t.swimmer_time]
-  #end
-#binding.pry
+  @sorted = @results.order("swimmer_time")   
+
 
   erb :"/bios/standings"
 end
