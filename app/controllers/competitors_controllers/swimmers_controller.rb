@@ -4,17 +4,17 @@ require 'pry'
 MyApp.get "/swimmers" do
   @swimmers = Swimmer.all
   @colleges = College.all
-  erb :"cv/swimmers"
+  erb :"/cv/swimmers"
 end
 
-MyApp.get "/newswimmername" do
+MyApp.post "/newswimmername" do
   s = Swimmer.new
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
   s.college_id= params[:collegeid]
   s.save
-  @newswimmername = params[swimmerfirstname] + " " + params[:swimmerlastname]
-  erb :"cv/swimmeraddsuccess"
+  @newswimmername = params[:swimmerfirstname] + " " + params[:swimmerlastname]
+  erb :"/cv/swimmeraddsuccess"
 end
 
 MyApp.get "/view_swimmer/:id" do
@@ -26,7 +26,7 @@ MyApp.get "/view_swimmer/:id" do
     @events << banana.find_event_name
   end
   #binding.pry
-  erb :"cv/view_swimmer"
+  erb :"/cv/view_swimmer"
 end
 
 
