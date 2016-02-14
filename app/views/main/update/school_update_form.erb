@@ -1,8 +1,8 @@
 Update a school here: 
 
-<form action="/school_added">
+<form action="/update/school_updated/<%= @school.id %>">
   School name:<br>
-  <input type="string" name="school_name"><br><br>
+  <input type="string" name="school_name" value="<%= @school.school_name %>"><br><br>
 
   <input type="submit" value="Submit">
 </form><br><br>

@@ -34,3 +34,12 @@ MyApp.get "/update/event_update_form/:popsicle" do
   @event = Event.find_by_id(params[:popsicle])
   erb :"main/update/event_update_form"
 end
+
+MyApp.get "/update/event_updated/:stopsign" do
+  @event = Event.find_by_id(params[:stopsign])
+  @event.gender = params[:gender]
+  @event.distance = params[:race_distance]
+  @event.style_id = params[:style_id]
+  @event.save
+  erb :"main/update/event_updated"
+end

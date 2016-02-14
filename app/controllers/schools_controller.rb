@@ -20,3 +20,10 @@ MyApp.get "/update/school_update_form/:popsicle" do
   @school = School.find_by_id(params[:popsicle])
   erb :"main/update/school_update_form"
 end
+
+MyApp.get "/update/school_updated/:stopsign" do
+  @school = School.find_by_id(params[:stopsign])
+  @school.school_name = params[:school_name]
+  @school.save
+  erb :"main/update/school_updated"
+end
