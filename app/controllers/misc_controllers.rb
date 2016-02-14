@@ -30,7 +30,7 @@ end
 MyApp.get "/top_three/:id" do
   @events = Event.all
   @swimmer = Swimmer.find_by_id(params[:id])
-  @results = Result.where({"swimmer_id" => params[:id]})
+  @results = Result.where({"event_id" => params[:id]})
 
   erb :"/bios/standings"
 end

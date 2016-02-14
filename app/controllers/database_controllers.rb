@@ -19,7 +19,7 @@ end
 MyApp.post "/add_conference" do
   c = Conference.new
   c.conference_name = params["input_conference"]
-  c.saveç
+  c.save
 
   erb :"/success/success_conference"
 end
