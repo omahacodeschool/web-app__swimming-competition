@@ -47,8 +47,9 @@ MyApp.post "/event_delete/:event_id" do
 	erb :"success"
 end
 
-MyApp.get "/lock_event/:event_id"
-	@event = Event.find(params[:event_id]).lock(true)
+MyApp.post "/lock_event/:event_id" do
+	@event = Event.find(params[:event_id])
+	@event.locked = true
 	@event.save
 	erb :"success"
 end

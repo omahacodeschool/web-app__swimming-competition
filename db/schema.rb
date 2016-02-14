@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "first_place"
     t.integer  "second_place"
     t.integer  "third_place"
+    t.boolean  "locked"
   end
 
   create_table "results", force: :cascade do |t|

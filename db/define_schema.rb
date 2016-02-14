@@ -18,6 +18,7 @@ DB.define_column("events", "name", "string")
 DB.define_column("events", "first_place", "integer")
 DB.define_column("events", "second_place", "integer")
 DB.define_column("events", "third_place", "integer")
+DB.define_column("events", "locked", "boolean")
 
 DB.define_table("competitors")
 DB.define_column("competitors", "first_name", "string")
