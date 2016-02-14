@@ -20,6 +20,8 @@
 <h2>Top 3 Best Performances for 
   <%=@student.first_name%> <%=@student.last_name%></h2>
 
+  <h2><%= @student_ranks %></h2>
+
 <table border="1">
   <thead>
     <tr>
@@ -39,13 +41,12 @@
         <td><%= i + 1 %></td>
         <td><a href="/read/activity/<%=r.access_event.id%>">
         <%= r.access_event.event_name %></a></td>
-        <td><%= r.student_score %></td>
-          <% @ranks_in_activity.each do |r|%>
-          <td><%= r + 1%></td>
-          <%end%>
-          <%end%>
-          <%end%>
+          <td><%=r.student_score%></td>
+          <td>Overall Rank in Activity</td>
     </tr>
+          <%end%>
+      <%end%>
+    
           
         
   </tbody>

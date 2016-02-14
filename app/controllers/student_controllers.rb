@@ -52,27 +52,15 @@ MyApp.get "/read/student/:student_id" do
   @results = Result.where({"student_id" => params[:student_id]})
   sorted_results = @results.order(student_score: :desc)
   @top_three_activities = sorted_results.first(3)
-  @ranks_in_activity = []
+  @student_ranks = []
   @top_three_activities.each do |r|
-    activity_id = r.access_event.id
-    all_results_for_activity = Result.where({"activity_id" => activity_id})
-    ordered_results = all_results_for_activity.order(student_score: :desc)
-    @ranks_in_activity << ordered_results.index(r)
+    activity_object = r.access_event
+    ordered_results = r.ordered_results_for_activity(activity_object)
+    @student_ranks << ordered_results.index(r)
   end
-
-  # @activity_results = Result.where({"activity_id" => params[:id]})
-  # sorted_results = @results.order(student_score: :desc)
-  # @top_three_results_for_activity = sorted_results.first(3)
   erb :"admin/student/read_one_student"
 end
 
-# MyApp.get "/read/activity/:id" do
-#   @activity = Activity.find_by_id(params[:id])
-#   @results = Result.where({"activity_id" => params[:id]})
-#   sorted_results = @results.order(student_score: :desc)
-#   @top_three_results_for_activity = sorted_results.first(3)
-#   erb :"admin/activity/read_one_activity"
-# end
 
 
 

@@ -10,8 +10,4 @@ class Student < ActiveRecord::Base
   end
 
 
-  # def result_for_activity(activity_object)
-  #   x = self.
-
-
 end
