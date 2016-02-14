@@ -17,6 +17,7 @@ end
 
 #Show the update form
 MyApp.get "/form_update_university/:id_of_university" do
+  @conferences = Conference.all
   @s = University.find_by_id(params[:id_of_university])
 
   erb :"/update/update_university"

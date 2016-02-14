@@ -9,10 +9,10 @@
   <p>Conference ID<p>
 
   <select name="conference_id">
-    <option value="1">East</option>
-    <option value="2">West</option>
-    <option value="3">North</option>
-    <option value="4">South</option>
+    <% @conferences.each do |y| %>
+      <option value="<%=y.id%>"><%=y.conference_name%> </option>
+
+    <% end %>
   </select>
   <input type="submit">
 </form>
