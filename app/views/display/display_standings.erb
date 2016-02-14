@@ -1,1 +1,21 @@
-Display Standings Here!
+<p>Click on an event to see it's top performers. <p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |y| %>
+      <tr>
+        <td><a href="top_three/<%= y.id %>"> <%= y.event_name %></a> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<a href="/">Return Home</a>

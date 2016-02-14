@@ -3,7 +3,6 @@
 MyApp.get "/swimmer_bio/:id" do
   @swimmer = Swimmer.find_by_id(params[:id])
   @result = Result.where({"swimmer_id" => params[:id]})
-  #binding.pry
   erb :"/bios/swimmer_bio"
 end
 
@@ -11,14 +10,37 @@ end
 MyApp.get "/event_bio/:id" do
   @event = Event.find_by_id(params[:id])
   @university = Result.where({"event_id" => params[:id]})
-  #binding.pry
   erb :"/bios/event_bio"
 end
 
 #Trying to make a link from event bio to take users to swimmer's bio, not perfect. For some reason it confuses the swimmer id and dispalays the wrong bio.
-MyApp.get "/event_bio/swimmer_bio/:id" do
-  @swimmer = Swimmer.find_by_id(params[:id])
-  @result = Result.where({"swimmer_id" => params[:id]})
-  erb :"/bios/swimmer_bio"
+# MyApp.get "/event_bio/swimmer_bio/:id" do
+#   @swimmer = Swimmer.find_by_id(params[:id])
+#   @result = Result.where({"swimmer_id" => params[:id]})
+#   erb :"/bios/swimmer_bio"
+# end
+
+#Take to view showing list of events. Each event will be a link to a dynamic view that will show the fastes performers in that event. 
+MyApp.get "/show_standings" do
+  @events = Event.all
+
+  erb :"/display/display_standings"
 end
+
+MyApp.get "/top_three/:id" do
+  @events = Event.all
+  @swimmer = Swimmer.find_by_id(params[:id])
+  @results = Result.where({"swimmer_id" => params[:id]})
+
+  erb :"/bios/standings"
+end
+
+
+
+
+
+
+
+
+
 

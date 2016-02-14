@@ -63,8 +63,3 @@ MyApp.get "/show_results" do
   erb :"display/display_results"
 end
 
-# Go to a view that only displays the current standings.
-MyApp.get "/show_standings" do
-  @standings = Standing.all
-  erb :"display/display_standings"
-end
