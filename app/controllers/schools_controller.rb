@@ -3,7 +3,7 @@ MyApp.get "/schools" do
   erb :"main/schools"
 end
 
-MyApp.get "/school_added" do
+MyApp.post "/school_added" do
   x = School.new
   x.school_name = params[:school_name]
   x.save
@@ -21,7 +21,7 @@ MyApp.get "/update/school_update_form/:popsicle" do
   erb :"main/update/school_update_form"
 end
 
-MyApp.get "/update/school_updated/:stopsign" do
+MyApp.post "/update/school_updated/:stopsign" do
   @school = School.find_by_id(params[:stopsign])
   @school.school_name = params[:school_name]
   @school.save

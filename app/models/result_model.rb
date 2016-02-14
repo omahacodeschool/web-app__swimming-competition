@@ -17,6 +17,7 @@ class Result <ActiveRecord::Base
   def display_event_gender
     x = self.event_id
     y = Event.find_by_id(x)
+    binding.pry
     return y.gender
   end
 

@@ -5,7 +5,7 @@ MyApp.get "/events" do
   erb :"main/events"
 end
 
-MyApp.get "/event_added" do
+MyApp.post "/event_added" do
   x = Event.new
   x.gender = params[:gender]
   x.distance = params[:race_distance]
@@ -35,7 +35,7 @@ MyApp.get "/update/event_update_form/:popsicle" do
   erb :"main/update/event_update_form"
 end
 
-MyApp.get "/update/event_updated/:stopsign" do
+MyApp.post "/update/event_updated/:stopsign" do
   @event = Event.find_by_id(params[:stopsign])
   @event.gender = params[:gender]
   @event.distance = params[:race_distance]

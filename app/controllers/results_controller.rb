@@ -3,7 +3,7 @@ MyApp.get "/results" do
   erb :"main/results"
 end
 
-MyApp.get "/result_added" do
+MyApp.post "/result_added" do
   x = Result.new
   x.event_id = params[:event_id]
   x.competitor_id = params[:competitor_id]
@@ -32,11 +32,11 @@ MyApp.get "/update/result_update_form/:popsicle" do
   erb :"main/update/result_update_form"
 end
 
-MyApp.get "/update/result_updated/:stopsign" do
+MyApp.post "/update/result_updated/:stopsign" do
   @result = Result.find_by_id(params[:stopsign])
-  @result.event_id = event_id[:race_style]
-  @result.competitor_id = competitor_id[:race_style]
-  @result.final_time = final_time[:race_style]
+  @result.event_id = params[:race_style]
+  @result.competitor_id = params[:race_style]
+  @result.final_time = params[:race_style]
   @result.save
   erb :"main/update/result_updated"
 end

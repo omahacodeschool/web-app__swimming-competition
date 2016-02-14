@@ -3,7 +3,7 @@ MyApp.get "/competitors" do
   erb :"main/competitors"
 end
 
-MyApp.get "/competitor_added" do
+MyApp.post "/competitor_added" do
   x = Competitor.new
   x.first_name = params[:firstname]
   x.last_name = params[:lastname]
@@ -25,7 +25,7 @@ MyApp.get "/update/competitor_update_form/:popsicle" do
   erb :"main/update/competitor_update_form"
 end
 
-MyApp.get "/update/competitor_updated/:stopsign" do
+MyApp.post "/update/competitor_updated/:stopsign" do
   @competitor = Competitor.find_by_id(params[:stopsign])
   @competitor.first_name = params[:firstname]
   @competitor.last_name = params[:lastname]

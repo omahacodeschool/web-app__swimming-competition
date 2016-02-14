@@ -3,7 +3,7 @@ MyApp.get "/conferences" do
   erb :"main/conferences"
 end
 
-MyApp.get "/conference_added" do
+MyApp.post "/conference_added" do
   x = Conference.new
   x.conference_name = params[:conference_name]
   x.save
@@ -21,7 +21,7 @@ MyApp.get "/update/conference_update_form/:popsicle" do
   erb :"main/update/conference_update_form"
 end
 
-MyApp.get "/update/conference_updated/:stopsign" do
+MyApp.post "/update/conference_updated/:stopsign" do
   @conference = Conference.find_by_id(params[:stopsign])
   @conference.conference_name = params[:conference_name]
   @conference.save

@@ -14,7 +14,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter information about each event here:</p>
 
-<form action="/event_added">
+<form action="/event_added" method="post">
   Gender:<br>
   <select name="gender">
     <option value="F">F</option>
@@ -34,7 +34,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter information about each style here:</p>
 
-<form action="/style_added">
+<form action="/style_added" method="post">
   Style:<br>
   <input type="string" name="race_style"><br><br>
 
@@ -44,7 +44,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter information about each competitor here:</p>
 
-<form action="/competitor_added">
+<form action="/competitor_added" method="post">
   First name:<br>
   <input type="text" name="firstname"><br><br>
 
@@ -78,7 +78,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter information about each school here:</p>
 
-<form action="/school_added">
+<form action="/school_added" method="post">
   School name:<br>
   <input type="string" name="school_name"><br><br>
 
@@ -88,7 +88,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter information about each conference here:</p>
 
-<form action="/conference_added">
+<form action="/conference_added" method="post">
   Conference name:<br>
   <input type="string" name="conference_name"><br><br>
 
@@ -98,7 +98,7 @@ or <a href="/styles">Styles</a>.<br>
 <hr>
 <p>Please enter each competitor's results here:</p>
 
-<form action="/result_added">
+<form action="/result_added" method="post">
   Event id:<br>
   <input type="integer" name="event_id"><br><br>
 

@@ -3,7 +3,7 @@ MyApp.get "/styles" do
   erb :"main/styles"
 end
 
-MyApp.get "/style_added" do
+MyApp.post "/style_added" do
   x = Style.new
   x.style = params[:race_style]
   x.save
@@ -21,9 +21,8 @@ MyApp.get "/update/style_update_form/:popsicle" do
   erb :"main/update/style_update_form"
 end
 
-MyApp.get "/update/style_updated/:stopsign" do
+MyApp.post "/update/style_updated/:stopsign" do
   @style = Style.find_by_id(params[:stopsign])
-  binding.pry
   @style.style = params[:race_style]
   @style.save
   erb :"main/update/style_updated"
