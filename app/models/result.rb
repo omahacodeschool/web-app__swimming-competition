@@ -15,9 +15,6 @@ class Result < ActiveRecord::Base
   end
 
 
-  # @ranks_in_activity = []
-  #   @top_three_activities.each do |r|
-  #     activity_id = r.access_event.id
 
   #Returns an array of all the results for a particular activity, in order of
   #highest student score to lowest student score
@@ -27,6 +24,7 @@ class Result < ActiveRecord::Base
     ordered_results = all_results_for_activity.order(student_score: :desc)
     return ordered_results
   end
+
 
 
   #     @ranks_in_activity << ordered_results.index(r)

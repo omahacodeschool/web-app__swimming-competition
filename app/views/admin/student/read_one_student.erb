@@ -43,7 +43,12 @@
         <%= r.access_event.event_name %></a></td>
           <td><%=r.student_score%></td>
 
-          <td>Overall Rank In Activity</td>
+          <td>
+          <%@ordered_results = r.ordered_results_for_activity(r.access_event)%>
+          <%=@ordered_results.index(r)%>
+
+
+          </td>
     </tr>
           <%end%>
       <%end%>
