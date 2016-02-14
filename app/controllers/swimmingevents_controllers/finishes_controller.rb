@@ -25,7 +25,6 @@ MyApp.post "/updatefinish" do
   f.event_id = params[:eventid]
   f.finish_time = params[:finishtime]
   f.save
-  binding.pry
   @events = Event.all
   erb :"ev/finishes"
 end

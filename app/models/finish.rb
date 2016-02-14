@@ -16,6 +16,15 @@ class Finish < ActiveRecord::Base
     x = self.signup_id
     return Signup.find_by_id(x)
   end
+
+  def self.determine_winner(eventid)
+    x = Finish.where({"event_id" => eventid})
+    @finishes = []
+      x.each do |timeys|
+        @finishes << timeys.finish_time
+      end
+    return @finishes.sort
+  end
   
 end
 

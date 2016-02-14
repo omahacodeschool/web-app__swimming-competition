@@ -25,4 +25,22 @@ class Winner < ActiveRecord::Base
     z = y.signup_id
     return z.find_event
   end
+
+  #def determine_winner(eventid)
+  #  x = Finish.find_by(event_id: eventid)
+  #  arr = x.finish_time
+  #  @bean = arr.sort
+  #  return @bean
+  #
+  #end
+
+
+
+#DB.define_table("winners")
+#DB.define_column("winners","rank_id","integer")
+#DB.define_column("winners","finish_id","integer")
+
+#method that determines winner, involving "finish" class
+#method that gets event title, rank "first second third" 
+#name of swimmer, and their swim time
 end

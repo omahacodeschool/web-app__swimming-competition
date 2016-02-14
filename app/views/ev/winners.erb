@@ -1,3 +1,12 @@
-winners
+<h1>Tournament Admin: Winners!</h1>
+<h2>Choose an Event to View or Update Swimmer Times<h2>
+
+<h2>Tournament Events:<h2>
+<ul>
+  <% @events.each do |post| %>
+    <li><%= post.id%>. <%=post.event_name%>
+    <a href="/view_winner/<%=post.id%>">View Winners!</a></li>
+  <% end %>
+</ul>
 
 <a href="/">Home</a>
