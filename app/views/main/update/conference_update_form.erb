@@ -2,7 +2,7 @@ Update a conference here:
 
 <form action="/update/conference_updated/<%= @conference.id %>">
   Conference name:<br>
-  <input type="string" name="conference_name"><br><br>
+  <input type="string" name="conference_name" value="<%= @conference.conference_name %>"><br><br>
 
   <input type="submit" value="Submit">
 </form><br><br>

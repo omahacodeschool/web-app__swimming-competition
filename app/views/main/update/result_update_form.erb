@@ -2,13 +2,13 @@ Update a result here:
 
 <form action="/result_added" value="/update/school_updated/<%= @result.id %>">
   Event id:<br>
-  <input type="integer" name="event_id"><br><br>
+  <input type="integer" name="event_id" value="<%= @result.event_id %>"><br><br>
 
   Competitor id:<br>
-  <input type="integer" name="competitor_id"><br><br>
+  <input type="integer" name="competitor_id" value="<%= @result.competitor_id %>"><br><br>
 
   Result (in seconds):<br>
-  <input type="decimal" name="final_time"><br><br>
+  <input type="decimal" name="final_time" value="<%= @result.final_time %>"><br><br>
 
   <input type="submit" value="Submit">
 </form><br><br>

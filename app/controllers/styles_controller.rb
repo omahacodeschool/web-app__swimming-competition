@@ -23,6 +23,7 @@ end
 
 MyApp.get "/update/style_updated/:stopsign" do
   @style = Style.find_by_id(params[:stopsign])
+  binding.pry
   @style.style = params[:race_style]
   @style.save
   erb :"main/update/style_updated"
