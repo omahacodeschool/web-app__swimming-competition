@@ -19,5 +19,8 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 <%= @event.event_name %>
 
 <% @event.list_of_swimmers.each do |swimmer| %>
-  <%= swimmer.first_name %> <%= swimmer.last_name%>
+  <p>
+    <%= swimmer.first_name %> <%= swimmer.last_name%> 
+    <%= swimmer.finish_time(@event.id)%>
+  </p>
 <% end%>
