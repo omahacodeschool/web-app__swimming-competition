@@ -26,5 +26,5 @@ MyApp.post "/rookeries/process_edit/:id" do
   @rookery.name = params["edit_rookery"]
   @rookery.conference_id = params["edit_conference_id"]
   @rookery.save
-  erb :"updated"
+  erb :"updated"  
 end

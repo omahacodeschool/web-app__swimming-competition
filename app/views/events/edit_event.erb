@@ -1,0 +1,16 @@
+<p>To add a new event to the system, type the name of the event in the form below.</p>
+
+
+<form action="/events/process_edit/<%= @event.id %>" method="post">
+  <label>Event</label>
+  <input type="text" name ="edit_event" value="<%= @event.name %>">
+
+  <label>Number of Entries</label>
+  <input type="number" name="edit_entries" value="<%= @event.num_entries %>">
+
+  <label>Start Time</label>
+  <input type="time" name="edit_time" value="<%= @event.start_time %>">
+
+  <input type="submit" value="update">
+
+</form>
