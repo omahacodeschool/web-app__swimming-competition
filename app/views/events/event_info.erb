@@ -11,9 +11,12 @@
 				<a href="/profile/<%= c.id %>">
 					<%=c.first_name %> <%= c.last_name %>
 				</a>
-				-
+				- 
+				<% if result != nil%>
+				<% result.time %>
+				<% end %>
 				<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
-				<i>add result</i>
+				<i>add/edit result</i>
 				</a>
 				
 				</a>

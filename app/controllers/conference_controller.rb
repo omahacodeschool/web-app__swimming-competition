@@ -33,5 +33,10 @@ end
 
 MyApp.post "/conference_delete/:conference_id" do
 	@conference = Conference.find(params[:conference_id])
-	erb :"success"
+	if @conference.there_are_schools_in_conference == true
+		erb :"conferences/unable_to_delete_conference"
+	else
+		@conference.delete
+		erb :"success"
+	end
 end

@@ -36,7 +36,13 @@ end
 
 MyApp.post "/school_delete/:school_id" do
 	@school = School.find(params[:school_id])
-	@school.delete
+	if @school.there_are_competitors_in_school == true
+		erb :"schools/unable_to_delete_school"
+	else 
+		@school.delete
 	erb :"success"
+	end
+
 end
+
 

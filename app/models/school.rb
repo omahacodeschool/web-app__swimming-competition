@@ -22,7 +22,6 @@ class School < ActiveRecord::Base
 			end
 		end
 
-end
 
 #If the administrator tries to delete a school, 
 #then the system should first check if there are any teams in that school. 
@@ -38,3 +37,4 @@ end
 			return true
 		end
 	end
+end

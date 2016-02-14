@@ -1,6 +1,6 @@
-<h1 style="color:green;">Add result:</h1>
+<h1 style="color:green;">Add edit/result:</h1>
 
-<form action="/add_result/time/:competitor_id/:event_id">
+<form action="/add_result/time/<%= params[:competitor_id] %>/<%= params[:event_id] %>">
 
   <input type="integer" name="time" placeholder="time in seconds">
   
