@@ -7,6 +7,7 @@ MyApp.post "/view_delete_data_confirmation" do
   erb :"view_delete_data_confirmation"
 end
 
+
 MyApp.get "/view_delete_data" do
 
   @all_swim_names = []

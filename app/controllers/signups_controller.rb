@@ -25,5 +25,37 @@ end
 
 MyApp.get "/view_add_signup" do
 
+  @sorted_signup_records = []
+
+  Signup.all.each do |x|
+        @signup_records = []
+
+        name = x.get_swimmer_name
+          if name == nil
+            name = "empty"
+          end
+        @signup_records << name
+
+        school = x.get_school_name
+          if school == nil
+            school = "empty"
+          end
+        @signup_records << school
+   
+        event = x.get_event_name
+          if event == nil
+            event = "empty"
+          end
+        @signup_records << event
+
+        time = x.completed_swim_time
+          if time == nil
+            time = "empty"
+          end
+        @signup_records << time
+        @sorted_signup_records << @signup_records
+  end
+
+  
   erb :"view_add_signup"
 end
