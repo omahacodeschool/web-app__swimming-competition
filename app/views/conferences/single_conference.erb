@@ -1,4 +1,10 @@
 <h1><%= @conference.conference.capitalize %></h1>
 
+<p>
+  <% @conference.schools.each do |c| %>
+    <%= c.school %>
+  <% end %>
+</p>
+
 <p><a href="/all_conferences">Back</a></p>
 <p><a href="/">Home</a></p>

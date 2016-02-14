@@ -1,8 +1,7 @@
 class Event < ActiveRecord::Base
 
   def results
-    x = self.id
-    @results = Result.where("event_id" => x)
+    @results = Result.where("event_id" => self.id)
     return @results
   end
 
