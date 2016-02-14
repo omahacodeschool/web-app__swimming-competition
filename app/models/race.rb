@@ -8,7 +8,7 @@ class Race < ActiveRecord:: Base
 
 #So will I need another method in SwimEntry to return swimmer names and their swimmer ids? 
 
-  def swimmer_ids_one_race
+  def list_of_swimmers
     r = self.id #a race_id we want to have swimmer info about.
     s = SwimEntry.where({"race_id" => r}) #anticipaing a hash where the key is the race_id and the value is the swim_entry_id
     g=[] #empty array to populate with swimmer ids for race "r"
