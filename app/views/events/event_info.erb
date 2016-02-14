@@ -12,9 +12,7 @@
 					<%=c.first_name %> <%= c.last_name %>
 				</a>
 				- 
-				<% if result != nil%>
-				<% result.time %>
-				<% end %>
+				<!-- add time next to name if result does not equil nil  -->
 				<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
 				<i>add/edit result</i>
 				</a>
@@ -59,6 +57,9 @@
 	</ol>
 
 <p><a href="/events/edit/<%= @event.id %>"> Edit this event. </a></p>
+
+<p><a href="/lock_event/<%= @event.id %>"> Lock this event. </a></p>
+
 
 <p><a href="/events"> Back </a></p>
 

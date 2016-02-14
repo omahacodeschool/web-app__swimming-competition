@@ -46,3 +46,12 @@ MyApp.post "/event_delete/:event_id" do
 	@event.delete
 	erb :"success"
 end
+
+MyApp.get "/lock_event/:event_id"
+	@event = Event.find(params[:event_id])
+	@event.lock
+	@event.save
+	erb :"success"
+end
+
+
