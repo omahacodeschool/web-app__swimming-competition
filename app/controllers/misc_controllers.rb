@@ -30,7 +30,13 @@ end
 MyApp.get "/top_three/:id" do
   @events = Event.find_by_id(params[:id])
   @results = Result.where({"event_id" => params[:id]})
-  @sorted = @results.order("swimmer_time")   
+  @sorted = @results.to_a.sort 
+  @top_three = []
+
+  3.times do 
+    @top_three << @sorted.shift
+  end
+
 
 
   erb :"/bios/standings"
