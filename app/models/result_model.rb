@@ -17,7 +17,6 @@ class Result <ActiveRecord::Base
   def display_event_gender
     x = self.event_id
     y = Event.find_by_id(x)
-    binding.pry
     return y.gender
   end
 
@@ -35,15 +34,4 @@ class Result <ActiveRecord::Base
     return a.style
   end
 
-  #def find_top_three_in_event
-    #empty_array = []
-    #somehow separate results into one array for each event
-    #@results.each do |r|
-      #empty_aray << r.
-      #create new array for each to push three largest values into
-    #end
-
-
-      #master.group_by{|h| h[:group]}
-  #end
 end

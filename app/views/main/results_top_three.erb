@@ -1,7 +1,10 @@
-Here are the top three finishers in each event:
+The top three finishers in this event are
 
 <p> 
-<!-- add loop here to iterate through each event id -->
-<%= Result.find_top_three_in_event %>
+<% @three_best_times.each do |i| %>
+The competitor with id # 
+ <%= i.competitor_id %> 
+ finished in <%= i.final_time %> seconds.<br>
+<% end %>
 </p>
 

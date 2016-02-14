@@ -12,13 +12,20 @@ MyApp.post "/result_added" do
   erb :"main/result_added"
 end
 
-MyApp.get "/results_top_three" do
-  
+MyApp.get "/results_top_three/:id" do
+  @results = Result.where({"event_id" => params[:id]})
+  @ordered_results = @results.order(:final_time).to_a
+  @three_best_times = []
+  3.times do 
+    @three_best_times << @ordered_results[0]
+    @ordered_results.shift
+  end
   erb :"main/results_top_three"
 end
 
 MyApp.get "/competitors_by_event_result/:kittenmitten" do
   @competitor = Competitor.find_by_id(params[:kittenmitten])
+  erb :"main/competitors_by_event_result"
 end
 
 MyApp.get "/delete/result_deleted/:dogfood" do

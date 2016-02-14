@@ -2,10 +2,9 @@ Here are the competitors in this event:
 
 <p>
 <% @juggalos.each do |j| %>
-  <% x = Competitor.find_by_id(j) %>
-  <%= x.first_name %>
-  <%= x.last_name%>
-  (id # <%= x.id %>)
+  <%= j.first_name %>
+  <%= j.last_name%>
+  (id # <%= j.id %>)
   <br>
   <br>
 <% end %>
