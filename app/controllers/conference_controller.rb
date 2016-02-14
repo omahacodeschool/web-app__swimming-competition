@@ -21,7 +21,6 @@ MyApp.get "/conference/new" do
 
   # Accepts the form entry data and creates the swimmer in the table. 
 
-
   
   erb :"conference"
 end
@@ -36,10 +35,10 @@ MyApp.get "/conference/create" do
   # combined document back to the client.
 
   # Accepts the form entry data and creates the swimmer in the table. 
-  c = Conference.new
+  @c = Conference.new
 
-  c.conference_name = params[:conference_name]
-  c.save
+  @c.conference_name = params[:conference_name]
+  @c.save
   
   erb :"success_conference_add"
 end

@@ -1,3 +1,5 @@
+
+
 MyApp.get "/race" do
 
   # If a GET request is made to the root path, the following line of code
@@ -11,20 +13,20 @@ end
 
 
 #Returns all of the information in the Races table.
-MyApp.get "/race/:id" do
+MyApp.get "/race_view/:id" do
 
-  #@races = Race.all
-  @records = []
-  #locate object in races table
-  @w = Race.find_by_id(params[:id])
-  swimmer_ids = @w.swimmer_ids_one_race 
-  swimmer_ids.each do |number| 
-    record = Swimmer.find_by_id(number)
-    @records.push(record) #should return all of the relevant objects for display
+  @event = Race.find_by_id(params[:id])
+  # @records = []
+  # #locate object in races table
+  # @w = Race.find_by_id(params[:id])
+  # swimmer_ids = @w.swimmer_ids_one_race
+  # swimmer_ids.each do |number| 
+  #   record = Swimmer.find_by_id(number)
+  #   @records.push(record) #should return all of the relevant objects for display
 
-  end 
-    #returns an array of IDs
-  erb :"swimmers_one_race"
+  # end 
+    #returns an array of IDs?
+  erb :"race_status"
 end
 
 

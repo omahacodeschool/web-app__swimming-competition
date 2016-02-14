@@ -12,11 +12,8 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 
 <a href="/">Home</a><br>
 
-<h1>Race Summary</h1>
-<%=
-<p>Information about all of the swimmmers in this event.</p>
+<h1>Race Entries</h1>
 
-<% @races.each do |event| %>
-<p><a href="/race/<%event.id%>"<%race.event_name%</a></p>#link for each race
+<p>Pre-race information about all of the swimmmers in this race.</p>
 
-end
+<%= @event.event_name %>
