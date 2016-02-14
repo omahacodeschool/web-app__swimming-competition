@@ -57,6 +57,7 @@ MyApp.get "/read/student/:student_id" do
     activity_object = r.access_event
     ordered_results = r.ordered_results_for_activity(activity_object)
     @student_ranks << ordered_results.index(r)
+    #consider making this an array of hashes that contain the result object #along with the index/rank to keep them together
   end
   erb :"admin/student/read_one_student"
 end
