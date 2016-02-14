@@ -6,8 +6,8 @@ MyApp.get "/events_form" do
   @events = Event.all
   
   @e = Event.new
-  @e.event_name      = (params["event_to_add"])
-  @e.event_best_time = (params["event_best_time_to_add"])
+  @e.event_name      = (params["event_name"])
+  @e.event_best_time = (params["event_best_time"])
   @e.save
 
   erb :"main/add_events"

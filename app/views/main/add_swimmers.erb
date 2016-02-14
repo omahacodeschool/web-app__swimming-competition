@@ -9,12 +9,12 @@
 <a href="/add_teams">Go To Add Teams</a>
 <br />
 
-<!--Create a form to collect the swimmer name (text collect), gender (radio), team (dropdown with team names collected from the teams table), desired events (checkbox with event names collected from the events table), payment status (radio)-->
+
 <form action="/swimmers_form">
   <p>
   Name:
   <br />
-  <input type="text" name="swimmer_to_add">
+  <input type="text" name="swimmer_name">
   </p>
   
   <p>
@@ -31,8 +31,6 @@
   <input type="radio" name="swimmer_gender" value="Other" checked> Other<br />
   </p>
   
-<!--This dropdown part of my form doesn't appear to collect the team selection as thought-->
-<!--I receive a NilClass error for my Swimmer model specifying that team_name is nil-->
   <p>
   Team:
   <br />
@@ -45,12 +43,12 @@
   </select>
   <br />
   </p>
-  
+ <!--Must figure out where to store each swimmers' selected events--> 
   <p>
   Desired Events:
   <br /> 
     <% Event.all.each do |event| %>
-      <input type="checkbox" value="<% event.id %>">
+      <input type="checkbox" name="swiwmmer_events" value="<% event.id %>">
       <%= event.event_name %>
       <br />
     <% end %>

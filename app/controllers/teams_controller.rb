@@ -2,8 +2,8 @@ MyApp.get "/teams_form" do
   @teams = Team.all
   
   @t = Team.new
+  @t.team_name     = (params["team_name"])
   @t.conference_id = (params["select_conference"].to_i)  
-  @t.team_name     = (params["team_to_add"])
   @t.save
 
   erb :"main/add_teams"
