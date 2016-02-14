@@ -18,7 +18,8 @@ end
 
 MyApp.get "/rookeries/edit/:id" do
   @rookery = Rookery.find_by_id(params[:id])
-  erb :"rookery/edit_rookery"
+  @conferences = Conference.all
+  erb :"rookeries/edit_rookery"
 end
 
 MyApp.post "/rookeries/process_edit/:id" do

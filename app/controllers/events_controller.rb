@@ -29,3 +29,4 @@ MyApp.post "/events/process_edit/:id" do
   @event.save
   erb :"updated"
 end
+
