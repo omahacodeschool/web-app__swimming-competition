@@ -22,8 +22,8 @@ class Conference < ActiveRecord::Base
 #returns true or false
 	def	there_are_schools_in_conference
 		x = School.where("conference_id" => self.id)
-		if x != nil
-			return true
+		if x.empty?
+			return false
 		end
 	end
 
