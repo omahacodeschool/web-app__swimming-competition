@@ -52,6 +52,17 @@ MyApp.get "/read/student/:student_id" do
   @results = Result.where({"student_id" => params[:student_id]})
   sorted_results = @results.order(student_score: :desc)
   @top_three_activities = sorted_results.first(3)
+  @ranks_in_activity = []
+  @top_three_activities.each do |r|
+    activity_id = r.access_event.id
+    all_results_for_activity = Result.where({"activity_id" => activity_id})
+    ordered_results = all_results_for_activity.order(student_score: :desc)
+    @ranks_in_activity << ordered_results.index(r)
+  end
+
+  # @activity_results = Result.where({"activity_id" => params[:id]})
+  # sorted_results = @results.order(student_score: :desc)
+  # @top_three_results_for_activity = sorted_results.first(3)
   erb :"admin/student/read_one_student"
 end
 

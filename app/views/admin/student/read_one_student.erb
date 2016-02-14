@@ -33,17 +33,21 @@
 
   <tbody>
     <tr>
-    <%if @top_three_activities == []%>
-      <td>No Performances Yet</td>
-    <%else @top_three_activities.each_with_index do |r, i|%>
-      <td><%= i + 1 %></td>
-      <td><a href="/read/activity/<%=r.access_event.id%>">
-      <%= r.access_event.event_name %></a></td>
-      <td><%= r.student_score %></td>
-      <td>Overall Rank in Activity</td>
+      <%if @top_three_activities == []%>
+        <td>No Performances Yet</td>
+      <%else @top_three_activities.each_with_index do |r, i|%>
+        <td><%= i + 1 %></td>
+        <td><a href="/read/activity/<%=r.access_event.id%>">
+        <%= r.access_event.event_name %></a></td>
+        <td><%= r.student_score %></td>
+          <% @ranks_in_activity.each do |r|%>
+          <td><%= r + 1%></td>
+          <%end%>
+          <%end%>
+          <%end%>
     </tr>
-        <%end%>
-      <%end%>
+          
+        
   </tbody>
 </table>
 
