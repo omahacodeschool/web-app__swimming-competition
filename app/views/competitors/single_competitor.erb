@@ -1,10 +1,37 @@
 <h1><%= @competitor.first_name.capitalize + " " + @competitor.last_name.capitalize %></h1>
 
 <p>
-  <% @competitor.results.each do |c| %>
-    <%= c.event_name %>
-  <% end %>
+  School:
 </p>
+
+<ul>
+  <li>
+    <%= @competitor.school_name.capitalize %>
+  </li>
+</ul>
+
+<p>
+  Conference:
+</p>
+
+<ul>
+  <li>
+    <%= @competitor.conference_name.capitalize %>
+  </li>
+</ul>
+
+<p>
+  Events:
+</p>
+
+<% @competitor.results.each do |c| %>
+<ul>
+  <li>
+    <%= c.event_name.capitalize %>
+  </li>
+</ul>    
+<% end %>
+
 
 <p><a href="/all_competitors">Back</a></p>
 <p><a href="/">Home</a></p>
