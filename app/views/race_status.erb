@@ -17,3 +17,7 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 <p>Pre-race information about all of the swimmmers in this race.</p>
 
 <%= @event.event_name %>
+
+<%= @event.list_of_swimmers.each do |swimmer| %>
+  <%= swimmer.first_name %> <%= swimmer.last_name%>
+<%= end%>

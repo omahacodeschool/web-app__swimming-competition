@@ -16,7 +16,9 @@ class Race < ActiveRecord:: Base
       x = swim_entry.swimmer_id #to get just the swimmer_ids for race "r" for use in querying the swimmer table. "x" is the array object with all of the swimmer ids.
       g.push(x) #push swimmer_ids "x" for race "r" into an Array
     end #end of each do loop
-    return g   #array of swimmer ids for one race
+
+    return Swimmer.where({"id" => g})
+    #return g   #array of swimmer ids for one race
   end #end of swimmer_ids_one_race method
   
 end #end of Race class
