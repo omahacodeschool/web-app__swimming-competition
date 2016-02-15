@@ -25,3 +25,13 @@ MyApp.get "/competitors" do
   erb :"competitor/all_competitors"
 end
 
+MyApp.get "/view_competitor/:number" do
+  @competitor = Competitor.find_by_id(params[:number])
+  erb :"competitor/view_competitor"
+end
+
+MyApp.get "/delete_competitor/:number" do
+  @competitor = Competitor.find_by_id(params[:number])
+  @competitor.delete
+  erb :"competitor/competitor_deleted"
+end 
