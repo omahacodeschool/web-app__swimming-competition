@@ -26,12 +26,7 @@ MyApp.post "/conferences/process_edit/:id" do
   erb :"updated"
 end
 
-MyApp.get "/conferences/delete/:id" do
-  @conference = Conference.find_by_id(params[:id])
-  erb :"conferences/delete_conference"
-end
-
-MyApp.post "/conferences/process_delete/:id" do
+MyApp.post "/conferences/delete/:id" do
   @conference = Conference.find_by_id(params[:id])
   @conference.delete
   erb :"updated"
