@@ -28,6 +28,23 @@ MyApp.post "/add_entry/:event_id" do
   redirect :"event_info/#{x.event_id}"
 end
 
+MyApp.post "/entry_delete/:competitor_id/:event_id" do
+	@result = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id])
+	@result.delete
+  redirect :"events"
+end
+
+MyApp.get "/results/add_time/:competitor_id/:event_id" do
+  erb :"results/add_time"
+end
+
+MyApp.get "/add_result/time/:competitor_id/:event_id" do
+	result = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id]).first
+	result.time = params[:time]
+	result.save
+  erb :"event_info/#{result.event_id}"
+end
+
 MyApp.get "/events/edit/:event_id" do
   	@event = Event.find(params[:event_id])
   erb :"events/edit_event"
@@ -44,14 +61,14 @@ MyApp.post "/event_delete/:event_id" do
 	@event = Event.find(params[:event_id])
 	@event.delete_result_info
 	@event.delete
-  redirect :"/events"
+  redirect :"events"
 end
 
 MyApp.post "/lock_event/:event_id" do
 	@event = Event.find(params[:event_id])
 	@event.locked = true
 	@event.save
-  redirect :"/events"
+  redirect :"events"
 end
 
 

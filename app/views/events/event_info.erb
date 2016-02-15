@@ -13,10 +13,15 @@
 					<a href="/profile/<%= c.id %>">
 						<b><%=c.first_name %> <%= c.last_name %></b>
 					</a>
-						- 
+<!-- 					add time next to name
+ -->						:
 					<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
 						<i>add/edit result</i>
 					</a>
+						-
+						<form action="/entry_delete/<%= c.id%>/<%= @event.id %>" method="post">
+		  				<input type="submit" value="delete">
+		  				</form>
 				</li>
 				<% end %>
 			<% end %>
@@ -24,8 +29,9 @@
 
 
 	<form action="/add_entry/<%= @event.id %>" method="post">
-
-	  <select name="competitor_id">
+<!-- add function so that you can't add competitor more than once
+ -->
+ 	  <select name="competitor_id">
 
 		   <option selected disabled>Choose competitor</option>
 				<% @list_competitors.each do |c| %>

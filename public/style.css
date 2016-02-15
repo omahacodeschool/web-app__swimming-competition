@@ -558,6 +558,10 @@ a {
   clear: both;
 }
 
+li a {
+  color: #99cc00;
+  font-weight: bold;
+}
 /***********************
 NAVIGATION
 ***********************/
