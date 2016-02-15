@@ -71,20 +71,29 @@ end
 MyApp.get "/delete_event/:id_of_event" do
   @s = Event.find_by_id(params[:id_of_event])
   @y = Result.where({"event_id" => @s.id})
-
-  @s.delete
-  @y.delete_all
+  if @s.event_locked == true
+    @message = "This event is currently locked."
+  else
+    @message = "Event successfully deleted."
+    @s.delete
+    @y.delete_all
+  end
 
   erb :"/success/delete_event"
 end
 
 MyApp.get "/add_result" do
   r = Result.new
-  r.swimmer_id = params[:swimmer_id]
-  r.event_id = params[:event_id]
-  r.swimmer_time = params["input_time"] 
-  r.save
-
+  e = Event.find_by_id(params[:event_id])
+  if e.event_locked == true
+    @message = "This event is currently locked."
+  else
+    @message = "Result successfully added."
+    r.swimmer_id = params[:swimmer_id]
+    r.event_id = params[:event_id]
+    r.swimmer_time = params["input_time"]
+    r.save
+  end
   erb :"/success/success_result"
 end
 
