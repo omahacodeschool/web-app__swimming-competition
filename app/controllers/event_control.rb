@@ -17,15 +17,10 @@ end
 
 
 MyApp.get "/event/:id" do
-  x = Event.find_by_id(params[:id])
-  z = SignupResult.all
-  y = z(event_id(x))
-
+  @x = Event.find_by_id(params[:id])
+  @x.event_id 
+  @z = SignupResult.all
+  @z.
   binding.pry
-  
-
-  
-
-
   erb :"event/1"
 end

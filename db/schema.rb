@@ -29,22 +29,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "stroke"
   end
 
-  create_table "genders", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "gender"
-  end
-
   create_table "sign_up_results", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "swimmer_info_id"
-    t.integer  "event_id"
-    t.float    "time"
-    t.integer  "rank"
-  end
-
-  create_table "signup_results", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "swimmer_info_id"
@@ -60,7 +45,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "first_name"
     t.integer  "team_id"
     t.integer  "age"
-    t.integer  "gender_id"
     t.float    "height"
     t.integer  "weight"
   end

@@ -3,10 +3,10 @@ MyApp.get "/team_form/new" do
 end
 
 MyApp.get "/team_form/create" do
- t = Team.new
- t.team = params["team"]
- t.conference_id = params["conference_id"]
- t.save
+ @t = Team.new
+ @t.team = params["team"]
+ @t.conference_id = params["conference_id"]
+ @t.save
  erb :"team/team_form"
 end
 
