@@ -1,9 +1,11 @@
 <a href="/">home</a>
 <h1>Create a new Competitor</h1>
 
+<ul>
 <% @schools.each do |s| %>
-  <p><%= s.id %> - <%= s.school_name %></p>
+  <li><%= s.id %> - <%= s.school_name %></li>
 <% end %>
+</ul>
 
 <form action="/create_competitor/success">
   <fieldset>
