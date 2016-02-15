@@ -1,5 +1,15 @@
 <a href="/">home</a>
 <br>
 <a href="/competitors">back to competitors</a>
+<br>
 
-<h1>Edit Competitor Information</h1>
+<form action="/edit_competitor/success/<%= @competitor.id %>">
+  <fieldset>
+    <legend>Edit Competitor Information:</legend>
+    Name:<br>
+    <input type="text" name="competitor" value="<%= @competitor.competitor_name %>"><br>
+    School:<br>
+    <input type="number" name="school" value="<%= @competitor.school_id %>">
+    <input type="submit">
+  </fieldset>
+</form>
