@@ -26,7 +26,7 @@ end
 
 MyApp.get "/delete_conference/:id_of_conference" do
   @c = Conference.find_by_id(params[:id_of_conference])
-  @c.conference_delete
+  @c.conference_delete(params[:id_of_conference])
   erb :"/success/delete_conference"
 end
 
