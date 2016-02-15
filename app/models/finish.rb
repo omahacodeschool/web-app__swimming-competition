@@ -1,3 +1,4 @@
+require 'pry'
 class Finish < ActiveRecord::Base
 
   def find_event
@@ -16,13 +17,16 @@ class Finish < ActiveRecord::Base
     x = self.signup_id
     return Signup.find_by_id(x)
   end
-
-  def self.determine_winner(eventid)
+#finish_array returns an array of the finish times in ascending order
+  def self.finish_array(eventid)
     x = Finish.where({"event_id" => eventid})
     @finishes = []
       x.each do |timeys|
         @finishes << timeys.finish_time
       end
+    firstplace = @finishes[0]
+    @firstplacekitten = x.find_by({"finish_time"=> firstplace})
+    binding.pry
     return @finishes.sort
   end
   

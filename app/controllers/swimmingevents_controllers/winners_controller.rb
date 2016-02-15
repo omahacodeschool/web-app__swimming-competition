@@ -15,6 +15,10 @@ MyApp.get "/view_winner/:id" do
   erb :'/ev/view_winner'
 end
 
+MyApp.get "/eventnotover" do
+  erb :'/ev/eventnotover'
+end
+
 
 #method that determines winner, involving "finish" class
 #method that gets event title, rank "first second third" 

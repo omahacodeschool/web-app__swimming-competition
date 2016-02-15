@@ -26,14 +26,6 @@ class Winner < ActiveRecord::Base
     return z.find_event
   end
 
-  #def determine_winner(eventid)
-  #  x = Finish.find_by(event_id: eventid)
-  #  arr = x.finish_time
-  #  @bean = arr.sort
-  #  return @bean
-  #
-  #end
-
 
 
 #DB.define_table("winners")
