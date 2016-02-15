@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Gamer ID</th>
-      <th>Gamer Name</th>
+      <th colspan="3">Gamer Name</th>
       <th>Squad Name</th>
     </tr>
   </thead>
@@ -15,6 +15,12 @@
       <td><center><%= g.id %></center></td>
       <td><a href="gamer/<%=g.id%>">
           <%= g.last_name %>, <%= g.first_name %></a></td>
+      <td><form action="">
+            <input type="submit" value="Edit"></td>
+          </form>
+      <td><form action="delete_gamer/<%=g.id%>" method="post">
+            <input type="submit" value="Delete"></td>
+          </form>    
       <td><a href="squad/<%=g.squad_id%>">
           <%= g.squad_access.squad_name %></a></td>
     </tr>

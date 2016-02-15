@@ -22,3 +22,9 @@ MyApp.get "/gamer/:gamer_id" do
   @gamer = Gamer.find_by_id(params[:gamer_id])
   erb :"gamers_views/gamer_profile"
 end
+
+MyApp.post "/delete_gamer/gamer_id" do
+  @gamer = Gamer.find_by_id(params[:gamer_id])
+  @gamer.delete
+  erb :"gamers_views/delete_success"
+end

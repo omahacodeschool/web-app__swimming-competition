@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Game ID</th>
-      <th>Game Name</th>
+      <th colspan="3">Game Name</th>
     <tr>
   </thead>
 
@@ -13,6 +13,12 @@
       <tr>
         <td><center><%= g.id %></center></td>
         <td><a href="game/<%=g.id%>"><%= g.game_name %></a></td>
+        <td><form action="">
+              <input type="submit" value="Edit"></td>
+            </form>
+        <td><form action="/delete_game/<%=g.id%>" method="post">
+              <input type="submit" value="Delete"></td>
+            </form>    
       </tr>
     <% end %>
   </tbody>

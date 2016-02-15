@@ -18,3 +18,9 @@ MyApp.get "/game/:game_id" do
   @game = Game.find_by_id(params[:game_id])
   erb :"game_views/view_game"
 end
+
+MyApp.post "/delete_game/:game_id" do
+  @game = Game.find_by_id(params[:game_id])
+  @game.delete
+  erb :"game_views/delete_success"
+end

@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Squad ID</th>
-      <th>Squad Name</th>
+      <th colspan="3">Squad Name</th>
       <th>Division</th>
     </tr>
   </thead>
@@ -14,6 +14,12 @@
     <tr>
       <td><center><%=s.id%></center></td>
       <td><a href="/squad/<%=s.id%>"><%= s.squad_name %></a></td>
+      <td><form action="">
+            <input type="submit" value="Edit"></td>
+          </form>
+      <td><form action="">
+            <input type="submit" value="Delete"></td>
+          </form>    
       <td><center><a href="/division/<%=s.division_id%>">
           <%=s.division_access.division%></center></td>
     </tr>

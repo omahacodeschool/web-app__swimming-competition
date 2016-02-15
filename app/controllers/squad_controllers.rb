@@ -20,3 +20,9 @@ MyApp.get "/squad/:squad_id" do
   @squad = Squad.find_by_id(params[:squad_id])
   erb :"squad_views/view_squad"
 end
+
+MyApp.post "/delete_squad/:squad_id" do
+  @squad = Squad.find_by_id(params[:squad_id])
+  @squad.delete
+  erb :"squad_views/delete_success"
+end
