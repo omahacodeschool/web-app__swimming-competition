@@ -1,9 +1,8 @@
 class Conference < ActiveRecord::Base
 
   def schools
-    x = self.id
-    @schools = School.where("conference_id" => x)
-    return @schools
+    schools = School.where("conference_id" => self.id)
+    return schools
   end
 
 end
