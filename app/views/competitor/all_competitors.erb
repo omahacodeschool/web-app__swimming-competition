@@ -11,7 +11,7 @@
   <% @competitors.each do |c| %>
   <tr>
     <td><%= c.id %></td>
-    <td><%= c.competitor_name %></td>
+    <td><a href="/view_competitor/<%= c.id %>"><%= c.competitor_name %></a></td>
     <td><%= c.school_id %></td>
   </tr>
   <% end %>
