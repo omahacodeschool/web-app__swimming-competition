@@ -41,5 +41,5 @@ MyApp.post "/competitor_delete/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
 	@competitor.delete_competitor_info
 	@competitor.delete
-  erb :"success"
+  redirect :"competitors"
 end

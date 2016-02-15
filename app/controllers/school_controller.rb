@@ -29,16 +29,18 @@ end
 
 MyApp.post "/edit_school/:school_id" do
 	@school = School.find(params[:school_id])
-	@school.update_attributes({name: params['name'], conference_id: params['confernce_id']})
+	@school.update_attributes({name: params['school_name'], conference_id: params['conference_id']})
 	@school.save
 	redirect :"school_info/#{@school.id}"
 end
 
 MyApp.post "/school_delete/:school_id" do
 	@school = School.find(params[:school_id])
+	x = @school.school_members
+	x.delete_competitor_info
 	@school.delete_school_info
 	@school.delete
-	erb :"success"
+  redirect :"schools"
 end
 
 

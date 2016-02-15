@@ -37,7 +37,7 @@ MyApp.post "/conference_delete/:conference_id" do
 		erb :"conferences/unable_to_delete_conference"
 	else
 		@conference.delete
-		erb :"success"
+		redirect :"conferences"
 	end
 
 end
