@@ -1,10 +1,17 @@
 <h1><%= @event.event.capitalize %></h1>
 
 <p>
-  <% @event.results.each do |r| %>
-    <%= r.competitor_name %>
-  <% end %>
+  Competitors:
 </p>
+
+<% @event.results.each do |r| %>
+<ul>
+  <li>
+    <%= r.competitor_name %>
+  </li>
+</ul>  
+<% end %>
+
 
 <p><a href="/all_events">Back</a></p>
 <p><a href="/">Home</a></p>

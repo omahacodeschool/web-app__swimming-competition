@@ -6,7 +6,9 @@
 
 <ul>
   <li>
-    <%= @competitor.school_name.capitalize %>
+    <a href = "/view_school/<%= @competitor.id %>">
+      <%= @competitor.school_name.capitalize %>
+    </a>  
   </li>
 </ul>
 
@@ -16,7 +18,9 @@
 
 <ul>
   <li>
-    <%= @competitor.conference_name.capitalize %>
+    <a href = "/view_conference/<%= @competitor.id %>">
+      <%= @competitor.conference_name.capitalize %>
+    </a>
   </li>
 </ul>
 
@@ -27,7 +31,9 @@
 <% @competitor.results.each do |c| %>
 <ul>
   <li>
-    <%= c.event_name.capitalize %>
+    <a href = "/view_result/<%= @competitor.id %>">
+      <%= c.event_name.capitalize %>
+    </a>  
   </li>
 </ul>    
 <% end %>

@@ -1,10 +1,18 @@
-<h1><%= @conference.conference.capitalize %></h1>
+<h1><%= @conference.conference.capitalize %> Conference</h1>
 
 <p>
-  <% @conference.schools.each do |c| %>
-    <%= c.school %>
-  <% end %>
+Schools:
 </p>
+
+<% @conference.schools.each do |c| %>
+  <ul>
+    <li>
+      <a href = "/view_school/<%= @conference.id %>">
+        <%= c.school %>
+      </a>
+    </li>
+  </ul>
+<% end %>
 
 <p><a href="/all_conferences">Back</a></p>
 <p><a href="/">Home</a></p>

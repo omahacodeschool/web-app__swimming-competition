@@ -1,4 +1,18 @@
 <h1><%= @school.school.capitalize %></h1>
 
+<p>
+  Competitors:
+</p>
+
+<% @school.competitors.each do |s| %>
+<ul>
+  <li>
+    <a href = "/view_competitor/<%= @school.id %>">
+      <%= s.first_name.capitalize + " " + s.last_name.capitalize %>
+    </a>  
+  </li>
+</ul>
+<% end %>
+
 <p><a href="/all_schools">Back</a></p>
 <p><a href="/">Home</a></p>
