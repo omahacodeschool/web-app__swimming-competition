@@ -16,3 +16,13 @@ MyApp.get "/delete_signup/:placeholder" do
   @signup.delete
   erb :"administrator"
 end
+MyApp.get "/view_signup/:place" do
+  @signup = Signup.find_by_id(params[:place])
+  @school = School.find_by_id(params[:place])
+
+  erb :"view_signup"
+end
+
+#I want to update my schema for signup and include slots for 5 swimmers
+#to sign up, then all the swimmers and the event id would have the save
+#overall 'signup id'...

@@ -1,24 +1,49 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>School</th>
+      <th>Conference</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<h1>Here are the Schools currently competing in the Tournament</h1>
-<p>
+  <tbody>
   <% @schools.each do |school| %>
-    <%= school.school_name %> 
-    <%= school.id %> 
+      <tr>
+        <td><%= school.school_name %></td>
+        <td><%= school.conference_id %></td>
 
-  </a>
-</p>
-<% end %>
-<h1>Here are the events in the Tournament</h1>
-<p>
+      
+        
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer</th>
+      <th>School</th>
+      <th>ID</th>
+      <th>Event</th>
 
-<h1>Here are the Swimmers currently competing in the Tournament</h1>
-<p>
-  <% @swimmers.each do |swimmer| %>
-    <%= swimmer.name %> 
-    <%= swimmer.id   %>
-    <%= swimmer.school_id %>
-  </a>
-</p>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+      <tr>
+        <td><%= @swimmers.name %></td>
+        <td><%= @swimmers.school_name%></td>
+        <td><%= @swimmers.id %></td>
+        <td><%= @signups.event_name %></td>
+    
+        
+      </tr>
+    
+  </tbody>
+</table>
 <% end %>
 <table border="1">
   <thead>
@@ -33,11 +58,11 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.event_name %></a></td>
-        <td><a href="/place/<%= event.id %>">First Place</td>
-        <td><a href="/place/<%= event.id %>">Second Place</td>
-        <td><a href="/place/<%= event.id %>">Third Place</td>
-        <!-- You will need to add the overall adjusted grade yourself: -->
+        <td><%= event.event_name %></td>
+        <td><%= event.first_place_name %></td>
+        <td><%= event.second_place_name %></td>
+        <td><%= event.third_place_name %></td>
+      
         
       </tr>
     <% end %>

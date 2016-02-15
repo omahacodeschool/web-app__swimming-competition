@@ -1,5 +1,4 @@
 
-
 <table border="1">
   <thead>
     <tr>
@@ -21,3 +20,14 @@
     <% end %>
   </tbody>
 </table>
+  <% @signup.each do |y| %>
+    <a href="view_signup/<%= y.id%>">
+    <%= y.event_name %> </a></p>
+  <a href="delete_signup/<%= y.id%>">
+  Delete
+  --
+  <a href="edit_signup/<%= y.id%>">
+  Edit
+  </a>
+</p>
+<% end %>
