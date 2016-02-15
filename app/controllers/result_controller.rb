@@ -1,6 +1,6 @@
 # view that shows the form for adding an 'event'.
 MyApp.get "/create_result" do
-  erb :"create/create_result"
+  erb :"result/create_result"
 end
 
 # view that shows the user that they have successfully created a 'result'.
@@ -11,7 +11,7 @@ MyApp.get "/create_result/success" do
   # x.save is a new Active Record method that saves that Result Object to the 'results' table.
   x.save
   # binding.pry # what is 'x'?
-  erb :"create/create_result_success"
+  erb :"result/create_result_success"
 end
 
 MyApp.get "/results" do
@@ -22,5 +22,5 @@ MyApp.get "/results" do
   @events = Event.all
   @competitors = Competitor.all
  # binding.pry # what is '@results'?
-erb :"lists/all_results"
+erb :"result/all_results"
 end

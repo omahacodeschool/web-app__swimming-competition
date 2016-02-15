@@ -1,5 +1,5 @@
 MyApp.get "/create_event" do
-  erb :"/create/create_event"
+  erb :"event/create_event"
 end
 
 # shows the user they have successfully created a conference.
@@ -10,7 +10,7 @@ MyApp.get "/create_event/success" do
   # x.save should be a new Active Record method that saves that Event Object to the "events" table. 
   x.save
   # binding.pry # what is 'x'?
-  erb :"create/create_event_success"
+  erb :"event/create_event_success"
 end
 
 # shows all conferences
@@ -19,5 +19,5 @@ MyApp.get "/events" do
   # @events can be used in the view.
   @events = Event.all
   # binding.pry # what is '@events'?
-  erb :"lists/all_events"
+  erb :"event/all_events"
 end
