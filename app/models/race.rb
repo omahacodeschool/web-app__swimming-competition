@@ -19,6 +19,6 @@ class Race < ActiveRecord:: Base
 
     return Swimmer.where({"id" => g})
     #return g   #array of swimmer ids for one race
-  end #end of swimmer_ids_one_race method
+  end #end of list_of_swimmers method
   
 end #end of Race class

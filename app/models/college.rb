@@ -16,8 +16,8 @@ class College < ActiveRecord:: Base
   def conference_name_with_college #name of this new method
     conf = self.conference_id #conf is a collection of conference_ids in the College table that we will use to query the Conference database to get corresponding Conference names.
     confnam = Conference.find_by_id(conf) #iterating through the conference ids to find the conference names. We should actually be returning all of the conference information, but the only information in the conference table is the conference name. 
-    return confnam #(Sumeet said it is ok to get the whole line of information)
-  end #end of swimmer_names_one_race method
-end #end of class SwimEntry
+    return confnam 
+  end #end of conference_name_with_college method
 
 end
+
