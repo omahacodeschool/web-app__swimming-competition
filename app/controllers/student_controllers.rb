@@ -52,14 +52,6 @@ MyApp.get "/read/student/:student_id" do
   @results = Result.where({"student_id" => params[:student_id]})
   sorted_results = @results.order(student_score: :desc)
   @top_three_activities = sorted_results.first(3)
-  # @student_ranks = []
-  # @top_three_activities.each do |r|
-  #   activity_object = r.access_event
-  #   ordered_results = r.ordered_results_for_activity(activity_object)
-  #   @student_ranks << ordered_results.index(r)
-  #   binding.pry
-    #consider making this an array of hashes that contain the result object #along with the index/rank to keep them together
-  #end
   erb :"admin/student/read_one_student"
 end
 

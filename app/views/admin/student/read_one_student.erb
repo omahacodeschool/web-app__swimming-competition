@@ -45,9 +45,7 @@
 
           <td>
           <%@ordered_results = r.ordered_results_for_activity(r.access_event)%>
-          <%=@ordered_results.index(r)%>
-
-
+          <%=(@ordered_results.index(r) + 1)%>
           </td>
     </tr>
           <%end%>
