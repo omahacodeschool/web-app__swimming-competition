@@ -14,10 +14,6 @@ MyApp.get "/create_competitor/success" do
   erb :"create/create_competitor_success"
 end
 
-MyApp.get "/create_competitor/success" do
-  x = School.new
-  x.
-end
 
 MyApp.get "/competitors" do
   # .all must be run on the class Competitor itself
