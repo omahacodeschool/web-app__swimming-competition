@@ -33,6 +33,12 @@ MyApp.get "/results_top_three/:id" do
   end
 end
 
+MyApp.get "/results_by_event/:id" do
+  @results = Result.where({"event_id" => params[:id]})
+  @ordered_results = @results.order(:final_time)
+  erb :"main/results_by_event"
+end
+
 MyApp.get "/competitors_by_event_result/:kittenmitten" do
   @competitor = Competitor.find_by_id(params[:kittenmitten])
   erb :"main/competitors_by_event_result"
