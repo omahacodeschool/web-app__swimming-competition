@@ -12,6 +12,12 @@ end
 
 MyApp.get "/delete/school_deleted/:dogfood" do
   @school = School.find_by_id(params[:dogfood])
+  @school_name = @school.school_name
+  @competitors = Competitor.find_by_school_name(@school_name)
+  @results = Result.find_by_competitor_id(@competitors)
+  binding.pry
+  @results.delete
+  @competitors.delete
   @school.delete
   erb :"main/delete/school_deleted"
 end

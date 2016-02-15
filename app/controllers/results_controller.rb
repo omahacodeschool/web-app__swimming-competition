@@ -51,9 +51,9 @@ end
 
 MyApp.post "/update/result_updated/:stopsign" do
   @result = Result.find_by_id(params[:stopsign])
-  @result.event_id = params[:race_style]
-  @result.competitor_id = params[:race_style]
-  @result.final_time = params[:race_style]
+  @result.event_id = params[:event_id]
+  @result.competitor_id = params[:competitor_id]
+  @result.final_time = params[:final_time]
   @result.save
   erb :"main/update/result_updated"
 end

@@ -16,6 +16,8 @@ end
 
 MyApp.get "/delete/competitor_deleted/:dogfood" do
   @competitor = Competitor.find_by_id(params[:dogfood])
+  @results = Result.find_by_competitor_id(params[:dogfood])
+  @results.delete
   @competitor.delete
   erb :"main/delete/competitor_deleted"
 end
