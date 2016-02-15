@@ -29,32 +29,51 @@ MyApp.get  "/view_leaderboard" do
           if time == nil
             time = "Not Yet Scored"
           end
-
         @signup_records << time
+
         @sorted_signup_records << @signup_records
         end
 
         @all_times = []
 
         @sorted_signup_records.each do |x|
-          @all_times << x.last.to_i
+          
+          @all_times << x.last
         end
+        @all_times_only = []
+        
+        @all_times.each do |t|
 
-        hsh_all_times_and_ids = {}
-        @all_times.each do |z|
+          if t == "Not Yet Scored"
 
-          key = z
-          val = z[3]
+          else @all_times_only << t
+          end
+        
 
-          hsh_all_times_and_ids[key] = val
-        end
+        @p = @all_times_only.sort
+        # @p[0, 1, 2].each do |p|
 
-        @show_times = hsh_all_times_and_ids.sort_by {|_key, value| value}
+
+
+
+
+
+
+        # hsh_all_times_and_ids = {}
+        # @all_times.each do |z|
+
+        #   key = [0, 1, 2]z
+        #   val = z
+
+        #   hsh_all_times_and_ids[key] = val
+        # end
+
+        # @show_times = hsh_all_times_and_ids.sort_by {|_key, value| value}
 
 
 
         #@all_times_low_to_high = @all_times.sort
-
+end
         #@sorted_signup_records[]
 
           
