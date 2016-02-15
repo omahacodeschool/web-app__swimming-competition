@@ -17,6 +17,29 @@
 </table>
 <br>
 
+
+<h2>Results Awaiting Score</h2>
+<table border="1">
+  <thead>
+      <th>Activity</th>
+      <th>Add Score</th>
+  </thead>
+
+  <tbody>
+      <tr>
+        <%@results_awaiting_score.each do |r| %>
+          <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
+          <td>Add Score</td>
+      </tr>
+        <%end%>
+      
+  </tbody>
+</table>
+
+
+
+
+
 <h2>Top 3 Best Performances for 
   <%=@student.first_name%> <%=@student.last_name%></h2>
 
