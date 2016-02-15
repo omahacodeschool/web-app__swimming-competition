@@ -5,6 +5,8 @@
   <thead>
     <tr>
       <th>Event</th>
+      <th>Lock Event</th>
+      <th>Current Status</th>
     </tr>
   </thead>
 
@@ -12,6 +14,8 @@
     <% @events.each do |y| %>
       <tr>
         <td><a href="event_bio/<%= y.id %>"> <%= y.event_name %></a> </td>
+        <td><a href="lock_event/<%= y.id %>"> Lock/ Unlock Event </a> </td>
+        <td> <%= y.event_locked %> </td>
       </tr>
     <% end %>
   </tbody>

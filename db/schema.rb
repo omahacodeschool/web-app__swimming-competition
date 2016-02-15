@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "event_name"
+    t.boolean  "event_locked"
   end
 
   create_table "results", force: :cascade do |t|

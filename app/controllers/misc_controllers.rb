@@ -26,7 +26,7 @@ MyApp.get "/show_standings" do
 
   erb :"/display/display_standings"
 end
-
+#Arranges all swimmers in descending order according to their times.  Returns Array of the three swimmers with the fastest times.
 MyApp.get "/top_three/:id" do
   @events = Event.find_by_id(params[:id])
   @results = Result.where({"event_id" => params[:id]})
@@ -39,6 +39,19 @@ MyApp.get "/top_three/:id" do
 
   erb :"/bios/standings"
 end
+
+MyApp.get "/lock_event/:id" do
+  @l = Event.find_by_id(params[:id])
+  if @l.event_locked == false
+    @l.event_locked = true
+  else
+    @l.event_locked = false
+  end
+  @l.save
+
+  erb :"/display/event_locked"
+end
+
 
 
 
