@@ -1,7 +1,17 @@
 <a href="/">home</a>
 <h1>Create a new School</h1>
 
+<% @conferences.each do |c| %>
+  <p><%= c.id %> - <%= c.conference_name %></p>
+<% end %>
+
 <form action="/create_school/success">
-  <input type="text" name="school_entered">
-  <input type="submit">
+  <fieldset>
+    <legend>School Information:</legend>
+    School Name:<br>
+    <input type="text" name="school_entered"><br>
+    Conference ID:<br>
+    <input type="number" name="conference">
+    <input type="submit">
+  </fieldset>
 </form>

@@ -1,5 +1,6 @@
 # view that shows the form for adding a 'school'
 MyApp.get "/create_school" do
+  @conferences = Conference.all
   erb :"create/create_school"
 end
 
@@ -8,6 +9,8 @@ MyApp.get "/create_school/success" do
   x = School.new
   # x.school_name is a new Active Record method that sets a School Object attribute name to 'school_name'.
   x.school_name = params["school_entered"]
+  # x.conference.id is a new Active Record method that sets a Conference Object name 'conference_id' to a 'school_entered'.
+  x.conference.id = params["conference"]
   # x.save is a new Active Recored method that saves that School Object to the 'schools' table.
   x.save
   # binding.pry # what is 'x'?
