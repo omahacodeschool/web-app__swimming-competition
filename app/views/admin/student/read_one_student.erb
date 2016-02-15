@@ -18,7 +18,7 @@
 <br>
 
 
-<h2>Results Awaiting Score</h2>
+<h2>Events Registered but not Completed Yet</h2>
 <table border="1">
   <thead>
       <th>Activity</th>
@@ -36,6 +36,23 @@
   </tbody>
 </table>
 
+<h2>Events Completed</h2>
+<table border="1">
+  <thead>
+      <th>Activity</th>
+      <th>Score</th>
+  </thead>
+
+  <tbody>
+      <tr>
+        <%@completed_results.each do |r| %>
+          <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
+          <td><%= r.student_score %></td>
+      </tr>
+        <%end%>
+      
+  </tbody>
+</table>
 
 
 
