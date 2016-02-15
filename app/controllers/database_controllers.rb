@@ -37,13 +37,12 @@ end
 #Delete University from DB
 MyApp.get "/delete_university/:id_of_university" do
   @s = University.find_by_id(params[:id_of_university])
-  @x = Swimmer.where({"university_id" => @s.id })
-    
-  @y = Result.where({@x.university_id => params[:id_of_university]})
-binding.pry
+  @x = Swimmer.where({"university_id" => @s.id }) 
+  @y = Result.where({"swimmer_id" => @x.ids})
+  
   @s.delete
-  @x.delete
-  @y.delete
+  @x.delete_all
+  @y.delete_all
 
   erb :"/success/delete_university"
 end

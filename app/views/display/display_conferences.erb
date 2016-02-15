@@ -1,6 +1,24 @@
 <p>Current Conferences</p>
-<% @conferences.each do |y| %>
+
 <p> <%= y.id %>. <%= y.conference_name %> Date Added: <%= y.created_at %>  <p>
 <% end %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Delete Conference</th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @conferences.each do |y| %>
+      <tr>
+        <td> <%= y.conference_name %></a> </td>
+      </tr>
+      <tr>
+        <a href="delete_conference/<%= y.id %>"> Delete Swimmer </a>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <a href="/">Return Home</a>
