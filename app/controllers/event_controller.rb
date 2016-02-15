@@ -13,7 +13,7 @@ MyApp.get "/create_event/success" do
   erb :"event/create_event_success"
 end
 
-# shows all conferences
+# shows all events
 MyApp.get "/events" do
   # .all must be run on the class Event itself.
   # @events can be used in the view.

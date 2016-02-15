@@ -35,3 +35,17 @@ MyApp.get "/delete_competitor/:number" do
   @competitor.delete
   erb :"competitor/competitor_deleted"
 end 
+
+MyApp.get "/edit_competitor_form/:movie" do
+  @competitor = Competitor.find_by_id(params[:movie])
+  erb :"competitor/edit_competitor"
+end
+
+
+
+
+
+
+
+
+
