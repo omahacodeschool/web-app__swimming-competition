@@ -4,6 +4,10 @@
 
 <ul>
   <% @schools.each do |s| %>
-    <li><%= s.id %> - <%= s.school_name %> - <%= s.conference_id %></li>
+    <li><%= s.id %> 
+    - 
+    <a href="/view_school/<%= s.id %>"><%= s.school_name %></a>
+    - 
+    <%= s.conf_name %></li>
   <% end %>
 </ul>

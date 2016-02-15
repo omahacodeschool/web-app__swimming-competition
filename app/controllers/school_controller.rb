@@ -27,9 +27,10 @@ MyApp.get "/schools" do
 end
 
 # view a single school
-MyApp.get "/view_school/:variable" do
-  @school = School.find_by_id(params[:variable])
-  erb :"school/single_school"
+MyApp.get "/view_school/:number" do
+  @school = School.find_by_id(params[:number])
+  @competitors = Competitor.find_by_school_id(params[:number])
+  erb :"school/view_school"
 end
 
 # delete a school
@@ -49,34 +50,7 @@ end
 # controller action to process the form
 MyApp.get "/process_edit_school_form/:variable" do
   @school = School.find_by_id(params[:variable])
-  @school.school = params["school"]
   @school.save
   erb :"school/school_updated"
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
