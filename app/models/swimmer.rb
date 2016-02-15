@@ -6,6 +6,12 @@ class Swimmer < ActiveRecord::Base
     return y.college_name
   end
 
+  def swimmer_name
+    x = self.first_name
+    y = self.last_name
+    return x + " " + y
+  end
+
   def finishtime(eventid)
     x = self.id
     y = Finish.find_by(swimmer_id: x, event_id: eventid)

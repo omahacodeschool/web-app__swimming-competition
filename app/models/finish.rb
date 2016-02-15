@@ -24,9 +24,6 @@ class Finish < ActiveRecord::Base
       x.each do |timeys|
         @finishes << timeys.finish_time
       end
-    firstplace = @finishes[0]
-    @firstplacekitten = x.find_by({"finish_time"=> firstplace})
-    binding.pry
     return @finishes.sort
   end
   

@@ -10,8 +10,16 @@ end
 MyApp.get "/view_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
   @id = params[:id]
-  @finishes = Finish.where({"event_id" => @id})
-  @events = Event.all  
+  x = Finish.where({"event_id" => params[:id]})
+  @finishes = Finish.finish_array(params[:id])
+  first = x.find_by({"finish_time"=> @finishes[0]})
+  @firstplacekitten = Swimmer.find_by_id(first)
+  second = x.find_by({"finish_time"=> @finishes[1]})
+  @secondplacekitten = Swimmer.find_by_id(second)
+  third = x.find_by({"finish_time"=> @finishes[2]})
+  @thirdplacekitten = Swimmer.find_by_id (third)
+  binding.pry
+  
   erb :'/ev/view_winner'
 end
 
