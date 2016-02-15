@@ -17,3 +17,9 @@ MyApp.get "/view_competitor/:competitor_id" do
   @competitor = Competitor.find_by_id(params[:competitor_id])
   erb :"competitors/single_competitor"
 end
+
+MyApp.post "/delete_competitor/:competitor_id" do
+  @competitor = Competitor.find_by_id(params[:competitor_id])
+  @competitor.delete
+  erb :"competitors/deleted"
+end
