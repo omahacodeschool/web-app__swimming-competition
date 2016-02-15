@@ -14,7 +14,12 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 
 <h1>Race Entries</h1>
 
-<p>Information about all of the swimmmers in this race.</p>
+<p>Enter a race ID number from the list below to see results for all of the swimmers in that race.</p>
+
+<form action = "/race_view/">
+  <input type ="integer" name="race_id" placeholder="Race ID Number">
+  <input type ="submit">
+</form>
 
 <%= @event.event_name %>
 
@@ -22,6 +27,6 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
   <p>
     <%= swimmer.first_name %> <%= swimmer.last_name%> 
     <%= swimmer.race_result(@event.id).swimmer_time %>
-    <%= swimmer.race_result(@event.id).swimmer_rank %>
+    <%= swimmer.race_result(@event.id).swimmer_race_rank %>
   </p>
 <% end%>
