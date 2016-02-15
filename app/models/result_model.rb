@@ -33,5 +33,5 @@ class Result <ActiveRecord::Base
     a = Style.find_by_id(z)
     return a.style
   end
-
+  
 end
