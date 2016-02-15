@@ -13,7 +13,14 @@
     Name:<br>
     <input type="text" name="competitor_entered"><br>
     School:<br>
+    <select>
+      <% @schools.each do |s| %>
+        <option type="number" name="school"><%= s.school_name %></option>
+      <% end %>
+    </select>
+    <!--
     <input type="number" name="school">
+    -->
     <input type="submit">
   </fieldset>
 </form>
