@@ -67,6 +67,7 @@
       <th>Activity Name</th>
       <th><%=@student.first_name%> <%=@student.last_name%>'s Score</th>
       <th>Overall Rank in Activity</th>
+      <th>Score Status</th>
     </tr>
   </thead>
 
@@ -85,6 +86,10 @@
           <%@ordered_results = r.ordered_results_for_activity(r.access_event)%>
           <%=(@ordered_results.index(r) + 1)%>
           </td>
+          <td><%if r.access_event.event_over? == true%>
+                FINAL
+          </td>
+              <%end%>
     </tr>
           <%end%>
       <%end%>
