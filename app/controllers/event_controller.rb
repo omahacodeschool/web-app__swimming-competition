@@ -25,7 +25,7 @@ MyApp.post "/add_entry/:event_id" do
 	x.event_id = params[:event_id]
 	x.competitor_id = params[:competitor_id]
 	x.save
-  redirect :"event_info/#{x.event.id}"
+  redirect :"event_info/#{x.event_id}"
 end
 
 MyApp.get "/events/edit/:event_id" do
