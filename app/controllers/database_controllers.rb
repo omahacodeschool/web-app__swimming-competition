@@ -21,8 +21,13 @@ MyApp.post "/add_conference" do
   c = Conference.new
   c.conference_name = params["input_conference"]
   c.save
-
   erb :"/success/success_conference"
+end
+
+MyApp.get "/delete_conference/:id_of_conference" do
+  @c = Conference.find_by_id(params[:id_of_conference])
+  @c.conference_delete
+  erb :"/success/delete_conference"
 end
 
 MyApp.post "/add_university" do
@@ -39,7 +44,7 @@ MyApp.get "/delete_university/:id_of_university" do
   @s = University.find_by_id(params[:id_of_university])
   @x = Swimmer.where({"university_id" => @s.id }) 
   @y = Result.where({"swimmer_id" => @x.ids})
-  
+
   @s.delete
   @x.delete_all
   @y.delete_all
