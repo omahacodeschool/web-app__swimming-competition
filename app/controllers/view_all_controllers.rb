@@ -9,9 +9,6 @@ MyApp.get "/view_contestants" do
 end
 
 MyApp.get "/view_regions" do
-  @obj = Region.new
-  @obj.city = params[:city_name]
-  @obj.save
   @regions = Region.all
   erb :"all_entries/all_cities"
 end

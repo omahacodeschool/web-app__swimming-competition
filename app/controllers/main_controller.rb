@@ -2,25 +2,25 @@ MyApp.get "/" do
   erb :"homepage"
 end
 
-MyApp.get "/region" do
+MyApp.get "/add_region" do
   erb :"add_city"
 end
 
-MyApp.get "/contestant" do
+MyApp.get "/add_contestant" do
   @regions = Region.all
   erb :"add_contestant"
 end
 
-MyApp.get "/chili" do
+MyApp.get "/add_chili" do
   @people = Contestant.all
   erb :"add_chili"
 end
 
-MyApp.get "/competition" do
+MyApp.get "/add_competition" do
   erb :"add_competition"
 end
 
-MyApp.get "/scores" do
+MyApp.get "/add_scores" do
   @contestants = Contestant.all
   @chilis = Chili.all
   @competitions = Competition.all
