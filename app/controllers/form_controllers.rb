@@ -7,20 +7,20 @@ MyApp.get "/submit_region" do
   @obj = Region.new
   @obj.city = params[:city_name]
   @obj.save
-erb :"city_was_added"
+erb :"successful/city_was_added"
 end
 
 MyApp.get "/submit_competition" do
 
-erb :"competition_was_added"
+erb :"successful/competition_was_added"
 end
 
 MyApp.get "/submit_contestant" do
 
-erb :"contestant_was_added"
+erb :"successful/contestant_was_added"
 end
 
 MyApp.get "submit_score" do
 
-erb :"scores_was_added"
+erb :"successful/scores_was_added"
 end
