@@ -3,25 +3,18 @@
 
 <table border="1">
   <thead>
-    <tr>
-      <th></th>    
+    <tr>    
       <th>Last Name</th>
       <th>First Name</th>
       <th>Age</th>
       <th>Rookery ID</th>
+      <th>Edit/Delete</th>      
     </tr>
   </thead>
 
   <tbody>
     <% @penguins.each do |p| %>
-      <tr>
-        <td> 
-          <% if p.id != nil %>
-            <form action="/penguins/delete/<%= p.id %>" method="post">
-              <input type="submit" value="delete">
-            </form>
-          <% end %>
-        </td>      
+      <tr>      
         <td><%= p.last_name %></td>
         <td><%= p.first_name %></td>
         <td><%= p.age %></td>
@@ -30,6 +23,16 @@
           <%= p.rookery_access.name %>
         <% end %>
         </td>
+        <td> 
+          <% if p.id != nil %>
+            <form action="/penguins/delete/<%= p.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/penguins/edit/<%= p.id %>">
+              <input type="submit" value="edit">
+            </a>
+          <% end %>
+        </td>        
       </tr>
     <% end %>
   </tbody>

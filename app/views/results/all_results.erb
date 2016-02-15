@@ -7,7 +7,7 @@
       <th>Penguin ID</th>
       <th>Event ID</th>
       <th>Time</th>
-      <th></th>
+      <th>Edit/Delete</th>
     </tr>
   </thead>
 
@@ -29,6 +29,9 @@
             <form action="/results/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
             </form>
+            <a href="/results/edit/<%= r.id %>">
+              <input type="submit" value="edit">
+            </a>            
           <% end %>
         </td>         
       </tr>

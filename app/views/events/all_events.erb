@@ -7,21 +7,27 @@
       <th>Event</th>
       <th>Number of Entries</th>
       <th>Start Time</th>
+      <th>Edit/Delete</th>      
     </tr>
   </thead>
 
   <tbody>
     <% @events.each do |e| %>
-      <tr>
+      <tr>      
         <td><%= e.name %>
+        </td>        
+        <td><%= e.num_entries %></td>
+        <td><%= e.start_time.strftime("%I:%M %p") %></td>
+        <td>
           <% if e.id != nil %>
             <form action="/events/delete/<%= e.id %>" method="post">
               <input type="submit" value="delete">
             </form>
+            <a href="/events/edit/<%= e.id %>">
+              <input type="submit" value="edit">
+            </a>            
           <% end %>
         </td>        
-        <td><%= e.num_entries %></td>
-        <td><%= e.start_time.strftime("%I:%M %p") %></td>
       </tr>
     <% end %>
   </tbody>

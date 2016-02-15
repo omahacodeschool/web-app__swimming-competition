@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Conference</th>
+      <th>Edit/Delete</th>
     </tr>
   </thead>
 
@@ -13,12 +14,17 @@
       <tr>
         <td>
             <%= c.name %>
-          <% if c.id != nil %>
-            <form action="/conferences/delete/<%= c.id %>" method="post">
-              <input type="submit" value="delete">
-            </form>
-          <% end %>
         </td>
+      <td>
+        <% if c.id != nil %>
+          <form action="/conferences/delete/<%= c.id %>" method="post">
+            <input type="submit" value="delete">
+          </form>
+          <a href="/conferences/edit/<%= c.id %>">
+            <input type="submit" value="edit">
+          </a>        
+        <% end %>
+      </td>        
       </tr>
     <% end %>
   </tbody>

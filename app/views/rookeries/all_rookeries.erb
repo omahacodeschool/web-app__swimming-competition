@@ -4,7 +4,7 @@
 <table border="1">
   <thead>
     <tr>
-      <th></th>
+      <th>Edit/Delete</th>
       <th>Rookery Name</th>
       <th>Conference</th>
     </tr>
@@ -18,6 +18,9 @@
             <form action="/rookeries/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
             </form>
+            <a href="/rookeries/edit/<%= r.id %>">
+              <input type="submit" value="edit">
+            </a>            
           <% end %>
         </td>       
         <td><%= r.name %></td>
