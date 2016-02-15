@@ -26,7 +26,14 @@ end
 
 MyApp.get "/delete_conference/:id_of_conference" do
   @c = Conference.find_by_id(params[:id_of_conference])
-  @c.conference_delete(params[:id_of_conference])
+  @u = University.where({"conference_id" => params[:id_of_conference]}).to_a
+  if @u.empty? == false
+    @message = "Warning, there are still universities in this conference. Delete them before continuing."
+  else
+    @message = "Conference Successfully Deleted!"
+    @c.delete
+  end
+
   erb :"/success/delete_conference"
 end
 
