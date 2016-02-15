@@ -29,7 +29,7 @@ MyApp.get "/submit_contestant" do
   erb :"successful/contestant_was_added"
 end
 
-MyApp.get "submit_score" do
+MyApp.get "/submit_scores" do
   @score = Result.new
   @score.chili_id = params[:chili_id]
   @score.competition_id = params[:competition_id]

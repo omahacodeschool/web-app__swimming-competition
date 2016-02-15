@@ -22,3 +22,8 @@ MyApp.get "/view_results" do
   @scores = Result.all
   erb :"all_entries/all_results"
 end
+
+MyApp.get "/category_info/:category_id" do
+  @category = Competition.find_by_id(params[:category_id])
+  erb :"all_entries/category_info"
+end

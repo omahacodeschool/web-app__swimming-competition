@@ -4,16 +4,16 @@
   <p><input type="text" name="competiton_id"></p>
 
   <% @competitions.each do |x|%>
-    <p><%= x.name %>
-       <%= x.id %></p>
+    <p>ID - <%= x.id %><br>
+       Competition Category - <%= x.name %></p>
   <%end%>
 
   <p>Please enter the Chili ID</p>
   <p><input type="text" name="chili_id"></p>
 
   <% @chilis.each do |x|%>
-    <p><%= x.name %>
-       <%= x.id %></p>
+    <p>ID - <%= x.id %><br>
+       Chili Name- <%= x.name %></p>
   <%end%>
 
   <p>Please enter the rating for the Appearance Category</p>
@@ -36,15 +36,30 @@
 
   <p><input type="submit"></p>
 </form>
+
+<p><a href="/">Homepage</a></p>
+
+<p><a href="/add_region">Add City</a></p>
+
+<p><a href="/add_contestant">Add Contestant</a></p>
+
+<p><a href="/add_chili">Add Chili</a></p>
+
+<p><a href="/add_competition">Add Competition Category</a></p>
+
+<p><a href="/add_scores">Add Scores</a></p>
+
 <br>
 <br>
-<br>
-<p><a href="/submit_contestant">View Contestants</a></p>
 
-<p><a href="/submit_city">View Cities</a></p>
+<p><a href="/view_regions">View Cities</a></p>
 
-<p><a href="/submit_chili">View Chilies</a></p>
+<p><a href="/view_contestants">View Contestants</a></p>
 
-<p><a href="/submit_competition">View Competition Categories</a></p>
+<p><a href="/view_chilies">View Chilies</a></p>
 
-<p><a href="/submit_scores">View Scores</a></p>
+<p><a href="/view_competitions">View Competition Categories</a></p>
+
+<p><a href="/view_results">View Scores</a></p>
+
+<p><a href="/winners">View Winners</a></p>
