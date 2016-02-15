@@ -1,10 +1,7 @@
 <h1><%=@activity.event_name%></h1>
 
+
 <h2>Top Three Student Competitors for <%=@activity.event_name%></h2>
-
-<h2><%=@activity.event_over?%></h2>
-
-
 
 <table border="1">
   <thead>
@@ -17,13 +14,20 @@
 
   <tbody>
     <tr>
-    <% @top_three_results_for_activity.each_with_index do |r, i|%>
-      <td><%= i + 1 %></td>
-      <td><a href="/read/student/<%=r.student_id%>">
+    <% if @activity.event_over? == true %>
+      <% @top_three_results_for_activity.each_with_index do |r, i|%>
+        <td><%= i + 1 %></td>
+        <td><a href="/read/student/<%=r.student_id%>">
       <%= r.access_student.first_name %> <%= r.access_student.last_name %></a>
-      </td>
+        </td>
     </tr>
       <%end%>
+    <%else%>
+    <tr>
+        <td>Event Not Over Yet</td>
+        <td>Event Not Over Yet</td>
+    </tr>
+    <%end%>
   </tbody>
 </table>
   

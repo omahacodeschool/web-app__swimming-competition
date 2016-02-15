@@ -8,6 +8,9 @@ class Activity < ActiveRecord::Base
       def event_over?
         missing_score_count = 0
         all_results_for_activity = Result.where({"activity_id" => self.id})
+        if all_results_for_activity == []
+          return false
+        end
           all_results_for_activity.each do |r|
             if r.student_score == nil
               missing_score_count += 1
