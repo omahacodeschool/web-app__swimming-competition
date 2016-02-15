@@ -1,6 +1,10 @@
-<h1>Add Result:</h1>
+<h1>Register Student for Event:</h1>
 
-<h2>Please enter the result:</h2><br>
+<h2>Please select the student:</h2><br>
+
+
+
+<h2>Please select the event:</h2><br>
   
   <form method="post" action="/result/create">
     Student:<br>
@@ -16,7 +20,5 @@
         <option value="<%= a.id %>"><%= a.event_name %></option>
       <% end %>
     </select><br>
-    Score:<br>
-    <input type="number" name="student_score"><br>
     <input type="submit">
   </form></p>

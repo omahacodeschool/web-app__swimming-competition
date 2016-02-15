@@ -1,0 +1,22 @@
+<h3>Debate Tournament Registration Details for <%=@student.first_name%> 
+<%=@student.last_name%>:</h3>
+<br>   
+<table border="1">
+  <thead>
+      <th>Event</th>
+      <th>Add Score</th>
+  </thead>
+
+  <tbody>
+      <tr>
+        <%if @results == []%>
+          <td>No Events Yet </td>
+        <%else @results.each do |r| %>
+          <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
+          <td><a href="/result/update/<%=r.id%>">Add Score</a></td>
+      </tr>
+            <%end%>
+          <%end%>
+      
+  </tbody>
+</table>

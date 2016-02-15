@@ -1,0 +1,26 @@
+<h1>Add Result:</h1>
+
+<h2>Please enter the result:</h2><br>
+
+<table>
+  <thead>
+    <tr>
+    <th>Student Name</th>
+    <th>Activity</th>
+    <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><%=@result.access_student.first_name%> 
+    <%=@result.access_student.last_name%></td>
+    <td><%=@result.access_event.event_name%></td>
+    <td><form method = "post" action = "/result/update/process/<%=@result.id%>">
+        <input type "number" name = "student_score">
+        <input type="submit" value="Add Score">
+        </form> </td>
+  </tr>
+
+  </tbody>
+</table>

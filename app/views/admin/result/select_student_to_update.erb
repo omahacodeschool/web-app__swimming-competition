@@ -1,0 +1,23 @@
+<h1>Which Student Would You Like to Add a Result for?</h1>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+<% @students.each do |s| %>
+      <tr>
+        <td><a href="/read/registrations/<%=s.id%>"><%= s.first_name %> 
+        <%= s.last_name %></a></td>
+      </tr>
+      <%end%>
+
+  </tbody>
+
+</table>
