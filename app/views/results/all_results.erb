@@ -1,11 +1,22 @@
+<h3>
+  <a href="/">
+    Home
+  </a>
+</h3>
+
 <h1>Results</h1>
 
+<p>
+  <a href="/results/new">
+    Click here to add a new result
+  </a>
+</p>
 
 <table border="1">
   <thead>
     <tr>
-      <th>Penguin ID</th>
-      <th>Event ID</th>
+      <th>Penguin</th>
+      <th>Event</th>
       <th>Time</th>
       <th>Edit/Delete</th>
     </tr>
@@ -15,11 +26,11 @@
     <% @results.each do |r| %>
       <tr>
         <% if r.penguin_access != nil %>
-        <td>
-          <%= r.penguin_access.first_name %> 
-          <% end %> 
-          <%= r.penguin_access.last_name %>
-        </td>       
+          <td>
+            <%= r.penguin_access.first_name %> 
+            <%= r.penguin_access.last_name %>
+          </td>
+        <% end %>       
         <% if r.event_access != nil %>
         <td><%= r.event_access.name %></td>
         <% end %>
