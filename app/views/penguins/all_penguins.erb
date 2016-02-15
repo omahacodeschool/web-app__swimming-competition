@@ -4,6 +4,7 @@
 <table border="1">
   <thead>
     <tr>
+      <th></th>    
       <th>Last Name</th>
       <th>First Name</th>
       <th>Age</th>
@@ -14,6 +15,13 @@
   <tbody>
     <% @penguins.each do |p| %>
       <tr>
+        <td> 
+          <% if p.id != nil %>
+            <form action="/penguins/delete/<%= p.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+          <% end %>
+        </td>      
         <td><%= p.last_name %></td>
         <td><%= p.first_name %></td>
         <td><%= p.age %></td>

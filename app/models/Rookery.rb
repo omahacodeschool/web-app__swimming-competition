@@ -1,8 +1,8 @@
 class Rookery < ActiveRecord::Base
 
-  def conference_name
+  def conference_access
     x = self.conference_id
     y = Conference.find_by_id(x)
-    y.name
+    y
   end
 end

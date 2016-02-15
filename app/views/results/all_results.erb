@@ -7,6 +7,7 @@
       <th>Penguin ID</th>
       <th>Event ID</th>
       <th>Time</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,7 +23,14 @@
         <% if r.event_access != nil %>
         <td><%= r.event_access.name %></td>
         <% end %>
-        <td><%= r.time %> (seconds)</td> 
+        <td><%= r.time %> (seconds)</td>
+        <td>
+          <% if r.id != nil %>
+            <form action="/results/delete/<%= r.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+          <% end %>
+        </td>         
       </tr>
     <% end %>
   </tbody>

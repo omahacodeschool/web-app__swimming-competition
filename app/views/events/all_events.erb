@@ -13,7 +13,13 @@
   <tbody>
     <% @events.each do |e| %>
       <tr>
-        <td><%= e.name %></td>
+        <td><%= e.name %>
+          <% if e.id != nil %>
+            <form action="/events/delete/<%= e.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+          <% end %>
+        </td>        
         <td><%= e.num_entries %></td>
         <td><%= e.start_time.strftime("%I:%M %p") %></td>
       </tr>

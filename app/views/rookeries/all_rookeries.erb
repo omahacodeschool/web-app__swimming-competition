@@ -4,6 +4,7 @@
 <table border="1">
   <thead>
     <tr>
+      <th></th>
       <th>Rookery Name</th>
       <th>Conference</th>
     </tr>
@@ -12,8 +13,17 @@
   <tbody>
     <% @rookeries.each do |r| %>
       <tr>
+        <td>
+          <% if r.id != nil %>
+            <form action="/rookeries/delete/<%= r.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+          <% end %>
+        </td>       
         <td><%= r.name %></td>
-        <td><%= r.conference_name %></td>
+        <% if r.conference_access != nil%>
+        <td><%= r.conference_access.name %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
