@@ -11,8 +11,15 @@
   <tbody>
     <% @conferences.each do |c| %>
       <tr>
-        <td><%= c.name %></td>
+        <td>
+            <%= c.name %>
+          <% if @conference != nil %>
+            <a href="/conferences/process_delete/<%= @conference.id%>"> DELETE</a>
+          <% end %>
+        </td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
+
