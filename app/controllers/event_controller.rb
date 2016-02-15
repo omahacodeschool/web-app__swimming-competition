@@ -22,7 +22,7 @@ MyApp.get "/events" do
   erb :"event/all_events"
 end
 
-MyApp.get "view_event/:number" do
+MyApp.get "/view_event/:number" do
   @event = Event.find_by_id(params[:number])
   erb :"event/view_event"
 end
