@@ -15,7 +15,6 @@ MyApp.get "/delete/school_deleted/:dogfood" do
   @school_name = @school.school_name
   @competitors = Competitor.find_by_school_name(@school_name)
   @results = Result.find_by_competitor_id(@competitors)
-  binding.pry
   @results.delete
   @competitors.delete
   @school.delete

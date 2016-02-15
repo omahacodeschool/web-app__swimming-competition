@@ -8,19 +8,10 @@ Update a competitor here:
   <input type="text" name="lastname" value="<%= @competitor.last_name %>"><br><br>
 
   School:<br>
-  <select name="school">
-    <option value="Creighton University">Creighton University</option>
-    <option value="Doane College">Doane College</option>
-    <option value="Wesleyan University">Wesleyan University</option>
-    <option value="Central Community College">Central Community College</option>
-    <option value="University of Nebraska-Lincoln">University of Nebraska-Lincoln</option>
-  </select><br><br>
+  <input type="text" name="school" value="<%= @competitor.school_name %>"><br><br>
 
   Conference:<br>
-  <select name="conference">
-    <option value="East">East</option>
-    <option value="West">West</option>
-  </select><br><br>
+  <input type="text" name="conference" value="<%= @competitor.conference_name %>"><br><br>
 
   Gender:<br>
   <select name="gender">

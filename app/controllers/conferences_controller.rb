@@ -12,8 +12,14 @@ end
 
 MyApp.get "/delete/conference_deleted/:dogfood" do
   @conference = Conference.find_by_id(params[:dogfood])
-  @conference.delete
-  erb :"main/delete/conference_deleted"
+  @conference_name = @conference.conference_name
+  @competitors_in_conference = Competitor.find_by_conference_name(@conference_name)
+  if @competitors_in_conference != nil
+    erb :"main/conference_contains_competitors"
+  else
+    @conference.delete
+    erb :"main/delete/conference_deleted"
+  end
 end
 
 MyApp.get "/update/conference_update_form/:popsicle" do
