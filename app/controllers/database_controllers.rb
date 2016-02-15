@@ -67,6 +67,16 @@ MyApp.post "/add_event" do
 
   erb :"/success/success_event"
 end
+#Delete event and all results tied to it.
+MyApp.get "/delete_event/:id_of_event" do
+  @s = Event.find_by_id(params[:id_of_event])
+  @y = Result.where({"event_id" => @s.id})
+
+  @s.delete
+  @y.delete_all
+
+  erb :"/success/delete_event"
+end
 
 MyApp.get "/add_result" do
   r = Result.new
