@@ -1,4 +1,5 @@
-MyApp.get "/sign_up_form/new" do
+
+ MyApp.get "/sign_up_form/new" do
   erb :"sign_result/sign_up_form"
 end
 
@@ -16,4 +17,3 @@ MyApp.get "/sign_up_table" do
   @info = SignupResult.all
   erb :"sign_result/sign_up_table"
 end
-
