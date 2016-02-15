@@ -23,9 +23,8 @@ DB.define_column("swimmer_infos", "weight", "integer")
 
 
 DB.define_table("events")
-DB.define_column("events", "swimmer_info_id", "integer")
-DB.define_column("events", "distance", "string")
-DB.define_column("events", "stroke", "string")
+DB.define_column("events", "event_name", "string")
+
 
 DB.define_table("signup_results")
 DB.define_column("signup_results", "swimmer_info_id", "integer")

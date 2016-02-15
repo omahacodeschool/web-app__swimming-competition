@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "swimmer_info_id"
     t.string   "distance"
     t.string   "stroke"
+    t.string   "event_name"
   end
 
   create_table "sign_up_results", force: :cascade do |t|

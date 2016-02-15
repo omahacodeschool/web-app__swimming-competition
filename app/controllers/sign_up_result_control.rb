@@ -17,3 +17,11 @@ MyApp.get "/sign_up_table" do
   @info = SignupResult.all
   erb :"sign_result/sign_up_table"
 end
+
+
+
+MyApp.get "/event/:id" do
+  @x = SignupResult.find_by_id(params[:id])
+  binding.pry
+ erb :"event/1"
+end

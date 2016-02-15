@@ -4,16 +4,15 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Distance</th>
-      <th>Stroke</th>
+      
+      <th>Event</th>
     </tr>
   </thead>
 
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.distance %></td>
-        <td><%= info.stroke %></td>
+        <td><%= info.event_name %></td>
         </tr>
     <% end %>
   </tbody>

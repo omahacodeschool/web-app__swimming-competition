@@ -4,8 +4,7 @@ end
 
 MyApp.get "/event_form/create" do
   @e = Event.new
-  @e.distance = params["distance"]
-  @e.stroke = params["stroke"]
+  @e.event_name = params["event_name"]
   @e.save
   erb :"event/event_form"
 end
@@ -16,11 +15,10 @@ MyApp.get "/event_table" do
 end
 
 
-MyApp.get "/event/:id" do
+MyApp.get "/event/:" do
   @x = Event.find_by_id(params[:id])
-  @x.event_id 
+  binding.pry
   @z = SignupResult.all
-  @z.
   binding.pry
   erb :"event/1"
 end
