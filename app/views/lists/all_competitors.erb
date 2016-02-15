@@ -2,8 +2,17 @@
 
 <h1>All Competitors</h1>
 
-<ul>
-  <% @competitors.each do |comp| %>
-    <li><%= comp.id %> - <%= comp.competitor_name %> - <%= comp.school_id %> </li>
+<table style="width:50%" border="1">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>School</td>
+  </tr>
+  <% @competitors.each do |c| %>
+  <tr>
+    <td><%= c.id %></td>
+    <td><%= c.competitor_name %></td>
+    <td><%= c.school_id %></td>
+  </tr>
   <% end %>
-</ul>
+</table>

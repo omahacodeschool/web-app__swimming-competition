@@ -2,6 +2,8 @@
 
 <h1>All Schools</h1>
 
-<% @schools.each do |s| %>
-  <p><%= s.id %> - <%= s.school_name %> - <%= s.conference_id %></p>
-<% end %>
+<ul>
+  <% @schools.each do |s| %>
+    <li><%= s.id %> - <%= s.school_name %> - <%= s.conference_id %></li>
+  <% end %>
+</ul>
