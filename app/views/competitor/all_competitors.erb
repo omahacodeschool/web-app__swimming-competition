@@ -7,12 +7,14 @@
     <td>ID</td>
     <td>Name</td>
     <td>School</td>
+    <td>Delete?</td>
   </tr>
   <% @competitors.each do |c| %>
   <tr>
     <td><%= c.id %></td>
     <td><a href="/view_competitor/<%= c.id %>"><%= c.competitor_name %></a></td>
     <td><%= c.school_id %></td>
+    <td><a href="/delete_competitor/<%= c.id %>">delete</a></td>
   </tr>
   <% end %>
 </table>
