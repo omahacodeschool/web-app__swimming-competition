@@ -16,11 +16,21 @@ MyApp.get "/results_top_three/:id" do
   @results = Result.where({"event_id" => params[:id]})
   @ordered_results = @results.order(:final_time).to_a
   @three_best_times = []
-  3.times do 
-    @three_best_times << @ordered_results[0]
-    @ordered_results.shift
+  @ordered_results_competitor_id = []
+  @ordered_results_final_time = []
+  @ordered_results.each do |i|
+    @ordered_results_competitor_id << i.competitor_id
+    @ordered_results_final_time << i.final_time
   end
-  erb :"main/results_top_three"
+  if @ordered_results_competitor_id.compact.length == @ordered_results_final_time.compact.length
+    3.times do 
+      @three_best_times << @ordered_results[0]
+      @ordered_results.shift
+    end
+    erb :"main/results_top_three"
+  else
+    erb :"main/results_not_in_yet"
+  end
 end
 
 MyApp.get "/competitors_by_event_result/:kittenmitten" do
