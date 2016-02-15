@@ -1,6 +1,8 @@
 #Processes the form for adding an award
 MyApp.get "/award_added" do 
   x = Award.new
+  x.event_id = params["event_id"]
+  x.competitor_id = params["competitor_id"]
   x.rank = params["rank"]
   x.save
 
@@ -11,6 +13,7 @@ end
 MyApp.get "/college_added" do 
   x = College.new
   x.college_name = params["college_name"]
+  x.conference_id = params["conference_id"]
   x.save
 
   erb :"added/college_added"
@@ -20,6 +23,7 @@ end
 MyApp.get "/competitor_added" do 
   x = Competitor.new
   x.competitor_name = params["competitor_name"]
+  x.college_id = params["college_id"]
   x.save
 
   erb :"added/competitor_added"
@@ -46,6 +50,8 @@ end
 #Processes the form to add event details
 MyApp.get "/event_detail_added" do 
   x = EventDetail.new
+  x.event_id = params["event_id"]
+  x.competitor_id = params["competitor_id"]
   x.finish_time = params["finish_time"]
   x.save
 
