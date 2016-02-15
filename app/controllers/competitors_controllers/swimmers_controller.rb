@@ -32,9 +32,9 @@ end
 MyApp.post "/deleteswimmer/:id" do
   @swimmer = Swimmer.find_by_id(params[:id])
   @registrations = Signup.where({"swimmer_id" => (params[:id])})
-  @registrations.delete
+  @registrations.delete_all
   @times = Finish.where({"swimmer_id" => (params[:id])})
-  @times.delete
+  @times.delete_all
   @swimmer.delete
   erb :"/cv/deletesuccess"
 end
