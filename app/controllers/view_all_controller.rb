@@ -1,5 +1,7 @@
 #Shows all awards added
 MyApp.get "/all_awards" do 
+  @events = Event.all
+  @competitors = Competitor.all 
   @awards = Award.all
   
   erb :"review/view_all_awards"
@@ -28,6 +30,8 @@ end
 
 #Shows all event details added
 MyApp.get "/all_event_details" do 
+  @events = Event.all
+  @competitors = Competitor.all 
   @event_details = EventDetail.all 
 
   erb :"review/view_all_event_details"

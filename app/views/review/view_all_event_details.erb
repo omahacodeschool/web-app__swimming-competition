@@ -1,5 +1,7 @@
 <p>Here is a list of all of the event details enetered:</p>
 
 <% @event_details.each do |x| %>
-<%= x.name %>
+  <p><%= x.event_id %></p>      
+  <p><%= x.competitor_id %></p>
+  <p><%= x.finish_time %></p>
 <% end %>
