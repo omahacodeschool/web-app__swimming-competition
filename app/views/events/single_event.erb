@@ -1,6 +1,25 @@
 <h1><%= @event.event.capitalize %></h1>
 
 <p>
+  Top Three Finishers:
+</p>
+
+<ol>
+  <li>
+    <%= @event.first %>
+  </li>
+
+  <li>   
+    <%= @event.second %>
+  </li>
+
+  <li>
+    <%= @event.third %>
+  </li>
+
+</ol>
+
+<p>
   Competitors:
 </p>
 
