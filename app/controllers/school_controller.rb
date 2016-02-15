@@ -1,6 +1,6 @@
 # view that shows the form for adding a 'school'
 MyApp.get "/create_school" do
-  # @conferences = Conference.all
+  @conferences = Conference.all
   erb :"create/create_school"
 end
 

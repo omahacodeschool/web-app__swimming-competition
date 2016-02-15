@@ -1,7 +1,9 @@
 <a href="/">home</a>
 <h1>Create a new School</h1>
 
-
+<% @conferences.each do |conf| %>
+  <p><%= conf.id %> - <%= conf.conference_name %></p>
+<% end %>
 
 <form action="/create_school/success">
   <fieldset>

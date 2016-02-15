@@ -1,7 +1,17 @@
 <a href="/">home</a>
 <h1>Create a new Competitor</h1>
 
+<% @schools.each do |s| %>
+  <p><%= s.id %> - <%= s.school_name %></p>
+<% end %>
+
 <form action="/create_competitor/success">
-  <input type="text" name="competitor_entered">
-  <input type="submit">
+  <fieldset>
+    <legend>Competitor Information:</legend>
+    Name:<br>
+    <input type="text" name="competitor_entered"><br>
+    School:<br>
+    <input type="number" name="school">
+    <input type="submit">
+  </fieldset>
 </form>
