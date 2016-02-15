@@ -42,7 +42,7 @@ MyApp.get "/add_result/time/:competitor_id/:event_id" do
 	result = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id]).first
 	result.time = params[:time]
 	result.save
-  erb :"event_info/#{result.event_id}"
+  redirect :"event_info/#{result.event_id}"
 end
 
 MyApp.get "/events/edit/:event_id" do

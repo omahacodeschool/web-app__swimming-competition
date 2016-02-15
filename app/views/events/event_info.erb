@@ -18,7 +18,7 @@
 					<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
 						<i>add/edit result</i>
 					</a>
-						-
+						
 						<form action="/entry_delete/<%= c.id%>/<%= @event.id %>" method="post">
 		  				<input type="submit" value="delete">
 		  				</form>
@@ -60,7 +60,7 @@
 				<% @event.top_three.each do |result| %>
 					<li>
 						<a href="/profile/<%= result.competitor_id %>">
-						<%= result.name_of_competitor %> 
+						<%= result.name_of_competitor %> - <%= result.time %> seconds
 						</a>
 					</li>
 			<% end %>
