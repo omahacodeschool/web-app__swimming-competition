@@ -1,11 +1,22 @@
-<p>Success your city has been added</p>
-<p>Here is a list of all of the cities we have so far:</p>
+<p>Here's a list of the cities we have so far</p>
 
 <% @regions.each do |x|%>
-  <p><%= x.city %> 's ID is
-     <%= x.id %></p>
+  <p>Region ID - <%= x.id %><br>
+     City - <%= x.city %></p>
 <% end %>
 
 <p><a href="/region">Add Another City</a></p>
 <p><a href="/contestant">Add Contestant</a></p>
 <p><a href="/">Home</a></p>
+<br>
+<br>
+<br>
+<p><a href="/submit_contestant">View Contestants</a></p>
+
+<p><a href="/submit_city">View Cities</a></p>
+
+<p><a href="/submit_chili">View Chilies</a></p>
+
+<p><a href="/submit_competition">View Competition Categories</a></p>
+
+<p><a href="/submit_scores">View Scores</a></p>
