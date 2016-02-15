@@ -5,9 +5,13 @@
   <input type="text" name="school_name" placeholder="<%= @school.name %>">
 
   <select name="conference_id">
-	   <option selected disabled>Choose conference</option>
+	   <option selected disabled>
+	   Choose conference
+	   </option>
 			<% @list_conferences.each do |c| %>
-				<option value= "<%=c.id%>"> <%=c.name %> </option>
+				<option value= "<%=c.id%>">
+				<%=c.name %>
+				</option>
 			<%end%>
   </select>
   <input type="submit">

@@ -8,10 +8,10 @@ MyApp.get "/conferences/add_new" do
 end
 
 MyApp.post "/add_conference" do
-	x = Conference.new
-	x.name = params[:conference_name]
-	x.save
-	erb :"success"
+	conference = Conference.new
+	conference.name = params[:conference_name]
+	conference.save
+	redirect :"conference_info/#{conference.id}"
 end
 
 MyApp.get "/conference_info/:conference_id" do
@@ -28,7 +28,7 @@ MyApp.post "/edit_conference/:conference_id" do
 	@conference = Conference.find(params[:conference_id])
 	@conference.update_attributes({name: params['name']})
 	@conference.save
-	erb :"success"
+	redirect :"conference_info/#{@conference.id}"
 end
 
 MyApp.post "/conference_delete/:conference_id" do

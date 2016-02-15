@@ -24,4 +24,5 @@ class Result < ActiveRecord::Base
 			return y.name
 		end
 	end
+
 end

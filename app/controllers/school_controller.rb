@@ -9,11 +9,11 @@ MyApp.get "/schools/add_new" do
 end
 
 MyApp.post "/add_school" do
-	x = School.new
-	x.name = params[:school_name]
-	x.conference_id = params[:conference_id]
-	x.save
-  erb :"success"
+	school = School.new
+	school.name = params[:school_name]
+	school.conference_id = params[:conference_id]
+	school.save
+  redirect :"school_info/#{school.id}"
 end
 
 MyApp.get "/school_info/:school_id" do
@@ -31,7 +31,7 @@ MyApp.post "/edit_school/:school_id" do
 	@school = School.find(params[:school_id])
 	@school.update_attributes({name: params['name'], conference_id: params['confernce_id']})
 	@school.save
-	erb :"success"
+	redirect :"school_info/#{@school.id}"
 end
 
 MyApp.post "/school_delete/:school_id" do

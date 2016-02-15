@@ -11,14 +11,11 @@
 			<% @event.list_of_results.each do |c| %>
 				<li>
 					<a href="/profile/<%= c.id %>">
-						<%=c.first_name %> <%= c.last_name %>
+						<b><%=c.first_name %> <%= c.last_name %></b>
 					</a>
-					- 
-					<!-- add time next to name if result does not equil nil  -->
+						- 
 					<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
-					<i>add/edit result</i>
-					</a>
-					
+						<i>add/edit result</i>
 					</a>
 				</li>
 				<% end %>
@@ -66,7 +63,6 @@
 
 
 
-<!-- <p><a href="/lock_event/<%= @event.id %>"> Lock this event. </a></p> -->
 <form action="/lock_event/<%= @event.id %>" method="post">
 	<input type="submit" value="lock">
 </form>
