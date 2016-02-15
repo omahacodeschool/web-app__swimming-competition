@@ -20,7 +20,7 @@ class Result < ActiveRecord::Base
   def university
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
-    z = University.find_by_id(y)
+    z = University.find_by_id(y.university_id)
     if z!= nil
       return z.university_name
     else
@@ -30,7 +30,7 @@ class Result < ActiveRecord::Base
   def conference
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
-    z = University.find_by_id(y)
+    z = University.find_by_id(y.university_id)
     a = Conference.find_by_id(z.conference_id)
     if a!= nil
       return a.conference_name

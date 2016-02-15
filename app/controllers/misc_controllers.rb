@@ -10,6 +10,7 @@ end
 MyApp.get "/event_bio/:id" do
   @event = Event.find_by_id(params[:id])
   @university = Result.where({"event_id" => params[:id]})
+  #binding.pry
   erb :"/bios/event_bio"
 end
 
@@ -28,15 +29,16 @@ MyApp.get "/show_standings" do
 end
 #Arranges all swimmers in descending order according to their times.  Returns Array of the three swimmers with the fastest times.
 MyApp.get "/top_three/:id" do
-  @events = Event.find_by_id(params[:id])
-  @results = Result.where({"event_id" => params[:id]})
-  @sorted = @results.order("swimmer_time").to_a 
-  @top_three = []
+  @medal_winners = Event.all
+  @medal_winners.top_three(params[:id])
+  # @results = Result.where({"event_id" => params[:id]})
+  # @sorted = @results.order("swimmer_time").to_a 
+  # @top_three = []
+  # if @sorted.lenght < 3 
 
-  3.times do 
-    @top_three << @sorted.shift
-  end
-
+  # 3.times do 
+  #   @top_three << @sorted.shift
+  # end
   erb :"/bios/standings"
 end
 
