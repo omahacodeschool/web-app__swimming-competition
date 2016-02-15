@@ -33,8 +33,8 @@ DB.define_table("events")
 DB.define_column("events", "event_name", "string")
 DB.define_column("events", "event_best_time", "float")
 
-DB.define_table("swimmer_runs")
+DB.define_table("runs")
 
-DB.define_column("swimmer_runs", "event_id", "integer")
-DB.define_column("swimmer_runs", "swimmer_id", "integer")
-DB.define_column("swimmer_runs", "swimmer_run_time", "float")
+DB.define_column("runs", "event_id", "integer")
+DB.define_column("runs", "swimmer_id", "integer")
+DB.define_column("runs", "run_time", "float")

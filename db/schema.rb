@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.float    "event_best_time"
   end
 
-  create_table "swimmer_runs", force: :cascade do |t|
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+  create_table "runs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "event_id"
     t.integer  "swimmer_id"
-    t.float    "swimmer_run_time"
+    t.float    "run_time"
   end
 
   create_table "swimmers", force: :cascade do |t|

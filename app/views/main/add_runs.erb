@@ -1,0 +1,68 @@
+<h1><center>Runs</center></h1>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_events">Go To Add Events</a>
+<br />
+<a href="/add_conferences">Go To Add Conferences</a>
+<br />
+<a href="/add_teams">Go To Add Teams</a>
+<br />
+<a href="/add_swimmers">Go To Add Swimmers</a>
+
+<form action="/runs_form">
+  <p>
+  Event:
+  <br />
+  <select name="run_event">
+    <% Event.all.each do |event| %>
+      <option value="<%= event.id %>">
+      <%= event.event_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+
+  <p>
+  Swimmer:
+  <br />
+  <select name="run_swimmer">
+    <% Swimmer.all.each do |swimmer| %>
+      <option value="<%= swimmer.id %>">
+      <%= swimmer.swimmer_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+
+  <p>
+  Run Time (in seconds):
+  <br />
+  <input type="number" step="any" name="run_time" required>
+  </p>
+  
+  <p>
+  <input type="submit" value="Add Run">
+  </p>
+</form>
+
+<br />
+<h3>Swimmer Runs:</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th> Swimmer </th>
+      <th> Event </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @runs.each do |run| %>
+      <tr>
+        <td><%= run.event_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

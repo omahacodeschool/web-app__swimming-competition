@@ -13,7 +13,7 @@ class Swimmer < ActiveRecord::Base
     b = Team.find_by_id(a)
     c = b.conference_id
     d = Conference.find_by_id(c)
-    #binding.pry
+
     return d.conference_name
   end
 end

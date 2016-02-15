@@ -26,3 +26,9 @@ MyApp.get "/add_swimmers" do
 
   erb :"main/add_swimmers"
 end
+
+MyApp.get "/add_runs" do
+  @runs = Run.all
+
+  erb :"main/add_runs"
+end

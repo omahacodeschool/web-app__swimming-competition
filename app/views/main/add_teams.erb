@@ -12,14 +12,14 @@
   <p>
   Team Name:
   <br />
-  <input type="text" name="team_name">
+  <input type="text" name="team_name" required>
   </p>
   
   <p>
   Conference:
   <br />
     <% Conference.all.each do |conference| %>
-      <input type="radio" name="select_conference" value="<%= conference.id %>" checked> 
+      <input type="radio" name="select_conference" value="<%= conference.id %>" checked required> 
       <%= conference.conference_name %>
       <br />
     <% end %>
