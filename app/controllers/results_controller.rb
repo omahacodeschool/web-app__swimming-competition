@@ -33,4 +33,9 @@ MyApp.post "/results/process_edit/:id" do
 erb :"updated"
 end
 
+MyApp.post "/results/delete/:id" do
+  @result = Result.find_by_id(params[:id])
+  @result.delete
+  erb :"updated"
+end
 

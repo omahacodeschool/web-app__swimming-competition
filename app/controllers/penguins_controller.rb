@@ -32,6 +32,12 @@ MyApp.post "/penguins/process_edit/:id" do
   @penguin.age = params["edit_age"]
   @penguin.rookery_id = params["edit_rookery_id"]
   @penguin.save
+  erb :"updated"
+end
 
+MyApp.post "/penguins/delete/:id" do
+  @penguin = Penguin.find_by_id(params[:id])
+  @penguin.delete
+  #should I redirect here? OR should I give an "updated" message?
   erb :"updated"
 end

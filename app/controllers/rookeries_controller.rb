@@ -29,3 +29,9 @@ MyApp.post "/rookeries/process_edit/:id" do
   @rookery.save
   erb :"updated"  
 end
+
+MyApp.post "/rookeries/delete/:id" do
+  @rookery = Rookery.find_by_id(params[:id])
+  @rookery.delete
+  erb :"updated"
+end

@@ -30,3 +30,8 @@ MyApp.post "/events/process_edit/:id" do
   erb :"updated"
 end
 
+MyApp.post "/events/delete/:id" do
+  @event = Event.find_by_id(params[:id])
+  @event.delete
+  erb :"updated"
+end
