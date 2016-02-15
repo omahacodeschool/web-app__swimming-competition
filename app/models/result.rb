@@ -27,6 +27,7 @@ class Result < ActiveRecord::Base
 
 
 
+
   #     @ranks_in_activity << ordered_results.index(r)
 
 end
