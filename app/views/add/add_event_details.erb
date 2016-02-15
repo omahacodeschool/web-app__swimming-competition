@@ -12,3 +12,13 @@
     <input type="submit">
   </fieldset>
 </form>
+
+Event IDs:
+<% @events.each do |x| %>
+  <p><%= x.id %> - <%= x.event_name %></p>
+<% end %>
+
+Competitor IDs:
+<% @competitors.each do |x| %>
+  <p><%= x.id %> - <%= x.competitor_name %></p>
+<% end %>

@@ -10,3 +10,8 @@
     <input type="submit">
   </fieldset>
 </form>
+
+College IDs:
+<% @colleges.each do |x| %>
+  <p><%= x.id %> - <%= x.college_name %></p>
+<% end %>

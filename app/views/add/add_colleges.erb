@@ -10,3 +10,8 @@
     <input type="submit">
   </fieldset>
 </form>
+
+Conference IDs:
+<% @conferences.each do |x| %>
+  <p><%= x.id %> - <%= x.conference_name %></p>
+<% end %>
