@@ -16,15 +16,15 @@ class Result < ActiveRecord::Base
 
 
 
-  #Returns an array of all the results for a particular activity, in order of
+  #Returns an array of all the results for a particular activity that are 
+  #completed, in order of
   #highest student score to lowest student score
 
   def ordered_results_for_activity(activity_object)
-    all_results_for_activity = Result.where({"activity_id" => activity_object.id})
+    all_results_for_activity = Result.where({"activity_id" => activity_object.id}).where.not({"student_score" => nil})
     ordered_results = all_results_for_activity.order(student_score: :desc)
     return ordered_results
   end
-
 
 
 
