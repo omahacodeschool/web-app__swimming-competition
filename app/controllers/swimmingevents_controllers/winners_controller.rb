@@ -18,8 +18,6 @@ MyApp.get "/view_winner/:id" do
   @secondplacekitten = Swimmer.find_by_id(second)
   third = x.find_by({"finish_time"=> @finishes[2]})
   @thirdplacekitten = Swimmer.find_by_id (third)
-  binding.pry
-  
   erb :'/ev/view_winner'
 end
 

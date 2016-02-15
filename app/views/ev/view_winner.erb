@@ -1,11 +1,21 @@
+<h1><%= @currentevent.event_name %></h1>
 
 
-The winner of <%= @currentevent.event_name %> is Shannon! It's always Shannon!
+<h2>First Place</h2>
+<p><%= @firstplacekitten.swimmer_name %><p>
+<p><%= @firstplacekitten.find_college_name%><p>
+<p>Finish Time: <%=@finishes[0]%> seconds</p>
 
-The scores are <%= Finish.finish_array(@id) %>
+<h2>Second Place</h2>
+<p><%= @secondplacekitten.swimmer_name %><p>
+<p><%= @secondplacekitten.find_college_name%><p>
+<p>Finish Time: <%=@finishes[1]%> seconds</p>
 
-The winner is <%= @firstplacekitten.swimmer_name %> !
+<h2>Third Place</h2>
+<p><%= @thirdplacekitten.swimmer_name %><p>
+<p><%= @thirdplacekitten.find_college_name%><p>
+<p>Finish Time: <%=@finishes[2]%>seconds</p>
 
-Second place is <%= @secondplacekitten.swimmer_name %> !
+Congratulations, Kitties!
 
-Third place is <%= @thirdplacekitten.swimmer_name %> !
+<a href="/">Home</a>
