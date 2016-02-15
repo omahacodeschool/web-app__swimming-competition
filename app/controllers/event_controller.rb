@@ -44,7 +44,7 @@ MyApp.post "/event_delete/:event_id" do
 	@event = Event.find(params[:event_id])
 	@event.delete_result_info
 	@event.delete
-  erb :"success"
+  redirect :"/events"
 end
 
 MyApp.post "/lock_event/:event_id" do

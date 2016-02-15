@@ -77,6 +77,8 @@ class Event < ActiveRecord::Base
 end
 
 
+
+
 				# event_id   | competitor_id  | time
 				#-------------------------------------
 				# 2 	     | 	1			  | 105
