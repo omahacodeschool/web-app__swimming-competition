@@ -14,13 +14,14 @@ just put links on home page that take you to this for race 1, race 2, etc. and g
 
 <h1>Race Entries</h1>
 
-<p>Pre-race information about all of the swimmmers in this race.</p>
+<p>Information about all of the swimmmers in this race.</p>
 
 <%= @event.event_name %>
 
 <% @event.list_of_swimmers.each do |swimmer| %>
   <p>
     <%= swimmer.first_name %> <%= swimmer.last_name%> 
-    <%= swimmer.finish_time(@event.id)%>
+    <%= swimmer.race_result(@event.id).swimmer_time %>
+    <%= swimmer.race_result(@event.id).swimmer_rank %>
   </p>
 <% end%>
