@@ -1,5 +1,5 @@
 <p>Here is a list of all of the competitors enetered:</p>
 
 <% @competitors.each do |x| %>
-  <p><%= x.competitor_name %></p>
+  <p><a href="view_competitor/<%= x.id %>"><%= x.competitor_name %></a></p>
 <% end %>

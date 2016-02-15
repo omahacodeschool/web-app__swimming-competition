@@ -1,5 +1,5 @@
 <p>Here is a list of all of the conferences enetered:</p>
 
 <% @conferences.each do |x| %>
-  <p><%= x.conference_name %></p>
+  <p><a href="view_conference/<%= x.id %>"><%= x.conference_name %></a></p>
 <% end %>
