@@ -31,7 +31,7 @@ class Result < ActiveRecord::Base
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
     z = University.find_by_id(y)
-    a = Conference.find_by_id(z)
+    a = Conference.find_by_id(z.conference_id)
     if a!= nil
       return a.conference_name
     else

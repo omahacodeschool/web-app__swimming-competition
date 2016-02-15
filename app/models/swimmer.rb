@@ -11,7 +11,7 @@ class Swimmer < ActiveRecord::Base
   def conference
     x = self.university_id
     y = University.find_by_id(x)
-    z = Conference.find_by_id(y)
+    z = Conference.find_by_id(y.conference_id)
     if z != nil
       return z.conference_name
     else

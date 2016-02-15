@@ -11,8 +11,9 @@ end
 #Delete Swimmer from DB
 MyApp.get "/delete_swimmer/:id_of_swimmer" do
   @s = Swimmer.find_by_id(params[:id_of_swimmer])
+  @r = Result.find_by_id(@s.id)
   @s.delete
-
+  @r.delete
   erb :"/success/delete_swimmer"
 end
 
@@ -36,7 +37,13 @@ end
 #Delete University from DB
 MyApp.get "/delete_university/:id_of_university" do
   @s = University.find_by_id(params[:id_of_university])
+  @x = Swimmer.where({"university_id" => @s.id })
+    
+  @y = Result.where({@x.university_id => params[:id_of_university]})
+binding.pry
   @s.delete
+  @x.delete
+  @y.delete
 
   erb :"/success/delete_university"
 end
