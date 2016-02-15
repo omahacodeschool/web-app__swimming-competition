@@ -1,28 +1,4 @@
-<p>Here's a list of the scores we have so far</p>
+<p>Here's the scores you added</p>
 
-<% @scores.each do |x|%>
-  <p>Scores ID - <%= x.id %><br>
-  Chili ID - <%= x.chili_id %><br>
-  Competition ID - <%= x.competition_id %><br>
-  Appearance Score - <%= x.appearance %><br>
-  Aroma Score - <%= x.aroma %><br>
-  Texture Score - <%= x.texture %><br>
-  Flavor Score - <%= x.flavor %><br>
-  Heat Score - <%= x.heat %><br>
-  Overall Score - <%= x.overall %></p>
-<% end %>
+show scores info
 
-<p><a href="/scores">Add Another Contestant's Scores</a></p>
-<p><a href="/">Home</a></p>
-<br>
-<br>
-<br>
-<p><a href="/submit_contestant">View Contestants</a></p>
-
-<p><a href="/submit_city">View Cities</a></p>
-
-<p><a href="/submit_chili">View Chilies</a></p>
-
-<p><a href="/submit_competition">View Competition Categories</a></p>
-
-<p><a href="/submit_scores">View Scores</a></p>

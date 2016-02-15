@@ -1,0 +1,21 @@
+<p>Here's a list of the contestants we have so far</p>
+
+<% @con.each do |x|%>
+  <p>Contestant ID - <%= x.id %><br> 
+     Contestant Name - <%= x.first_name %> 
+     <%= x.last_name %><br>
+     Region ID <%= x.region_id %>.</p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/submit_contestant">View Contestants</a></p>
+
+<p><a href="/submit_city">View Cities</a></p>
+
+<p><a href="/submit_chili">View Chilies</a></p>
+
+<p><a href="/submit_competition">View Competition Categories</a></p>
+
+<p><a href="/submit_scores">View Scores</a></p>
