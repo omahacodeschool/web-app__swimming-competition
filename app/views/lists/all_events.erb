@@ -3,5 +3,5 @@
 <h1>All Events</h1>
 
 <% @events.each do |ev| %>
-  <%= ev.event_name %>
+  <p><%= ev.id %> - <%= ev.event_name %></p>
 <% end %>

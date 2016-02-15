@@ -3,5 +3,5 @@
 <h1>All Conferences</h1>
 
 <% @conferences.each do |conf| %>
-  <%= conf.conference_name %>
+  <p><%= conf.id %> - <%= conf.conference_name %></p>
 <% end %>

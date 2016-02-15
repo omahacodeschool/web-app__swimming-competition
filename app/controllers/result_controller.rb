@@ -18,6 +18,9 @@ MyApp.get "/results" do
   # .all must be run on the class Result itself.
   # @results can be used in the view.
   @results = Result.all
+  # @variables can also be used to in the view.
+  @events = Event.all
+  @competitors = Competitor.all
  # binding.pry # what is '@results'?
 erb :"lists/all_results"
 end
