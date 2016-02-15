@@ -1,11 +1,9 @@
 class Team < ActiveRecord::Base
 
   def conference_name
-    x = team
-    y = x.conference_id
-    z = Conference.find_by_id(y)
-    binding.pry
-    return z.conference
+    x = conference_id
+    y = Conference.find_by_id(x)
+    return y.conference
   end
 
 end

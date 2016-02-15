@@ -8,7 +8,6 @@ MyApp.get "/swimmer_info_form/create" do
   @s.first_name = params["first_name"]
   @s.team_id = params["team_id"]
   @s.age = params["age"]
-  @s.gender_id = params["gender_id"]
   @s.height = params["height"]
   @s.weight = params["weight"]
   @s.save
