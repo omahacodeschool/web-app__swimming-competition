@@ -37,7 +37,10 @@
             </form>
             <a href="/events/edit/<%= e.id %>">
               <input type="submit" value="edit">
-            </a>            
+            </a>
+            <form action="/events/lock/<%= e.id %>" method="post">
+            <input type="submit" value="LOCK">
+            </form>                        
           <% end %>
         </td>        
       </tr>
@@ -45,6 +48,3 @@
   </tbody>
 </table>
 
-<form action="/events/lock" method="post">
-  <input type="submit" value="LOCK">
-</form>

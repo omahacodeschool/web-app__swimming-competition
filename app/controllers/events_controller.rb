@@ -36,9 +36,9 @@ MyApp.post "/events/delete/:id" do
   erb :"updated"
 end
 
-MyApp.post "/events/lock" do
-  @events = Event.all
+MyApp.post "/events/lock/:id" do
+  @events = Event.find_by_id(params[:id])
   @events.locked = true
   @events.save
-  erb :"events/locked"
+  erb :"updated"
 end

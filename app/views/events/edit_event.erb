@@ -1,16 +1,24 @@
 <p>To add a new event to the system, type the name of the event in the form below.</p>
 
+<% if @event.locked = true %>
 
-<form action="/events/process_edit/<%= @event.id %>" method="post">
-  <label>Event</label>
-  <input type="text" name ="edit_event" value="<%= @event.name %>">
+    <h2 style="color:red";>This event has been locked and no further changes can be made!</h2>
 
-  <label>Number of Entries</label>
-  <input type="number" name="edit_entries" value="<%= @event.num_entries %>">
+<% else %>
 
-  <label>Start Time</label>
-  <input type="time" name="edit_time" value="<%= @event.start_time.strftime("%H:%M") %>">
+  <form action="/events/process_edit/<%= @event.id %>" method="post">
+    <label>Event</label>
+    <input type="text" name ="edit_event" value="<%= @event.name %>">
 
-  <input type="submit" value="update">
+    <label>Number of Entries</label>
+    <input type="number" name="edit_entries" value="<%= @event.num_entries %>">
 
-</form>
+    <label>Start Time</label>
+    <input type="time" name="edit_time" value="<%= @event.start_time.strftime("%H:%M") %>">
+
+    <input type="submit" value="update">
+
+  </form>
+
+
+<% end %>
