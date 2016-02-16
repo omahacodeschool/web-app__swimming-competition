@@ -8,7 +8,6 @@ class Event < ActiveRecord::Base
     signups_for_this_event.each do |e|
       comps << e.competitor_id
     end
-    binding.pry
     return Competitor.where({"id" => comps})
   end
 end
