@@ -18,6 +18,13 @@ class Run < ActiveRecord::Base
 
     return b.swimmer_name
   end
+
+  def run_event
+    a = self.event_id
+    b = Event.find_by_id(a)
+
+    return b.event_name
+  end
 end
 
 # I have collected all of the pertinent information (events, conferences, teams, swimmers, runs)

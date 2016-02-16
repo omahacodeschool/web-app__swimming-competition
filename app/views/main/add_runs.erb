@@ -48,22 +48,21 @@
   </p>
 </form>
 
-<!--Prints table showing events with runs added and the participating swimmers-->
 <br />
 <h3>Added Runs:</h3>
 <table border="1">
   <thead>
     <tr>
-      <th> Event Run </th>
-      <th><center> Swimmer </center></th>
-      <th><center> Run Time (sec.) </center></th>
+      <th> Run Event </th>
+      <th> Swimmer </th>
+      <th> Run Time (sec.) </th>
     </tr>
   </thead>
 
   <tbody>
     <% @runs.each do |run| %>
       <tr>
-        <td><%= run.event_id %></td>
+        <td><%= run.run_event %></td>
         <td><%= run.run_swimmer %></td>
         <td><%= run.run_time %></td>
       </tr>
