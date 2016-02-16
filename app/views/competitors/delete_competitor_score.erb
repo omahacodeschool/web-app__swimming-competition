@@ -1,0 +1,16 @@
+<center><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/delete_score/confirmation">
+<h1> <%= @competitor.name %> </h1>
+
+Age:&nbsp;<b><%= @competitor.age %></b> &emsp;|&emsp;
+College:&nbsp;<b><%= @competitor.get_college_name %></b>&emsp;|&emsp;
+Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
+<br>
+<br>
+<select name="delete_competitor_result_dropdown">
+    <% @results.each do |r| %>
+      <option value="<%= r.id %>"><%= r.get_activity_name %>.&nbsp;|&nbsp;<%= r.score %></option>
+      <% end %>
+    </select>
+    <br>
+  <br>
+  <input type="submit" value="Delete Score"></form></center><br><br>

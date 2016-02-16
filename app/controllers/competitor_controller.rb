@@ -11,11 +11,18 @@ MyApp.get "/competitors/competitor/:id" do
   erb :"/competitors/competitor"
 end
 
-MyApp.get "/competitors/competitor/:id/update_competitor" do
+MyApp.get "/competitors/competitor/:id/delete_score" do
   @competitor = Competitor.find_by_id(params[:id])
   @results = Result.where({"competitor_id" => params[:id]})
   @colleges = College.all
-  erb :"/competitors/update_competitor"
+  erb :"/competitors/delete_competitor_score"
+end
+
+MyApp.post "/competitors/competitor/:id/delete_score/confirmation" do
+  @competitor = Competitor.find_by_id(params[:id])
+  @results = Result.find_by_id(params["delete_competitor_result_dropdown"])
+  @results.delete
+  erb :"/competitors/deleted_competitor_confirmation"
 end
 
 MyApp.post "/competitors/competitor/:id/update_competitor/confirmation" do
@@ -44,7 +51,7 @@ MyApp.post "/competitors/competitor/:id/delete_competitor/confirmation" do
   @competitor = Competitor.find_by_id(params[:id])
   @competitor.delete_all_competitor_results
   @competitor.delete
-  erb:"/competitors/deleted_competitor_confirmation"
+  erb :"/competitors/deleted_competitor_confirmation"
 end
 
 MyApp.get "/competitors/competitor/:id/add_score" do
@@ -52,6 +59,12 @@ MyApp.get "/competitors/competitor/:id/add_score" do
   @colleges = College.all
   @activities = Activity.all
   @r = Result.all
+  erb :"/competitors/add_competitor_activity_score"
+end
+
+MyApp.get "/competitors/competitor/:id/delete_score" do
+  @competitor = Competitor.find_by_id(params[:id])
+  @results = Result.find_by_id(params["update_competitor_result_dropdown"])
   erb :"/competitors/add_competitor_activity_score"
 end
 
