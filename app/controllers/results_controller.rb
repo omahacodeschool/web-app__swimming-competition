@@ -39,3 +39,11 @@ MyApp.post "/results/delete/:id" do
   erb :"updated"
 end
 
+MyApp.get "/results/view/:id" do
+
+  @result = Result.where("event_id" => params[:id]).first
+
+  erb :"results/single_result_view"
+
+end
+
