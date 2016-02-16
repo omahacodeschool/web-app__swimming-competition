@@ -4,7 +4,8 @@
     <tr>
       <th>Swimmer</th>
       <th>School(conference)</th>
-      <th>Event</th>
+      <th>Conference</th>
+      <th>Events<th>
 
     </tr>
   </thead>
@@ -13,9 +14,11 @@
   
       <tr>
         <td><%= @swimmer.name %></td>
-        <td><%= @swimmer.school_name   %> </td>
-        <td><%= @school.conference_name  %></td>
-        <td><%= @signup.event_name %></td>
+        <td><%= @swimmer.school.school_name   %> </td>
+        <td><%= @swimmer.school.conference_name  %></td>
+        <% @signup.each do |signup| %>
+        <td><%= signup.event.event_name %></td>
+        <% end %>
     
         
       </tr>

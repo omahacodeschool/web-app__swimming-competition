@@ -8,6 +8,11 @@ class Swimmer < ActiveRecord::Base
     y = School.find_by_id(x)
     return y.school_name
   end
+  def school
+    x = self.school_id
+    y = School.find_by_id(x)
+    return y
+  end
 end
 
 # a = all events swimmer was in

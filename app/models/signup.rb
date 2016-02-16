@@ -9,4 +9,9 @@ class Signup < ActiveRecord::Base
     y = Event.find_by_id(x)
     return y.event_name
   end
+  def event
+    x = self.event_id
+    y = Event.find_by_id(x)
+    return y
+  end
 end

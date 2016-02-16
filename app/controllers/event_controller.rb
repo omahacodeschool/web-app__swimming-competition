@@ -28,3 +28,5 @@ MyApp.get "/edit_event/finish_update_event/:place" do
   @event.save
   erb :"administrator"
 end
+
+
