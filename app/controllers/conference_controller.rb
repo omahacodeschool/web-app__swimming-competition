@@ -25,6 +25,13 @@ MyApp.get "/conference/new" do
   erb :"conference"
 end
 
+MyApp.get "/conference_view/:id" do
+
+  @conference = Conference.find_by_id(params[:id])
+
+  erb :"conference_status"
+end
+
 MyApp.get "/conference/create" do
 
   # If a GET request is made to the root path, the following line of code

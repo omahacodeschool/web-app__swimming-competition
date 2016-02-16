@@ -1,4 +1,4 @@
-class Race < ActiveRecord:: Base
+class Race < ActiveRecord::Base
 
 #Race table does not have swimmer information of any kind in it. 
 

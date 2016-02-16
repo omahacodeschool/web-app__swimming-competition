@@ -20,7 +20,7 @@ DB.define_column("swimmers", "college_id", "integer")
 
 DB.define_table("race_results")
 DB.define_column("race_results", "swim_entry_id", "integer")
-DB.define_column("race_results", "swimmer_time", "float")
+DB.define_column("race_results", "swimmer_time", "integer")
 DB.define_column("race_results", "swimmer_race_rank", "integer")
 
 DB.define_table("swim_entries")

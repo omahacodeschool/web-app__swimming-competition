@@ -1,2 +1,2 @@
-class RaceResult < ActiveRecord:: Base
+class RaceResult < ActiveRecord::Base
 end

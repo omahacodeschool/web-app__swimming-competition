@@ -2,4 +2,25 @@
 
 <a href="/">Home</a><br>
 
-<h1>Colleges Entered</h1>
+<h1>Colleges in this Swim Meet</h1>
+
+
+
+#here's what I want on this page
+
+college name, conference name, college contact, college contact email, college contact phone for every college 
+
+ <p> Nothing that I put on this page that starts with @college is working. </p> 
+
+<%= "Hello World" %>
+
+<% @colleges.each do |college| %>
+  <p>
+    <%= college.college_name %> <%= college.conference_name %> 
+    <%= college.contact %> <%= college.contact_email %>
+    <%= college.contact_ph%>
+  </p>
+<% end%>
+
+
+

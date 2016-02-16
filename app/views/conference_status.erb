@@ -1,0 +1,14 @@
+<a href="/">Home</a><br>
+
+<h1>Conference Status</h1>
+
+
+Here's what I want on this page. Let's start with just a list of participating conferences.
+
+<% @conference.participating_colleges.each do |college| %>
+  <p>
+    <%= college.name %>
+  </p>
+<% end%>
+
+
