@@ -1,0 +1,13 @@
+<h1>LOCK EVENT<h1>
+
+<p>Are you sure you want to LOCK the event "<%= @currentevent.event_name %>"?<p>
+Once locked, this you will be unable to:
+<p>Add new swimmers to this event</p>
+<p>Add new results to this event</p>
+<p>Edit any result from this event</p>
+<p>Or delete this event</p>
+<p></p>
+<p></p>
+<form action="/confirmlock/<%= @currentevent.id%>" method ="post">
+  <input type="submit" value= "Yes, I'm sure. LOCK IT UP">
+</form>

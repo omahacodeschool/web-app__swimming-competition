@@ -17,6 +17,7 @@ require_relative "./_configure"
 #the names of the swimming events
 DB.define_table("events")
 DB.define_column("events","event_name","string")
+DB.define_column("events","locked","boolean")
 
 #info about the swimmers
 DB.define_table("swimmers")
@@ -53,6 +54,3 @@ DB.define_table("winners")
 DB.define_column("winners","rank_id","integer")
 DB.define_column("winners","finish_id","integer")
 
-#THIS STUFF IS NEW AND MAYBE GARBAGE
-DB.define_table("locks")
-DB.define_column("locks","event_id","boolean")
