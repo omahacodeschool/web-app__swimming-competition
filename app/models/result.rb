@@ -42,7 +42,7 @@ class Result < ActiveRecord::Base
     end
   end
 #Arranges all swimmers in descending order according to their times.  Returns Array of the three swimmers with the fastest times.
-  def top_swimmers
+  def Result.top_swimmers
     sorted = self.order("swimmer_time").to_a 
     top_three = []
     3.times do 

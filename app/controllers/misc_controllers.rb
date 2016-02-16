@@ -20,7 +20,7 @@ MyApp.get "/show_standings" do
 
   erb :"/display/display_standings"
 end
-#Arranges all swimmers in descending order according to their times.  Returns Array of the three swimmers with the fastest times.
+
 MyApp.get "/top_three/:id" do
   results = Result.where({"event_id" => params[:id]})
   #binding.pry
