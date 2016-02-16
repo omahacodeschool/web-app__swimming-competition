@@ -12,8 +12,8 @@
   <% @event.competitors.each do |c| %>
   <tr>
     <td><%= c.competitor_name %></td>
-    <td><%= c.school_id %></td>
-    <td>conference</td>
+    <td><%= c.school_name %></td>
+    <td><%=  %></td>
   </tr>
   <% end %>
 </table>
