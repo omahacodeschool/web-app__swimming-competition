@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "event_name"
-    t.integer  "max_possible_score_for_activity"
+    t.float    "max_possible_score_for_activity"
+    t.boolean  "lock"
   end
 
   create_table "colleges", force: :cascade do |t|
@@ -35,20 +36,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "conference_name"
   end
 
-  create_table "events", force: :cascade do |t|
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "event_name"
-    t.integer  "max_possible_score_for_activity"
-  end
-
   create_table "results", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "student_id"
-    t.integer  "event_id"
-    t.integer  "student_score"
     t.integer  "activity_id"
+    t.float    "student_score"
   end
 
   create_table "students", force: :cascade do |t|

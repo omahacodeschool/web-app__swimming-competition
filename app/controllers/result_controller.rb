@@ -3,7 +3,6 @@
 
 MyApp.get "/result/update/:result_id" do
   @result = Result.find_by_id(params[:result_id])
-  binding.pry
   erb :"admin/result/update_result"
 end
 
@@ -41,7 +40,6 @@ MyApp.post "/result/update/process/:result_id" do
   @result.student_score = (params["student_score"].to_f/max_possible_score.to_f).to_f
   @result.save
   @confirm_message = "Success! Updated #{@result.access_student.first_name} #{@result.access_student.last_name}'s score in #{@result.access_event.event_name}!"
-  #binding.pry
   erb :"admin/confirm_submission"
 end
 

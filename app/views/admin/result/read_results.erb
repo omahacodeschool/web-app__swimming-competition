@@ -7,7 +7,7 @@
       <th>Student First Name</th>
       <th>Student Last Name</th>
       <th>Event Name</th>
-      <th>Student Score (Out of Max Possible for Event)</th>
+      <th>Student Score</th>
     </tr>
   </thead>
 
@@ -18,7 +18,7 @@
         <td><%= r.access_student.first_name %></td>
         <td><%= r.access_student.last_name %></td>
         <td><%= r.access_event.event_name %></td>
-        <td><%= r.student_score %>/<%= r.access_event.max_possible_score_for_activity%></td>
+        <td><%= r.student_score %></td>
       </tr>
     <% end %>
   </tbody>
