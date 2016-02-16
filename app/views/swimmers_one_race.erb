@@ -1,0 +1,34 @@
+<!-- want to access @w to get the race number and name, and @records to get the swimmer information that goes with that race.
+
+#access to @w - race object
+#access to @records - collection of swimmer objects
+
+should be able to call methods on those objects to get what I want to display on this page
+
+watch for getting to the right controller action
+
+just put links on home page that take you to this for race 1, race 2, etc. and gives you the entries -->
+
+
+<a href="/">Home</a><br>
+
+<h1>Event Summary</h1>
+<%=
+<p>Information about all of the swimmmers entered in this event.</p>
+
+<% @w.each do |event| %>
+<p>This race is <%=@w.event_name %></p>
+<p>Entries</p>
+<%= @records.each do |swimmer| %>
+
+#<p><a href="/race/<%event.id%>"<%race.event_name%</a></p>#link for each race
+
+<p>Swimmers</p> 
+
+
+#<p><a href="/race/<%event.id%>"<%race.start_time%</a></p>
+#<p><a href="/race/<%event.id%>"<%swimmers.all
+
+
+
+
