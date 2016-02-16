@@ -1,0 +1,18 @@
+<h1>Update College:</h1>
+
+<h2>Please modify the information for <%=@college.college_name%>:</h2>
+<br>
+<p>
+  <form method = "post" action="/process_update_college_form/<%=@college.id%>">
+    College Name:<br>
+    <input type="text" name="college_name" 
+    value="<%=@college.college_name%>"><br>
+    Conference:<br>
+    <select name="conference_id">
+      <% @conferences.each do |c| %>
+      <option value="<%= c.id %>"> <%= c.conference_name %></option>
+      <% end %>
+    </select>
+    <input type="submit">
+  </form>
+</p>
