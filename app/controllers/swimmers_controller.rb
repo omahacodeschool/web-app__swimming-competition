@@ -1,7 +1,7 @@
 MyApp.post "/swimmers_form" do
   @swimmers = Swimmer.all
+  @s        = Swimmer.new
 
-  @s = Swimmer.new
   @s.swimmer_name           = (params["swimmer_name"])
   @s.swimmer_dob            = (params["swimmer_dob"])
   @s.swimmer_gender         = (params["swimmer_gender"])
@@ -13,7 +13,9 @@ MyApp.post "/swimmers_form" do
 end
 
 MyApp.get "/delete_swimmer/:swimmer_id" do
-  @swimmer = Swimmer.find_by_id(params[:swimmer_id])
+  @swimmers = Swimmer.all
+  @swimmer  = Swimmer.find_by_id(params[:swimmer_id])
+  
   @swimmer.delete
     
   erb :"main/add_swimmers"
