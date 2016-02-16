@@ -40,11 +40,11 @@ MyApp.post "/competitors/added_new_competitor" do
   erb :"/competitors/added_competitors_confirmation"
 end
 
-MyApp.post "/competitors/competitor/:id/delete/confirmation" do
+MyApp.post "/competitors/competitor/:id/delete_competitor/confirmation" do
   @competitor = Competitor.find_by_id(params[:id])
   @competitor.delete_all_competitor_results
   @competitor.delete
-  erb :"/competitors/deleted_competitor_confirmation"
+  erb:"/competitors/deleted_competitor_confirmation"
 end
 
 MyApp.get "/competitors/competitor/:id/add_score" do

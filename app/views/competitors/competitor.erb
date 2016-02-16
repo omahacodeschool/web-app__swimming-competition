@@ -41,7 +41,7 @@ Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
       <input type="submit" value="Add New Score">&emsp;</form></th>
       <th><form method="get" action="/competitors/competitor/<%= @competitor.id %>/update_competitor">
       <input type="submit" value="Update Competitor">&emsp;</form></th>
-      <th><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/delete/confirmation">
+      <th><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/delete_competitor/confirmation">
       <input type="submit" value="Delete Competitor">&emsp;</form></th>
 
     </tr>
