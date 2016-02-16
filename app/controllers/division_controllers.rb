@@ -19,6 +19,11 @@ MyApp.get "/division/:division_id" do
   erb :"division_views/view_division"
 end
 
+MyApp.get "/edit_division_form/:division_id" do
+  @division = Division.find_by_id(params[:division_id])
+  erb :"division_views/edit_division_form"
+end
+
 MyApp.post "/delete_division/:division_id" do
   @division = Division.find_by_id(params[:division_id])
   @division.delete
