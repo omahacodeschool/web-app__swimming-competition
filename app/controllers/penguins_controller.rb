@@ -38,5 +38,6 @@ end
 MyApp.post "/penguins/delete/:id" do
   @penguin = Penguin.find_by_id(params[:id])
   @penguin.delete
+  @penguin.delete_results
   erb :"updated"
 end

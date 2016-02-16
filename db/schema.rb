@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "name"
     t.integer  "num_entries"
     t.time     "start_time"
+    t.boolean  "locked"
   end
 
   create_table "penguins", force: :cascade do |t|

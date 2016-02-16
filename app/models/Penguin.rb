@@ -12,8 +12,8 @@ class Penguin < ActiveRecord::Base
     y
   end
 
-  def all_results
-    Result.where({"penguin_id" => self.id})
+  def delete_results
+    Result.where("penguin_id" => self.id).first.delete
   end
 
 end

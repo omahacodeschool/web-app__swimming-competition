@@ -35,3 +35,10 @@ MyApp.post "/events/delete/:id" do
   @event.delete
   erb :"updated"
 end
+
+MyApp.post "/events/lock" do
+  @events = Event.all
+  @events.locked = true
+  @events.save
+  erb :"events/locked"
+end

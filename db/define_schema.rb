@@ -24,12 +24,13 @@ DB.define_column("penguins", "age", "integer")
 
 #Make "events" table
 #needs the following columns:
-#name, num_entries, start_time
+#name, num_entries, start_time, locked
 
 DB.define_table("events")
 DB.define_column("events", "name", "string")
 DB.define_column("events", "num_entries", "integer")
 DB.define_column("events", "start_time", "time")
+DB.define_column("events", "locked", "boolean")
 
 
 #Make "rookeries" table
