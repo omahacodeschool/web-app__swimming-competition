@@ -17,7 +17,9 @@
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.swimmer_name %></td>
+        <td><%= info.swimmer_name %> -
+        <a href="/delete_swimmer/<%= info.id%>">Delete</a>
+        </td>
         <td><a href="/event/<%= info.id %>"><%= info.event_name %></a></td> 
         <td><%= info.time %></td>
         <td><%= info.rank %></td>
@@ -29,7 +31,5 @@
 <br>
 <br>
 
- <% @.each do |info| %>
- <%= x.top_three %>
 
 <center><a href="/">Admin Page</a></center>

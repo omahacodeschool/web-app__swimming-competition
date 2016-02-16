@@ -18,15 +18,21 @@ MyApp.get "/sign_up_table" do
   erb :"sign_result/sign_up_table"
 end
 
-
-MyApp.get "/event/:id" do
+MyApp.post "/event/:id" do
   @x = SignupResult.find_by_id(params[:id])
- erb :"event/:id"
+ erb :"event/single_event"
 end
 
-MyApp.get "/top_three" do
-  x = SignupResult.all
-  @y = x.rank[1..3]
-  binding.pry
-  erb :"sign_result/sign_up_table"
+
+MyApp.get "delete_swimmer/:id" do
+ @swimmer = SwimmerInfo.find_by_id(params[:id])
+ @swimmer.delete
+ erb :"sign_result/swimmer_deleted"
 end
+
+#MyApp.get "/top_three" do
+#  x = SignupResult.all
+#  @y = x.rank[1..3]
+#  binding.pry
+#  erb :"sign_result/sign_up_table"
+#end

@@ -15,4 +15,9 @@ class SignupResult < ActiveRecord::Base
     return z
   end
 
+  def swimmers
+     x = ["a", "b", "c"]
+    return x
+  end
+
 end

@@ -1,9 +1,17 @@
 class Event < ActiveRecord::Base
 
-  #def swimmers
 
-    #s = []
-    #x = Event.self.id
+  def swimmers
+    x =[Lou Reed, Mike Jackson]
+    return x
+  end
+  #def swimmers
+  #  x =[Lou Reed, Mike Jackson]
+  #  return x
+  #  x = Event.where({"event_id" = self.id})
+  #  swimmer_info_id = []
+  #    x each.do ||
+
     #y = SignupResult.find_by_id(x)
     #z << y.swimmer_info_id
     #binding.pry
