@@ -53,3 +53,6 @@ DB.define_table("winners")
 DB.define_column("winners","rank_id","integer")
 DB.define_column("winners","finish_id","integer")
 
+#THIS STUFF IS NEW AND MAYBE GARBAGE
+DB.define_table("locks")
+DB.define_column("locks","event_id","boolean")

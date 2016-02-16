@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "finish_time"
   end
 
+  create_table "locks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "event_id"
+  end
+
   create_table "ranks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

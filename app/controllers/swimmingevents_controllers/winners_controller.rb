@@ -8,11 +8,9 @@ MyApp.get "/winners" do
 end
 
 MyApp.get "/view_winner/:id" do
-#####################THIS IS WHERE YOU STOPPED
   @currentevent = Event.find_by_id(params[:id])
-  if x == []
-    @event.delete
-    erb :"/cv/deletesuccess"
+  if @currentevent.event_over? == false
+    erb :"/ev/eventnotover"
   else 
     @f = Finish.all
     @finishes = Finish.finish_array(params[:id])

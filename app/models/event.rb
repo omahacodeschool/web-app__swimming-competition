@@ -1,3 +1,13 @@
 class Event < ActiveRecord::Base
 
+  def event_over?
+    eventid = self.id
+    x = Signup.where({"event_id" => eventid})
+    y = Finish.where({"event_id" => eventid})
+    if x.length - y.length == 0
+      return true
+    else
+      return false
+    end
+  end
 end

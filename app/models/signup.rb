@@ -23,5 +23,6 @@ class Signup < ActiveRecord::Base
     y = Swimmer.find_by_id(x)
     return y.find_college_name
   end
+
   
 end
