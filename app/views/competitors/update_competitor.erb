@@ -35,23 +35,31 @@
 <table border="0">
   <thead>
     <tr>
+
       <th>Activity&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>Points Earned&emsp;</th>
-      <th>%Points Earned&emsp;</th>
+      <th>Score&emsp;</th>
+      <th>Possible Points&emsp;</th>
+      <th>Score (As %)&emsp;</th>
     </tr>
   </thead>
   <tbody>
+      <% @results.each do |r| %>
       <tr>
-        <td>meep</td>
-        <td>meep</td>
-        <td>meep</td>
+        <td><%= r.get_activity_name %></td>
+        <td><%= r.score %></td>
+        <td><%= r.get_activity_max_score %></td>
+        <td><%= "meep" %></td></tr>
       </tr>
+      <% end %>
   </tbody>
 </table>
 <br>
 <br>
 <br>
-<input type="submit" value="Save Changes">
+<input type="submit" value="Save Changes"></form>
+&emsp;
+<form method="POST" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/score">
+<input type="submit" value="Update Score">
 </form></center>
 <br>
 <br>

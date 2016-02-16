@@ -9,17 +9,22 @@ Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
 <table border="0">
   <thead>
     <tr>
+
       <th>Activity&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>Points Earned&emsp;</th>
-      <th>%Points Earned&emsp;</th>
+      <th>Score&emsp;</th>
+      <th>Possible Points&emsp;</th>
+      <th>Score (As %)&emsp;</th>
     </tr>
   </thead>
   <tbody>
+      <% @results.each do |r| %>
       <tr>
-        <td>meep</td>
-        <td>meep</td>
-        <td>meep</td>
+        <td><%= r.get_activity_name %></td>
+        <td><%= r.score %></td>
+        <td><%= r.get_activity_max_score %></td>
+        <td><%= "meep" %></td></tr>
       </tr>
+      <% end %>
   </tbody>
 </table>
 </center>
@@ -28,6 +33,18 @@ Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
 <br>
 <br>
 
-<center><form method="get" action="/competitors/competitor/<%= @competitor.id %>/update_competitor">
-      <input type="submit" value="Update Competitor">
-</form></center>
+<center>
+<table border="0">
+  <thead>
+    <tr>
+    <th><form method="GET" action="/competitors/competitor/<%= @competitor.id %>/add_score">
+      <input type="submit" value="Add New Score">&emsp;</form></th>
+      <th><form method="get" action="/competitors/competitor/<%= @competitor.id %>/update_competitor">
+      <input type="submit" value="Update Competitor">&emsp;</form></th>
+      <th><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/delete_competitor">
+      <input type="submit" value="Delete Competitor">&emsp;</form></th>
+
+    </tr>
+  </thead>
+  </table>
+</center>

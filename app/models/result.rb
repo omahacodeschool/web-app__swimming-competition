@@ -1,4 +1,5 @@
 class Result < ActiveRecord::Base
+has_one :competitor
 
   def get_competitor
     x = self.competitor_id
@@ -57,6 +58,12 @@ class Result < ActiveRecord::Base
     return y.name
   end
 
+    def get_activity_max_score
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    return y ? y.max_score : nil
+  end
+
   def set_activity_name(var)
     x = self.activity_id
     y =  Activity.find_by_id(x)
@@ -66,8 +73,7 @@ class Result < ActiveRecord::Base
   def get_activity_name
     x = self.activity_id
     y =  Activity.find_by_id(x)
-    return y.name
+    return y ? y.name : nil
   end
-
-
+   
 end
