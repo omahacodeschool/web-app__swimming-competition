@@ -1,0 +1,15 @@
+<h1>Update Activity:</h1>
+
+<h2>Please modify the activity information for <%=@activity.event_name%>:</h2>
+<br>
+<p>
+  <form method = "post" action="/process_update_activity_form/<%=@activity.id%>">
+    Activity Name:<br>
+    <input type="text" name="event_name" 
+    value="<%=@activity.event_name%>"><br>
+    Maximum Possible Score for Activity:<br>
+    <input type="text" name="max_possible_score_for_activity" 
+    value="<%=@activity.max_possible_score_for_activity%>"><br>
+    <input type="submit">
+  </form>
+</p>

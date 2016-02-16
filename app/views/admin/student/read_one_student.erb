@@ -18,7 +18,7 @@
 <br>
 
 
-<h2>Events Registered but not Completed Yet</h2>
+<h2>Events Not Completed Yet</h2>
 <table border="1">
   <thead>
       <th>Activity</th>
@@ -27,10 +27,15 @@
 
   <tbody>
       <tr>
+        <%if @registrations == [] %>
+          <td>No Events to Complete</td>
+          <td>No Scores to Add</td>
+        <%else %> 
         <%@registrations.each do |r| %>
           <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
           <td><a href="/result/update/<%=r.id%>">Add Score</a></td>
       </tr>
+          <%end%>
         <%end%>
       
   </tbody>

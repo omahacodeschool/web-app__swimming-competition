@@ -7,6 +7,8 @@
       <th>Activity ID</th>
       <th>Activity Name</th>
       <th>Maximum Possible Score for Activity</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -16,6 +18,10 @@
         <td><%= a.id %></td>
         <td><a href="/read/activity/<%=a.id%>"><%= a.event_name %></a></td>
         <td><%= a.max_possible_score_for_activity %></td>
+        <td><a href="/update/activity/<%=a.id%>">Update</td>
+        <td><form method = "post" action = "/delete/activity/<%=a.id%>">
+        <input type="submit" value="delete" onClick="alert('Are you sure? Deleting an activity will delete all of the corresponding results entered for that activity');return true;">
+        </form></td>
       </tr>
     <% end %>
   </tbody>

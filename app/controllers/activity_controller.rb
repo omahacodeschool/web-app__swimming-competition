@@ -12,6 +12,29 @@ MyApp.post "/activity/create" do
   erb :"admin/confirm_submission"
 end
 
+MyApp.get "/update/activity/:activity_id" do
+  @activity = Activity.find_by_id(params[:activity_id])
+  erb :"admin/activity/update_activity"
+end
+
+MyApp.post "/process_update_activity_form/:activity_id" do
+  @activity = Activity.find_by_id(params[:activity_id])
+  @activity.event_name = params["event_name"]
+  @activity.max_possible_score_for_activity = params["max_possible_score_for_activity"]
+  @activity.save
+  @confirm_message = "Success! Updated #{@activity.event_name}. It's maximum possible score is now #{@activity.max_possible_score_for_activity}!"
+  erb :"admin/confirm_submission"
+end
+
+MyApp.post "/delete/activity/:activity_id" do
+  @activity = Activity.find_by_id(params[:activity_id])
+  @confirm_message = "Success! Deleted #{@activity.event_name}!"
+  @corresponding_results = Result.where({"activity_id" => params[:activity_id]})
+  @corresponding_results.delete_all
+  @activity.delete
+  erb :"admin/confirm_submission"
+end
+
 MyApp.get "/read/activities" do
   @activities = Activity.all
   erb :"admin/activity/read_activities"
