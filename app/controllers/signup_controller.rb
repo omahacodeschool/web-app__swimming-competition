@@ -22,7 +22,7 @@ MyApp.get "/view_signup/:place" do
 
   erb :"view_signup"
 end
+MyApp.get "/event_result/:place" do
+  @signup = Signup.find_by_id(params[:place])
 
-#I want to update my schema for signup and include slots for 5 swimmers
-#to sign up, then all the swimmers and the event id would have the save
-#overall 'signup id'...
+end

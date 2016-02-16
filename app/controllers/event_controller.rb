@@ -9,6 +9,8 @@ MyApp.get "/add_event" do
 end
 MyApp.get "/view_event/:place" do
   @event = Event.find_by_id(params[:place])
+  @signup = Signup.where({"event_id" => (params[:place])})
+
   erb :"event_list"
 end
 MyApp.get "/delete_event/:place" do
