@@ -5,8 +5,8 @@
   &emsp;&emsp;
 
   Conference:&emsp;<select name="college_conference_dropdown">
+    <option value="<%= nil %>"><%= "---" %></option>
     <% @conference.each do |c| %>
-      <option value="<%= nil %>"><%= "---" %></option>
       <option value="<%= c.id %>"><%= c.name %></option>
     <% end %>  
   </select>

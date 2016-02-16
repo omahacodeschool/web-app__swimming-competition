@@ -19,12 +19,12 @@ class Competitor < ActiveRecord::Base
     y = College.find_by_id(x)
     z = y.conference_id
     zz = Conference.find_by_id(z)
-    return zz ? zz.name : "---"
+    return zz ? zz.name : nil
  end
 
 def get_competitor_results
   y = Result.where({competitor_id => self.id})
-  return y ? y : "---"
+  return y ? y : nil
 end
 
 

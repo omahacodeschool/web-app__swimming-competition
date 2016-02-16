@@ -1,0 +1,11 @@
+<center>
+<h1> Competitors </h1>
+<form method="POST" action="/competitors/add_competitor">
+<input type="submit" value="Add Competitor"></form>
+<br>
+    <% @competitors.each do |c| %>
+    <a href="/competitors/competitor/<%= c.id %>"><%= c.name %></a><br>
+    <% end %>
+<br>
+<br>
+</center>

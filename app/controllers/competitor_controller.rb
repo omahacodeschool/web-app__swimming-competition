@@ -1,3 +1,9 @@
+
+MyApp.get "/competitors" do
+  @competitors = Competitor.all
+  erb :"/competitors/competitors"
+end
+
 MyApp.post "/competitors/add_competitor" do
   @colleges = College.all
   erb :"/competitors/add_competitor"
