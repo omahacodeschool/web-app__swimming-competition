@@ -1,7 +1,9 @@
 
-<h1>@x.event_name</h1>
+<h1><%= @x.event_name %></h1>
 
-<%= @x.swimmers %> 
+<% @x.swimmers.each do |s| %> 
+  <p><%= s %></p>
+<% end %>
 
 
 

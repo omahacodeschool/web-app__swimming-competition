@@ -1,10 +1,7 @@
 class Event < ActiveRecord::Base
 
 
-  def swimmers
-    x =[Lou Reed, Mike Jackson]
-    return x
-  end
+
   #def swimmers
   #  x =[Lou Reed, Mike Jackson]
   #  return x
