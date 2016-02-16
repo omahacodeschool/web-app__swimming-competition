@@ -7,6 +7,8 @@
     <tr>
       <th>Conference ID</th>
       <th>Conference Name</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -15,6 +17,10 @@
       <tr>
         <td><%= c.id %></td>
         <td><%= c.conference_name %></td>
+        <td><a href="/update/conference/<%=c.id%>">Update</a></td>
+        <td><form method = "post" action = "/delete/conference/<%=c.id%>">
+        <input type="submit" value="delete">
+        </form></td>
       </tr>
     <% end %>
   </tbody>
