@@ -18,6 +18,12 @@ class Result < ActiveRecord::Base
       return nil
     end
   end
+#Returns Boolean value of the event_locked column in the Events table.
+  def event_locked?
+    x = self.event_id
+    y = Event.find_by_id(x)
+    return y.event_locked
+  end
 
   def university
     x = self.swimmer_id

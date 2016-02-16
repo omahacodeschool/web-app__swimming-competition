@@ -5,6 +5,7 @@
       <th>Swimmer</th>
       <th>Swimmer's University</th>
       <th>University Conference</th>
+      <th>Remove Swimmer from Event</th>
     </tr>
   </thead>
 
@@ -19,6 +20,9 @@
         </td>
         <td>
           <%= y.conference %>
+        </td>
+        <td>
+          <a href="/delete_result/<%= y.id %>"> Remove Swimmer </a>
         </td>
       </tr>
     <% end %>

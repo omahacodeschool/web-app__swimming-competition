@@ -97,6 +97,18 @@ MyApp.post "/add_result" do
   end
   erb :"/success/success_result"
 end
+# Remove a result from results table
+MyApp.get "/delete_result/:id_of_result" do
+  y = Result.find_by_id(params[:id_of_result])
+  #binding.pry
+  if y.event_locked? == true
+    @message = "This event is currently locked. Swimmers and results cannot be removed at this time."
+  else
+    @message = "Swimmer successfully removed from this event."
+    y.delete
+  end
+  erb :"/success/delete_result"
+end
 
 MyApp.get "/current_standings" do
   c = Standing.new
