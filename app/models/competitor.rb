@@ -22,4 +22,8 @@ class Competitor < ActiveRecord::Base
       return zz ? zz.name : nil
  end
 
+ def get_competitor_results
+  y = Result.where({competitor_id => self.id})
+  return y ? y : nil
+  end
 end

@@ -16,7 +16,7 @@ MyApp.get "/conferences/conference/:id" do
   erb :"/conferences/conference"
 end
 
-MyApp.post "/conferences/conference/:id/update_conference" do
+MyApp.get "/conferences/conference/:id/update_conference" do
   @conference = Conference.find_by_id(params[:id])
   erb :"/conferences/update_conference"
 end

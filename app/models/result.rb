@@ -75,5 +75,7 @@ has_one :competitor
     y =  Activity.find_by_id(x)
     return y ? y.name : nil
   end
+
+
    
 end

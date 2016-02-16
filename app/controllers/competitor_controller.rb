@@ -64,3 +64,22 @@ MyApp.post "/competitors/competitor/:id/add_score/confirmation" do
   erb :"/competitors/added_competitors_confirmation"
 end
 
+MyApp.get "/competitors/competitor/:id/update_competitor/score" do
+  @competitor = Competitor.find_by_id(params[:id])
+  @colleges = College.all
+  @activities = Activity.all
+  @results = Result.all
+  erb :"/competitors/update_competitor_score"
+end
+
+MyApp.post "/competitors/competitor/:id/update_competitor/score/confirmation" do
+  @c = Competitor.find_by_id(params[:id])
+  @activities = Activity.all
+  @results = Result.where({"competitor_id" => params[:id]})
+  @results.activity_id = params["update_competitor_result_dropdown"]
+  @results.score = params["update_competitor_activity_score_textbox"]
+  @results.save
+  erb :"/competitors/update_competitor_confirmation"
+end
+
+
