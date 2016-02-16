@@ -1,0 +1,31 @@
+<h1>Edit Results</h1>
+
+<p>You are currently editing an event result:</p>
+
+<form action="/update_results/<%= @result.id %>" method="post">
+
+    <label for="game_id"><sub><i>Game ID:</i></sub></label>
+    <select name="game_id" value="<%= @result.game_id %>">
+        <% @games.each do |g| %>
+        <option value="<%=g.id%>"><%= g.id %>: <%= g.game_name %></option>
+        <% end %>
+    </select>
+    <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label>
+    <select name="gamer_id" value="<%= @result.gamer_id %>">
+        <% @gamers.each do |m| %>
+        <option value="<%=m.id%>"><%= m.id %>: <%= m.last_name %>, <%= m.first_name %></option>
+        <% end %>
+    </select>
+    <br>
+    <br>
+    <label for="completion_time"><sub><i>Completion Time:</i></sub></label>
+    <input type="text" name="completion_time" 
+           value="<%= @result.completion_time %>">
+    <input type="submit">
+
+</form>
+<br>
+<br>
+<a href="/results_list">Back</a>
+<br>
+<a href="/">Home</a>

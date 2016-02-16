@@ -1,0 +1,17 @@
+<h1>Edit Division</h1>
+
+<p>You are currently editing a regional division:</p>
+
+<form action="/update_division/<%= @division.id %>" method="post">
+
+    <label for="division"><sub><i>Division:</i></sub></label>
+    <input type="text" name="division" value="<%= @division.division %>">
+    <input type="submit">
+
+</form>
+<br>
+<br>
+<a href="/division_list">Back</a>
+<br>
+<a href="/">Home</a>
+
