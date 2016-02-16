@@ -1,18 +1,14 @@
 class Event < ActiveRecord::Base
 
+  def swimmers
+    x = SignupResult.where({"event_id" => self.id})
+    swimmers = []
+    x.each do |y|
+      swimmers << y.swimmer_info_id
+    end
 
-
-  #def swimmers
-  #  x =[Lou Reed, Mike Jackson]
-  #  return x
-  #  x = Event.where({"event_id" = self.id})
-  #  swimmer_info_id = []
-  #    x each.do ||
-
-    #y = SignupResult.find_by_id(x)
-    #z << y.swimmer_info_id
-    #binding.pry
-
+    SwimmerInfo.where({"id" => swimmers})
+  end
 
     # This event's id is self.id
     # Find all rows in the sign_up_results table where the event_id = this event's id.

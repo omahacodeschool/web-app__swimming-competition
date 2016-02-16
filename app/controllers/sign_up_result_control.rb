@@ -19,7 +19,7 @@ MyApp.get "/sign_up_table" do
 end
 
 MyApp.get "/event/:id" do
-  @x = SignupResult.find_by_id(params[:id])
+  @x = Event.find_by_id(params[:id])
  erb :"event/single_event"
 end
 

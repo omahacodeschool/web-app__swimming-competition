@@ -15,12 +15,6 @@ class SignupResult < ActiveRecord::Base
     return z
   end
 
-  def swimmers
-     x = SignupResult.where({"event_id" => self.id})
-     swimmers = []
-      x.each do |y|
-        swimmers << y.swimmer_info_id
-      end
-  end
+
 
 end

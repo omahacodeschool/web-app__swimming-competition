@@ -6,6 +6,11 @@ class SwimmerInfo < ActiveRecord::Base
     return y.team
   end
 
+  def swimmer_name
+    z = self.first_name + " " + self.last_name
+    return z
+  end
+
 end
 
 
