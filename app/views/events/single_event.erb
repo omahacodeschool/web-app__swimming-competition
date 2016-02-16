@@ -3,8 +3,9 @@
 <p>
   Top Three Finishers:
 </p>
+
 <ol>
-<% @event.results.order('time ASC').each do |r| %>
+<% @event.results.order('time ASC').first(3).each do |r| %>
   <li>
     <%= r.competitor_name %>
   </li>
