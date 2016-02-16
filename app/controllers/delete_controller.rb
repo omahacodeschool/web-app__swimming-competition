@@ -1,4 +1,4 @@
-#Shows one award selected
+#Processes deletion of an award  #DOESN'T WORK
 MyApp.get "/delete_award" do 
   @events = Event.all
   @competitors = Competitor.all 
@@ -7,7 +7,7 @@ MyApp.get "/delete_award" do
   erb :"delete/delete_award"
 end
 
-#Shows one college selected
+#Processes deletion of a college
 MyApp.get "/delete_college/:b" do 
   @colleges = College.find_by_id(params[:b]) 
   @colleges.delete
@@ -15,7 +15,7 @@ MyApp.get "/delete_college/:b" do
   erb :"delete/delete_college"
 end
 
-#Shows one competitor selected
+#Processes deletion of a competitor
 MyApp.get "/delete_competitor/:b" do 
   @competitors = Competitor.find_by_id(params[:b]) 
   @competitors.delete
@@ -23,7 +23,7 @@ MyApp.get "/delete_competitor/:b" do
   erb :"delete/delete_competitor"
 end
 
-#Shows one conference selected
+#Processes deletion of a conference
 MyApp.get "/delete_conference/:b" do 
   @conferences = Conference.find_by_id(params[:b]) 
   @conferences.delete
@@ -31,7 +31,7 @@ MyApp.get "/delete_conference/:b" do
   erb :"delete/delete_conference"
 end
 
-#Shows one event detail selected
+#Processes deletion of an event event_details  #DOESN'T WORK
 MyApp.get "/delete_event_detail" do 
   @events = Event.all
   @competitors = Competitor.all 
@@ -40,7 +40,7 @@ MyApp.get "/delete_event_detail" do
   erb :"delete/delete_event_detail"
 end
 
-#Shows one event selected
+#Processes deletion of an event
 MyApp.get "/delete_event/:b" do 
   @events = Event.find_by_id(params[:b])
   @events.delete

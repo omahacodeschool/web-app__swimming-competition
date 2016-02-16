@@ -1,0 +1,28 @@
+<p>Update event detail information:</p>
+<br>
+
+<form>
+  <p>
+    Event ID:
+    <input type="number" name="evnt_id" value="<%= @event_details.event_id %>">
+  </p>
+  <p> 
+    Competitor ID:
+    <input type="number" name"comp_id" value="<%= @event_details.competitor_id %>">
+  </p>
+  <p> 
+    Finish Time:
+    <input type="number" name"fnsh_time" value="<%= @event_details.finish_time %>">
+  </p>
+</form>
+<br>
+<u><b>Event IDs:</u></b>
+<% @events.each do |x| %>
+  <p><%= x.id %> - <%= x.event_name %></p>
+<% end %>
+<br>
+<u><b>Competitor IDs:</u></b>
+<% @competitors.each do |x| %>
+  <p><%= x.id %> - <%= x.competitor_name %></p>
+<% end %>
+<br>
