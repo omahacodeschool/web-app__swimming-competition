@@ -38,7 +38,5 @@ end
 MyApp.post "/penguins/delete/:id" do
   @penguin = Penguin.find_by_id(params[:id])
   @penguin.delete
-  @peguin.all_results.delete
-  #should I redirect here? OR should I give an "updated" message?
   erb :"updated"
 end

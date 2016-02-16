@@ -13,8 +13,7 @@ class Penguin < ActiveRecord::Base
   end
 
   def all_results
-    x = Result.where({"penguin_id" => self.id})
-    x.id
+    Result.where({"penguin_id" => self.id})
   end
 
 end

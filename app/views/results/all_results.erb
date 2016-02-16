@@ -25,26 +25,24 @@
   <tbody>
     <% @results.each do |r| %>
       <tr>
-        <% if r.penguin_access != nil %>
+        <% if r.penguin_access != nil%>
           <td>
             <%= r.penguin_access.first_name %> 
             <%= r.penguin_access.last_name %>
           </td>
         <% end %>       
-        <% if r.event_access != nil %>
-        <td><%= r.event_access.name %></td>
-        <% end %>
-        <td><%= r.time %> (seconds)</td>
-        <td>
-          <% if r.id != nil %>
+        <% if r.event_access != nil && r.penguin_access != nil %>
+          <td><%= r.event_access.name %></td>
+          <td><%= r.time %> (seconds)</td>
+          <td>
             <form action="/results/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
             </form>
             <a href="/results/edit/<%= r.id %>">
               <input type="submit" value="edit">
             </a>            
-          <% end %>
-        </td>         
+          </td>
+        <% end %>          
       </tr>
     <% end %>
   </tbody>

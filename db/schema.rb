@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.integer  "penguin_id"
     t.integer  "event_id"
-    t.integer  "time"
+    t.decimal  "time"
   end
 
   create_table "rookeries", force: :cascade do |t|
