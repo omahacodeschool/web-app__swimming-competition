@@ -24,13 +24,18 @@ MyApp.get "/view_finish/:id" do
 end
 
 MyApp.post "/updatefinish" do
-  f = Finish.new
-  f.swimmer_id = params[:swimmerid]
-  f.event_id = params[:eventid]
-  f.finish_time = params[:finishtime]
-  f.save
-  @events = Event.all
-  erb :"ev/finishes"
+    z = Finish.find_by swimmer_id:params[:swimmerid],event_id:params[:eventid]
+  if z != nil
+    z.finish_time = params[:finishtime]
+    z.save
+  else
+    f = Finish.new
+    f.swimmer_id = params[:swimmerid]
+    f.event_id = params[:eventid]
+    f.finish_time = params[:finishtime]
+    f.save
+  end
+  redirect back
 end
 
 
