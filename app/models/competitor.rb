@@ -27,3 +27,7 @@ class Competitor < ActiveRecord::Base
   return y ? y : nil
   end
 end
+
+def delete_all_competitor_results
+  Result.where("competitor_id" => self.id).delete_all
+end
