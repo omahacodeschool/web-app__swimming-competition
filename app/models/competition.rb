@@ -1,55 +1,31 @@
 class Competition < ActiveRecord::Base
 
   def contestants
-    # result objects is a collection of rows
-    result_objects = Result.where({"competition_id" => self.id})
+    # self.id refers to 1 particular row's (or object's) id
+    # objects_by_competiton_id is a collection of rows in the results table with a matching value for self.id in the competition_id column
+    objects_by_competiton_id = Result.where({"competition_id" => self.id})
 
-    #just the cells for a particular column in result_ojects
-    chili_ids = []
+    # an extraction of just the values (or cells) for the chili_id column from the ojects_by_competition_id collection
+    chili_ids_collection = []
 
-    result_objects.each do |p|
-      chili_ids << p.chili_id
+    objects_by_competition_id.each do |row|
+      chili_ids_collection << row.chili_id
     end
 
-    # c is a collection of rows/objects
-    c = Chili.where({"id" => chili_ids})
+    # objects_by_chili_id is a collection of rows in the chilis table with a matching value for chili_ids in the id column
+    objects_by_chili_id = Chili.where({"id" => chili_ids})
 
-    # just the cells for contestant_id column in c
+    # an extraction of just the values (or cells) for the contestant_id column from the objects_by_chili_id collection
     contestant_ids = []
-    c.each do |c|
-      contestant_ids << c.contestant_id
+
+    objects_by_chili_id.each do |row|
+      contestant_ids << row.contestant_id
     end
 
-    # cont is a collection of rows/objects
-    cont = Contestant.where("id" => contestant_ids)
-    return cont
+    # objects_by_contestant_id is a collection of rows in the contestants table with a matching value for contestant_ids in the id column
+    objects_by_contestant_id = Contestant.where("id" => contestant_ids)
+    
+    #returns a collection of objects
+    return objects_by_contestant_id
 
   end
-
-  def contestant_last_name
-    arr = ["fake_last_name1", "fake_last_name2", "fake_last_name3"]
-  end
-
-end
-
-
-class Movie < ActiveRecord::Base
-  # in the movies class make a method for actors names
-  # start with getting this table's (Movies) id
-  # self.id
-  # Search the bridge table (Performance) for a movie_id entry that matches the self.id
-
-    def actors
-        performances = Performance.where({"movie_id" => self.id})
-
-        actor_ids = []
-
-        performances.each do |p|
-            actor_ids << p.actor_id
-        end
-
-        # after this loop, actor_ids = [1, 2]
-
-        Actor.where({"id" => actor_ids}) # <-- the ActiveRecord method .where allows us to pass in Arrays in this way.
-    end
-end
