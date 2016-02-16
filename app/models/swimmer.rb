@@ -8,15 +8,15 @@ class Swimmer < ActiveRecord::Base
 
   def registered_events
     x = self.id
-    y = Event.where({"swimmer_id" => x})
+    y = Signup.where({"swimmer_id" => x})
     if y == []
       return "n/a"
     else
       events = []
       y.each do |event|
-        events << event.event_name
+        events << event.event_id
       end
-      return events.join
+      return events
     end
   end
 

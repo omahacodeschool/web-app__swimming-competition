@@ -6,17 +6,21 @@ end
 
 MyApp.get "/view_finish/:id" do
   @currentevent = Event.find_by_id(params[:id])
-  @signups = Signup.all
-  @swimmers = Swimmer.all
-  @kitties = []
-  z = Signup.where({"event_id" => (params[:id])})
-  #z contains the swimmer_id, i need to match that to
-  #the actual swimmer table
-    z.each do |banana|
-     @kitties << banana.find_swimmer
-    end
-  #binding.pry
-  erb :"/ev/view_finish"
+  if @currentevent.locked == true
+    erb :"/ev/nocando"
+  else
+    @signups = Signup.all
+    @swimmers = Swimmer.all
+    @kitties = []
+    z = Signup.where({"event_id" => (params[:id])})
+    #z contains the swimmer_id, i need to match that to
+    #the actual swimmer table
+      z.each do |banana|
+       @kitties << banana.find_swimmer
+      end
+    #binding.pry
+    erb :"/ev/view_finish"
+  end
 end
 
 MyApp.post "/updatefinish" do
