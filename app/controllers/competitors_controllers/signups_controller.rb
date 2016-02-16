@@ -3,15 +3,20 @@ require 'pry'
 MyApp.get "/signups" do 
   @events = Event.all
   @swimmers = Swimmer.all
-  erb :"cv/signups"
+  erb :"/cv/signups"
 end
 
-MyApp.get "/newsignup" do
-  s = Signup.new
-  s.swimmer_id = params[:swimmerid]
-  s.event_id = params[:eventid]
-  s.save
-  erb :"cv/signupaddsuccess"
+MyApp.post "/newsignup" do
+  check = Event.find_by_id(params[:eventid])
+  if check.locked == true
+    erb :"/ev/nocando"
+  else
+    s = Signup.new
+    s.swimmer_id = params[:swimmerid]
+    s.event_id = params[:eventid]
+    s.save
+    erb :"cv/signupaddsuccess"
+  end
 end
 
 MyApp.post "/remove_swimmer/:id" do

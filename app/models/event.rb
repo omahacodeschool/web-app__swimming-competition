@@ -11,6 +11,16 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def locked_status
+    x = self.locked
+    if x == true
+      return "Locked"
+    elsif x != true
+      return "Unlocked"
+    end
+  end
+      
+
 end
 
 #DB.define_table("events")

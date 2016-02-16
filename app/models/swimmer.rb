@@ -6,6 +6,21 @@ class Swimmer < ActiveRecord::Base
     return y.college_name
   end
 
+  def registered_events
+    x = self.id
+    y = Event.where({"swimmer_id" => x})
+    if y == []
+      return "n/a"
+    else
+      events = []
+      y.each do |event|
+        events << event.event_name
+      end
+      return events.join
+    end
+  end
+
+
   def swimmer_name
     x = self.first_name
     y = self.last_name

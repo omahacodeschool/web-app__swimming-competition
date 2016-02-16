@@ -2,8 +2,7 @@ require 'pry'
 
 MyApp.get "/events" do
   @events = Event.all
-  erb :"/ev/events"
-  
+  erb :"/ev/events"  
 end
 
 MyApp.post "/newevent" do  
@@ -13,7 +12,6 @@ MyApp.post "/newevent" do
   e.save
   @neweventname = params[:neweventname]
   erb :"/ev/eventaddsuccess"
-
 end
 
 MyApp.get "/view_event/:id" do

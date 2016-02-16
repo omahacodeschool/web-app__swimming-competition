@@ -1,6 +1,6 @@
 <h1>Event Registration</h1>
 
-<form action="/newsignup">
+<form action="/newsignup" method="post">
   <fieldset>
     <legend>Register for Event</legend>
       <label for="swimmer_id">Kitty ID: see below</label>
@@ -13,7 +13,7 @@
 <h2>Enrolled Kitties:<h2>
 <ul>
   <% @swimmers.each do |post| %>
-    <li><%= post.id%>. <%=post.first_name%> <%=post.last_name%> Registered for:</li>
+    <li><%= post.id%>. <%=post.swimmer_name%> Registered for: <%=post.registered_events%></li>
       
   <% end %>
 </ul>
