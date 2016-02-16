@@ -1,5 +1,5 @@
 #Shows one award selected
-MyApp.get "/all_awards" do 
+MyApp.get "/view_award" do 
   @events = Event.all
   @competitors = Competitor.all 
   @awards = Award.all
@@ -8,28 +8,28 @@ MyApp.get "/all_awards" do
 end
 
 #Shows one college selected
-MyApp.get "/all_colleges" do 
-  @colleges = College.all 
+MyApp.get "/view_college/:num" do 
+  @colleges = College.find_by_id(params[:num])
 
-  erb :"view_one/view_college/:num"
+  erb :"view_one/view_college"
 end
 
 #Shows one competitor selected
-MyApp.get "/all_competitors" do 
+MyApp.get "/view_competitor" do 
   @competitors = Competitor.all 
 
   erb :"view_one/view_competitor"
 end
 
 #Shows one conference selected
-MyApp.get "/all_conferences" do 
+MyApp.get "/view_conference" do 
   @conferences = Conference.all 
 
   erb :"view_one/view_conference"
 end
 
 #Shows one event detail selected
-MyApp.get "/all_event_details" do 
+MyApp.get "/view_event_detail" do 
   @events = Event.all
   @competitors = Competitor.all 
   @event_details = EventDetail.all 
@@ -38,7 +38,7 @@ MyApp.get "/all_event_details" do
 end
 
 #Shows one event selected
-MyApp.get "/all_events" do 
+MyApp.get "/view_event" do 
   @events = Event.all
 
   erb :"view_one/view_event"
