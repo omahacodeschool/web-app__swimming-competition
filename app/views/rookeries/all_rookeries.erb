@@ -12,6 +12,8 @@
   </a>
 </p>
 
+<% if @rookeries.empty? == false %>
+
 <table border="1">
   <thead>
     <tr>
@@ -42,3 +44,7 @@
     <% end %>
   </tbody>
 </table>
+
+<% else %>
+<p>There are currently no rookeries in the system. Click on the link above to create a rookery.</p>
+<% end %>

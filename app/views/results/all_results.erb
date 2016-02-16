@@ -12,6 +12,8 @@
   </a>
 </p>
 
+<% if @results.empty? == false %>
+
 <table border="1">
   <thead>
     <tr>
@@ -47,3 +49,8 @@
     <% end %>
   </tbody>
 </table>
+
+
+<% else %>
+<p>There are currently no results in the system. Click on the link above to create a result.</p>
+<% end %>

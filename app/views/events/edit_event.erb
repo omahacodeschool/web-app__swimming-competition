@@ -1,6 +1,6 @@
 <p>To add a new event to the system, type the name of the event in the form below.</p>
 
-<% if @event.locked = true %>
+<% if @event.locked == true %>
 
     <h2 style="color:red";>This event has been locked and no further changes can be made!</h2>
 

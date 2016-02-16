@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<% if @events != nil%>
+<% if @events.empty? == false %>
 
   <p>Click on an event to see the results for that event</p>
   <table border="1">
@@ -53,4 +53,5 @@
 <% else %>
 <p>There are currently no events in the system. Click on the link above to create an event.</p>
 <% end %>
+
 

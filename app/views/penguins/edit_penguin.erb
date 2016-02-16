@@ -11,10 +11,13 @@
   <p>
     <label>Rookery</label>
     <select name="edit_rookery_id">
-  <% @rookeries.each do |r| %>
-    <option value="<%= r.id %>">
-    <%= r.name %></option>
-  <% end %>    
+      <% @rookeries.each do |r| %>
+        <option value="<%= r.id %>">
+          <%= r.name %>
+        </option>
+      <% end %>    
+    <option selected> <%=@penguin.rookery_access.name%>
+      </option>  
     </select>
     <input type="submit" value="update">
   </p>

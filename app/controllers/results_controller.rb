@@ -40,10 +40,7 @@ MyApp.post "/results/delete/:id" do
 end
 
 MyApp.get "/results/view/:id" do
-
   @result = Result.where("event_id" => params[:id]).first
-
   erb :"results/single_result_view"
-
 end
 

@@ -1,6 +1,38 @@
-<% if @result != nil %>
-<p><%= @result.penguin_id %> </p>
-<p><%= @result.event_id %> </p>
-<p><%= @result.time %> </p>
+<% if @result.event_access != nil && @result.penguin_access != nil %>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Penguin</th>
+        <th>Event</th>
+        <th>Time</th>
+        <th>Edit/Delete</th>
+      </tr>
+    </thead>
 
+    <tbody>
+          <% if @result.penguin_access != nil%>
+            <td>
+              <%= @result.penguin_access.first_name %> 
+              <%= @result.penguin_access.last_name %>
+            </td>
+          <% end %>       
+          <% if @result.event_access != nil && @result.penguin_access != nil %>
+            <td><%= @result.event_access.name %></td>
+            <td><%= @result.time %> (seconds)</td>
+            <td>
+              <form action="/results/delete/<%= @result.id %>" method="post">
+                <input type="submit" value="delete">
+              </form>
+              <a href="/results/edit/<%= @result.id %>">
+                <input type="submit" value="edit">
+              </a>            
+            </td>
+          <% end %>          
+        </tr>
+    </tbody>
+  </table>
+
+<% else %>
+<p>There are currently no results saved for this event</p>
+<p><a href="/events">BACK</a>
 <% end %>
