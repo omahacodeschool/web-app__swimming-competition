@@ -14,13 +14,6 @@ MyApp.get "/event_bio/:id" do
   erb :"/bios/event_bio"
 end
 
-#Trying to make a link from event bio to take users to swimmer's bio, not perfect. For some reason it confuses the swimmer id and dispalays the wrong bio.
-# MyApp.get "/event_bio/swimmer_bio/:id" do
-#   @swimmer = Swimmer.find_by_id(params[:id])
-#   @result = Result.where({"swimmer_id" => params[:id]})
-#   erb :"/bios/swimmer_bio"
-# end
-
 #Take to view showing list of events. Each event will be a link to a dynamic view that will show the fastes performers in that event. 
 MyApp.get "/show_standings" do
   @events = Event.all
@@ -29,12 +22,9 @@ MyApp.get "/show_standings" do
 end
 #Arranges all swimmers in descending order according to their times.  Returns Array of the three swimmers with the fastest times.
 MyApp.get "/top_three/:id" do
-  @results = Result.where({"event_id" => params[:id]})
-  @sorted = @results.order("swimmer_time").to_a 
-  @top_three = []
-    3.times do 
-      @top_three << @sorted.shift
-  end
+  results = Result.where({"event_id" => params[:id]})
+  #binding.pry
+  @medal_winners = results.top_swimmers
   erb :"/bios/standings"
 end
 

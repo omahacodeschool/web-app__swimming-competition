@@ -11,9 +11,9 @@ end
 #Delete Swimmer from DB
 MyApp.get "/delete_swimmer/:id_of_swimmer" do
   @s = Swimmer.find_by_id(params[:id_of_swimmer])
-  @r = Result.find_by_id(@s.id)
+  @r = Result.where({"swimmer_id" => params[:id_of_swimmer]})
   @s.delete
-  @r.delete
+  @r.delete_all
   erb :"/success/delete_swimmer"
 end
 
