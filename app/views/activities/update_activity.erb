@@ -1,17 +1,40 @@
-<h2>Update Activity Description:</h2>
-<p>Please select the desired activity. Next, type out the change <br>
-you would like to make in the text field below.<br></p>
-<form action="">
-<select name="update_activity_dropdown">
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-</select>
+<center><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_activity_name_textbox" value="<%= @activity.name %>">
 <br><br>
-Activity :&emsp;<input type="text" name="update_activity_textbox" value=""><br> <br><br>
-<input type="submit" value="Update">
-</form>
-
-<br><br>
-<center><a href="/">Home</a></center> 
+  Max Score:&emsp;
+  <select name="update_activity_max_score_dropdown">
+    <option value="<%= @activity.max_score %>"><%= @activity.max_score %></option>
+    <option value=<%= nil %>>---</option>
+    <% for i in 1..25 %>
+      <option value="<%= i %>"><%= i %></option>
+    <% end %>  
+  </select>
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>College&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>Total Activites&emsp;</th>
+      <th>Competitor Score&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+  </tbody>
+</table> 
+<br>
+<br>
+<br>
+<input type="submit" value="Save Changes">
+</form></center>
+<br>
+<br>

@@ -1,8 +1,22 @@
 <center><h1> Debate Meet </h1>
-<a href="/competitors/add_competitor">Add Competitor</a>&emsp;|&emsp;
-<a href="/activities/add_activity">Add Activity</a>&emsp;|&emsp;
-<a href="/colleges/add_college">Add College</a>&emsp;|&emsp;
-<a href="/conferences/add_conference">Add Conference</a>
+
+<table border="0">
+  <thead>
+    <tr>
+      <th><form method="POST" action="/competitors/add_competitor">
+        <input type="submit" value="Add Competitor"></form></th>
+      <th>&emsp;|&emsp;</th>
+      <th><form method="POST" action="/activities/add_activity">
+        <input type="submit" value="Add Activity"></form></th>
+      <th>&emsp;|&emsp;</th>
+      <th><form method="POST" action="/colleges/add_college">
+        <input type="submit" value="Add College"></form></th>
+      <th>&emsp;|&emsp;</th>
+      <th><form method="POST" action="/conferences/add_conference">
+        <input type="submit" value="Add Conference"></form></th>
+    </tr>
+  </thead>
+</table>
 <br>
 <br>
 <br>
@@ -23,7 +37,7 @@
     <tbody>
     <% @competitors.each do |s| %>
       <tr>
-        <td><a href="/competitors/competitor/<%= s.id %>"><%= s.name %></a></td>
+        <td><a href="/competitors/competitor/<%= s.id %>"><%= s.name%>&nbsp;</a></td>
         <td><%= s.age %></td>
         <td><%= s.get_college_name %></td>
         <td><%= s.get_conference_name %></td>
@@ -33,7 +47,9 @@
       </tr>
     <% end %>
   </tbody>
-</table> </center>
+</table> 
+
+</center>
 <br>
 <br>
 <h2> Add / Modify / Delete </h2>

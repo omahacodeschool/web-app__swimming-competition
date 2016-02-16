@@ -1,52 +1,9 @@
-<center><form  method="POST" action="/competitors/competitor/update_name/<%= @competitor.id %>">
-<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_competitor_name_textbox" value="<%= @competitor.name %>">
-<br>&emsp;|&emsp;
-<input type="submit" value="Update Name">&emsp;|&emsp;
-</form>
+<center><h1> <%= @competitor.name %> </h1>
+
+Age:&nbsp;<b><%= @competitor.age %></b> &emsp;|&emsp;
+College:&nbsp;<b><%= @competitor.get_college_name %></b>&emsp;|&emsp;
+Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
 <br>
-
-<table border="0">
-  <thead>
-    <tr>
-
-  <th><form method="POST" action="/competitors/competitor/updated_competitor_age/<%= @competitor.id %>">
-  <select name="update_competitor_age_dropdown">
-    <option value="<%= @competitor.age %>"><%= @competitor.age %></option>
-    <% for i in 1..100 %>
-       <option value="<%= i %>"><%= i %></option>
-    <% end %>  
-  </select>&emsp;|&emsp;
-    <input type="submit" value="Update Age">
-    </form></th>
-
-  <th><form method="POST" action="/competitors/competitor/delete_competitor_age/<%= @competitor.id %>">
-  <input type="submit" value="Delete Age">
-  </form></th>
-
-  <th>&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;</th>
-    
-  <th><form method="POST" action="/competitors/competitor/updated_college/<%= @competitor.id %>">
-    <select name="update_competitor_college_dropdown">
-      <option value="<%= @competitor.get_college_name %>"><%= @competitor.get_college_name %></option>
-      <% @colleges.each do |c| %>
-        <option value="<%= c.id %>"><%= c.name %></option>
-      <% end %> 
-    </select>&emsp;|&emsp;
-    <input type="submit" value="Update College">
-  </form></th>
-
-  <th><form method="POST" action="/competitors/competitor/delete_competitor_college/<%= @competitor.id %>">
-      <input type="submit" value="Delete College">
-  </form></th>
-    
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-      </tr>
-  </tbody>
-</table> 
-
 <br>
 <br>
 <table border="0">
@@ -70,4 +27,7 @@
 <br>
 <br>
 <br>
-<center><a href="/">Main Page</a></center> 
+
+<center><form method="get" action="/competitors/competitor/<%= @competitor.id %>/update_competitor">
+      <input type="submit" value="Update Competitor">
+</form></center>

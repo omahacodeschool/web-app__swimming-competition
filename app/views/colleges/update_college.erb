@@ -1,16 +1,35 @@
-<h2>Update College Description:</h2>
-<p>Please select the desired college. Next, type out the change <br>
-you would like to make in the text field below.<br></p>
-<form action="">
-<select name="update_college_dropdown">
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
-  <option value="PLACEHOLDER">PLACEHOLDER</option>
+<center><form method="POST" action="/colleges/college/<%= @college.id %>/update_college/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_college_name_textbox" value="<%= @college.name %>">
+<br>
+<br>
+Conference:&emsp; <select name="update_college_conference_dropdown">
+  <option value="<%= @college.get_conference_name %>"><%= @college.get_conference_name %></option>
+    <% @conferences.each do |c| %>
+      <option value="<%= c.id %>"><%= c.name %></option>
+    <% end %> 
 </select>
-<br><br>
-Activity :&emsp;<input type="text" name="update_college_textbox" value=""><br> <br><br>
-<input type="submit" value="Update">
-</form>
-
-<center><a href="/">Home</a></center> 
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Total Activites&emsp;</th>
+      <th>Total Accrued Points&emsp;</th>
+      <th>Total Possible Points&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+  </tbody>
+</table> 
+<br>
+<br>
+<br>
+<input type="submit" value="Save Changes">
+</form></center>

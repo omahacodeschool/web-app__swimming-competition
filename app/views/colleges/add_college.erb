@@ -1,17 +1,18 @@
-<center><h1> Add College</center></h1>
+<center><h1> Add College</h1>
 
-<form method="GET" action="/colleges/added_new_college">
-  College :&emsp;<input type="text" name="add_college_name_textbox" value=""><br><br>
+<form method="POST" action="/colleges/added_new_college">
+  College :&emsp;<input type="text" name="add_college_name_textbox" value="">
+  &emsp;&emsp;
+
   Conference:&emsp;<select name="college_conference_dropdown">
     <% @conference.each do |c| %>
       <option value="<%= nil %>"><%= "---" %></option>
       <option value="<%= c.id %>"><%= c.name %></option>
     <% end %>  
   </select>
-  <br>  
+<br>
+<br>  
   <input type="submit" value="Add">
-</form>
-<br><br>
-<center><a href="/">Home</a></center> 
+</form></center>
 
 

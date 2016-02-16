@@ -1,0 +1,57 @@
+<center><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_competitor_name_textbox" value="<%= @competitor.name %>"</input>
+<br>
+<br>
+
+<table border="0">
+<thead>
+<tr>
+  <th><span style="font-weight:normal">Age:</span>&emsp;
+   <select name="update_competitor_age_dropdown">
+     <option value="<%= @competitor.age %>"><%= @competitor.age %></option>
+     <option value=<%= nil %>>---</option>
+        <% for i in 1..100 %>
+          <option value="<%= i %>"><%= i %></option>
+        <% end %>  
+   </select>&emsp;|&emsp;
+  </th>
+    
+  <th><span style="font-weight:normal">College:</span>&emsp;
+    <select name="update_competitor_college_dropdown">
+      <option value="<%= nil %>"> --- </option>
+      <option value="<%= @competitor.get_college_name %>"><%= @competitor.get_college_name %></option>
+        <% @colleges.each do |c| %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% end %> 
+    </select>&emsp;|&emsp;
+  </th>
+  <th><span style="font-weight:normal">Conference:</span>&emsp;<%= @competitor.get_conference_name %></th>
+</tr>
+</thead>
+</table> 
+
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Activity&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Points Earned&emsp;</th>
+      <th>%Points Earned&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<input type="submit" value="Save Changes">
+</form></center>
+<br>
+<br>

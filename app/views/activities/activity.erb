@@ -1,18 +1,6 @@
-<center><form  method="POST" action="/activities/activity/update_name/<%= @activity.id %>">
-<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_activity_name_textbox" value="<%= @activity.name %>">
-<br>&emsp;|&emsp;
-<input type="submit" value="Update Activity Name">&emsp;|&emsp;
-</form>
+<center><h1><%= @activity.name %></h1>
 
-<form  method="POST" action="/activities/activity/update_max_score/<%= @activity.id %>">
-  <select name="update_activity_max_score_dropdown">
-  <option value="<%= @activity.max_score %>"><%= @activity.max_score %></option>
-    <% for i in 1..25 %>
-       <option value="<%= i %>"><%= i %></option>
-    <% end %>  
-  </select>&emsp;|&emsp;
-  <input type="submit" value="Update Max Possible Score">
-</form>
+Max Possible Score: <b><%= @activity.max_score %></b>
 <br>
 <br>
 <table border="0">
@@ -38,4 +26,6 @@
 <br>
 <br>
 <br>
-<center><a href="/">Main Page</a></center> 
+<center><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
+      <input type="submit" value="Update Activity">
+</form></center>

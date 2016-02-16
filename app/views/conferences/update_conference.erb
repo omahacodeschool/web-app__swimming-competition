@@ -1,5 +1,6 @@
-<center><h1> <%= @conference.name %></h1>
-
+<center><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_conference_name_textbox" value="<%= @conference.name %>">
+<br>
 <br>
 <table border="0">
   <thead>
@@ -22,7 +23,8 @@
 <br>
 <br>
 <br>
-<center><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference">
-      <input type="submit" value="Update Conference">
-</form>
+<input type="submit" value="Save Changes">
+</form></center>
+<br>
+<br>
 
