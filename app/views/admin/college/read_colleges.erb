@@ -9,6 +9,8 @@
       <th>College ID</th>
       <th>College Name</th>
       <th>Conference</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -21,6 +23,10 @@
             <% else %><%= c.conference_name %>
             <% end %>
         </td>
+        <td><a href="/update/college/<%=c.id%>">Update</a></td>
+        <td><form method = "post" action = "/delete/college/<%=c.id%>">
+        <input type="submit" value="delete" onClick="alert('Are you sure? Deleting a college will delete all of the corresponding students in that college AND results entered for those students');return true;">
+        </form></td>
       </tr>
     <% end %>
   </tbody>

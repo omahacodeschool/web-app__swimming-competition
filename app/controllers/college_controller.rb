@@ -28,6 +28,17 @@ MyApp.post "/process_update_college_form/:college_id" do
   erb :"admin/confirm_submission"
 end
 
+MyApp.post "/delete/college/:college_id" do
+  @college = College.find_by_id(params[:college_id])
+  @confirm_message = "Success! Deleted #{@college.college_name}!"
+  @corresponding_students = Student.where({"college_id" => params[:college_id]})
+  @corresponding_results = Result.where({"student_id" => @college.get_student_ids})
+  @corresponding_results.delete_all
+  @corresponding_students.delete_all
+  @college.delete
+  erb :"admin/confirm_submission"
+end
+
 MyApp.get "/read/colleges" do
   @colleges = College.all
   erb :"admin/college/read_colleges"
