@@ -27,7 +27,7 @@ end
 
 MyApp.get "/conference_view/:id" do
 
-  @conference = Conference.find_by_id(params[:id])
+  @conferences = Conference.all
 
   erb :"conference_status"
 end

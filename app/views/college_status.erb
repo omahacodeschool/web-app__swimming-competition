@@ -6,21 +6,18 @@
 
 
 
-#here's what I want on this page
+Here's what I want on this page
 
 college name, conference name, college contact, college contact email, college contact phone for every college 
 
- <p> Nothing that I put on this page that starts with @college is working. </p> 
+ <p> Nothing that I put on this page that starts with @colleges is working. </p> 
 
-<%= "Hello World" %>
 
-<% @colleges.each do |college| %>
+
   <p>
-    <%= college.college_name %> <%= college.conference_name %> 
-    <%= college.contact %> <%= college.contact_email %>
-    <%= college.contact_ph%>
+    <%= @colleges.college_name %> <%= @colleges.conference_name %> 
+  
   </p>
-<% end%>
 
 
 
