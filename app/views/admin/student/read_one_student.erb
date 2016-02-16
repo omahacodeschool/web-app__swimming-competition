@@ -27,7 +27,7 @@
 
   <tbody>
       <tr>
-        <%@results_awaiting_score.each do |r| %>
+        <%@registrations.each do |r| %>
           <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
           <td><a href="/result/update/<%=r.id%>">Add Score</a></td>
       </tr>
@@ -45,7 +45,7 @@
 
   <tbody>
       <tr>
-        <%@completed_results.each do |r| %>
+        <%@sorted_completed_performances.each do |r| %>
           <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
           <td><%= r.student_score %></td>
       </tr>
@@ -73,9 +73,9 @@
 
   <tbody>
     <tr>
-      <%if @top_three_activities == []%>
+      <%if @sorted_completed_performances == []%>
         <td>No Performances Yet</td>
-      <%else @top_three_activities.each_with_index do |r, i|%>
+      <%else @top_three_performances.each_with_index do |r, i|%>
         <td><%= i + 1 %></td>
         <td><a href="/read/activity/<%=r.access_event.id%>">
         <%= r.access_event.event_name %></a></td>

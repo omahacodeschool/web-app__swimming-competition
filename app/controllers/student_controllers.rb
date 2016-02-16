@@ -50,10 +50,11 @@ end
 MyApp.get "/read/student/:student_id" do
   @student = Student.find_by_id(params[:student_id])
   @results = Result.where({"student_id" => params[:student_id]})
-  @results_awaiting_score = Result.where({"student_id" => params[:student_id]} && {"student_score" => nil})
-  @completed_results = Result.where({"student_id" => params[:student_id]}).where.not({"student_score" => nil})
-  sorted_results = @completed_results.order(student_score: :desc)
-  @top_three_activities = sorted_results.first(3)
+  @registrations = @student.all_registrations
+  completed_performances = @student.all_completed_performances
+  @sorted_completed_performances = completed_performances.order(student_score: :desc)
+  @top_three_performances = @sorted_completed_performances.first(3)
+  binding.pry
   erb :"admin/student/read_one_student"
 end
 

@@ -16,7 +16,7 @@ class Result < ActiveRecord::Base
 
 
 
-  #Returns an array of all the results for a particular activity that are 
+  #Returns an array (collection?) of all the results for a particular activity that are 
   #completed, in order of
   #highest student score to lowest student score
 
@@ -25,7 +25,14 @@ class Result < ActiveRecord::Base
     ordered_results = all_results_for_activity.order(student_score: :desc)
     return ordered_results
   end
+  
+  # Returns a collection of all the results for a particular student that are # completed, in order of highest score to lowest score
 
+def ordered_results_for_student(student_object)
+  completed_results = student_object.all_completed_performances
+  ordered_results = completed_results.order(student_score: :desc)
+  return ordered_results
+end
 
 
   #     @ranks_in_activity << ordered_results.index(r)
