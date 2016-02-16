@@ -30,6 +30,7 @@ MyApp.post "/results/process_edit/:id" do
   @result.penguin_id = params["edit_penguin_id"]
   @result.event_id = params["edit_event_id"]
   @result.time = params["edit_time"]
+  @result.save
 erb :"updated"
 end
 

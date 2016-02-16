@@ -2,27 +2,29 @@
 
 <form action="/results/process_edit/<%= @result.id %>" method="post">
   <label>Select Penguin Name</label>
-  <select name ="new_penguin_id">
+  <select name ="edit_penguin_id">
     <% @penguins.each do |p| %>
       <option value="<%= p.id%>">
         <%= p.first_name%> <%=p.last_name %>
       </option>
     <% end %>
-      <option selected> <%=@result.penguin_access.first_name%> <%=@result.penguin_access.last_name%>
+      <option selected> <%= @result.penguin_access.first_name %> <%=@result.penguin_access.last_name%>
       </option>    
   </select>
 
   <label>Select Event</label>
-  <select name ="new_event_id">
+  <select name ="edit_event_id">
     <% @events.each do |e| %>
       <option value="<%= e.id%>">
         <%= e.name%>
       </option>
     <% end %>
+      <option selected> <%= @result.event_access.name %>
+      </option>    
   </select>
 
   <label>Enter Time</label>
-  <input type="number" step="any" name="new_time" value="<%= @result.time %>"> (Time in seconds)
+  <input type="number" step="any" name="edit_time" value="<%= @result.time %>"> (Time in seconds)
 
   <input type="submit" value="update">
 
