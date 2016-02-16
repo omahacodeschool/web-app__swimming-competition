@@ -9,11 +9,18 @@
     <td>School</td>
     <td>Conference</td>
   </tr>
-  <% @event.event_competitors.each do |e| %>
+  <% @event.competitors.each do |c| %>
   <tr>
-    <td><%= e %></td>
-    <td>code to include schools</td>
-    <td>code to include conferences</td>
+    <td><%= c.competitor_name %></td>
+    <td><%= c.school_id %></td>
+    <td>conference</td>
   </tr>
   <% end %>
 </table>
+
+
+
+
+
+
+
