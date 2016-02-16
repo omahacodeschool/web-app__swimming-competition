@@ -1,7 +1,8 @@
 class Competitor < ActiveRecord::Base
 
-  # gets the school_id from class Competitor
-  # returns school name String from class School
+  # gets 'school_id' Integer from class Competitor
+  # gets 'schools.id' Integer from class School
+  # returns 'school_name' String from class School
   def school_name
     x = self.school_id
     y = School.find_by_id(x)
