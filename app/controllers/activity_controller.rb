@@ -13,8 +13,9 @@ MyApp.post "/activities/added_new_activity" do
   erb :"/activities/added_activity_confirmation"
 end
 
-MyApp.get "/activities/delete_activity/:id" do 
+MyApp.post "/activities/activity/:id/delete_activity/confirmation" do 
     @activity = Activity.find_by_id(params[:id])
+    @activity.delete_all_activity_results
     @activity.delete
     erb :"/activities/deleted_activity_confirmation"
 end

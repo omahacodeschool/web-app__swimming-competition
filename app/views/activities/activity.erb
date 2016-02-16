@@ -26,6 +26,19 @@ Max Possible Score: <b><%= @activity.max_score %></b>
 <br>
 <br>
 <br>
-<center><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
-      <input type="submit" value="Update Activity">
-</form></center>
+<center>
+<table border="0">
+  <thead>
+    <tr>
+
+    <th><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
+    <input type="submit" value="Update Activity"></form></th>
+
+    <th><form method="POST" action="/activities/activity/<%= @activity.id %>/delete_activity/confirmation">
+    <input type="submit" value="Delete Activity">&emsp;</form></th></form>
+    </tr>
+    </thead>
+    </table>
+    <br>
+    <br>
+    </center>
