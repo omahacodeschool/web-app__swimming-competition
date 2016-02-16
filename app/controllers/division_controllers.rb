@@ -9,9 +9,9 @@ MyApp.post "/add_division" do
   erb :"division_views/add_success"
 end
 
-MyApp.get "/division_list" do
+MyApp.get "/divisions_list" do
   @divisions = Division.all
-  erb :"division_views/division_list"
+  erb :"division_views/divisions_list"
 end
 
 MyApp.get "/division/:division_id" do
@@ -22,6 +22,14 @@ end
 MyApp.get "/edit_division_form/:division_id" do
   @division = Division.find_by_id(params[:division_id])
   erb :"division_views/edit_division_form"
+end
+
+MyApp.post "/update_division/:division_id" do
+  @division = Division.find_by_id(params[:division_id])
+  @division.division = params["division"]
+  @division.save
+  @item = "division"
+  erb :"update_success"
 end
 
 MyApp.post "/delete_division/:division_id" do

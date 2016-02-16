@@ -14,10 +14,10 @@
     <tr>
       <td><center><%=s.id%></center></td>
       <td><a href="/squad/<%=s.id%>"><%= s.squad_name %></a></td>
-      <td><form action="">
+      <td><form action="/edit_squad_form/<%=s.id%>">
             <input type="submit" value="Edit"></td>
           </form>
-      <td><form action="">
+      <td><form action="/delete_squad/<%=s.id%>" method="post">
             <input type="submit" value="Delete"></td>
           </form>    
       <td><center><a href="/division/<%=s.division_id%>">

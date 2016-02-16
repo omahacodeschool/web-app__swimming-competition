@@ -24,6 +24,14 @@ MyApp.get "/edit_game_form/:game_id" do
   erb :"game_views/edit_game_form"
 end
 
+MyApp.post "/update_game/:game_id" do
+  @game = Game.find_by_id(params[:game_id])
+  @game.game_name = params["game_name"]
+  @game.save
+  @item = "game"
+  erb :"update_success"
+end
+
 MyApp.post "/delete_game/:game_id" do
   @game = Game.find_by_id(params[:game_id])
   @game.delete

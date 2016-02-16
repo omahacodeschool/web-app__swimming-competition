@@ -9,7 +9,6 @@ MyApp.post "/add_gamer" do
   x.first_name = params["first_name"]
   x.squad_id = params["squad_id"]
   x.save
-
   erb :"gamers_views/add_success"
 end
 
@@ -23,12 +22,23 @@ MyApp.get "/gamer/:gamer_id" do
   erb :"gamers_views/gamer_profile"
 end
 
-MyApp.get "edit_gamer_form/:gamer_id" do
+MyApp.get "/edit_gamer_form/:gamer_id" do
+  @squads = Squad.all
   @gamer = Gamer.find_by_id(params[:gamer_id])
   erb :"gamers_views/edit_gamer_form"
 end
 
-MyApp.post "/delete_gamer/gamer_id" do
+MyApp.post "/update_gamer/:gamer_id" do
+  @gamer = Gamer.find_by_id(params[:gamer_id])
+  @gamer.last_name = params["last_name"]
+  @gamer.first_name = params["first_name"]
+  @gamer.squad_id = params["squad_id"]
+  @gamer.save
+  @item = "gamer"
+  erb :"update_success"
+end
+
+MyApp.post "/delete_gamer/:gamer_id" do
   @gamer = Gamer.find_by_id(params[:gamer_id])
   @gamer.delete
   erb :"gamers_views/delete_success"

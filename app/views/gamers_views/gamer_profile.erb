@@ -1,2 +1,33 @@
-<h1><%= @gamer.first_name %> <%= @gamer.last_name %>'s Profile Page</h1>
+<% if @gamer.last_name[-1] == "s" %>
+  
+  <h1><%= @gamer.first_name %> <%= @gamer.last_name %>' Profile Page</h1>
 
+<% else %>
+
+  <h1><%= @gamer.first_name %> <%= @gamer.last_name %>'s Profile Page</h1>
+
+<% end %>
+
+<% if @gamer.all_results.length == 1 %>
+  <p> 
+    This page lists the events this Gamer is signed up for. Currently 
+    <b><%= @gamer.first_name %></b> is participating in 
+    <b><%= @gamer.all_results.length %></b> game.
+  </p>
+<% else %>
+  <p>
+    This page lists the events this Gamer is signed up for. Currently 
+    <b><%= @gamer.first_name %></b> is participating in 
+    <b><%= @gamer.all_results.length %></b> games.
+  </p>
+<% end %>
+
+<ul style="list-style-type: circle">
+  <% @gamer.all_results.each do |r| %>
+  <li><%= r.game_access.game_name %></li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+<a href="/">Home</a>

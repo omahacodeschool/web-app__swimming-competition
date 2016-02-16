@@ -21,9 +21,19 @@ MyApp.get "/squad/:squad_id" do
   erb :"squad_views/view_squad"
 end
 
-MyApp.get "edit_squad_form/:squad_id" do
-  @squad = Squad.find_by_id(params[:sqaud_id])
+MyApp.get "/edit_squad_form/:squad_id" do
+  @divisions = Division.all
+  @squad = Squad.find_by_id(params[:squad_id])
   erb :"squad_views/edit_squad_form"
+end
+
+MyApp.post "/update_squad/:squad_id" do
+  @squad = Squad.find_by_id(params[:squad_id])
+  @squad.squad_name = params["squad_name"]
+  @squad.division_id = params["division_id"]
+  @squad.save
+  @item = "squad"
+  erb :"update_success"
 end
 
 MyApp.post "/delete_squad/:squad_id" do

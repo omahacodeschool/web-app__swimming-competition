@@ -13,7 +13,7 @@
       <tr>
         <td><center><%= g.id %></center></td>
         <td><a href="game/<%=g.id%>"><%= g.game_name %></a></td>
-        <td><form action="">
+        <td><form action="/edit_game_form/<%=g.id%>">
               <input type="submit" value="Edit"></td>
             </form>
         <td><form action="/delete_game/<%=g.id%>" method="post">

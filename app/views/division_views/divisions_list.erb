@@ -13,10 +13,10 @@
       <tr>
         <td><center><%= d.id %></center></td>
         <td><a href="/division/<%=d.id%>"><%= d.division %></a></td>
-        <td><form action="">
+        <td><form action="/edit_division_form/<%=d.id%>">
               <input type="submit" value="Edit"></td>
             </form>
-        <td><form action="/delete_division/<%d.id%>" method="post">
+        <td><form action="/delete_division/<%=d.id%>" method="post">
               <input type="submit" value="Delete"></td>
             </form>    
       </tr>

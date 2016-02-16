@@ -13,12 +13,12 @@
     <% @gamers.each do |g| %>
     <tr>
       <td><center><%= g.id %></center></td>
-      <td><a href="gamer/<%=g.id%>">
+      <td><a href="/gamer/<%=g.id%>">
           <%= g.last_name %>, <%= g.first_name %></a></td>
-      <td><form action="">
+      <td><form action="/edit_gamer_form/<%=g.id%>">
             <input type="submit" value="Edit"></td>
           </form>
-      <td><form action="delete_gamer/<%=g.id%>" method="post">
+      <td><form action="/delete_gamer/<%=g.id%>" method="post">
             <input type="submit" value="Delete"></td>
           </form>    
       <td><a href="squad/<%=g.squad_id%>">

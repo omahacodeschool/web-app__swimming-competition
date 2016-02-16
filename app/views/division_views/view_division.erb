@@ -1,1 +1,23 @@
 <h1><%= @division.division %></h1>
+
+
+<% if @division.all_squads.length == 1 %>
+  <p> 
+    This page lists the teams assigned to this division. Currently there is <b>
+    <%= @division.all_squads.length %></b> squad assigned to this division. 
+  </p>
+<% else %>
+  <p>
+    This page lists the teams assigned to this division. Currently there are 
+    <b><%=@division.all_squads.lenth %></b> squads assigned to this division.
+<% end %>
+
+<ul style="list-style-type: circle">
+  <% @division.all_squads.each do |s| %>
+  <li><%= s.squad_name %> </li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+<a href="/">Home</a>

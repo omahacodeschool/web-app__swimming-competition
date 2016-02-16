@@ -13,17 +13,18 @@
   <tbody>
     <% @results.each do |r| %>
     <tr>
-      <td><center><% r.id %></center></td>
-      <td><form action="">
+      <td><center><%= r.id %></center></td>
+      <td><form action="/edit_results_form/<%=r.id%>">
             <input type="submit" value="Edit"></td>
           </form>
-      <td><form action="">
+      <td><form action="/delete_result/<%=r.id%>" method="post">
             <input type="submit" value="Delete"></td>
           </form>    
       <td><a href="game/<%=r.game_id%>">
           <%=r.game_access.game_name%></a></td>
-      <td><a href="gamer/<%= r.gamer_id%>">
-          <%=r.gamer_access.gamer_name%></a></td>
+      <td><a href="gamer/<%=r.gamer_id%>">
+          <%= r.gamer_access.last_name %>, <%= r.gamer_access.first_name %></a>
+      </td>
       <td><center><%= r.completion_time %></center></td>
     </tr>
     <% end %>
