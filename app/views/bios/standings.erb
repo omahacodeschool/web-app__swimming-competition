@@ -1,34 +1,40 @@
 
-<p> The Top three simmers are... <p>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Swimmer</th>
-      <th>Swimmer's University</th>
-      <th>University Conference</th>
-      <th>Swimmer's Time</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @medal_winners.each do |y| %>
-
+<h1> The Victors </h1>
+<% if @medal_winners != nil %>
+  <table border="1">
+    <thead>
       <tr>
-        <td>
-          <a href="swimmer_bio/<%= y.swimmer_id %>"> <%= y.swimmer %> </a>
-        </td>
-        <td>
-          <%= y.university %>
-        </td>
-        <td>
-          <%= y.conference %>
-        </td>
-        <td>
-          <%= y.swimmer_time %>
-        </td>
+        <th>Swimmer</th>
+        <th>Swimmer's University</th>
+        <th>University Conference</th>
+        <th>Swimmer's Time</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<a href="/">Return Home</a>
+    <tbody>
+      <% @medal_winners.each do |y| %>
+
+        <tr>
+          <td>
+            <a href="swimmer_bio/<%= y.swimmer_id %>"> <%= y.swimmer %> </a>
+          </td>
+          <td>
+            <%= y.university %>
+          </td>
+          <td>
+            <%= y.conference %>
+          </td>
+          <td>
+            <%= y.swimmer_time %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <p> This event is not finished yet, be patient </p>
+<% end %>
+
+
+<p><a href="/">Return Home</a><p>
+<p><a href="/show_standings">Back</a><p>

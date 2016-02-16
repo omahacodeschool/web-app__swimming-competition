@@ -23,8 +23,8 @@ end
 
 MyApp.get "/top_three/:id" do
   results = Result.where({"event_id" => params[:id]})
-  #binding.pry
   @medal_winners = results.top_swimmers
+  #binding.pry
   erb :"/bios/standings"
 end
 

@@ -45,10 +45,14 @@ class Result < ActiveRecord::Base
   def Result.top_swimmers
     sorted = self.order("swimmer_time").to_a 
     top_three = []
-    3.times do 
-      top_three << sorted.shift
+    if sorted.length >= 3
+      3.times do 
+        top_three << sorted.shift
+      end
+      return top_three
+    else
+      return nil
     end
-  return top_three
   end
 end
 
