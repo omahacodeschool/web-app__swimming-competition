@@ -9,5 +9,10 @@
   <tr>
     <td>competitors from <%= @school.school_name %></td>
   </tr>
+  <% @competitor.each do |c| %>
+  <tr>
+    <td><%= c.competitor_name %></td>
+  </tr>
+  <% end %>
 
 </table>
