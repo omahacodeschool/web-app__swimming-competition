@@ -51,6 +51,36 @@
 <!--Edit this to create a table for each event that has the event name as the header, and subheaders for the swimmer and their run times.-->
 <br />
 <h3>Added Runs:</h3>
+
+<% @runs.each do |run| %>
+<table border="1"> 
+  <thead>
+    <tr>
+      <th colspan="2"><%= run.run_event %></th>
+    </tr>
+  
+    <tr>
+      <th> Swimmer </th>
+      <th> Run Time (sec.) </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><center><%= run.run_swimmer %></center></td>
+      <td><center><%= run.run_time %></center></td>
+      <td><center><a href="/delete_run/<%= run.id %>">delete</a></center></td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
+
+
+
+
+
+<br />
+<h3>Added Runs:</h3>
 <table border="1">
   <thead>
     <tr>

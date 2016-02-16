@@ -1,15 +1,16 @@
 class Run < ActiveRecord::Base
   @runs = Run.all
 
-  # Within the variable x, store all Event IDs. Then iterate through each row of the runs tabls, collecting the rows where the Event IDs match in the event_runs_arr Array.
-  def event_runs
+# Define a method that goes through each row in Runs, finds the rows related by event_id, and separates those related rows from other related rows. Ultimately I want to take this information to create a table for each bundle of related rows. 
+#
+  def event_run
     x = Event.ids
     event_runs_arr = []
     
     x.each do |event_id|
       event_runs_arr << Run.where({"event_id" => event_id})
-    end
-    return event_runs_arr
+    end 
+    
   end
 
   def run_swimmer
@@ -32,7 +33,7 @@ end
 # Per the assignment, I need to list all competitors for at least one event, identified by its ID.
 # As my schema is defined, I have my runs table including the columns:
 #
-# | id | event_id | swimmer_id | swimmer_event_time |
+# | id | event_id | swimmer_id | run_time |
 #
 # As events are added, the same event_id will be logged for multiple swimmer_id's each with unique swimmer_event_times.
 # The runs table primary key (id column) will iterate up 1 for each entry
@@ -44,6 +45,6 @@ end
 # event_runs_arr = Run.where({"event_id" => self.id})
 #
 # 2. For these rows with matching event_id's, separate them from the others
-# 3. Then look in each of those containers and create a table headed by the the event name connected to the event_id and each row being the swimmer name connected to the swimmer_id
+# 3. Then look in each of those containers and create a table headed by the the event name connected to the event_id and each row being the swimmer name connected to the swimmer_id and their run time
 #
-# I don't know if I need to create a method in this model or in the events model. I'm not sure what operations grab which data. I
+# I don't know if I need to create a method in this model or in the events model. I'm not sure what operations grab which data.
