@@ -24,6 +24,7 @@ MyApp.get "/view_results" do
 end
 
 MyApp.get "/category_info/:category_id" do
-  @category = Competition.find_by_id(params[:category_id])
+  @x = Result.find_by_competition_id(params[:category_id])
+  binding.pry
   erb :"all_entries/category_info"
 end
