@@ -1,5 +1,16 @@
 <p>Here is a list of all of the competitors enetered:</p>
 
 <% @competitors.each do |x| %>
-  <p><a href="view_competitor/<%= x.id %>"><%= x.competitor_name %></a></p>
+  <p>
+    <a href="view_competitor/<%= x.id %>">
+      <%= x.competitor_name %>
+    </a>
+
+   -
+
+    <a href="/delete_competitor/<%= x.id %>">
+      Delete
+    </a>
+  </p>
+
 <% end %>

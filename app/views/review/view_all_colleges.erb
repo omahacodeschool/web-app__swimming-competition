@@ -1,5 +1,15 @@
 <p>Here is a list of all of the colleges enetered:</p>
 
 <% @colleges.each do |x| %>
-  <p><a href="view_college/<%= x.id %>"><%= x.college_name %></a></p>
+  <p>
+    <a href="view_college/<%= x.id %>">
+      <%= x.college_name %>
+    </a>
+
+     - 
+
+    <a href="/delete_college/<%= x.id %>">
+      Delete
+    </a>
+  </p>
 <% end %>

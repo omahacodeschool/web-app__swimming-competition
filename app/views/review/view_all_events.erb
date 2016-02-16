@@ -1,5 +1,16 @@
 <p>Here is a list of all of the events enetered:</p>
 
 <% @events.each do |x| %>
-  <p><a href="view_event/<%= x.id %>"><%= x.event_name %></a></p>
+  <p>
+    <a href="view_event/<%= x.id %>">
+      <%= x.event_name %>
+    </a>
+
+   -
+
+    <a href="/delete_event/<%= x.id %>">
+      Delete
+    </a>
+  </p>
+
 <% end %>

@@ -11,7 +11,7 @@ end
 MyApp.get "/all_colleges" do 
   @colleges = College.all 
 
-  erb :"view_one/view_college/"
+  erb :"view_one/view_college/:num"
 end
 
 #Shows one competitor selected
