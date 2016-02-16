@@ -8,27 +8,28 @@ MyApp.get "/winners" do
 end
 
 MyApp.get "/view_winner/:id" do
-
-  
-
+#####################THIS IS WHERE YOU STOPPED
   @currentevent = Event.find_by_id(params[:id])
-  @f = Finish.all
-  @finishes = Finish.finish_array(params[:id])
-  
-  @x = Finish.where({"event_id" => params[:id]})
-  
-  first = @x.find_by({"finish_time"=> @finishes[0]})
-  @firstplacekitten = Swimmer.find_by_id(first.swimmer_id)
-  
-  second = @x.find_by({"finish_time"=> @finishes[1]})
-  @secondplacekitten = Swimmer.find_by_id(second.swimmer_id)
-  
-  third = @x.find_by({"finish_time"=> @finishes[2]})
-  @thirdplacekitten = Swimmer.find_by_id (third.swimmer_id)
-  
-  binding.pry
-
-  erb :'/ev/view_winner'
+  if x == []
+    @event.delete
+    erb :"/cv/deletesuccess"
+  else 
+    @f = Finish.all
+    @finishes = Finish.finish_array(params[:id])
+    
+    @x = Finish.where({"event_id" => params[:id]})
+    
+    first = @x.find_by({"finish_time"=> @finishes[0]})
+    @firstplacekitten = Swimmer.find_by_id(first.swimmer_id)
+    
+    second = @x.find_by({"finish_time"=> @finishes[1]})
+    @secondplacekitten = Swimmer.find_by_id(second.swimmer_id)
+    
+    third = @x.find_by({"finish_time"=> @finishes[2]})
+    @thirdplacekitten = Swimmer.find_by_id (third.swimmer_id)
+    
+    erb :'/ev/view_winner'
+  end
 end
 
 MyApp.get "/eventnotover" do
