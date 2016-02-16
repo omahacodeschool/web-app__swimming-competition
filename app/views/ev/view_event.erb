@@ -5,4 +5,10 @@
 <p>Participating Kitties:<p>
 <%= @swimmers.join(", ") %>
 
+<p></p>
+<form action="/delete_event/<%=@currentevent.id%>" method="post">
+  <input type="submit" value="REMOVE THIS EVENT FROM TOURNAMENT">
+</form>
+<p></p>
+
 <a href="/">Home</a>
