@@ -79,6 +79,7 @@ Then:
         <td><%= swimmer.swimmer_name %></td>
         <td><center><%= swimmer.swimmer_team %></center></td>
         <td><center><%= swimmer.swimmer_conference %></center></td>
+        <td><center><a href="/delete_swimmer/<%= swimmer.id %>"> delete</a></center></td>
       </tr>
     <% end %>
   </tbody>

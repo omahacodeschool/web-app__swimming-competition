@@ -9,3 +9,10 @@ MyApp.post "/runs_form" do
 
   erb :"main/add_runs"
 end
+
+MyApp.get "/delete_run/:run_id" do
+  @run = Run.find_by_id(params[:run_id])
+  @run.delete
+  binding.pry
+  erb :"main/add_runs"
+end

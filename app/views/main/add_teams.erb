@@ -48,6 +48,7 @@ Then:
       <tr>
         <td><%= team.team_name %></td>
         <td><center><%= team.team_conference %></center></td>
+        <td><center><a href="/delete_team/<%= team.id %>"> delete</a></center></td>
       </tr>
     <% end %>
   </tbody>

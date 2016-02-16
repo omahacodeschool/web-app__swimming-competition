@@ -12,3 +12,10 @@ MyApp.post "/events_form" do
 
   erb :"main/add_events"
 end
+
+MyApp.get "/delete_event/:event_id" do
+  @event = Event.find_by_id(params[:event_id])
+  @event.delete
+    
+  erb :"main/add_events"
+end

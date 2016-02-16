@@ -7,3 +7,10 @@ MyApp.post "/conferences_form" do
 
   erb :"main/add_conferences"
 end
+
+MyApp.get "/delete_conference/:conference_id" do
+  @conference = Conference.find_by_id(params[:conference_id])
+  @conference.delete
+    
+  erb :"main/add_conferences"
+end

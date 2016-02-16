@@ -11,3 +11,10 @@ MyApp.post "/swimmers_form" do
   
   erb :"main/add_swimmers"
 end
+
+MyApp.get "/delete_swimmer/:swimmer_id" do
+  @swimmer = Swimmer.find_by_id(params[:swimmer_id])
+  @swimmer.delete
+    
+  erb :"main/add_swimmers"
+end

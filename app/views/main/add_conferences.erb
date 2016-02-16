@@ -35,6 +35,8 @@ Then:
     <% @conferences.each do |conference| %>
       <tr>
         <td><%= conference.conference_name %></td>
+        <td><center><a href="/delete_conference/<%= conference.id %>"> delete
+        </a></center></td>
       </tr>
     <% end %>
   </tbody>

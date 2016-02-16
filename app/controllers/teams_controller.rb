@@ -8,3 +8,10 @@ MyApp.post "/teams_form" do
 
   erb :"main/add_teams"
 end
+
+MyApp.get "/delete_team/:team_id" do
+  @team = Team.find_by_id(params[:team_id])
+  @team.delete
+    
+  erb :"main/add_teams"
+end

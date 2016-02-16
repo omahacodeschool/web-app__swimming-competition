@@ -1,4 +1,4 @@
-<h1><center>Runs</center></h1>
+<h2>Add Run Info Below</h2>
 
 <a href="/">Home</a>
 <br />
@@ -63,8 +63,9 @@
     <% @runs.each do |run| %>
       <tr>
         <td><%= run.run_event %></td>
-        <td><%= run.run_swimmer %></td>
-        <td><%= run.run_time %></td>
+        <td><center><%= run.run_swimmer %></center></td>
+        <td><center><%= run.run_time %></center></td>
+        <td><center><a href="/delete_run/<%= run.id %>">delete</a></center>
       </tr>
     <% end %>
   </tbody>
