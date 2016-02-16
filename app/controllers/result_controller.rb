@@ -3,6 +3,7 @@
 
 MyApp.get "/result/update/:result_id" do
   @result = Result.find_by_id(params[:result_id])
+  binding.pry
   erb :"admin/result/update_result"
 end
 
