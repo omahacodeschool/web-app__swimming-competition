@@ -12,8 +12,8 @@
   <tbody>
     <% @results.each do |y| %>
       <tr>
-        <td><%= y.swimmer %></td>
-        <td><%= y.event %></td>
+        <td><a href="/swimmer_bio/<%= y.swimmer_id %>"><%= y.swimmer %></a></td>
+        <td><a href="/event_bio/<%= y.event_id %>"><%= y.event %></a></td>
         <td><%= y.swimmer_time %></td>
       </tr>
     <% end %>
