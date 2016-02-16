@@ -6,6 +6,13 @@
         <%= conference.conference %>
       </a>  
   </p>
+
+  <form action = "/delete_conference/<%= conference.id %>" method = "post">
+    <input type = "submit" value = "Delete">
+  </form>
+  <form action = "/edit_conference/<%= conference.id %>" method = "get">
+    <input type = "submit" value = "Edit">
+  </form>
 <% end %>
 
 <p><a href = "/">Home</a></p>
