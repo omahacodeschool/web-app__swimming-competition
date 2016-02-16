@@ -19,9 +19,14 @@ MyApp.get "/sign_up_table" do
 end
 
 
-
 MyApp.get "/event/:id" do
   @x = SignupResult.find_by_id(params[:id])
+ erb :"event/:id"
+end
+
+MyApp.get "/top_three" do
+  x = SignupResult.all
+  @y = x.rank[1..3]
   binding.pry
- erb :"event/1"
+  erb :"sign_result/sign_up_table"
 end

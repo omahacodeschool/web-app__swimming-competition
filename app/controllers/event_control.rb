@@ -14,11 +14,3 @@ MyApp.get "/event_table" do
   erb :"event/event_table"
 end
 
-
-MyApp.get "/event/:" do
-  @x = Event.find_by_id(params[:id])
-  binding.pry
-  @z = SignupResult.all
-  binding.pry
-  erb :"event/1"
-end

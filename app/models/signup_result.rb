@@ -11,7 +11,7 @@ class SignupResult < ActiveRecord::Base
   def event_name
     x = event_id
     y = Event.find_by_id(x)
-    z = y.distance + " " + y.stroke
+    z = y.event_name
     return z
   end
 
