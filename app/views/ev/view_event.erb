@@ -3,12 +3,14 @@
 <p>Event ID: <%=@currentevent.id%></p>
 
 <p>Participating Kitties:<p>
-<%= @swimmers.join(", ") %>
-
-<p></p>
-<form action="/delete_event/<%=@currentevent.id%>" method="post">
-  <input type="submit" value="REMOVE THIS EVENT FROM TOURNAMENT">
-</form>
-<p></p>
+<ul>
+  <% @signups.each do |post| %>
+    <li><%= post.find_swimmer_name%> ////
+    <%=post.find_swimmer_college%> ////
+    <form action="/remove_swimmer/<%=post.id%>" method="post">
+      <input type="submit" value="REMOVE THIS KITTY FROM EVENT">
+    </form>
+  <% end %>
+</ul> 
 
 <a href="/">Home</a>

@@ -8,6 +8,7 @@ class Signup < ActiveRecord::Base
   def find_swimmer
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
+    return y
   end
 
   def find_swimmer_name
@@ -15,6 +16,12 @@ class Signup < ActiveRecord::Base
     y = Swimmer.find_by_id(x)
     name = y.first_name + " " + y.last_name
     return name
+  end
+
+  def find_swimmer_college
+    x = self.swimmer_id
+    y = Swimmer.find_by_id(x)
+    return y.find_college_name
   end
   
 end

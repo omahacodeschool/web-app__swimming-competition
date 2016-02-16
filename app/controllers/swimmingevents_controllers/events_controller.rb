@@ -19,14 +19,14 @@ end
 
 MyApp.get "/view_event/:id" do
   @currentevent = Event.find_by_id(params[:id])
-  @signups = Signup.all
-  z = Signup.where({"event_id" => (params[:id])})
-  @swimmers = []
-  z.each do |banana|
-    @swimmers << banana.find_swimmer_name
-  end
-  #binding.pry
+  @signups = Signup.where({"event_id" => (params[:id])})
   erb :"/ev/view_event"
+end
+
+MyApp.get "remove_swimmer/:id" do
+  @currentswimmer = Swimmer.find_by_id(params[:id])
+  @currentevent = @currentevent
+  erb :"/cv/remove_swimmer"
 end
 
 MyApp.post "/delete_event/:id" do
