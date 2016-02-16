@@ -4,5 +4,4 @@ class Conference < ActiveRecord::Base
     schools = School.where("conference_id" => self.id)
     return schools
   end
-
 end

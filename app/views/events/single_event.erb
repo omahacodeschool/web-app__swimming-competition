@@ -24,11 +24,14 @@
 </p>
 
 <% @event.results.each do |r| %>
-<ul>
-  <li>
-    <%= r.competitor_name %>
-  </li>
-</ul>  
+  <% if r.competitor_name == nil %>
+  <% else %>
+    <ul>
+      <li>
+        <%= r.competitor_name.first_name.capitalize + " " + r.competitor_name.last_name.capitalize %>
+      </li>
+    </ul>
+  <% end %>  
 <% end %>
 
 
