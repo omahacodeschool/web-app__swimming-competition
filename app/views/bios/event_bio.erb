@@ -1,4 +1,4 @@
-display all the swimmers in an event| thier university| and the conference|
+<h1> <%= @event.event_name %> </h1>
 <table border="1">
   <thead>
     <tr>
@@ -12,7 +12,7 @@ display all the swimmers in an event| thier university| and the conference|
     <% @university.each do |y| %>
       <tr>
         <td>
-          <a href="swimmer_bio/<%= y.id %>"> <%= y.swimmer %> </a>
+          <a href="/swimmer_bio/<%= y.swimmer_id %>"> <%= y.swimmer %> </a>
         </td>
         <td>
           <%= y.university %>
