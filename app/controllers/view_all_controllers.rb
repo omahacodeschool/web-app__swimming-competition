@@ -24,5 +24,6 @@ MyApp.get "/view_results" do
 end
 
 MyApp.get "/category_info/:category_id" do
+  @comp_obj = Competition.find_by(params[:category_id])
   erb :"all_entries/category_info"
 end
