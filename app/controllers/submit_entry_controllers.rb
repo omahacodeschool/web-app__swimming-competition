@@ -31,8 +31,8 @@ end
 
 MyApp.get "/submit_scores" do
   @score = Result.new
-  @score.chili_id = params[:chili_id]
   @score.competition_id = params[:competition_id]
+  @score.chili_id = params[:chili_id]
   @score.aroma = params[:aroma]
   @score.flavor = params[:flavor]
   @score.texture = params[:texture]
