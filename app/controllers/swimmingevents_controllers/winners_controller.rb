@@ -12,9 +12,9 @@ MyApp.get "/find_winner/:id" do
   @x = Finish.where({"event_id" => params[:id]})
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
-  elsif Winner.exists?(:rank_id => @x.ids)
-    @currentevent = Event.find_by_id(params[:id])
-    erb :"/ev/view_winner/"
+# elsif Winner.exists?(:rank_id => @x.ids)
+#  @currentevent = Event.find_by_id(params[:id])
+#  erb :"/ev/view_winner"
   else
     erb :"/ev/calculate_winner"
   end
