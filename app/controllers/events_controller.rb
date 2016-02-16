@@ -2,7 +2,7 @@
 # Want to use the final list of events to populate a checklist for an Add
 # Swimmers form
 #
-MyApp.get "/events_form" do
+MyApp.post "/events_form" do
   @events = Event.all
   
   @e = Event.new

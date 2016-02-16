@@ -1,4 +1,4 @@
-MyApp.get "/runs_form" do
+MyApp.post "/runs_form" do
   @runs = Run.all
 
   @r = Run.new

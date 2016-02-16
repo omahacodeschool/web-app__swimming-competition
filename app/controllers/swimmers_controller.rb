@@ -1,4 +1,4 @@
-MyApp.get "/swimmers_form" do
+MyApp.post "/swimmers_form" do
   @swimmers = Swimmer.all
 
   @s = Swimmer.new

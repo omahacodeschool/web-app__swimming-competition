@@ -1,4 +1,4 @@
-MyApp.get "/conferences_form" do
+MyApp.post "/conferences_form" do
   @conferences = Conference.all
   
   @c = Conference.new

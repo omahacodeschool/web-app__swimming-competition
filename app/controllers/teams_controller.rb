@@ -1,4 +1,4 @@
-MyApp.get "/teams_form" do
+MyApp.post "/teams_form" do
   @teams = Team.all
   
   @t = Team.new
