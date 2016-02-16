@@ -11,14 +11,6 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def event_locked?
-    if self.locked == true
-      return true
-    else
-      return false
-    end
-  end
-
 end
 
 #DB.define_table("events")

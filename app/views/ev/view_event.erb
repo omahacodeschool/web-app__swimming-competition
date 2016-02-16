@@ -15,5 +15,10 @@
 
 <a href="/lock_event/<%= @currentevent.id%>">LOCK THIS EVENT</a>
 <p></p>
+<p></p>
+<form action="/delete_event/<%=@currentevent.id%>" method="post">
+  <input type="submit" value="DELETE THIS EVENT">
+</form>
+<p></p>
 
 <a href="/">Home</a>
