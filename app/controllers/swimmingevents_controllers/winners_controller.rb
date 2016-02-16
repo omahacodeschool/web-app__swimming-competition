@@ -7,40 +7,48 @@ MyApp.get "/winners" do
   #splash page of events
 end
 
-MyApp.get "/view_winner/:id" do
+MyApp.get "/find_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
-  else 
-    @f = Finish.all
-    @finishes = Finish.finish_array(params[:id])
-    
-    @x = Finish.where({"event_id" => params[:id]})
-    
-    first = @x.find_by({"finish_time"=> @finishes[0]})
-    @firstplacekitten = Swimmer.find_by_id(first.swimmer_id)
-    
-    second = @x.find_by({"finish_time"=> @finishes[1]})
-    @secondplacekitten = Swimmer.find_by_id(second.swimmer_id)
-    
-    third = @x.find_by({"finish_time"=> @finishes[2]})
-    @thirdplacekitten = Swimmer.find_by_id (third.swimmer_id)
-    
-    erb :'/ev/view_winner'
+  else
+    erb :"/ev/calculate_winner"
   end
+end 
+
+MyApp.post "/calc_winner/:id" do
+  @finishes = Finish.finish_array(params[:id])
+  @x = Finish.where({"event_id" => params[:id]})
+  
+  first = @x.find_by({"finish_time"=> @finishes[0]}) 
+  @one = Winner.new
+  @one.rank_id = 1
+  @one.finish_id = first.id
+  @one.save
+
+  second = @x.find_by({"finish_time"=> @finishes[1]})
+  @two = Winner.new
+  @two.rank_id = 2
+  @two.finish_id = second.id
+  @two.save
+
+  third = @x.find_by({"finish_time"=> @finishes[2]})
+  @three = Winner.new
+  @three.rank_id = 3
+  @three.finish_id = third.id
+  @three.save
+
+  @winners = [@one, @two, @three]
+  @currentevent = Event.find_by_id(params[:id])
+  erb :"/ev/view_winner"
 end
+
+
+
 
 MyApp.get "/eventnotover" do
   erb :'/ev/eventnotover'
 end
-
-
-#method that determines winner, involving "finish" class
-#method that gets event title, rank "first second third" 
-#name of swimmer, and their swim time
-
-#another that tells you if winners are on the "finished event"
-#table which does not exist yet
 
 #DB.define_table("winners")
 #DB.define_column("winners","rank_id","integer")

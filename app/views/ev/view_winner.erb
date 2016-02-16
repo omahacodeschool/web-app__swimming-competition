@@ -1,21 +1,13 @@
-
 <h1><%= @currentevent.event_name %></h1>
 
-
-<h2>First Place</h2>
-<h3><%= @firstplacekitten.swimmer_name %><h3>
-<p><%= @firstplacekitten.find_college_name%><p>
-<p>Finish Time: <%=@finishes[0]%> seconds</p>
-
-<h2>Second Place</h2>
-<h3><%= @secondplacekitten.swimmer_name %><h3>
-<p><%= @secondplacekitten.find_college_name%><p>
-<p>Finish Time: <%=@finishes[1]%> seconds</p>
-
-<h2>Third Place</h2>
-<h3><%= @thirdplacekitten.swimmer_name %><h3>
-<p><%= @thirdplacekitten.find_college_name%><p>
-<p>Finish Time: <%=@finishes[2]%>seconds</p>
+<ul>
+  <% @winners.each do |place| %>
+    <li>
+    <%=place.places%>////
+    <%=place.find_swimmer%>////
+    (<%=place.find_time%>) 
+  <% end %>
+</ul> 
 
 Congratulations, Kitties!
 
