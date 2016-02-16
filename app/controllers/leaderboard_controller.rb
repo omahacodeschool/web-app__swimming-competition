@@ -1,57 +1,58 @@
 MyApp.get  "/view_leaderboard" do
 
-@sorted_signup_records = []
+# @sorted_signup_records = []
 
-  Signup.all.each do |x| 
-        @signup_records = []
-        primary_key = x.id
-        @signup_records << primary_key
 
-        name = x.get_swimmer_name
-          if name == nil
-            name = "X"
-          end
-        @signup_records << name
+#   Signup.all.each do |x| 
+#         @signup_records = []
+#         primary_key = x.id
+#         @signup_records << primary_key
 
-        school = x.get_school_name
-          if school == nil
-            school = "X"
-          end
-        @signup_records << school
+#         name = x.get_swimmer_name
+#           if name == nil
+#             name = "X"
+#           end
+#         @signup_records << name
+
+#         school = x.get_school_name
+#           if school == nil
+#             school = "X"
+#           end
+#         @signup_records << school
    
-        event = x.get_event_name
-          if event == nil
-            event = "X"
-          end
-        @signup_records << event
+#         event = x.get_event_name
+#           if event == nil
+#             event = "X"
+#           end
+#         @signup_records << event
 
-        time = x.completed_swim_time
-          if time == nil
-            time = "Not Yet Scored"
-          end
-        @signup_records << time
+#         time = x.completed_swim_time
+#           if time == nil
+#             time = "Not Yet Scored"
+#           end
+#         @signup_records << time
 
-        @sorted_signup_records << @signup_records
-        end
+#         @sorted_signup_records << @signup_records
+#         end
 
-        @all_times = []
+#         @all_times = []
 
-        @sorted_signup_records.each do |x|
+#         @sorted_signup_records.each do |x|
           
-          @all_times << x.last
-        end
-        @all_times_only = []
+#           @all_times << x.[3]
+#         end
+#         @all_times_only = []
         
-        @all_times.each do |t|
+#         @all_times.each do |t|
 
-          if t == "Not Yet Scored"
-
-          else @all_times_only << t
-          end
+#           if t == "Not Yet Scored"
+#             end
+#           else @all_times_only << t
+#           end
         
 
-        @p = @all_times_only.sort
-        # @p[0, 1, 2].each do |p|
+#         @p = @all_times_only.sort
+       
 
 
 
@@ -73,7 +74,7 @@ MyApp.get  "/view_leaderboard" do
 
 
         #@all_times_low_to_high = @all_times.sort
-end
+#end
         #@sorted_signup_records[]
 
           
