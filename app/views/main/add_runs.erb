@@ -46,16 +46,17 @@
   <p>
   <input type="submit" value="Add Run">
   </p>
-
 </form>
 
+<!--Prints table showing events with runs added and the participating swimmers-->
 <br />
-<h3>Swimmer Runs:</h3>
+<h3>Added Runs:</h3>
 <table border="1">
   <thead>
     <tr>
-      <th> Swimmer </th>
-      <th> Event </th>
+      <th> Event Run </th>
+      <th><center> Swimmer ID </center></th>
+      <th><center> Run Time (sec.) </center></th>
     </tr>
   </thead>
 
@@ -63,6 +64,8 @@
     <% @runs.each do |run| %>
       <tr>
         <td><%= run.event_id %></td>
+        <td><%= run.run_swimmer %></td>
+        <td><%= run.run_time %></td>
       </tr>
     <% end %>
   </tbody>
