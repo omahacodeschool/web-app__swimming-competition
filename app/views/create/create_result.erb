@@ -4,12 +4,11 @@
 
 <form action="/add_result" method="post">
   <p>Name of Swimmer<p>
-  <select name="event_id">
+  <select name="swimmer_id">
     <% @swimmers.each do |y| %>
       <option value="<%=y.id%>"><%=y.swimmer_name%> </option>
     <% end %>
   </select>
-
   <p>Name of Event<p>
   <select name="event_id">
     <% @events.each do |y| %>
@@ -21,69 +20,6 @@
   <p>
   <input type="submit">
 </form>
-
-
-
-
-
-
-
-
-
-
-
-<p>Current Swimmers<p>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Swimmer's ID</th>
-      <th>Swimmer's Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @swimmers.each do |y| %>
-      <tr>
-        <td>
-          <%= y.id %>
-        </td>
-        <td>
-          <a href="swimmer_bio/<%= y.id %>"> <%= y.swimmer_name %> </a>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p>Current Events<p>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Event's ID</th>
-      <th>Event's Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |x| %>
-      <tr>
-        <td>
-          <%= x.id %> 
-        </td>
-        <td>
-          <%= x.event_name %> 
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-
-
-
-
 
 
 
