@@ -4,7 +4,9 @@ class Event < ActiveRecord::Base
     eventid = self.id
     x = Signup.where({"event_id" => eventid})
     y = Finish.where({"event_id" => eventid})
-    if x.length - y.length == 0
+    if x.length == 0
+      return false
+    elsif x.length - y.length == 0
       return true
     else
       return false

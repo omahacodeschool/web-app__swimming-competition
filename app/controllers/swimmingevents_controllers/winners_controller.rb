@@ -9,8 +9,11 @@ end
 
 MyApp.get "/find_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
+  @x = Finish.where({"event_id" => params[:id]})
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
+  elsif Winner.exists?(:rank_id => @x.ids)
+    erb :"/ev/view_winner"
   else
     erb :"/ev/calculate_winner"
   end
@@ -43,7 +46,15 @@ MyApp.post "/calc_winner/:id" do
   erb :"/ev/view_winner"
 end
 
+MyApp.get "/view_winner/:id" do
+  swimmers = Finish.where({"event_id" => params[:id]})
+  @winners = []
+  swimmers.each do |swim|
 
+
+  topthree = Winners.where({"finish_id" => Swimmers.id})
+
+end
 
 
 MyApp.get "/eventnotover" do
