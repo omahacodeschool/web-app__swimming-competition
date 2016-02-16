@@ -29,7 +29,7 @@ end
 # view a single school
 MyApp.get "/view_school/:number" do
   @school = School.find_by_id(params[:number])
-  @competitors = Competitor.find_by_school_id(params[:number])
+  # @competitors = Competitor.find_by_id(params[:number])
   erb :"school/view_school"
 end
 

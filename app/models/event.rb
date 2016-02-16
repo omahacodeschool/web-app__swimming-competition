@@ -1,10 +1,11 @@
 class Event < ActiveRecord::Base
 
-  # Return an Array containing all competitors. (the Competitor Objects).
-  def all_competitors
+  # Return an Array containing all competitors for an event. 
+  #(the Competitor Objects).
+  def event_competitors
     x = self.id
-    # how you search a table
-    return Competitors.where({"event_id" => x})
+    # how we search a table
+    return Signup.where({"event_id" => x})
   end
 
 end
