@@ -27,3 +27,12 @@ MyApp.post "/conferences/conference/:id/update_conference/confirmation" do
   @c.save
   erb :"/conferences/update_conference_confirmation"
 end
+
+MyApp.post "/conferences/conference/:id/delete_conference/confirmation" do
+  @c = Conference.find_by_id(params[:id])
+  @c.delete_all_competitor_results
+  @c.delete_all_competitors
+  @c.delete_all_colleges
+  @c.delete
+  erb :"/conferences/deleted_conference_confirmation"
+end

@@ -22,7 +22,21 @@
 <br>
 <br>
 <br>
-<center><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference">
-      <input type="submit" value="Update Conference">
-</form>
+<table border="0">
+  <thead>
+    <tr>
+
+    <th><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference">
+      <input type="submit" value="Update Conference"></form></th>
+
+    <th><form method="POST" action="/conferences/conference/<%= @conference.id %>/delete_conference/confirmation">
+    <input type="submit" value="Delete Conference">&emsp;</form></th></form>
+    </tr>
+    </thead>
+    </table>
+    <br>
+    <br>
+    </center>
+
+
 
