@@ -4,21 +4,6 @@
   Top Three Finishers:
 </p>
 
-<ol>
-  <li>
-    <%= @event.first %>
-  </li>
-
-  <li>   
-    <%= @event.second %>
-  </li>
-
-  <li>
-    <%= @event.third %>
-  </li>
-
-</ol>
-
 <p>
   Competitors:
 </p>
@@ -28,7 +13,7 @@
   <% else %>
     <ul>
       <li>
-        <%= r.competitor_name.first_name.capitalize + " " + r.competitor_name.last_name.capitalize %>
+        <%= r.competitor_name %>
       </li>
     </ul>
   <% end %>  

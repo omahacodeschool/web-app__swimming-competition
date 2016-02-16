@@ -33,9 +33,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "event"
-    t.string   "first"
-    t.string   "second"
-    t.string   "third"
   end
 
   create_table "results", force: :cascade do |t|

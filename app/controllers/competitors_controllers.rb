@@ -24,7 +24,6 @@ MyApp.post "/delete_competitor/:competitor_id" do
   @result = Result.where("competitor_id" => params[:competitor_id])
   @result.each do |r|
     r.delete
-    binding.pry
   end
   erb :"competitors/deleted"
 end

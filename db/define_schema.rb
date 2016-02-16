@@ -12,9 +12,6 @@ DB.define_column("conferences", "conference", "string")
 
 DB.define_table("events")
 DB.define_column("events", "event", "string")
-DB.define_column("events", "first", "string")
-DB.define_column("events", "second", "string")
-DB.define_column("events", "third", "string")
 
 DB.define_table("results")
 DB.define_column("results", "event_id", "integer")

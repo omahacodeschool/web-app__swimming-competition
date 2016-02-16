@@ -2,7 +2,8 @@ class Result < ActiveRecord::Base
 
   def competitor_name
     name = Competitor.find_by_id(self.competitor_id)
-    return name
+    full_name = name.first_name.capitalize + " " + name.last_name.capitalize
+    return full_name
   end
 
   def event_name
