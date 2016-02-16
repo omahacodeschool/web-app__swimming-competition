@@ -23,7 +23,18 @@ Conference:&emsp; <b><%= @college.get_conference_name %>
 <br>
 <br>
 <br>
+<table border="0">
+  <thead>
+    <tr>
 
-<center><form method="POST" action="/colleges/college/<%= @college.id %>/update_college">
-      <input type="submit" value="Update College">
-</form></center>
+    <th><form method="POST" action="/colleges/college/<%= @college.id %>/update_college">
+      <input type="submit" value="Update College"></form></th>
+
+    <th><form method="POST" action="/colleges/college/<%= @college.id %>/delete_college/confirmation">
+    <input type="submit" value="Delete College">&emsp;</form></th></form>
+    </tr>
+    </thead>
+    </table>
+    <br>
+    <br>
+    </center>

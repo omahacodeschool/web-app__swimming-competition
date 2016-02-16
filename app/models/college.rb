@@ -16,5 +16,22 @@ class College < ActiveRecord::Base
     y =  Conference.find_by_id(x)
     y.name = var
   end
+
+  def delete_all_competitor_results
+    arr = []
+    x = Competitor.where({"college_id" => self.id})
+    x.each do |x|
+      arr << x.id
+    end
+
+    arr.each do |x|
+      Result.where({"competitor_id" => x}).delete_all
+    end
+  end
+
+  def delete_all_competitors
+    Competitor.where({"college_id" => self.id}).delete_all
+  end
+
 end
 

@@ -13,6 +13,14 @@ MyApp.post "/colleges/added_new_college" do
   erb :"/colleges/added_college_confirmation"
 end
 
+MyApp.post "/colleges/college/:id/delete_college/confirmation" do
+  @college = College.find_by_id(params[:id])
+  @college.delete_all_competitor_results
+  @college.delete_all_competitors
+  @college.delete
+  erb :"/colleges/deleted_college_confirmation"
+end
+
 MyApp.get "/colleges/college/:id" do
   @college = College.find_by_id(params[:id])
   @conferences = Conference.all
