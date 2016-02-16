@@ -82,9 +82,10 @@ MyApp.get "/delete_event/:id_of_event" do
   erb :"/success/delete_event"
 end
 
-MyApp.get "/add_result" do
+MyApp.post "/add_result" do
   r = Result.new
   e = Event.find_by_id(params[:event_id])
+
   if e.event_locked == true
     @message = "This event is currently locked."
   else

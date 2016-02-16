@@ -1,19 +1,36 @@
 <h1>Add Results of an Event</h1>
 
-<p>Swimmer ID<p>
 
-<form action="/add_result">
-  <p> Add Swimmer's ID
-  <input type="number" name="swimmer_id">
-  <p>
-  <p> Add Event ID
-  <input type="number" name="event_id">
-  <p>
+
+<form action="/add_result" method="post">
+  <p>Name of Swimmer<p>
+  <select name="event_id">
+    <% @swimmers.each do |y| %>
+      <option value="<%=y.id%>"><%=y.swimmer_name%> </option>
+    <% end %>
+  </select>
+
+  <p>Name of Event<p>
+  <select name="event_id">
+    <% @events.each do |y| %>
+      <option value="<%=y.id%>"><%=y.event_name%> </option>
+    <% end %>
+  </select>
   <p> Swimmer's Time for Event
   <input type="decimal" name="input_time">
   <p>
   <input type="submit">
 </form>
+
+
+
+
+
+
+
+
+
+
 
 <p>Current Swimmers<p>
 <table border="1">

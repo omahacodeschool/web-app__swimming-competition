@@ -39,6 +39,8 @@ end
 
 # Go to a view with a form for adding events.
 MyApp.get "/new_event" do
+  @events = Event.all
+  @swimmers = Swimmer.all
   erb :"create/create_event"
 end
 
