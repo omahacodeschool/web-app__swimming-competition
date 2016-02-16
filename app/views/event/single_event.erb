@@ -2,9 +2,10 @@
 <h1><%= @x.event_name %></h1>
 
 <% @x.swimmers.each do |s| %> 
-  <p><%= s %></p>
+  <p><%= s.swimmer_name %></p>
 <% end %>
 
+<a href="/sign_up_table">Event Table</a>
 
 
 

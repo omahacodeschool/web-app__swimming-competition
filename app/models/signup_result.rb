@@ -16,8 +16,11 @@ class SignupResult < ActiveRecord::Base
   end
 
   def swimmers
-     x = ["a", "b", "c"]
-    return x
+     x = SignupResult.where({"event_id" => self.id})
+     swimmers = []
+      x.each do |y|
+        swimmers << y.swimmer_info_id
+      end
   end
 
 end
