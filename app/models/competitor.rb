@@ -1,5 +1,6 @@
 class Competitor < ActiveRecord::Base
 
+  # returns a 'competitor's' school name.
   # gets 'school_id' Integer from class Competitor
   # gets 'schools.id' Integer from class School
   # returns 'school_name' String from class School
