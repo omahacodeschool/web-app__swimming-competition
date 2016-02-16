@@ -1,5 +1,16 @@
 <h1><%=@activity.event_name%></h1>
 
+<%if @activity.lock == true%>
+  <h2>Event is Locked - <form method = "post" action = "/unlock/activity/<%=@activity.id%>">
+        <input type="submit" value="Unlock" onClick="alert('Are you sure? This will unlock the event');return true;">
+      </form></h2>
+<%else%>
+  <h2><form method = "post" action = "/lock/activity/<%=@activity.id%>">
+        <input type="submit" value="Lock" onClick="alert('Are you sure? This will lock the event');return true;">
+      </form>
+  </h2>
+<%end%>
+
 
 <h2>Top Three Student Competitors for <%=@activity.event_name%></h2>
 

@@ -47,3 +47,25 @@ MyApp.get "/read/activity/:id" do
   @top_three_results_for_activity = sorted_results.first(3)
   erb :"admin/activity/read_one_activity"
 end
+
+
+MyApp.post "/lock/activity/:activity_id" do
+  @activity = Activity.find_by_id(params["activity_id"])
+  @activity.lock = true
+  @activity.save
+  @confirm_message = "Successfully locked #{@activity.event_name}."
+  erb :"admin/confirm_submission"
+end
+
+MyApp.post "/unlock/activity/:activity_id" do
+  @activity = Activity.find_by_id(params["activity_id"])
+  @activity.lock = false
+  @activity.save
+  @confirm_message = "Successfully unlocked #{@activity.event_name}."
+  erb :"admin/confirm_submission"
+end
+
+
+
+
+
