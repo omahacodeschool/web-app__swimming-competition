@@ -52,52 +52,30 @@
 <br />
 <h3>Added Runs:</h3>
 
-<% @runs.each do |run| %>
-<table border="1"> 
-  <thead>
-    <tr>
-      <th colspan="2"><%= run.run_event %></th>
-    </tr>
-  
-    <tr>
-      <th> Swimmer </th>
-      <th> Run Time (sec.) </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td><center><%= run.run_swimmer %></center></td>
-      <td><center><%= run.run_time %></center></td>
-      <td><center><a href="/delete_run/<%= run.id %>">delete</a></center></td>
-    </tr>
-  </tbody>
-</table>
-<% end %>
-
-
-
-
-
-<br />
-<h3>Added Runs:</h3>
-<table border="1">
-  <thead>
-    <tr>
-      <th> Run Event </th>
-      <th> Swimmer </th>
-      <th> Run Time (sec.) </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @runs.each do |run| %>
+<% binding.pry %>
+<% @events.each do |e| %>
+  <table border="1"> 
+    
+    <thead>
       <tr>
-        <td><%= run.run_event %></td>
-        <td><center><%= run.run_swimmer %></center></td>
-        <td><center><%= run.run_time %></center></td>
-        <td><center><a href="/delete_run/<%= run.id %>">delete</a></center></td>
+        <th colspan="2"><%= e.event_name %></th>
       </tr>
+
+      <tr>
+        <th> Swimmer </th>
+        <th> Run Time (sec.) </th>
+      </tr>
+    </thead>
+    
+    <% e.event_runs.each do |r| %>
+      <tbody>
+        <tr>
+          <td><center><%= r.run_swimmer %></center></td>
+          <td><center><%= r.run_time %></center></td>
+          <td><center><a href="/delete_run/<%= run.id %>">delete</a></center></td>
+        </tr>
+      </tbody>
     <% end %>
-  </tbody>
-</table>
+  
+  </table>
+<% end %>

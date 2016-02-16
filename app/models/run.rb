@@ -1,18 +1,6 @@
 class Run < ActiveRecord::Base
   @runs = Run.all
 
-# Define a method that goes through each row in Runs, finds the rows related by event_id, and separates those related rows from other related rows. Ultimately I want to take this information to create a table for each bundle of related rows. 
-#
-  def event_run
-    x = Event.ids
-    event_runs_arr = []
-    
-    x.each do |event_id|
-      event_runs_arr << Run.where({"event_id" => event_id})
-    end 
-    
-  end
-
   def run_swimmer
     a = self.swimmer_id
     b = Swimmer.find_by_id(a)
