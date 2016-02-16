@@ -7,8 +7,15 @@ MyApp.get "/competitors/competitor/:id" do
   @competitor = Competitor.find_by_id(params[:id])
   @colleges = College.all
   @results = Result.where({"competitor_id" => params[:id]})
-
   erb :"/competitors/competitor"
+end
+
+
+MyApp.get "/competitors/competitor/:id/update_competitor" do
+  @competitor = Competitor.find_by_id(params[:id])
+  @colleges = College.all
+  @results = Result.where({"competitor_id" => params[:id]})
+  erb :"/competitors/update_competitor"
 end
 
 MyApp.get "/competitors/competitor/:id/delete_score" do

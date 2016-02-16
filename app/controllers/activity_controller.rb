@@ -1,6 +1,9 @@
+MyApp.get "/activities" do
+  @activities = Activity.all
+  erb :"/activities/activities"
+end
+
 MyApp.post "/activities/add_activity" do
-
-
   erb :"/activities/add_activity"
 end
 
@@ -22,6 +25,7 @@ end
 
 MyApp.get "/activities/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
+  @results = Result.where({"activity_id" => params[:id]})
   erb :"/activities/activity"
 end
 

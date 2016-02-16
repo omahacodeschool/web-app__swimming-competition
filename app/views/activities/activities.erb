@@ -1,0 +1,11 @@
+<center>
+<h1> Activities </h1>
+<form method="POST" action="/activities/add_activity">
+<input type="submit" value="Add Activity"></form>
+<br>
+    <% @activities.each do |s| %>
+    <a href="/activities/activity/<%= s.id %>"><%= s.name %></a><br>
+    <% end %>
+<br>
+<br>
+</center>

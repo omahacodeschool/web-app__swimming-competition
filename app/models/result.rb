@@ -6,6 +6,12 @@ has_one :competitor
     return Competitor.find_by_id(x)
   end
 
+    def get_competitor_name
+    x = self.competitor_id
+    y =  Competitor.find_by_id(x)
+    return y ? y.name : "---"
+  end
+
   def get_college
     x = self.competitor_id
     y = Competitor.find_by_id(x)

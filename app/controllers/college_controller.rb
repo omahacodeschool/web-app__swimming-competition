@@ -1,6 +1,10 @@
+MyApp.get "/colleges" do
+  @colleges = College.all
+  erb :"/colleges/colleges"
+end
+
 MyApp.post "/colleges/add_college" do
   @conference = Conference.all
-
   erb :"/colleges/add_college"
 end
 
@@ -24,6 +28,7 @@ end
 MyApp.get "/colleges/college/:id" do
   @college = College.find_by_id(params[:id])
   @conferences = Conference.all
+  @competitors = Competitor.where({"college_id" => params[:id]})
   erb :"/colleges/college"
 end
 

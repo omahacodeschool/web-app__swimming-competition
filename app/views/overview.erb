@@ -52,64 +52,6 @@
 </center>
 <br>
 <br>
-<h2> Add / Modify / Delete </h2>
-<table border="0">
-  <thead>
-    <tr>
-      <th>Activities&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-       <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @activites.each do |s| %>
-    <tr>
-      <td><a href="/activities/activity/<%= s.id %>"><%= s.name %></a></td>
-      <td><a href="/activites/add_activity/"> Modify </a></td>
-      <td><a href="/activities/delete_activity/<%= s.id %>"> Delete </a></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table> 
-<br>
-<br>
-<table border="0">
-  <thead>
-    <tr>
-      <th>Colleges&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-        <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @colleges.each do |s| %>
-    <tr>
-      <td><a href="/colleges/college/<%= s.id %>"><%= s.name %></a></td>
-      <td><a href="/colleges/add_college/"> Modify </a></td>
-      <td><a href="/college/add_college/"> Delete </a></td>
-    </tr>
-    <% end %>
- </tbody>
-</table> 
-<br>
-<br>
-<table border="0">
-  <thead>
-    <tr>
-      <th>Conferences&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @conferences.each do |s| %>
-    <tr>
-      <td><a href="/conferences/conference/<%= s.id %>"><%= s.name %></a></td>
-      <td><a href="/conferences/conference/"> Modify </a></td>
-      <td><a href="/conferences/add_conference/"> Delete </a></td>
-    </tr>
-    <% end %>
- </tbody>
-</table> 
+
 
 

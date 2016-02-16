@@ -22,7 +22,6 @@ class Conference < ActiveRecord::Base
   def delete_all_competitors
     college_ids = []
     x = College.where({"conference_id" => self.id})
-
     x.each do |x|
       college_ids << x.id
     end
@@ -35,6 +34,5 @@ class Conference < ActiveRecord::Base
   def delete_all_colleges
     College.where({"conference_id" => self.id}).delete_all
   end
-
 
 end

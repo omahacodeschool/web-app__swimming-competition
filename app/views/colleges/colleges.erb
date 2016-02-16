@@ -1,0 +1,11 @@
+<center>
+  <h1> Colleges </h1>
+  <form method="POST" action="/colleges/add_college">
+  <input type="submit" value="Add College"></form>
+  <br>
+  <% @colleges.each do |s| %>
+     <a href="/colleges/college/<%= s.id %>"><%= s.name %></a><br>
+  <% end %>
+  <br>
+  <br>
+ </center>

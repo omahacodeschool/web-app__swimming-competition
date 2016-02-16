@@ -8,7 +8,7 @@ class College < ActiveRecord::Base
    def get_conference_name
     x = self.conference_id
     y =  Conference.find_by_id(x)
-    return y.name
+    return y ? y.name : nil
   end
 
   def set_conference_name(var)

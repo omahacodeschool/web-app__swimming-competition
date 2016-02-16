@@ -11,12 +11,14 @@
     </tr>
   </thead>
   <tbody>
+  <% @colleges.each do |c| %>
       <tr>
-        <td>meep</td>
+        <td><%= c.name %></td>
         <td>meep</td>
         <td>meep</td>
         <td>meep</td>
       </tr>
+      <% end %>
   </tbody>
 </table> 
 <br>
@@ -26,7 +28,7 @@
   <thead>
     <tr>
 
-    <th><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference">
+    <th><form method="GET" action="/conferences/conference/<%= @conference.id %>/update_conference">
       <input type="submit" value="Update Conference"></form></th>
 
     <th><form method="POST" action="/conferences/conference/<%= @conference.id %>/delete_conference/confirmation">

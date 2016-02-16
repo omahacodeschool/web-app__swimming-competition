@@ -14,13 +14,15 @@ Max Possible Score: <b><%= @activity.max_score %></b>
     </tr>
   </thead>
   <tbody>
+  <% @results.each do |r| %>
       <tr>
-        <td>meep</td>
+        <td><%= r.get_competitor_name %></td>
         <td>meep</td>
         <td>meep</td>
         <td>meep</td>
         <td>meep</td>
       </tr>
+      <% end %>
   </tbody>
 </table> 
 <br>
