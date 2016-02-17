@@ -8,7 +8,7 @@ class Result < ActiveRecord::Base
       return nil
     end
   end
-  
+#Returns String for the name of event.
   def event
     x = self.event_id
     y = Event.find_by_id(x)
@@ -60,20 +60,17 @@ class Result < ActiveRecord::Base
       return nil
     end
   end
+#Checks events table for duplicate swimmer id in the same event. Return True if swimmer is already in event, return False if they are not.
+  def duplicate_swimmer?
+    x = self.swimmer_id
+    y = Event.find_by_id(x)
+    if y == nil
+      return false
+    else
+      return true
+    end
+  end
 end
-
-#This is working code. Paste this into the controller if things go bad
-  # @sorted = @results.order("swimmer_time").to_a 
-  # @top_three = []
-  #   3.times do 
-  #     @top_three << @sorted.shift
-  # end
-
-
-
-    # if sorted.length < 3
-    #   top_three = []
-    # else 
 
 
 
