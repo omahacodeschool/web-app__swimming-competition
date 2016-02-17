@@ -1,7 +1,7 @@
 <p>Update competitor information:</p>
 <br>
 
-<form action="/competitor_updated/<%= @competitors.id %>">
+<form action="/competitor_updated/<%= @competitors.id %>" method="post">
   <p>
     Competitor:
     <input type="text" name="comp_name" value="<%= @competitors.competitor_name %>">

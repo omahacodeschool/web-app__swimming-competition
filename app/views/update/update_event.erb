@@ -1,7 +1,7 @@
 <p>Update event information:</p>
 <br>
 
-<form action="/event_updated/<%= @events.id %>">
+<form action="/event_updated/<%= @events.id %>" method="post">
   <p>
     Event:
     <input type="text" name="evnt_name" value="<%= @events.event_name %>">

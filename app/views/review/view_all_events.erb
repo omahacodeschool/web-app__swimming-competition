@@ -5,14 +5,11 @@
     <a href="view_event/<%= x.id %>">
       <%= x.event_name %>
     </a>
-
-   -
-
-    <a href="/delete_event/<%= x.id %>">
-      Delete
-    </a>
   </p>
-
+  <form action="delete_event/<%= x.id %>" method "post">
+    <input type="submit" value="Delete">
+  </form>
+  <br>
 <% end %>
 
 <br>

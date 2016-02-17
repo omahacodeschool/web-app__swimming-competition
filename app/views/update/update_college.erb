@@ -1,7 +1,7 @@
 <p>Update college information:</p>
 <br>
 
-<form action="/college_updated/<%= @colleges.id %>">
+<form action="/college_updated/<%= @colleges.id %>" method="post">
   <p>
     College:
     <input type="text" name="coll_name" value="<%= @colleges.college_name %>">

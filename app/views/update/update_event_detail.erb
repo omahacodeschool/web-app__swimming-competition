@@ -1,18 +1,18 @@
 <p>Update event detail information:</p>
 <br>
 
-<form action="/event_detail_updated/<%= @event_details.id %>">
+<form action="/event_detail_updated/<%= @event_details.id %>" method="post">
   <p>
     Event ID:
     <input type="number" name="evnt_id" value="<%= @event_details.event_id %>">
   </p>
   <p> 
     Competitor ID:
-    <input type="number" name"comp_id" value="<%= @event_details.competitor_id %>">
+    <input type="number" name="comp_id" value="<%= @event_details.competitor_id %>">
   </p>
   <p> 
     Finish Time:
-    <input type="number" name"fnsh_time" value="<%= @event_details.finish_time %>">
+    <input type="number" name="fnsh_time" value="<%= @event_details.finish_time %>">
   </p>
   <input type ="submit">
 </form>

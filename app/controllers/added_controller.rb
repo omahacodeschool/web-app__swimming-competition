@@ -1,5 +1,5 @@
 #Processes the form for adding an award
-MyApp.get "/award_added" do 
+MyApp.post "/award_added" do 
   x = Award.new
   x.event_id = params["event_id"]
   x.competitor_id = params["competitor_id"]
@@ -10,7 +10,7 @@ MyApp.get "/award_added" do
 end
 
 #Processes the form for adding a college
-MyApp.get "/college_added" do 
+MyApp.post "/college_added" do 
   x = College.new
   x.college_name = params["college_name"]
   x.conference_id = params["conference_id"]
@@ -20,7 +20,7 @@ MyApp.get "/college_added" do
 end
 
 #Processes the form for adding a competitor
-MyApp.get "/competitor_added" do 
+MyApp.post "/competitor_added" do 
   x = Competitor.new
   x.competitor_name = params["competitor_name"]
   x.college_id = params["college_id"]
@@ -30,7 +30,7 @@ MyApp.get "/competitor_added" do
 end
 
 #Processes the form for adding a conference
-MyApp.get "/conference_added" do 
+MyApp.post "/conference_added" do 
   x = Conference.new
   x.conference_name = params["conference_name"]
   x.save
@@ -39,7 +39,7 @@ MyApp.get "/conference_added" do
 end
 
 #Processes the form to add an event
-MyApp.get "/event_added" do 
+MyApp.post "/event_added" do 
   x = Event.new
   x.event_name = params["event_name"]
   x.save
@@ -48,7 +48,7 @@ MyApp.get "/event_added" do
 end
 
 #Processes the form to add event details
-MyApp.get "/event_detail_added" do 
+MyApp.post "/event_detail_added" do 
   x = EventDetail.new
   x.event_id = params["event_id"]
   x.competitor_id = params["competitor_id"]

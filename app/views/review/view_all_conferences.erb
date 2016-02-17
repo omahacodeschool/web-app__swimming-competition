@@ -5,14 +5,11 @@
     <a href="view_conference/<%= x.id %>">
       <%= x.conference_name %>
     </a>
-
-   -
-
-    <a href="/delete_conference/<%= x.id %>">
-      Delete
-    </a>
   </p>
-
+  <form action="delete_conference/<%= x.id %>" method "post">
+    <input type="submit" value="Delete">
+  </form>
+  <br>
 <% end %>
 
 <br>

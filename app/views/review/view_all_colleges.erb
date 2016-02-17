@@ -5,13 +5,12 @@
     <a href="view_college/<%= x.id %>">
       <%= x.college_name %>
     </a>
-
-     - 
-
-    <a href="/delete_college/<%= x.id %>">
-      Delete
-    </a>
   </p>
+    <form action="delete_college/<%= x.id %>" method "post">
+      <input type="submit" value="Delete">
+    </form>
+  </p>
+  <br>
 <% end %>
 
 <br>

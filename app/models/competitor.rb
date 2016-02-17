@@ -4,13 +4,17 @@ class Competitor < ActiveRecord::Base
   #
   # Return conference name String
   def coll_name
-    x = self.college_id
-    y = College.find_by_id(x)
-    return y.college_name
+    return coll.college_name
   end
 
   def conf_name
-    x = self.id
-    return Conference.where({"college_id" => x})
+    z = coll.conference_id
+    a = Conference.find_by_id(z)
+    return a.conference_name
+  end
+
+  def coll
+    x = self.college_id
+    y = College.find_by_id(x)
   end
 end
