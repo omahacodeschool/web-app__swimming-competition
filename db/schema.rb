@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "name"
     t.integer  "age"
     t.integer  "college_id"
+    t.boolean  "confirmed"
   end
 
   create_table "conferences", force: :cascade do |t|

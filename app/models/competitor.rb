@@ -40,4 +40,9 @@ def delete_all_competitor_results
   Result.where("competitor_id" => self.id).delete_all
 end
 
+  def competitor_already_exists_prompt
+    return "It appears this Competitor might already exist in the database.\r\n
+     To continue creating the record, please confirm and click 'Add New Competitor.'"
+  end
+
 end

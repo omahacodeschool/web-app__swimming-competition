@@ -4,6 +4,7 @@ DB.define_table("competitors")
 DB.define_column("competitors", "name", "string")
 DB.define_column("competitors", "age", "integer")
 DB.define_column("competitors", "college_id", "integer")
+DB.define_column("competitors", "confirmed", "boolean")
 
 DB.define_table("activities")
 DB.define_column("activities", "name", "string")

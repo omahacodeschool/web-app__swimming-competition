@@ -4,7 +4,7 @@ MyApp.get "/competitors" do
   erb :"/competitors/competitors"
 end
 
-MyApp.post "/competitors/add_competitor" do
+MyApp.get "/competitors/add_competitor" do
   @colleges = College.all
   erb :"/competitors/add_competitor"
 end
@@ -51,13 +51,21 @@ end
 
 MyApp.post "/competitors/added_new_competitor" do
   @c = Competitor.new
-  @c.name = params["add_competitor_name_textbox"]
-  age = params["competitor_age_dropdown"]
+  @colleges = College.all
+  @c.name = params[:add_competitor_name_textbox]
+  age = params[:competitor_age_dropdown]
   @c.age = age.to_i
-  college = params["competitor_college_dropdown"]
-  @c.college_id = college
-  @c.save
-  redirect :"/competitors/competitor/#{@c.id}"
+  college = params[:competitor_college_dropdown]
+  @c.college_id = college 
+  @c.confirmed = params[:confirmed_radio]
+ 
+ if Competitor.exists?(:name => params[:add_competitor_name_textbox]) && @c.confirmed != true
+    @duplicate_user_warning = true
+    erb :"/competitors/add_competitor"
+  else
+    @c.save
+    redirect :"/competitors/competitor/#{@c.id}"
+  end
 end
 
 MyApp.post "/competitors/competitor/:id/delete_competitor/confirmation" do

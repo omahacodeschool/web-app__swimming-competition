@@ -12,11 +12,11 @@ end
 MyApp.post "/activities/added_new_activity" do
   @message = Activity.all
   @a = Activity.new
-  @a.name = params["add_activity_textbox"]
-  @max_score = params["activity_max_score_dropdown"]
+  @a.name = params[:add_activity_textbox]
+  @max_score = params[:activity_max_score_dropdown]
   @a.max_score = @max_score.to_i
   @a.locked = false
-  if Activity.exists?(:name => params["add_activity_textbox"])
+  if Activity.exists?(:name => params[:add_activity_textbox])
     @error = true
     erb :"/activities/add_activity"
   else
