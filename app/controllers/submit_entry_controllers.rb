@@ -37,8 +37,8 @@ MyApp.get "/submit_scores" do
   @score.flavor = params[:flavor]
   @score.texture = params[:texture]
   @score.heat = params[:heat]
-  @score.overall = params[:overall]
   @score.appearance = params[:appearance]
+  @score.overall = @score.competition_id + @score.chili_id + @score.aroma + @score.flavor + @score.texture + @score.heat + @score.appearance
   @score.save
   erb :"successful/scores_was_added"
 end

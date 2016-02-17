@@ -1,1 +1,7 @@
 <p> This page will display the 2016 winners once calculated.</p>
+<p> The winning chili_id is <%= @win.order(:"overall").last.chili_id %>. </p>
+<p> The winning score is <%= @win.order(:"overall").last.overall %>. </p>
+
+<br>
+<br>
+<br>

@@ -11,6 +11,7 @@ MyApp.get "/2015" do
 end
 
 MyApp.get "/2016" do
+  @win = Result.all
   erb :"2016_winners"
 end
 
