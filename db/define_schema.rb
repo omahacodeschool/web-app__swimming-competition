@@ -28,7 +28,7 @@ DB.define_column("swimmers", "swimmer_payment_status", "boolean")
 DB.define_table ("events")
 DB.define_column("events", "event_name", "string")
 DB.define_column("events", "event_best_time", "float")
-Db.define_column("events", "event_run_complete", "boolean")
+Db.define_column("events", "event_complete", "boolean")
 
 DB.define_table ("runs")
 DB.define_column("runs", "event_id", "integer")
