@@ -9,11 +9,11 @@ tp = Competitor.create(name: "Aaron Burr", age: 48, college_id: 2)
 
 competitors = [dm, hp, nr, ks, jh, tp]
 
-rps = Activity.create(name: "Public Forum", max_score: 6)
-str = Activity.create(name: "Lincoln - Douglas", max_score: 6)
-prp = Activity.create(name: "Model UN", max_score: 6)
-sst = Activity.create(name: "Student Congress", max_score: 6)
-dbb = Activity.create(name: "Original Oratory", max_score: 6)
+rps = Activity.create(name: "Public Forum", max_score: 6,locked: false)
+str = Activity.create(name: "Lincoln - Douglas", max_score: 6,locked: false)
+prp = Activity.create(name: "Model UN", max_score: 6, locked: false)
+sst = Activity.create(name: "Student Congress", max_score: 6, locked: false)
+dbb = Activity.create(name: "Original Oratory", max_score: 6, locked: false)
 
 activities = [rps, str, prp, sst, dbb]
 

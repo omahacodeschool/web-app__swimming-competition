@@ -8,6 +8,7 @@ DB.define_column("competitors", "college_id", "integer")
 DB.define_table("activities")
 DB.define_column("activities", "name", "string")
 DB.define_column("activities", "max_score", "integer")
+DB.define_column("activities", "locked", "boolean")
 
 DB.define_table("results")
 DB.define_column("results", "competitor_id", "integer")

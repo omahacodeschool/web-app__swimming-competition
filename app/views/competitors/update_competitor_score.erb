@@ -6,11 +6,16 @@ College:&nbsp;<b><%= @competitor.get_college_name %></b>&emsp;|&emsp;
 Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
 <br>
 <br>
-Activity:&emsp; <select name="update_competitor_result_dropdown">
+<p> A competitor's score can only be updated while the activity in question is unlocked.<br>
+Scores for locked activties will not be available to update via the drop down menu. </p>
+<br>
+Unlocked Activity:&emsp; <select name="update_competitor_result_dropdown">
   <option value="<%= nil %>"> --- </option>
     <% @results.each do |r| %>
-      <option value="<%= r.id %>"><%= r.get_activity_name %></option>
+      <% if r.get_activity_locked? == false %>
+        <option value="<%= r.id %>"><%= r.get_activity_name %></option>
       <% end %>
+    <% end %>
     </select>&emsp;|&emsp; 
 Score :&emsp;<input type="float" name="update_competitor_activity_score_textbox" value=" ">&emsp;&emsp;
   <br>

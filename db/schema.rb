@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.string   "name"
     t.integer  "max_score"
+    t.boolean  "locked"
   end
 
   create_table "colleges", force: :cascade do |t|

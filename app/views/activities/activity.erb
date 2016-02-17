@@ -1,6 +1,7 @@
 <center><h1><%= @activity.name %></h1>
 
-Max Possible Score: <b><%= @activity.max_score %></b>
+Max Possible Score: <b><%= @activity.max_score %></b>&emsp;|&emsp;
+Status: <b><%= @activity.get_activity_locked_status %></b>
 <br>
 <br>
 <table border="0">
@@ -34,10 +35,13 @@ Max Possible Score: <b><%= @activity.max_score %></b>
     <tr>
 
     <th><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
-    <input type="submit" value="Update Activity"></form></th>
+    <input type="submit" value="Update Activity">&emsp;</form></th>
 
     <th><form method="POST" action="/activities/activity/<%= @activity.id %>/delete_activity/confirmation">
     <input type="submit" value="Delete Activity">&emsp;</form></th></form>
+
+    <th><form method="POST" action="/activities/activity/<%= @activity.id %>/lock">
+    <input type="submit" value="Lock Activity">&emsp;</form></th></form>
     </tr>
     </thead>
     </table>

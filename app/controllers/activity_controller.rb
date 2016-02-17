@@ -8,11 +8,12 @@ MyApp.post "/activities/add_activity" do
 end
 
 MyApp.post "/activities/added_new_activity" do
-  a = Activity.new
-  a.name = params["add_activity_textbox"]
-  max_score = params["activity_max_score_dropdown"]
-  a.max_score = max_score.to_i
-  a.save
+  @a = Activity.new
+  @a.name = params["add_activity_textbox"]
+  @max_score = params["activity_max_score_dropdown"]
+  @a.max_score = @max_score.to_i
+  @a.locked = false
+  @a.save
   erb :"/activities/added_activity_confirmation"
 end
 
@@ -27,6 +28,14 @@ MyApp.get "/activities/activity/:id" do
   @activity = Activity.find_by_id(params[:id])
   @results = Result.where({"activity_id" => params[:id]})
   erb :"/activities/activity"
+end
+
+MyApp.post "/activities/activity/:id/lock" do
+  @activity = Activity.find_by_id(params[:id])
+  @activity.locked = true
+  @activity.save
+  @results = Result.where({"activity_id" => params[:id]})
+  redirect :"/activities/activity/#{@activity.id}"
 end
 
 MyApp.post "/activities/activity/:id/update_activity" do

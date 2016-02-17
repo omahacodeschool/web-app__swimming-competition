@@ -82,6 +82,19 @@ has_one :competitor
     return y ? y.name : nil
   end
 
+  def get_activity_locked?
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    return y.locked == false ? false : true
+  end
+
+  def get_activity_locked_status
+    x = self.activity_id
+    y =  Activity.find_by_id(x)
+    return y.locked == true ? "Locked" : "Unlocked"
+  end
+
+
 
    
 end
