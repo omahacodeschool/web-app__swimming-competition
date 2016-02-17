@@ -1,7 +1,7 @@
 <p>Update competitor information:</p>
 <br>
 
-<form>
+<form action="/competitor_updated/<%= @competitors.id %>">
   <p>
     Competitor:
     <input type="text" name="comp_name" value="<%= @competitors.competitor_name %>">
@@ -10,4 +10,5 @@
     College ID:
     <input type="number" name"coll_id" value="<%= @competitors.college_id %>">
   </p>
+  <input type ="submit">
 </form>

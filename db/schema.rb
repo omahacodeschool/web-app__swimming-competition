@@ -51,14 +51,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.float    "finish_time"
   end
 
-  create_table "event_results", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "event_id"
-    t.integer  "competitor_id"
-    t.float    "finish_time"
-  end
-
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

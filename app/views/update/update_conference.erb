@@ -1,9 +1,10 @@
 <p>Update conference information:</p>
 <br>
 
-<form>
+<form action="/conference_updated/<%= @conferences.id %>">
   <p>
     Conference:
     <input type="text" name="conf_name" value="<%= @conferences.conference_name %>">
   </p>
+  <input type ="submit">
 </form>

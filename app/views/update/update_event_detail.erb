@@ -1,7 +1,7 @@
 <p>Update event detail information:</p>
 <br>
 
-<form>
+<form action="/event_detail_updated/<%= @event_details.id %>">
   <p>
     Event ID:
     <input type="number" name="evnt_id" value="<%= @event_details.event_id %>">
@@ -14,6 +14,7 @@
     Finish Time:
     <input type="number" name"fnsh_time" value="<%= @event_details.finish_time %>">
   </p>
+  <input type ="submit">
 </form>
 <br>
 <u><b>Event IDs:</u></b>

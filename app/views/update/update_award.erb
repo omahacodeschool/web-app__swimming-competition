@@ -1,7 +1,7 @@
 <p>Update award information:</p>
 <br>
 
-<form>
+<form action="/award_updated/<%= @awards.id %>">
   <p>
     Event ID:
     <input type="number" name="evnt_id" value="<%= @awards.event_id %>">
@@ -14,6 +14,7 @@
     Rank:
     <input type="number" name"fnsh_time" value="<%= @awards.rank %>">
   </p>
+  <input type ="submit">
 </form>
 <br>
 <u><b>Event IDs:</u></b>

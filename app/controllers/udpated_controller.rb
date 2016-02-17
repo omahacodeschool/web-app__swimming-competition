@@ -1,59 +1,65 @@
 #Processes the form for updating an award
-MyApp.get "/award_updated" do 
-  x = Award.new
-  x.event_id = params["event_id"]
-  x.competitor_id = params["competitor_id"]
-  x.rank = params["rank"]
-  x.save
+#
+#NOT WORKING -- not saving changes for comp/rank!!
+#
+MyApp.get "/award_updated/:num" do 
+  @awards = Award.find_by_id(params[:num])
+  @awards.event_id = params["evnt_id"]
+  @awards.competitor_id = params["comp_id"]
+  @awards.rank = params["fnsh_time"]
+  @awards.save
 
   erb :"updated/award_updated"
 end
 
 #Processes the form for updating a college
-MyApp.get "/college_updated" do 
-  x = College.new
-  x.college_name = params["college_name"]
-  x.conference_id = params["conference_id"]
-  x.save
+MyApp.get "/college_updated/:num" do 
+  @colleges = College.find_by_id(params[:num])
+  @colleges.college_name = params["coll_name"]
+  @colleges.conference_id = params["conf_id"]
+  @colleges.save
 
   erb :"updated/college_updated"
 end
 
 #Processes the form for updating a competitor
-MyApp.get "/competitor_updated" do 
-  x = Competitor.new
-  x.competitor_name = params["competitor_name"]
-  x.college_id = params["college_id"]
-  x.save
+MyApp.get "/competitor_updated/:num" do 
+  @competitors = Competitor.find_by_id(params[:num])
+  @competitors.competitor_name = params["comp_name"]
+  @competitors.college_id = params["coll_id"]
+  @competitors.save
 
   erb :"updated/competitor_updated"
 end
 
 #Processes the form for updating a conference
-MyApp.get "/conference_updated" do 
-  x = Conference.new
-  x.conference_name = params["conference_name"]
-  x.save
+MyApp.get "/conference_updated/:num" do 
+  @conferences = Conference.find_by_id(params[:num])
+  @conferences.conference_name = params["conf_name"]
+  @conferences.save
 
   erb :"updated/conference_updated"
 end
 
 #Processes the form for updating an event
-MyApp.get "/event_updated" do 
-  x = Event.new
-  x.event_name = params["event_name"]
-  x.save
+MyApp.get "/event_updated/:num" do
+  @events = Event.find_by_id(params[:num])
+  @events.event_name = params["evnt_name"]
+  @events.save 
 
   erb :"updated/event_updated"
 end
 
 #Processes the form for updating event details
-MyApp.get "/event_detail_updated" do 
-  x = EventDetail.new
-  x.event_id = params["event_id"]
-  x.competitor_id = params["competitor_id"]
-  x.finish_time = params["finish_time"]
-  x.save
+#
+#NOT WORKING -- not saving changes!!
+#
+MyApp.get "/event_detail_updated/:num" do
+  @event_details = EventDetail.find_by_id(params[:num])
+  @event_details.event_id = params["evnt_id"]
+  @event_details.competitor_id = params["comp_id"]
+  @event_details.finish_time = params["fnsh_time"] 
+  @event_details.save   
 
   erb :"updated/event_detail_updated"
 end
