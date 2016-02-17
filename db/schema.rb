@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.integer  "swimmer_id"
     t.integer  "event_id"
+    t.integer  "event_time"
   end
 
   create_table "swimmers", force: :cascade do |t|

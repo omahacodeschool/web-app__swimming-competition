@@ -10,14 +10,14 @@
   </thead>
 
   <tbody>
-
+      <%@signup.each do |signup| %>
       <tr>
-        <td><%= @event.first_place_name %></td>
+        <td><%= @event.first_place_name %>(<%= signup.event_time%>)</td>
         <td><%= @event.second_place_name %></td>
         <td><%= @event.third_place_name %></td>
       
         
       </tr>
- 
+  <%end%>
   </tbody>
 </table>

@@ -1,9 +1,11 @@
 MyApp.get "/winners/:place" do
   @event = Event.find_by_id(params[:place])
+  @signup = Signup.where({"event_id" => (params[:place])})
   if @event.lock == true
     return nil
   else
   end
+  binding.pry
   erb :"winners"
 end
 MyApp.get "/lock_event/:place" do
