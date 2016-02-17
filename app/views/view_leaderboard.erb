@@ -3,10 +3,10 @@
     </h1>
   <br>
    <br>
-   <% @ordered_signups_array.each do |n| %>   
+     <% @ordered_event_ids.each do |a|%>
   <table border="1" cellpadding="5" cellspacing="5">
       <tr>
-        <th><%= n.get_event_name %>
+        <th><%= Event.find_by_id(a).event_name %>
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -14,7 +14,8 @@
          <th>Conference</th>
         <th>Swim Time</th>
       </tr>
-      <tr>  
+      <% Signup.where("event_id" => a).each do |n| %> 
+      <tr> 
         <td><%= n.id %></td>
         <td><%= n.get_swimmer_name %></td>
         <td><%= n.get_school_name %></td>
@@ -22,6 +23,6 @@
         <td><%= n.completed_swim_time %></td>
       
       </tr>
-        <% end %>
-      
+      <% end %>
+    <% end %>    
     </table>
