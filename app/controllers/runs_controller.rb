@@ -35,3 +35,15 @@ MyApp.post "/process_run_update/:run_id" do
 
   erb :"main/add_runs"
 end
+#
+# Not sure if I need to place this controller action in my Runs or Events
+# controller
+# If here, how do I know which set of Event runs is tied to any instance of
+# the form being passed in?
+MyApp.post "/run_complete_form" do
+  @run = 
+            
+  @run.run_complete = (params["run_complete_check"])
+
+  erb :"main/add_runs"
+end

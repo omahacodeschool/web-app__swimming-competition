@@ -78,9 +78,22 @@
           <td><center><a href="/update_run/<%= r.id %>"> update</a>
           </center></td>
         </tr>
-      </tbody>
     <% end %>
+
+<!--This form is within an each loop for the Event Class. Is the Event ID passed along with this form? Should I pass the information collected in this form back to the Runs or Events controller? Do I add a new column to my Runs or Events table of my schema?-->    
+        <form action="/event_run_complete_form" method="post">
+          <tr>
+            <td colspan="2">
+            Run complete?: 
+            <input type="radio" name="event_run_complete_check" value="true"> Yes
+            <input type="radio" name="event_run_complete_check" value="false" 
+              checked> No
+            <input type="submit">
+            </td>
+          </tr>
+        </form>
+      </tbody>
   
-  </table>
+    </table>
   <br />
 <% end %>
