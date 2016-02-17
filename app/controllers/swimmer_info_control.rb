@@ -18,3 +18,4 @@ MyApp.get "/swimmer_info_table" do
   @info = SwimmerInfo.all
   erb :"swimmer/swimmer_info_table"
 end
+

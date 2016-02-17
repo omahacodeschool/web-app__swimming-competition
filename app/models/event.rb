@@ -12,7 +12,16 @@ class Event < ActiveRecord::Base
 
   def top_three
     x = SignupResult.where({"event_id" => self.id}).order("rank")
-    x[0..2]
+    #top_three = []
+    #top_three << x[0..2]
+    #binding.pry
+    #if top_three.rank == nil
+
+    #  return nil 
+    #else 
+      x[0..2]
+    #end
+    #binding.pry
   end
     
 end

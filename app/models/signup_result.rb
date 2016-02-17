@@ -1,4 +1,3 @@
-
 class SignupResult < ActiveRecord::Base
 
   def swimmer_name
