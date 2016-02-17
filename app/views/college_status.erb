@@ -8,38 +8,15 @@
 
 Here's what I want on this page
 
-college name, conference name, college contact, college contact email, college contact phone for every college 
+college name, conference name, college contact, college contact email, college contact phone for every college. conference name has to come from the conferences table using the conference_id foreign key. 
 
- <p> Nothing that I put on this page that starts with @colleges is working. </p> 
+ Nothing that I put on this page that starts with @colleges is working. 
 
- <% @colleges.find_by_id.each do |id| %>
- <%= id.college_name %> 
-<% end%>
-
+<p>
   
 
-<!-- id.conference_name(@colleges.id)  -->
-
-<!-- teps 
-
-1 Getting or modifying info? GET
-2 Part of page or whole page? WHOLE PAGE
-3 How does this feature get triggered. From links on the home page. Similar to the race status pages, there would be a link for each school's information.
-4 What's the response? The view page is this one, college_status.erb.
-5 Controller action: I have set up a controller action MyApp.get "/college_view" do with the erb "college status". In that controller action I also set up @colleges = College.all so I could use the "@colleges" on the view page. 
-5 NEW WORK - I may need to add a variable to the controller action, like MyApp.get "/college_view/:id" where the id is a college id, if I am going to switch to individual college pages. That is what I did for the race pages. It makes for a lot of links on the home page, but I'm getting ahead of myself here. 
-6 Dream erb page = The dream is a page with the name of the school, the conference name, the college's contact person, contact email and contact phone. I guess it would be good to add their swimmers, but I'm not going to deal with that now.
-My original thought was to have the names of all schools - all of their respective conferences - all of their contact data. Kind of a display of the entire college table, with the conference name substituted for the conference id.
-The one-college per page format seems more doable in the time frame.
-7 I need to re-think and re-do my method for getting conference names. It is on college.rb in the Models pages. 
-8 Step goals
-9 Display this page with just the name of "college 1" on it. That would be a step forward. 
-10 Display this page with that college's other data from the college table.
-Display this page with that college's data and the conference name from the conference table. 
-11 Make a link on the home page to just this.
-12 If the link works, replicate the link and change the id variable to 2, in hopes of getting school 2 data. There are 4 colleges in the meet. 
-13 If the link works, replicate the link and change the id variable to 3, in hopes of getting school 3 data. There are 4 colleges in the meet. 
-14 If the link works, replicate the link and change the id variable to 4, in hopes of getting school 4 data. There are 4 colleges in the meet. 
- -->
+  <%= @college.college_name %> <%= @college.conference.conference_name %>
+  <%= @college.contact %> <%= @college.contact_email %> <%= @college.contact_ph %>
 
 
+<p>

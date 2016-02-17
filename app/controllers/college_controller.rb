@@ -51,11 +51,11 @@ MyApp.get "/college_view/:id" do
 
 #   @colleges = College.all#is this still going to work?
 # OR
-  @colleges = College.find_by_id(params[:id])#is this better for separate college pages? 
+  @college = College.find(params[:id])#is this better for separate college pages? 
   
 
   # If a GET request is made to the root path, the following line of code
-  # looks for a .erb view file located in the 'views' directory at the given
+  # looks for  .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
   # 
   # Then it will combine that view file with the layout file and sent the
