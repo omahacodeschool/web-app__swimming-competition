@@ -4,6 +4,28 @@
 <form action="/signup_successful">
   <fieldset>
     <legend>Register for Events:</legend>
+
+    <select type="number" name="event">
+      <% @events.each do |e| %>
+      <option value="<%= e.id %>"><%= e.event_name %></option>
+      <% end %>
+    </select>
+
+    <select type="number" name="competitor">
+      <% @competitors.each do |c| %>
+      <option value="<%= c.id %>"><%= c.competitor_name %></option>
+      <% end %> 
+    </select>
+
+    <input type="submit">
+
+  </fieldset>
+</form>
+
+<!--
+<form action="/signup_successful">
+  <fieldset>
+    <legend>Register for Events:</legend>
     Event:<br>
     <input type="number" name="event"><br>
     Name:<br>
