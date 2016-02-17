@@ -13,7 +13,7 @@ class Penguin < ActiveRecord::Base
   end
 
   def delete_results
-    Result.where("penguin_id" => self.id).first.delete
+    Result.where("penguin_id" => self.id).delete_all
   end
 
 end

@@ -3,7 +3,7 @@ class Result < ActiveRecord::Base
     x = self.penguin_id
     y = Penguin.find_by_id(x)
     if y != nil
-    return y
+      return y
     end
   end
   
@@ -11,6 +11,14 @@ class Result < ActiveRecord::Base
     x = self.event_id
     y = Event.find_by_id(x)
     y    
+  end
+
+  def rookery_access
+    x = self.penguin_access.rookery_id
+    y = Rookery.find_by_id(x)
+    if x != nil && y != nil
+      y
+    end
   end
 
 end

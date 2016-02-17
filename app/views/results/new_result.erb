@@ -5,7 +5,7 @@
   <select name ="new_penguin_id">
     <% @penguins.each do |p| %>
       <option value="<%= p.id%>">
-        <%= p.last_name%> <%=p.first_name %>
+        <%= p.first_name%> <%=p.last_name %>
       </option>
     <% end %>
   </select>
