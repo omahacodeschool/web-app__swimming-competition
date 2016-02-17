@@ -37,11 +37,20 @@
   </tbody>
 </table>
 
-<ul style="list-style-type: circle">
-  <%= @game.get_winners.each do |r| %>
-  <li><%= r.completion_time%></li>
-  <% end %>
-</ul>
+
+<% if @game.check_if_done != false  %>
+  <h1>Winners Circle</h1>
+  <ul style="list-style-type: circle">
+    <% @game.get_winners.each do |r| %>
+    <li>
+      <%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %>
+      <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This event is not yet complete. Hang tight for results!<p>
+<% end %>
 
 <br>
 <br>

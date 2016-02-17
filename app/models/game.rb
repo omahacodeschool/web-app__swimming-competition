@@ -6,7 +6,16 @@ class Game < ActiveRecord::Base
 
   def get_winners
     x = Result.where({"game_id" => self.id})
-    return x.order("completion_time DESC").limit(3)
+    return x.order("completion_time ASC").limit(3)
   end
   
+  def check_if_done
+    x = Result.where({"game_id" => self.id})
+    x.each do |r|
+      if r.completion_time == 0
+        return false
+      end
+    end
+  end
+
 end
