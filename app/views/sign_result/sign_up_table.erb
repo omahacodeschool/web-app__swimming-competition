@@ -16,15 +16,18 @@
 
   <tbody>
     <% @info.each do |info| %>
-      <tr>
-        <td><%= info.swimmer_name %> -
-        binding.pry
-        <a href="/delete_swimmer/<%= info.id%>">Delete</a>
-        </td>
-        <td><a href="/event/<%= info.event_id %>"><%= info.event_name %></a></td> 
-        <td><%= info.time %></td>
-        <td><%= info.rank %></td>
+
+      <% if info.swimmer_exist? == true %>
+        <tr>
+          <td><%= info.swimmer_name %></td>
+          <td>
+            <a href="/event/<%= info.event_id %>"><%= info.event_name %></a>
+          </td> 
+          <td><%= info.time %></td>
+          <td><%= info.rank %></td>
         </tr>
+      <% end %>
+
     <% end %>
   </tbody>
 </table>

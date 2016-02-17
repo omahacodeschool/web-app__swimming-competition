@@ -14,5 +14,15 @@ class SignupResult < ActiveRecord::Base
     return z
   end
 
+  def swimmer_exist?
+    x = swimmer_info_id
+    y = SwimmerInfo.find_by_id(x)
+    if y != nil
+      return true
+    else
+      return false
+    end
+  end
+
 
 end

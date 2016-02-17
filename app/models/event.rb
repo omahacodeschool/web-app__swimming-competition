@@ -12,16 +12,12 @@ class Event < ActiveRecord::Base
 
   def top_three
     x = SignupResult.where({"event_id" => self.id}).order("rank")
-    #top_three = []
-    #top_three << x[0..2]
-    #binding.pry
-    #if top_three.rank == nil
-
-    #  return nil 
-    #else 
-    x[0..2]
-    #end
-    #binding.pry
+    y = SignupResult.where({"rank" => nil})
+    if y.empty?
+      return x[0..2]
+    else
+      return "Event not over"
+    end
   end
     
 end
