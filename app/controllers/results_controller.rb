@@ -42,6 +42,7 @@ end
 
 MyApp.get "/results/view/:id" do
   @results = Result.where("event_id" => params[:id])
+  @ordered = @results.order("time")
   erb :"results/result_details"
 end
 
