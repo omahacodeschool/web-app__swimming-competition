@@ -1,10 +1,16 @@
 <a href="/">home</a>
-<h1>Create a new Result</h1>
+<h1>Find the event</h1>
 
-<form action="/create_result/success">
-  <input type="number" name="event_id">
-  <input type="number" name="competitor_id">
-  <input type="integer" name="time_entered">
-  <input type="number" name="rank">
-  <input type="submit">
+<form action="/create_result/event/:number">
+  <fieldset>
+    <legend>Find Event:</legend>
+
+    <select type="number" name="event">
+      <% @events.each do |e| %>
+      <option value="<%= e.id %>"><%= e.event_name %></option>
+      <% end %>
+    </select>
+
+  </fieldset>
+
 </form>

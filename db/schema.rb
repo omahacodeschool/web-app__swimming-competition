@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "competitor_id"
     t.integer  "time"
     t.integer  "rank"
+    t.integer  "signup_id"
   end
 
   create_table "schools", force: :cascade do |t|

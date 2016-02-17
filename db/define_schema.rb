@@ -32,7 +32,5 @@ DB.define_column("signups", "event_id", "integer")
 DB.define_column("signups", "competitor_id", "integer")
 
 DB.define_table("results")
-DB.define_column("results", "event_id", "integer")
-DB.define_column("results", "competitor_id", "integer")
+DB.define_column("results", "signup_id", "integer")
 DB.define_column("results", "time", "integer")
-DB.define_column("results", "rank", "integer")
