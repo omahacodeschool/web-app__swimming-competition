@@ -1,33 +1,40 @@
+<center>
+
 <h1><%= @event.event.capitalize %></h1>
 
-<p>
-  Top Three Finishers:
-</p>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Top Finishers(in order)</th>
+  </tr>
+  
+  <tr>  
+    <% @event.results.order('time ASC').first(3).each do |r| %>
+      <td align="center">
+        <%= r.competitor_name %>      
+      </td>
+  </tr>
+    <% end %>
+</table>
 
-<ol>
-<% @event.results.order('time ASC').first(3).each do |r| %>
-  <li>
-    <%= r.competitor_name %>
-  </li>
-<% end %>
-</ol>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Competitors</th>
+  </tr>
 
-
-<p>
-  Competitors:
-</p>
-
-<% @event.results.each do |r| %>
-  <% if r.competitor_name == nil %>
-  <% else %>
-    <ul>
-      <li>
-        <%= r.competitor_name %>
-      </li>
-    </ul>
-  <% end %>  
-<% end %>
+  <tr>
+    <% @event.results.each do |r| %>
+      <% if r.competitor_name == nil %>
+      <% else %>
+        <td align="center">
+          <%= r.competitor_name %>
+        </td>
+      <% end %>
+  </tr>  
+    <% end %>
+</table>
 
 
 <p><a href="/all_events">Back</a></p>
 <p><a href="/">Home</a></p>
+
+</center>
