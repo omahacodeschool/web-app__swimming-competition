@@ -3,5 +3,4 @@ class Contestant < ActiveRecord::Base
     var = Region.where({"id" => self.region_id}) 
     return var.name
   end
-
 end
