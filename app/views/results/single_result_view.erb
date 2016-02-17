@@ -10,25 +10,26 @@
     </thead>
 
     <tbody>
-          <% if @result.penguin_access != nil%>
-            <td>
-              <%= @result.penguin_access.first_name %> 
-              <%= @result.penguin_access.last_name %>
-            </td>
-          <% end %>       
-          <% if @result.event_access != nil && @result.penguin_access != nil %>
-            <td><%= @result.event_access.name %></td>
-            <td><%= @result.time %> (seconds)</td>
-            <td>
-              <form action="/results/delete/<%= @result.id %>" method="post">
-                <input type="submit" value="delete">
-              </form>
-              <a href="/results/edit/<%= @result.id %>">
-                <input type="submit" value="edit">
-              </a>            
-            </td>
-          <% end %>          
-        </tr>
+      <% if @result.event_access != nil && @result.penguin_access != nil %>
+
+        <% @result.each do |r|%>
+          <td>
+            <%= r.penguin_access.first_name %> 
+            <%= r.penguin_access.last_name %>
+          </td>
+          <td><%= r.event_access.name %></td>
+          <td><%= r.time %> (seconds)</td>
+          <td>
+            <form action="/results/delete/<%= @result.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/results/edit/<%= @result.id %>">
+              <input type="submit" value="edit">
+            </a>            
+          </td>
+        <% end %>
+        <% end %>          
+      </tr>
     </tbody>
   </table>
 
