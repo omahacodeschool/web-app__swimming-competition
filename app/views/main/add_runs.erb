@@ -11,7 +11,9 @@
 <br />
 <a href="/add_swimmers">Go To Add Swimmers</a>
 
+
 <form action="/runs_form" method="post">
+  
   <p>
   Event:
   <br />
@@ -41,14 +43,14 @@
   <p>
   Run Time (in seconds):
   <br />
-  <input type="number" step="any" name="run_time" required>
+    <input type="number" step="any" name="run_time" required>
   </p>
   
   <p>
-  <input type="submit" value="Add Run">
+    <input type="submit" value="Add Run">
   </p>
-</form>
 
+</form>
 
 <br />
 <h3>Added Runs:</h3>
@@ -73,17 +75,22 @@
         <tr>
           <td><center><%= r.run_swimmer %></center></td>
           <td><center><%= r.run_time %></center></td>
+
         <% if e.event_complete == false %>
+          
           <td><center><a href="/delete_run/<%= r.id %>">delete</a>
           </center></td>
           <td><center><a href="/update_run/<%= r.id %>"> update</a>
           </center></td>
+
         <% else %>
         <% end %>
+
         </tr>
     <% end %>
 
         <form action="/event_complete_form/<%= e.id %>" method="post">
+          
           <tr>
             <td colspan="2">
               Run complete?: 
@@ -94,24 +101,31 @@
               <input type="submit">
             </td>
           </tr>
-          <tr>
-            <% if e.event_complete == true %>
+          
+          <% if e.event_complete == true %>
+              
+            <tr>
               <td colspan="2">
                 <a href="/event_top_runs/<%= e.id %>">
                 <center>Go to <%= e.event_name %> Top 3</center>
                 </a>
               </td>
-              <tr>
+            </tr>
+
+            <tr>
               <td colspan="2" style="color:red">
                 <center>LOCKED</center>
               </td>
-              </tr>
-            <% else %>
-            <% end %>
-          </tr>
+            </tr>
+
+          <% else %>
+          <% end %>
+
         </form>
+      
       </tbody>
   
     </table>
   <br />
+
 <% end %>

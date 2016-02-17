@@ -12,7 +12,8 @@ MyApp.get "/delete_conference/:conference_id" do
   @conferences = Conference.all
   @conference  = Conference.find_by_id(params[:conference_id])
   
-  @conference.delete
+  
+  @conference.del_conference_check
     
   erb :"main/add_conferences"
 end
