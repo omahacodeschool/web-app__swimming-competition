@@ -11,13 +11,7 @@ class Competitor < ActiveRecord::Base
   end
 
   def conf_name
-    x = self.school_id
-    y = Conference.find_by_id(x)
-    return y.conference_name
-  end
-
-  def comp_conf_name
-    return "Conferenc_Name"
+    return "Conference Name"
   end
 
 end
