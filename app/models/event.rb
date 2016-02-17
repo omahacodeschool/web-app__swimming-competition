@@ -14,13 +14,14 @@ class Event < ActiveRecord::Base
 #   1. Keep link hidden
 #   2. Allow event run to be edited
   def event_complete?
-    top_event_link = ""
-    
+    @events = Event.all
+    @top_event_link = ''
+
     @events.each do |event|
       if event.event_complete == True
 # Maybe return a keyword that talks to the link on the view page telling it to
 # reveal the link?
-      top_event_link = '<a href="/event_top_runs/<%= e.id %>">Go To Top 3</a>'
+      @top_event_link = '<a href="/event_top_runs/<%= e.id %>">Go To Top 3</a>'
       else 
 
       end  

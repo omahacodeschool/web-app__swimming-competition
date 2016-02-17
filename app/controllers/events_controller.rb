@@ -44,6 +44,7 @@ MyApp.post "/event_complete_form/:event_id" do
   @event =  Event.find_by_id(params[:event_id])
             
   @event.event_complete = (params["event_complete_check"])
+  @event.save
   @event.event_complete?
 
   erb :"main/add_runs"

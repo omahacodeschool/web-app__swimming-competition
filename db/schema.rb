@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",      null: false
     t.string   "event_name"
     t.float    "event_best_time"
+    t.boolean  "event_complete"
   end
 
   create_table "runs", force: :cascade do |t|
