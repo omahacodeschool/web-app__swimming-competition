@@ -6,4 +6,14 @@ class Event < ActiveRecord::Base
     y
   end
 
+  def result_access
+    x = self.event_id
+    y = Event.find_by_id(x)
+  end
+
+  def top_3
+    result_access.time.max
+  end
+
+
 end
