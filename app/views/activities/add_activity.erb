@@ -1,5 +1,9 @@
 <center><h1> Add Activity</h1>
-
+<% if @error == true %>
+  <p><%= @a.activity_already_exists_error %></p>
+  <br>
+  <br>
+<% end %>
 <form  method="POST" action="/activities/added_new_activity">
   Activity :&emsp;<input type="text" name="add_activity_textbox" value=" ">&emsp;&emsp;
   Max Possible Score:&emsp;<select name="activity_max_score_dropdown">

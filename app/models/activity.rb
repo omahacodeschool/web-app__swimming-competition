@@ -13,4 +13,9 @@ class Activity < ActiveRecord::Base
     return y.order('score DESC').limit(3)
   end
 
+  def activity_already_exists_error
+    return "That Activity already exists. Please add a new activity
+     or edit your preexisting activity"
+  end
+
 end
