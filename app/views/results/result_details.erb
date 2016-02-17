@@ -44,7 +44,7 @@
 
       <tbody>
         <tr>
-          <% @results.each do |r|%>
+          <% @results.first(3).each do |r|%>
             <td>
               <%= r.penguin_access.first_name %> 
               <%= r.penguin_access.last_name %>
