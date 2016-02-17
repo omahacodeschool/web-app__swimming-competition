@@ -16,6 +16,16 @@ class SwimmerInfo < ActiveRecord::Base
     y = SignupResult.find_by_id(x)
     return y
   end
+
+  def team_exist?
+    x = team_id
+    y = Team.find_by_id(x)
+    if y == nil
+      return false
+    else
+      return true
+    end
+  end
   
 end
 

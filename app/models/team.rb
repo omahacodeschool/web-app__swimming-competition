@@ -6,4 +6,9 @@ class Team < ActiveRecord::Base
     return y.conference
   end
 
+  def delete_team
+    x = self.id
+    x.delete
+  end
+
 end

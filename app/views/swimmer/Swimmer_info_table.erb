@@ -18,14 +18,17 @@
 
   <tbody>
     <% @info.each do |info| %>
-      <tr>
-        <td><%= info.last_name %></td>
-        <td><%= info.first_name %> - <a href="/delete_swimmer/<%= info.id%>">Delete</a></td>
-        <td><%= info.team_access.team %> - <%= info.team_access.conference_name %></td>
-        <td><%= info.age %></td>
-        <td><%= info.height %></td>
-        <td><%= info.weight %></td>
+      
+      <% if info.team_exist? == true %>
+        <tr>
+          <td><%= info.last_name %></td>
+          <td><%= info.first_name %> - <a href="/delete_swimmer/<%= info.id%>">Delete</a></td>
+          <td><%= info.team_access.team %> - <%= info.team_access.conference_name %></td>
+          <td><%= info.age %></td>
+          <td><%= info.height %></td>
+          <td><%= info.weight %></td>
         </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
