@@ -46,7 +46,12 @@ end
 
 MyApp.get "/update/event_update_form/:popsicle" do
   @event = Event.find_by_id(params[:popsicle])
-  erb :"main/update/event_update_form"
+  @lock_check = @event.lock
+  if @lock_check == true
+    erb :"main/locked_error_page"
+  else
+    erb :"main/update/event_update_form"
+  end
 end
 
 MyApp.post "/update/event_updated/:stopsign" do

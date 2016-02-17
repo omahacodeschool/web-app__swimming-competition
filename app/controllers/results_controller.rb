@@ -8,12 +8,19 @@ MyApp.get "/add/result_form_add" do
 end
 
 MyApp.post "/result_added" do
-  x = Result.new
-  x.event_id = params[:event_id]
-  x.competitor_id = params[:competitor_id]
-  x.final_time = params[:final_time]
-  x.save
-  erb :"main/add/result_added"
+  @event_id = params[:event_id]
+  @event = Event.find_by_id(@event_id)
+  @lock_check = @event.lock
+  if @lock_check == true
+    erb :"main/locked_error_page"
+  else
+    x = Result.new
+    x.event_id = params[:event_id]
+    x.competitor_id = params[:competitor_id]
+    x.final_time = params[:final_time]
+    x.save
+    erb :"main/add/result_added"
+  end
 end
 
 MyApp.get "/results_top_three/:id" do
@@ -45,16 +52,28 @@ end
 
 MyApp.get "/delete/result_deleted/:dogfood" do
   @result = Result.find_by_id(params[:dogfood])
-  @result.delete
-  erb :"main/delete/result_deleted"
+  @result = Event.find_by_id(@result)
+  @lock_check = @result.lock
+  if @lock_check == true
+    erb :"main/locked_error_page"
+  else
+    @result.delete
+    erb :"main/delete/result_deleted"
+  end
 end
 
 MyApp.get "/update/result_update_form/:popsicle" do
   @result = Result.find_by_id(params[:popsicle])
-  erb :"main/update/result_update_form"
+  @result = Event.find_by_id(@result)
+  @lock_check = @result.lock
+  if @lock_check == true
+    erb :"main/locked_error_page"
+  else
+    erb :"main/update/result_update_form"
+  end
 end
 
-MyApp.post "/update/result_updated/:stopsign" do
+MyApp.post "/update/result_updated/:stopsign" do 
   @result = Result.find_by_id(params[:stopsign])
   @result.event_id = params[:event_id]
   @result.competitor_id = params[:competitor_id]
