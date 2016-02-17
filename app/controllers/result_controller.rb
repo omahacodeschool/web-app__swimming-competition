@@ -5,6 +5,7 @@ MyApp.get "/create_result" do
 end
 
 MyApp.get "/create_result/event" do
+  @signups = Signup.where
 
   erb :"result/create_result_event"
 end
