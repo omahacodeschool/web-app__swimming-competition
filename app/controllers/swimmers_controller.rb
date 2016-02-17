@@ -1,25 +1,13 @@
 MyApp.post "/view_add_swimmer_confirmation" do
 
-  @swim_1 = Swimmer.new
-  @swim_1.swimmer_name = (params["swim_1_name"])
-  @swim_1.school_id = @show_school_id
-  @swim_1.save
+  swim_1_school = School.where("school_name" => params["school_1_name"])
+
+  swim_1 = Swimmer.new
+  swim_1.swimmer_name = (params["swim_1_name"])
+  swim_1.school_id = swim_1_school.ids[0]
+  swim_1.save
   @show_added_name = (params["swim_1_name"])
-
-  @conference_1 = Conference.new
-  @conference_1.conference_name = (params["conference_1_name"])
-  @conference_1.save
-  @show_added_conference = (params["conference_1_name"])
-
-  @school_1 = School.new
-  @school_1.school_name = (params["school_1_name"])
-  @school_1.conference_id = @conference_1.id
-  @school_1.save
-  @show_school_id = @school_1.id
-  @show_added_school = (params["school_1_name"])
-
-  
-
+  @show_added_school = params["school_1_name"]
 
   erb :"view_add_swimmer_confirmation"
 end

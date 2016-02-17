@@ -2,16 +2,27 @@ MyApp.post "/view_add_signup_confirmation" do
 
   signup_new = Signup.new
 
-  signup_new.swimmer_id = Swimmer.where("swimmer_name" => params["swim_signup_name"]).id
+  a = Swimmer.where("swimmer_name" => params["swim_signup_name"])
 
-  signup_new.event_id = Event.where("event_name" => params["event_signup_name"]).id
+  signup_new.swimmer_id = a[0].id
+
+
+  r = a[0].school_id
+  s = School.find_by_id(r)
+
+  signup_new.school_id = s.id
+
+  signup_new.conference_id = s.conference_id
+
+  x = Event.where("event_name" => params["event_signup_name"])
+  signup_new.event_id = x.ids[0] 
   signup_new.save
+  @new_signup = signup_new
 
-  @show_got_event_id = signup_new.id
-  @show_got_swim_id = signup_new.swimmer_id
+  @show_got_event_id = x.ids[0]
+  @show_got_swim_id = a.ids[0]
 
   @all_signups = Signup.all
-
   erb :"view_add_signup_confirmation"
 end
 

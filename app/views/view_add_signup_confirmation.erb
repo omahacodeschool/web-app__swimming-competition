@@ -4,6 +4,34 @@
   <br>
   <br>
     <h1>
+      Current Sign-ups:
+    </h1>
+  <br>
+   <br>
+  <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>School</th>
+         <th>Conference</th>
+        <th>Event</th>
+        <th>Swim Time</th>
+      </tr>
+      <% @all_signups.each do |n| %>   
+      <tr>  
+        <td><%= n.id %></td>
+        <td><%= n.get_swimmer_name %></td>
+        <td><%= n.get_school_name %></td>
+        <td><%= n.get_conference_name %></td>
+        <td><%= n.get_event_name %></td>
+        <td><%= n.completed_swim_time %></td>
+      </tr>
+        <% end %>
+      
+    </table>
+    
+  <br>
+    <h1>
       Success!
     </h1>
   <br>
@@ -23,12 +51,6 @@
   <br>
   <br>
   <br>
-    <h2>
-      Current Sign-ups:
-    </h2>
-  <br>
-  <br>
-    <%= @all_signups %>
   <br>
     <a href="/view_add_signup">
       Add Another Sign-up
