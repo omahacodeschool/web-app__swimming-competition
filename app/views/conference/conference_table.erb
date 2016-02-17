@@ -14,7 +14,7 @@
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.conference %></td>
+        <td><%= info.conference %> - <a href="/delete_conference/<%= info.id %>">Delete</a></td>
       </tr>
     <% end %>
   </tbody>
