@@ -4,10 +4,7 @@ MyApp.get "/create_result" do
   erb :"result/create_result"
 end
 
-MyApp.get "/create_result/event/:number" do
-  @signups = Signup.all
-  x = Result.new
-
+MyApp.get "/create_result/event" do
 
   erb :"result/create_result_event"
 end
@@ -16,7 +13,7 @@ end
 MyApp.get "/create_result/success" do
   x = Result.new
   # x.result_name is a new Active Record method that sets a Result Object attribute name to 'result_name'.
-  x.time = params["time_entered"]
+  x.time = params["time"]
   # x.save is a new Active Record method that saves that Result Object to the 'results' table.
   x.save
   # binding.pry # what is 'x'?
