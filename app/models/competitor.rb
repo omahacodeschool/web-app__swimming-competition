@@ -11,15 +11,7 @@ class Competitor < ActiveRecord::Base
   end
 
   def conf_name
-    # x = ("id", "school_name", "conference_id")
-    x = School.where({"id" => self.school_id})
-    comps = []
-    x.each do |c|
-      # pushes each "conference_id" into comps Array
-      comps << c.conference_id
-    end
-    # returns ("id", "conference_name")
-    return Conference.where({"id" => comps})
+    return "Conference Name"
   end
 
 end
