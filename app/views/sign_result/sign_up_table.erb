@@ -11,6 +11,7 @@
       <th>Event ID</th>
       <th>Time</th>
       <th>Rank</th>
+      <th>Edit</th>
     </tr>
   </thead>
 
@@ -19,13 +20,13 @@
 
       <% if info.swimmer_exist? == true %>
         <tr>
-          <td><%= info.swimmer_name %> - <a href="/edit_form/<%= info.id %>">Edit</a>
-          </td>
+          <td><%= info.swimmer_name %></td>
           <td>
             <a href="/event/<%= info.event_id %>"><%= info.event_name %></a>
           </td> 
           <td><%= info.time %></td>
           <td><%= info.rank %></td>
+          <td><a href="/edit_form/<%= info.id %>">Edit</a></td>
         </tr>
       <% end %>
 

@@ -19,3 +19,19 @@ MyApp.get "/swimmer_info_table" do
   erb :"swimmer/swimmer_info_table"
 end
 
+MyApp.get "/edit_swimmer_form/:id" do
+  @info = SwimmerInfo.find_by_id(params[:id])
+  erb :"swimmer/edit_swimmer_info"
+end
+
+MyApp.post "/process_swimmer_form/:id" do
+  @info = SwimmerInfo.find_by_id(params[:id])
+  @info.last_name = params["last_name"]
+  @info.first_name = params["first_name"]
+  @info.team_id = params["team_id"]
+  @info.age = params["age"]
+  @info.height = params["height"]
+  @info.weight = params["weight"]
+  @info.save
+  erb :"swimmer/updated_swimmer"
+end

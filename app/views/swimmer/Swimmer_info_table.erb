@@ -13,6 +13,8 @@
       <th>Age</th>
       <th>Height</th>
       <th>Weight</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -22,11 +24,13 @@
       <% if info.team_exist? == true %>
         <tr>
           <td><%= info.last_name %></td>
-          <td><%= info.first_name %> - <a href="/delete_swimmer/<%= info.id%>">Delete</a></td>
+          <td><%= info.first_name %></td>
           <td><%= info.team_access.team %> - <%= info.team_access.conference_name %></td>
           <td><%= info.age %></td>
-          <td><%= info.height %></td>
+          <td><%= info.height %></td> 
           <td><%= info.weight %></td>
+          <td><a href="/edit_swimmer_form/<%= info.id %>">Edit</a></td>
+          <td><a href="/delete_swimmer/<%= info.id%>">Delete</a></td>
         </tr>
       <% end %>
     <% end %>

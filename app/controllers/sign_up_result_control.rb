@@ -36,7 +36,6 @@ end
 
 MyApp.get "/edit_form/:id" do
   @info = SignupResult.find_by_id(params[:id])
-  binding.pry
   erb :"sign_result/edit_signup_form"
 end
 
