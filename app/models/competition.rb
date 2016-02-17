@@ -32,10 +32,7 @@ class Competition < ActiveRecord::Base
 
 
 
-  def contestants_city
-    var = Region.find_by_id(self.region_id)
-    return var.city
-  end
+  
 
 
 end
