@@ -34,12 +34,16 @@ end
 
 MyApp.post "/result/update/process/:result_id" do
   @result = Result.find_by_id(params[:result_id])
+  if @result.access_event.lock == true
+    @confirm_message = "Stop trying to cheat! That event is locked."
+  else
   activity_id = @result.access_event.id
   activity = Activity.find_by_id(activity_id)
   max_possible_score = activity.max_possible_score_for_activity
   @result.student_score = (params["student_score"].to_f/max_possible_score.to_f).to_f
   @result.save
   @confirm_message = "Success! Updated #{@result.access_student.first_name} #{@result.access_student.last_name}'s score in #{@result.access_event.event_name}!"
+  end
   erb :"admin/confirm_submission"
 end
 

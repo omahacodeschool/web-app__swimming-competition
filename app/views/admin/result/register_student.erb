@@ -2,11 +2,7 @@
 
 <h2>Please select the student:</h2><br>
 
-
-
-<h2>Please select the event:</h2><br>
-  
-  <form method="post" action="/result/create">
+<form method="post" action="/result/create">
     Student:<br>
     <select name="student_id">
       <% @students.each do |s| %>
@@ -14,6 +10,11 @@
         </option>
       <% end %>
     </select><br>
+
+
+<h2>Please select the event:</h2><br>
+  
+  
     Activity:<br>
     <select name="activity_id">
       <% @activities.each do |a| %>

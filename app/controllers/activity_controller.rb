@@ -19,10 +19,14 @@ end
 
 MyApp.post "/process_update_activity_form/:activity_id" do
   @activity = Activity.find_by_id(params[:activity_id])
+  if @activity.lock == true
+    @confirm_message = "Stop trying to cheat, that activity is locked."
+  else
   @activity.event_name = params["event_name"]
   @activity.max_possible_score_for_activity = params["max_possible_score_for_activity"]
   @activity.save
   @confirm_message = "Success! Updated #{@activity.event_name}. It's maximum possible score is now #{@activity.max_possible_score_for_activity}!"
+  end
   erb :"admin/confirm_submission"
 end
 
