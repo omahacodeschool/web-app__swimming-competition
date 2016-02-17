@@ -8,7 +8,8 @@ class Event < ActiveRecord::Base
   def event_top_runs
     qualifier = Run.where({"event_id" => self.id})
 
-    qualifier.order(:run_time)
+    x = qualifier.order(:run_time)
+    x[0..2]
   end
 #
 # Define method that checks if event_complete is True or False for each event.
