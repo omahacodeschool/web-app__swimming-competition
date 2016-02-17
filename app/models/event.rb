@@ -1,4 +1,19 @@
 class Event < ActiveRecord::Base
-  #If there are more than 3 competetors in any event, return an Array of Result objects sorted in ascending order. Otherwise retrun @message.
+
+    def duplicate_swimmer?
+      f = Result.where({"event_id" => e.id})
+    x = self.where({})
+    duplicate = nil
+    self.each do |i|
+      if i.swimmer_id == x
+        duplicate = true
+        break
+      else
+        duplicate = false
+      end
+    end
+    return duplicate
+  end
+
 
 end
