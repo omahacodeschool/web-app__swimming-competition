@@ -54,7 +54,6 @@ MyApp.get "/read/student/:student_id" do
   completed_performances = @student.all_completed_performances
   @sorted_completed_performances = completed_performances.order(student_score: :desc)
   @top_three_performances = @sorted_completed_performances.first(3)
-  binding.pry
   erb :"admin/student/read_one_student"
 end
 

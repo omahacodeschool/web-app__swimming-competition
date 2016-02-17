@@ -8,13 +8,24 @@ end
 
 MyApp.get "/add/registration" do
   @students = Student.all
-  @activities = Activity.all
+  @activities = Activity.where({"lock" => [false, nil]})
   erb :"admin/result/register_student"
 end
 
 MyApp.get "/read/registrations/:student_id" do
   @student = Student.find_by_id(params[:student_id])
-  @results = Result.where({"student_id" => params[:student_id]})
+  results = Result.where({"student_id" => params[:student_id]})
+  activities = []
+   results.each do |r|
+    activities << r.activity_id
+  end
+  activities_for_student = Activity.where({"id" => activities})
+  unlocked_activities_for_student = activities_for_student.where({"lock" => [false, nil]})
+  unlocked_activities_for_student_ids = []
+    unlocked_activities_for_student.each do |a|
+      unlocked_activities_for_student_ids << a.id
+    end
+  @results = results.where({"activity_id" => unlocked_activities_for_student_ids})
   erb :"admin/student/read_one_students_registrations"
 end
 

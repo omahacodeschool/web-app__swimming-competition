@@ -34,7 +34,12 @@ def ordered_results_for_student(student_object)
   return ordered_results
 end
 
+  #Checks all results to see if they contain an activity that is locked
+  #returns all results that don't have a locked activity
+def lock_check
+  all_activities = Activity.where({"id" => self.activity_id})
+  @activities = Activity.where({"lock" => [false, nil]})
+end
 
-  #     @ranks_in_activity << ordered_results.index(r)
 
 end
