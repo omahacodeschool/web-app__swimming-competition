@@ -13,10 +13,12 @@
 
   <tbody>
     <% @info.each do |info| %>
-      <tr>
-        <td><%= info.conference %> - <a href="/delete_conference/<%= info.id %>">Delete</a></td>
-      </tr>
-    <% end %>
+      <% if info.delete_conference? == false %>
+        <tr>
+          <td><%= info.conference %> - <a href="/delete_conference/<%= info.id %>">Delete</a></td>
+        </tr>
+      <% end %>
+    <%
   </tbody>
 </table>
 </center>

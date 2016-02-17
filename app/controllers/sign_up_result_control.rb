@@ -32,3 +32,21 @@ MyApp.get "/delete_swimmer/:id" do
  @swimmer.delete
  erb :"sign_result/swimmer_deleted"
 end
+
+
+MyApp.get "/edit_form/:id" do
+  @info = SignupResult.find_by_id(params[:id])
+  binding.pry
+  erb :"sign_result/edit_signup_form"
+end
+
+MyApp.post "/process_signup_form/:id" do
+  @info = SignupResult.find_by_id(params[:id])
+  @info.swimmer_info_id = params["swimmer_info_id"]
+  @info.event_id = params["event_id"]
+  @info.time = params["time"]
+  @info.rank = params["rank"]
+  @info.save
+  erb :"sign_result/updated"
+end
+
