@@ -8,10 +8,10 @@ MyApp.post "/conferences/add_conference" do
 end
 
 MyApp.post "/conferences/added_new_conference" do
-  c = Conference.new
-  c.name = params["add_conference_name_textbox"]
-  c.save
-  erb :"/conferences/added_conference_confirmation"
+  @c = Conference.new
+  @c.name = params["add_conference_name_textbox"]
+  @c.save
+  redirect :"/conferences/conference/#{@c.id}"
 end
 
 MyApp.get "/conferences/conference/:id" do
@@ -29,7 +29,7 @@ MyApp.post "/conferences/conference/:id/update_conference/confirmation" do
   @c = Conference.find_by_id(params[:id])
   @c.name = params["update_conference_name_textbox"]
   @c.save
-  erb :"/conferences/update_conference_confirmation"
+  redirect :"/conferences/conference/#{@c.id}"
 end
 
 MyApp.post "/conferences/conference/:id/delete_conference/confirmation" do
@@ -38,5 +38,5 @@ MyApp.post "/conferences/conference/:id/delete_conference/confirmation" do
   @c.delete_all_competitors
   @c.delete_all_colleges
   @c.delete
-  erb :"/conferences/deleted_conference_confirmation"
+  redirect :"/conferences"
 end
