@@ -1,11 +1,15 @@
 # view that shows the form for adding an 'event'.
 MyApp.get "/create_result" do
-  @events = Events.all
+  @events = Event.all
   erb :"result/create_result"
 end
 
 MyApp.get "/create_result/event/:number" do
-  
+  @signups = Signup.all
+  x = Result.new
+
+
+  erb :"result/create_result_event"
 end
 
 # view that shows the user that they have successfully created a 'result'.
