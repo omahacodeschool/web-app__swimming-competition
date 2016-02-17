@@ -20,7 +20,9 @@ MyApp.get "/view_school/:holder" do
 end
 MyApp.get "/delete_school/:place" do
   @school = School.find_by_id(params[:place])
+  @swimmer = Swimmer.where({"school_id" => @school.id})
   @school.delete
+  @swimmer.delete
   erb :"administrator"
 end
 MyApp.get "/view_conferences/:place" do
@@ -29,7 +31,9 @@ MyApp.get "/view_conferences/:place" do
 end
 MyApp.get "/delete_conference/:place" do
   @conference = Conference.find_by_id(params[:place])
+  @school = School.where({"conference_id" => @conference.id})
   @conference.delete
+  @school.delete
   erb :"administrator"
 end
 MyApp.get "/edit_school/:place" do
