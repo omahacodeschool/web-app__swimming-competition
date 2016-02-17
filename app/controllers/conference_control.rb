@@ -16,12 +16,6 @@ MyApp.get "/conference_table" do
 end
 
 MyApp.get "/delete_conference/:id" do
-  conference = Conference.find_by_id(params[:id])
-  conference.delete_conference?
-  if true
-    conference.delete 
-    erb :"conference/conference_delete"
-  else
-    erb :"conference/conference_delete_invaild"
-  end
+  @info = Conference.find_by_id(params[:id])
+  erb :"conference/conference_delete"
 end

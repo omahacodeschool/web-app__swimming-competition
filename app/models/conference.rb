@@ -2,8 +2,8 @@ class Conference < ActiveRecord::Base
 
   def delete_conference?
     x = self.id
-    y = SwimmerInfo.find_by_id(x)
-    if y == nil
+    y = Team.find_by_id(x)
+    if y == false
       return true
     else
       return false
