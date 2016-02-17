@@ -1,11 +1,30 @@
 <h1>Competitor List</h1>
 
-<% @competitors.each do |competitor| %>
-  <p>
-    <a href = "/view_competitor/<%= competitor.id %>">
-      <%= competitor.first_name + " " + competitor.last_name %>
-    </a>
-  </p>
-<% end %>
+<table border = 1px style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <% @competitors.each do |competitor| %>
+      <td>
+        <a href = "/view_competitor/<%= competitor.id %>">
+          <%= competitor.first_name + " " + competitor.last_name %>
+        </a>
+      </td>  
+      <td>
+        <form action = "/delete_competitor/<%= competitor.id %>" method = "post">
+          <input type = "submit" value = "Delete">
+        </form>
+      </td>
+      <td>
+        <form action = "/edit_competitor/<%= competitor.id %>" method = "get">
+          <input type = "submit" value = "Edit">
+        </form>
+      </td>
+  </tr>
+    <% end %>
+</table>
 
-<center><a href = "/">Home</a></center>
+<p><a href = "/">Home</a></p>

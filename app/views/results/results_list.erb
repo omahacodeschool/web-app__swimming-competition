@@ -1,11 +1,37 @@
 <h1>Results List</h1>
 
-<% @results.each do |result| %>
-  <p>
-    <a href = "/view_result/<%= result.id %>">
-      <%= result.event_id %>
-    </a>  
-  </p>
-<% end %>
+<table border = 1px style="width:100%">
+  <tr>
+    <th>Competitor</th>
+    <th>Event</th>
+    <th>Time(sec)</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <% @results.each do |result| %>
+      <!-- <a href = "/view_result/<%= result.id %>"> -->
+      <td>
+        <%= result.competitor_name %>
+      </td>
+      <td>
+        <%=result.event_name %>
+      </td>
+      <td>
+        <%=result.time %>
+      </td>
+      <td>  
+        <form action = "/delete_result/<%= result.id %>" method = "post">
+          <input type = "submit" value = "Delete">
+        </form>
+      </td>
+      <td>
+        <form action = "/edit_result/<%= result.id %>" method = "get">
+          <input type = "submit" value = "Edit">
+        </form>
+      </td>
+  </tr>
+    <% end %>
+</table>
 
-<center><a href = "/">Home</a></center>
+<p><a href = "/">Home</a></p>

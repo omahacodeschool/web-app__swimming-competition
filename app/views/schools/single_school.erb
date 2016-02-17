@@ -1,6 +1,17 @@
-<h1>single school</h1>
+<h1><%= @school.school.capitalize %></h1>
 
+<p>
+  Competitors:
+</p>
 
+<% @school.competitors.each do |s| %>
+<ul>
+  <li>
+      <%= s.first_name.capitalize + " " + s.last_name.capitalize %>
+    </a>  
+  </li>
+</ul>
+<% end %>
 <p><center><a href = "/">Home</a></center></p>
 
 <center><a href = "/all_schools">Back to Schools</a></center>

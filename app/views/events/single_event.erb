@@ -1,4 +1,36 @@
-<h1>single event</h1>
+<h1><%= @event.event.capitalize %></h1>
+
+<p>
+  Top Three Finishers:
+</p>
+
+<pl>
+  
+  <li>
+  <% @event.results.order('time ASC').first(3).each do |r| %>
+  <% if r.complete == true %>
+    <%= r.competitor_name %>
+  <% else %>
+    <p>Results not in</p>
+  <% end %>
+  </li>
+</pl>
+<%end %>
+
+<p>
+  Competitors:
+</p>
+
+<% @event.results.each do |r| %>
+<% if r.competitor_name == nil %>
+<% else %>
+  <ul>
+    <li>
+      <%= r.competitor_name %>
+    </li>
+  </ul>  
+  <% end %>
+<% end %>
 
 
 <p><center><a href = "/">Home</a></center></p>

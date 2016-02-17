@@ -1,7 +1,7 @@
 <center>
-  <h1>Welcome Contestants!</h1>
+<h1>Welcome Contestants!</h1>
 
-<form action = "/competitors">
+<form action = "/competitors" method = "post">
   <p>
     First Name: <input type = "text" name = "fname">
   </p>
@@ -13,75 +13,78 @@
   <p>
     School_id: <input type = "number" name = "school">
   </p>
+
   <input type = "submit">
 </form>
 
-<form action = "/conferences">
+<form action = "/conferences" method = "post">
   <p>
-    Conference: <input type = "text" name = "conf">
+    Conference: <input type = "text" name = "conference">
   </p>
   <input type = "submit">
 </form>
 
-<form action = "/events">
+<form action = "/events" method = "post">
   <p>
     Event: <input type = "text" name = "event">
   </p>
-
-  <p>
-    First: <input type = "text" name = "first">
-  </p>
-
-  <p>
-    Second: <input type = "text" name = "second">
-  </p>
-
-  <p>
-    Third: <input type = "text" name = "third">
-  </p>
   <input type = "submit">
 </form>
 
-<form action = "/results">
+<form action = "/results" method = "post">
   <p>
     Event_id: <input type = "number" name = "event_id">
   </p>
 
   <p>
-    Competitor: <input type = "number" name = "comp_id">
+    Competitor: <input type = "number" name = "competitor_id">
   </p>
 
   <p>
-    Time: <input type = "text" name = "time">
+    Time: <input type = "number" name = "time">
   </p>
   <input type = "submit">
 </form>
 
-<form action = "/schools">
+<form action = "/schools" method = "post">
   <p>
     School: <input type = "text" name = "school">
   </p>
 
   <p>
-    Conference_id: <input type = "number" name = "conf_id">
+    Conference_id: <input type = "number" name = "conference_id">
   </p>
   <input type = "submit">
 </form>
 
 
-  <p>
-    <a href = "/all_competitors">Competitors</a>
-  </p>
-  <p>
-    <a href = "/all_conferences">Conferences</a>
-  </p>
-  <p>
-    <a href = "/all_events">Events</a>
-  </p>
-  <p>
-    <a href = "/all_results">Results</a>
-  </p>
-  <p>
-    <a href = "/all_schools">Schools</a>
-  </p>
+<table border = 1px style="width:50%">
+  <tr>
+    <td>
+    <center>
+      <a href = "/all_competitors">Competitors</a>
+      </center>
+    </td>
+    <td>
+    <center>
+      <a href = "/all_conferences">Conferences</a>
+      </center>
+    </td>
+    <td>
+    <center>
+      <a href = "/all_events">Events</a>
+      </center>
+    </td>
+    <td>
+    <center>
+      <a href = "/all_results">Results</a>
+      </center>
+    </td>
+    <td>
+    <center>
+      <a href = "/all_schools">Schools</a>
+      </center>
+    </td>
+  </tr>
+
 </center>

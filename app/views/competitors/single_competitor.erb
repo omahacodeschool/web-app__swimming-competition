@@ -1,4 +1,43 @@
-<h1> Single competitor </h1>
+<h1><%= @competitor.first_name.capitalize + " " + @competitor.last_name.capitalize %></h1>
+
+<p>
+  School:
+</p>
+
+<ul>
+  <li>
+    <a href = "/view_school/<%= @competitor.school_id %>">
+      <%= @competitor.school_name.capitalize %>
+    </a>  
+  </li>
+</ul>
+
+<p>
+  Conference:
+</p>
+
+<ul>
+  <li>
+    <a href = "/view_conference/<%= @competitor.conference_id %>">
+      <%= @competitor.conference_name.capitalize %>
+    </a>
+  </li>
+</ul>
+
+<p>
+  Events:
+</p>
+
+<% @competitor.results.each do |c| %>
+<ul>
+  <li>
+    <!-- <a href = "/view_result/<%= @competitor.id %>"> -->
+      <%= c.event_name.capitalize %>
+    </a>  
+  </li>
+</ul>    
+<% end %>
+
 
 <p><center><a href = "/">Home</a></center></p>
 
