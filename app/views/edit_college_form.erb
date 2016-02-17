@@ -1,6 +1,10 @@
 just setting up the form.
  
- my goal here is to bring in the existing data for a college and edit it, and those changes stick in the database and replace the old data where the old data had appeared.
+ my goal here is 
+ Step 1: to bring the existing data for a college into edit_college_form.erb.
+ Step 2: edit that data.
+ Step 3: have those changes replace the old data where the old data had appeared.
+ Step 4: not worry about ux changes at this time. 
 
 
 
@@ -10,23 +14,36 @@ just setting up the form.
 <p>Edit information in the appropriate blank(s) 
 and click the Submit button.</p>
 
-<form  = "/college/create">
+<form action = "/process_form_for_editing_college/:id">
   <p>
-  College Name:<input type ="text" name="college_name" 
-  value="<%=@college.college_name %>"
+    College Name:
+    <input type ="text" name="college_name" 
+    value="<%=@college.college_name %>">
   </p>
 
-  <p>Conference ID:<input type ="integer" name="conference_id" 
-  value="<%=@college.college_id %>"</p>
+  <p>
+    Conference ID:
+    <input type ="integer" name="conference_id" 
+    value="<%=@college.id %>">
+  </p>
 
-  <p>Contact Person:<input type ="text" name="contact_person" 
-  value="<%=@college.contact %>"</p>
+  <p>
+    Contact Person:
+    <input type ="text" name="contact_person" 
+    value="<%=@college.contact %>">
+  </p>
 
-  <p>Contact Email:<input type ="text" name="contact_email" 
-  value="<%=@college.contact_email %>"</p>
+  <p>
+    Contact Email:
+    <input type ="text" name="contact_email" 
+    value="<%=@college.contact_email %>">
+  </p>
 
-  <p>Contact Phone:<input type ="text" name="contact_phone" 
-  value="<%=@college.contact_ph %>"</p>
+  <p>
+    Contact Phone:
+    <input type ="text" name="contact_phone" 
+    value="<%=@college.contact_ph %>">
+  </p>
 
   <p><input type ="submit"></p>
 </form>

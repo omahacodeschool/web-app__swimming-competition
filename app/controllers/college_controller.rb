@@ -1,11 +1,11 @@
-MyApp.get "/form_for_editing_college/:id"
+MyApp.get "/form_for_editing_college/:id" do
   @college = College.find_by_id(params[:id])
 
   erb :"edit_college_form"
 end
 
-MyApp.get "/process_form_for_editing_college/:id"
-  @college = College.new
+MyApp.get "/process_form_for_editing_college/:id" do
+  @college = College.find_by_id(params[:id])
 
     @college.college_name = params[:college_name]
     @college.conference_id = params[:conference_id]
@@ -15,6 +15,7 @@ MyApp.get "/process_form_for_editing_college/:id"
     @college.save
 
   erb :"success_college_edit"
+end
 
 
 MyApp.get "/all_colleges" do
