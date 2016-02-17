@@ -8,14 +8,17 @@ Status: <b><%= @activity.get_activity_locked_status %></b>
   <thead>
     <tr>
       <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>&emsp;&emsp;</th>
       <th>College&emsp;</th>
+      <th>&emsp;&emsp;</th>
       <th>Conference&emsp;</th>
+      <th>&emsp;&emsp;</th>
       <th>Competitor Score&emsp;</th>
     </tr>
   </thead>
   <tbody>
+     <% @results.each do |r| %>
       <tr>
-      <% @results.each do |r| %>
         <td><a href="/competitors/competitor/<%= r.competitor_id %>"><%= r.get_competitor_name%>&nbsp;</a></td>
         <td>&emsp;&emsp;</td>
         <td><%= r.get_competitor_college_name %></td>
@@ -24,7 +27,7 @@ Status: <b><%= @activity.get_activity_locked_status %></b>
         <td>&emsp;&emsp;</td>
         <td>&emsp;<%= r.score %></td>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table> 
 <br>

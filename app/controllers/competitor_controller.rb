@@ -71,7 +71,7 @@ MyApp.get "/competitors/competitor/:id/add_score" do
   @competitor = Competitor.find_by_id(params[:id])
   @colleges = College.all
   @activities = Activity.all
-  @r = Result.all
+  @results = Result.all
   erb :"/competitors/add_competitor_activity_score"
 end
 

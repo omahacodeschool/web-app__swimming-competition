@@ -117,8 +117,5 @@ has_one :competitor
       return nil
     end
   end
-
-
-
    
 end

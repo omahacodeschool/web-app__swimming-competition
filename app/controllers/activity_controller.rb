@@ -1,3 +1,5 @@
+enable :notice
+
 MyApp.get "/activities" do
   @activities = Activity.all
   erb :"/activities/activities"
@@ -13,9 +15,18 @@ MyApp.post "/activities/added_new_activity" do
   @max_score = params["activity_max_score_dropdown"]
   @a.max_score = @max_score.to_i
   @a.locked = false
-  @a.save
-  redirect :"/activities/activity/#{@a.id}"
+  if Activity.exists?(:name => params["add_activity_textbox"])
+    redirect :"/activities/activity_exists"
+  else
+    @a.save
+    redirect :"/activities/activity/#{@a.id}"
+  end
 end
+
+MyApp.get "/activities/activity_exists" do
+  erb :"activities/activity_exists"
+end
+
 
 MyApp.post "/activities/activity/:id/delete_activity/confirmation" do 
     @activity = Activity.find_by_id(params[:id])

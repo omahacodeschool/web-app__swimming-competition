@@ -15,6 +15,7 @@ class Conference < ActiveRecord::Base
     end
 
     competitor_ids.each do |id|
+
       Result.where ({"competitor_id" => id}).delete_all
     end
   end

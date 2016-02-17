@@ -1,0 +1,17 @@
+<center><h1> Add Activity</h1>
+
+<p> That Activity already exists. Please add a new activity, or <a href="/activities">find</a> your pre-existing activity.<br>
+  Click on the hyperlinked activity name to access further editing options. </p>
+<form  method="POST" action="/activities/added_new_activity">
+  Activity :&emsp;<input type="text" name="add_activity_textbox" value=" ">&emsp;&emsp;
+  Max Possible Score:&emsp;<select name="activity_max_score_dropdown">
+    <% for i in 1..25 %>
+       <option value="<%= i %>"><%= i %></option>
+    <% end %>  
+  </select>
+  <br><br>    
+  <input type="submit" value="Add New Activity">
+</form>
+<br><br>
+
+</center> 
