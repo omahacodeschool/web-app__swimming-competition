@@ -8,4 +8,9 @@ class Activity < ActiveRecord::Base
     return self.locked == true ? "Closed" : "Open"
   end
 
+  def get_activity_winners
+    y = Result.where({"activity_id" => self.id})
+    return y.order('score DESC').limit(3)
+  end
+
 end

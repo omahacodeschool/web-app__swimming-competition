@@ -65,6 +65,6 @@ end
 
 MyApp.get "/activities/activity/:id/winners" do
   @activity = Activity.find_by_id(params[:id])
-  @results = Result.where({"activity_id" => params[:id]})
+  @winners = @activity.get_activity_winners
   erb :"/activities/winners"
 end

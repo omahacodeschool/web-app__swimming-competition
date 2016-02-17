@@ -1,1 +1,34 @@
-meep
+<center><h1><%= @activity.name %></h1>
+
+Max Possible Score: <b><%= @activity.max_score %></b>&emsp;|&emsp;
+Status: <b><%= @activity.get_activity_locked_status %></b>
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>&emsp;&emsp;</th>
+      <th>College&emsp;</th>
+      <th>&emsp;&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>&emsp;&emsp;</th>
+      <th>Competitor Score&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @winners.each do |w| %>
+      <tr>
+        <td><a href="/competitors/competitor/<%= w.competitor_id %>"><%= w.get_competitor_name%>&nbsp;</a></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= w.get_competitor_college_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= w.get_conference_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td>&emsp;<%= w.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+</center>
+
