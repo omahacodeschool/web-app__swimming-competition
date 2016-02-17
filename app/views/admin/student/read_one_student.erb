@@ -32,8 +32,12 @@
           <td>No Scores to Add</td>
         <%else %> 
         <%@registrations.each do |r| %>
-          <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
-          <td><a href="/result/update/<%=r.id%>">Add Score</a></td>
+            <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
+            <%if r.access_event.lock == true%>
+            <td>LOCKED</td>
+            <%else%>
+            <td><a href="/result/update/<%=r.id%>">Add Score</a></td>
+            <%end%>
       </tr>
           <%end%>
         <%end%>
@@ -46,6 +50,7 @@
   <thead>
       <th>Activity</th>
       <th>Score</th>
+      <th>Update Score</th>
   </thead>
 
   <tbody>
@@ -53,6 +58,11 @@
         <%@sorted_completed_performances.each do |r| %>
           <td><a href="/read/activity/<%=r.activity_id%>"><%= r.access_event.event_name %></a></td>
           <td><%= r.student_score %></td>
+          <%if r.access_event.lock == true%>
+            <td>LOCKED</td>
+            <%else%>
+            <td><a href="/result/update/<%=r.id%>">Update Score</a></td>
+            <%end%>
       </tr>
         <%end%>
       

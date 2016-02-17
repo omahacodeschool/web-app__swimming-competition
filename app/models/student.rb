@@ -30,7 +30,7 @@ class Student < ActiveRecord::Base
   #Returns an activerecord relation collection of results for all the #activities a student is
   #registered in but hasn't completed and are also unlocked
 
-  def all_registered_uncompleted_unlocked_activities
+  def all_unlocked_registrations
   results = self.all_registrations
   activities = []
   unlocked_activities_for_student_ids = []

@@ -14,7 +14,7 @@ end
 
 MyApp.get "/read/registrations/:student_id" do
   @student = Student.find_by_id(params[:student_id])
-  @results = @student.all_registered_uncompleted_unlocked_activities
+  @results = @student.all_unlocked_registrations
   erb :"admin/student/read_one_students_registrations"
 end
 
