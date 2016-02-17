@@ -1,6 +1,6 @@
 class Contestant < ActiveRecord::Base
-  def city
+  def cities
     var = Region.where({"id" => self.region_id}) 
-    return var.name
+    return var.city
   end
 end
