@@ -1,6 +1,6 @@
 
 class SignupResult < ActiveRecord::Base
-  
+
   def swimmer_name
     x = swimmer_info_id
     y = SwimmerInfo.find_by_id(x)
@@ -14,7 +14,6 @@ class SignupResult < ActiveRecord::Base
     z = y.event_name
     return z
   end
-
 
 
 end
