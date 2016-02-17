@@ -61,14 +61,18 @@ class Result < ActiveRecord::Base
     end
   end
 #Checks events table for duplicate swimmer id in the same event. Return True if swimmer is already in event, return False if they are not.
-  def duplicate_swimmer?
-    x = self.swimmer_id
-    y = Event.find_by_id(x)
-    if y == nil
-      return false
-    else
-      return true
+  def Result.duplicate_swimmer?
+    x = self.where({})
+    duplicate = nil
+    self.each do |i|
+      if i.swimmer_id == x
+        duplicate = true
+        break
+      else
+        duplicate = false
+      end
     end
+    return duplicate
   end
 end
 

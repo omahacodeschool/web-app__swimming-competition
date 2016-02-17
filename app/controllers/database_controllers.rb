@@ -86,6 +86,7 @@ MyApp.post "/add_result" do
   r = Result.new
   e = Event.find_by_id(params[:event_id])
   f = Result.where({"event_id" => e.id})
+  #f.duplicate_swimmer
   binding.pry 
   #if r.duplicate_swimmer? == false do
     if e.event_locked == true
