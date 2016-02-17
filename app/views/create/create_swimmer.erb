@@ -9,33 +9,13 @@
 
 <p>Swimmer's University Id<p>
 
-  <input type="number" name="university_id">
-  
-  <input type="submit"> 
-</form>
-
-<p> Here is a list of the universities currently in the database. <br>
-  If desired university is not shown, it will need to be added.
-</p>
-<table border="1">
-  <thead>
-    <tr>
-      <th>University's ID Number</th>
-      <th>University</th>
-      <th>Conference</th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <select name="university_id">
     <% @universities.each do |y| %>
-      <tr>
-        <td> <%= y.id %> </td>
-        <td> <%= y.university_name %> </td>
-        <td> <%= y.conference %> </td>
-      </tr>
+      <option value="<%=y.id%>"><%=y.university_name%> </option>
     <% end %>
-  </tbody>
-</table>
+  </select>
+  <input type="submit">
+</form>
 
 
 <a href="/show_swimmers">View all Swimmers</a>
