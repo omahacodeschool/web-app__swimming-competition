@@ -2,19 +2,23 @@
 
 <h1><%= @event.event.capitalize %></h1>
 
-<table border = 1px style="width:50%">
-  <tr>
-    <th>Top Finishers(in order)</th>
-  </tr>
+<% if @event.completed == true%>
+  <table border = 1px style="width:50%">
+    <tr>
+      <th>Top Finishers(in order)</th>
+    </tr>
   
-  <tr>  
-    <% @event.results.order('time ASC').first(3).each do |r| %>
-      <td align="center">
-        <%= r.competitor_name %>      
-      </td>
-  </tr>
-    <% end %>
-</table>
+    <tr>  
+      <% @event.results.order('time ASC').first(3).each do |r| %>
+        <td align="center">
+          <%= r.competitor_name %>
+        </td>        
+    </tr>
+      <% end %>
+  </table>
+<% else %>
+  <p>Results not in.</p>
+<% end %>
 
 <table border = 1px style="width:50%">
   <tr>
