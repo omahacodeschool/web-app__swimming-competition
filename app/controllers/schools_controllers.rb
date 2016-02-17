@@ -20,9 +20,9 @@ end
 MyApp.post "/delete_school/:school_id" do
   @school = School.find_by_id(params[:school_id])
   @school.delete
-  @result = Result.where("event_id" => params[:event_id])
-  @result.each do |r|
-    r.delete
+  @competitor = Competitor.where("school_id" => params[:school_id])
+  @competitor.each do |c|
+    c.delete
   end
   erb :"schools/deleted"
 end
