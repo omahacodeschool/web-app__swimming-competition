@@ -1,5 +1,14 @@
 <a href="/">home</a>
-<h1>Step 1: Find the event</h1>
+<h1>Step 1: Select the Event</h1>
+
+<!-- Hidden radio form, I like the dropdown better!
+<form action="/create_result/event">
+  <% @events.each do |e| %>
+  <input type="radio" name="event" value="<%= e.id %>"><%= e.event_name %><br>
+  <% end %>
+  <input type="submit" value="next">
+</form>
+-->
 
 <form action="/create_result/event">
   <fieldset>
@@ -11,8 +20,7 @@
       <% end %>
     </select>
 
-    <input type="submit">
+    <input type="submit" value="next">
 
   </fieldset>
-
 </form>
