@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
 
     #  return nil 
     #else 
-      x[0..2]
+    x[0..2]
     #end
     #binding.pry
   end
