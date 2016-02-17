@@ -30,6 +30,8 @@
   <p>
   Team:
   <br />
+  <i>(currently on: <%= @swimmer.swimmer_team %>)</i>
+  <br />
   <select name="swimmer_team_update">
     <% Team.all.each do |team| %>
       <option value="<%= team.id %>">
