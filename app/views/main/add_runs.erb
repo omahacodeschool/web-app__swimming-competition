@@ -73,10 +73,13 @@
         <tr>
           <td><center><%= r.run_swimmer %></center></td>
           <td><center><%= r.run_time %></center></td>
+        <% if e.event_complete == false %>
           <td><center><a href="/delete_run/<%= r.id %>">delete</a>
           </center></td>
           <td><center><a href="/update_run/<%= r.id %>"> update</a>
           </center></td>
+        <% else %>
+        <% end %>
         </tr>
     <% end %>
 
@@ -98,9 +101,11 @@
                 <center>Go to <%= e.event_name %> Top 3</center>
                 </a>
               </td>
+              <tr>
               <td colspan="2" style="color:red">
                 <center>LOCKED</center>
               </td>
+              </tr>
             <% else %>
             <% end %>
           </tr>
