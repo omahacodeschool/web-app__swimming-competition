@@ -36,19 +36,25 @@
   <thead>
     <tr>
 
-      <th>Activity&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-      <th>Score&emsp;</th>
+      <th>Activity</th>
+      <th>&emsp;&emsp;</th>
+      <th>Status</th>
+      <th>&emsp;&emsp;</th>
+      <th>Score</th>
+      <th>&emsp;&emsp;</th>
       <th>Possible Points&emsp;</th>
-      <th>Score (As %)&emsp;</th>
     </tr>
   </thead>
   <tbody>
       <% @results.each do |r| %>
       <tr>
         <td><%= r.get_activity_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_activity_locked_status %></td>
+        <td>&emsp;&emsp;</td>
         <td><%= r.score %></td>
+        <td>&emsp;&emsp;</td>
         <td><%= r.get_activity_max_score %></td>
-        <td><%= "meep" %></td></tr>
       </tr>
       <% end %>
   </tbody>

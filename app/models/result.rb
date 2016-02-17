@@ -18,6 +18,13 @@ has_one :competitor
     return College.find_by_id(y)
   end
 
+  def get_competitor_college_name
+    x = self.competitor_id
+    y = Competitor.find_by_id(x)
+    z = College.find_by_id(y)
+    return z ? z.name : nil
+  end
+
   def get_conference
     x = self.competitor_id
     y = Competitor.find_by_id(x)
@@ -29,10 +36,23 @@ has_one :competitor
   def get_conference_name
     x = self.competitor_id
     y = Competitor.find_by_id(x)
-    z = y.college_id
-    a = College.find_by_id(z)
-    b = Conference.find_by_id(a)
-    return b.name 
+    if y != nil
+      z = y.college_id
+      if z != nil
+        a = College.find_by_id(z)
+        b = a.conference_id
+        if b != nil
+          c = Conference.find_by_id(b)
+          return c ? c.name : nil 
+        else
+          return "Error"
+        end
+      else
+        return "Error"
+      end
+    else
+      return "Error"
+    end
   end
 
   def set_conference_name(var)
@@ -91,7 +111,11 @@ has_one :competitor
   def get_activity_locked_status
     x = self.activity_id
     y =  Activity.find_by_id(x)
-    return y.locked == true ? "Locked" : "Unlocked"
+    if y != nil
+      return y.locked == true ? "Closed" : "Open"
+    else 
+      return "Error"
+    end
   end
 
 

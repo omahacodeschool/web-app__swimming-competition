@@ -10,18 +10,19 @@ Status: <b><%= @activity.get_activity_locked_status %></b>
       <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
       <th>College&emsp;</th>
       <th>Conference&emsp;</th>
-      <th>Total Activites&emsp;</th>
       <th>Competitor Score&emsp;</th>
     </tr>
   </thead>
   <tbody>
-  <% @results.each do |r| %>
       <tr>
-        <td><%= r.get_competitor_name %></td>
-        <td>meep</td>
-        <td>meep</td>
-        <td>meep</td>
-        <td>meep</td>
+      <% @results.each do |r| %>
+        <td><a href="/competitors/competitor/<%= r.competitor_id %>"><%= r.get_competitor_name%>&nbsp;</a></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_competitor_college_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_conference_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td>&emsp;<%= r.score %></td>
       </tr>
       <% end %>
   </tbody>
@@ -30,22 +31,29 @@ Status: <b><%= @activity.get_activity_locked_status %></b>
 <br>
 <br>
 <center>
-<% if @activity.locked == false %>
   <table border="0">
     <thead>
       <tr>
-      <th><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
-      <input type="submit" value="Update Activity">&emsp;</form></th>
 
-      <th><form method="POST" action="/activities/activity/<%= @activity.id %>/delete_activity/confirmation">
-      <input type="submit" value="Delete Activity">&emsp;</form></th></form>
+      <% if @activity.locked == false %>
+        <th><form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity">
+        <input type="submit" value="Update Activity">&emsp;</form></th>
 
-      <th><form method="POST" action="/activities/activity/<%= @activity.id %>/lock">
-      <input type="submit" value="Lock Activity">&emsp;</form></th></form>
+        <th><form method="POST" action="/activities/activity/<%= @activity.id %>/delete_activity/confirmation">
+        <input type="submit" value="Delete Activity">&emsp;</form></th></form>
+
+        <th><form method="POST" action="/activities/activity/<%= @activity.id %>/lock">
+        <input type="submit" value="Lock Activity">&emsp;</form></th></form>
+      <% end %>
+
+      <% if @activity.locked == true %>
+        <th><form method="GET" action="/activities/activity/<%= @activity.id %>/winners">
+        <input type="submit" value="View Winners">&emsp;</form></th></form>
+      <% end %>
+
       </tr>
       </thead>
       </table>
-<% end %>
     <br>
     <br>
     </center>

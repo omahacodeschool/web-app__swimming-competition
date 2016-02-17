@@ -52,4 +52,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.float    "score"
   end
 
+  create_table "winners", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

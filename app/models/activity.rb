@@ -5,7 +5,7 @@ class Activity < ActiveRecord::Base
   end
 
   def get_activity_locked_status
-    return self.locked == true ? "Locked" : "Unlocked"
+    return self.locked == true ? "Closed" : "Open"
   end
 
 end

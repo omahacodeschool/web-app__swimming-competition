@@ -51,3 +51,9 @@ MyApp.post "/activities/activity/:id/update_activity/confirmation" do
   @a.save
 redirect :"/activities/activity/#{@a.id}"
 end
+
+MyApp.get "/activities/activity/:id/winners" do
+  @activity = Activity.find_by_id(params[:id])
+  @results = Result.where({"activity_id" => params[:id]})
+  erb :"/activities/winners"
+end

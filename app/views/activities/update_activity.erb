@@ -13,26 +13,29 @@
     </select>
   <br>
   <br>
-  <table border="0">
-    <thead>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>College&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>Competitor Score&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
       <tr>
-        <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
-        <th>College&emsp;</th>
-        <th>Conference&emsp;</th>
-        <th>Total Activites&emsp;</th>
-        <th>Competitor Score&emsp;</th>
+      <% @results.each do |r| %>
+        <td><a href="/competitors/competitor/<%= r.competitor_id %>"><%= r.get_competitor_name%>&nbsp;</a></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_competitor_college_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_conference_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td>&emsp;<%= r.score %></td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>meep</td>
-          <td>meep</td>
-          <td>meep</td>
-          <td>meep</td>
-          <td>meep</td>
-        </tr>
-    </tbody>
-  </table> 
+      <% end %>
+  </tbody>
+</table> 
   <br>
   <br>
   <br>
