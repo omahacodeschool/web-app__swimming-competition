@@ -10,4 +10,10 @@ class Competitor < ActiveRecord::Base
     return y.school_name
   end
 
+  def conf_access
+    x = self.school_id
+    y = Conference.find_by_id(x)
+    return y
+  end
+
 end
