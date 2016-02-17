@@ -55,7 +55,7 @@ MyApp.get "/delete/result_deleted/:dogfood" do
   @result = Event.find_by_id(@result)
   @lock_check = @result.lock
   if @lock_check == true
-    erb :"main/locked_error_page"
+    erb :"main/locked_error_page/:dogfood"
   else
     @result.delete
     erb :"main/delete/result_deleted"
@@ -67,7 +67,7 @@ MyApp.get "/update/result_update_form/:popsicle" do
   @result = Event.find_by_id(@result)
   @lock_check = @result.lock
   if @lock_check == true
-    erb :"main/locked_error_page"
+    erb :"main/locked_error_page/:popsicle"
   else
     erb :"main/update/result_update_form"
   end

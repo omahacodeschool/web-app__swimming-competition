@@ -69,3 +69,10 @@ MyApp.get "/event_locked/:id" do
   @event.save
   erb :"main/event_locked"
 end
+
+MyApp.get "/event_unlocked/:id" do
+  @event = Event.find_by_id(params[:id])
+  @event.lock = false
+  @event.save
+  erb :"main/event_unlocked"
+end
