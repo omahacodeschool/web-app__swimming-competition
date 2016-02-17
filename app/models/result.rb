@@ -36,10 +36,10 @@ end
 
   #Checks all results to see if they contain an activity that is locked
   #returns all results that don't have a locked activity
-def lock_check
-  all_activities = Activity.where({"id" => self.activity_id})
-  @activities = Activity.where({"lock" => [false, nil]})
-end
+# def lock_check
+#   all_activities = Activity.where({"id" => self.activity_id})
+#   @activities = Activity.where({"lock" => [false, nil]})
+# end
 
 
 end

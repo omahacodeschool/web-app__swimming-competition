@@ -20,9 +20,42 @@ class Student < ActiveRecord::Base
 
   #Returns a collection of results that show what events a student has #completed
 
+
+
   def all_completed_performances
   completed_results = Result.where({"student_id" => self.id}).where.not({"student_score" => nil})
   return completed_results
   end
 
+  #Returns an activerecord relation collection of results for all the #activities a student is
+  #registered in but hasn't completed and are also unlocked
+
+  def all_registered_uncompleted_unlocked_activities
+  results = self.all_registrations
+  activities = []
+  unlocked_activities_for_student_ids = []
+   
+   results.each do |r|
+    activities << r.activity_id
+  end
+  activities_for_student = Activity.where({"id" => activities})
+  unlocked_activities_for_student = activities_for_student.where({"lock" => [false, nil]})
+    unlocked_activities_for_student.each do |a|
+      unlocked_activities_for_student_ids << a.id
+    end
+    results = results.where({"activity_id" => unlocked_activities_for_student_ids})
+  return results
 end
+
+end
+
+
+
+
+
+
+
+
+
+
+
