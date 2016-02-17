@@ -95,8 +95,11 @@
             <% if e.event_complete == true %>
               <td colspan="2">
                 <a href="/event_top_runs/<%= e.id %>">
-                <center>Go to Top 3</center>
+                <center>Go to <%= e.event_name %> Top 3</center>
                 </a>
+              </td>
+              <td colspan="2" style="color:red">
+                <center>LOCKED</center>
               </td>
             <% else %>
             <% end %>

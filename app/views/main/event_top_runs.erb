@@ -1,0 +1,32 @@
+<h2>Here are the Top 3 for the <%= @event.event_name %></h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_runs">Back</a>
+<br />
+
+<p>
+<table border="1"> 
+  
+  <thead>
+    <tr>
+      <th colspan="2"><%= @event.event_name %></th>
+    </tr>
+
+    <tr>
+      <th> Swimmer </th>
+      <th> Run Time (sec.) </th>
+    </tr>
+  </thead>
+
+<!--Must figure out how to order the results-->
+  <% @event.event_top_runs.each do |r| %>
+    <tbody>
+      <tr>
+        <td><center><%= r.run_swimmer %></center></td>
+        <td><center><%= r.run_time %></center></td>
+      </tr>
+  <% end %>
+
+</table>
+</p>
