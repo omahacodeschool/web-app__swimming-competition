@@ -1,11 +1,43 @@
 <h1>Results List</h1>
 
-<% @results.each do |result| %>
-  <p>
-    <a href = "/view_result/<%= result.id %>">
-      <%= result.event_id %>
-    </a>  
-  </p>
-<% end %>
+<table border = 1px style="width:100%">
+  <tr>
+    <th>Competitor</th>
+    <th>Event</th>
+    <th>Time(sec)</th>
+  </tr>
+  <tr>
+  <% @results.each do |result| %>
+      <a href = "/view_result/<%= result.id %>">
+      <td><%= result.competitor_name %></td>
+      <td><%=result.event_name %></td>
+      <td><%=result.time.to_s %></td>
+      </a>  
+  </tr>
+  <% end %>
+</table>
 
 <p><a href = "/">Home</a></p>
+
+<!-- <table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>   
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>    
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>    
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>    
+    <td>80</td>
+  </tr>
+</table> -->

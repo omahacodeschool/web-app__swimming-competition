@@ -1,18 +1,32 @@
 <h1>Event List</h1>
 
-<% @events.each do |event| %>
-  <p>
-    <a href = "/view_event/<%= event.id %>">
-      <%= event.event %>
-    </a>    
-  </p>
-    
-  <form action = "/delete_event/<%= event.id %>" method = "post">
-    <input type = "submit" value = "Delete">
-  </form>
-  <form action = "/edit_event/<%= event.id %>" method = "get">
-    <input type = "submit" value = "Edit">
-  </form>
-<% end %>
+<table border = 1px style="width:100%">
+  <tr>
+    <th>Event</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <% @events.each do |event| %>
+      <td>
+        <a href = "/view_event/<%= event.id %>">
+          <%= event.event %>
+        </a>
+        </td>
+        <td>
+          <form action = "/delete_event/<%= event.id %>" method = "post">
+            <input type = "submit" value = "Delete">
+          </form>
+        </td>
+        <td>
+          <form action = "/edit_event/<%= event.id %>" method = "get">
+            <input type = "submit" value = "Edit">
+          </form>
+        </td>
+  </tr>
+    <% end %>
+</table>
+
 
 <p><a href = "/">Home</a></p>
+
