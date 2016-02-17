@@ -1,0 +1,17 @@
+<h1>Edit Result</h1>
+
+<form action = "/process_result_edit_form/<%= @result.id %>" method = "post">
+  <p>
+    Event_ID:
+      <input type = "text" name = "event_id" value = "<%= @result.event_id %>">
+  </p>
+  <p>
+    Competitor_ID:
+      <input type = "text" name = "competitor_id" value = "<%= @result.competitor_id %>">
+  </p>
+  <p>
+    Time:
+      <input type = "number" name = "event" value = "<%= @result.time %>">
+  </p>
+    <input type = "submit">
+</form>

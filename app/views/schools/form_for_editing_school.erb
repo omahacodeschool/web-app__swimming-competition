@@ -1,0 +1,13 @@
+<h1>Edit School</h1>
+
+<form action = "/process_school_edit_form/<%= @school.id %>" method = "post">
+  <p>
+    School:
+      <input type = "text" name = "school" value = "<%= @school.school %>">
+  </p>
+  <p>
+    Conference_ID:
+      <input type = "number" name = "conference_id" value = "<%= @school.conference_id %>">
+  </p>
+    <input type = "submit">
+</form>

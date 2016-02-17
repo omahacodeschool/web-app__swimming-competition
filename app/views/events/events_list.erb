@@ -12,17 +12,17 @@
         <a href = "/view_event/<%= event.id %>">
           <%= event.event %>
         </a>
-        </td>
-        <td>
-          <form action = "/delete_event/<%= event.id %>" method = "post">
-            <input type = "submit" value = "Delete">
-          </form>
-        </td>
-        <td>
-          <form action = "/edit_event/<%= event.id %>" method = "get">
-            <input type = "submit" value = "Edit">
-          </form>
-        </td>
+      </td>
+      <td>
+        <form action = "/delete_event/<%= event.id %>" method = "post">
+          <input type = "submit" value = "Delete">
+        </form>
+      </td>
+      <td>
+        <form action = "/edit_event/<%= event.id %>" method = "get">
+          <input type = "submit" value = "Edit">
+        </form>
+      </td>
   </tr>
     <% end %>
 </table>
