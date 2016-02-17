@@ -1,0 +1,32 @@
+just setting up the form.
+ 
+ my goal here is to bring in the existing data for a college and edit it, and those changes stick in the database and replace the old data where the old data had appeared.
+
+
+
+<a href="/">Home</a><br>
+
+<h1>Edit College Information</h1>
+<p>Edit information in the appropriate blank(s) 
+and click the Submit button.</p>
+
+<form  = "/college/create">
+  <p>
+  College Name:<input type ="text" name="college_name" 
+  value="<%=@college.college_name %>"
+  </p>
+
+  <p>Conference ID:<input type ="integer" name="conference_id" 
+  value="<%=@college.college_id %>"</p>
+
+  <p>Contact Person:<input type ="text" name="contact_person" 
+  value="<%=@college.contact %>"</p>
+
+  <p>Contact Email:<input type ="text" name="contact_email" 
+  value="<%=@college.contact_email %>"</p>
+
+  <p>Contact Phone:<input type ="text" name="contact_phone" 
+  value="<%=@college.contact_ph %>"</p>
+
+  <p><input type ="submit"></p>
+</form>
