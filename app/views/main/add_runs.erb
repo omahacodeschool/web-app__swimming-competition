@@ -87,14 +87,19 @@
               <input type="radio" name="event_complete_check" value="true"> 
               Yes
               <input type="radio" name="event_complete_check" value="false" 
-              checked> No
+              > No
               <input type="submit">
             </td>
           </tr>
           <tr>
-            <td colspan="2">
-              <%= @top_event_link %>
-            </td>
+            <% if e.event_complete == true %>
+              <td colspan="2">
+                <a href="/event_top_runs/<%= e.id %>">
+                <center>Go to Top 3</center>
+                </a>
+              </td>
+            <% else %>
+            <% end %>
           </tr>
         </form>
       </tbody>

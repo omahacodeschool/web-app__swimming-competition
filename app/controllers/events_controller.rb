@@ -26,7 +26,7 @@ MyApp.get "/update_event/:event_id" do
 end
 
 MyApp.post "/process_event_update/:event_id" do
-  @event  = Event.find_by_id(params[:event_id])
+  @event = Event.find_by_id(params[:event_id])
 
   @event.event_name      = (params["event_name_update"])
   @event.event_best_time = (params["event_time_update"])
@@ -45,7 +45,7 @@ MyApp.post "/event_complete_form/:event_id" do
             
   @event.event_complete = (params["event_complete_check"])
   @event.save
-  @event.event_complete?
+  #@event.event_complete?
 
   erb :"main/add_runs"
 end
