@@ -8,13 +8,15 @@ class Competitor < ActiveRecord::Base
     x = self.school_id
     # x = Integer "school_id"
     y = School.find_by_id(x)
-    # y = ("schools.id", "school_name", "conference_id")
+    # y = ("id", "school_name", "conference_id")
     return y.school_name 
     # returns String "school_name"
   end
 
   def conf_name
-    return "Conference Name"
+    school = School.find_by_id(self.school_id)
+    return school.conf_name
+    # return "Conference Name"
   end
 
 end
