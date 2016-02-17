@@ -24,6 +24,7 @@ end
 
 MyApp.get "/view_event/:number" do
   @event = Event.find_by_id(params[:number])
+  # @event = ("id", "event_name")
   erb :"event/view_event"
 end
 
