@@ -15,34 +15,39 @@
 
 <% if @conferences.empty? == false %>
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>Conference</th>
-      <th>Edit/Delete</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @conferences.each do |c| %>
+  <table border="1">
+    <thead>
       <tr>
-        <td>
-            <%= c.name %>
-        </td>
-      <td>
-        <% if c.id != nil %>
-          <form action="/conferences/delete/<%= c.id %>" method="post">
-            <input type="submit" value="delete">
-          </form>
-          <a href="/conferences/edit/<%= c.id %>">
-            <input type="submit" value="edit">
-          </a>        
-        <% end %>
-      </td>        
+        <th>Conference</th>
+        <th>Edit/Delete</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @conferences.each do |c| %>
+        <tr>
+          <td>
+            <%= c.name %>
+          </td>
+        <td>
+          <% if c.id != nil %>
+            <% if c.has_a_rookery? %>
+              <form action="/conferences/cannot_delete">
+                <input type="submit" value="delete">
+            <% end %>
+          <% else %>
+            <form action="/conferences/delete/<%= c.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/conferences/edit/<%= c.id %>">
+              <input type="submit" value="edit">
+            </a>        
+          <% end %>
+          </td>        
+        </tr>
+      <% end %>                  
+    </tbody>
+  </table>
 
 
 <% else %>
