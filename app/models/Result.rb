@@ -12,4 +12,5 @@ class Result < ActiveRecord::Base
     y = Event.find_by_id(x)
     y    
   end
+
 end
