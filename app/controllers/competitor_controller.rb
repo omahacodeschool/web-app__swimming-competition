@@ -101,7 +101,7 @@ MyApp.get "/competitors/competitor/:id/update_competitor/score" do
 end
 
 MyApp.post "/competitors/competitor/:id/update_competitor/score/confirmation" do
-  @c = Competitor.find_by_id(params[:id])
+  @competitor = Competitor.find_by_id(params[:id])
   @results = Result.find_by_id(params["update_competitor_result_dropdown"])
   @results.score = params["update_competitor_activity_score_textbox"]
   @results.save

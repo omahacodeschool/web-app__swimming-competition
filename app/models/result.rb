@@ -45,13 +45,13 @@ has_one :competitor
           c = Conference.find_by_id(b)
           return c ? c.name : nil 
         else
-          return "Error"
+          return nil
         end
       else
-        return "Error"
+        return nil
       end
     else
-      return "Error"
+      return nil
     end
   end
 
@@ -114,7 +114,7 @@ has_one :competitor
     if y != nil
       return y.locked == true ? "Closed" : "Open"
     else 
-      return "Error"
+      return nil
     end
   end
 

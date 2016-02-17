@@ -18,8 +18,8 @@
     
   <th><span style="font-weight:normal">College:</span>&emsp;
     <select name="update_competitor_college_dropdown">
+    <option value="<%= @competitor.get_college_name %>"><%= @competitor.get_college_name %></option>
       <option value="<%= nil %>"> --- </option>
-      <option value="<%= @competitor.get_college_name %>"><%= @competitor.get_college_name %></option>
         <% @colleges.each do |c| %>
           <option value="<%= c.id %>"><%= c.name %></option>
         <% end %> 
@@ -62,10 +62,15 @@
 <br>
 <br>
 <br>
-<input type="submit" value="Save Changes"></form>
-&emsp;
-<form method="GET" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/score">
-<input type="submit" value="Update Score">
-</form></center>
+<table border="0">
+  <thead>
+    <tr>
+      <th><input type="submit" value="Save Changes">&emsp;</form></th>
+      <th><form method="GET" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/score">
+      <input type="submit" value="Update Score"></form></th>
+    </tr>
+  </thead>
+  </table>
+</center>
 <br>
 <br>
