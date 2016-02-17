@@ -11,7 +11,7 @@
   <tr>
     <td><%= @competitor.competitor_name %></td>
     <td><a href="/view_school/<%= @competitor.school_id %>"><%= @competitor.school_name %></a></td>
-    <td><%= @competitor.conf_name %></td>
+    <td><%= @competitor.conf_name.conference_name %></td>
   </tr>
 </table>
 
