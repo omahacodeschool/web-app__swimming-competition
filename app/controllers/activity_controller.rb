@@ -14,14 +14,14 @@ MyApp.post "/activities/added_new_activity" do
   @a.max_score = @max_score.to_i
   @a.locked = false
   @a.save
-  erb :"/activities/added_activity_confirmation"
+  redirect :"/activities/activity/#{@a.id}"
 end
 
 MyApp.post "/activities/activity/:id/delete_activity/confirmation" do 
     @activity = Activity.find_by_id(params[:id])
     @activity.delete_all_activity_results
     @activity.delete
-    erb :"/activities/deleted_activity_confirmation"
+    redirect :"/activities"
 end
 
 MyApp.get "/activities/activity/:id" do
@@ -49,5 +49,5 @@ MyApp.post "/activities/activity/:id/update_activity/confirmation" do
   @a.max_score = params["update_activity_max_score_dropdown"]
   @a.name = params["update_activity_name_textbox"]
   @a.save
-erb :"/activities/update_activity_confirmation"
+redirect :"/activities/activity/#{@a.id}"
 end
