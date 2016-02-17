@@ -1,5 +1,13 @@
 something
 
+Goal: All I want on this page is a list of participating colleges. If it ends up being more like a dump of all of the information in the colleges database, that is ok. 
+
+<h1>Participating Colleges</h1>
+
+<% @colleges.each do |college| %>
+<%= college.college_name %>
+
+<% end %>
 
 
 

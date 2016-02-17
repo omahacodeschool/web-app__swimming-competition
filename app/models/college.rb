@@ -12,7 +12,9 @@ class College < ActiveRecord::Base
     return confnam
   end #end of conference_name method
 
-
-
+  def list_of_colleges
+    coll = self.find_by_name
+    return coll
+  end #end of list_of_colleges method
 end #end of the college class
     
