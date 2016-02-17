@@ -10,6 +10,12 @@ MyApp.get "/college" do
   erb :"college"
 end
 
+# MyApp.get "/all_colleges" do
+#   @colleges = College.all
+
+#   erb :"college_list"
+# end
+
 MyApp.get "/college/new" do
 
   # If a GET request is made to the root path, the following line of code

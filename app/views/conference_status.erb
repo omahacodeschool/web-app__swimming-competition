@@ -3,12 +3,12 @@
 <h1>Conference Status</h1>
 
 
-Here's what I want on this page. Let's start with just a list of participating conferences.
+<p>Here are the participating conferences.</p>
 
-<% @conference.participating_colleges.each do |college| %>
+
   <p>
-    <%= college.name %>
+    <%= @conferences.all %>
   </p>
-<% end%>
 
 
+<!-- @conference.participating_colleges.each do |college| -->

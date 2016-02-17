@@ -25,7 +25,7 @@ MyApp.get "/conference/new" do
   erb :"conference"
 end
 
-MyApp.get "/conference_view/:id" do
+MyApp.get "/conference_view" do
 
   @conferences = Conference.all
 

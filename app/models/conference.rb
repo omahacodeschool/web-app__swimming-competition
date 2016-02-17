@@ -7,4 +7,11 @@ class Conference < ActiveRecord::Base
     confid = self.id  #conference ids in the conference table. The conference_id is also a foreign key in the college table.
     return College.where({"conference_id" => confid})
   end
+
+  def list_of_conferences 
+    return ["something here", "please"]
+  end
+
+
+
 end
