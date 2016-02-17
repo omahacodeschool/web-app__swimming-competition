@@ -1,4 +1,5 @@
-<% if @result.event_access != nil && @result.penguin_access != nil %>
+<% if @results.empty? == false %>
+
   <table border="1">
     <thead>
       <tr>
@@ -10,9 +11,7 @@
     </thead>
 
     <tbody>
-      <% if @result.event_access != nil && @result.penguin_access != nil %>
-
-        <% @result.each do |r|%>
+        <% @results.each do |r|%>
           <td>
             <%= r.penguin_access.first_name %> 
             <%= r.penguin_access.last_name %>
@@ -20,14 +19,13 @@
           <td><%= r.event_access.name %></td>
           <td><%= r.time %> (seconds)</td>
           <td>
-            <form action="/results/delete/<%= @result.id %>" method="post">
+            <form action="/results/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
             </form>
-            <a href="/results/edit/<%= @result.id %>">
+            <a href="/results/edit/<%= r.id %>">
               <input type="submit" value="edit">
             </a>            
           </td>
-        <% end %>
         <% end %>          
       </tr>
     </tbody>

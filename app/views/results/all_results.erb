@@ -25,7 +25,7 @@
   </thead>
 
   <tbody>
-    <% @results do |r| %>
+    <% @results.each do |r| %>
       <tr>
         <% if r.penguin_access != nil%>
           <td>

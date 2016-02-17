@@ -41,14 +41,13 @@ MyApp.post "/results/delete/:id" do
 end
 
 MyApp.get "/results/view/:id" do
-  @result = Result.where("event_id" => params[:id]).all
-
-  erb :"results/single_result_view"
+  @results = Result.where("event_id" => params[:id])
+  erb :"results/result_details"
 end
 
 MyApp.get "/results/top_3" do
   @events = Event.all
-  erb :"top_three"
+  erb :"results/result_details"
 end
 
 
