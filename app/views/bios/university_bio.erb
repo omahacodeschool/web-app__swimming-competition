@@ -1,0 +1,20 @@
+<h1> <%= @university.university_name %> </h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swimmers.each do |y| %>
+      <tr>
+        <td>
+          <a href="/swimmer_bio/<%= y.id %>"> <%= y.swimmer_name %> </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return Home</a>
