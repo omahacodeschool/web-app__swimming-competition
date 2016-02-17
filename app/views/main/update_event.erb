@@ -1,0 +1,22 @@
+<h2>Update <%= @event.event_name %> Information:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_events">Back</a>
+<br />
+
+<form action="/process_event_update/<%= @event.id %>" method="post">
+  <p>
+  Event Name:
+  <br />
+  <input type="text" name="event_name_update" value="<%= @event.event_name %>">
+  </p>
+  <p>
+  Standing Record (in seconds):
+  <br />
+  <input type="number" step="any" name="event_time_update" value="<%= @event.event_best_time %>">
+  </p>
+  <p>
+  <input type="submit" value="Update Event">
+  </p>
+</form>

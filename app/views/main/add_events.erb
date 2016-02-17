@@ -1,4 +1,4 @@
-<h2>Please add your desired events below:</h2>
+<h2>Add Events Below:</h2>
 
 <a href="/">Home</a>
 <br />
@@ -11,7 +11,7 @@
   </p>
   
   <p>
-  Standing Time Record (in seconds):
+  Standing Record (in seconds):
   <br />
   <input type="number" step="any" name="event_best_time" required>
   </p>
@@ -41,7 +41,10 @@ Then:
       <tr>
         <td><%= event.event_name %></td>
         <td><center><%= event.event_best_time %></center></td>
-        <td><center><a href="/delete_event/<%= event.id %>"> delete</a></center></td>
+        <td><center><a href="/delete_event/<%= event.id %>"> delete</a>
+        </center></td>
+        <td><center><a href="/update_event/<%= event.id %>"> update</a>
+        </center></td>
       </tr>
     <% end %>
   </tbody>

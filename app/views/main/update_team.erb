@@ -1,0 +1,30 @@
+<h2>Update <%= @team.team_name %> Info:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_teams">Back</a>
+<br />
+
+<!--NOT WORKING, running into NilClass error seemingly from the radio form element interacting with team.rb line 7 'v.conference_name'-->
+<form action="/process_team_update/<%= @team.id %>" method="post">
+  <p>
+  Team Name:
+  <br /> 
+  <input type="text" name="team_name_update" 
+    value="<%= @team.team_name %>" required>
+  </p>
+
+  <p>
+  Conference:
+  <br />
+    <% Conference.all.each do |conference| %>
+      <input type="radio" name="select_conference" value="<%= conference.id %>" checked required> 
+      <%= conference.conference_name %>
+      <br />
+    <% end %>
+  </p>
+
+  <p>
+  <input type="submit" value="Update Team">
+  </p>
+</form>

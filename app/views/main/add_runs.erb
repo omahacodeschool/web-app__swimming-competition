@@ -1,5 +1,6 @@
 <h2>Add Run Info Below</h2>
 
+
 <a href="/">Home</a>
 <br />
 <a href="/add_events">Go To Add Events</a>
@@ -48,7 +49,7 @@
   </p>
 </form>
 
-<!--Edit this to create a table for each event that has the event name as the header, and subheaders for the swimmer and their run times.-->
+
 <br />
 <h3>Added Runs:</h3>
 
@@ -72,7 +73,10 @@
         <tr>
           <td><center><%= r.run_swimmer %></center></td>
           <td><center><%= r.run_time %></center></td>
-          <td><center><a href="/delete_run/<%= r.id %>">delete</a></center></td>
+          <td><center><a href="/delete_run/<%= r.id %>">delete</a>
+          </center></td>
+          <td><center><a href="/update_run/<%= r.id %>"> update</a>
+          </center></td>
         </tr>
       </tbody>
     <% end %>

@@ -1,0 +1,18 @@
+<h2>Update <%= @conference.conference_name %> Conference:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_conferences">Back</a>
+<br />
+
+<form action="/process_conference_update/<%= @conference.id %>" method="post">
+  <p>
+  Conference Name:
+  <br /> 
+  <input type="text" name="conference_name_update" 
+    value="<%= @conference.conference_name %>" required>
+  </p>
+  <p>
+  <input type="submit" value="Update Conference">
+  </p>
+</form>
