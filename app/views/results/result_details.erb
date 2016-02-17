@@ -11,6 +11,7 @@
     </thead>
 
     <tbody>
+      <tr>
         <% @results.each do |r|%>
           <td>
             <%= r.penguin_access.first_name %> 
@@ -30,6 +31,31 @@
       </tr>
     </tbody>
   </table>
+
+  <h2> TOP 3 RESULTS </h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Penguin</th>
+          <th>Event</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <% @results.each do |r|%>
+            <td>
+              <%= r.penguin_access.first_name %> 
+              <%= r.penguin_access.last_name %>
+            </td>
+            <td><%= r.event_access.name %></td>
+            <td><%= r.time %> (seconds)</td>
+          <% end %>          
+        </tr>
+      </tbody>
+    </table>
+
 
 <% else %>
 <p>There are currently no results saved for this event</p>

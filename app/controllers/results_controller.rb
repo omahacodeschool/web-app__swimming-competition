@@ -45,9 +45,3 @@ MyApp.get "/results/view/:id" do
   erb :"results/result_details"
 end
 
-MyApp.get "/results/top_3" do
-  @events = Event.all
-  erb :"results/result_details"
-end
-
-
