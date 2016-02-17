@@ -7,7 +7,7 @@ end
 MyApp.get "/process_form_for_editing_college/:id" do
   @college = College.find_by_id(params[:id])
 
-    @college.college_name = params[:college_name]
+    @college.college_name = params[:college_name] #last error message here
     @college.conference_id = params[:conference_id]
     @college.contact = params[:contact]
     @college.contact_email = params[:contact_email]
