@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "first_place_swimmer"
     t.integer  "second_place_swimmer"
     t.integer  "third_place_swimmer"
+    t.boolean  "lock"
   end
 
   create_table "schools", force: :cascade do |t|

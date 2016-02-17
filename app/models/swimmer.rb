@@ -3,7 +3,7 @@ class Swimmer < ActiveRecord::Base
 
   #returns the school name when referencing the school id
 
-  def school_name
+  def name_school
     x = self.school_id
     y = School.find_by_id(x)
     return y.school_name

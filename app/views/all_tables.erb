@@ -1,4 +1,4 @@
-<table border="1">
+wf<table border="1">
   <thead>
     <tr>
       <th>School</th>
@@ -32,19 +32,18 @@
   </thead>
 
   <tbody>
-  
+  <% @swimmers.each do |swimmers| %>
       <tr>
-        <td><%= @swimmers.name %></td>
-        <td><%= @swimmers.school_name%></td>
-        <td><%= @swimmers.id %></td>
-        <td><%= @signups.event_name %></td>
+        <td><%= swimmers.name %></td>
+        <td><%= swimmers.name_school%></td>
+      
     
         
       </tr>
-    
+    <% end %>
   </tbody>
 </table>
-<% end %>
+
 <table border="1">
   <thead>
     <tr>
