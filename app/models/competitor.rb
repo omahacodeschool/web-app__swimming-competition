@@ -16,4 +16,8 @@ class Competitor < ActiveRecord::Base
     return y.conference_name
   end
 
+  def comp_conf_name
+    return "Conferenc_Name"
+  end
+
 end
