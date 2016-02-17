@@ -42,27 +42,14 @@ MyApp.get  "/view_leaderboard" do
   ordered_signups = []
   @ordered_event_ids.each do |q|
     
-    x = Signup.where("event_id" => q)
-    ordered_signups << x
+    Signup.where("event_id" => q).each do |k|
+    ordered_signups << k
+
+    end
   end
     @ordered_signups_array = ordered_signups.to_a
   
-  binding.pry
 
-
-
-
-
-
-
-
-  #@all_signups.sort_by { |k| k["event_id"] }
-
-
-
-    #e.sort_by(event_id)
-
-    #unsorted_times << e.completed_swim_time
 
   erb :"view_leaderboard"
 end

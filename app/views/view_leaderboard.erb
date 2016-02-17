@@ -6,7 +6,7 @@
    <% @ordered_signups_array.each do |n| %>   
   <table border="1" cellpadding="5" cellspacing="5">
       <tr>
-        <th><%= n[last].get_event_name %>
+        <th><%= n.get_event_name %>
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -14,18 +14,14 @@
          <th>Conference</th>
         <th>Swim Time</th>
       </tr>
-      <% until @ordered_signups_array.empty? %>
       <tr>  
-        <td><%= n[last].id %></td>
-        <td><%= n[last].get_swimmer_name %></td>
-        <td><%= n[last].get_school_name %></td>
-        <td><%= n[last].get_conference_name %></td>
-        <td><%= n[last].completed_swim_time %></td>
-        <% n.delete(last) %>
+        <td><%= n.id %></td>
+        <td><%= n.get_swimmer_name %></td>
+        <td><%= n.get_school_name %></td>
+        <td><%= n.get_conference_name %></td>
+        <td><%= n.completed_swim_time %></td>
+      
       </tr>
         <% end %>
       
     </table>
-  <br>
-  <br>
-  <% end %>
