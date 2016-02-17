@@ -3,11 +3,15 @@ MyApp.get "/schools" do
   erb :"main/schools"
 end
 
+MyApp.get "/add/school_form_add" do
+  erb :"main/add/school_form_add"
+end
+
 MyApp.post "/school_added" do
   x = School.new
   x.school_name = params[:school_name]
   x.save
-  erb :"main/school_added"
+  erb :"main/add/school_added"
 end
 
 MyApp.get "/delete/school_deleted/:dogfood" do

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "gender"
     t.integer  "distance"
     t.integer  "style_id"
+    t.boolean  "lock"
   end
 
   create_table "results", force: :cascade do |t|

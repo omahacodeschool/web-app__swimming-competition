@@ -3,11 +3,15 @@ MyApp.get "/styles" do
   erb :"main/styles"
 end
 
+MyApp.get "/add/style_form_add" do
+  erb :"main/add/style_form_add"
+end
+
 MyApp.post "/style_added" do
   x = Style.new
   x.style = params[:race_style]
   x.save
-  erb :"main/style_added"
+  erb :"main/add/style_added"
 end
 
 MyApp.get "/delete/style_deleted/:dogfood" do

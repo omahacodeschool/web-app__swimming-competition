@@ -1,122 +1,23 @@
 <center>
 <h1>Hello admin! Welcome to your swim meet database.</h1>
-
-View all <a href="/competitors">Competitors</a>,
-<a href="/events">Events</a>,
-<a href="/results">Results</a>,
-<a href="/conferences">Conferences</a>,
-<a href="/schools">Schools</a>,
-or <a href="/styles">Styles</a>.<br>
 <br>
-</center>
-
-<hr>
-<p>Please enter information about each event here:</p>
-
-<form action="/event_added" method="post">
-  Gender:<br>
-  <select name="gender">
-    <option value="F">F</option>
-    <option value="M">M</option>
-  </select>
-  <br><br>
-
-  Distance:<br>
-  <input type="integer" name="race_distance"> meters<br><br>
-
-  Style id:<br>
-  <input type="integer" name="style_id"><br><br>
-
-  <input type="submit" value="Submit">
-</form><br><br>
-
-<hr>
-<p>Please enter information about each style here:</p>
-
-<form action="/style_added" method="post">
-  Style:<br>
-  <input type="string" name="race_style"><br><br>
-
-  <input type="submit" value="Submit">
-</form><br><br>
-
-<hr>
-<p>Please enter information about each competitor here:</p>
-
-<form action="/competitor_added" method="post">
-  First name:<br>
-  <input type="text" name="firstname"><br><br>
-
-  Last name:<br>
-  <input type="text" name="lastname"><br><br>
-
-  School:<br>
-  <select name="school">
-    <option value="Creighton University">Creighton University</option>
-    <option value="Doane College">Doane College</option>
-    <option value="Wesleyan University">Wesleyan University</option>
-    <option value="Central Community College">Central Community College</option>
-    <option value="University of Nebraska-Lincoln">University of Nebraska-Lincoln</option>
-  </select><br><br>
-
-  Conference:<br>
-  <select name="conference">
-    <option value="East">East</option>
-    <option value="West">West</option>
-  </select><br><br>
-
-  Gender:<br>
-  <select name="gender">
-    <option value="f">F</option>
-    <option value="m">M</option>
-  </select><br><br>
-
-  <input type="submit" value="Submit">
-</form> <br>
-
-<hr>
-<p>Please enter information about each school here:</p>
-
-<form action="/school_added" method="post">
-  School name:<br>
-  <input type="string" name="school_name"><br><br>
-
-  <input type="submit" value="Submit">
-</form><br><br>
-
-<hr>
-<p>Please enter information about each conference here:</p>
-
-<form action="/conference_added" method="post">
-  Conference name:<br>
-  <input type="string" name="conference_name"><br><br>
-
-  <input type="submit" value="Submit">
-</form><br><br>
-
-<hr>
-<p>Please enter each competitor's results here:</p>
-
-<form action="/result_added" method="post">
-  Event id:<br>
-  <input type="integer" name="event_id"><br><br>
-
-  Competitor id:<br>
-  <input type="integer" name="competitor_id"><br><br>
-
-  Result (in seconds):<br>
-  <input type="decimal" name="final_time"><br><br>
-
-  <input type="submit" value="Submit">
-</form><br><br>
-
-<hr>
-<center> View all <a href="/competitors">Competitors</a>,
-<a href="/events">Events</a>,
-<a href="/results">Results</a>,
-<a href="/conferences">Conferences</a>,
-<a href="/schools">Schools</a>,
-or <a href="/styles">Styles</a>.<br>
+<h2>View all:</h2>
+<a href="/competitors">Competitors</a> |
+<a href="/events">Events</a> |
+<a href="/results">Results</a> |
+<a href="/conferences">Conferences</a> |
+<a href="/schools">Schools</a> |
+<a href="/styles">Styles</a><br>
 <br>
-<a href="/results_top_three">View top three finishers by event.</a>
+<br>
+
+<h2>Add:</h2>
+<a href="/add/competitor_form_add">Competitor</a> |
+<a href="/add/event_form_add">Event</a> |
+<a href="/add/result_form_add">Result</a> |
+<a href="/add/conference_form_add">Conference</a> |
+<a href="/add/school_form_add">School</a> |
+<a href="/add/style_form_add">Style</a><br>
+<br>
+<br>
 </center>

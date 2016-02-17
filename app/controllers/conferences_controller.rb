@@ -3,11 +3,15 @@ MyApp.get "/conferences" do
   erb :"main/conferences"
 end
 
+MyApp.get "/add/conference_form_add" do
+  erb :"main/add/conference_form_add"
+end
+
 MyApp.post "/conference_added" do
   x = Conference.new
   x.conference_name = params[:conference_name]
   x.save
-  erb :"main/conference_added"
+  erb :"main/add/conference_added"
 end
 
 MyApp.get "/delete/conference_deleted/:dogfood" do
@@ -16,7 +20,7 @@ MyApp.get "/delete/conference_deleted/:dogfood" do
   @competitors_in_conference = Competitor.find_by_conference_name(@conference_name)
   if @competitors_in_conference != nil
     @display_this = @competitors_in_conference.first_name + " " + @competitors_in_conference.last_name + ", " + @competitors_in_conference.school_name
-    erb :"main/conference_contains_competitors"
+    erb :"main/delete/conference_contains_competitors"
   else
     @conference.delete
     erb :"main/delete/conference_deleted"

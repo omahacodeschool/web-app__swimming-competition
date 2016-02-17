@@ -2,10 +2,12 @@ Here is information about each conference:
 
 <p>
 <% @conferences.each do |c| %>
-  <%= c.conference_name %> conference
+  <%= c.conference_name %> Conference
   has id # <%= c.id %>. - 
   <a href= "/delete/conference_deleted/<%= c.id %>"> Delete conference</a> - 
   <a href= "/update/conference_update_form/<%= c.id %>"> Update conference</a>
   <br>
 <% end %>
+</p><br>
+<a href="/add/conference_form_add">Add a conference</a> | <a href="/">Home</a>
 </p>

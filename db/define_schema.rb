@@ -17,6 +17,7 @@ DB.define_table("events")
 DB.define_column("events", "gender", "string")
 DB.define_column("events", "distance", "integer")
 DB.define_column("events", "style_id", "integer")
+DB.define_column("events", "lock", "boolean")
 
 DB.define_table("styles")
 DB.define_column("styles", "style", "string")

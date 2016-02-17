@@ -3,6 +3,10 @@ MyApp.get "/competitors" do
   erb :"main/competitors"
 end
 
+MyApp.get "/add/competitor_form_add" do
+  erb :"main/add/competitor_form_add"
+end
+
 MyApp.post "/competitor_added" do
   x = Competitor.new
   x.first_name = params[:firstname]
@@ -11,7 +15,7 @@ MyApp.post "/competitor_added" do
   x.conference_name = params[:conference]
   x.gender = params[:gender]
   x.save
-  erb :"main/competitor_added"
+  erb :"main/add/competitor_added"
 end
 
 MyApp.get "/delete/competitor_deleted/:dogfood" do

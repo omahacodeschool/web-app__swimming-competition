@@ -3,13 +3,17 @@ MyApp.get "/results" do
   erb :"main/results"
 end
 
+MyApp.get "/add/result_form_add" do
+  erb :"main/add/result_form_add"
+end
+
 MyApp.post "/result_added" do
   x = Result.new
   x.event_id = params[:event_id]
   x.competitor_id = params[:competitor_id]
   x.final_time = params[:final_time]
   x.save
-  erb :"main/result_added"
+  erb :"main/add/result_added"
 end
 
 MyApp.get "/results_top_three/:id" do
@@ -37,11 +41,6 @@ MyApp.get "/results_by_event/:id" do
   @results = Result.where({"event_id" => params[:id]})
   @ordered_results = @results.order(:final_time)
   erb :"main/results_by_event"
-end
-
-MyApp.get "/competitors_by_event_result/:kittenmitten" do
-  @competitor = Competitor.find_by_id(params[:kittenmitten])
-  erb :"main/competitors_by_event_result"
 end
 
 MyApp.get "/delete/result_deleted/:dogfood" do
