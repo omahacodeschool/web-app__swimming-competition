@@ -14,6 +14,7 @@ class Competitor < ActiveRecord::Base
   end
 
   def conf_name
+    # get School object(s) found by Competitor.school_id
     school = School.find_by_id(self.school_id)
     return school.conf_name
     # return "Conference Name"
