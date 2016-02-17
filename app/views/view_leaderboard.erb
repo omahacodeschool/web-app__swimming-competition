@@ -1,28 +1,31 @@
-<script src="sorttable.js"></script>
 <h1>
       Current Sign-ups:
     </h1>
   <br>
    <br>
-  <table class="sortable" border="1" cellpadding="5" cellspacing="5">
+   <% @ordered_signups_array.each do |n| %>   
+  <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th><%= n[last].get_event_name %>
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>School</th>
          <th>Conference</th>
-        <th>Event</th>
         <th>Swim Time</th>
       </tr>
-      <% @all_signups.each do |n| %>   
+      <% until @ordered_signups_array.empty? %>
       <tr>  
-        <td><%= n.id %></td>
-        <td><%= n.get_swimmer_name %></td>
-        <td><%= n.get_school_name %></td>
-        <td><%= n.get_conference_name %></td>
-        <td><%= n.get_event_name %></td>
-        <td><%= n.completed_swim_time %></td>
+        <td><%= n[last].id %></td>
+        <td><%= n[last].get_swimmer_name %></td>
+        <td><%= n[last].get_school_name %></td>
+        <td><%= n[last].get_conference_name %></td>
+        <td><%= n[last].completed_swim_time %></td>
+        <% n.delete(last) %>
       </tr>
         <% end %>
       
     </table>
-    
+  <br>
+  <br>
+  <% end %>
