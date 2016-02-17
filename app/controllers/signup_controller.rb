@@ -13,6 +13,7 @@ end
 # end
 MyApp.get "/delete_signup/:placeholder" do
   @signup = Signup.find_by_id(params[:placeholder])
+  
   @signup.delete
   erb :"administrator"
 end

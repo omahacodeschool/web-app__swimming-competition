@@ -1,11 +1,23 @@
 
 
-  <h2>Welcome to the National All Star Swimming Competition</h2>
-  <p>Select category you would like to see results of.</p>                                          
-      <li><a href="/swimmer">Swimmer</a></li>
-      <li><a href="/event">Event</a></li>
-      <li><a href="/school">School</a></li>
+  <h1>Welcome to the National All Star Swimming Competition</h2>
 
+<h3>Here are the Swimmers currently competing in the Tournament</h1>
+<p>
+  <% @swimmers.each do |swimmer| %>
+    
+    <%= swimmer.name %> </a></p>
+  
+</p>
+<% end %>
+<h3>Here are the events in the Tournament</h1>
+<p>
+  <% @events.each do |event| %>
+   
+    <%= event.event_name %> </a></p>
+  
+</p>
+<% end %>
 
       <li><a href="/all_tables">All Details</a></li>
 
@@ -13,4 +25,6 @@
  
   
     <li><a href="/administrator">Admin Only</a></li>
+
+
 

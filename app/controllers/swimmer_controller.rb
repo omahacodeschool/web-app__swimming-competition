@@ -24,6 +24,8 @@ MyApp.get "/view_swimmers/:place" do
 end
 MyApp.get "/delete_swimmers/:place" do
   @swimmer = Swimmer.find_by_id(params[:place])
+  @signup = Signup.where({swimmer_id => (params[:place])})
   @swimmer.delete
+  @signup.delete
   erb :"administrator"
 end

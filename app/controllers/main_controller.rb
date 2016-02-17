@@ -1,5 +1,7 @@
 
 MyApp.get "/" do
+  @swimmers = Swimmer.all
+  @events = Event.all
   erb :"home"
 end
 MyApp.get "/swimmer" do
