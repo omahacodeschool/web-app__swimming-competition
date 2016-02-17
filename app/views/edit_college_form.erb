@@ -15,7 +15,7 @@ just setting up the form.
 and click the Submit button.</p>
 
 
-<form action = "/process_form_for_editing_college/<% @college.id %>"
+<form action = "/process_form_for_editing_college/<%= @college.id %>">
   <p>
     College Name:
     <input type ="text" name="college_name" 
@@ -25,12 +25,12 @@ and click the Submit button.</p>
   <p>
     Conference ID:
     <input type ="integer" name="conference_id" 
-    value="<%=@college.id %>">
+    value="<%=@college.conference_id %>">
   </p>
 
   <p>
     Contact Person:
-    <input type ="text" name="contact_person" 
+    <input type ="text" name="contact" 
     value="<%=@college.contact %>">
   </p>
 
@@ -42,7 +42,7 @@ and click the Submit button.</p>
 
   <p>
     Contact Phone:
-    <input type ="text" name="contact_phone" 
+    <input type ="text" name="contact_ph" 
     value="<%=@college.contact_ph %>">
   </p>
 
