@@ -1,12 +1,19 @@
 #Processes the form for adding an award
 MyApp.post "/award_added" do 
-  x = Award.new
-  x.event_id = params["event_id"]
-  x.competitor_id = params["competitor_id"]
-  x.rank = params["rank"]
-  x.save
+  @event = Event.find_by_id(params["event_id"])
 
-  erb :"added/award_added"
+  if @event.is_complete
+    x = Award.new
+    x.event_id = params["event_id"]
+    x.competitor_id = params["competitor_id"]
+    x.rank = params["rank"]
+    x.save
+
+    erb :"added/award_added"
+  else
+    
+    erb :"banana/event_not_complete_yet"
+  end
 end
 
 #Processes the form for adding a college

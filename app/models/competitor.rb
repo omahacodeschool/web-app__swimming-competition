@@ -17,4 +17,5 @@ class Competitor < ActiveRecord::Base
     x = self.college_id
     y = College.find_by_id(x)
   end
+  
 end
