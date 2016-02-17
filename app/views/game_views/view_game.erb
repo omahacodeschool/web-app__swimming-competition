@@ -12,9 +12,34 @@
   </p>
 <% end %>
 
+<table border="2">
+  <thead>
+    <tr>
+      <th>Participant Name</th>
+      <th>Completion Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game.all_results.each do |r| %>
+    <tr>
+      <td>
+        <a href="/gamer/<%=r.gamer_access.id%>">
+        <%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %>
+      </td>
+      <td>
+        <center>
+          <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
+        </center>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <ul style="list-style-type: circle">
-  <% @game.all_results.each do |r| %>
-  <li><%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %></li>
+  <%= @game.get_winners.each do |r| %>
+  <li><%= r.completion_time%></li>
   <% end %>
 </ul>
 

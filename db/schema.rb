@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",      null: false
     t.integer  "game_id"
     t.integer  "gamer_id"
-    t.string   "completion_time"
+    t.integer  "completion_time"
   end
 
   create_table "squads", force: :cascade do |t|

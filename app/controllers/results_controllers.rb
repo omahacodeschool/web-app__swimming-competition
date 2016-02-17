@@ -8,7 +8,10 @@ MyApp.post "/add_results" do
   x = Result.new
   x.game_id = params["game_id"]
   x.gamer_id = params["gamer_id"]
-  x.completion_time = params["completion_time"]
+  a = params["completion_time"]
+  y = a[0..1].to_i
+  z = a[3..4].to_i
+  x.completion_time = ((y*60) + z)
   x.save
   erb :"results_views/add_success"
 end

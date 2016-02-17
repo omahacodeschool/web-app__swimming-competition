@@ -10,4 +10,10 @@ class Gamer < ActiveRecord::Base
     return y
   end
 
+  def division_access
+    x = self.squad_access.division_id
+    y = Division.find_by_id(x)
+    return y
+  end
+  
 end
