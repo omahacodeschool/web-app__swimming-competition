@@ -37,3 +37,14 @@ MyApp.post "/delete_game/:game_id" do
   @game.delete
   erb :"game_views/delete_success"
 end
+
+MyApp.post "/lock_game/:game_id" do
+  @games = Game.all
+  @game = Game.find_by_id(params[:game_id])
+  if @game.locked == true
+    @game.locked == false
+  else
+    @game.locked == true
+  end
+  erb :"game_views/games_list"
+end
