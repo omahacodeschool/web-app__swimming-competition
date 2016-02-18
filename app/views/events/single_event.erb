@@ -2,8 +2,8 @@
 
 <h1><%= @event.event.capitalize %></h1>
 
-<form>
-<input type = "submit" value = "Lock Event">
+<form action="/lock_event/<%= @event.id %>" method = "post">
+<input type = "submit" value = "Lock">
 </form>
 
 <% if @event.completed == true%>
