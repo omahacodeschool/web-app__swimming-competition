@@ -1,9 +1,6 @@
-<p>This page will display the 2015 winners per category calculated.</p>
+<p>Here's a list of the competition categories we had in 2015</p>
 
-<% @os.each do |x| %>
-  <p>
-    <%= x.overall %> 
-    <%= x.contestant.first_name %>
-    <%= x.contestant.last_name %>
-  </p>
+<% @competition_table.each do |row| %>
+  <p>Category ID - <%= row.id %><br> 
+     Category Name - <a href="/competition_winners/<%= row.id %>"><%= row.name %></a></p>
 <% end %>
