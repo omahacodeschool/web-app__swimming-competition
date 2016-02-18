@@ -1,0 +1,37 @@
+<center><h1> Add New Competitor</h1>
+
+  <form  method="POST" action="/competitors/added_new_competitor">
+
+  <% if @duplicate_user_warning == true %>
+    <p><%= @c.competitor_already_exists_prompt %></p>
+    <br>
+    <br>
+    <% end %>
+
+    First & Last Name:&emsp;<input type="text" name="add_competitor_name_textbox" value="<%= params[:add_competitor_name_textbox] %>">
+    &emsp;&emsp;
+
+    Age:&emsp;<select name="competitor_age_dropdown">
+      <% for i in 1..100 %>
+      <option value="<%= i %>"<%= "selected" if i.to_s == params[:competitor_age_dropdown] %>><%= i %></option>
+      <% end %>  
+    </select>&emsp;&emsp;
+
+    College:&emsp;<select name="competitor_college_dropdown">
+      <% @colleges.each do |c| %>
+        <option value="<%= c.id %>"<%= "selected" if c.id.to_s == params[:competitor_college_dropdown] %>><%= c.name %></option>
+      <% end %>  
+    </select>
+    <br>
+    <br>
+     <% if @duplicate_user_warning == true %>
+    <input type="radio" name="confirmed_radio" value= <%= true %>> I confirm that this student has not been registered.
+  <% end %> 
+  <br>
+  <br>
+  <input type="submit" value="Add New User">
+</form>
+<br>
+<br>
+
+</center> 

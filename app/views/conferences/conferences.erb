@@ -1,0 +1,11 @@
+<center>
+  <h1> Conferences </h1>
+  <form method="POST" action="/conferences/add_conference">
+  <input type="submit" value="Add Conference"></form>
+  <br>
+  <% @conferences.each do |s| %>
+    <a href="/conferences/conference/<%= s.id %>"><%= s.name %></a><br>
+  <% end %>
+  <br>
+  <br>
+</center>

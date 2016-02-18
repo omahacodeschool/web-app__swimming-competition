@@ -1,0 +1,78 @@
+<center><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_competitor_name_textbox" value="<%= @competitor.name %>"</input>
+<br>
+<br>
+
+<table border="0">
+<thead>
+<tr>
+  <th><span style="font-weight:normal">Age:</span>&emsp;
+   <select name="update_competitor_age_dropdown">
+     <option value="<%= @competitor.age %>"><%= @competitor.age %></option>
+     <option value=<%= nil %>>---</option>
+        <% for i in 1..100 %>
+          <option value="<%= i %>"><%= i %></option>
+        <% end %>  
+   </select>&emsp;|&emsp;
+  </th>
+    
+  <th><span style="font-weight:normal">College:</span>&emsp;
+    <select name="update_competitor_college_dropdown">
+    <option value="<%= @competitor.get_college_name %>"><%= @competitor.get_college_name %></option>
+      <option value="<%= nil %>"> --- </option>
+        <% @colleges.each do |c| %>
+          <option value="<%= c.id %>"><%= c.name %></option>
+        <% end %> 
+    </select>&emsp;|&emsp;
+  </th>
+  <th><span style="font-weight:normal">Conference:</span>&emsp;<%= @competitor.get_conference_name %></th>
+</tr>
+</thead>
+</table> 
+
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+
+      <th>Activity</th>
+      <th>&emsp;&emsp;</th>
+      <th>Status</th>
+      <th>&emsp;&emsp;</th>
+      <th>Score</th>
+      <th>&emsp;&emsp;</th>
+      <th>Max Possible Score</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @results.each do |r| %>
+      <tr>
+        <td><a href="/activities/activity/<%= r.activity_id %>"><%= r.get_activity_name %></a></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_activity_locked_status %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.score %></td>
+        <td>&emsp;&emsp;</td>
+        <td>&emsp;<%= r.get_activity_max_score %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+</center>
+
+<br>
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th><input type="submit" value="Save Changes">&emsp;</form></th>
+      <th><form method="GET" action="/competitors/competitor/<%= @competitor.id %>/update_competitor/score">
+      <input type="submit" value="Update Score"></form></th>
+    </tr>
+  </thead>
+  </table>
+</center>
+<br>
+<br>

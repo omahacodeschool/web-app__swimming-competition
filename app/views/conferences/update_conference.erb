@@ -1,0 +1,32 @@
+<center><form method="POST" action="/conferences/conference/<%= @conference.id %>/update_conference/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_conference_name_textbox" value="<%= @conference.name %>">
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>College&emsp;</th>
+      <th>Avg # of Activities Per Student&emsp;</th>
+      <th>Average Score Per Student&emsp;</th>
+      <th>Average Possible Score Per Student&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @colleges.each do |c| %>
+      <tr>
+        <td><a href="/colleges/college/<%= c.id %>"><%= c.name %></a></td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table> 
+<br>
+<br>
+<br>
+<input type="submit" value="Save Changes">
+</form></center>
+<br>
+<br>
+

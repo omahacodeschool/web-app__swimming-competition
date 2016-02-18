@@ -1,0 +1,25 @@
+<center><form method="POST" action="/competitors/competitor/<%= @competitor.id %>/add_score/confirmation">
+<h1> <%= @competitor.name %> </h1>
+
+Age:&nbsp;<b><%= @competitor.age %></b> &emsp;|&emsp;
+College:&nbsp;<b><%= @competitor.get_college_name %></b>&emsp;|&emsp;
+Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
+<table border="0">
+  <thead>
+    <tr>
+      <th><span style="font-weight:normal">Activity:</span>&emsp;
+    <select name="add_competitor_activity_dropdown">
+      <option value="<%= nil %>"> --- </option>
+        <% @activities.each do |a| %>
+        <% if a.locked == false %>
+          <option value="<%= a.id %>"><%= a.name %></option>
+        <% end %>
+       <% end %>
+    </select></th>&emsp;|&emsp; 
+      <th>Score :&emsp;<input type="text" name="add_competitor_activity_score_textbox" value=" ">&emsp;&emsp;</th>
+    </tr>
+  </thead></table>
+  <br>
+  <input type="submit" value="Add New Score"></form></center>
+  <br>
+  <br>

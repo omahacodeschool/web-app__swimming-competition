@@ -1,0 +1,38 @@
+<center><h1> Debate Meet </h1>
+
+<br>
+<br>
+
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Age&emsp;</th>
+      <th>College&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>Total Activites&emsp;</th>
+      <th>Total Accrued Points&emsp;</th>
+      <th>Total Possible Points&emsp;</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @competitors.each do |s| %>
+      <tr>
+        <td><a href="/competitors/competitor/<%= s.id %>"><%= s.name%>&nbsp;</a></td>
+        <td><%= s.age %></td>
+        <td><%= s.get_college_name %></td>
+        <td><%= s.get_conference_name %></td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+</center>
+<br>
+<br>
+
+
+

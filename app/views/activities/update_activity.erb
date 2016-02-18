@@ -1,0 +1,51 @@
+<center>
+<% if @activity.locked == false %>
+  <form method="POST" action="/activities/activity/<%= @activity.id %>/update_activity/confirmation">
+  <input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_activity_name_textbox" value="<%= @activity.name %>">
+  <br><br>
+    Max Score:&emsp;
+    <select name="update_activity_max_score_dropdown">
+      <option value="<%= @activity.max_score %>"><%= @activity.max_score %></option>
+      <option value=<%= nil %>>---</option>
+      <% for i in 1..25 %>
+        <option value="<%= i %>"><%= i %></option>
+      <% end %>  
+    </select>
+  <br>
+  <br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>College&emsp;</th>
+      <th>Conference&emsp;</th>
+      <th>Competitor Score&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <% @results.each do |r| %>
+        <td><a href="/competitors/competitor/<%= r.competitor_id %>"><%= r.get_competitor_name%>&nbsp;</a></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_competitor_college_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td><%= r.get_conference_name %></td>
+        <td>&emsp;&emsp;</td>
+        <td>&emsp;<%= r.score %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table> 
+  <br>
+  <br>
+  <br>
+  <input type="submit" value="Save Changes">
+  </form>
+  <br>
+  <br>
+<% else %>
+<h1> <%= @activity.name %> </h1>
+<br>
+<%= "This activity has been locked by an Administrator and can no longer be edited."  %>
+<% end %>
+</center>

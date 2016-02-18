@@ -1,0 +1,37 @@
+<center><form method="POST" action="/colleges/college/<%= @college.id %>/update_college/confirmation">
+<input type="text" style="height:70px;font-size:36pt; text-align: center;>" name="update_college_name_textbox" value="<%= @college.name %>">
+<br>
+<br>
+Conference:&emsp; <select name="update_college_conference_dropdown">
+  <option value="<%= @college.get_conference_name %>"><%= @college.get_conference_name %></option>
+    <% @conferences.each do |c| %>
+      <option value="<%= c.id %>"><%= c.name %></option>
+    <% end %> 
+</select>
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>Competitor&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Total Activites&emsp;</th>
+      <th>Total Accrued Points&emsp;</th>
+      <th>Total Possible Points&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <%  @competitors.each do |c| %>
+        <td><a href="/competitors/competitor/<%= c.id %>"><%= c.name %></a></td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+      <% end %>
+  </tbody>
+</table> 
+<br>
+<br>
+<br>
+<input type="submit" value="Save Changes">
+</form></center>

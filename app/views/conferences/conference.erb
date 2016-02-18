@@ -1,0 +1,44 @@
+<center><h1> <%= @conference.name %></h1>
+
+<br>
+<table border="0">
+  <thead>
+    <tr>
+      <th>College&emsp;</th>
+      <th>Avg # of Activities Per Student&emsp;</th>
+      <th>Average Score Per Student&emsp;</th>
+      <th>Average Possible Score Per Student&emsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @colleges.each do |c| %>
+      <tr>
+        <td><a href="/colleges/college/<%= c.id %>"><%= c.name %></a></td>
+        <td>meep</td>
+        <td>meep</td>
+        <td>meep</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table> 
+<br>
+<br>
+<br>
+<table border="0">
+  <thead>
+    <tr>
+
+    <th><form method="GET" action="/conferences/conference/<%= @conference.id %>/update_conference">
+      <input type="submit" value="Update Conference"></form></th>
+
+    <th><form method="POST" action="/conferences/conference/<%= @conference.id %>/delete_conference/confirmation">
+    <input type="submit" value="Delete Conference">&emsp;</form></th></form>
+    </tr>
+    </thead>
+    </table>
+    <br>
+    <br>
+    </center>
+
+
+
