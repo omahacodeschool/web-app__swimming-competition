@@ -5,4 +5,8 @@ class Rookery < ActiveRecord::Base
     y = Conference.find_by_id(x)
     y
   end
+
+  def delete_penguins
+    Penguin.where("rookery_id" => self.id).delete_all
+  end
 end

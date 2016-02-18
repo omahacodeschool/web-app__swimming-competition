@@ -33,5 +33,6 @@ end
 MyApp.post "/rookeries/delete/:id" do
   @rookery = Rookery.find_by_id(params[:id])
   @rookery.delete
+  @rookery.delete_penguins
   erb :"updated"
 end
