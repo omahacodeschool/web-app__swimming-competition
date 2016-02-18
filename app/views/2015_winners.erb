@@ -1,11 +1,9 @@
-<p>This page will display the 2015 winners once calculated.</p>
+<p>This page will display the 2015 winners per category calculated.</p>
 
-<% while @counter < 3 s%>
-
-  <% @os.each do |x| %>
-  <%= x.overall %> 
-  <%= x.chili_id %>
-  <% end %>
-
-<% @counter += 1 %>
+<% @os.each do |x| %>
+  <p>
+    <%= x.overall %> 
+    <%= x.contestant.first_name %>
+    <%= x.contestant.last_name %>
+  </p>
 <% end %>
