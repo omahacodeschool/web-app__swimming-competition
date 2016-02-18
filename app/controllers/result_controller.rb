@@ -1,8 +1,5 @@
 MyApp.get "/results" do
-  # .all must be run on the class Result itself.
-  # @results can be used in the view.
-  @events = Signup.all
- # binding.pry # what is '@results'?
+  @events = Event.all
 erb :"result/all_results"
 end
 
