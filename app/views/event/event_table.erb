@@ -17,10 +17,10 @@
         <td><a href="/event/<%= info.id %>"><%= info.event_name %></a></td>
         <td>
           <form action="/lock_event/<%= info.id %>" method="post">
-          <button name="lock" type="submit" value=true>Lock Event</button>
+          <button name="lock" type="submit" value=<%= true %>>Lock Event</button>
           </form> 
         </td>
-        <td><a href="/process_edit_form/<%= info.id %>">Edit</a></td>
+        <td><a href="/edit_event_form/<%= info.id %>">Edit</a></td>
         <td><a href="/delete_event/<%= info.id %>">Delete</a></td>
         </tr>
     <% end %>

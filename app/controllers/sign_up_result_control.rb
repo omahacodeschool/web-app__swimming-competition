@@ -46,8 +46,9 @@ MyApp.post "/process_signup_form/:id" do
   erb :"sign_result/updated"
 end
 
-MyApp.get "/delete_event/:id" do
+MyApp.get "/delete_event_result/:id" do
   @info = SignupResult.find_by_id(params[:id])
+  binding.pry
   if @info.lock == true
     erb :"event/sorry_event_locked"
   else 

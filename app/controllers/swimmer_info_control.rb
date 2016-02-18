@@ -35,3 +35,13 @@ MyApp.post "/process_swimmer_form/:id" do
   @info.save
   erb :"swimmer/updated_swimmer"
 end
+
+MyApp.get "/delete_swimmer/:id" do
+  @swimmer = SwimmerInfo.find_by_id(params[:id])
+  if @swimmer.lock == true
+    erb :"event/sorry_event_locked"
+  else 
+    @swimmer.delete
+    erb :"sign_result/swimmer_deleted"
+  end
+end
