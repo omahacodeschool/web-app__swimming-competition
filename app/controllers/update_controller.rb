@@ -31,10 +31,8 @@ MyApp.get "/update_conference/:num" do
 end
 
 #Shows form for updating an event detail
-MyApp.get "/update_event_detail/:num" do 
-  @events = Event.find_by_id(params[:num])
-  @competitors = Competitor.find_by_id(params[:num]) 
-  @event_details = EventDetail.find_by_id(params[:num]) 
+MyApp.get "/update_event_detail/:num" do  
+  @event_details = EventDetail.find_by_id(params[:num])
   @events = Event.all 
   @competitors = Competitor.all 
 
