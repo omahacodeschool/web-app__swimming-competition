@@ -10,10 +10,6 @@ MyApp.post "/view_add_signup_confirmation" do
   r = a[0].school_id
   s = School.find_by_id(r)
 
-  signup_new.school_id = s.id
-
-  signup_new.conference_id = s.conference_id
-
   x = Event.where("event_name" => params["event_signup_name"])
   signup_new.event_id = x.ids[0] 
   signup_new.save

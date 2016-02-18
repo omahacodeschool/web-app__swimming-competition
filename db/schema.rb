@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "swimmer_id"
     t.integer  "event_id"
     t.integer  "completed_swim_time"
-    t.integer  "school_id"
-    t.text     "conference_id"
   end
 
   create_table "swimmers", force: :cascade do |t|

@@ -20,9 +20,9 @@ end
 MyApp.post "/delete_school/:school_id" do
   @school = School.find_by_id(params[:school_id])
   @school.delete
-  @swimmer = Swimmer.where("school_id" => :school_id)
+  @swimmer = Swimmer.where("school_id" => params[:school_id])
   @swimmer.delete_all
-  @signup = Signup.where("school_id" => :school_id)
+  @signup = Signup.where("school_id" => params[:school_id])
   @signup.delete_all
 
   erb :"view_add_school_and_conference"
