@@ -1,7 +1,7 @@
 #Shows all awards that can be updated
 MyApp.get "/all_awards_to_update" do 
   @events = Event.all
-  @competitors = Competitor.all 
+  @competitors = Competitor.all  
   @awards = Award.all
   
   erb :"update_landing/select_award_to_update"

@@ -26,7 +26,10 @@ end
 #Processes deletion of a conference
 MyApp.get "/delete_conference/:b" do 
   @conferences = Conference.find_by_id(params[:b]) 
-  @conferences.delete
+
+  if@conferences.get_deleted
+    @conferences.delete
+    #also delete colleges linked by conference_id
 
   erb :"delete/delete_conference"
 end

@@ -1,7 +1,4 @@
 #Processes the form for updating an award
-#
-#NOT WORKING -- not saving changes for comp/rank!!
-#
 MyApp.post "/award_updated/:num" do 
   @awards = Award.find_by_id(params[:num])
   @awards.event_id = params["evnt_id"]
@@ -51,9 +48,6 @@ MyApp.post "/event_updated/:num" do
 end
 
 #Processes the form for updating event details
-#
-#NOT WORKING -- not saving changes!!
-#
 MyApp.post "/event_detail_updated/:num" do
   @event_details = EventDetail.find_by_id(params[:num])
   @event_details.event_id = params["evnt_id"]

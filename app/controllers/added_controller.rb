@@ -1,8 +1,8 @@
 #Processes the form for adding an award
 MyApp.post "/award_added" do 
-  @event = Event.find_by_id(params["event_id"])
+  @events = Event.find_by_id(params["event_id"])
 
-  if @event.is_complete
+  if @events.is_complete
     x = Award.new
     x.event_id = params["event_id"]
     x.competitor_id = params["competitor_id"]
