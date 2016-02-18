@@ -26,6 +26,14 @@ MyApp.post "/view_add_signup_confirmation" do
   erb :"view_add_signup"
 end
 
+MyApp.post "/delete_signup/:signup_id" do
+  @signup = Signup.find_by_id(params[:signup_id])
+  @signup.delete
+  @all_signups = Signup.all
+
+  erb :"view_add_signup"
+end
+
 
 MyApp.get "/view_add_signup" do
 

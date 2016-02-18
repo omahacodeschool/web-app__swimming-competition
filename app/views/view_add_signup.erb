@@ -26,6 +26,11 @@
         <td><%= n.get_conference_name %></td>
         <td><%= n.get_event_name %></td>
         <td><%= n.completed_swim_time %></td>
+        <td>
+            <form action="/delete_signup/<%= n.id %>" method="post">
+              <input type="submit" value="X">
+            </form>
+          </td>
       </tr>
         <% end %>
       

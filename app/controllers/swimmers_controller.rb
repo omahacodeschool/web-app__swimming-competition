@@ -12,6 +12,17 @@ MyApp.post "/view_add_swimmer_confirmation" do
   erb :"view_add_swimmer"
 end
 
+MyApp.post "/delete_swimmer/:swimmer_id" do
+
+  @swimmer = Swimmer.find_by_id(params[:swimmer_id])
+  @swimmer.delete
+
+  @signup = Signup.where("swimmer_id" => params[:swimmer_id])
+  @signup.delete_all
+
+  erb :"view_add_swimmer"
+end
+
 MyApp.get "/view_add_swimmer" do
 
   erb :"view_add_swimmer"

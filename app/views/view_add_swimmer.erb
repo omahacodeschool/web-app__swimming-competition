@@ -17,6 +17,11 @@
         <td><%= n.id %></td>
         <td><%= n.swimmer_name %></td>
         <td><%= School.find_by_id(n.school_id).school_name %></td>
+        <td>
+          <form action="/delete_swimmer/<%= n.id %>" method="post">
+            <input type="submit" value="X">
+          </form>
+        </td>
       </tr>
       <% end %>
       <br>
