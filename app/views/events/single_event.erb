@@ -2,9 +2,12 @@
 
 <h1><%= @event.event.capitalize %></h1>
 
-<form action="/lock_event/<%= @event.id %>" method = "post">
-<input type = "submit" value = "Lock">
-</form>
+<% if @event.locked == true %>
+<% else%>
+  <form action="/lock_event/<%= @event.id %>" method = "post">
+    <input type = "submit" value = "Lock">
+  </form>
+<% end %>
 
 <% if @event.completed == true%>
   <table border = 1px style="width:50%">

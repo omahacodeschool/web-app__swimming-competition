@@ -15,6 +15,18 @@
           <%= event.event %>
         </a>
       </td>
+      <% if event.locked == true %>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>
+        </td>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>  
+        </td>
+      <% else %>
       <td align="center">
         <form action = "/delete_event/<%= event.id %>" method = "post">
           <input type = "submit" value = "Delete">
@@ -25,6 +37,7 @@
           <input type = "submit" value = "Edit">
         </form>
       </td>
+      <% end %>
   </tr>
     <% end %>
 </table>
