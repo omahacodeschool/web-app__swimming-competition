@@ -7,7 +7,13 @@
     <label for="game_id"><sub><i>Game ID:</i></sub></label>
     <select name="game_id" value="<%= @result.game_id %>">
         <% @games.each do |g| %>
-        <option value="<%=g.id%>"><%= g.id %>: <%= g.game_name %></option>
+            <% if g.locked == true %>
+                <% next %>
+            <% else %>
+                <option value="<%=g.id%>">
+                    <%= g.id %>: <%= g.game_name %>
+                </option>
+            <% end %>
         <% end %>
     </select>
     <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label>

@@ -24,6 +24,10 @@ MyApp.get "/edit_game_form/:game_id" do
   erb :"game_views/edit_game_form"
 end
 
+MyApp.get "/edit_game_fail" do
+  erb :"game_views/edit_fail"
+end
+
 MyApp.post "/update_game/:game_id" do
   @game = Game.find_by_id(params[:game_id])
   @game.game_name = params["game_name"]
@@ -38,13 +42,20 @@ MyApp.post "/delete_game/:game_id" do
   erb :"game_views/delete_success"
 end
 
+MyApp.get "/delete_game_fail" do
+  erb :"game_views/delete_fail"
+end
+
 MyApp.post "/lock_game/:game_id" do
   @games = Game.all
   @game = Game.find_by_id(params[:game_id])
-  if @game.locked == true
-    @game.locked == false
+  if @game.locked == nil || @game.locked == false
+    @game.locked = true
   else
-    @game.locked == true
+    @game.locked = false
   end
+  @game.save
   erb :"game_views/games_list"
 end
+
+

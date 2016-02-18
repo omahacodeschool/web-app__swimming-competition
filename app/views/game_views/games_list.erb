@@ -14,13 +14,22 @@
       <tr>
         <td><center><%= g.id %></center></td>
         <td><a href="game/<%=g.id%>"><%= g.game_name %></a></td>
-        <td><form action="/edit_game_form/<%=g.id%>">
-              <input type="submit" value="Edit"></form>
-        </td>
-        <td><form action="/delete_game/<%=g.id%>" method="post">
-              <input type="submit" value="Delete"></form>
-        </td>
-        <% if g.locked? == true %>    
+        <% if g.locked == true %>
+          <td><form action="/edit_game_fail">
+                <input type="submit" value="Edit"></form>
+          </td>    
+          <td><form action="/delete_game_fail">
+                <input type="submit" value="Delete"></form> 
+          </td>
+        <% else %>
+          <td><form action="/edit_game_form/<%=g.id%>">
+                <input type="submit" value="Edit"></form>
+          </td>
+          <td><form action="/delete_game/<%=g.id%>" method="post">
+                <input type="submit" value="Delete"></form>
+          </td>
+        <% end %>
+        <% if g.locked == true %>    
         <td><form action="/lock_game/<%=g.id%>" method="post">
               <input type="submit" value="Locked"></form>
         </td> 
