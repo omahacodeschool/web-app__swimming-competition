@@ -18,7 +18,7 @@ end
 MyApp.get "/competition_winners/:competition_id" do
   @comp_obj = Competition.find_by_id(params[:competition_id])
 
-  @all_scores = Result.where("competition_id = @comp_obj.id")
+  @all_scores = Result.where(competition_id: @comp_obj.id)
   @os = @all_scores.order(:"overall")
   @os = @os.limit(3).reverse
   erb :"competition_winners"
