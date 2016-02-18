@@ -54,3 +54,4 @@ DB.define_table("results")
 DB.define_column("results", "penguin_id", "integer")
 DB.define_column("results", "event_id", "integer")
 DB.define_column("results", "time", "decimal")
+

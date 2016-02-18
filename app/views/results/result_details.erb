@@ -36,7 +36,12 @@
     </tbody>
   </table>
 
-  <h2> TOP 3 RESULTS </h2>
+<h2> TOP 3 RESULTS </h2>
+
+  <% if @results.exists?(:time => nil) %>
+    <p style="color:red";> Please make sure results have been entered for each participant.</p>
+  <% else %>
+
     <table border="1">
       <thead>
         <tr>
@@ -59,7 +64,7 @@
         <% end %> 
       </tbody>
     </table>
-
+  <% end %>
 
 <% else %>
 <p>There are currently no results saved for this event</p>
