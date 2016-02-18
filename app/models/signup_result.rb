@@ -11,7 +11,7 @@ class SignupResult < ActiveRecord::Base
     x = event_id
     y = Event.find_by_id(x)
     z = y.event_name
-    return z
+    return z 
   end
 
   def swimmer_exist?
@@ -23,15 +23,4 @@ class SignupResult < ActiveRecord::Base
       return false
     end
   end
-
-  def event_locked?
-    x = self.id
-    y = Event.find_by_id(x)
-    binding.pry
-    z = y.find("lock")
-    binding.pry
-    z
-  end
-
-
 end
