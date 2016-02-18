@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "contact"
     t.string   "contact_email"
     t.string   "contact_ph"
+    t.boolean  "locked"
   end
 
   create_table "conferences", force: :cascade do |t|

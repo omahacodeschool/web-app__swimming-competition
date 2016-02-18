@@ -12,6 +12,9 @@ class College < ActiveRecord::Base
     return confnam
   end #end of conference_name method
 
+  def locked_college
+    lokid = self.
+
   
-end #end of the col
+end #end of the college class
     

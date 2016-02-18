@@ -36,6 +36,7 @@ DB.define_column("colleges", "conference_id", "integer")
 DB.define_column("colleges", "contact", "string")
 DB.define_column("colleges", "contact_email", "string")
 DB.define_column("colleges", "contact_ph", "string")
+DB.define_column("colleges", "locked", "boolean")
 
 DB.define_table("races")
 DB.define_column("races", "event_name", "string")
