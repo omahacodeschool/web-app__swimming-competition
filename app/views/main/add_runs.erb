@@ -2,15 +2,8 @@
 
 <a href="/">Home</a>
 <br />
-<a href="/add_events">Go To Add Events</a>
+<a href="/add_swimmers">Back</a>
 <br />
-<a href="/add_conferences">Go To Add Conferences</a>
-<br />
-<a href="/add_teams">Go To Add Teams</a>
-<br />
-<a href="/add_swimmers">Go To Add Swimmers</a>
-<br />
-
 
 <form action="/runs_form" method="post">
   
@@ -57,9 +50,18 @@
 <p>
 
   <% if Run.ids.any? %>
+    <p>
     <strong style="color:green">
       THANK YOU!
     </strong>
+    </p>
+    <a href="/add_events">Go To Add Events</a>
+    <br />
+    <a href="/add_conferences">Go To Add Conferences</a>
+    <br />
+    <a href="/add_teams">Go To Add Teams</a>
+    <br />
+    <a href="/add_swimmers">Go To Add Swimmers</a>
   <% else %>
     <strong style="color:red">
       Please add runs
@@ -98,10 +100,16 @@
 
         <% if e.event_complete == false %>
           
-          <td><center><a href="/delete_run/<%= r.id %>">delete</a>
-          </center></td>
-          <td><center><a href="/update_run/<%= r.id %>"> update</a>
-          </center></td>
+          <td>
+          <center>
+            <a href="/delete_run/<%= r.id %>">delete</a>
+          </center>
+          </td>
+          <td>
+          <center>
+            <a href="/update_run/<%= r.id %>"> update</a>
+          </center>
+          </td>
 
         <% else %>
         <% end %>
@@ -117,7 +125,7 @@
               <input type="radio" name="event_complete_check" value="true"> 
               Yes
               <input type="radio" name="event_complete_check" value="false" 
-              > No
+              checked> No
               <input type="submit">
             </td>
           </tr>
