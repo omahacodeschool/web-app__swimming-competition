@@ -13,7 +13,11 @@
     <% @info.each do |info| %>
       <tr>
         <td><a href="/event/<%= info.id %>"><%= info.event_name %></a></td>
-        <td><a href="/event_lock/<% info.id %>"></td>
+        <td>
+          <form action="/lock_event/<%= info.id %>" method="post">
+          <button name="lock" type="submit" value="true">Lock Event</button>
+          </form> 
+        </td>
         </tr>
     <% end %>
   </tbody>

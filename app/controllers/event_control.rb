@@ -14,7 +14,9 @@ MyApp.get "/event_table" do
   erb :"event/event_table"
 end
 
-MyApp.get "/event_lock/:id" do
-  
-  erb :"event_locked_success"
+MyApp.post "/lock_event/:id" do
+  @info = Event.find_by_id(params[:id])
+  @info.lock = params["lock"]
+  @info.save
+  erb :"event/event_locked_success"
 end

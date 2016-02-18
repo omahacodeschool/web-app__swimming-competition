@@ -20,8 +20,12 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def event_lock
-    
+
+  def event_locked?
+    x = self.id
+    y = Event.find_by_id(x)
+    z = y.find("lock")
+    z
   end
     
 
