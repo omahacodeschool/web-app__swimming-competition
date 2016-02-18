@@ -2,13 +2,16 @@ class Conference < ActiveRecord::Base
 
   def del_conference_check
     
-    if 
-      Team.all.each do |team|
-        team.conference_id.any?
-      end
+    if self.teams.any?
+      false
     else
-      @conference.delete
+      self.delete
     end
 
+  end
+
+  def teams
+    x = self.id
+    Team.where({"conference_id" => x})
   end
 end

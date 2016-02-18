@@ -12,10 +12,13 @@ MyApp.get "/delete_conference/:conference_id" do
   @conferences = Conference.all
   @conference  = Conference.find_by_id(params[:conference_id])
   
-  
-  @conference.del_conference_check
-    
-  erb :"main/add_conferences"
+  if @conference.del_conference_check
+    erb :"main/add_conferences"
+  else
+    @error = "YOU CAN'T DELETE THIS"
+    erb :"main/add_conferences"
+  end
+  #erb :"main/delete_error"
 end
 
 MyApp.get "/update_conference/:conference_id" do
