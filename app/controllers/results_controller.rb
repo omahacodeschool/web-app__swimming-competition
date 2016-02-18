@@ -51,5 +51,5 @@ MyApp.post "/results/lock/:id" do
   @reults.locked = true
   @results.save
   erb :"updated"
-end
+end 
 
