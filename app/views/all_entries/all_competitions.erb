@@ -2,8 +2,36 @@
 
 <% @all_cats.each do |a| %>
   <p>Category ID - <%= a.id %><br> 
-     Category Name - <a href="/category_info/<%= a.id %>"><%= a.name %></a></p>
+     Category Name - 
+    <a href="/category_info/<%= a.id %>">
+      <%= a.name %>
+    </a> 
+
+    - 
+    
+    <a href="/delete_competition/<%= a.id %>">
+      Delete
+    </a>
+  </p>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p><a href="/">Homepage</a></p>
 
