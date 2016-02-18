@@ -12,11 +12,16 @@ end
 
 MyApp.get "/conference_table" do
   @info = Conference.all
-  binding.pry
   erb :"conference/conference_table"
 end
 
 MyApp.get "/delete_conference/:id" do
-  @info = Conference.find_by_id(params[:id])
+  conference = Conference.find_by_id(params[:id])
+  binding.pry
+  if conference.delete_conference? == true
+    conference.delete
   erb :"conference/conference_delete"
+  else
+  erb :"conference/conference_delete_invalid"
+  end 
 end

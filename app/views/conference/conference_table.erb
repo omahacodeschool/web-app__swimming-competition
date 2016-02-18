@@ -8,16 +8,16 @@
       
    </TR>
       <th>Conference</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @info.each do |info| %>
-      <% if info.delete_conference? == false %>
-        <tr>
-          <td><%= info.conference %> - <a href="/delete_conference/<%= info.id %>">Delete</a></td>
-        </tr>
-      <% end %>
+      <tr>
+      <td><%= info.conference %>
+      <td><a href="/delete_conference/<%= info.id %>">Delete</a></td></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

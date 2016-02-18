@@ -2,8 +2,9 @@ class Conference < ActiveRecord::Base
 
   def delete_conference?
     x = self.id
-    y = Team.find_by_id(x)
-    if y == true
+    y = Team.where({"conference_id" => x })
+    binding.pry
+    if y.empty?
       return true
     else
       return false

@@ -6,17 +6,17 @@
     <tr>
       <th>Team</th>
       <th>Conference ID</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @info.each do |info| %>
       <tr>
-        <td><%= info.team %> -
-            <a href="/delete_team/<%= info.id %>">Delete</a>
-        </td>
+        <td><%= info.team %></td>
         <td><%= info.conference_name %></td>
-        </tr>
+        <td><a href="/delete_team/<%= info.id %>">Delete</a></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
