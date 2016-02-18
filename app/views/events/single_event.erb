@@ -2,6 +2,10 @@
 
 <h1><%= @event.event.capitalize %></h1>
 
+<form>
+<input type = "submit" value = "Lock Event">
+</form>
+
 <% if @event.completed == true%>
   <table border = 1px style="width:50%">
     <tr>
