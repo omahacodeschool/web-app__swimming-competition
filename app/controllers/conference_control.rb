@@ -12,6 +12,7 @@ end
 
 MyApp.get "/conference_table" do
   @info = Conference.all
+  binding.pry
   erb :"conference/conference_table"
 end
 
