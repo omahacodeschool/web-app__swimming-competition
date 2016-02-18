@@ -11,8 +11,8 @@ MyApp.post "/award_added" do
 
     erb :"added/award_added"
   else
-    
-    erb :"banana/event_not_complete_yet"
+
+    erb :"misc/event_not_over"
   end
 end
 
