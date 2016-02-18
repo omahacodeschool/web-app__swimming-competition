@@ -46,4 +46,10 @@ MyApp.get "/results/view/:id" do
   erb :"results/result_details"
 end
 
+MyApp.post "/results/lock/:id" do
+  @results = Event.find_by_id(params[:id])
+  @reults.locked = true
+  @results.save
+  erb :"updated"
+end
 

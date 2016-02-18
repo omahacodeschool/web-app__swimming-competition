@@ -42,6 +42,9 @@
             </form>
             <a href="/results/edit/<%= r.id %>">
               <input type="submit" value="edit">
+            <form action="/results/lock/<%= r.id %>" method="post">
+              <input type="submit" value="LOCK">
+            </form>               
             </a>            
           </td>
         <% end %>          
