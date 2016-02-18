@@ -9,7 +9,7 @@ class Activity < ActiveRecord::Base
   end
 
   def get_activity_winners
-    y = Result.where({"activity_id" => self.id})
+    y = Result.where({"activity_id" => self.id}).where.not({"score" => nil})
     return y.order('score DESC').limit(3)
   end
 

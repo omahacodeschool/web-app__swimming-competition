@@ -42,23 +42,25 @@
       <th>&emsp;&emsp;</th>
       <th>Score</th>
       <th>&emsp;&emsp;</th>
-      <th>Possible Points&emsp;</th>
+      <th>Max Possible Score</th>
     </tr>
   </thead>
   <tbody>
       <% @results.each do |r| %>
       <tr>
-        <td><%= r.get_activity_name %></td>
+        <td><a href="/activities/activity/<%= r.activity_id %>"><%= r.get_activity_name %></a></td>
         <td>&emsp;&emsp;</td>
         <td><%= r.get_activity_locked_status %></td>
         <td>&emsp;&emsp;</td>
         <td><%= r.score %></td>
         <td>&emsp;&emsp;</td>
-        <td><%= r.get_activity_max_score %></td>
+        <td>&emsp;<%= r.get_activity_max_score %></td>
       </tr>
       <% end %>
   </tbody>
 </table>
+</center>
+
 <br>
 <br>
 <br>

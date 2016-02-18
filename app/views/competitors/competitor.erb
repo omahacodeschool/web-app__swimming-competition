@@ -22,7 +22,7 @@ Conference:&nbsp;<b><%= @competitor.get_conference_name %></b>
   <tbody>
       <% @results.each do |r| %>
       <tr>
-        <td><%= r.get_activity_name %></td>
+        <td><a href="/activities/activity/<%= r.activity_id %>"><%= r.get_activity_name %></a></td>
         <td>&emsp;&emsp;</td>
         <td><%= r.get_activity_locked_status %></td>
         <td>&emsp;&emsp;</td>
