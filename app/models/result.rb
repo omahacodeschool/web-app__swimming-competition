@@ -12,4 +12,10 @@ class Result < ActiveRecord::Base
     return event
   end
 
+  def event_locked
+    locked = Event.find_by_id(self.event_id)
+    locked = locked.locked
+    return locked
+  end
+
 end

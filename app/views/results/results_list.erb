@@ -22,6 +22,19 @@
       <td align="center">
         <%=result.time.to_s %>
       </td>
+
+      <% if result.event_locked == true %>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>
+        </td>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>  
+        </td>
+      <% else %>
       <td align="center">  
         <form action = "/delete_result/<%= result.id %>" method = "post">
           <input type = "submit" value = "Delete">
@@ -32,6 +45,7 @@
           <input type = "submit" value = "Edit">
         </form>
       </td>
+      <% end %>
   </tr>
     <% end %>
 </table>
