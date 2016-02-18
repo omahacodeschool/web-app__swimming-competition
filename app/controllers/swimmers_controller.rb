@@ -9,7 +9,7 @@ MyApp.post "/view_add_swimmer_confirmation" do
   @show_added_name = (params["swim_1_name"])
   @show_added_school = params["school_1_name"]
 
-  erb :"view_add_swimmer_confirmation"
+  erb :"view_add_swimmer"
 end
 
 MyApp.get "/view_add_swimmer" do

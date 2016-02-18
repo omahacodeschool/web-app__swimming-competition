@@ -1,11 +1,12 @@
 <center>
-<a href="/">
+    <a href="/">
       Home
+    </a>
   <br>
   <br>
-    <center>
-<h1>
-      Schools<br>
+    <h1>
+      Schools
+      <br>
     </h1>
   <br>
    <br>
@@ -15,18 +16,30 @@
         <th>ID</th>
         <th>Name</th>
          <th>Conference</th>
+         <th>Delete</th>
       </tr>
+
       <% School.all.each do |n| %> 
-      <tr> 
-        <td><%= n.id %></td>
-        <td><%= n.school_name %></td>
-        <td><%= Conference.find_by_id(n.conference_id).conference_name %></td>
-      
-      </tr>
+        <tr> 
+          <td>
+            <%= n.id %>
+          </td>
+          <td>
+            <%= n.school_name %>
+          </td>
+          <td>
+            <%= Conference.find_by_id(n.conference_id).conference_name %>
+          </td>
+          <td>
+            <form action="/delete_school/<%= n.id %>" method="post">
+              <input type="submit" value="X">
+            </form>
+          </td>
+        </tr>
       <% end %>
+  </table>
       <br>
-      <br>   
-    </table>
+      <br>       
   <br>
   <br>
     <h1>

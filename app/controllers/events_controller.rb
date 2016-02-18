@@ -8,6 +8,15 @@ MyApp.post "/view_add_event_confirmation" do
   erb :"view_add_event"
 end
 
+MyApp.post "/delete_event/:event_id" do
+  @event = Event.find_by_id(params[:event_id])
+  @event.delete
+  @signup = Signup.where("event_id" => :event_id)
+  @signup.delete_all
+
+  erb :"view_add_event"
+end
+
 MyApp.get "/view_add_event" do
 
   erb :"view_add_event"
