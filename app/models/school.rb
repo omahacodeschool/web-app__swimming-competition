@@ -7,8 +7,12 @@ class School < ActiveRecord::Base
 
   def conference
     c = Conference.find_by_id(self.conference_id)
-    conference = c.conference
-    return conference
+    if c == nil
+      return "No Data"
+    else
+      conference = c.conference
+      return conference
+    end
   end 
 
 end

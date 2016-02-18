@@ -11,21 +11,15 @@
   </tr>
   <tr>
     <% @schools.each do |school| %>
-      <% if school.school == nil %>
-      <% else %>
-        <td align="center">
-          <a href = "/view_school/<%= school.id %>">
-            <%= school.school %>
-          </a>
-        </td>
-      <% end %>
+      <td align="center">
+        <a href = "/view_school/<%= school.id %>">
+          <%= school.school %>
+        </a>
+      </td>
 
-      <% if school.conference == nil %>
-      <% else %>
-        <td align="center">
-          <%=school.conference %>
-        </td>
-      <% end %>
+      <td align="center">
+        <%=school.conference %>
+      </td>
       
       <td align="center">
         <form action = "/delete_school/<%= school.id %>" method = "post">
