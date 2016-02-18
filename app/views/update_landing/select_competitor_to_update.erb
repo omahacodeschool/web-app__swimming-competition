@@ -1,0 +1,14 @@
+<p>Select a competitor to update:</p>
+
+<% @competitors.each do |x| %>
+  <p>
+    <a href="update_competitor/<%= x.id %>">
+      <%= x.competitor_name %>
+    </a>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

@@ -1,0 +1,20 @@
+<p>Select an event detail to update:</p>
+
+<% @event_details.each do |x| %>
+  <p>
+    <b>Event:</b>  
+      <a href="update_event/<%= x.event_id %>"><%= x.event_name %></a>
+    <b>Competitor:</b> 
+      <a href="update_competitor/<%= x.competitor_id %>"><%= x.competitor_name %></a>
+    <br>
+    <b>Finish Time:</b> 
+    <a href="update_event_detail/<%= x.finish_time %>">
+      <%= x.finish_time %>
+    </a>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

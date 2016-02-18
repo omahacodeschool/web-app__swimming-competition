@@ -1,0 +1,14 @@
+<p>Select an event to update:</p>
+
+<% @events.each do |x| %>
+  <p>
+    <a href="update_event/<%= x.id %>">
+      <%= x.event_name %>
+    </a>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

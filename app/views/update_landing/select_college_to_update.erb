@@ -1,0 +1,14 @@
+<p>Select a college to update:</p>
+
+<% @colleges.each do |x| %>
+  <p>
+    <a href="update_college/<%= x.id %>">
+      <%= x.college_name %>
+    </a>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>
