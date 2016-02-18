@@ -1,3 +1,13 @@
+MyApp.get "/college_delete/:id" do
+  @college = College.find_by_id(params[:id])
+  @college.delete
+
+  erb :"success_college_deleted"
+end
+
+
+
+
 MyApp.get "/form_for_editing_college/:id" do
   @college = College.find_by_id(params[:id])
 
