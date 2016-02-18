@@ -22,7 +22,7 @@
           </td>
           <td><%= r.event_access.name %></td>
           <td><%= r.time %> (seconds)</td>
-          <td><%= r.rookery_access.name %></td>
+          <td><%= r.rookery_access.name %> (<%= r.rookery_access.conference_access.name %>)</td>
           <td>
             <form action="/results/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
