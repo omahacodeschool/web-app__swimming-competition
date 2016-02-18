@@ -1,11 +1,11 @@
 MyApp.get "/results" do
   @events = Event.all
-erb :"result/all_results"
+  erb :"result/results"
 end
 
-# view that shows the form for adding an 'event'.
-MyApp.get "/create_result/:event" do
-  erb :"result/create_result/"
+MyApp.get "/view_results/:event" do
+  @event = Event.find_by_id(params[:event])
+  erb :"result/view_results"
 end
 
 # view that shows the user that they have successfully created a 'result'.

@@ -3,5 +3,5 @@
 <h1>View and Edit Results by Event</h1>
 
 <% @events.each do |ev| %>
-  <p><%= ev.event_name %></p>
+  <p><a href="/view_results/<%= ev.id %>"><%= ev.event_name %></a></p>
 <% end %>
