@@ -1,11 +1,15 @@
 <center>
+
 <h1>Conference List</h1>
+
 <table border = 1px style="width:50%">
+
   <tr>
     <th>Conference</th>
     <th>Delete</th>
     <th>Edit</th>
   </tr>
+
   <tr>
     <% @conferences.each do |conference| %>
       <td align="center">
@@ -14,7 +18,7 @@
         </a>
       </td>
       <td align="center"> 
-        <form action = "/delete_conference/<%= conference.id %>" method = "post">
+        <form action = "/delete_conference/<%= conference.no_can_do %>" method = "post">
           <input type = "submit" value = "Delete">
         </form>
       </td>
@@ -28,4 +32,5 @@
 </table>
 
 <p><a href = "/">Home</a></p>
+
 </center>
