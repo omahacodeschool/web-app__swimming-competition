@@ -14,9 +14,20 @@
       </tr>
       <% Event.all.each do |n| %> 
       <tr> 
-        <td><%= n.id %></td>
-        <td><%= n.event_name %></td>
-        <td><%= n.locked? %></td>
+        <td>
+          <%= n.id %>
+        </td>
+        <td>
+          <%= n.event_name %>
+        </td>
+        <td>
+          <%= n.locked? %>
+        </td>
+        <td>
+            <form action="/delete_event/<%= n.id %>" method="post">
+              <input type="submit" value="X">
+            </form>
+          </td>
       </tr>
       <% end %>
       <br>  
