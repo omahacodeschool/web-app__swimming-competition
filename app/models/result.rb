@@ -1,8 +1,8 @@
 class Result < ActiveRecord::Base
  
-  def order_scores(x)
-    @os = x.order(:"overall").reverse
+  def order_scores
+    .order(:"overall").reverse
   end
-  
+
 end
 
