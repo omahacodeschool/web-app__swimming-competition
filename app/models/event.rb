@@ -19,7 +19,11 @@ class Event < ActiveRecord::Base
       return "Event not over"
     end
   end
+
+  def event_lock
     
-  
+  end
+    
+
 end
 

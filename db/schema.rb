@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "event_name"
+    t.string   "lock"
   end
 
   create_table "signup_results", force: :cascade do |t|

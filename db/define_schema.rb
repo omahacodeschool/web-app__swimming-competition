@@ -24,6 +24,7 @@ DB.define_column("swimmer_infos", "weight", "integer")
 
 DB.define_table("events")
 DB.define_column("events", "event_name", "string")
+DB.define_column("events", "lock", "boolean")
 
 
 DB.define_table("signup_results")

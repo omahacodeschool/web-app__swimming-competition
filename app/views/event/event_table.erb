@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Event</th>
+      <th>Lock</th>
     </tr>
   </thead>
 
@@ -12,6 +13,7 @@
     <% @info.each do |info| %>
       <tr>
         <td><a href="/event/<%= info.id %>"><%= info.event_name %></a></td>
+        <td><a href="/event_lock/<% info.id %>"></td>
         </tr>
     <% end %>
   </tbody>

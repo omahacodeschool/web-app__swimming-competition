@@ -30,7 +30,8 @@ MyApp.get "/edit_team/:id" do
  erb :"team/edit_team_form"
 end
 
-MyApp.post "/process_edit_form"
+
+MyApp.post "/process_edit_form" do
  @info = Team.find_by_id(params[:id])
  @info.team = params["team"]
  @info.conference_id = params["conference_id"]
