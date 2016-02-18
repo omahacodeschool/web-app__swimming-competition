@@ -23,7 +23,7 @@ MyApp.post "/view_add_signup_confirmation" do
   @show_got_swim_id = a.ids[0]
 
   @all_signups = Signup.all
-  erb :"view_add_signup_confirmation"
+  erb :"view_add_signup"
 end
 
 

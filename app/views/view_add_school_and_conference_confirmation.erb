@@ -1,6 +1,30 @@
 <center>
   <br>
   <br>
+    <center>
+<h1>
+      Schools<br>
+    </h1>
+  <br>
+   <br>
+  <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+         <th>Conference</th>
+      </tr>
+      <% School.all.each do |n| %> 
+      <tr> 
+        <td><%= n.id %></td>
+        <td><%= n.school_name %></td>
+        <td><%= Conference.find_by_id(n.conference_id).conference_name %></td>
+      
+      </tr>
+      <% end %>
+      <br>
+      <br>   
+    </table>
   <br>
   <br>
     <h1>

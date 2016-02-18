@@ -41,7 +41,7 @@ MyApp.post  "/view_add_score_confirmation" do
         @sorted_signup_records << @signup_records
   end
 
-erb :"view_add_score_confirmation"
+erb :"view_add_score"
 end
 
 MyApp.get  "/view_add_score" do

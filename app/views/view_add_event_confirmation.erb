@@ -1,8 +1,23 @@
 <center>
   <br>
-  <br>
-  <br>
-  <br>
+    <h1> 
+      Events 
+    </h1>
+  <table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        <th>ID</th>
+        <th>Event Name</th>
+         <th>Locked?</th>
+      </tr>
+      <% Event.all.each do |n| %> 
+      <tr> 
+        <td><%= n.id %></td>
+        <td><%= n.event_name %></td>
+        <td><%= n.locked? %></td>
+      </tr>
+      <% end %>
+      <br>  
+    </table>
     <h1>
       Success!
     </h1>

@@ -5,7 +5,7 @@ MyApp.post "/view_add_event_confirmation" do
   @event_1.save
   @show_added_event_name = (params["event_1_name"])
 
-  erb :"view_add_event_confirmation"
+  erb :"view_add_event"
 end
 
 MyApp.get "/view_add_event" do

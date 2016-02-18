@@ -1,13 +1,29 @@
 <center>
+<a href="/">
+      Home
   <br>
-  <br>
-  <br>
-  <br>
-    <h1>
-      This will add a swimmer to the database.
+    <h1> 
+      Swimmers 
     </h1>
-  <br>
-  <br>
+  <table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+         <th>School</th>
+      </tr>
+      <% Swimmer.all.each do |n| %> 
+      <tr> 
+        <td><%= n.id %></td>
+        <td><%= n.swimmer_name %></td>
+        <td><%= School.find_by_id(n.school_id).school_name %></td>
+      </tr>
+      <% end %>
+      <br>
+      <br>   
+    </table>
+    <h2>
+      This will add a swimmer to the database.
+    </h2>
   <br>
     <form action="/view_add_swimmer_confirmation" method="post">
       Swimmer name:

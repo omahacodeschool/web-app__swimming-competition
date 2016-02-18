@@ -14,7 +14,7 @@ MyApp.post "/view_add_school_and_conference_confirmation" do
 
 
   
-  erb :"view_add_school_and_conference_confirmation"
+  erb :"view_add_school_and_conference"
 end
 
 MyApp.get "/view_add_school_and_conference" do

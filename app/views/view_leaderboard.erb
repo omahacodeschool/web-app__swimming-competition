@@ -1,12 +1,13 @@
+<center>
 <h1>
-      Current Sign-ups:
+      Scored Events<br>
     </h1>
   <br>
    <br>
-     <% @ordered_event_ids.each do |a|%>
+     <% Event.all.each do |a|%>
   <table border="1" cellpadding="5" cellspacing="5">
       <tr>
-        <th><%= Event.find_by_id(a).event_name %>
+        <th><%= a.event_name %>
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -14,7 +15,7 @@
          <th>Conference</th>
         <th>Swim Time</th>
       </tr>
-      <% Signup.where("event_id" => a).each do |n| %> 
+      <% Signup.where("event_id" => a.id).each do |n| %> 
       <tr> 
         <td><%= n.id %></td>
         <td><%= n.get_swimmer_name %></td>
@@ -24,5 +25,9 @@
       
       </tr>
       <% end %>
-    <% end %>    
+      <br>
+      <br>   
     </table>
+    <% end %> 
+
+</center>
