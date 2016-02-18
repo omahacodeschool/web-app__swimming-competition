@@ -1,10 +1,13 @@
 <h1><%= @comp_obj.name %> Competiton Winners</h1>
 
-
-<% @os.each do |x| %>
-  <p>
-    <%= x.overall %> 
-    <%= x.contestant.first_name %>
-    <%= x.contestant.last_name %>
-  </p>
+<%if @unscored == nil %>
+  <% @os.each do |x| %>
+    <p>
+      <%= x.overall %> 
+      <%= x.contestant.first_name %>
+      <%= x.contestant.last_name %>
+    </p>
+  <% end %>
+<% else %>
+  <%= "This competition has not yet finished" %>
 <% end %>

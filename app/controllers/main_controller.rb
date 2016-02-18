@@ -20,6 +20,7 @@ MyApp.get "/competition_winners/:competition_id" do
 
   @all_scores = Result.where(competition_id: @comp_obj.id)
   @os = @all_scores.order(:"overall")
+  @unscored = @os.find_by_overall(nil)
   @os = @os.limit(3).reverse
   erb :"competition_winners"
 end
