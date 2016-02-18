@@ -6,6 +6,7 @@
     <tr>
       <th>Team</th>
       <th>Conference ID</th>
+      <th>Edit</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= info.team %></td>
         <td><%= info.conference_name %></td>
+        <td><a href="/edit_team/<%= info.id %>">Edit</a></td>
         <td><a href="/delete_team/<%= info.id %>">Delete</a></td>
       </tr>
     <% end %>

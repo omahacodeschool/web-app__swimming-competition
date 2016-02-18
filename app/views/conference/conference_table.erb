@@ -1,4 +1,3 @@
-
 <center>
 
 <TABLE  BORDER="5" WIDTH="25%" >
@@ -8,6 +7,7 @@
       
    </TR>
       <th>Conference</th>
+      <th>Edit</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -15,8 +15,9 @@
   <tbody>
     <% @info.each do |info| %>
       <tr>
-      <td><%= info.conference %>
-      <td><a href="/delete_conference/<%= info.id %>">Delete</a></td></td>
+        <td><%= info.conference %></td>
+        <td><a href="/conference_edit/<%= info.id %>">Edit</a></td>
+        <td><a href="/delete_conference/<%= info.id %>">Delete</a></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +26,4 @@
 <br>
 <br>
 
-<center><a href="http://localhost:9292/">Admin Page</a></center>
+<center><a href="/">Admin Page</a></center>

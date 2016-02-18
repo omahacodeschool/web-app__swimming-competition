@@ -18,6 +18,26 @@ MyApp.get "/team_table" do
  erb :"/team/team_table"
 end
 
+#Updates team
+MyApp.get "/edit_team/:id" do
+ @info = Team.find_by_id(params[:id])
+ erb :"team/edit_team_form"
+end
+
+#Updates team
+MyApp.get "/edit_team/:id" do
+ @info = Team.find_by_id(params[:id])
+ erb :"team/edit_team_form"
+end
+
+MyApp.post "/process_edit_form"
+ @info = Team.find_by_id(params[:id])
+ @info.team = params["team"]
+ @info.conference_id = params["conference_id"]
+ @info.save
+ erb :"team/updated_team"
+end
+
 #Deletes team
 MyApp.get "/delete_team/:id" do
  team = Team.find_by_id(params[:id])
