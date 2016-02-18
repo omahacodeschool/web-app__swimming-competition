@@ -5,14 +5,14 @@ class Conference < ActiveRecord::Base
     return schools
   end
 
-  def no_can_do
+  def has_schools
     schools = School.where("conference_id" => self.id)
     schools.each do |s|
       if s.school != nil
-        return "no_can_do"
+        return true
       end
     end
-    return self.id
+    return false
   end
 
 end

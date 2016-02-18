@@ -16,18 +16,14 @@ MyApp.get "/view_conference/:conference_id" do
   erb :"conferences/single_conference"
 end
 
-MyApp.post "/delete_conference/no_can_do" do
-  erb :"conferences/no_can_do"
-end
-
 MyApp.post "/delete_conference/:conference_id" do
   @conference = Conference.find_by_id(params[:conference_id])
-  @conference.delete
-  @school = School.where("conference_id" => params[:conference_id])
-  @school.each do |s|
-    s.delete
+  if @conference.has_schools == true
+    erb :"conferences/no_can_do"
+  else
+    @conference.delete
+    erb :"conferences/deleted"
   end
-  erb :"conferences/deleted"
 end
 
 MyApp.get "/edit_conference/:conference_id" do
