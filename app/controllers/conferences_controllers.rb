@@ -16,7 +16,7 @@ MyApp.get "/view_conference/:conference_id" do
   erb :"conferences/single_conference"
 end
 
-MyApp.get "/delete_conference/no_can_do" do
+MyApp.post "/delete_conference/no_can_do" do
   erb :"conferences/no_can_do"
 end
 
