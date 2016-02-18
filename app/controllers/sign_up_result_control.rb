@@ -28,9 +28,13 @@ end
 
 #Deletes swimmer
 MyApp.get "/delete_swimmer/:id" do
- @swimmer = SwimmerInfo.find_by_id(params[:id])
- @swimmer.delete
- erb :"sign_result/swimmer_deleted"
+  @swimmer = SwimmerInfo.find_by_id(params[:id])
+  if @swimmer.lock == true
+    erb :"event/sorry_event_locked"
+  else 
+    @swimmer.delete
+    erb :"sign_result/swimmer_deleted"
+  end
 end
 
 
@@ -48,4 +52,19 @@ MyApp.post "/process_signup_form/:id" do
   @info.save
   erb :"sign_result/updated"
 end
+
+MyApp.get "/delete_event/:id" do
+  @info = SignupResult.find_by_id(params[:id])
+  @info.event_locked?
+  if true
+    erb :"event/sorry_event_locked"
+  else 
+    @info.delete
+    erb :"sign_result/delete_successful"
+  end
+end
+
+
+
+
 

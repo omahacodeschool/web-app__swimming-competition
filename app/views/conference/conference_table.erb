@@ -16,7 +16,7 @@
     <% @info.each do |info| %>
       <tr>
         <td><%= info.conference %></td>
-        <td><a href="/conference_edit/<%= info.id %>">Edit</a></td>
+        <td><a href="/process_edit_form/<%= info.id %>">Edit</a></td>
         <td><a href="/delete_conference/<%= info.id %>">Delete</a></td>
       </tr>
     <% end %>

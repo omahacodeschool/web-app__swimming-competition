@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "event_name"
-    t.string   "lock"
+    t.boolean  "lock"
   end
 
   create_table "signup_results", force: :cascade do |t|
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "event_id"
     t.float    "time"
     t.integer  "rank"
+    t.boolean  "lock"
   end
 
   create_table "swimmer_infos", force: :cascade do |t|

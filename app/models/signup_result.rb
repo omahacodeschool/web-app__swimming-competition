@@ -24,5 +24,14 @@ class SignupResult < ActiveRecord::Base
     end
   end
 
+  def event_locked?
+    x = self.id
+    y = Event.find_by_id(x)
+    binding.pry
+    z = y.find("lock")
+    binding.pry
+    z
+  end
+
 
 end

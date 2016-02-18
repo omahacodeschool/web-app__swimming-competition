@@ -20,3 +20,25 @@ MyApp.post "/lock_event/:id" do
   @info.save
   erb :"event/event_locked_success"
 end
+
+MyApp.post "/process_edit_form/:id" do
+  @info = Event.find_by_id(params[:id])
+  @info.event_name = params["event_name"]
+  if @info.event_locked? == true
+    erb :"event/sorry_event_locked"
+  else
+    @info.save
+    erb :"event/update_success"
+  end
+end
+
+
+MyApp.get "/delete_event/:id" do
+  @info = Event.find_by_id(params[:id])
+  if @info.event_locked? == true
+    erb :"event/sorry_event_locked"
+  else 
+    @info.delete
+    erb :"/event/delete_success"
+  end
+end

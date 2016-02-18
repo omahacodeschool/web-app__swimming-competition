@@ -12,6 +12,7 @@
       <th>Time</th>
       <th>Rank</th>
       <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -27,6 +28,7 @@
           <td><%= info.time %></td>
           <td><%= info.rank %></td>
           <td><a href="/edit_form/<%= info.id %>">Edit</a></td>
+          <td><a href="/delete_event/<%= info.id %>">Delete</td>
         </tr>
       <% end %>
 

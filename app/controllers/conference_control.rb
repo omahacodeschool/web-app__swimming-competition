@@ -15,7 +15,7 @@ MyApp.get "/conference_table" do
   erb :"conference/conference_table"
 end
 
-MyApp.get "/conference_edit/:id" do
+MyApp.get "/process_edit_form/:id" do
   @info = Conference.find_by_id(params[:id])
   erb :"conference/conference_edit_form"
 end
