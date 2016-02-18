@@ -28,7 +28,7 @@
             <%= n.school_name %>
           </td>
           <td>
-            <%= Conference.find_by_id(n.conference_id).conference_name %>
+            <%= n.get_conference_name %>
           </td>
           <td>
             <form action="/delete_school/<%= n.id %>" method="post">
