@@ -7,8 +7,8 @@ MyApp.get "/winners" do
 end
 
 MyApp.get "/2015" do
-  @a = Result.where("competition_id = '1'")
-  binding.pry
+  @all_scores = Result.where("competition_id = '1'")
+  order_scores(@all_scores)
   erb :"2015_winners"
 end
 

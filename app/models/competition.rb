@@ -23,10 +23,10 @@ class Competition < ActiveRecord::Base
     end
 
     # objects_by_contestant_id is a collection of rows in the contestants table with a matching value for contestant_ids in the id column
-    @objects_by_contestant_id = Contestant.where("id" => contestant_ids_collection)
+    objects_by_contestant_id = Contestant.where("id" => contestant_ids_collection)
     
     #returns a collection of objects in the contestants table
-    return @objects_by_contestant_id
+    return objects_by_contestant_id
   end
 
 
