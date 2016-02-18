@@ -16,9 +16,15 @@
         <td><form action="/edit_division_form/<%=d.id%>">
               <input type="submit" value="Edit"></td>
             </form>
+        <% if d.all_squads.empty? %>
         <td><form action="/delete_division/<%=d.id%>" method="post">
               <input type="submit" value="Delete"></td>
-            </form>    
+            </form>
+        <% else %>
+        <td><form action="/delete_division_fail">
+              <input type="submit" value="Delete"></td> 
+            </form> 
+        <% end %>  
       </tr>
     <% end %>
   </tbody>

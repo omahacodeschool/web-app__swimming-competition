@@ -37,3 +37,7 @@ MyApp.post "/delete_division/:division_id" do
   @division.delete
   erb :"division_views/delete_success"
 end
+
+MyApp.get "/delete_division_fail" do
+  erb :"division_views/delete_fail"
+end
