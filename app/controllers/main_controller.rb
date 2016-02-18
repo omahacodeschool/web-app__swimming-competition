@@ -8,7 +8,7 @@ end
 
 MyApp.get "/2015" do
   @all_scores = Result.where("competition_id = '1'")
-  @os = @all_scores.order_scores
+  @os = @all_scores.order(:"overall").reverse
   erb :"2015_winners"
 end
 
