@@ -1,26 +1,11 @@
 <a href="/">home</a>
-<h1>Step 1: Select the Event</h1>
+<h1>Create a Single Result</h1>
 
-<!-- Hidden radio form, I like the dropdown better!
-<form action="/create_result/event">
-  <% @events.each do |e| %>
-  <input type="radio" name="event" value="<%= e.id %>"><%= e.event_name %><br>
-  <% end %>
-  <input type="submit" value="next">
-</form>
--->
-
-<form action="/create_result/event" method="post">
+<form action="/create_result/success">
   <fieldset>
-    <legend>Find Event:</legend>
-
-    <select type="number" name="event">
-      <% @events.each do |e| %>
-      <option value="<%= e.id %>"><%= e.event_name %></option>
-      <% end %>
-    </select>
-
-    <input type="submit" value="next">
-
+    <legend>Create Result:</legend> 
+    <input type="number" name="signup_id">
+    <input type="integer" name="time">
+    <input type="submit">
   </fieldset>
 </form>

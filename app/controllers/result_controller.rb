@@ -1,19 +1,14 @@
 # view that shows the form for adding an 'event'.
 MyApp.get "/create_result" do
-  @events = Event.all
   erb :"result/create_result"
 end
 
-MyApp.get "/create_result/event" do
-  @signups = Signup.where
-
-  erb :"result/create_result_event"
-end
 
 # view that shows the user that they have successfully created a 'result'.
 MyApp.get "/create_result/success" do
   x = Result.new
   # x.result_name is a new Active Record method that sets a Result Object attribute name to 'result_name'.
+  x.signup_id = params["signup_id"]
   x.time = params["time"]
   # x.save is a new Active Record method that saves that Result Object to the 'results' table.
   x.save
