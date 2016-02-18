@@ -30,13 +30,24 @@
 <p>
 Then:
 <br />
-<a href="/add_swimmers">Add Swimmers</a>
+  
+  <% if Team.ids.any? %>
+    <a href="/add_swimmers">Add Swimmers</a>
+  <% else %>
+    <strong style="color:red">
+      Please add teams before moving forward
+    </strong>
+  <% end %>
+  
 </p>
 
 <br />
-<h3>Added Teams:</h3>
+
 <table border="1">
   <thead>
+    <tr>
+      <th colspan="4"> ADDED TEAMS </th>
+    </tr>
     <tr>
       <th> Team </th>
       <th> Conference </th>

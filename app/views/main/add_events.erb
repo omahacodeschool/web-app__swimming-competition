@@ -23,13 +23,22 @@
 <p>
 Then:
 <br />
-<a href="/add_conferences">Add Conferences</a>
+  <% if Event.ids.any? %>
+    <a href="/add_conferences">Add Conferences</a>
+  <% else %>
+    <strong style="color:red">
+      Please add events before moving forward
+    </strong>
+  <% end %>
 </p>
 
 <br />
-<h3>Added Events:</h3>
+
 <table border="1">
   <thead>
+    <tr>
+      <th colspan="4"> ADDED EVENTS </th>
+    </tr>
     <tr>
       <th> Event </th>
       <th> Current Record (sec.) </th>

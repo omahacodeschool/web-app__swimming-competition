@@ -1,6 +1,5 @@
 <h2>Add Run Info Below</h2>
 
-
 <a href="/">Home</a>
 <br />
 <a href="/add_events">Go To Add Events</a>
@@ -10,6 +9,7 @@
 <a href="/add_teams">Go To Add Teams</a>
 <br />
 <a href="/add_swimmers">Go To Add Swimmers</a>
+<br />
 
 
 <form action="/runs_form" method="post">
@@ -53,12 +53,32 @@
 </form>
 
 <br />
-<h3>Added Runs:</h3>
 
+<p>
+
+  <% if Run.ids.any? %>
+    <strong style="color:green">
+      THANK YOU!
+    </strong>
+  <% else %>
+    <strong style="color:red">
+      Please add runs
+    </strong>
+  <% end %>
+
+</p>
+
+<br />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="5"> ADDED RUNS </th>
+    </tr>
+  </thead>
 
 <% Event.all.each do |e| %>
-  <table border="1"> 
-    
+  <p>
     <thead>
       <tr>
         <th colspan="2"><%= e.event_name %></th>
@@ -101,7 +121,7 @@
               <input type="submit">
             </td>
           </tr>
-          
+
           <% if e.event_complete == true %>
               
             <tr>
@@ -114,7 +134,7 @@
 
             <tr>
               <td colspan="2" style="color:red">
-                <center>LOCKED</center>
+                <center><strong>LOCKED</strong></center>
               </td>
             </tr>
 
@@ -124,8 +144,6 @@
         </form>
       
       </tbody>
-  
-    </table>
-  <br />
-
+  </p>
 <% end %>
+</table>

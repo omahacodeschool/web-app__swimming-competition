@@ -19,13 +19,24 @@
 <p>
 Then:
 <br />
-<a href="/add_teams">Add Teams</a>
+  
+  <% if Conference.ids.any? %>
+    <a href="/add_teams">Add Teams</a>
+  <% else %>
+    <strong style="color:red">
+      Please add conferences before moving forward
+    </strong>
+  <% end %>
+  
 </p>
 
 <br />
-<h3>Added Conferences:</h3>
+
 <table border="1">
   <thead>
+    <tr>
+      <th colspan="3"> ADDED CONFERENCES </th>
+    </tr>
     <tr>
       <th> Name </th>
     </tr>

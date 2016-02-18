@@ -15,7 +15,7 @@ MyApp.get "/delete_conference/:conference_id" do
   if @conference.del_conference_check
     erb :"main/add_conferences"
   else
-    @error = "YOU CAN'T DELETE THIS"
+    @error = "YOU CAN'T DELETE THIS: TEAMS ASSOCIATED WITH THIS CONFERENCE"
     erb :"main/add_conferences"
   end
   #erb :"main/delete_error"

@@ -1,21 +1,39 @@
 <center><h1>Swim Competition Sign-Up</h1></center>
 
-<!--Link to page to form for admin to enter events to the database -->
+<center>
 <p>
-First:
+<strong>Start Here:</strong>
 <br />
 <a href="/add_events">Add Events</a>
 </p>
+
+
+<p>
+<strong>Go To:</strong>
 <br />
-<p>(You can worry about this stuff later)</p>
-<!--Link to page to form for admin to add conferences-->
-<a href="/add_conferences">Add Conferences</a>
-<br />
-<!--Link to page to form for admin to add schools and select conference-->
-<a href="/add_teams">Add Teams</a>
-<br />
-<!--Link to page to form for admin to add swimmers-->
-<a href="/add_swimmers">Add Swimmers</a>
-<br />
-<!--Link to page to form for admin to log event results-->
-<a href="/add_runs">Add Runs</a>
+
+<% if Conference.ids.any? %>
+  <a href="/add_conferences">Add Conferences</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Team.ids.any? %>
+  <a href="/add_teams">Add Teams</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Swimmer.ids.any? %>
+  <a href="/add_swimmers">Add Swimmers</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Run.ids.any? %>
+  <a href="/add_runs">Add Runs</a>
+  <br />
+<% else %>
+<% end %>
+</p>
+</center>
