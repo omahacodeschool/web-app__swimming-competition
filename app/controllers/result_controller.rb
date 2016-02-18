@@ -1,14 +1,14 @@
 MyApp.get "/results" do
   # .all must be run on the class Result itself.
   # @results can be used in the view.
-  @results = Result.all
+  @events = Signup.event
  # binding.pry # what is '@results'?
 erb :"result/all_results"
 end
 
 # view that shows the form for adding an 'event'.
-MyApp.get "/create_result" do
-  erb :"result/create_result"
+MyApp.get "/create_result/:event" do
+  erb :"result/create_result/"
 end
 
 # view that shows the user that they have successfully created a 'result'.
