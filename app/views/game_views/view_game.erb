@@ -27,11 +27,15 @@
         <a href="/gamer/<%=r.gamer_access.id%>">
         <%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %>
       </td>
+      <% if r.completion_time == 0 %>
+      <td><center>N/F</center></td>
+      <% else %>
       <td>
         <center>
           <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
         </center>
       </td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>

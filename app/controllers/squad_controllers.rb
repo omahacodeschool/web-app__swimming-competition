@@ -38,6 +38,8 @@ end
 
 MyApp.post "/delete_squad/:squad_id" do
   @squad = Squad.find_by_id(params[:squad_id])
+  @squad.delete_all_gamers_results
+  @squad.all_gamers.delete_all
   @squad.delete
   erb :"squad_views/delete_success"
 end

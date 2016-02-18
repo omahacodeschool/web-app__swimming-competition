@@ -22,6 +22,7 @@ DB.define_column("gamers", "squad_id", "integer")
 #Set up Games table
 DB.define_table("games")
 DB.define_column("games", "game_name", "string")
+DB.define_column("games", "locked", "boolean")
 
 
 #Set up Squads table

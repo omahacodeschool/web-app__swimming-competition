@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "game_name"
+    t.boolean  "locked"
   end
 
   create_table "results", force: :cascade do |t|

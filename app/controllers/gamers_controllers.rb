@@ -40,6 +40,7 @@ end
 
 MyApp.post "/delete_gamer/:gamer_id" do
   @gamer = Gamer.find_by_id(params[:gamer_id])
+  @gamer.all_results.delete_all
   @gamer.delete
   erb :"gamers_views/delete_success"
 end

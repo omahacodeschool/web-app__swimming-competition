@@ -25,10 +25,14 @@
       <td><a href="gamer/<%=r.gamer_id%>">
           <%= r.gamer_access.last_name %>, <%= r.gamer_access.first_name %></a>
       </td>
+      <% if r.completion_time == 0 %>
+      <td><center>N/F</center></td>
+      <% else %>
       <td><center>
             <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
           </center>
       </td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
