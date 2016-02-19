@@ -2,12 +2,21 @@ class Event < ActiveRecord::Base
 
   # Return an Array of Competitor Objects for an event.
   def competitors
-    x = Signup.where({"event_id" => self.id})
-    comps = []
-    x.each do |e|
-      comps << e.competitor
+    signup_objects = Signup.where({"event_id" => self.id})
+    competitors_arr = []
+    signup_objects.each do |e|
+      competitors_arr << e.competitor
     end
-    return comps
+    return competitors_arr
   end 
+
+  def results
+    signup_objects = Signup.where({"event_id" => self.id})
+    results_arr =[]
+    signup_objects.each do |s|
+      results_arr << s.result
+    end
+    return results_arr
+  end
   
 end

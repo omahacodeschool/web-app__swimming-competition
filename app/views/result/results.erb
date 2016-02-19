@@ -4,6 +4,10 @@
 
 <h1>Results</h1>
 
+<% @events.each do |ev| %>
+<p><a href="/view_results/<%= ev.id %>"><%= ev.event_name %></a></p>
+<% end %>
+
 <table style="width:50%" border="1">
   <tr>
     <td>Result ID</td>

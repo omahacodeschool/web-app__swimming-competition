@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.integer  "signup_id"
     t.float    "time"
+    t.integer  "place"
   end
 
   create_table "schools", force: :cascade do |t|

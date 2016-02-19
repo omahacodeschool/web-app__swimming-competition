@@ -6,4 +6,8 @@ class Signup < ActiveRecord::Base
     return y
   end
 
+  def result
+    
+  end
+
 end

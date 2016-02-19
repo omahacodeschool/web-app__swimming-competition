@@ -1,9 +1,11 @@
 MyApp.get "/results" do
+  @events = Event.all
   @results = Result.all
   erb :"result/results"
 end
 
 MyApp.get "/view_results/:event" do
+  @event = Event.find_by_id(params[:event])
   @results = Result.all
   erb :"result/view_results"
 end
