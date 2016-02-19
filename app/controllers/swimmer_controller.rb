@@ -1,3 +1,12 @@
+MyApp.post "/swimmer_delete"
+
+
+
+  erb :"success_swimmer_deleted"
+end
+
+
+
 MyApp.get "/swimmer" do
 
   # If a GET request is made to the root path, the following line of code
