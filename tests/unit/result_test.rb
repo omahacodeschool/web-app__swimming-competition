@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SwimmerTest < Minitest::Test
+class ResultTest < Minitest::Test
   def setup
     super
     @c1 = Conference.new
@@ -38,17 +38,17 @@ class SwimmerTest < Minitest::Test
 
     @backstroke = Event.new
     @backstroke.event_name = "100 m Backstroke"
-    @baskstroke.event_locked = true
+    @backstroke.event_locked = true
     @backstroke.save
 
-    @breastroke = Event.new
-    @breastroke.event_name = "100 m Breastroke"
-    @baskstroke.event_locked = false
-    @breastroke.save
+    @breaststroke = Event.new
+    @breaststroke.event_name = "100 m Breaststroke"
+    @breaststroke.event_locked = false
+    @breaststroke.save
 
     @freestyle = Event.new
     @freestyle.event_name = "100 m Freestyle"
-    @baskstroke.event_locked = true
+    @freestyle.event_locked = true
     @freestyle.save
 
     @r1 = Result.new
@@ -71,33 +71,34 @@ class SwimmerTest < Minitest::Test
 
     @r4 = Result.new
     @r4.swimmer_id = @micheal_phelps.id
-    @r4.event_id = @breastroke.id
+    @r4.event_id = @breaststroke.id
     @r4.swimmer_time = 1.33
     @r4.save
 
     @r5 = Result.new
     @r5.swimmer_id = @ryan_lochte.id
-    @r5.event_id = @breastroke.id
+    @r5.event_id = @breaststroke.id
     @r5.swimmer_time = 1.34
     @r5.save
 
     @r6 = Result.new
     @r6.swimmer_id = @nick_keenan.id
-    @r6.event_id = @breastroke.id
+    @r6.event_id = @breaststroke.id
     @r6.swimmer_time = 2.43
     @r6.save
 
   end
-#This method exists in University Class, not actually sure that it even works or is used anywhere.
+
   def test_swimmer
-    assert_equal(@r5.swimmer, "Micheal Phelps")
+
+    assert_equal(@r4.swimmer, "Micheal Phelps")
     assert_equal(@r2.swimmer, "Ryan Lochte")
     refute_equal(@r3.swimmer, "Ryan Lochte")
   end
 
   def test_event
     assert_equal(@r1.event, "100 m Backstroke")
-    assert_equal(@r4.event, "100 m Breastroke")
+    assert_equal(@r4.event, "100 m Breaststroke")
     refute_equal(@r6.event, "100 m Freestyle")
   end
 end
