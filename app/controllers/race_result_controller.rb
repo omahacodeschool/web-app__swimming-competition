@@ -1,13 +1,10 @@
 MyApp.post "/race_result_delete_one_swimmer" do
 
-  @dq = RaceResult.new
-  @dq = swimmer_id(params[:id])
-  @dq.race_result_delete_one_swimmer
-  @dq.save
+  @dq = RaceResult.find_by_id(params[:id]) #find by id? I don't need the whole table.
+
 
   erb :"success_deleted_race_results_one_swimmer"
 end
-
 
 
 
@@ -51,9 +48,9 @@ MyApp.get "/race_result/create" do
 
   # Accepts the form entry data and creates the swimmer in the table. 
   r = RaceResult.new
-  r.swim_entry_id
-  r.swimmer_time
-  r.swimmer_race_rank
+  r.swim_entry_id =params[:swim_entry_id]
+  r.swimmer_done =params[:swimmer_done]
+  r.swimmer_race_rank = params[:swimmer_race_rank]
   r.save
 
 

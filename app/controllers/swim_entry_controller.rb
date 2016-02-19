@@ -1,4 +1,4 @@
-MyApp.post "/swim_entry_delete_one_swimmer" do
+MyApp.post "/swim_entry_delete_one_swimmer/:id" do
 
   @dq = SwimEntry.find_by_id(params[:id])
   
