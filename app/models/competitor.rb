@@ -10,7 +10,7 @@ class Competitor < ActiveRecord::Base
 		end
 	end
 
-#this method finds the results that match the competitor's id
+#this method finds the results that match the Competitor object's id
 #it then stores each Results' event_id in an Array
 # then returns the Event that matches the event_id
 	def event_entry
@@ -18,13 +18,6 @@ class Competitor < ActiveRecord::Base
 		if list_results.empty?
 			return nil
 		else
-			# event_id   | competitor_id  | time
-			#-------------------------------------
-			# 2 	     | 	1			  | 105
-			# 3 	     | 	1			  | 110
-			# 4 	     | 	1			  | 108
-			# 6 	     | 	1			  | 103
-
 			event_id_arr =[]
 			list_results.each do |result|
 				event_id_arr << result.event_id
@@ -38,9 +31,17 @@ class Competitor < ActiveRecord::Base
 		end
 	end
 
+
+#this method deletes the Result objects matching this Competitor object
 	def delete_competitor_info
 		Result.where("competitor_id" => self.id).delete_all
 	end
 
 end
 
+	# event_id   | competitor_id  | time
+			#-------------------------------------
+			# 2 	     | 	1			  | 105
+			# 3 	     | 	1			  | 110
+			# 4 	     | 	1			  | 108
+			# 6 	     | 	1			  | 103

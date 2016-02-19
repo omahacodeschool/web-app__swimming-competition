@@ -65,10 +65,11 @@ class CompetitorTest < Minitest::Test
     refute_includes(@cat.event_entry, @event3)
   end
 
-    def test_is_a_competitors_event_entry_empty
+  def test_is_a_competitors_event_entry_empty
     assert_includes(@cat3.event_entry, nil)
   end
 
   def test_delete_competitor_info
+    assert_includes(@cat2 == nil, @result_3 == nil)
   end
 end
