@@ -1,6 +1,6 @@
-MyApp.get  "/leaderboard" do
+MyApp.get "/leaderboard" do
 
   # Still under construction
 
-  erb :"views/leaderboard/leaderboard"
+  erb :"/leaderboard/leaderboard"
 end

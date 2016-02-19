@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  def get_all_event_names
+  def self.get_all_event_names
     all_event_names = []
     Event.all.each do |s|
       x = s.event_name

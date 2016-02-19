@@ -11,7 +11,7 @@ MyApp.post "/add_signup_confirmation" do
   
   @all_signups = Signup.all
 
-  erb :"views/signups/add_signup"
+  erb :"/signups/add_signup"
 end
 
 MyApp.post "/delete_signup/:signup_id" do
@@ -20,7 +20,7 @@ MyApp.post "/delete_signup/:signup_id" do
 
   @all_signups = Signup.all
 
-  erb :"views/signups/add_signup"
+  erb :"/signups/add_signup"
 end
 
 
@@ -29,5 +29,5 @@ MyApp.get "/add_signup" do
   @all_signups = Signup.all
 
   
-  erb :"views/signups/add_signup"
+  erb :"/signups/add_signup"
 end

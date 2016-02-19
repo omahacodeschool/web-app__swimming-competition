@@ -1,6 +1,6 @@
 class Swimmer < ActiveRecord::Base
 
-  def get_all_swimmer_names
+  def self.get_all_swimmer_names
     all_swim_names = []
     Swimmer.all.each do |s|
       x = s.swimmer_name

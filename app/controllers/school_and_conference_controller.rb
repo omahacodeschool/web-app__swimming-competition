@@ -12,7 +12,7 @@ MyApp.post "/add_school_and_conference_confirmation" do
   school_1.conference_id = conference_1.id
   school_1.save
   
-  erb :"views/school_and_conference/add_school_and_conference"
+  erb :"/school_and_conference/add_school_and_conference"
 end
 
 
@@ -26,7 +26,7 @@ MyApp.post "/delete_conference/:conference_id" do
   conference_1.delete
   schools_del.delete_all
 
-  erb :"views/school_and_conference/add_school_and_conference"
+  erb :"/school_and_conference/add_school_and_conference"
 end
 
 
@@ -42,7 +42,7 @@ MyApp.post "/delete_school/:school_id" do
   school_1.delete
   swimmers_del.delete_all
 
-  erb :"views/school_and_conference/add_school_and_conference"
+  erb :"/school_and_conference/add_school_and_conference"
 end
 
 
@@ -51,7 +51,7 @@ MyApp.get "/add_school_and_conference" do
   @conferences_all = Conference.all
   @schools_all = School.all
 
-  erb :"views/school_and_conference/add_school_and_conference"
+  erb :"/school_and_conference/add_school_and_conference"
 end
 
 

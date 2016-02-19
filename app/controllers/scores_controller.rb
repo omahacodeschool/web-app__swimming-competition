@@ -4,12 +4,14 @@ MyApp.post "/add_score_confirmation" do
   x.completed_swim_time =  params["signup_1_time"]
   x.save
 
-erb :"views/scores/add_score"
+erb :"/scores/add_score"
 end
 
 
 MyApp.get "/add_score" do
 
-  erb :"views/scores/add_score"
+  @sorted_signup_records = Signup.sort_signups_for_viewing_table
+
+  erb :"/scores/add_score"
 end
 

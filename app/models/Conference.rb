@@ -1,6 +1,6 @@
 class Conference < ActiveRecord::Base
 
-  def get_all_conference_names
+  def self.get_all_conference_names
     all_conference_names = []
     Conference.all.each do |s|
       x = s.conference_name

@@ -6,7 +6,7 @@ MyApp.post "/delete_data_confirmation" do
   Signup.delete_all
   Conference.delete_all
 
-  erb :"views/delete_data/delete_data_confirmation"
+  erb :"/delete_data/delete_data_confirmation"
 end
 
 
@@ -17,5 +17,5 @@ MyApp.get "/delete_data" do
   @all_school_names = School.get_all_school_names
   @all_conference_names = Conference.get_all_conference_names
 
-  erb :"views/delete_data/delete_data"
+  erb :"/delete_data/delete_data"
 end
