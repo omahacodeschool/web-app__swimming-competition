@@ -25,6 +25,5 @@ MyApp.get "/superadmin" do
 end
 
 
-#ADD SOMETHING FOR SUPERADMIN
 
 

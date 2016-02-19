@@ -2,25 +2,10 @@
 <h2>Enrolled Kitties:<h2>
 <ul>
   <% @swimmers.each do |post| %>
-    <li><%= post.id%>. 
-    <%=post.first_name%> 
-    <%=post.last_name%>  
-    (<%=post.find_college_name%>) 
+    <li><%= post.id%>. <%=post.swimmer_name%>
     <a href="/view_swimmer/<%=post.id%>">see more</a></li>
   <% end %>
-</ul> 
-<form action="/newswimmername" method="post">
-  <fieldset>
-    <legend>Add New Kitty</legend>
-      <label for="swimmer_first_name">Swimmer First Name</label>
-        <input type="text" name="swimmerfirstname">
-      <label for="swimmer_last_name">Swimmer Last Name</label>
-        <input type="text" name="swimmerlastname">
-      <label for="swimmer_college_id">College I.D. see below</label>
-        <input type="text" name="collegeid">
-      <input type="submit">
-  </fieldset>
-</form>
+</ul>
 
 Schools Represented in the Conference:
 
