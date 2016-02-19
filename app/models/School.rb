@@ -6,7 +6,6 @@ class School < ActiveRecord::Base
   end
 
 
-  
   def get_all_school_names
     all_school_names = []
     School.all.each do |s|
