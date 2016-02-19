@@ -87,10 +87,11 @@ class ResultTest < Minitest::Test
     @r6.swimmer_time = 2.43
     @r6.save
 
+    @results = Result.where({"event_id" => @backstroke.id})
+
   end
 
   def test_swimmer
-
     assert_equal(@r4.swimmer, "Micheal Phelps")
     assert_equal(@r2.swimmer, "Ryan Lochte")
     refute_equal(@r3.swimmer, "Ryan Lochte")
@@ -101,4 +102,36 @@ class ResultTest < Minitest::Test
     assert_equal(@r4.event, "100 m Breaststroke")
     refute_equal(@r6.event, "100 m Freestyle")
   end
+
+  def test_event_locked?
+    assert_equal(@r1.event_locked?, true)
+    assert_equal(@r4.event_locked?, false)
+    refute_equal(@r6.event_locked?, true)
+  end
+
+  def test_university
+    assert_equal(@r1.university, "University of Pheonix")
+    assert_equal(@r5.university, "Kirkwood College")
+    refute_equal(@r6.university, "University of Pheonix")
+  end
+
+  def test_conferece
+    assert_equal(@r1.conference, "Online")
+    assert_equal(@r5.conference, "Party On")
+    refute_equal(@r6.university, "Online")
+  end
+
+  def test_result_top_swimmers
+    assert_equal(@results.top_swimmers, [@r1, @r2, @r3])
+  
+    #assert_equal(@r5.conference, "Party On")
+    #refute_equal(@r6.university, "Online")
+  end
+
+
+
+
+
+
+
 end
