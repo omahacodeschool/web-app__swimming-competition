@@ -43,9 +43,16 @@ class SwimmerTest < Minitest::Test
     refute_equal(@nick_keenan.university, "University of Pheonix")
   end
 
-  def test_conference
+  def test_conferences
     assert_equal(@micheal_phelps.conference, "Online")
     assert_equal(@ryan_lochte.conference, "Party On")
     refute_equal(@nick_keenan.conference, "Online")
   end
 end
+
+
+
+
+
+
+

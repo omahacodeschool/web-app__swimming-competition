@@ -87,8 +87,21 @@ class ResultTest < Minitest::Test
     @r6.swimmer_time = 2.43
     @r6.save
 
-    @results = Result.where({"event_id" => @backstroke.id})
+    @r7 = Result.new
+    @r7.swimmer_id = @micheal_phelps.id
+    @r7.event_id = @freestyle.id
+    @r7.swimmer_time = 1.33
+    @r7.save
 
+    @r8 = Result.new
+    @r8.swimmer_id = @ryan_lochte.id
+    @r8.event_id = @freestyle.id
+    @r8.swimmer_time = 1.34
+    @r8.save   
+
+    @results = Result.where({"event_id" => @backstroke.id})
+    @results2 = Result.where({"event_id" => @breaststroke.id})
+    @duplicates = Result.where({"event_id" => @freestyle.id})
   end
 
   def test_swimmer
@@ -123,15 +136,16 @@ class ResultTest < Minitest::Test
 
   def test_result_top_swimmers
     assert_equal(@results.top_swimmers, [@r1, @r2, @r3])
-  
-    #assert_equal(@r5.conference, "Party On")
-    #refute_equal(@r6.university, "Online")
+    refute_equal(@results.top_swimmers, [@r2, @r1, @r3])
   end
 
-
-
-
-
-
-
+  def test_result_duplicate_swimmers
+    assert_equal(@duplicates.duplicate_swimmer(@freestyle.id, @micheal_phelps.id), true)    
+    assert_equal(@duplicates.duplicate_swimmer(@freestyle.id, @nick_keenan.id), false)       
+  end  
 end
+
+
+
+
+
