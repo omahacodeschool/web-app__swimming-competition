@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CompetitorTest < Minitest::Test
   def setup
+    super
 
     @competitor_1 = Competitor.new
     @competitor_1.first_name = "Ben"
@@ -18,7 +19,7 @@ class CompetitorTest < Minitest::Test
     @competitor_3 = Competitor.new
     @competitor_3.first_name = "Reed"
     @competitor_3.last_name = "Richards"
-    @competitor_3.school_id = 2
+    @competitor_3.school_id = 3
     @competitor_3.save
 
     @result_1 = Result.new
@@ -70,30 +71,30 @@ class CompetitorTest < Minitest::Test
 
   def test_results
     assert_includes(@competitor_1.results, @result_1)
-    assert_includes(@@competitor_2.results, @result_2)
-    assert_includes(@@competitor_3.results, @result_3)
-    refute_includes(@@competitor_1.results, @result_3)
+    assert_includes(@competitor_2.results, @result_2)
+    assert_includes(@competitor_3.results, @result_3)
+    refute_includes(@competitor_1.results, @result_3)
   end
 
   def test_school_name
-    assert_includes(@competitor_1.school_name, @school_1)
-    assert_includes(@@competitor_2.school_name, @school_2)
-    assert_includes(@@competitor_3.school_name, @school_3)
-    refute_includes(@@competitor_1.school_name, @school_3)
+    assert_equal(@competitor_1.school_name, "Baxter")
+    assert_equal(@competitor_2.school_name, "Triskelion")
+    assert_equal(@competitor_3.school_name, "Xavier Academy")
+    refute_equal(@competitor_1.school_name, "Xavier Academy")
   end
 
   def test_conference_name
-    assert_includes(@competitor_1.conference_name, @conference_1)
-    assert_includes(@@competitor_2.conference_name, @conference_2)
-    assert_includes(@@competitor_3.conference_name, @conference_3)
-    refute_includes(@@competitor_1.conference_name, @conference_3)
+    assert_equal(@competitor_1.conference_name, "Upper")
+    assert_equal(@competitor_2.conference_name, "Middle")
+    assert_equal(@competitor_3.conference_name, "Lower")
+    refute_equal(@competitor_1.conference_name, "Lower")
   end
 
   def test_conference_id
-    assert_includes(@competitor_1.conference_id, @conference_1)
-    assert_includes(@@competitor_2.conference_id, @conference_2)
-    assert_includes(@@competitor_3.conference_id, @conference_3)
-    refute_includes(@@competitor_1.conference_id, @conference_3)
+    assert_equal(@competitor_1.conference_id, 1)
+    assert_equal(@competitor_2.conference_id, 2)
+    assert_equal(@competitor_3.conference_id, 3)
+    refute_equal(@competitor_1.conference_id, 3)
   end
 
 end
