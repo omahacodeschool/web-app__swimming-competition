@@ -43,8 +43,8 @@ class SwimmerTest < Minitest::Test
   end
 
   def test_registered_events
-    assert_equal(@event, @shannon_jackson.registered_events)
-    refute_equal(@event2, @shannon_jackson.registered_events)
+    assert_equal([@event.id], @shannon_jackson.registered_events)
+    refute_equal([@event2.id], @shannon_jackson.registered_events)
   end
 
   def test_finishtime
