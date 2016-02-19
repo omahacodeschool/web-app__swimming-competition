@@ -10,6 +10,9 @@ class Competitor < ActiveRecord::Base
 		end
 	end
 
+#this method finds the results that match the competitor's id
+#it then stores each Results' event_id in an Array
+# then returns the Event that matches the event_id
 	def event_entry
 		list_results = Result.where({"competitor_id" => self.id})
 		if list_results.empty?
