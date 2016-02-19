@@ -136,6 +136,7 @@ class ResultTest < Minitest::Test
 
   def test_result_top_swimmers
     assert_equal(@results.top_swimmers, [@r1, @r2, @r3])
+    assert_equal(@results2.top_swimmers, [@r4, @r5, @r6])
     refute_equal(@results.top_swimmers, [@r2, @r1, @r3])
   end
 

@@ -36,12 +36,6 @@ class SwimmerTest < Minitest::Test
     @nick_keenan.university_id = @u2.id
     @nick_keenan.save
   end
-#This method exists in University Class, not actually sure that it even works or is used anywhere.
-  def test_swimmer_name
-    #assert_includes(@u1.swimmer_name, @micheal_phelps)
-    # assert_equal(@ryan_lochte.university, "Kirkwood College")
-    # refute_equal(@nick_keenan.university, "University of Pheonix")
-  end
 
   def test_conference
     assert_equal(@u1.conference, "Online")
