@@ -1,25 +1,5 @@
 <a href="/">home</a>
 <br>
 <a href="/results">back to results</a>
-<h1><%= @event.event_name %> - View and Edit Results</h1>
 
-<table style="width:50%" border="1">
-  <tr>
-    <td>Competitor</td>
-    <td>School</td>
-    <td>Official Time:</td>
-    <td>Place Finished</td>
-  </tr>
-  <% @event.competitors.each do |c| %>
-  <tr>
-    <td><%= c.competitor_name %></td>
-    <td><%= c.school_name %></td>
-    <td>
-      <form action="/result/success">
-        
-      </form>
-    </td>
-    <td>auto ranking</td>
-  </tr>
-  <% end %>
-</table>
+<h1>Results</h1>
