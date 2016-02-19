@@ -47,6 +47,14 @@ end
   erb :"race"
 end
 
+
+MyApp.get "/race/schedule" do
+  @events = Race.all
+  
+
+  erb :"race_schedule"
+end
+
 MyApp.get "/race/create" do
 
   # If a GET request is made to the root path, the following line of code
@@ -59,8 +67,8 @@ MyApp.get "/race/create" do
   # Accepts the form entry data and creates the swimmer in the table. 
 
   g = Race.new
-  g.event_name
-  g.start_time
+  g.event_name = (params[:event_name])
+  g.start_time = (params[:start_time])
   g.save
  
   

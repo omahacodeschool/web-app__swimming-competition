@@ -22,10 +22,20 @@ MyApp.get "/process_form_for_editing_college/:id" do
     @college.contact = params[:contact]
     @college.contact_email = params[:contact_email]
     @college.contact_ph = params[:contact_ph]
+    @college.locked = params[:locked]
     @college.save
 
   erb :"success_college_edit"
 end
+
+MyApp.post "/lock_college/:id" do  #I KNOW THIS ISN'T IT. 
+  @college = College.find_by_id(params[:id]) #find the line in college table 
+  @college.locked = true
+  @college.save
+
+  erb :"success_college_locked"
+end
+
 
 
 MyApp.get "/all_colleges" do

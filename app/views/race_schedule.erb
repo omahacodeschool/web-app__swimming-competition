@@ -1,0 +1,31 @@
+
+
+
+<a href="/">Home</a><br>
+
+<h1>Race Schedule</h1>
+
+<!-- <p>Enter a race ID number from the list below to see results for all of the swimmers in that race.</p>
+
+<form action = "/race_view">
+  <input type ="integer" name="race_id" placeholder="Race ID Number">
+  <input type ="submit">
+</form> -->
+
+
+
+<% @events.each do |event| %>
+  <p>
+    <%= event.event_name %> <%= event.start_time %> 
+  </p>
+<% end%>
+
+
+  <p>
+    <form action ="/lock_college/<%= @college.id %>" method="post">
+      Lock This College's Information
+    <input type ="submit" value="Lock">
+    </form><br>
+    <!-- <input type ="  " name="locked"
+    value="<%=@college.locked %>"> -->
+  </p>

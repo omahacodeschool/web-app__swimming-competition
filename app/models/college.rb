@@ -12,8 +12,18 @@ class College < ActiveRecord::Base
     return confnam
   end #end of conference_name method
 
-  def locked_college
-    lokid = self.
+  # def lock_one_college
+  #   collid = self.id 
+
+
+  # end 
+
+
+    #here's what I want. if the college's locked column says "NULL" I can change it to 'true' and by doing that lock the college.
+
+    
+
+
 
   
 end #end of the college class
