@@ -1,4 +1,5 @@
 class School <ActiveRecord::Base
+  #returns first element of Array as a String (name of conference from school object)
   def display_conference_of_school
     competitors = Competitor.all
     x = self.school_name
