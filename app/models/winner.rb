@@ -19,12 +19,12 @@ class Winner < ActiveRecord::Base
     return swimmer.swimmer_name
   end
 
-  def find_event
-    x = self.finish_id
-    y = Finish.find_by_id(x)
-    z = y.signup_id
-    return z.find_event
-  end
+  #def find_event
+  #  x = self.finish_id
+  #  y = Finish.find_by_id(x)
+  #  z = y.signup_id
+  #  return z.find_event
+  #end
 
 
 
