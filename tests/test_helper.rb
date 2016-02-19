@@ -1,4 +1,4 @@
-NV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] = 'test'
 require 'simplecov'
 SimpleCov.start do
   add_filter "/main.rb"

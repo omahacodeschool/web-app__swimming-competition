@@ -56,7 +56,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "competitor_id"
   end
 
-  create_table "untitled_table", force: :cascade do |t|
-  end
-
 end
