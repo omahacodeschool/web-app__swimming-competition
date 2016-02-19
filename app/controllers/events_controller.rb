@@ -18,6 +18,6 @@ MyApp.post "/delete_event/:event_id" do
 end
 
 MyApp.get "/view_add_event" do
-
+  @all_events = Event.all
   erb :"view_add_event"
 end

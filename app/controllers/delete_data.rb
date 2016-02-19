@@ -19,38 +19,22 @@ MyApp.get "/view_delete_data" do
 
   Swimmer.all.each do |s|
     x = s.swimmer_name
-    if x == nil 
-      @all_swim_names << "X"
-    else
-      @all_swim_names << x
-    end
+    @all_swim_names << x
   end
 
   Event.all.each do |s|
     x = s.event_name
-    if x == nil 
-      @all_event_names << "X"
-    else
-      @all_event_names << x
-    end
+    @all_event_names << x
   end
 
   School.all.each do |s|
     x = s.school_name
-    if x == nil 
-      @all_school_names << "X"
-    else
-      @all_school_names << x
-    end
+    @all_school_names << x
   end
 
   Conference.all.each do |s|
     x = s.conference_name
-    if x == nil 
-      @all_conference_names << "X"
-    else
-      @all_conference_names << x
-    end
+    @all_conference_names << x
   end
 
   erb :"view_delete_data"
