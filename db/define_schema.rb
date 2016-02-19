@@ -26,6 +26,7 @@ DB.define_column("competitors", "college_id", "integer")
 
 DB.define_table("events")
 DB.define_column("events", "event_name", "string")
+DB.define_column("events", "locked", "boolean")
 
 DB.define_table("awards")
 DB.define_column("awards", "event_id", "integer")

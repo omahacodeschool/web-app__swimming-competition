@@ -49,12 +49,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "event_id"
     t.integer  "competitor_id"
     t.float    "finish_time"
+    t.boolean  "locked"
   end
 
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "event_name"
+    t.boolean  "locked"
   end
 
 end

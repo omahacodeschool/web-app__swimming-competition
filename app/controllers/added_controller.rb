@@ -49,6 +49,7 @@ end
 MyApp.post "/event_added" do 
   x = Event.new
   x.event_name = params["event_name"]
+  x.locked = false 
   x.save
 
   erb :"added/event_added"
