@@ -4,8 +4,17 @@
   <p>Contestant ID - <%= row.id %><br> 
      Contestant Name - <%= row.first_name %> 
      <%= row.last_name %><br>
-     hails from <%= row.cities %>.</p>
+     hails from <%= row.cities %>
+     
+     <a href="/delete_contestant/<%= row.id %>">
+      Delete
+    </a>
+  </p>
 <% end %>
+
+
+
+
 
 <p><a href="/">Homepage</a></p>
 

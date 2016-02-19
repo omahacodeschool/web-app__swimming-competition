@@ -3,8 +3,14 @@
 <% @noms.each do |x|%>
   <p>Chili ID - <%= x.id %><br>
      Chili Name - <%= x.name %><br>
-     Contestant ID - <%= x.contestant_id %></p>
+     Contestant ID - <%= x.contestant_id %>
+      <a href="/delete_chili/<%= x.id %>">
+      Delete
+    </a>
+  </p>
 <% end %>
+
+
 
 <p><a href="/">Homepage</a></p>
 

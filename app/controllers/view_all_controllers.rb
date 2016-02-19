@@ -28,10 +28,3 @@ MyApp.get "/category_info/:category_id" do
   erb :"all_entries/category_info"
 end
 
-MyApp.get "/delete_competition/:num" do
-  @competition = Competition.find_by_id(params[:num])
-  @competition.delete
-  @comp_result = Result.where(competition_id: params[:num])
-  @comp_result.delete_all
-  erb :"delete_entry/competition_deleted"
-end
