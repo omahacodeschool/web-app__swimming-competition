@@ -7,17 +7,29 @@ MyApp.get "/delete_award" do
   erb :"delete/delete_award"
 end
 
-#Processes deletion of a college
+#Processes deletion of a college plus any applicable competitors and their event details
 MyApp.get "/delete_college/:b" do 
   @colleges = College.find_by_id(params[:b]) 
+  @this_colleges_competitors = Competitor.where({"college_id" => params[:b]})
+  @event_detail_competitor_ids = [] #empty array for competitor_id's
+  @this_colleges_competitors.each do |x|  #competitors of a particular college
+    @event_detail_competitor_ids << x.id  #puts all the particular college's competitor_id's in an array
+  end
+  @event_details_to_delete = EventDetail.where({"competitor_id" => "@event_detail_competitor_ids"})
+  @event_details_to_delete.delete_all 
+  @this_colleges_competitors.delete_all
   @colleges.delete
 
   erb :"delete/delete_college"
 end
 
-#Processes deletion of a competitor
+#Processes deletion of a competitor plus any related event or award data
 MyApp.get "/delete_competitor/:b" do 
   @competitors = Competitor.find_by_id(params[:b]) 
+  @this_competitor_event_details = EventDetail.where({"competitor_id" => params[:b]})
+  @this_competitor_event_details.delete_all
+  @this_competitor_awards = Award.where({"competitor_id" => params[:b]})
+  @this_competitor_awards.delete_all
   @competitors.delete
 
   erb :"delete/delete_competitor"
