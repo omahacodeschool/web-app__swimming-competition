@@ -1,44 +1,45 @@
+<center>
+
 <h1><%= @competitor.first_name.capitalize + " " + @competitor.last_name.capitalize %></h1>
 
-<p>
-  School:
-</p>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>School</th>
+    <th>Conference</th>
+  </tr>
 
-<ul>
-  <li>
-    <a href = "/view_school/<%= @competitor.school_id %>">
-      <%= @competitor.school_name.capitalize %>
-    </a>  
-  </li>
-</ul>
+  <tr>
+    <td align="center">
+      <a href = "/view_school/<%= @competitor.school_id %>">
+        <%= @competitor.school_name.capitalize %>
+      </a>  
+    </td>
 
-<p>
-  Conference:
-</p>
+    <td align="center">
+      <a href = "/view_conference/<%= @competitor.conference_id %>">
+        <%= @competitor.conference_name.capitalize %>
+      </a>
+    </td>
+  </tr>
+</table>
 
-<ul>
-  <li>
-    <a href = "/view_conference/<%= @competitor.conference_id %>">
-      <%= @competitor.conference_name.capitalize %>
-    </a>
-  </li>
-</ul>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Events</th>
+  </tr>
 
-<p>
-  Events:
-</p>
-
-<% @competitor.results.each do |c| %>
-<ul>
-  <li>
-    <!-- <a href = "/view_result/<%= @competitor.id %>"> -->
-      <%= c.event_name.capitalize %>
-    </a>  
-  </li>
-</ul>    
-<% end %>
+  <tr>
+    <% @competitor.results.each do |c| %>
+      <td align="center">
+        <!-- <a href = "/view_result/<%=  %>"> -->
+        <%= c.event_name.capitalize %>
+      </td>
+  </tr>
+    <% end %>
+</table>
 
 
-<p><center><a href = "/">Home</a></center></p>
+<p><a href="/all_competitors">Back</a></p>
+<p><a href="/">Home</a></p>
 
-<center><a href = "/all_competitors">Back to competitors</a></center>
+</center>

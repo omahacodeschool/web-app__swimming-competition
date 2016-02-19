@@ -1,18 +1,23 @@
+<center>
+
 <h1><%= @conference.conference.capitalize %> Conference</h1>
 
-<p>
-Schools:
-</p>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Schools</th>
+  </tr>
 
-<% @conference.schools.each do |c| %>
-  <ul>
-    <li>
-      <!-- # <a href = "/view_school/<%= @conference %>"> -->
+  <tr>
+    <% @conference.schools.each do |c| %>
+      <td align="center">
+        <!-- # <a href = "/view_school/<%= @conference %>"> -->
         <%= c.school %>
-      </a>
-    </li>
-  </ul>
-<% end %>
+      </td>
+  </tr>
+    <% end %>
+</table>
 
 <p><a href="/all_conferences">Back</a></p>
 <p><a href="/">Home</a></p>
+
+</center>

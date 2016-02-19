@@ -1,6 +1,8 @@
+<center>
+
 <h1>Competitor List</h1>
 
-<table border = 1px style="width:100%">
+<table border = 1px style="width:50%">
   <tr>
     <th>Name</th>
     <th>Delete</th>
@@ -8,17 +10,17 @@
   </tr>
   <tr>
     <% @competitors.each do |competitor| %>
-      <td>
+      <td align="center">
         <a href = "/view_competitor/<%= competitor.id %>">
           <%= competitor.first_name + " " + competitor.last_name %>
         </a>
       </td>  
-      <td>
+      <td align="center">
         <form action = "/delete_competitor/<%= competitor.id %>" method = "post">
           <input type = "submit" value = "Delete">
         </form>
       </td>
-      <td>
+      <td align="center">
         <form action = "/edit_competitor/<%= competitor.id %>" method = "get">
           <input type = "submit" value = "Edit">
         </form>
@@ -28,3 +30,5 @@
 </table>
 
 <p><a href = "/">Home</a></p>
+
+</center>

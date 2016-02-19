@@ -1,28 +1,38 @@
+<center>
+
 <h1>School List</h1>
 
-<table border = 1px style="width:100%">
+<table border = 1px style="width:50%">
   <tr>
-    <th><center>School</center></th>
-    <th><center>Conference</center></th>
-    <th><center>Delete</center></th>
-    <th><center>Edit</center></th>
+    <th>School</th>
+    <th>Conference</th>
+    <th>Delete</th>
+    <th>Edit</th>
   </tr>
   <tr>
     <% @schools.each do |school| %>
-      <td>
-        <a href = "/view_school/<%= school.id %>">
-          <%= school.school %>
-        </a>
-      </td>
-      <td>
-        <%=school.conference %>
-      </td>
-      <td>
+      <% if school.school == nil %>
+      <% else %>
+        <td align="center">
+          <a href = "/view_school/<%= school.id %>">
+            <%= school.school %>
+          </a>
+        </td>
+      <% end %>
+
+      <% if school.conference == nil %>
+      <% else %>
+        <td align="center">
+          <%=school.conference %>
+        </td>
+      <% end %>
+      
+      <td align="center">
         <form action = "/delete_school/<%= school.id %>" method = "post">
           <input type = "submit" value = "Delete">
         </form>
       </td>
-      <td>
+      <td align="center">
         <form action = "/edit_school/<%= school.id %>" method = "get">
           <input type = "submit" value = "Edit">
         </form>
@@ -32,3 +42,5 @@
 </table>
 
 <p><a href = "/">Home</a></p>
+
+</center>

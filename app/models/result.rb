@@ -12,14 +12,10 @@ class Result < ActiveRecord::Base
     return event
   end
 
-  def complete
-    completed = Result.where("event_id" => self.event_id)
-    completed.each do |c|
-      if c.time != nil
-        return false
-      else
-        return true
-      end
-    end
+  def event_locked
+    locked = Event.find_by_id(self.event_id)
+    locked = locked.locked
+    return locked
   end
+
 end

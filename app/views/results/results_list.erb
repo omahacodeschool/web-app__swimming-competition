@@ -1,6 +1,8 @@
+<center>
+
 <h1>Results List</h1>
 
-<table border = 1px style="width:100%">
+<table border = 1px style="width:50%">
   <tr>
     <th>Competitor</th>
     <th>Event</th>
@@ -11,27 +13,43 @@
   <tr>
     <% @results.each do |result| %>
       <!-- <a href = "/view_result/<%= result.id %>"> -->
-      <td>
+      <td align="center">
         <%= result.competitor_name %>
       </td>
-      <td>
+      <td align="center">
         <%=result.event_name %>
       </td>
-      <td>
-        <%=result.time %>
+      <td align="center">
+        <%=result.time.to_s %>
       </td>
-      <td>  
+
+      <% if result.event_locked == true %>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>
+        </td>
+        <td align="center">
+          <font color="Red">
+            LOCKED
+          </font>  
+        </td>
+      <% else %>
+      <td align="center">  
         <form action = "/delete_result/<%= result.id %>" method = "post">
           <input type = "submit" value = "Delete">
         </form>
       </td>
-      <td>
+      <td align="center">
         <form action = "/edit_result/<%= result.id %>" method = "get">
           <input type = "submit" value = "Edit">
         </form>
       </td>
+      <% end %>
   </tr>
     <% end %>
 </table>
 
 <p><a href = "/">Home</a></p>
+
+</center>

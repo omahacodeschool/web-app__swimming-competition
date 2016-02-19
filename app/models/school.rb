@@ -7,6 +7,9 @@ class School < ActiveRecord::Base
 
   def conference
     c = Conference.find_by_id(self.conference_id)
+    if c == nil
+      return "No data"
+    end
     conference = c.conference
     return conference
   end 

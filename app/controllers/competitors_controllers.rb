@@ -30,11 +30,10 @@ end
 
 MyApp.get "/edit_competitor/:competitor_id" do
   @competitor = Competitor.find_by_id(params[:competitor_id])
-  @competitor.save
   erb :"competitors/form_for_editing_competitor"
 end
 
-MyApp.post "/process_competitor_form/:competitor_id" do
+MyApp.post "/process_competitor_edit_form/:competitor_id" do
   x = Competitor.find_by_id(params[:competitor_id])
   x.first_name = params["first_name"]
   x.last_name = params["last_name"]
@@ -42,4 +41,4 @@ MyApp.post "/process_competitor_form/:competitor_id" do
   x.save
   @y = [x.first_name, x.last_name, x.school_id]
   erb :"competitors/processed"
-end
+ end 

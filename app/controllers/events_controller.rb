@@ -2,7 +2,7 @@ MyApp.post "/events" do
   x = Event.new
   x.event = params["event"]
   x.save
-  @y = [x.event]
+  @y = x.event
   erb :"events/events"
 end
 
@@ -35,6 +35,13 @@ MyApp.post "/process_event_edit_form/:event_id" do
   x = Event.find_by_id(params[:event_id])
   x.event = params["event"]
   x.save
-  @y = [x.event]
+  @y = x.event
   erb :"events/processed"
  end 
+
+ MyApp.post "/lock_event/:event_id" do
+  @event = Event.find_by_id(params[:event_id])
+  @event.locked = true
+  @event.save
+  erb :"events/locked"
+end

@@ -1,7 +1,8 @@
 class Competitor < ActiveRecord::Base
+
   def results
-    results = Result.where("competitor_id" => self.id)
-    return results
+    r = Result.where("competitor_id" => self.id)
+    return r
   end
 
   def school_name
@@ -17,7 +18,7 @@ class Competitor < ActiveRecord::Base
   end
 
   def conference_id
-    c= School.find_by_id(self.school_id)
+    c = School.find_by_id(self.school_id)
     c_id = c.conference_id
     return c_id
   end

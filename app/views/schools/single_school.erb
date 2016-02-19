@@ -1,17 +1,23 @@
+<center>
+
 <h1><%= @school.school.capitalize %></h1>
 
-<p>
-  Competitors:
-</p>
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Competitors</th>
+  </tr>
 
-<% @school.competitors.each do |s| %>
-<ul>
-  <li>
-      <%= s.first_name.capitalize + " " + s.last_name.capitalize %>
-    </a>  
-  </li>
-</ul>
-<% end %>
-<p><center><a href = "/">Home</a></center></p>
+  <tr>
+    <% @school.competitors.each do |s| %>
+      <td align="center">
+        <!-- <a href = "/view_competitor/<%= %>">  -->
+        <%= s.first_name.capitalize + " " + s.last_name.capitalize %>
+      </td>
+  </tr>
+    <% end %>
+</table>
 
-<center><a href = "/all_schools">Back to Schools</a></center>
+<p><a href="/all_schools">Back</a></p>
+<p><a href="/">Home</a></p>
+
+</center>
