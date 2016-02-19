@@ -20,7 +20,7 @@ DB.define_column("swimmers", "college_id", "integer")
 
 DB.define_table("race_results")
 DB.define_column("race_results", "swim_entry_id", "integer")
-DB.define_column("race_results", "swimmer_time", "integer")
+DB.define_column("race_results", "swimmer_done", "integer")
 DB.define_column("race_results", "swimmer_race_rank", "integer")
 
 DB.define_table("swim_entries")
@@ -41,3 +41,4 @@ DB.define_column("colleges", "locked", "boolean")
 DB.define_table("races")
 DB.define_column("races", "event_name", "string")
 DB.define_column("races", "start_time", "string")
+DB.define_column("races", "locked", "boolean")

@@ -5,12 +5,6 @@
 
 <h1>Race Schedule</h1>
 
-<!-- <p>Enter a race ID number from the list below to see results for all of the swimmers in that race.</p>
-
-<form action = "/race_view">
-  <input type ="integer" name="race_id" placeholder="Race ID Number">
-  <input type ="submit">
-</form> -->
 
 
 
@@ -20,7 +14,7 @@
   </p>
 
   <p>
-    <form action ="/lock_event/<%= @events.id %>" method="post">
+    <form action ="/lock_event/<%= event.id %>" method="post">
       Lock This Event's Information
     <input type ="submit" value="Lock">
     </form><br>

@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "swim_entry_id"
     t.time     "swimmer_time"
     t.integer  "swimmer_race_rank"
+    t.integer  "swimmer_done"
   end
 
   create_table "races", force: :cascade do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
     t.string   "event_name"
     t.time     "start_time"
+    t.boolean  "locked"
   end
 
   create_table "swim_entries", force: :cascade do |t|
