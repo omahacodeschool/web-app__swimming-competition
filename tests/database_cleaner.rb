@@ -5,6 +5,7 @@ class Minitest::Test
 
   def setup
     if @@first_run
+
       DatabaseCleaner.clean_with(:truncation)
       @@first_run = false
 
