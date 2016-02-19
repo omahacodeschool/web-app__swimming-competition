@@ -1,3 +1,16 @@
+MyApp.post "/swim_entry_delete_one_swimmer" do
+
+  @dq = SwimEntry.find_by_id(params[:id])
+  
+
+  erb :"success_deleted_swim_entries_one_swimmer"
+end
+
+
+
+
+
+
 MyApp.get "/swim_entry" do
 
   # If a GET request is made to the root path, the following line of code

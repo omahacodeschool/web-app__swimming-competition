@@ -1,3 +1,18 @@
+MyApp.post "/race_result_delete_one_swimmer" do
+
+  @dq = RaceResult.new
+  @dq = swimmer_id(params[:id])
+  @dq.race_result_delete_one_swimmer
+  @dq.save
+
+  erb :"success_deleted_race_results_one_swimmer"
+end
+
+
+
+
+
+
 MyApp.get "/race_result" do
 
   # If a GET request is made to the root path, the following line of code

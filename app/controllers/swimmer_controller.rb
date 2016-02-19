@@ -1,6 +1,6 @@
 MyApp.post "/swimmer_delete"
 
-
+  dq = Swimmer.find_by_id(params[:id])
 
   erb :"success_swimmer_deleted"
 end
