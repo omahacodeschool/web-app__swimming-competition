@@ -55,6 +55,14 @@ MyApp.get "/race/schedule" do
   erb :"race_schedule"
 end
 
+MyApp.post "/lock_event/:id" do  #I KNOW THIS ISN'T IT. 
+  @events = Race.find_by_id(params[:id]) #find the line in college table 
+  @events.locked = true
+  @events.save
+
+  erb :"success_race_locked"
+end
+
 MyApp.get "/race/create" do
 
   # If a GET request is made to the root path, the following line of code

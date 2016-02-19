@@ -18,14 +18,13 @@
   <p>
     <%= event.event_name %> <%= event.start_time %> 
   </p>
-<% end%>
-
 
   <p>
-    <form action ="/lock_college/<%= @college.id %>" method="post">
-      Lock This College's Information
+    <form action ="/lock_event/<%= @events.id %>" method="post">
+      Lock This Event's Information
     <input type ="submit" value="Lock">
     </form><br>
-    <!-- <input type ="  " name="locked"
-    value="<%=@college.locked %>"> -->
   </p>
+
+
+<% end%>
