@@ -32,7 +32,7 @@ DB.define_column("signup_results", "swimmer_info_id", "integer")
 DB.define_column("signup_results", "event_id", "integer")
 DB.define_column("signup_results", "time", "float")
 DB.define_column("signup_results", "rank", "integer")
-DB.define_column("signup_results", "lock", "boolean")
+
 
 DB.define_table("teams")
 DB.define_column("teams", "team", "string")

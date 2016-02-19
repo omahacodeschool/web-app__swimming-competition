@@ -4,7 +4,7 @@
 end
 
 #Signs up new swimmer
-MyApp.get "/sign_up_form/create" do
+MyApp.post "/sign_up_form/create" do
   @s = SignupResult.new
   @s.swimmer_info_id = params["swimmer_info_id"]
   @s.event_id = params["event_id"]
@@ -26,16 +26,19 @@ MyApp.get "/event/:id" do
  erb :"event/single_event"
 end
 
+#Edit form
 MyApp.get "/edit_form/:id" do
-  x = SignupResult.find_by_id(params[:id])
-  @info = x.event_access
-  if @info.lock == true
+  @info = SignupResult.find_by_id(params[:id])
+  @y = @info.event_access
+  if @y.lock == true
     erb :"event/sorry_event_locked"
-  else 
+  else @info
+    binding.pry
     erb :"sign_result/edit_signup_form"
   end
 end
 
+#edits event
 MyApp.post "/process_signup_form/:id" do
   @info = SignupResult.find_by_id(params[:id])
   @info.swimmer_info_id = params["swimmer_info_id"]
@@ -46,6 +49,7 @@ MyApp.post "/process_signup_form/:id" do
   erb :"sign_result/updated"
 end
 
+#deletes event
 MyApp.get "/delete_event_result/:id" do
   x = SignupResult.find_by_id(params[:id])
   @info = x.event_access
