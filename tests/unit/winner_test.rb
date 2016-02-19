@@ -50,29 +50,29 @@ class SignupTest < Minitest::Test
     @second.save
 
     @w1 = Winner.new
-    @w1.rank_id = 1
+    @w1.rank_id = @first.id
     @w1.finish_id = @f.id
     @w1.save
 
     @w2 = Winner.new
-    @w2.rank_id = 2
+    @w2.rank_id = @second.id
     @w2.finish_id = @f2.id
     @w2.save
 
   end
 
-  def places
+  def test_places
     assert_equal("First Place", @w1.places)
     assert_equal("Second Place", @w2.places)
   end
 
-  def find_time
+  def test_find_time
     assert_equal(100, @w1.find_time)
     refute_equal(100, @w2.find_time)
 
   end
 
-  def find_swimmer
+  def test_find_swimmer
     assert_equal("Shannon Jackson", @w1.find_swimmer)
     assert_equal("Andrew Yolland", @w2.find_swimmer)
   end

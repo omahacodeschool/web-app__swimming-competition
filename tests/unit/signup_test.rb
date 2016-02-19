@@ -17,6 +17,7 @@ class SignupTest < Minitest::Test
     @andrew = Swimmer.new
     @andrew.first_name = "Andrew"
     @andrew.last_name = "Yolland"
+    @andrew.college_id = @ocs.id
     @andrew.save
 
     @e2 = Event.new
@@ -47,25 +48,25 @@ class SignupTest < Minitest::Test
 
   end
 
-  def find_event_name
+  def test_find_event_name
     assert_equal("Swim", @register.find_event_name)
     assert_equal("Swim", @register2.find_event_name)
     assert_equal("Sink", @register3.find_event_name)
   end
-
-  def find_swimmer
+#find_swimmer is fine
+  def test_find_swimmer
     assert_equal(@shannon, @register.find_swimmer)
     assert_equal(@andrew, @register2.find_swimmer)
     refute_equal(@andrew, @register3.find_swimmer)
   end
 
-  def find_swimmer_name
+  def test_find_swimmer_name
     assert_equal("Shannon Jackson", @register.find_swimmer_name)
     assert_equal("Andrew Yolland", @register2.find_swimmer_name)
   end
 
-  def find_swimmer_college
-    assert_equal("Omaha Code School", @register)
+  def test_find_swimmer_college
+    assert_equal("Omaha Code School", @register2.find_swimmer_college)
   end
 
 
