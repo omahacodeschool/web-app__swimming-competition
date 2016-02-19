@@ -13,4 +13,8 @@ class EventDetail < ActiveRecord::Base
       Competitor.find_by_id(self.competitor_id).competitor_name
     end
   end
+  def is_locked # NOT BEING USED RIGHT NOW
+    x = Event.find_by_id(self.event_id)
+    return x.locked
+  end
 end

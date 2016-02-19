@@ -40,11 +40,17 @@ end
 
 #Processes the form for updating an event
 MyApp.post "/event_updated/:num" do
-  @events = Event.find_by_id(params[:num])
-  @events.event_name = params["evnt_name"]
-  @events.save 
+  @events = Event.find_by_id(params[:num]) 
 
-  erb :"updated/event_updated"
+  if @events.locked == false
+    @events.event_name = params["evnt_name"]
+    @events.save 
+
+    erb :"updated/event_updated"
+  else
+
+    erb :"misc/event_locked"
+  end
 end
 
 #Processes the form for updating event details

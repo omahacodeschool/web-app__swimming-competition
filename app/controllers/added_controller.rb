@@ -57,11 +57,18 @@ end
 
 #Processes the form to add event details
 MyApp.post "/event_detail_added" do 
-  x = EventDetail.new
-  x.event_id = params["event_id"]
-  x.competitor_id = params["competitor_id"]
-  x.finish_time = params["finish_time"]
-  x.save
+  @event = Event.find_by_id(params["event_id"])
 
-  erb :"added/event_detail_added"
+  if @event.locked == false
+    x = EventDetail.new
+    x.event_id = params["event_id"]
+    x.competitor_id = params["competitor_id"]
+    x.finish_time = params["finish_time"]
+    x.save
+
+    erb :"added/event_detail_added"
+  else
+
+    erb :"misc/event_locked"
+  end
 end
