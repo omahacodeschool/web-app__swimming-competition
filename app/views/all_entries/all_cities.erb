@@ -2,8 +2,14 @@
 
 <% @regions.each do |x|%>
   <p>Region ID - <%= x.id %><br>
-     City - <%= x.city %></p>
+     City - <%= x.city %> 
+
+    <a href="/update_city/<%= x.id %>">
+      Update
+    </a>
+  </p>
 <% end %>
+
 
 <p><a href="/">Homepage</a></p>
 
