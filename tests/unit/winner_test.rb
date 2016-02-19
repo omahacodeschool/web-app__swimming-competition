@@ -59,10 +59,6 @@ class SignupTest < Minitest::Test
     @w2.finish_id = @f2.id
     @w2.save
 
-#DB.define_table("winners")
-#DB.define_column("winners","rank_id","integer")
-#DB.define_column("winners","finish_id","integer")
-
   end
 
   def places
