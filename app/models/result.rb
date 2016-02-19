@@ -24,7 +24,7 @@ class Result < ActiveRecord::Base
     y = Event.find_by_id(x)
     return y.event_locked
   end
-
+#Returns String of the university that this result is called on.
   def university
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
@@ -35,7 +35,7 @@ class Result < ActiveRecord::Base
       return nil
     end 
   end
-
+#Returns String of the conference_name when this method is called one line in the Results table.
   def conference
     x = self.swimmer_id
     y = Swimmer.find_by_id(x)
@@ -75,19 +75,6 @@ end
 
 
 
-
-  # def Result.duplicate_swimmer(x)
-  #   duplicate = nil
-  #   self.each do |i|
-  #     if i.swimmer_id == x
-  #       duplicate = true
-  #       break
-  #     else
-  #       duplicate = false
-  #     end
-  #   end
-  #   return duplicate
-  # end
 
 
 
