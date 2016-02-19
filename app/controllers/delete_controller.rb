@@ -1,4 +1,4 @@
-#Processes deletion of an award  #DOESN'T WORK
+# Processes deletion of an award  #DOESN'T WORK
 MyApp.get "/delete_award" do 
   @events = Event.all
   @competitors = Competitor.all 
@@ -11,6 +11,7 @@ end
 MyApp.get "/delete_college/:b" do 
   @colleges = College.find_by_id(params[:b]) 
   @this_colleges_competitors = Competitor.where({"college_id" => params[:b]})
+  
   @event_detail_competitor_ids = [] # empty array for competitor_id's
   @this_colleges_competitors.each do |x|  # competitors of a particular college
     @event_detail_competitor_ids << x.id  # puts all of particular college's competitor_id's in array
@@ -26,12 +27,13 @@ MyApp.get "/delete_college/:b" do
   @awards_to_delete.delete_all
   
   @this_colleges_competitors.delete_all 
+  
   @colleges.delete 
 
   erb :"delete/delete_college"
 end
 
-#Processes deletion of a competitor plus any related event or award data
+# Processes deletion of a competitor plus any related event or award data
 MyApp.get "/delete_competitor/:b" do 
   @competitors = Competitor.find_by_id(params[:b]) 
   @this_competitor_event_details = EventDetail.where({"competitor_id" => params[:b]})
@@ -43,15 +45,23 @@ MyApp.get "/delete_competitor/:b" do
   erb :"delete/delete_competitor"
 end
 
-#Processes deletion of a conference
+# Processes deletion of a conference if no colleges tied to it
+#
+# Otherwise instructs user to delete college first
 MyApp.get "/delete_conference/:b" do 
   @conferences = Conference.find_by_id(params[:b]) 
-  @conferences.delete
+  x = College.where({"conference_id" => params[:b]})
+  if x.length == 0 
+    @conferences.delete
+    
+    erb :"delete/delete_conference"
+  else
 
-  erb :"delete/delete_conference"
+    erb :"misc/cannot_delete_conference"
+  end
 end
 
-#Processes deletion of an event event_details  #DOESN'T WORK
+# Processes deletion of an event detail  #DOESN'T WORK
 MyApp.get "/delete_event_detail" do 
   @events = Event.all
   @competitors = Competitor.all 
@@ -60,7 +70,7 @@ MyApp.get "/delete_event_detail" do
   erb :"delete/delete_event_detail"
 end
 
-#Processes deletion of an event
+# Processes deletion of an event
 MyApp.get "/delete_event/:b" do 
   @events = Event.find_by_id(params[:b])
   @events.delete
