@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class CompetitorTest < Minitest::Test
-  def setup
+class ResultTest < Minitest::Test
+ def setup
     super
     @school = School.new
     @school.name = "Dodge"
@@ -30,9 +30,11 @@ class CompetitorTest < Minitest::Test
     @cat3.save
 
     @event1 =  Event.new
+    @event1.name = "Hurdles"
     @event1.save
 
     @event2 =  Event.new
+    @event2.name = "Box Jumping"
     @event2.save
 
     @event3 =  Event.new
@@ -54,23 +56,14 @@ class CompetitorTest < Minitest::Test
     @result_3.save
   end
 
-  def test_get_a_competitors_school
-    assert_includes(@cat.school_name, @school.name)
-    refute_includes(@cat.school_name, @other_school.name)
+  def test_name_of_competitor
+    assert_includes(@result_1.name_of_competitor, @cat.first_name + " " + @cat.last_name)
+    refute_includes(@result_1.name_of_competitor, @cat2.first_name + " " + @cat2.last_name)
   end
 
-  def test_get_a_competitors_event_entry
-    assert_includes(@cat.event_entry, @event1)
-    assert_includes(@cat.event_entry, @event2)
-    refute_includes(@cat.event_entry, @event3)
+  def test_name_of_event
+    assert_includes(@result_1.name_of_event, @event1.name)
+    refute_includes(@result_1.name_of_event, @event2.name)
   end
 
-  def test_is_a_competitors_event_entry_empty
-    assert_nil(@cat3.event_entry)
-  end
-
-  def test_delete_competitor_info
-    @cat2.delete_competitor_info
-    assert_nil(@cat2.event_entry)
-  end
 end

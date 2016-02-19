@@ -17,9 +17,9 @@ class Event < ActiveRecord::Base
 		end
 
 		competitors = []
-		if id_arr.empty?
-			return nil
-		else
+		# if id_arr.empty?
+		# 	return nil
+		# else
 			#with the competitor.id find each Competitor object in the competitor table
 			 id_arr.each do |c|
 			 	x = Competitor.find_by_id(c)
@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
 			 	if x != nil
 					competitors << x
 				end
-			end
+			# end
 		end
 
 		return competitors

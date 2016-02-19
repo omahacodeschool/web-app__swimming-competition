@@ -16,6 +16,7 @@ class Competitor < ActiveRecord::Base
 	def event_entry
 		list_results = Result.where({"competitor_id" => self.id})
 		if list_results.empty?
+			
 			return nil
 		else
 			event_id_arr =[]
