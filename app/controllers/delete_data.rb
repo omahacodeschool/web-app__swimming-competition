@@ -1,41 +1,21 @@
-MyApp.post "/view_delete_data_confirmation" do
+MyApp.post "/delete_data_confirmation" do
+  
   Swimmer.delete_all
   Event.delete_all
   School.delete_all
   Signup.delete_all
   Conference.delete_all
 
-  erb :"view_delete_data_confirmation"
+  erb :"views/delete_data/delete_data_confirmation"
 end
 
 
-MyApp.get "/view_delete_data" do
+MyApp.get "/delete_data" do
 
-  @all_swim_names = []
-  @all_event_names = []
-  @all_school_names = []
-  @all_conference_names = []
+  @all_swim_names = Swimmer.get_all_swimmer_names
+  @all_event_names = Event.get_all_event_names
+  @all_school_names = School.get_all_school_names
+  @all_conference_names = Conference.get_all_conference_names
 
-
-  Swimmer.all.each do |s|
-    x = s.swimmer_name
-    @all_swim_names << x
-  end
-
-  Event.all.each do |s|
-    x = s.event_name
-    @all_event_names << x
-  end
-
-  School.all.each do |s|
-    x = s.school_name
-    @all_school_names << x
-  end
-
-  Conference.all.each do |s|
-    x = s.conference_name
-    @all_conference_names << x
-  end
-
-  erb :"view_delete_data"
+  erb :"views/delete_data/delete_data"
 end

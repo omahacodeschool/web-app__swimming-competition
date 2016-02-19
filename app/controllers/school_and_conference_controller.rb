@@ -1,4 +1,7 @@
-MyApp.post "/view_add_school_and_conference_confirmation" do
+MyApp.post "/add_school_and_conference_confirmation" do
+
+  @conferences_all = Conference.all
+  @schools_all = School.all
 
   @conference_1 = Conference.new
   @conference_1.conference_name = (params["conference_1_name"])
@@ -14,19 +17,26 @@ MyApp.post "/view_add_school_and_conference_confirmation" do
 
 
   
-  erb :"view_add_school_and_conference"
+  erb :"view/school_and_conference/add_school_and_conference"
 end
 
 MyApp.post "/delete_conference/:conference_id" do
+
+  @conferences_all = Conference.all
+  @schools_all = School.all
 
   @conference = Conference.find_by_id(params[:conference_id])
   @school = School.find_by_conference_id(params[:conference_id])
   @conference.delete
   @school.delete
-  erb :"view_add_school_and_conference"
+
+  erb :"view/school_and_conference/add_school_and_conference"
 end
 
 MyApp.post "/delete_school/:school_id" do
+
+  @conferences_all = Conference.all
+  @schools_all = School.all
 
   @school = School.find_by_id(params[:school_id])
   @swimmer = Swimmer.find_by_school_id(params[:school_id])
@@ -42,16 +52,20 @@ MyApp.post "/delete_school/:school_id" do
     end
   else
   end
+  
   #Note: The line below does not work, if my @school search in line 31 returns nil. Thinking there has got to be a better way of doing this^______________________________
 
   @school.delete
 
-  erb :"view_add_school_and_conference"
+  erb :"view/school_and_conference/add_school_and_conference"
 end
 
-MyApp.get "/view_add_school_and_conference" do
+MyApp.get "/add_school_and_conference" do
 
-  erb :"view_add_school_and_conference"
+  @conferences_all = Conference.all
+  @schools_all = School.all
+
+  erb :"view/school_and_conference/add_school_and_conference"
 end
 
 MyApp.get "/" do

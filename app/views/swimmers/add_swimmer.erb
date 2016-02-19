@@ -11,12 +11,18 @@
         <th>ID</th>
         <th>Name</th>
          <th>School</th>
+         <th>Edit Swimmer Name</th>
     </tr>
-      <% Swimmer.all.each do |n| %> 
+      <% @swimmers_all.each do |n| %> 
     <tr> 
         <td><%= n.id %></td>
         <td><%= n.swimmer_name %></td>
         <td><%= n.get_school_name %></td>
+        <td><form action="/edit_swimmer_name/<%= n.id %>" method="post">
+            <input type="text" name="swim_edit_name">
+            <input type="submit">
+          </form>
+        </td>
         <td><form action="/delete_swimmer/<%= n.id %>" method="post">
             <input type="submit" value="X">
           </form>
@@ -30,7 +36,7 @@
       This will add a swimmer to the database.
     </h2>
   <br>
-    <form action="/view_add_swimmer_confirmation" method="post">
+    <form action="/add_swimmer_confirmation" method="post">
       Swimmer name:
   <br>
   <br>

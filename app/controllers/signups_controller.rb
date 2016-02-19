@@ -1,4 +1,4 @@
-MyApp.post "/view_add_signup_confirmation" do
+MyApp.post "/add_signup_confirmation" do
 
   signup_new = Signup.new
 
@@ -11,7 +11,7 @@ MyApp.post "/view_add_signup_confirmation" do
   signup_new.save
   
   @all_signups = Signup.all
-  erb :"view_add_signup"
+  erb :"views/signups/add_signup"
 end
 
 MyApp.post "/delete_signup/:signup_id" do
@@ -19,14 +19,14 @@ MyApp.post "/delete_signup/:signup_id" do
   @signup.delete
   @all_signups = Signup.all
 
-  erb :"view_add_signup"
+  erb :"views/signups/add_signup"
 end
 
 
-MyApp.get "/view_add_signup" do
+MyApp.get "/add_signup" do
 
   @all_signups = Signup.all
 
   
-  erb :"view_add_signup"
+  erb :"views/signups/add_signup"
 end

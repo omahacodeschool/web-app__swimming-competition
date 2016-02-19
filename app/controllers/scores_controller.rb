@@ -1,4 +1,4 @@
-MyApp.post  "/view_add_score_confirmation" do
+MyApp.post "/add_score_confirmation" do
 
 
   y = params["signup_1_id"]
@@ -41,10 +41,10 @@ MyApp.post  "/view_add_score_confirmation" do
         @sorted_signup_records << @signup_records
   end
 
-erb :"view_add_score"
+erb :"views/scores/add_score"
 end
 
-MyApp.get  "/view_add_score" do
+MyApp.get "/add_score" do
 
 @sorted_signup_records = []
 
@@ -81,6 +81,6 @@ MyApp.get  "/view_add_score" do
   end
 
 
-  erb :"view_add_score"
+  erb :"views/scores/add_score"
 end
 

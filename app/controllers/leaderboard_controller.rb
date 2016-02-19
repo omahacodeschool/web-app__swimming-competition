@@ -1,4 +1,5 @@
-MyApp.get  "/view_leaderboard" do
+MyApp.get  "/leaderboard" do
+  # Still under construction:
 
   # @all_signups = Signup.all
   # event_id_dump = []
@@ -20,5 +21,5 @@ MyApp.get  "/view_leaderboard" do
   
 
 
-  erb :"view_leaderboard"
+  erb :"views/leaderboard/leaderboard"
 end

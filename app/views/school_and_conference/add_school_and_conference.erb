@@ -19,7 +19,7 @@
         </th>
       </tr>
       
-      <% Conference.all.each do |n| %> 
+      <% @conferences_all.each do |n| %> 
         <tr> 
           <td>
             <%= n.id %>
@@ -55,7 +55,7 @@
         </th>
       </tr>
 
-    <% School.all.each do |n| %> 
+    <% @schools_all.each do |n| %> 
       <tr> 
         <td>
           <%= n.id %>
@@ -84,7 +84,7 @@
   <br>
   <br>
   <br>
-    <form action="/view_add_school_and_conference_confirmation" method="post">
+    <form action="/add_school_and_conference_confirmation" method="post">
       Name of school:
   <br>
   <br>
