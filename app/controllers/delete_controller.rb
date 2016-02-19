@@ -15,7 +15,7 @@ MyApp.get "/delete_college/:b" do
   @this_colleges_competitors.each do |x|  #competitors of a particular college
     @event_detail_competitor_ids << x.id  #puts all the particular college's competitor_id's in an array
   end
-  @event_details_to_delete = EventDetail.where({"competitor_id" => "@event_detail_competitor_ids"})
+  @event_details_to_delete = EventDetail.where({"competitor_id" => "@event_detail_competitor_ids"})#details to delete are ones where ids match
   @event_details_to_delete.delete_all 
   @this_colleges_competitors.delete_all
   @colleges.delete
