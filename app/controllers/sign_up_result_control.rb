@@ -27,12 +27,12 @@ MyApp.get "/event/:id" do
 end
 
 MyApp.get "/edit_form/:id" do
-  @info = SignupResult.find_by_id(params[:id])
+  x = SignupResult.find_by_id(params[:id])
+  @info = x.event_access
   if @info.lock == true
     erb :"event/sorry_event_locked"
   else 
-    @info.delete
-    erb :"sign_result/delete_successful"
+    erb :"sign_result/edit_signup_form"
   end
 end
 
@@ -47,8 +47,8 @@ MyApp.post "/process_signup_form/:id" do
 end
 
 MyApp.get "/delete_event_result/:id" do
-  @info = SignupResult.find_by_id(params[:id])
-  binding.pry
+  x = SignupResult.find_by_id(params[:id])
+  @info = x.event_access
   if @info.lock == true
     erb :"event/sorry_event_locked"
   else 

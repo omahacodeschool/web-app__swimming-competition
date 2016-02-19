@@ -19,7 +19,8 @@
   <tbody>
     <% @info.each do |info| %>
 
-      <% if info.swimmer_exist? == true %>
+      <% if (info.swimmer_exist?) && (info.event_exist?) %>
+
         <tr>
           <td><%= info.swimmer_name %></td>
           <td>

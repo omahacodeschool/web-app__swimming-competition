@@ -26,7 +26,7 @@ MyApp.get "/edit_event_form/:id" do
   if @info.event_locked? == true
     erb :"event/sorry_event_locked"
   else
-  erb :"event/edit_event_form"
+    erb :"event/edit_event_form"
   end
 end
 
@@ -36,7 +36,6 @@ MyApp.post "/process_event_form/:id" do
   @info.save
   erb :"event/update_success"
 end
-
 
 
 MyApp.get "/delete_event/:id" do

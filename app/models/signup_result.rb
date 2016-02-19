@@ -14,9 +14,25 @@ class SignupResult < ActiveRecord::Base
     return z 
   end
 
+  def event_access
+    x = self.event_id
+    y = Event.find_by_id(x)
+    return y
+  end
+
   def swimmer_exist?
     x = swimmer_info_id
     y = SwimmerInfo.find_by_id(x)
+    if y != nil
+      return true
+    else
+      return false
+    end
+  end
+
+  def event_exist?
+    x = event_id
+    y = Event.find_by_id(x)
     if y != nil
       return true
     else
