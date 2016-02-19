@@ -37,9 +37,14 @@ end
 MyApp.post "/school_delete/:school_id" do
 	@school = School.find(params[:school_id])
 	x = @school.school_members
-	x.delete_competitor_info
-	@school.delete_school_info
-	@school.delete
+  if x != nil
+  	x.delete_competitor_info
+  	@school.delete_school_info
+  	@school.delete
+  else
+    @school.delete_school_info
+    @school.delete
+  end
   redirect :"schools"
 end
 
