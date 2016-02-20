@@ -3,7 +3,7 @@ MyApp.get "/delete_competition/:num" do
   @competition.delete
   @comp_result = Result.where(competition_id: params[:num])
   @comp_result.delete_all
-  erb :"successful/competition_deleted"
+  erb :"delete/competition_deleted"
 end
 
 MyApp.get "/delete_chili/:num" do
@@ -11,7 +11,7 @@ MyApp.get "/delete_chili/:num" do
   @chili.delete
   @chili_result = Result.where(chili_id: params[:num])
   @chili_result.delete_all
-  erb :"successful/chili_deleted"
+  erb :"delete/chili_deleted"
 end
 
 MyApp.get "/delete_contestant/:num" do
@@ -27,6 +27,15 @@ MyApp.get "/delete_contestant/:num" do
   @chili_result.delete_all
   @cont_chili.delete_all
   @contestant.delete
-  erb :"successful/contestant_deleted"
+  erb :"delete/contestant_deleted"
 end
 
+MyApp.get "/delete_city/:num" do
+  @del_city = Region.find_by_id(params[:num])
+  erb :"delete/city_deleted"
+end
+
+MyApp.get "/delete_scores/:num" do
+  @del_scores = Result.find_by_id(params[:num])
+  erb :"delete/scores_deleted"
+end

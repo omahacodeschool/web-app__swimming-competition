@@ -4,29 +4,93 @@
    Chili - <%= @f.name %><br>
    Contestant ID - <%= @f.contestant_id %></p>
 
-<p><a href="/">Homepage</a></p>
+<br>
+<br>
 
-<p><a href="/add_region">Add City</a></p>
+<table border="0">
+<tr>
 
-<p><a href="/add_contestant">Add Contestant</a></p>
+<td>
+  <form action="/add_city">
+    <input type="submit" value="Add City">
+  </form>
+</td>
 
-<p><a href="/add_chili">Add Chili</a></p>
+<td>
+  <form action="/add_contestant">
+    <input type="submit" value="Add Contestant">
+</form>
+</td>
 
-<p><a href="/add_competition">Add Competition Category</a></p>
+<td>
+  <form action="/add_chili">
+    <input type="submit" value="Add Chili">
+  </form>
+</td>
 
-<p><a href="/add_scores">Add Scores</a></p>
+<td>
+  <form action="/add_competition">
+    <input type="submit" value="Add Competition">
+  </form>
+
+<td>
+  <form action="/add_scores">
+    <input type="submit" value="Add Scores">
+  </form>
+</td>
+
+</tr>
+</table>
+
+
+<table border="0">
+<tr>
+
+<td>
+  <form action="/view_cities">
+      <input type="submit" value="View Cities">
+  </form>
+</td>
+
+<td>
+  <form action="/view_contestants">
+      <input type="submit" value="View Contestants">
+  </form>
+</td>
+
+<td>
+  <form action="/view_chilies">
+      <input type="submit" value="View Chilies">
+  </form>
+</td>
+
+<td>
+  <form action="/view_competitions">
+      <input type="submit" value="View Competitions">
+  </form>
+</td>
+
+<td>
+  <form action="/view_scores">
+      <input type="submit" value="View Scores">
+  </form>
+</td>
+
+<td>
+  <form action="/view_winners">
+      <input type="submit" value="View Winners">
+  </form>
+</td>
+
+</tr>
+</table>
 
 <br>
 <br>
 
-<p><a href="/view_regions">View Cities</a></p>
 
-<p><a href="/view_contestants">View Contestants</a></p>
-
-<p><a href="/view_chilies">View Chilies</a></p>
-
-<p><a href="/view_competitions">View Competition Categories</a></p>
-
-<p><a href="/view_results">View Scores</a></p>
-
-<p><a href="/winners">View Winners</a></p>
+<td>
+  <form action="/">
+    <input type="submit" value="Homepage">
+  </form>
+</td>

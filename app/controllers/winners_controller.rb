@@ -1,4 +1,4 @@
-MyApp.get "/winners" do
+MyApp.get "/view_winners" do
   erb :"winners/winners_by_year"
 end
 
@@ -17,6 +17,7 @@ MyApp.get "/competition_winners/:competition_id" do
   @all_scores = Result.where(competition_id: @comp_obj.id)
   @os = @all_scores.order(:"overall")
   @unscored = @os.find_by_overall(nil)
+  binding.pry
   @os = @os.limit(3).reverse
   erb :"winners/2015_winners_by_competition"
 end

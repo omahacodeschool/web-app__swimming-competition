@@ -1,6 +1,13 @@
-The city was updated to <%= @upd.city %>
+<h1><%= @comp_obj.name %> Competiton</h1>
 
 
+<p>The following are the current participants:</p>
+
+<% @comp_obj.contestants.each do |x| %>
+  <p><%= x.first_name %> 
+     <%= x.last_name %>
+     hails from <%= x.cities %></p>
+<% end %>
 
 
 <br>

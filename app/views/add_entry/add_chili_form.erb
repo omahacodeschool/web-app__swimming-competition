@@ -1,7 +1,22 @@
-The city was updated to <%= @upd.city %>
+<form action="/submit_chili">
 
+  <p>Please type the first name of the chili being entered</p>
+  <p><input type="text" name="name_of_chili"></p>
 
+  <p>Please type the contestant ID from the table below.</p>
+  <p><input type="text" name="contestant_id"></p>
 
+  <p><input type="submit"></p>
+
+</form>
+
+<p>Here is a list of all of the contestants in the database and their IDs:</p>
+
+<% @people.each do |x|%>
+  <p>ID - <%= x.id %><br>
+     Name - <%= x.first_name %> 
+     <%= x.last_name %></p>
+<% end %>
 
 <br>
 <br>

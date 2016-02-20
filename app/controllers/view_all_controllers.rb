@@ -3,7 +3,7 @@ MyApp.get "/view_contestants" do
   erb :"all_entries/all_contestants"
 end
 
-MyApp.get "/view_regions" do
+MyApp.get "/view_cities" do
   @regions = Region.all
   erb :"all_entries/all_cities"
 end
@@ -18,13 +18,8 @@ MyApp.get "/view_competitions" do
   erb :"all_entries/all_competitions"
 end
 
-MyApp.get "/view_results" do
+MyApp.get "/view_scores" do
   @scores = Result.all
-  erb :"all_entries/all_results"
-end
-
-MyApp.get "/category_info/:category_id" do
-  @comp_obj = Competition.find_by_id(params[:category_id])
-  erb :"all_entries/category_info"
+  erb :"all_entries/all_scores"
 end
 
