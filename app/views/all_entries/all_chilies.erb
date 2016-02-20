@@ -4,11 +4,26 @@
   <p>Chili ID - <%= x.id %><br>
      Chili Name - <%= x.name %><br>
      Contestant ID - <%= x.contestant_id %>
-      <a href="/delete_chili/<%= x.id %>">
-      Delete
-    </a>
+    <table border="0">
+      <tr>
+        <td>
+          <form action="/update_chili_form/<%= x.id %>">
+            <input type="submit" value="Update">
+          </form>
+        </td>
+
+        <td>
+          <form action="/delete_city/<%= x.id %>">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+    </table>
   </p>
 <% end %>
+
+
+
 
 
 <br>

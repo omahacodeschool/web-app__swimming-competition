@@ -1,23 +1,49 @@
 <p>Here's a list of the competition categories we have so far</p>
-  <table border="0">
-    <tr>
-      <% @all_cats.each do |a| %>
-      Category ID - <%= a.id %><br> 
-      Category Name - 
-        <a href="/competition_info/<%= a.id %>">
-          <%= a.name %>
-        </a> 
-        &nbsp;
-        <form action="/competition_was_deleted/<%= a.id %>">
-          <input type="submit" value="Delete">
-        </form>
-      <% end %>
-    </tr>
-  </table>
-</p>
+
+<% @all_cats.each do |a| %>
+  <p>Category ID - <%= a.id %><br> 
+     Category Name - 
+     <a href="/competition_info/<%= a.id %>">
+        <%= a.name %>
+     </a> 
+
+    <table border="0">
+      <tr>
+        <td>
+          <form action="/update_competition_form/<%= a.id %>">
+            <input type="submit" value="Update">
+          </form>
+        </td>
+
+        <td>
+          <form action="/competition_was_deleted/<%= a.id %>">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+    </table>
+  </p>
+<% end %>
+     
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,14 @@
+<form action="/submit_contestant_update/<%= @contestant.id %>">
 
+  <p>Please type your update for the contestant of 
+    <%= @contestant.first_name %>
+    <%= @contestant.last_name %>.</p>
+
+  <input type="text" name="city_name">
+  
+  <input type="submit">
+
+</form>
 
 
 

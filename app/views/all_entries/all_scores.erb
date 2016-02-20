@@ -1,16 +1,61 @@
 <p>Here's a list of the scores we have so far</p>
 
+
 <% @scores.each do |x|%>
   <p>Scores ID - <%= x.id %><br>
-  Chili ID - <%= x.chili_id %><br>
-  Competition ID - <%= x.competition_id %><br>
-  Appearance Score - <%= x.appearance %><br>
-  Aroma Score - <%= x.aroma %><br>
-  Texture Score - <%= x.texture %><br>
-  Flavor Score - <%= x.flavor %><br>
-  Heat Score - <%= x.heat %><br>
-  Overall Score - <%= x.overall %></p>
+     Chili ID - <%= x.chili_id %><br>
+     Competition ID - <%= x.competition_id %><br>
+     Appearance Score - <%= x.appearance %><br>
+     Aroma Score - <%= x.aroma %><br>
+     Texture Score - <%= x.texture %><br>
+     Flavor Score - <%= x.flavor %><br>
+     Heat Score - <%= x.heat %><br>
+     Overall Score - <%= x.overall %>
+
+    <table border="0">
+      <tr>
+
+        <td>
+            <form action="/update_scores_form/<%= x.id %>">
+              <input type="submit" value="Update">
+            </form>
+        </td>
+
+        <td>    
+            <form action="/delete_scores/<%= x.id %>">
+              <input type="submit" value="Delete">
+            </form>
+        </td>
+
+      </tr>
+    </table>
+  </p>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br>
