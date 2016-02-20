@@ -61,19 +61,15 @@ MyApp.get "/delete_conference/:b" do
   end
 end
 
-# Processes deletion of an event detail  #DOESN'T WORK
-MyApp.get "/delete_event_detail" do 
-  @events = Event.all
-  @competitors = Competitor.all 
-  @event_details = EventDetail.all 
-
-  erb :"delete/delete_event_detail"
-end
-
 # Processes deletion of an event
 MyApp.get "/delete_event/:b" do 
-  @events = Event.find_by_id(params[:b])
-  @events.delete
+  @event = Event.find_by_id(params[:b])
+  if @event.locked == true
+
+    erb :"misc/event_locked"
+  else  
+    @event.delete
 
   erb :"delete/delete_event"
+  end
 end
