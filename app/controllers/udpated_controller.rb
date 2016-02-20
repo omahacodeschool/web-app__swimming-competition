@@ -56,10 +56,17 @@ end
 #Processes the form for updating event details
 MyApp.post "/event_detail_updated/:num" do
   @event_details = EventDetail.find_by_id(params[:num])
-  @event_details.event_id = params["evnt_id"]
-  @event_details.competitor_id = params["comp_id"]
-  @event_details.finish_time = params["fnsh_time"] 
-  @event_details.save   
+  @events = Event.find_by_id(params[:num]) 
+  if @events.locked == true
 
-  erb :"updated/event_detail_updated"
+    erb :"misc/event_locked"
+  else   
+    @event_details.event_id = params["evnt_id"]
+    @event_details.competitor_id = params["comp_id"]
+    @event_details.finish_time = params["fnsh_time"] 
+    @event_details.save   
+
+    erb :"updated/event_detail_updated"
+  end
 end
+
