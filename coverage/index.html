@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-19T10:51:48-06:00">2016-02-19T10:51:48-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-21T15:05:18-06:00">2016-02-21T15:05:18-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">25.65%</span></span>
+    (<span class="covered_percent"><span class="red">27.27%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.25
+         0.3
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>191</b> relevant lines. 
-    <span class="green"><b>49</b> lines covered</span> and
-    <span class="red"><b>142</b> lines missed </span>
+    <b>187</b> relevant lines. 
+    <span class="green"><b>51</b> lines covered</span> and
+    <span class="red"><b>136</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -132,12 +132,12 @@
       
       <tr>
         <td class="strong"><a href="#01901f1e550bd096d4b4ec06ad21affd86c3a991" class="src_link" title="app/models/Penguin.rb">app/models/Penguin.rb</a></td>
-        <td class="red strong">36.36 %</td>
-        <td>19</td>
-        <td>11</td>
-        <td>4</td>
+        <td class="yellow strong">85.71 %</td>
+        <td>13</td>
         <td>7</td>
-        <td>0.4</td>
+        <td>6</td>
+        <td>1</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -1751,11 +1751,11 @@
         <div class="source_table" id="01901f1e550bd096d4b4ec06ad21affd86c3a991">
   <div class="header">
     <h3>app/models/Penguin.rb</h3>
-    <h4><span class="red">36.36 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1780,20 +1780,20 @@
           <code class="ruby">  def rookery_access</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
-          
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">    x = self.rookery_id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">    y = Rookery.find_by_id(x)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    y</code>
         </li>
@@ -1813,64 +1813,28 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  def event_access</code>
+          <code class="ruby">  def delete_results</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">    x = self.event_id</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">    y = Event.find_by_id(x)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">    y</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def delete_results</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
           <code class="ruby">    Result.where(&quot;penguin_id&quot; =&gt; self.id).delete_all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>
