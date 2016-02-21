@@ -8,9 +8,8 @@ MyApp.get "/winners" do
   #splash page of events
 end
 
-MyApp.post "/calcwinner" do
+MyApp.get "/viewwinners" do
   @currentevent = Event.find_by_id(params[:eventid])
-  @x = Finish.where({"event_id" => params[:eventid]})
   @f = Finish.this_event(params[:eventid])
   @y = Winner.this_event
 
@@ -18,9 +17,16 @@ MyApp.post "/calcwinner" do
     erb :"/ev/eventnotover"
   
   elsif @f & @y != []
-    erb :"/ev/view_winner"
+    @currentevent = Event.find_by_id(params[:eventid])
+    redirect '/view_winner'
 
   elsif @f & @y == []
+    @currentevent = Event.find_by_id(params[:eventid])
+    erb :"/ev/calculate_winners"
+  end
+end
+
+MyApp.post "/calcwinners" do
     @finishes = Finish.finish_array(params[:eventid])
     @x = Finish.where({"event_id" => params[:eventid]})
     
@@ -41,17 +47,17 @@ MyApp.post "/calcwinner" do
     @three.rank_id = 3
     @three.finish_id = third.id
     @three.save
-    
+
     erb :"/ev/view_winner"
-  end
-end
+end  
+
 
 MyApp.get "/view_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
-  swimmers = Finish.where({"event_id" => params[:id]})
+  @finishes = Finish.this_event(params[:id])
   @winners = []
-  swimmers.each do |swim|
-    @winners << Winner.where({"finish_id" => swim.id})
+  @finishes.each do |swim|
+    @winners << Winner.where({"finish_id" => swim})
   end
   erb :"/ev/view_winner"
 end

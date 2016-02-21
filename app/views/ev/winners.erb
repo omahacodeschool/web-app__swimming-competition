@@ -5,7 +5,7 @@
 <ul>
   <% @events.each do |event| %>
     <li><%=event.event_name%>
-    <form action="/calcwinner" method="post">
+    <form action="/viewwinners" method="get">
       <input type="hidden" value="<%=event.id%>" name="eventid" />
       <input type="Submit" value="View Winners">
     </form>
