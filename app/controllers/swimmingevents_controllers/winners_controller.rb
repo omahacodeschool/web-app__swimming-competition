@@ -18,7 +18,7 @@ MyApp.get "/viewwinners" do
   
   elsif @f & @y != []
     @currentevent = Event.find_by_id(params[:eventid])
-    redirect '/view_winner'
+    redirect '/view_winner/' + params[:eventid]
 
   elsif @f & @y == []
     @currentevent = Event.find_by_id(params[:eventid])
@@ -56,6 +56,7 @@ MyApp.get "/view_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
   @finishes = Finish.this_event(params[:id])
   @winners = []
+  binding.pry
   @finishes.each do |swim|
     @winners << Winner.where({"finish_id" => swim})
   end
