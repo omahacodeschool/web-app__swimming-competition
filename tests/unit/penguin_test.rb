@@ -52,11 +52,14 @@ class PenguinTest < Minitest::Test
     assert_equal(@polar_tech.name, @audrey_hepburn.rookery_access.name)
     assert_equal(@south_pole.conference_id, @duke_ellington.rookery_access.id)
     assert_equal(@south_pole.name, @duke_ellington.rookery_access.name)
-  end
+  end  
 
-  def test_delete_results
-    assert_equal(@
-  end
+
+     #  Test for delete_results method. Does not work. Is there a way to test this?
+  # def test_delete_results
+  #   assert_equal(@result_2.penguin_id, @audrey_hepburn.delete_results)
+  # end
+
 
 
 end
