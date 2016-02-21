@@ -11,15 +11,15 @@ end
 MyApp.post "/calcwinner" do
   @currentevent = Event.find_by_id(params[:eventid])
   @x = Finish.where({"event_id" => params[:eventid]})
+  @f = Finish.this_event(params[:eventid])
   @y = Winner.all
-  binding.pry
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
   
-  elsif @x & @y != []
+  elsif @f & @y != []
     erb :"/ev/view_winner/params[:eventid]"
 
-  elsif @x & @y == []
+  elsif @f & @y == []
     @finishes = Finish.finish_array(params[:eventid])
     @x = Finish.where({"event_id" => params[:eventid]})
     
