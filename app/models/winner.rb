@@ -18,7 +18,7 @@ class Winner < ActiveRecord::Base
     swimmer = Swimmer.find_by_id(y.swimmer_id)
     return swimmer.swimmer_name
   end
-  ##this will require a new test--also not sure how it works yet
+  
    def self.this_event 
     @finishes = []
       x = Winner.all

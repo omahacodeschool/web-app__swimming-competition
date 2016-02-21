@@ -41,4 +41,8 @@ class FinishTest < Minitest::Test
     def test_finish_array
         assert_equal([100,200],Finish.finish_array(@e.id))
     end
+
+    def test_this_event
+        assert_equal([@f.id, @f2.id], Finish.this_event(@e.id))
+    end    
 end

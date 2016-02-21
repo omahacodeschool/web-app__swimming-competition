@@ -78,5 +78,9 @@ class WinnerTest < Minitest::Test
     assert_equal("Andrew Winner Yolland", @w2.find_swimmer)
   end
 
+  def test_this_event
+    assert_equal([@f.id, @f2.id], Winner.this_event)
+  end
+
 
 end
