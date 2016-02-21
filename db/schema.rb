@@ -15,15 +15,11 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "conferences", force: :cascade do |t|
-    t.text "conference_name"
-  end
-
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "event_name"
-    t.string   "locked?"
+    t.binary   "locked?"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -38,7 +34,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",          null: false
     t.integer  "swimmer_id"
     t.integer  "event_id"
-    t.integer  "completed_swim_time"
+    t.string   "completed_swim_time"
   end
 
   create_table "swimmers", force: :cascade do |t|
