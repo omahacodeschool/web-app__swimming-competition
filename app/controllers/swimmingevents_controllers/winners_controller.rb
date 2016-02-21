@@ -12,7 +12,7 @@ MyApp.post "/calcwinner" do
   @currentevent = Event.find_by_id(params[:eventid])
   @x = Finish.where({"event_id" => params[:eventid]})
   @y = Winner.all
-
+  binding.pry
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
   
