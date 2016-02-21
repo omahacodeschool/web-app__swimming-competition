@@ -7,23 +7,21 @@ class ResultTest < Minitest::Test
     @audrey_hepburn = Penguin.new
     @audrey_hepburn.last_name = "Hepburn"
     @audrey_hepburn.first_name = "Audrey"
-    @audrey_hepburn.rookery_id = 2
+    @audrey_hepburn.rookery_id = @polar_tech.id
     @audrey_hepburn.save
 
     @duke_ellington = Penguin.new
     @duke_ellington.last_name = "Ellington"
     @duke_ellington.first_name = "Duke"
-    @duke_ellington.rookery_id = 1
+    @duke_ellington.rookery_id = @south_pole.id
     @duke_ellington.save
 
     @south_pole = Rookery.new
     @south_pole.name = "South Pole University"
-    @south_pole.conference_id = 1
     @south_pole.save
 
     @polar_tech = Rookery.new
     @polar_tech.name = "Polar Tech"
-    @polar_tech.conference_id = 2
     @polar_tech.save
 
     @event_1 = Event.new
@@ -35,14 +33,14 @@ class ResultTest < Minitest::Test
     @event_2.save
 
     @result_1 = Result.new
-    @result_1.penguin_id = 2
-    @result_1.event_id = 2
+    @result_1.penguin_id = @duke_ellington.id
+    @result_1.event_id = @event_2.id
     @result_1.time = 98
     @result_1.save
 
     @result_2 = Result.new
-    @result_2.penguin_id = 1
-    @result_2.event_id = 1
+    @result_2.penguin_id = @audrey_hepburn.id
+    @result_2.event_id = @event_1.id
     @result_2.time = 99
     @result_2.save    
 

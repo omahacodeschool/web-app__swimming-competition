@@ -14,12 +14,12 @@ class ConferenceTest < Minitest::Test
 
     @polar_tech = Rookery.new
     @polar_tech.name = "Polar Tech"
-    @polar_tech.conference_id = 2
+    @polar_tech.conference_id = @conference_2.id
     @polar_tech.save
 
     @south_pole = Rookery.new
     @south_pole.name = "South Pole University"
-    @south_pole.conference_id = 2
+    @south_pole.conference_id = @conference_2.id
     @south_pole.save
 
   end
