@@ -3,9 +3,12 @@
 
 <h2>Tournament Events:<h2>
 <ul>
-  <% @events.each do |post| %>
-    <li><%=post.event_name%>
-    <a href="/find_winner/<%=post.id%>"> VIEW WINNERS </a>
+  <% @events.each do |event| %>
+    <li><%=event.event_name%>
+    <form action="/calcwinner" method="post">
+      <input type="hidden" value="<%=event.id%>" name="eventid" />
+      <input type="Submit" value="View Winners">
+    </form>
   <% end %>
 </ul>
 
