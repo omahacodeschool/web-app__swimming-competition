@@ -14,6 +14,12 @@ class SwimmerTest < Minitest::Test
     @shannon_jackson.college_id = @ocs.id
     @shannon_jackson.save
 
+    @andrew = Swimmer.new
+    @andrew.first_name = "Andrew Swimmer"
+    @andrew.last_name = "Yolland"
+    @andrew.college_id = @ocs.id
+    @andrew.save
+
     @event = Event.new
     @event.event_name = "Swim"
     @event.save
@@ -44,6 +50,7 @@ class SwimmerTest < Minitest::Test
 
   def test_registered_events
     assert_equal([@event.id], @shannon_jackson.registered_events)
+    assert_equal("n/a", @andrew.registered_events)
     refute_equal([@event2.id], @shannon_jackson.registered_events)
   end
 

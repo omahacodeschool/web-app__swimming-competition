@@ -25,6 +25,11 @@ class EventTest < Minitest::Test
     @e.locked = true
     @e.save
 
+    @e3 = Event.new
+    @e3.event_name = "Stay Dry"
+    @e3.locked = false
+    @e3.save
+
     @register = Signup.new
     @register.swimmer_id = @shannon.id
     @register.event_id = @e.id
@@ -68,6 +73,7 @@ class EventTest < Minitest::Test
   def test_event_over
     assert_equal(false, @event2.event_over?)
     assert_equal(true, @e.event_over?)
+    assert_equal(false, @e3.event_over?)
   end
 
   def test_locked_status

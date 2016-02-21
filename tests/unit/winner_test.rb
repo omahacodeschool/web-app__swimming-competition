@@ -17,6 +17,7 @@ class WinnerTest < Minitest::Test
     @andrew = Swimmer.new
     @andrew.first_name = "Andrew Winner"
     @andrew.last_name = "Yolland"
+    @andrew.college_id = @ocs.id
     @andrew.save
 
     @e2 = Event.new
