@@ -53,6 +53,15 @@ MyApp.post "/event_updated/:num" do
   end
 end
 
+#Processes the locking of an event
+MyApp.post "/success_event_locked/:num" do
+  @events = Event.find_by_id(params[:num])
+  @events.locked = true
+  @events.save
+
+  erb :"misc/success_event_locked"
+end
+
 #Processes the form for updating event details
 MyApp.post "/event_detail_updated/:num" do
   @event_details = EventDetail.find_by_id(params[:num])
