@@ -54,13 +54,13 @@ end
 
 MyApp.get "/view_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
-  f = Finish.this_event(params[:eventid])
+  f = Finish.this_event(params[:id])
   y = Winner.this_event
   @finishes = f & y
   @winners = []
-  binding.pry
+  
   @finishes.each do |swim|
-    @winners << Winner.where({"finish_id" => swim})
+    @winners << Winner.where({"finish_id" => swim})[0]
   end
   erb :"/ev/view_winner"
 end
