@@ -6,12 +6,12 @@ class EventTest < Minitest::Test
     super
 
     @shannon = Swimmer.new
-    @shannon.first_name = "Shannon"
+    @shannon.first_name = "Shannon Event"
     @shannon.last_name = "Jackson"
     @shannon.save
 
     @andrew = Swimmer.new
-    @andrew.first_name = "Andrew"
+    @andrew.first_name = "Andrew Event"
     @andrew.last_name = "Yolland"
     @andrew.save
 

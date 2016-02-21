@@ -9,7 +9,7 @@ class SwimmerTest < Minitest::Test
     @ocs.save
 
     @shannon_jackson = Swimmer.new
-    @shannon_jackson.first_name = "Shannon"
+    @shannon_jackson.first_name = "Shannon Swimmer"
     @shannon_jackson.last_name = "Jackson"
     @shannon_jackson.college_id = @ocs.id
     @shannon_jackson.save
@@ -35,7 +35,7 @@ class SwimmerTest < Minitest::Test
   end
 
   def test_swimmer_name
-    assert_equal("Shannon Jackson", @shannon_jackson.swimmer_name)
+    assert_equal("Shannon Swimmer Jackson", @shannon_jackson.swimmer_name)
   end
 
   def test_find_collge_name

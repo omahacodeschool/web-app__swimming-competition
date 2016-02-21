@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SignupTest < Minitest::Test
+class WinnerTest < Minitest::Test
   
   def setup
     super
@@ -9,13 +9,13 @@ class SignupTest < Minitest::Test
     @ocs.save
 
     @shannon = Swimmer.new
-    @shannon.first_name = "Shannon"
+    @shannon.first_name = "Shannon Winner"
     @shannon.last_name = "Jackson"
     @shannon.college_id = @ocs.id
     @shannon.save
 
     @andrew = Swimmer.new
-    @andrew.first_name = "Andrew"
+    @andrew.first_name = "Andrew Winner"
     @andrew.last_name = "Yolland"
     @andrew.save
 
@@ -73,8 +73,8 @@ class SignupTest < Minitest::Test
   end
 
   def test_find_swimmer
-    assert_equal("Shannon Jackson", @w1.find_swimmer)
-    assert_equal("Andrew Yolland", @w2.find_swimmer)
+    assert_equal("Shannon Winner Jackson", @w1.find_swimmer)
+    assert_equal("Andrew Winner Yolland", @w2.find_swimmer)
   end
 
 
