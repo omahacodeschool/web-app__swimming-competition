@@ -3,6 +3,7 @@ require 'test_helper'
 class ResultTest < Minitest::Test
   def setup
     super
+
     @audrey_hepburn = Penguin.new
     @audrey_hepburn.last_name = "Hepburn"
     @audrey_hepburn.first_name = "Audrey"
@@ -35,31 +36,29 @@ class ResultTest < Minitest::Test
 
     @result_1 = Result.new
     @result_1.penguin_id = 2
-    @result_1.event_id = 1
+    @result_1.event_id = 2
     @result_1.time = 98
     @result_1.save
 
     @result_2 = Result.new
     @result_2.penguin_id = 1
-    @result_2.event_id = 2
+    @result_2.event_id = 1
     @result_2.time = 99
-    @result_2.save
+    @result_2.save    
+
 
   end
 
+  def test_penguin_access
+    assert_equal(@audrey_hepburn.last_name, @result_2.penguin_access.last_name)
+  end
+
+  def test_event_access
+    assert_equal(@event_1.name, @result_2.event_access.name)
+  end
 
   def test_rookery_access
-    assert_equal(@polar_tech.name, @audrey_hepburn.rookery_access.name)
-    assert_equal(@south_pole.conference_id, @duke_ellington.rookery_access.id)
-    assert_equal(@south_pole.name, @duke_ellington.rookery_access.name)
-  end  
-
-
-     #  Test for delete_results method. Does not work. Is there a way to test this?
-  # def test_delete_results
-  #   assert_equal(@result_2.penguin_id, @audrey_hepburn.delete_results)
-  # end
-
-
+    assert_equal(@polar_tech.name, @result_2.rookery_access.name)
+  end 
 
 end
