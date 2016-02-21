@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PenguinTest < Minitest::Test
+class ResultTest < Minitest::Test
   def setup
     super
     @audrey_hepburn = Penguin.new
