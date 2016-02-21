@@ -54,7 +54,9 @@ end
 
 MyApp.get "/view_winner/:id" do
   @currentevent = Event.find_by_id(params[:id])
-  @finishes = Finish.this_event(params[:id])
+  f = Finish.this_event(params[:eventid])
+  y = Winner.this_event
+  @finishes = f & y
   @winners = []
   binding.pry
   @finishes.each do |swim|
