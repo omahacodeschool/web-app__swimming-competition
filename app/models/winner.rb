@@ -19,9 +19,9 @@ class Winner < ActiveRecord::Base
     return swimmer.swimmer_name
   end
   ##this will require a new test--also not sure how it works yet
-   def self.this_event
-    
+   def self.this_event 
     @finishes = []
+      x = Winner.all
       x.each do |finishid|
         @finishes << finishid.finish_id
       end

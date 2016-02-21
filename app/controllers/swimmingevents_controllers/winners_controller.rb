@@ -12,12 +12,13 @@ MyApp.post "/calcwinner" do
   @currentevent = Event.find_by_id(params[:eventid])
   @x = Finish.where({"event_id" => params[:eventid]})
   @f = Finish.this_event(params[:eventid])
-  @y = Winner.all
+  @y = Winner.this_event
+
   if @currentevent.event_over? == false
     erb :"/ev/eventnotover"
   
   elsif @f & @y != []
-    erb :"/ev/view_winner/params[:eventid]"
+    erb :"/ev/view_winner"
 
   elsif @f & @y == []
     @finishes = Finish.finish_array(params[:eventid])
@@ -40,9 +41,7 @@ MyApp.post "/calcwinner" do
     @three.rank_id = 3
     @three.finish_id = third.id
     @three.save
-  
-    @winners = [@one, @two, @three]
-    @currentevent = Event.find_by_id(params[:eventid])
+    
     erb :"/ev/view_winner"
   end
 end
