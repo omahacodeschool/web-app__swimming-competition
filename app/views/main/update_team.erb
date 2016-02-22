@@ -1,4 +1,4 @@
-<h2>Update Info for <%= @team.team_name %> in the <%= @team.team_conference %> Conference:</h2>
+<h2>Update Info for <%= @team.team_name %>:</h2>
 
 <a href="/">Home</a>
 <br />
@@ -18,7 +18,8 @@
   <br />
     <% Conference.all.each do |conference| %>
       <input type="radio" name="select_conference_update" 
-      value="<%= conference.id %>" checked required> 
+      value="<%= conference.id %>" 
+      <%= "checked" if @team.conference_id == conference.id %> required> 
       <%= conference.conference_name %>
       <br />
     <% end %>

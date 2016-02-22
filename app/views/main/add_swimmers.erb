@@ -30,9 +30,10 @@
   Team:
   <br />
   <select name="swimmer_team">
+    <option>Select a team...</option>
     <% Team.all.each do |team| %>
       <option value="<%= team.id %>">
-      <%= team.team_name %>
+        <%= team.team_name %>
       </option>
     <% end %>
   </select>

@@ -18,38 +18,41 @@
   <br />
   <input type="date" name="swimmer_dob_update" value="<%= @swimmer.swimmer_dob %>" required>
   </p>
-<!--Boolean check against original setting-->
+<!--Figure out 'checked if' code-->
   <p>
   Gender:
   <br />
-  <input type="radio" name="swimmer_gender_update" value="Male"> Male<br />
-  <input type="radio" name="swimmer_gender_update" value="Female"> Female<br />
-  <input type="radio" name="swimmer_gender_update" value="Other"> Other<br />
+  <input type="radio" name="swimmer_gender_update" value="Male"
+  <%= "checked" if @swimmer.swimmer_gender == "Male" %>> Male<br />
+  <input type="radio" name="swimmer_gender_update" value="Female"
+  <%= "checked" if @swimmer.swimmer_gender == "Female" %>> Female<br />
+  <input type="radio" name="swimmer_gender_update" value="Other"
+  <%= "checked" if @swimmer.swimmer_gender == "Other" %>> Other<br />
   </p>
 
   <p>
   Team:
   <br />
-  <i>(currently on: <%= @swimmer.swimmer_team %>)</i>
-  <br />
   <select name="swimmer_team_update">
     <% Team.all.each do |team| %>
-      <option value="<%= team.id %>">
+      <option value="<%= team.id %>"
+      <%= "selected" if @swimmer.team_id == team.id %>>
       <%= team.team_name %>
       </option>
     <% end %>
   </select>
   <br />
   </p>
-
+<!--Figure out 'checked if' code-->
   <p>
   Payment?:
   <br />
   <input type="radio" name="swimmer_payment_status_update" value="true" 
-  checked> 
+  <%= "checked" if @swimmer.swimmer_payment_status == true %>> 
   Pay Now
   <br />
-  <input type="radio" name="swimmer_payment_status_update" value="false"> 
+  <input type="radio" name="swimmer_payment_status_update" value="false"
+  <%= "checked" if @swimmer.swimmer_payment_status == false %>> 
   Pay Later
   <br />
   </p>  

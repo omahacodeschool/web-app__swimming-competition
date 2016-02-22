@@ -11,7 +11,8 @@
   <br />
     <select name="run_swimmer_update">
     <% Swimmer.all.each do |swimmer| %>
-      <option value="<%= swimmer.id %>">
+      <option value="<%= swimmer.id %>"
+      <%= "selected" if @run.swimmer_id == swimmer.id %>>
       <%= swimmer.swimmer_name %>
       </option>
     <% end %>

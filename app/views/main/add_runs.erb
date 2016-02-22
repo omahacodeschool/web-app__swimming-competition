@@ -6,24 +6,12 @@
 <br />
 
 <form action="/runs_form" method="post">
-  
-  <p>
-  Event:
-  <br />
-  <select name="run_event">
-    <% Event.all.each do |event| %>
-      <option value="<%= event.id %>">
-      <%= event.event_name %>
-      </option>
-    <% end %>
-  </select>
-  <br />
-  </p>
 
   <p>
   Swimmer:
   <br />
   <select name="run_swimmer">
+    <option>Select a swimmer...</option>
     <% Swimmer.all.each do |swimmer| %>
       <option value="<%= swimmer.id %>">
       <%= swimmer.swimmer_name %>
@@ -31,6 +19,32 @@
     <% end %>
   </select>
   <br />
+  </p>
+
+<!--   <p>
+  Event:
+  <br />
+  <select name="run_event">
+    <option>Select an event...</option>
+    <% Event.all.each do |event| %>
+      <option value="<%= event.id %>">
+      <%= event.event_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p> -->
+
+<!--Have swimmers sign up for their events on the add_swimmers view. On this view, have the admin select an event and a dropdown below will dynamically populate with swimmers who have signed up for that event. Then add times one at a time for each swimmer of that particular event-->
+
+<!--Passing multiple values: name = ARRAY-->
+  <p>
+  Event:
+  <br />
+    <% Event.all.each do |event| %>
+    <input type="checkbox" name="event_name[]" value="<%= event.id %>"><%= event.event_name %>
+    <br />
+    <% end %>
   </p>
 
   <p>
@@ -51,9 +65,9 @@
 
   <% if Run.ids.any? %>
     <p>
-    <strong style="color:green">
+    <h2 style="color:green">
       THANK YOU!
-    </strong>
+    </h2>
     </p>
     <a href="/add_events">Go To Add Events</a>
     <br />
