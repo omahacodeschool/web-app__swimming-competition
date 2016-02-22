@@ -13,7 +13,9 @@ MyApp.post "/event_added" do
   x = Event.new
   x.gender = params[:gender]
   x.distance = params[:race_distance]
-  x.style_id = params[:style_id]
+  @style_name = params[:style]
+  @styleid = x.get_style_id(@style_name)
+  x.style_id = @styleid
   x.lock = false
   x.save
   erb :"main/add/event_added"
@@ -58,7 +60,8 @@ MyApp.post "/update/event_updated/:stopsign" do
   @event = Event.find_by_id(params[:stopsign])
   @event.gender = params[:gender]
   @event.distance = params[:race_distance]
-  @event.style_id = params[:style_id]
+  @style_name = params[:style]
+  @event.style_id = @event.get_style_id(@style_name)
   @event.save
   erb :"main/update/event_updated"
 end
