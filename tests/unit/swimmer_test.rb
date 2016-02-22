@@ -58,6 +58,18 @@ class SwimmerTest < Minitest::Test
     assert_equal(100, @shannon_jackson.finishtime(@event.id))
   end
 
+  def test_register
+    @e2 = Event.new
+    @e2.save
+
+    @e3 = Event.new
+    @e3.save
+
+    @andrew.register([@e2.id, @e3.id])
+
+    assert_equal([@e2.id, @e3.id], @andrew.registered_events)
+  end
+
 
 
 end

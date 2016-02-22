@@ -8,13 +8,13 @@ MyApp.get "/signups" do
 end
 
 MyApp.post "/newsignup" do
-  #check = Event.find_by_id(params[:eventid])
   @currentswimmer = Swimmer.find_by_id(params[:swimmerid])
+  Signup.where("swimmer_id" => @currentswimmer.id).delete_all
   @currentswimmer.register(params[:events])
   @events = Event.unlocked_events
   @lockedevents = Event.locked_events
   @swimmers = Swimmer.all
-  erb :"/cv/signups"
+  erb :"/cv/signups"##--> this is not what i want
 end
 
 MyApp.post "/remove_swimmer/:id" do

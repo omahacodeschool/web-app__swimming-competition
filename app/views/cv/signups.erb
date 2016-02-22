@@ -14,6 +14,7 @@
     Events:<br>
     <% @events.each do |event| %>
       <input type="checkbox" name="events[]" value="<%= event.id %>">
+      <%= "checked" if ??????????include?(event) %>>
       <label><%= event.event_name %> 
     <% end %>
       <input type="submit">
