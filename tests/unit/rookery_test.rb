@@ -12,17 +12,13 @@ class RookeryTest < Minitest::Test
     @conference_2.name = "South"
     @conference_2.save
 
-    @audrey_hepburn = Penguin.new
-    @audrey_hepburn.last_name = "Hepburn"
-    @audrey_hepburn.first_name = "Audrey"
-    @audrey_hepburn.rookery_id = @polar_tech.id
-    @audrey_hepburn.save
+    @event_1 = Event.new
+    @event_1.name = "100m Waddle"
+    @event_1.save
 
-    @duke_ellington = Penguin.new
-    @duke_ellington.last_name = "Ellington"
-    @duke_ellington.first_name = "Duke"
-    @duke_ellington.rookery_id = @south_pole.id
-    @duke_ellington.save
+    @event_2 = Event.new
+    @event_2.name = "Polar Plunge"
+    @event_2.save
 
     @south_pole = Rookery.new
     @south_pole.name = "South Pole University"
@@ -34,13 +30,17 @@ class RookeryTest < Minitest::Test
     @polar_tech.conference_id = @conference_2.id
     @polar_tech.save
 
-    @event_1 = Event.new
-    @event_1.name = "100m Waddle"
-    @event_1.save
+    @audrey_hepburn = Penguin.new
+    @audrey_hepburn.last_name = "Hepburn"
+    @audrey_hepburn.first_name = "Audrey"
+    @audrey_hepburn.rookery_id = @polar_tech.id
+    @audrey_hepburn.save
 
-    @event_2 = Event.new
-    @event_2.name = "Polar Plunge"
-    @event_2.save
+    @duke_ellington = Penguin.new
+    @duke_ellington.last_name = "Ellington"
+    @duke_ellington.first_name = "Duke"
+    @duke_ellington.rookery_id = @south_pole.id
+    @duke_ellington.save
 
     @result_1 = Result.new
     @result_1.penguin_id = @duke_ellington.id
@@ -58,12 +58,14 @@ class RookeryTest < Minitest::Test
 
 
   def test_conference_access
-    assert_equal(@conference_1.name, @south_pole.rookery_access.name)
+    assert_equal(@conference_1.name, @south_pole.conference_access.name)
+    assert_equal(@conference_2.id, @polar_tech.conference_access.id)
   end  
 
-
-  def test_delete_penguins
-  end 
+  #Is there a way to test this functionality?
+  # def test_delete_penguins
+  #   assert_equal(@duke_ellington, @south_pole.delete_penguins)
+  # end 
 
 
 
