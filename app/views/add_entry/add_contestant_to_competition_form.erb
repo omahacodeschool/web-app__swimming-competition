@@ -1,7 +1,13 @@
 <p>Please enter the Chili ID to enter into the competition.</p>
 
+<p>The following chilis are already contestants in this competiton:</p>
+
+<% @all_contestants.each do |x| %>
+  <p>Chili #<%= x.chili_id %></p>
+<% end %>
+
 <% @chili_selection.each do |a| %>
-  <p>Chili ID - <%= a.id %><br> 
+  <p>Chili #<%= a.id %><br> 
      Chili Name - <%= a.name %>
   </p>
 <% end %>

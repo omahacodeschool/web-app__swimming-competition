@@ -12,7 +12,32 @@
      Heat Score - <%= x.heat %><br>
      Overall Score - <%= x.overall %>
 
+    <% if x.lock == false %>
+      <table border="0">
+          <tr>
+            <td>
+              <form action="/score_locked">
+                <input type="submit" value="Lock This Score">
+              </form>
+            </td>
 
+            <td>
+              <form action="/update_scores_form/<%= x.id %>">
+                <input type="submit" value="Update">
+              </form>
+            </td>
+
+            <td>
+              <form action="/scores_was_deleted/<%= x.id %>">
+                <input type="submit" value="Delete">
+              </form>
+            </td>
+          </tr>
+        </table>
+
+    <% elsif x.lock == true %>
+      <p> This score is locked and cannot be altered </p>
+    <% end %>
       
   </p>
 <% end %>

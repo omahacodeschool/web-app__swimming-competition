@@ -1,7 +1,7 @@
 <p>Here's a list of the contestants we have so far</p>
 
 <% @con.each do |row|%>
-  <p>Contestant ID - <%= row.id %><br> 
+  <p>Contestant #<%= row.id %><br> 
      Contestant Name - <%= row.first_name %> 
      <%= row.last_name %><br>
      hails from <%= row.cities %>

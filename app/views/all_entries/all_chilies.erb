@@ -1,9 +1,10 @@
 <p>Here's a list of the chilies we so far</p>
 
 <% @noms.each do |x|%>
-  <p>Chili ID - <%= x.id %><br>
+  <p>Chili #<%= x.id %><br>
+     Contestant - <%= x.contestant.first_name %> 
+     <%= x.contestant.last_name %><br>
      Chili Name - <%= x.name %><br>
-     Contestant ID - <%= x.contestant_id %>
     <table border="0">
       <tr>
         <td>

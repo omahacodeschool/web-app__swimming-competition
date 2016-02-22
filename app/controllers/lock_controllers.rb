@@ -1,4 +1,4 @@
-MyApp.get "/competition_locked" do
+MyApp.get "/score_locked" do
 
-  erb :"competition_was_locked"
+  erb :"successful/score_was_locked"
 end

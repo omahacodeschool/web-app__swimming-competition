@@ -33,6 +33,7 @@ DB.define_column("results","texture","integer")
 DB.define_column("results","flavor","integer")
 DB.define_column("results","heat","integer")
 DB.define_column("results","overall","integer")
+DB.define_column("results","lock","boolean")
 
 DB.define_table("competitions")
 DB.define_column("competitions", "name","string")
