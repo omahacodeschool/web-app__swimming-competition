@@ -2,25 +2,28 @@
 
 <form action="/newsignup" method="post">
   <fieldset>
-    <legend>Register for Event</legend>
-      <label for="swimmer_id">Kitty ID: see below</label>
-        <input type="integer" name="swimmerid">
-      <label for="event_id">Event ID: see below</label>
-        <input type="integer" name="eventid">
+    <legend>Register for Events</legend>
+    <select name = "swimmerid">
+      <option>Select a Kitty...</option>
+      <% @swimmers.each do |post| %>
+        <option value="<%= post.id %>"><%= post.swimmer_name %>
+        </option>
+      <% end%>
+    </select>  
+    <br>
+    Events:<br>
+    <% @events.each do |event| %>
+      <input type="checkbox" name="events[]" value="<%= event.id %>">
+      <label><%= event.event_name %> 
+    <% end %>
       <input type="submit">
   </fieldset>
 </form>
-<h2>Enrolled Kitties:<h2>
-<ul>
-  <% @swimmers.each do |post| %>
-    <li><%= post.id%>. <%=post.swimmer_name%> ///Registered for: <%=post.registered_events%></li>
-      
-  <% end %>
-</ul>
+
 <h2>Events:<h2>
 <ul>
   <% @events.each do |post| %>
-    <li><%= post.id%>. <%=post.event_name%></li>
+    <li><%=post.event_name%></li>
   <% end %>
 </ul>
 
