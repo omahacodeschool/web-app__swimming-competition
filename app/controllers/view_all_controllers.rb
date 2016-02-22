@@ -24,6 +24,7 @@ MyApp.get "/view_scores" do
 end
 
 MyApp.get "/view_all_scores/:comp_num" do
+  @comp_obj = Competition.find_by_id(params[:comp_num])
   @comp_scores = Result.where(competition_id: params[:comp_num])
   erb :"all_entries/all_scores"
 end

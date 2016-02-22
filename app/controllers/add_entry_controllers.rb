@@ -29,6 +29,7 @@ end
 MyApp.get "/add_contestant_to_competition_form/:competition_id" do
   @chili_selection = Chili.all
   @all_contestants = Result.where(competition_id: params[:competition_id])
+  
   @new_entry = Result.new
   @new_entry.chili_id = params[:chili_id]
   @new_entry.competition_id = params[:competition_id]

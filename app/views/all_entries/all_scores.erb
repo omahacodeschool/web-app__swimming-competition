@@ -16,12 +16,6 @@
       <table border="0">
           <tr>
             <td>
-              <form action="/score_locked">
-                <input type="submit" value="Lock This Score">
-              </form>
-            </td>
-
-            <td>
               <form action="/update_scores_form/<%= x.id %>">
                 <input type="submit" value="Update">
               </form>
@@ -47,12 +41,11 @@
 
 
 
-
-
-
-
-
-
+<td>
+  <form action="/score_locked/<%= @comp_obj.id %>">
+    <input type="submit" value="LOCK THIS COMPETITION">
+  </form>
+</td>
 
 
 
