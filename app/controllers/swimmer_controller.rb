@@ -3,6 +3,7 @@ MyApp.get "/add_swimmer" do
   swimmer_add.name = params[:new_swimmer]
   swimmer_add.school_id = params[:swimmer_school]
   swimmer_add.save
+  @schools = School.all
   erb :"administrator"
 end
 MyApp.get "/edit_swimmer/:place" do

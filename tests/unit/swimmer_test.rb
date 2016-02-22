@@ -2,15 +2,36 @@ require 'test_helper'
 
 class SwimmerTest < Minitest::Test
   def setup
-      @brake = "works"
+      super
+
+      @swimmer1 = Swimmer.new
+      @swimmer1.name = "Ben Seaver"
+      @swimmer.save
+
+      @swimmer2 = Swimmer.new
+      @swimmer2.name = "Peter Brady"
+      @swimmer2.save
+
+      @school1 = School.new
+      @school1.name = "Iowa State"
+      @school1.save
+
+      @school2 = School.new
+      @school2.name = "Wisconsin"
+      @school2.save
+
   end
 
-  def test_name_school
-    assert_includes("works", @brake)
+  def test_school_name
+    assert_includes(@swimmer1.school_name, @school1)
+    assert_includes(@swimmer2.school_name, @school2)
+  end
+  def test_school
+    assert_includes(@swimmer1, @school1)
+    assert_includes(@swimmer2, @school2)
   end
 end
 
-# class Swimmer_test < ActiveRectord::Base
 
 
 #   def setup

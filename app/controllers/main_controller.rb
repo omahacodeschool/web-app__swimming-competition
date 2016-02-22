@@ -22,6 +22,10 @@ MyApp.get "/school" do
   erb :"schools"
 end
 MyApp.get "/administrator" do
+  @schools = School.all
+  @conferences = Conference.all
+  @swimmers = Swimmer.all
+  @events = Event.all
   erb :"administrator"
 end
 MyApp.get "/all_tables" do

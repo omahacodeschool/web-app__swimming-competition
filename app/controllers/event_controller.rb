@@ -5,7 +5,6 @@ MyApp.get "/winners/:place" do
     return nil
   else
   end
-  binding.pry
   erb :"winners"
 end
 MyApp.get "/lock_event/:place" do
@@ -17,7 +16,7 @@ MyApp.get "/lock_event/:place" do
     @event.lock = false
     @event.save
   end
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/add_event" do
     @event = Event.all
@@ -27,7 +26,10 @@ MyApp.get "/add_event" do
     @event_add.second_place_swimmer = params[:second]
     @event_add.third_place_swimmer = params[:third]
     @event_add.save
-  erb :"administrator"
+    @schools = School.new
+    @swimmers = Swimmer.new
+    @conferences = Conference.new
+  erb :"follower"
 end
 MyApp.get "/view_event/:place" do
   @event = Event.find_by_id(params[:place])
@@ -42,7 +44,8 @@ MyApp.get "/delete_event/:place" do
   else
     return nil
   end
-  erb :"administrator"
+  @schools = School.all
+  erb :"follower"
 end
 MyApp.get "/edit_event/:place" do
   @event = Event.find_by_id(params[:place])
@@ -57,7 +60,7 @@ MyApp.get "/edit_event/finish_update_event/:place" do
   else
     return nil
   end
-  erb :"administrator"
+  erb :"follower"
 end
 
 

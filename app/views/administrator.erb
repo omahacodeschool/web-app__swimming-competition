@@ -7,18 +7,46 @@
 <p>Enter a swimmer, along with that swimmers school ID that you would like to add to the comepition</p>
 <form action="/add_swimmer">
 <input type = "text" name = "new_swimmer">
+
+
+
+<select name="swimmer_school">
+    <option>Select a school</option> 
+    <% @schools.each do |school| %>
+        <option value="<%= school.id %>"><%= school.school_name %></option>
+    <% end %>
+
+</select>
 <input type = "submit">
-<input type = "number" name = "swimmer_school">
 </form>
 </body>
 </html>
+
+
 <p>Enter an event and the top three finishers by ID</p>
 <form action="/add_event">
 Event:<input type = "text" name = "new_event">
+<select name="first">
+    <option>First Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<select name="second">
+    <option>Second Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<select name="third">
+    <option>Third Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
 <input type = "submit">
-First Place:<input type = "number" name = "first">
-Second Place:<input type = "number" name = "second">
-Third Place:<input type = "number" name = "third" >
+</select>
 </form>
 
 </body>
@@ -35,19 +63,59 @@ Third Place:<input type = "number" name = "third" >
 <p>Enter a school along with that schools Conference ID that you would like to add to the comepition</p>
 <form action="/add_school">
 <input type = "text" name = "new_school">
+
+<select name="new_conf">
+    <option>Select a Conference</option> 
+    <% @conferences.each do |conference| %>
+        <option value="<%= conference.id %>"><%= conference.conference_name %></option>
+    <% end %>
+
+</select>
 <input type = "submit">
-<input type = "number" name = "new_conf">
+
+
 </form>
+</body>
+</html>
+
+
+
+
+
+
 <p>Enter a conference that you would like to add to the comepition</p>
 <form action="/add_conference">
 <input type = "text" name = "new_conference">
 </form>
 <p>Enter a swimmers ID, the events ID and the time for an event</p>
 <form action="/add_signup_swimmer">
-<input type = "number" name = "new_signup">
-<input type = "submit">
-<input type = "number" name = "event_id">
+
+
+<select name="new_signup">
+    <option>Select a Swimmer</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<% @events.each do |event| %>
+    <input type="checkbox" name="event_id[]" value="<%= event.id %>">
+    <label><%= event.event_name %> 
+<% end %>
+
+
+<select name="event_id">
+    <option>Select an Event</option> 
+    <% @events.each do |event| %>
+        <option value="<%= event.id %>"><%= event.event_name %></option>
+    <% end %>
+
+</select>
+Input Time in seconds
 <input type = "number" name = "time">
+<input type = "submit">
+
+
 </form>
 
 -

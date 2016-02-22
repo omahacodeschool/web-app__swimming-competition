@@ -3,6 +3,8 @@ MyApp.get "/add_school" do
   school_add.school_name = params[:new_school]
   school_add.conference_id = params[:new_conf]
   school_add.save
+  @schools = School.all
+  @conferences = Conference.all
   erb :"administrator"
 end
 MyApp.get "/add_conference" do
