@@ -6,17 +6,13 @@
 <ul>
   <% @kitties.each do |post| %>
     <li>
-    <%=post.id%>
-    <%=post.first_name%> 
-    <%=post.last_name%>  
+    <%=post.swimmer_name%> 
     (<%=post.find_college_name%>) 
     <form action="/updatefinish" method="post">
       <fieldset>
         <legend>Add/Update Time</legend>
-          <label for="swimmer_id">Swimmer ID</label>
-            <input type="integer" name="swimmerid" value="<%=post.id%>">
-          <label for="event_id">Event ID</label>
-            <input type="integer" name="eventid" value="<%=@currentevent.id%>">
+          <input type="hidden" value="<%=post.id%>" name="swimmerid"/>
+          <input type="hidden" value="<%=@currentevent.id%>" name="eventid"/>
           <label for="time">Time (in seconds)</label>
             <input type="integer" name="finishtime" value="<%=post.finishtime(@currentevent.id)%>">
           <input type="submit">
