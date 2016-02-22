@@ -22,13 +22,12 @@ MyApp.get "/profile/:competitor_id" do
   	@competitor = Competitor.find(params[:competitor_id])
   	@school =School.find_by_id(@competitor.school_id)
   	@events = Event.all
-	@competitor.set_events(params["set_events"])
   erb :"competitors/profile"
 end
 
-MyApp.post "/profile/set_events/:competitor_id" do
+MyApp.post "/profile/enter_events/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
-	@competitor.set_events(params["set_events"])
+	@competitor.set_events(params["set_competitor_events"])
   redirect :"profile/#{@competitor.id}"
 end
 

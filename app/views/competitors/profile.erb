@@ -28,12 +28,11 @@
   	</ul> 
 
 
-<form action="/profile/set_events/@competitor.id" method="post">
+<form action="/profile/enter_events/<%= @competitor.id %>" method="post">
 Enter this competitor in events:<br>
 	<% @events.each do |event| %>
-	    <input type="checkbox" name="set_events[]" value="<%= event.id %>"
-	    <%= "checked" if @competitor.event_entry != nil && @competitor.event_entry.include?(event.id) %>>
-
+	    <input type="checkbox" name="set_competitor_events[]" value="<%= event.id %>"
+	    <%= "checked" if @competitor.event_entry.include?(event) %>>
 	    <label><%= event.name %></label><br>
 	<% end %>
  	<input type="submit">
