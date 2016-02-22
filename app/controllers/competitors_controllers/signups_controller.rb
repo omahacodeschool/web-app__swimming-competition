@@ -1,7 +1,8 @@
 #signups controller goes here
 require 'pry'
 MyApp.get "/signups" do 
-  @events = Event.all
+  @events = Event.unlocked_events
+  @lockedevents = Event.locked_events
   @swimmers = Swimmer.all
   erb :"/cv/signups"
 end
@@ -10,7 +11,8 @@ MyApp.post "/newsignup" do
   #check = Event.find_by_id(params[:eventid])
   @currentswimmer = Swimmer.find_by_id(params[:swimmerid])
   @currentswimmer.register(params[:events])
-  @events = Event.all
+  @events = Event.unlocked_events
+  @lockedevents = Event.locked_events
   @swimmers = Swimmer.all
   erb :"/cv/signups"
 end

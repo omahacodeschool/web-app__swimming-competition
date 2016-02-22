@@ -20,9 +20,10 @@
   </fieldset>
 </form>
 
-<h2>Events:<h2>
+Locked Events:
+(The following events are locked and therefore not open for new registrations)
 <ul>
-  <% @events.each do |post| %>
+  <% @lockedevents.each do |post| %>
     <li><%=post.event_name%></li>
   <% end %>
 </ul>
