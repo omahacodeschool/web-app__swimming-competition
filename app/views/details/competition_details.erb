@@ -9,11 +9,20 @@
      hails from <%= x.cities %></p>
 <% end %>
 
-<td>
-  <form action="/add_contestant_to_competition_form/<%=@comp_obj.id %>">
-    <input type="submit" value="Add a Contestant To This Competition">
-  </form>
-</td>
+
+<br>
+<br>
+
+
+  <% if @comp_score.lock == true %>
+    <p> THIS COMPETITION IS LOCKED!</p>
+  <% else %>
+    <td>
+      <form action="/add_contestant_to_competition_form/<%=@comp_obj.id %>">
+        <input type="submit" value="Add a Contestant To This Competition">
+      </form>
+    </td>
+  <% end %>
 
 
 

@@ -17,7 +17,8 @@ MyApp.get "/add_competition" do
 end
 
 MyApp.get "/add_scores/:comp_id" do
-  @all_chilis = Result.where(competition_id: params[:comp_id])  
+  @all_chilis = Result.where(competition_id: params[:comp_id])
+  @one_chili = Result.find_by_id(params[:comp_id])  
   erb :"add_entry/add_scores_form"
 end
 

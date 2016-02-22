@@ -1,29 +1,45 @@
-<form action="/submit_scores">
-  <p>Please enter the Chili ID</p>
-  <p><input type="text" name="result_id"></p>
+<% if @one_chili.lock == true %>
+    <p> THIS COMPETITION IS LOCKED!</p>
 
-  <% @all_chilis.each do |x|%>
-    <p><%= x.chili_name %>
-       <%= x.id %></p>
-  <%end%>
+<% else %>
+  <form action="/submit_scores">
+    <p>Please enter the Chili ID</p>
+    <p><input type="text" name="result_id"></p>
 
-  <p>Please enter the rating for the Appearance Category</p>
-  <p><input type="text" name="appearance"></p>
+    <% @all_chilis.each do |x|%>
+      <p><%= x.chili_name %>
+         <%= x.id %></p>
+    <%end%>
 
-  <p>Please enter the rating for the Aroma Category</p>
-  <p><input type="text" name="aroma"></p>
+    <p>Please enter the rating for the Appearance Category</p>
+    <p><input type="text" name="appearance"></p>
 
-  <p>Please enter the rating for the Flavor Category</p>
-  <p><input type="text" name="flavor"></p>
+    <p>Please enter the rating for the Aroma Category</p>
+    <p><input type="text" name="aroma"></p>
 
-  <p>Please enter the rating for the Texture Category</p>
-  <p><input type="text" name="texture"></p>
+    <p>Please enter the rating for the Flavor Category</p>
+    <p><input type="text" name="flavor"></p>
 
-  <p>Please enter the rating for the Heat Category</p>
-  <p><input type="text" name="heat"></p>
+    <p>Please enter the rating for the Texture Category</p>
+    <p><input type="text" name="texture"></p>
 
-  <p><input type="submit"></p>
-</form>
+    <p>Please enter the rating for the Heat Category</p>
+    <p><input type="text" name="heat"></p>
+
+    <p><input type="submit"></p>
+  </form>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 <br>
