@@ -33,7 +33,7 @@ class ContestantTest < Minitest::Test
     @score1.save
   end
 
-  def test_cities
+  def test_get_city_name
     assert_includes(@contestant1.cities, @city1.city)
   end
 end
