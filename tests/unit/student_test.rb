@@ -9,13 +9,13 @@ class StudentTest < Minitest::Test
     assert_equal("Delicious", @banana)
   end
 
-  # def test_all_registrations
+  def test_all_registrations
 
-  # end
+  end
 
-  # def test_all_completed_performances
+  def test_all_completed_performances
 
-  # end
+  end
 
 
 end

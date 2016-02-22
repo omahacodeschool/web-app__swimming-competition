@@ -12,9 +12,10 @@ MyApp.get "/add/registration" do
   erb :"admin/result/register_student"
 end
 
-MyApp.get "/read/registrations/:student_id" do
+MyApp.post "/read/registrations" do
   @student = Student.find_by_id(params[:student_id])
   @results = @student.all_unlocked_registrations
+  @activities = @student.all_unlocked_unregistered_uncompleted_activities
   erb :"admin/student/read_one_students_registrations"
 end
 
@@ -28,6 +29,18 @@ MyApp.post "/result/create" do
   @result.student_id = params["student_id"]
   @result.activity_id = params["activity_id"]
   @result.save
+  @confirm_message = "Success! Registered #{@result.access_student.first_name} #{@result.access_student.last_name} for #{@result.access_event.event_name}!"
+  erb :"admin/confirm_submission"
+end
+
+MyApp.post "/result/create/:student_id" do
+  activity_ids = params["activity_ids"]
+  activity_ids.each do |a|
+    @result = Result.new
+    @result.student_id = params["student_id"]
+    @result.activity_id = a
+    @result.save
+  end
   @confirm_message = "Success! Registered #{@result.access_student.first_name} #{@result.access_student.last_name} for #{@result.access_event.event_name}!"
   erb :"admin/confirm_submission"
 end

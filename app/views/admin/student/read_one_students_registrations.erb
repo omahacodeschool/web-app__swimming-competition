@@ -20,3 +20,31 @@
       
   </tbody>
 </table>
+
+<%if @activities == []%>
+  <h3><a href="/read/student/<%=@student.id%>"><%=@student.first_name%> <%=@student.last_name%></a> is already registered for all activities.</h3>
+
+<%else%>
+
+  <h3>Register <a href="/read/student/<%=@student.id%>">
+  <%=@student.first_name%> <%=@student.last_name%></a> for more events:</h3>
+  <br>   
+    <form method="post" action="/result/create/<%=@student.id%>">
+        <%@activities.each do |a|%>
+      <input type="checkbox" name="activity_ids[]" value="<%=a.id%>">
+      <%=a.event_name%><br>
+        <%end%><br>
+      <input type="submit" value="Register">
+    </form>
+
+<%end%>
+
+
+
+
+
+
+
+
+
+  

@@ -43,9 +43,26 @@ class Student < ActiveRecord::Base
     unlocked_activities_for_student.each do |a|
       unlocked_activities_for_student_ids << a.id
     end
-    results = results.where({"activity_id" => unlocked_activities_for_student_ids})
-  return results
+    unlocked_results = results.where({"activity_id" => unlocked_activities_for_student_ids})
+  return unlocked_results
 end
+
+#Returns an activerecord collection of all the activities that a student has
+#NOT registered for and are also unlocked
+
+  def all_unlocked_unregistered_uncompleted_activities
+
+    results = Result.where({"student_id" => self.id})
+    activities = []
+   
+    results.each do |r|
+    activities << r.activity_id
+    end
+
+    unregistered_activities_for_student = Activity.where.not({"id" => activities})
+    unlocked_unregistered_activities_for_student = unregistered_activities_for_student.where({"lock" => [false, nil]})
+    return unlocked_unregistered_activities_for_student
+  end
 
 end
 
