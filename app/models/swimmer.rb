@@ -37,7 +37,15 @@ class Swimmer < ActiveRecord::Base
     end
   end
 
-#  def find_finish_time
-#    x = self.
-#  end
+#need a test for register
+
+  def register(eventidarray)
+    eventidarray.each do |event|
+      s = Signup.new
+      s.swimmer_id = self.id
+      s.event_id = event
+      s.save
+    end
+  end
+
 end
