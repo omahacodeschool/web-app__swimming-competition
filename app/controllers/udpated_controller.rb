@@ -61,7 +61,7 @@ MyApp.post "/success_event_locked/:num" do
 
   erb :"misc/success_event_locked"
 end
-
+ 
 #Processes the form for updating event details
 MyApp.post "/event_detail_updated/:num" do
   @event_details = EventDetail.find_by_id(params[:num])

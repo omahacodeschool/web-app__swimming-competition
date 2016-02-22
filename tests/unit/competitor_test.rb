@@ -5,7 +5,7 @@ class CompetitorTest < Minitest::Test
     @banana = "Delicious"
   end
 
-  def test_get_a_competitors_college_name
+  def check_competitors_college
     assert_equal("Delicious", @banana)
   end
 end

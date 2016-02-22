@@ -6,8 +6,4 @@ class Conference < ActiveRecord::Base
     x = self.id
     return College.where({"conference_id" => x})
   end
-
-  def get_deleted
-    
-  end
 end
