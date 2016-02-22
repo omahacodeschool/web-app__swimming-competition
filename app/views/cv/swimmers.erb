@@ -7,12 +7,22 @@
   <% end %>
 </ul>
 
-Schools Represented in the Conference:
-
-<ul>
-  <% @colleges.each do |list| %>
-    <li><%= list.id%>. <%=list.college_name%></li>
-  <% end %>
-</ul>
+<form action="/newswimmername" method="post">
+  <fieldset>
+  <legend>Add New Kitty Swimmer</legend>
+  <label for="first_name">First Name</label>
+  <input type="text" name="swimmerfirstname">
+  <label for="last_name">Last Name</label>
+  <input type="text" name="swimmerlastname">
+  <select name = "collegeid">
+    <option>Select a College...</option>
+    <% @colleges.each do |post| %>
+      <option value="<%= post.id %>"><%= post.college_name %>
+      </option>
+    <% end%>
+  </select>
+  <input type="submit">
+  </fieldset>
+</form>
 
 <a href="/">Home</a>
