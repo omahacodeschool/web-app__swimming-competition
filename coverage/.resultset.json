@@ -26,9 +26,9 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -572,6 +572,43 @@
       ],
       "/Users/Jillian/Code/web-app__swimming-competition/tests/unit/college_test.rb": [
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/Jillian/Code/web-app__swimming-competition/tests/unit/competitor_test.rb": [
@@ -653,6 +690,6 @@
         null
       ]
     },
-    "timestamp": 1456120571
+    "timestamp": 1456121349
   }
 }
