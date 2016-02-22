@@ -73,4 +73,14 @@ class CompetitorTest < Minitest::Test
     @cat2.delete_competitor_info
     assert_nil(@cat2.event_entry)
   end
+
+    def test_set_events
+    @cat4 = Competitor.new
+    event_ids = [@event1.id, @event2.id]
+
+    @cat4.set_events(event_ids)
+
+    assert_includes(@cat4.event_entry, @event1)
+    assert_includes(@cat4.event_entry, @event2)
+  end
 end
