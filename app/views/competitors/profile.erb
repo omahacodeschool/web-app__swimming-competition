@@ -27,6 +27,18 @@
  		<% end %>
   	</ul> 
 
+
+<form action="/profile/set_events/@competitor.id" method="post">
+Enter this competitor in events:<br>
+	<% @events.each do |event| %>
+	    <input type="checkbox" name="set_events[]" value="<%= event.id %>"
+	    <%= "checked" if @competitor.event_entry != nil && @competitor.event_entry.include?(event.id) %>>
+
+	    <label><%= event.name %></label><br>
+	<% end %>
+ 	<input type="submit">
+ </form>
+
 <p><a href="/competitors/edit/<%= @competitor.id %>"> Edit this competitor. </a></p>
 
 <p><a href="/competitors"> Back </a></p>

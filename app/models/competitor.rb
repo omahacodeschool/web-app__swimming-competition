@@ -38,6 +38,17 @@ class Competitor < ActiveRecord::Base
 		Result.where("competitor_id" => self.id).delete_all
 	end
 
+
+	#this method enters a competitor into events
+	def set_events(arr_of_event_ids)
+		Result.where("competitor_id" => self.id).delete_all
+	    arr_of_event_ids.each do |event_id|
+	        result_row = Result.new
+	        result_row.competitor_id = self.id
+	        result_row.event_id = event_id
+	        result_row.save
+	    end
+	end
 end
 
 	# event_id   | competitor_id  | time
