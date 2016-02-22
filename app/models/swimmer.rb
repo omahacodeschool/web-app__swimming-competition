@@ -37,8 +37,6 @@ class Swimmer < ActiveRecord::Base
     end
   end
 
-#need a test for register
-
   def register(eventidarray)
     eventidarray.each do |event|
       s = Signup.new

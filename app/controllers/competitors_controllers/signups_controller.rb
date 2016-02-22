@@ -14,7 +14,7 @@ MyApp.post "/newsignup" do
   @events = Event.unlocked_events
   @lockedevents = Event.locked_events
   @swimmers = Swimmer.all
-  erb :"/cv/signups"##--> this is not what i want
+  redirect '/cv/view_swimmer/{@currentswimmer.id}'
 end
 
 MyApp.post "/remove_swimmer/:id" do
