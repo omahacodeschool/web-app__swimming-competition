@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-21T16:05:36-06:00">2016-02-21T16:05:36-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-22T15:11:17-06:00">2016-02-22T15:11:17-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">70.86%</span></span>
+    (<span class="covered_percent"><span class="red">71.99%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.58
+         1.78
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>549</b> relevant lines. 
-    <span class="green"><b>389</b> lines covered</span> and
-    <span class="red"><b>160</b> lines missed </span>
+    <b>564</b> relevant lines. 
+    <span class="green"><b>406</b> lines covered</span> and
+    <span class="red"><b>158</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#ec62b90a02dd9731f3b7dac029f316c3a0289672" class="src_link" title="app/controllers/competitors_controllers/signups_controller.rb">app/controllers/competitors_controllers/signups_controller.rb</a></td>
-        <td class="red strong">18.18 %</td>
-        <td>35</td>
-        <td>22</td>
+        <td class="red strong">26.67 %</td>
+        <td>26</td>
+        <td>15</td>
         <td>4</td>
-        <td>18</td>
-        <td>0.2</td>
+        <td>11</td>
+        <td>0.3</td>
       </tr>
       
       <tr>
@@ -163,9 +163,9 @@
       <tr>
         <td class="strong"><a href="#a94704c84fab81483d0c66dbcba5e2363a5260fa" class="src_link" title="app/models/event.rb">app/models/event.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
-        <td>16</td>
-        <td>16</td>
+        <td>38</td>
+        <td>22</td>
+        <td>22</td>
         <td>0</td>
         <td>1.7</td>
       </tr>
@@ -202,12 +202,12 @@
       
       <tr>
         <td class="strong"><a href="#f4e52ab4b95a07ab27d513959f21e56f3291afed" class="src_link" title="app/models/swimmer.rb">app/models/swimmer.rb</a></td>
-        <td class="green strong">95.83 %</td>
-        <td>43</td>
+        <td class="red strong">80.0 %</td>
+        <td>51</td>
+        <td>30</td>
         <td>24</td>
-        <td>23</td>
-        <td>1</td>
-        <td>2.1</td>
+        <td>6</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -223,11 +223,11 @@
       <tr>
         <td class="strong"><a href="#1c445f423ea38b9e52b3c39c9efa290ffdb4ae3a" class="src_link" title="tests/unit/event_test.rb">tests/unit/event_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>84</td>
-        <td>62</td>
-        <td>62</td>
+        <td>98</td>
+        <td>72</td>
+        <td>72</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -799,11 +799,11 @@
         <div class="source_table" id="ec62b90a02dd9731f3b7dac029f316c3a0289672">
   <div class="header">
     <h3>app/controllers/competitors_controllers/signups_controller.rb</h3>
-    <h4><span class="red">18.18 %</span> covered</h4>
+    <h4><span class="red">26.67 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
+      <b>15</b> relevant lines. 
       <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <span class="red"><b>11</b> lines missed.</span>
     </div>
   </div>
   
@@ -864,157 +864,103 @@
           <code class="ruby">MyApp.post &quot;/newsignup&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  check = Event.find_by_id(params[:eventid])</code>
+          <code class="ruby">  #check = Event.find_by_id(params[:eventid])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">  z = Signup.find_by swimmer_id:params[:swimmerid],event_id:params[:eventid]</code>
+          <code class="ruby">  @currentswimmer = Swimmer.find_by_id(params[:swimmerid])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">  if check.locked == true</code>
+          <code class="ruby">  @currentswimmer.register(params[:events])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">    erb :&quot;/ev/nocando&quot;</code>
+          <code class="ruby">  @events = Event.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">  elsif z == nil</code>
+          <code class="ruby">  @swimmers = Swimmer.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">    s = Signup.new</code>
+          <code class="ruby">  erb :&quot;/cv/signups&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">    s.swimmer_id = params[:swimmerid]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">    s.event_id = params[:eventid]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">    s.save</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">    erb :&quot;cv/signupaddsuccess&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">  else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    @events = Event.all</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">    @swimmers = Swimmer.all</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">    erb :&quot;/cv/signups&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.post &quot;/remove_swimmer/:id&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
           <code class="ruby">  @signup = Signup.find_by_id(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">  @signup.delete</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
           <code class="ruby">  erb :&quot;/cv/remove_swimmer&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">#DB.define_table(&quot;signups&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">#DB.define_column(&quot;signups&quot;,&quot;event_id&quot;,&quot;integer&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">#DB.define_column(&quot;signups&quot;,&quot;swimmer_id&quot;,&quot;integer&quot;)</code>
@@ -2751,8 +2697,8 @@
     <h3>app/models/event.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2901,40 +2847,88 @@
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">  def self.locked_events</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="26">
+          <span class="hits">2</span>
           
+          <code class="ruby">    e = Event.where(&quot;locked&quot; =&gt; true)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
-          <code class="ruby"></code>
+          <code class="ruby">    return e</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">#DB.define_table(&quot;events&quot;)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.unlocked_events</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="31">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    e = Event.where(&quot;locked&quot; =&gt; false)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    return e</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">#DB.define_table(&quot;events&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
           <code class="ruby">#DB.define_column(&quot;events&quot;,&quot;event_name&quot;,&quot;string&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">#DB.define_column(&quot;events&quot;,&quot;locked&quot;,&quot;boolean&quot;)</code>
@@ -3349,11 +3343,11 @@
         <div class="source_table" id="f4e52ab4b95a07ab27d513959f21e56f3291afed">
   <div class="header">
     <h3>app/models/swimmer.rb</h3>
-    <h4><span class="green">95.83 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -3597,22 +3591,70 @@
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">#  def find_finish_time</code>
+          <code class="ruby">#need a test for register</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">#    x = self.</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#  end</code>
+          <code class="ruby">  def register(eventidarray)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">    eventidarray.each do |event|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">      s = Signup.new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">      s.swimmer_id = self.id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">      s.event_id = event</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
+          
+          <code class="ruby">      s.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">end</code>
@@ -3879,8 +3921,8 @@
     <h3>tests/unit/event_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>62</b> relevant lines. 
-      <span class="green"><b>62</b> lines covered</span> and
+      <b>72</b> relevant lines. 
+      <span class="green"><b>72</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3915,253 +3957,253 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def setup</code>
+          <code class="ruby">    def setup</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="6">
+          <span class="hits">4</span>
           
-          <code class="ruby">    super</code>
+          <code class="ruby">        super</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @shannon = Swimmer.new</code>
+          <code class="ruby">        @shannon = Swimmer.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @shannon.first_name = &quot;Shannon Event&quot;</code>
+          <code class="ruby">        @shannon.first_name = &quot;Shannon Event&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @shannon.last_name = &quot;Jackson&quot;</code>
+          <code class="ruby">        @shannon.last_name = &quot;Jackson&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @shannon.save</code>
+          <code class="ruby">        @shannon.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @andrew = Swimmer.new</code>
+          <code class="ruby">        @andrew = Swimmer.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="14">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @andrew.first_name = &quot;Andrew Event&quot;</code>
+          <code class="ruby">        @andrew.first_name = &quot;Andrew Event&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @andrew.last_name = &quot;Yolland&quot;</code>
+          <code class="ruby">        @andrew.last_name = &quot;Yolland&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @andrew.save</code>
+          <code class="ruby">        @andrew.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="18">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @event2 = Event.new</code>
+          <code class="ruby">        @event2 = Event.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="19">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="19">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @event2.event_name = &quot;Sink&quot;</code>
+          <code class="ruby">        @event2.event_name = &quot;Sink&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="20">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @event2.locked = false</code>
+          <code class="ruby">        @event2.locked = false</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @event2.save</code>
+          <code class="ruby">        @event2.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="23">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e = Event.new</code>
+          <code class="ruby">        @e = Event.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="24">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e.event_name = &quot;Swim&quot;</code>
+          <code class="ruby">        @e.event_name = &quot;Swim&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="25">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e.locked = true</code>
+          <code class="ruby">        @e.locked = true</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="26">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e.save</code>
+          <code class="ruby">        @e.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="28">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e3 = Event.new</code>
+          <code class="ruby">        @e3 = Event.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="29">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="29">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e3.event_name = &quot;Stay Dry&quot;</code>
+          <code class="ruby">        @e3.event_name = &quot;Stay Dry&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="30">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="30">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e3.locked = false</code>
+          <code class="ruby">        @e3.locked = false</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="31">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @e3.save</code>
+          <code class="ruby">        @e3.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="33">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="33">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register = Signup.new</code>
+          <code class="ruby">        @e4 = Event.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="34">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register.swimmer_id = @shannon.id</code>
+          <code class="ruby">        @e4.event_name = &quot;Whatever&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="35">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register.event_id = @e.id</code>
+          <code class="ruby">        @e4.locked = true</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="36">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="36">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register.save</code>
+          <code class="ruby">        @e4.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="38">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="38">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register2 = Signup.new</code>
+          <code class="ruby">        @register = Signup.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="39">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="39">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register2.swimmer_id = @andrew.id</code>
+          <code class="ruby">        @register.swimmer_id = @shannon.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="40">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="40">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register2.event_id = @e.id</code>
+          <code class="ruby">        @register.event_id = @e.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="41">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="41">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register2.save</code>
+          <code class="ruby">        @register.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="43">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="43">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register3 = Signup.new</code>
+          <code class="ruby">        @register2 = Signup.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="44">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="44">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register3.swimmer_id = @shannon.id</code>
+          <code class="ruby">        @register2.swimmer_id = @andrew.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="45">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="45">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register3.event_id = @event2.id</code>
+          <code class="ruby">        @register2.event_id = @e.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="46">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register3.save</code>
+          <code class="ruby">        @register2.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -4170,223 +4212,307 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="48">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register4 = Signup.new</code>
+          <code class="ruby">        @register3 = Signup.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="49">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register4.swimmer_id = @andrew.id</code>
+          <code class="ruby">        @register3.swimmer_id = @shannon.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="50">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="50">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register4.event_id = @event2.id</code>
+          <code class="ruby">        @register3.event_id = @event2.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="51">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @register4.save</code>
+          <code class="ruby">        @register3.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="53">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @register4 = Signup.new</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="54">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @register4.swimmer_id = @andrew.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="55">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @register4.event_id = @event2.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="56">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @register4.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="58">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f = Finish.new</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="59">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f.swimmer_id = @shannon.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="60">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f.event_id = @e.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="61">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f.finish_time = 100</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="62">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="64">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f2 = Finish.new</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="65">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f2.swimmer_id = @andrew.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="66">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f2.event_id = @e.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="67">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f2.finish_time = 200</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="68">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f2.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="70">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f3 = Finish.new</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="71">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f3.swimmer_id = @shannon.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="72">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f3.event_id = @event2.id</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="73">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f3.finish_time = 20</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="74">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        @f3.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="53">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f = Finish.new</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="54">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f.swimmer_id = @shannon.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="55">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f.event_id = @e.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="56">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f.finish_time = 100</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="57">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="59">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f2 = Finish.new</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="60">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f2.swimmer_id = @andrew.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="61">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f2.event_id = @e.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="62">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f2.finish_time = 200</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="63">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f2.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="65">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f3 = Finish.new</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="66">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f3.swimmer_id = @shannon.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="67">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f3.event_id = @event2.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="68">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f3.finish_time = 20</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="69">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @f3.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">  def test_event_over</code>
+          <code class="ruby">    def test_event_over</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    assert_equal(false, @event2.event_over?)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    assert_equal(true, @e.event_over?)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    assert_equal(false, @e3.event_over?)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">        assert_equal(false, @event2.event_over?)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">  def test_locked_status</code>
+          <code class="ruby">        assert_equal(true, @e.event_over?)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">    assert_equal(&quot;Locked&quot;, @e.locked_status)</code>
+          <code class="ruby">        assert_equal(false, @e3.event_over?)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="81">
           
-          <code class="ruby">    assert_equal(&quot;Unlocked&quot;, @event2.locked_status)</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def test_locked_status</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        assert_equal(&quot;Locked&quot;, @e.locked_status)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        assert_equal(&quot;Unlocked&quot;, @event2.locked_status)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def test_locked_events</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        assert_equal([@e,@e4], Event.locked_events)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        refute_equal([@e, @e4,@e3, @event2], Event.locked_events)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def test_unlocked_events</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        assert_equal([@event2,@e3], Event.unlocked_events)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        refute_equal([@e, @e4, @e3, @event2], Event.unlocked_events)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">end</code>

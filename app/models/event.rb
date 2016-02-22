@@ -21,8 +21,16 @@ class Event < ActiveRecord::Base
       return "Unlocked"
     end
   end
-      
 
+  def self.locked_events
+    e = Event.where("locked" => true)
+    return e
+  end
+
+  def self.unlocked_events
+    e = Event.where("locked" => false)
+    return e
+  end
 end
 
 #DB.define_table("events")
