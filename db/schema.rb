@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "flavor"
     t.integer  "heat"
     t.integer  "overall"
+    t.boolean  "locked"
+    t.boolean  "lock"
   end
 
 end

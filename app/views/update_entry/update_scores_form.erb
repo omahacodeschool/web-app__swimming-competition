@@ -1,7 +1,24 @@
 <form action="/submit_scores_update/<%= @scores.id %>">
 
-  <p>Please type your update for the scores of <%= "somethinghere" %>.</p>
-  <input type="text" name="city_name">
+  <p>Please type your update for the scores for chili 
+    <%= "@scores.chili_name" %>.
+  </p>
+
+  <p>Please enter the updated rating for the Appearance Category</p>
+  <p><input type="text" name="appearance_score"></p>
+
+  <p>Please enter the updated rating for the Aroma Category</p>
+  <p><input type="text" name="aroma_score"></p>
+
+  <p>Please enter the updated rating for the Flavor Category</p>
+  <p><input type="text" name="flavor_score"></p>
+
+  <p>Please enter the updated rating for the Texture Category</p>
+  <p><input type="text" name="texture_score"></p>
+
+  <p>Please enter the updated rating for the Heat Category</p>
+  <p><input type="text" name="heat_score"></p>
+
   
   <input type="submit">
 

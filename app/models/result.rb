@@ -7,4 +7,15 @@ class Result < ActiveRecord::Base
     contestant = Contestant.find_by_id(chilies.contestant_id)
     return contestant
   end
+
+  def chili_name
+    ch_obj = Chili.find_by_id(self.chili_id)
+    return ch_obj.name
+  end
+
+  def competition
+    comp_obj = Competition.find_by_id(self.competition_id)
+    return comp_obj.name
+  end
 end
+

@@ -19,7 +19,11 @@ MyApp.get "/view_competitions" do
 end
 
 MyApp.get "/view_scores" do
-  @scores = Result.all
-  erb :"all_entries/all_scores"
+  @comps = Competition.all
+  erb :"all_entries/select_competition_for_scores"
 end
 
+MyApp.get "/view_all_scores/:comp_num" do
+  @comp_scores = Result.where(competition_id: params[:comp_num])
+  erb :"all_entries/all_scores"
+end

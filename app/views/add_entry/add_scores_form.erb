@@ -1,19 +1,10 @@
 <form action="/submit_scores">
-
-  <p>Please enter the Competition ID</p>
-  <p><input type="text" name="competition_id"></p>
-
-  <% @competitions.each do |x|%>
-    <p>ID - <%= x.id %><br>
-       Competition Category - <%= x.name %></p>
-  <%end%>
-
   <p>Please enter the Chili ID</p>
-  <p><input type="text" name="chili_id"></p>
+  <p><input type="text" name="result_id"></p>
 
-  <% @chilis.each do |x|%>
-    <p>ID - <%= x.id %><br>
-       Chili Name- <%= x.name %></p>
+  <% @all_chilis.each do |x|%>
+    <p><%= x.chili_name %>
+       <%= x.id %></p>
   <%end%>
 
   <p>Please enter the rating for the Appearance Category</p>

@@ -1,38 +1,4 @@
-<p>Here's a list of the scores we have so far</p>
-
-
-<% @comp_scores.each do |x|%>
-  <p>Scores ID - <%= x.id %><br>
-     Chili Name - <%= x.chili_name %><br>
-     Competition Name - <%= x.competition %><br>
-     Appearance Score - <%= x.appearance %><br>
-     Aroma Score - <%= x.aroma %><br>
-     Texture Score - <%= x.texture %><br>
-     Flavor Score - <%= x.flavor %><br>
-     Heat Score - <%= x.heat %><br>
-     Overall Score - <%= x.overall %>
-
-
-      
-  </p>
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+your contestant was added to the compeition.
 
 
 <br>
@@ -50,7 +16,7 @@
 <td>
   <form action="/add_contestant">
     <input type="submit" value="Add Contestant">
-</form>
+  </form>
 </td>
 
 <td>

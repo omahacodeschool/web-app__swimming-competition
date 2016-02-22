@@ -18,6 +18,6 @@ MyApp.get "/update_contestant_form/:num" do
   erb :"update_entry/update_contestant_form"
 end
 MyApp.get "/update_scores_form/:num" do
-  @scores = result.find_by_id(params[:num])
+  @scores = Result.find_by_id(params[:num])
   erb :"update_entry/update_scores_form"
 end

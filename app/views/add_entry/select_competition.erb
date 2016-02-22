@@ -1,0 +1,10 @@
+<p>Please select the competition you would like to score.</p>
+
+
+<% @comps.each do |a| %>
+  <p>Category ID - <%= a.id %><br>  
+     <a href="/add_scores/<%= a.id %>">
+      <%= a.name %>
+     </a>
+  </p>
+<% end %>

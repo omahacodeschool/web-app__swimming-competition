@@ -30,9 +30,7 @@ MyApp.get "/submit_contestant" do
 end
 
 MyApp.get "/submit_scores" do
-  @score = Result.new
-  @score.competition_id = params[:competition_id]
-  @score.chili_id = params[:chili_id]
+  @score = Result.find_by_id(params[:result_id])
   @score.aroma = params[:aroma]
   @score.flavor = params[:flavor]
   @score.texture = params[:texture]
@@ -42,3 +40,14 @@ MyApp.get "/submit_scores" do
   @score.save
   erb :"successful/scores_was_added"
 end
+
+MyApp.get "/submit_contestant_to_competition/:result_id_num" do
+  @new_competitor = Result.find_by_id(params[:result_id_num])
+  @new_competitor.chili_id = params[:chili_id]
+  @new_competitor.save
+  erb :"successful/contestant_was_added_to_competition"
+end
+
+
+
+

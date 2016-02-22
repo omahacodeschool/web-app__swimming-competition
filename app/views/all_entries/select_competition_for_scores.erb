@@ -1,0 +1,11 @@
+<p>Please select the competition you would like to view the current scores for</p>
+
+<% @comps.each do |a| %>
+  <p>Competition ID - <%= a.id %><br> 
+     Competition Name - 
+     <a href="/view_all_scores/<%= a.id %>">
+        <%= a.name %>
+     </a> 
+  </p>
+<% end %>
+
