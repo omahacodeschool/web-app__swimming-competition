@@ -66,8 +66,12 @@ MyApp.post "/update/event_updated/:stopsign" do
   @event.distance = params[:race_distance]
   @style_name = params[:style]
   @event.style_id = @event.get_style_id(@style_name)
-  @event.save
-  erb :"main/update/event_updated"
+  if @event.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    @event.save
+    erb :"main/update/event_updated"
+  end
 end
 
 MyApp.get "/event_locked/:id" do
