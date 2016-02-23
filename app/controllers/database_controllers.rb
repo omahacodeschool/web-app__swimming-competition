@@ -83,24 +83,27 @@ MyApp.get "/delete_event/:id_of_event" do
 end
 
 MyApp.post "/add_result" do
-  r = Result.new
   e = Event.find_by_id(params[:event_id])
+  swimmer_arr = params.fetch("swimmer_id")
+  swimmer_arr.each do |id|
+    r = Result.new
+    if Result.duplicate_swimmer(params[:event_id], id) == false
 
-  if Result.duplicate_swimmer(params[:event_id], params[:swimmer_id]) == false
-
-    if e.event_locked == true
-      @message = "This event is currently locked."
+      if e.event_locked == true
+        @message = "This event is currently locked."
+        erb :"success/success_result"
+      else
+        @message = "Result successfully added."
+        r.swimmer_id = id
+        r.event_id = params[:event_id]
+        r.save
+      end
     else
-      @message = "Result successfully added."
-      r.swimmer_id = params[:swimmer_id]
-      r.event_id = params[:event_id]
-      binding.pry
-      r.save
+      @message = "There is a duplicate swimmer" 
+      erb :"success/success_result"
     end
-  else
-    @message = "There is a duplicate swimmer" 
+    erb :"/create/add_times"
   end
-  erb :"/create/add_times"
 end
 # Remove a result from results table
 MyApp.get "/delete_result/:id_of_result" do
