@@ -59,13 +59,15 @@ MyApp.get "/results_by_event/:id" do
 end
 
 MyApp.get "/delete/result_deleted/:dogfood" do
-  @result = Result.find_by_id(params[:dogfood])
-  @result = Event.find_by_id(@result)
-  @lock_check = @result.lock
+  @result_object = Result.find_by_id(params[:dogfood])
+  @results_event_id = @result_object.event_id
+  @event_object = Event.find_by_id(@results_event_id)
+  binding.pry
+  @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page/:dogfood"
   else
-    @result.delete
+    @result_object.delete
     erb :"main/delete/result_deleted"
   end
 end

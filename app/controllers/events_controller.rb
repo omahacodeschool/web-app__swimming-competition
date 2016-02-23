@@ -16,10 +16,10 @@ MyApp.post "/event_added" do
     @style_name = params[:style]
     @styleid = x.get_style_id(@style_name)
     x.style_id = @styleid
+    x.lock = false
   if x.is_valid? == false
     erb :"main/errors/generic_errors"
   else
-    x.lock = false
     x.save
     erb :"main/add/event_added"
   end
