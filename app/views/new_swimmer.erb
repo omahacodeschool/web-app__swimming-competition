@@ -3,26 +3,12 @@
 
 <h1>Add a Swimmer</h1>
 <p>Please enter the following information about each swimmer.</p>
-<p>For "college" just enter the number on the following list that corresponds to the swimmer's college.</p>
-
-<p>1-Hogwarts</p>
-<p>2-Middle Earth</p>
-<p>3-Westeros</p>
-<p>4-Tatooine</p>
-
-<form action = "/swimmer/create">
-  <input type ="text" name="first_name" placeholder="first_name">
-  <input type ="text" name="last_name" placeholder="last_name">
-  <input type ="integer" name="college_id" placeholder="number_from_list"> 
-  <input type ="submit">
-</form>
-
+<p>Select the swimmer's college from the dropdown menu.</p>
 
 
 <form action = "/swimmer/create">
   <input type ="text" name="first_name" placeholder="first_name">
   <input type ="text" name="last_name" placeholder="last_name">
-  <!-- <input type ="integer" name="college_id" placeholder="number_from_list">  -->
 
   <select name = "college_id">College Name
   <option value="" disabled selected>Select College Name</option>
