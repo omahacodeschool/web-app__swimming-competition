@@ -42,6 +42,10 @@ MyApp.post "/update/competitor_updated/:stopsign" do
   @competitor.school_name = params[:school]
   @competitor.conference_name = params[:conference]
   @competitor.gender = params[:gender]
-  @competitor.save
-  erb :"main/update/competitor_updated"
+  if @competitor.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    @competitor.save
+    erb :"main/update/competitor_updated"
+  end
 end
