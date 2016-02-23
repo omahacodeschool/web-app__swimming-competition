@@ -10,14 +10,14 @@
       <option value="<%=y.id%>"><%=y.event_name%> </option>
     <% end %>
   </select>
-  <input type="submit" value="Submit">
 
-    <p>Name of Swimmer<p>
-  <select name="swimmer_id">
+    <p>Now choose all of the swimmers what swam in this event.<p>
+  
     <% @swimmers.each do |y| %>
-      <option value="<%=y.id%>"><%=y.swimmer_name%> </option>
+      <input type="checkbox" name="swimmer_id[]" 
+        value="<%=y.id%>"><%=y.swimmer_name%> </option> <br>
     <% end %>
-  </select>
+  <input type="submit" value="Submit">
 </form>
 
 

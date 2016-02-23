@@ -94,6 +94,7 @@ MyApp.post "/add_result" do
       @message = "Result successfully added."
       r.swimmer_id = params[:swimmer_id]
       r.event_id = params[:event_id]
+      binding.pry
       r.save
     end
   else
