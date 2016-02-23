@@ -7,14 +7,15 @@ MyApp.get "/add/result_form_add" do
   erb :"main/add/result_form_add"
 end
 
-MyApp.post "/result_added" do #some kind of error's going down w/ adding/updating/viewing events; error is re: lock method for nil
+MyApp.post "/result_added" do
   @event_id = params[:event_id]
-  @event = Event.find_by_id(@event_id)
+  @event_object = Event.find_by_id(@event_id)
   x = Result.new
   x.event_id = params[:event_id]
   x.competitor_id = params[:competitor_id]
   x.final_time = params[:final_time]
-  @lock_check = @event.lock
+  binding.pry
+  @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page"
   else

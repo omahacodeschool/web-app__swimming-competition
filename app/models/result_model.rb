@@ -39,7 +39,7 @@ class Result <ActiveRecord::Base
   end
 
   def is_valid?
-    if self.event_id == nil || self.competitor_id == nil || self.final_time == nil
+    if self.event_id == nil || self.event_id == "" || self.competitor_id == nil || self.competitor_id == "" || self.final_time == nil || self.final_time == ""
       return false
     else
       return true
