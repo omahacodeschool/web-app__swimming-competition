@@ -25,9 +25,9 @@
   <!-- <input type ="integer" name="college_id" placeholder="number_from_list">  -->
 
   <select name = "college_id">College Name
-
+  <option value="" disabled selected>Select College Name</option>
     <% @colleges.each do |college| %>
-    <option value ="<%=college_id %>"><%= college_name %><option>
+    <option value ="<%=college.id %>"><%= college.college_name %></option>
     <% end %>
 
   <input type ="submit">
