@@ -3,6 +3,3 @@ Error.
 <% @penguin.get_errors.each do |message| %>
   <p><%= message %></p>
   <% end %>
-
-  <a href="/penguins/new">Back to New Penguin form</a><br>
-  <a href="/penguins/edit/<%=@penguin.id %>">Back to Penguin edit form</a>

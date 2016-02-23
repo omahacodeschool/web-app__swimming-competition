@@ -5,11 +5,11 @@ MyApp.get "/results/new" do
 end
 
 MyApp.post "/results/create" do
-  x = Result.new
-  x.penguin_id = params["new_penguin_id"]
-  x.event_id = params["new_event_id"]
-  x.time = params["new_time"]
-  x.save
+  @result = Result.new
+  @result.penguin_id = params["new_penguin_id"]
+  @result.event_id = params["new_event_id"]
+  @result.time = params["new_time"]
+  @result.save
   redirect "/results"
 end
 

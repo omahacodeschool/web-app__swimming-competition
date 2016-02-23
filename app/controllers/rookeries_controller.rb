@@ -4,12 +4,16 @@ MyApp.get "/rookeries/new" do
 end
 
 MyApp.post "/rookeries/create" do
-  x = Rookery.new
-  x.name = params["new_rookery"]
-  x.conference_id = params["new_conference_id"]
-  x.save
-  redirect "/rookeries"
-end
+  @rookery = Rookery.new
+  @rookery.name = params["new_rookery"]
+  @rookery.conference_id = params["new_conference_id"]
+  if @rookery.is_valid
+    @rookery.save
+    redirect "/rookeries"
+  else 
+    erb :"rookeries/error"
+  end
+end 
 
 MyApp.get "/rookeries" do
   @rookeries = Rookery.all
@@ -26,9 +30,13 @@ MyApp.post "/rookeries/process_edit/:id" do
   @rookery = Rookery.find_by_id(params[:id])
   @rookery.name = params["edit_rookery"]
   @rookery.conference_id = params["edit_conference_id"]
-  @rookery.save
-  erb :"updated"  
-end
+  if @rookery.is_valid
+    @rookery.save
+    erb :"updated"
+  else 
+    erb :"rookeries/error"
+  end
+end 
 
 MyApp.post "/rookeries/delete/:id" do
   @rookery = Rookery.find_by_id(params[:id])
