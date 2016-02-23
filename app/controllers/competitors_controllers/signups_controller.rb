@@ -9,7 +9,6 @@ end
 
 MyApp.post "/newsignup" do
   @currentswimmer = Swimmer.find_by_id(params[:swimmerid])
-  Signup.where("swimmer_id" => @currentswimmer.id).delete_all
   @currentswimmer.register(params[:events])
   @events = Event.unlocked_events
   @lockedevents = Event.locked_events
