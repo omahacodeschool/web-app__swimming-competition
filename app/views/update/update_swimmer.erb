@@ -1,0 +1,20 @@
+Show form for updating swimmers
+
+<form action="/process_update_swimmer/<%= @s.id %>" method="post">
+  <p>
+    Swimmer's Name
+    <input type="text" name="new_swimmer_name" 
+      value="<%= @s.swimmer_name %>">
+  </p>
+  <p>
+    University ID
+    <input type="number" name="new_swimmer_university_id"
+      value="<%= @s.university_id %>"> 
+  </p>
+
+  <input type="submit">
+</form>
+
+
+<a href="/show_swimmers">View all Swimmers</a>
+<a href="/">Return Home</a>

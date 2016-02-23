@@ -1,0 +1,23 @@
+<p>Current Conferences</p>
+
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Conference</th>
+      <th>Delete Conference</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |y| %>
+      <tr>
+        <td> <%= y.conference_name %></a> </td>
+
+        <td><a href="delete_conference/<%= y.id %>"> Delete Conference </a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="/">Return Home</a>

@@ -1,0 +1,40 @@
+<h1> <%= @swimmer.swimmer_name %> </h1>
+<p>Swimmer's Information</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Competitor's Name</th>
+      <th>University</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @swimmer.swimmer_name %></td>
+        <td><%= @swimmer.university %></td>
+      </tr>
+  </tbody>
+</table>
+
+<p>Swimmer's Information</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer's Events</th>
+      <th>Swimmer's Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @result.each do |y| %>
+      <tr>
+        <td><%= y.event %></td>
+        <td><%= y.swimmer_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return Home</a>

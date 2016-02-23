@@ -1,0 +1,26 @@
+<p>Current List of Events</p>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Delete Event</th>
+      <th>Lock Event</th>
+      <th>Current Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |y| %>
+      <tr>
+        <td><a href="event_bio/<%= y.id %>"> <%= y.event_name %></a> </td>
+        <td><a href="delete_event/<%= y.id %>"> Delete Event </a> </td>
+        <td><a href="lock_event/<%= y.id %>"> Lock/ Unlock Event </a> </td>
+        <td> <%= y.event_locked %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return Home</a>

@@ -1,0 +1,30 @@
+<p>Current Universities</p>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>University</th>
+      <th>Conference</th>
+      <th>Delete University</th>
+      <th>Update University</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @universities.each do |y| %>
+      <tr>
+        <td><a href="university_bio/<%= y.id %>"> <%= y.university_name %> </td>
+        <td> <%= y.conference %> </td>
+        <td>
+          <a href="delete_university/<%= y.id %>"> Delete University </a>
+        </td>
+        <td>
+          <a href="form_update_university/<%= y.id %>"> Update University </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return Home</a>

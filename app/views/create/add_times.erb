@@ -1,0 +1,27 @@
+<h1>Add the swimmer's times.</h1>
+
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Swimmer Name</th>
+      <th>Input Time</th>
+    </tr>
+  </thead>
+<form action="/add_times" method="post">
+  <tbody>
+    <% @registered_events.each do |y| %>
+      <tr>
+        <td> <%= y.event %> </td>
+        <td> <%= y.swimmer %> </td>
+        <td>
+          <input type="decimal" name="input_time[]"> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+<input type="submit">  
+</form>
+</table>

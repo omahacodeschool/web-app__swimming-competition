@@ -1,0 +1,27 @@
+<p>Current Results</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Swimmer</th>
+      <th>Event</th>
+      <th>Swimmer's Time for Event</th>
+      <th>Remove Result</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |y| %>
+      <tr>
+        <td><a href="/swimmer_bio/<%= y.swimmer_id %>"><%= y.swimmer %></a></td>
+        <td><a href="/event_bio/<%= y.event_id %>"><%= y.event %></a></td>
+        <td><%= y.swimmer_time %></td>
+        <td>
+          <a href="/delete_result/<%= y.id %>"> Remove Result </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return Home</a>
