@@ -11,6 +11,7 @@ MyApp.post "/style_added" do
   x = Style.new
   x.style = params[:race_style]
   if x.is_valid? == false
+    @error_object = x
     erb :"main/errors/generic_errors"
   else
     x.save
@@ -33,6 +34,7 @@ MyApp.post "/update/style_updated/:stopsign" do
   @style = Style.find_by_id(params[:stopsign])
   @style.style = params[:race_style]
   if @style.is_valid? == false
+    @error_object = @style
     erb :"main/errors/generic_errors"
   else
     @style.save

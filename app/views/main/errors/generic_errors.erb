@@ -1,3 +1,5 @@
-GENERIC ERROR PAGE HALLO
-
-<%#= .@errors %>
+<br>
+<% errors = @error_object.get_errors %>
+<% errors.each do |e| %>
+<%= e %>
+<% end %>

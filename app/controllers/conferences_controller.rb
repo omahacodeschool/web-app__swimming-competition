@@ -11,6 +11,7 @@ MyApp.post "/conference_added" do
   x = Conference.new
   x.conference_name = params[:conference_name]
   if x.is_valid? == false
+    @error_object = x
     erb :"main/errors/generic_errors"
   else
     x.save
@@ -40,6 +41,7 @@ MyApp.post "/update/conference_updated/:stopsign" do
   @conference = Conference.find_by_id(params[:stopsign])
   @conference.conference_name = params[:conference_name]
   if @conference.is_valid? == false
+    @error_object = @conference
     erb :"main/errors/generic_errors"
   else
     @conference.save

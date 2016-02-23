@@ -18,6 +18,7 @@ MyApp.post "/event_added" do
     x.style_id = @styleid
     x.lock = false
   if x.is_valid? == false
+    @error_object = x
     erb :"main/errors/generic_errors"
   else
     x.save
@@ -67,6 +68,7 @@ MyApp.post "/update/event_updated/:stopsign" do
   @style_name = params[:style]
   @event.style_id = @event.get_style_id(@style_name)
   if @event.is_valid? == false
+    @error_object = @event
     erb :"main/errors/generic_errors"
   else
     @event.save

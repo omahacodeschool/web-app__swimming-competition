@@ -15,6 +15,7 @@ MyApp.post "/competitor_added" do
   x.conference_name = params[:conference]
   x.gender = params[:gender]
   if x.is_valid? == false
+    @error_object = x
     erb :"main/errors/generic_errors"
   else
     x.save
@@ -43,6 +44,7 @@ MyApp.post "/update/competitor_updated/:stopsign" do
   @competitor.conference_name = params[:conference]
   @competitor.gender = params[:gender]
   if @competitor.is_valid? == false
+    @error_object = @competitor
     erb :"main/errors/generic_errors"
   else
     @competitor.save

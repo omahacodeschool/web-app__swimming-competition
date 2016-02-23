@@ -14,12 +14,12 @@ MyApp.post "/result_added" do
   x.event_id = params[:event_id]
   x.competitor_id = params[:competitor_id]
   x.final_time = params[:final_time]
-  binding.pry
   @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page"
   else
     if x.is_valid? == false
+      @error_object = x
       erb :"main/errors/generic_errors"
     else
       x.save
@@ -91,6 +91,7 @@ MyApp.post "/update/result_updated/:stopsign" do
   @result.competitor_id = params[:competitor_id]
   @result.final_time = params[:final_time]
   if @result.is_valid? == false
+    @error_object = @result
     erb :"main/errors/generic_errors"
   else
     @result.save

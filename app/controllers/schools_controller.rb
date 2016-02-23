@@ -11,6 +11,7 @@ MyApp.post "/school_added" do
   x = School.new
   x.school_name = params[:school_name]
   if x.is_valid? == false
+    @error_object = x
     erb :"main/errors/generic_errors"
   else
     x.save
@@ -38,6 +39,7 @@ MyApp.post "/update/school_updated/:stopsign" do
   @school = School.find_by_id(params[:stopsign])
   @school.school_name = params[:school_name]
   if @school.is_valid? == false
+    @error_object = @school
     erb :"main/errors/generic_errors"
   else
     @school.save
