@@ -4,23 +4,22 @@
     <tr>
       <th>Event</th>
       <th>School</th>
-      <th>Swimmers</th>
-      <th>Swimmers</th>
+      <th>Swimmer</th>
+      <th>Add Time</th>
 
     </tr>
   </thead>
 
   <tbody>
-  <% @signup.each do |signup| %>
+ 
       <tr>
-        <td><%= signup.event_name %></td>
+        <td><%= @signup.event_name %></td>
         <td><%= @school.school_name%></td>
-        <td><%= signup.name %></td>
-        <td><%= signup.name %></td>
-        <td><%= signup.name %></td>
+        <td><%= @signup.name %></td>
+        <td><a href="/add_time">Add Time</a></td>
     
         
       </tr>
-    <% end %>
+    
   </tbody>
 </table>

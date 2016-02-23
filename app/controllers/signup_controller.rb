@@ -1,6 +1,13 @@
-MyApp.get "/add_signup_time" do
-  @signup_at_event = Signup.where(event_id => params[:time])
-  @signup_at_event.event_time = params[:time]
+MyApp.get "/add_time/:place" do
+  @signup = Signup.find_by_id(params[:place])
+  
+  erb :"signup_time"
+end
+MyApp.get "/complete_add_time/:place" do
+  @signup = Signup.find_by_id(params[:place])
+  @signup.event_time = params[:time]
+  @signup.save 
+  erb :"follower"
 end
 MyApp.get "/add_signup_swimmer" do
   @swimmer = Swimmer.find_by_id(params[:new_signup])

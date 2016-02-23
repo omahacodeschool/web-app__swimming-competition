@@ -4,7 +4,7 @@
     <tr>
       <th>Event</th>
       <th>Swimmer</th>
-      <th>Time (seconds)</th>
+      <th>Add Time (seconds)</th>
 
       
     </tr>
@@ -15,7 +15,13 @@
       <tr>
         <td><%= y.event_name %></a></td>
         <td><%= y.name %></td>
-        <td><form action="/add_signup_time"><input type = "number" name = "time"><input type = "submit"></td>
+        <td>
+
+          <form action="complete_add_time/<%= y.id%>">
+            <input type = "text" name = "time" value = "<%= y.event_time %>">
+            <input type = "submit">
+          </form>
+        </td>
         
         
       </tr>
@@ -25,6 +31,7 @@
   <% @signup.each do |y| %>
     <a href="view_signup/<%= y.id%>">
     <%= y.event_name%> 
+    <%= y.name %>
     <%= y.event_time %></a></p>
   <a href="delete_signup/<%= y.id%>">
   Delete
