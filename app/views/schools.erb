@@ -1,0 +1,27 @@
+
+<h1>Here are the Schools currently competing in the Tournament</h1>
+<p>
+  <% @schools.each do |school| %>
+    <a href="/view_school/<%= school.id%>">
+    <%= school.school_name %> </a></p>
+  <a href="delete_school/<%= school.id%>">
+  Delete
+  </a>
+  <a href="edit_school/<%= school.id%>">
+  Edit
+  </a>
+</p>
+<% end %>
+
+<h1>Here are the Conferences currently competing in the Tournament</h1>
+<ul>
+
+<p>
+  <% @conference.each do |conference| %>
+    <a href="view_conferences/<%= conference.id%>">
+    <%= conference.conference_name %> </a></p>
+  <a href="delete_conference/<%= conference.id%>">
+  Delete
+  </a>
+</p>
+<% end %>

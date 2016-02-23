@@ -1,0 +1,25 @@
+
+<H1><%=@event.event_name%></H1>
+
+
+<table border="1">
+  <thead>
+    <tr>
+
+      <th>Swimmers Competing!</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @signup.each do |signup| %>
+      <tr>
+        <td><%= signup.name %></td>
+
+
+      
+        
+      </tr>
+  <% end %>
+  </tbody>
+</table>

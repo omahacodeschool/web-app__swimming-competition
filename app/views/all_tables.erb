@@ -1,0 +1,15 @@
+<h1>Click on the event to see competitors for the event</h1>
+<p>
+  <% @events.each do |event| %>
+    <a href="view_event/<%= event.id%>">
+    <%= event.event_name %> </a></p>
+    <a href="/winners/<%= event.id%>">View Winners!</a>
+</p>
+<% end %>
+<h1>Click on a swimmer to get information on that swimmer</h1>
+<p>
+  <% @swimmers.each do |swimmer| %>
+    <a href="view_swimmers/<%= swimmer.id%>">
+    <%= swimmer.name %> </a></p>
+</p>
+<% end %>

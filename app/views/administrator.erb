@@ -1,0 +1,123 @@
+<h1>Here you can manipulate information in the Database</h1>
+
+
+<h3>Enter a swimmer, along with that swimmers school</h3>
+<p>
+<form action="/add_swimmer">
+<input type = "text" name = "new_swimmer">
+
+
+
+<select name="swimmer_school">
+    <option>Select a school</option> 
+    <% @schools.each do |school| %>
+        <option value="<%= school.id %>"><%= school.school_name %></option>
+    <% end %>
+
+</select>
+<input type = "submit">
+</form>
+</body>
+</html>
+
+<h3>Enter an event and the top three finishers</h3>
+<p>
+<form action="/add_event">
+Event:<input type = "text" name = "new_event">
+<select name="first">
+    <option>First Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<select name="second">
+    <option>Second Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<select name="third">
+    <option>Third Place</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+<input type = "submit">
+</select>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<h3>Enter a school along with that schools Conference</h3>
+<p>
+<form action="/add_school">
+<input type = "text" name = "new_school">
+
+<select name="new_conf">
+    <option>Select a Conference</option> 
+    <% @conferences.each do |conference| %>
+        <option value="<%= conference.id %>"><%= conference.conference_name %></option>
+    <% end %>
+
+</select>
+<input type = "submit">
+
+
+</form>
+</body>
+</html>
+
+
+
+
+
+<h3>Enter a School Conference</h3>
+<p>
+<form action="/add_conference">
+<input type = "text" name = "new_conference">
+</form>
+<h3>Enter a swimmer, the events, and time for that event</h3>
+<p>
+<form action="/add_signup_swimmer">
+
+
+<select name="new_signup">
+    <option>Select a Swimmer</option> 
+    <% @swimmers.each do |swimmer| %>
+        <option value="<%= swimmer.id %>"><%= swimmer.name %></option>
+    <% end %>
+
+</select>
+<% @events.each do |event| %>
+    <input type="checkbox" name="event_id[]" value="<%= event.id %>">
+    <label><%= event.event_name %> 
+<% end %>
+<input type = "submit">
+
+
+<!-- Input Time in seconds
+<input type = "number" name = "time">
+<input type = "submit"> -->
+
+
+</form>
+</label>
+</p>
+-
+-
+-
+-
+<h3>Manage Entries<h3>
+      <li><a href="/swimmer">Swimmer</a></li>
+      <li><a href="/event">Event</a></li>
+      <li><a href="/school">School</a></li>
+      <li><a href="/signup">Signups</a></li>

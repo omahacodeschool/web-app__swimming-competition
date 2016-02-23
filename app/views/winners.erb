@@ -1,0 +1,23 @@
+<h3><%= @event.event_name %></h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>First Place</th>
+      <th>Second Place</th>
+      <th>Third Place</th>
+   
+    </tr>
+  </thead>
+
+  <tbody>
+      <%@signup.each do |signup| %>
+      <tr>
+        <td><%= @event.first_place_name %>(<%= signup.event_time%>)</td>
+        <td><%= @event.second_place_name %></td>
+        <td><%= @event.third_place_name %></td>
+      
+        
+      </tr>
+  <%end%>
+  </tbody>
+</table>

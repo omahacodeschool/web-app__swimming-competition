@@ -1,0 +1,17 @@
+<h1>Here are the events in the Tournament</h1>
+<p>
+  <% @events.each do |event| %>
+    <a href="view_event/<%= event.id%>">
+    <%= event.event_name %> </a></p>
+  <a href="delete_event/<%= event.id%>">
+  Delete
+  --
+  <a href="edit_event/<%= event.id%>">
+  Edit
+  </a>
+  -
+  <a href="/lock_event/<%= event.id%>">LOCK EVENT</a>
+  -
+  <a href="/winners/<%= event.id%>">View Winners!</a>
+</p>
+<% end %>

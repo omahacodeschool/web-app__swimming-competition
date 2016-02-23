@@ -1,0 +1,13 @@
+<h1>Here are the Swimmers currently competing in the Tournament</h1>
+<p>
+  <% @swimmers.each do |swimmer| %>
+    <a href="view_swimmers/<%= swimmer.id%>">
+    <%= swimmer.name %> </a></p>
+  <a href="delete_swimmers/<%= swimmer.id%>">
+  Delete
+  --
+  <a href="edit_swimmer/<%= swimmer.id%>">
+  Edit
+  </a>
+</p>
+<% end %>
