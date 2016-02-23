@@ -4,14 +4,18 @@ MyApp.get "/penguins/new" do
 end
 
 MyApp.post "/penguins/create" do
-  x = Penguin.new
-  x.last_name = params["new_last_name"]
-  x.first_name = params["new_first_name"]
-  x.age = params["new_age"]
-  x.rookery_id = params["new_rookery_id"]
-  x.save
+  @penguin = Penguin.new
+  @penguin.last_name = params["new_last_name"]
+  @penguin.first_name = params["new_first_name"]
+  @penguin.age = params["new_age"]
+  @penguin.rookery_id = params["new_rookery_id"]
+  if @penguin.is_valid
+    @penguin.save
+    redirect "/penguins"
+  else 
+    erb :"penguins/error"
+  end
 
-  redirect "/penguins"
 end
 
 MyApp.get "/penguins" do
@@ -31,8 +35,14 @@ MyApp.post "/penguins/process_edit/:id" do
   @penguin.first_name = params["edit_first_name"]
   @penguin.age = params["edit_age"]
   @penguin.rookery_id = params["edit_rookery_id"]
-  @penguin.save
-  erb :"updated"
+
+  if @penguin.is_valid
+    @penguin.save
+    erb :"updated"
+  else 
+    erb :"penguins/error"
+  end
+
 end
 
 MyApp.post "/penguins/delete/:id" do
