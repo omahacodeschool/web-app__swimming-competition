@@ -56,18 +56,6 @@
 </p>
 
 <form action = "/results" method = "post">
-  
-  <select name="event_id">
-
-    <option>Select an event...</option>
-
-      <% @events.each do |event| %>
-          <option value="<%= event.id %>">
-            <%= event.event %>
-          </option>
-      <% end %>
-
-  </select>
 
   <select name="competitor_id">
 
@@ -80,6 +68,13 @@
       <% end %>
 
   </select>
+
+  Events:<br>
+
+  <% @results.each do |result| %>
+    <input type="checkbox" name="event_id[]" value="<%= result.event_id %>">
+    <label><%= result.event_name %>
+  <% end %>
 
   <p>
     Time: <input type = "number" name = "time">
