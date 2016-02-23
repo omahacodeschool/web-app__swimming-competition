@@ -1,4 +1,12 @@
 class Award < ActiveRecord::Base
+  def is_valid
+    if self.event_id == "" || self.rank == "" || self.competitor_id == "" 
+      return false
+    else
+      return true
+    end
+  end
+
   def event_name
     if self.event_id == nil
       return ""
@@ -6,6 +14,7 @@ class Award < ActiveRecord::Base
       Event.find_by_id(self.event_id).event_name
     end
   end
+  
   def competitor_name
     if self.competitor_id == nil
       return ""

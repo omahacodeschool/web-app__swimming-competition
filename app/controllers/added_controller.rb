@@ -21,9 +21,12 @@ MyApp.post "/college_added" do
   x = College.new
   x.college_name = params["college_name"]
   x.conference_id = params["conference_id"]
-  x.save
-
-  erb :"added/college_added"
+  if x.is_valid == true
+    x.save
+    erb :"added/college_added"
+  else
+    erb :"misc/error"
+  end
 end
 
 #Processes the form for adding a competitor

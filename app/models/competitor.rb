@@ -1,4 +1,11 @@
 class Competitor < ActiveRecord::Base
+  def is_valid
+    if self.competitor_name == "" || self.college_id == ""
+      return false
+    else
+      return true
+    end
+  end
 
   # Get the conference name to display w/ single college
   #
