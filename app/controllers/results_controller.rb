@@ -11,6 +11,7 @@ MyApp.post "/results/create" do
   @result.time = params["new_time"]
   @result.save
   redirect "/results"
+
 end
 
 MyApp.get "/results" do
@@ -31,8 +32,10 @@ MyApp.post "/results/process_edit/:id" do
   @result.event_id = params["edit_event_id"]
   @result.time = params["edit_time"]
   @result.save
-erb :"updated"
+  erb :"updated"
+
 end
+
 
 MyApp.post "/results/delete/:id" do
   @result = Result.find_by_id(params[:id])

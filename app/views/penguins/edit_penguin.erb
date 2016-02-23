@@ -12,12 +12,10 @@
     <label>Rookery</label>
     <select name="edit_rookery_id">
       <% @rookeries.each do |r| %>
-        <option value="<%= r.id %>">
+        <option value="<%= r.id %>" <% if @penguin.rookery_access != nil && r.id == @penguin.rookery_access.id %> selected <% end %>>
           <%= r.name %>
         </option>
-      <% end %>    
-    <option selected> <%=@penguin.rookery_access.name%>
-      </option>  
+      <% end %>     
     </select>
     <input type="submit" value="update">
   </p>
