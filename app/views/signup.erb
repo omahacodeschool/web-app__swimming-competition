@@ -15,7 +15,7 @@
       <tr>
         <td><%= y.event_name %></a></td>
         <td><%= y.name %></td>
-        <td><%= y.event_time %></td>
+        <td><form action="/add_signup_time"><input type = "number" name = "time"><input type = "submit"></td>
         
         
       </tr>
@@ -34,4 +34,3 @@
   </a>
 </p>
 <% end %>
-<form action="/add_signup_time"><input type = "number" name = "time"><input type = "submit">

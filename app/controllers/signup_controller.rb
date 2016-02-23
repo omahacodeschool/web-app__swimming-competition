@@ -1,6 +1,7 @@
 MyApp.get "/add_signup_time" do
   @signup_at_event = Signup.where(event_id => params[:time])
   @signup_at_event.event_time = params[:time]
+end
 MyApp.get "/add_signup_swimmer" do
   @swimmer = Swimmer.find_by_id(params[:new_signup])
   @swimmer.set_events(params[:event_id])
