@@ -75,11 +75,11 @@ MyApp.get "/update/result_update_form/:popsicle" do
   @result_object = Result.find_by_id(params[:popsicle])
   @results_event_id = @result_object.event_id
   @event_object = Event.find_by_id(@results_event_id)
-  binding.pry
   @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page/:popsicle"
   else
+    @result = @result_object
     erb :"main/update/result_update_form"
   end
 end
