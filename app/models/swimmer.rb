@@ -45,7 +45,8 @@ class Swimmer < ActiveRecord::Base
       s.save
     end
   end
-
+  
+  #will need tests for get_errors, set_erros, is_valid
   def get_errors
     self.set_errors
     return @errors

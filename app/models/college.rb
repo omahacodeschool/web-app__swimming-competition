@@ -6,4 +6,32 @@ class College < ActiveRecord::Base
     y = Conference.find_by_id(x)
     return y.conference_name
   end  
+
+  #will need tests for get_errors, set_erros, is_valid
+  def get_errors
+    self.set_errors
+    return @errors
+  end
+
+  def set_errors
+    @errors = []
+
+    if self.college_name == ""
+      @errors << "Must include valid College name"
+    end
+
+    if self.conference_id == 0
+      @errors << "Must choose Conference"
+    end
+  end
+
+  def is_valid
+    self.set_errors
+
+    if @errors.length > 0
+      return false
+    else
+      return true
+    end
+  end
 end

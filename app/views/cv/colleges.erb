@@ -14,7 +14,7 @@ Schools Represented in the Tournament:
   <input type="text" name="collegename">
 
   <select name = "conferenceid">
-    <option>Select a Conference...</option>
+    <option disabled>Select a Conference...</option>
     <% @conferences.each do |post| %>
       <option value="<%= post.id %>"><%= post.conference_name %>
       </option>

@@ -11,9 +11,16 @@ MyApp.post "/newcollege" do
   c = College.new
   c.college_name = params[:collegename]
   c.conference_id = params[:conferenceid]
-  c.save
-  @newcollegename = params[:collegename]
-  erb :"cv/collegeaddsuccess"
+
+  if c.is_valid == false
+    @errorobject = "college"
+    @errors = c.get_errors
+    erb :"/cv/college_validation_error"
+  elsif c.is_valid == true
+    c.save
+    @newcollegename = params[:collegename]
+    erb :"cv/collegeaddsuccess"
+  end
 end
 
 
