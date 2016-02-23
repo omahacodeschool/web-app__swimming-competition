@@ -72,8 +72,8 @@
   Events:<br>
 
   <% @results.each do |result| %>
-    <input type="checkbox" name="event_id[]" value="<%= result.event_id %>">
-    <label><%= result.event_name %>
+    <input type="checkbox" name="event_id[]" value="<%= result.event_type %>">
+    <label><%= result.event_type %><br>
   <% end %>
 
   <p>

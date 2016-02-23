@@ -18,4 +18,14 @@ class Result < ActiveRecord::Base
     return locked
   end
 
+  def event_type
+    events = Event.all
+    result = Hash.new(0)
+    events.each {|event| result[event] += 1 }
+    event_hash = result
+    event_list_arr = event_hash.keys.each{|key| key}
+    return event_list_arr
+  end
+    
+
 end
