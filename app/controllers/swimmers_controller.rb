@@ -1,6 +1,7 @@
 MyApp.get "/add_swimmer" do
 
-  @swimmers_all = Swimmer.all
+  @schools = School.all
+  @swimmers = Swimmer.all
 
   erb :"/swimmers/add_swimmer"
 end
@@ -8,9 +9,10 @@ end
 
 MyApp.post "/add_swimmer_confirmation" do
 
-  @swimmers_all = Swimmer.all
+  @swimmers = Swimmer.all
+  @schools = School.all
 
-  swim_1_school = School.find_by_school_name(params["school_1_name"])
+  swim_1_school = School.find_by_id(params["school_1_id"])
 
   swimmer_1 = Swimmer.new
   swimmer_1.swimmer_name = (params["swim_1_name"])
@@ -23,7 +25,8 @@ end
 
 MyApp.post "/edit_swimmer_name/:swimmer_id" do
 
-  @swimmers_all = Swimmer.all
+  @swimmers = Swimmer.all
+  @schools = School.all
 
   swimmer_1 = Swimmer.find_by_id(params[:swimmer_id])
   swimmer_1.swimmer_name = params["swim_edit_name"]
@@ -35,7 +38,8 @@ end
 
 MyApp.post "/delete_swimmer/:swimmer_id" do
 
-  @swimmers_all = Swimmer.all
+  @swimmers = Swimmer.all
+  @schools = School.all
 
   swimmer_1 = Swimmer.find_by_id(params[:swimmer_id])
   signup_1 = Signup.where("swimmer_id" => params[:swimmer_id])

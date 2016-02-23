@@ -8,8 +8,7 @@ class Signup < ActiveRecord::Base
 
       signup_records = []
 
-      primary_key = x.id
-      signup_records << primary_key
+      signup_records << x.id
 
       name = x.get_swimmer_name
         if name == nil
@@ -40,9 +39,8 @@ class Signup < ActiveRecord::Base
       signup_records << time
 
       sorted_signup_records << signup_records
+      end
       return sorted_signup_records
-
-    end
   end
 
 

@@ -1,5 +1,5 @@
 MyApp.post "/add_score_confirmation" do
-
+  @sorted_signup_records = Signup.sort_signups_for_viewing_table
   x = Signup.find_by_id(params["signup_1_id"])
   x.completed_swim_time =  params["signup_1_time"]
   x.save

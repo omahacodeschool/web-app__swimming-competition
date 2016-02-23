@@ -13,7 +13,7 @@
          <th>School</th>
          <th>Edit Swimmer Name</th>
     </tr>
-      <% @swimmers_all.each do |n| %> 
+      <% @swimmers.each do |n| %> 
     <tr> 
         <td><%= n.id %></td>
         <td><%= n.swimmer_name %></td>
@@ -27,7 +27,7 @@
             <input type="submit" value="X">
           </form>
         </td>
-      </tr>
+    </tr>
       <% end %>
       <br>
       <br>   
@@ -48,7 +48,12 @@
       School name:
   <br>
   <br>
-      <input type="text" name="school_1_name">
+      <select name="school_1_id">
+      <option>Select a School...</option>
+      <% @schools.each do |s| %>
+      <option value = "<%= s.id %>"><%=s.school_name%></option>
+      <% end %>
+      </select>
   <br>
   <br>
   <br>

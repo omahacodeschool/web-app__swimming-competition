@@ -16,6 +16,8 @@ class SwimmerTest < Minitest::Test
     @swimmer.school_id = @school.id
     @school.save
     @swimmer.save
+
+    
     
 
   end
