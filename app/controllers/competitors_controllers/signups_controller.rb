@@ -9,11 +9,16 @@ end
 
 MyApp.post "/newsignup" do
   @currentswimmer = Swimmer.find_by_id(params[:swimmerid])
-  @currentswimmer.register(params[:events])
-  @events = Event.unlocked_events
-  @lockedevents = Event.locked_events
-  @swimmers = Swimmer.all
-  redirect '/view_swimmer/' + (params[:swimmerid])
+
+  if params[:events] == nil
+    erb :"/cv/signup_validation_error"
+  else
+    @currentswimmer.register(params[:events])
+    @events = Event.unlocked_events
+    @lockedevents = Event.locked_events
+    @swimmers = Swimmer.all
+    redirect '/view_swimmer/' + (params[:swimmerid])
+  end
 end
 
 MyApp.post "/remove_swimmer/:id" do

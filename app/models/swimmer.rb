@@ -45,12 +45,10 @@ class Swimmer < ActiveRecord::Base
       else
       end
     end 
-    binding.pry
   end
   #this now includes validation so rewrite that test
   def register(eventidarray)
     array = self.register_errors(eventidarray)
-    binding.pry
     if array.empty? == false
       array.each do |event|
         s = Signup.new
