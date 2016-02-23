@@ -1,6 +1,6 @@
 class College < ActiveRecord::Base
   def is_valid
-    if self.college_name == "" || self.conference_id == ""
+    if self.college_name == "" || self.conference_id == nil
       return false
     else
       return true
