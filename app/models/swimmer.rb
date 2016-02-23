@@ -38,12 +38,14 @@ class Swimmer < ActiveRecord::Base
   end
   #this is new so test it (so many swimmer tests!)
   def register_errors(eventidarray)
+    binding.pry
     eventidarray.each do |event|
       a = Signup.find_by(swimmer_id: self.id, event_id: event)
       if a
-        eventidarray - event
+        eventidarray.shift
       else
       end
+      binding.pry
     end 
   end
   #this now includes validation so rewrite that test
