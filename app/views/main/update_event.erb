@@ -9,12 +9,12 @@
   <p>
   Event Name:
   <br />
-  <input type="text" name="event_name_update" value="<%= @event.event_name %>">
+  <input type="text" name="event_name_update" placeholder="<%= @event.event_name %>" required>
   </p>
   <p>
   Standing Record (in seconds):
   <br />
-  <input type="number" step="any" name="event_time_update" value="<%= @event.event_best_time %>">
+  <input type="number" step="any" name="event_time_update" placeholder="<%= @event.event_best_time %>" required>
   </p>
   <p>
   <input type="submit" value="Update Event">

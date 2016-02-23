@@ -10,7 +10,7 @@
   Team Name:
   <br /> 
   <input type="text" name="team_name_update" 
-    value="<%= @team.team_name %>" required>
+    placeholder="<%= @team.team_name %>" required>
   </p>
 
   <p>
@@ -18,7 +18,7 @@
   <br />
     <% Conference.all.each do |conference| %>
       <input type="radio" name="select_conference_update" 
-      value="<%= conference.id %>" 
+      placeholder="<%= conference.id %>" 
       <%= "checked" if @team.conference_id == conference.id %> required> 
       <%= conference.conference_name %>
       <br />
