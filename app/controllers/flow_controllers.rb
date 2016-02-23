@@ -67,16 +67,16 @@ end
 
 # Go to a view showing all events with swimmers that don't have times.
 MyApp.get "/upcoming_events" do
-  events = Result.where({"swimmer_time" => nil})
-  @registered_events = events.select(:event_id).group(:event_id)
-  erb :"display/upcoming_events"
+  @registered_events = Result.where({"swimmer_time" => nil})
+
+  erb :"create/add_times"
 end
 
 # Go to a view showing all the swimmers in an event withouth times.
 MyApp.get "/add_times/:id" do
   @event_name = Event.find_by_id(params[:id])
   @event = Result.where({"event_id" => params[:id]})
-  binding.pry
+
 
   erb :"create/add_times"
 end

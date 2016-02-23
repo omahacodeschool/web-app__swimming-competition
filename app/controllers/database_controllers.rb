@@ -114,7 +114,9 @@ end
 
 #Add times to results.
 MyApp.post "/add_times" do
-  #put cool stuff here
+  times = Result.where()
+  time.set_swimmers_time
+  binding.pry
 
   erb :"/success/success_event"
 end

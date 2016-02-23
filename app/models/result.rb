@@ -71,6 +71,13 @@ class Result < ActiveRecord::Base
     end
     return duplicates
   end
+
+  def set_swimmers_time(id_of_event, arr_of_times)
+    event = Result.where({"event_id" => id_of_event})
+    arr_of_times.each do |i|
+
+
+  end
 end
 
 
