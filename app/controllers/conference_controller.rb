@@ -31,9 +31,14 @@ end
 
 MyApp.post "/edit_conference/:conference_id" do
 	@conference = Conference.find(params[:conference_id])
-	@conference.update_attributes({name: params['name']})
-	@conference.save
-	redirect :"conference_info/#{@conference.id}"
+	@conference.assign_attributes({name: params['name']})
+	if @conference.is_valid == true
+		@conference.save
+		redirect :"conference_info/#{@conference.id}"
+	else
+		@error_object = @conference
+		erb :"error"
+	end
 end
 
 MyApp.post "/conference_delete/:conference_id" do

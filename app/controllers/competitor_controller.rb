@@ -44,9 +44,14 @@ end
 
 MyApp.post "/edit/:competitor_id" do
 	@competitor = Competitor.find(params[:competitor_id])
-	@competitor.update_attributes({first_name: params['first_name'], last_name: params['last_name'], school_id: params['school_id']})
-	@competitor.save
-  redirect :"profile/#{@competitor.id}"
+	@competitor.assign_attributes({first_name: params['first_name'], last_name: params['last_name'], school_id: params['school_id']})
+	if @competitor.is_valid == true
+		@competitor.save
+		redirect :"profile/#{@competitor.id}"
+	else
+		@error_object = @competitor
+		erb :"error"
+	end
 end
 
 MyApp.post "/competitor_delete/:competitor_id" do

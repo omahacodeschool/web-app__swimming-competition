@@ -46,8 +46,13 @@ end
 MyApp.get "/add_result/time/:competitor_id/:event_id" do
 	result = Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id]).first
 	result.time = params[:time]
-	result.save
-  redirect :"event_info/#{result.event_id}"
+	if result.is_valid == true
+		result.save
+  		redirect :"event_info/#{result.event_id}"
+	else
+		@error_object = result
+		erb :"error"
+	end
 end
 
 MyApp.get "/events/edit/:event_id" do
@@ -57,9 +62,14 @@ end
 
 MyApp.post "/edit_event/:event_id" do
 	@event = Event.find(params[:event_id])
-	@event.update_attributes({name: params['name']})
-	@event.save
-  redirect :"event_info/#{@event.id}"
+	@event.assign_attributes({name: params['name']})
+	if @event.is_valid == true
+		@event.save
+  		redirect :"event_info/#{@event.id}"
+	else
+		@error_object = @event
+		erb :"error"
+	end
 end
 
 MyApp.post "/event_delete/:event_id" do

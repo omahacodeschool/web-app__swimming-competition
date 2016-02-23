@@ -52,6 +52,12 @@ class CompetitorTest < Minitest::Test
     @result_3.event_id = @event3.id
     @result_3.competitor_id = @cat2.id
     @result_3.save
+
+    @cat4 = Competitor.new
+    @cat4.first_name = ""
+    @cat4.last_name = ""
+    @cat4.school_id = nil
+    @cat4.save
   end
 
   def test_get_a_competitors_school
@@ -74,7 +80,7 @@ class CompetitorTest < Minitest::Test
     assert_nil(@cat2.event_entry)
   end
 
-    def test_set_events
+  def test_set_events
     @cat4 = Competitor.new
     event_ids = [@event1.id, @event2.id]
 
@@ -82,5 +88,23 @@ class CompetitorTest < Minitest::Test
 
     assert_includes(@cat4.event_entry, @event1)
     assert_includes(@cat4.event_entry, @event2)
+  end
+
+  def test_set_errors
+    assert_includes(@cat4.set_errors, "First name cannot be blank")
+    assert_includes(@cat4.set_errors, "Last name cannot be blank")
+    assert_includes(@cat4.set_errors, "Must choose a school")
+  end
+
+  def test_get_errors
+    @cat4.set_errors
+    assert_includes(@cat4.get_errors, "First name cannot be blank")
+    assert_includes(@cat4.get_errors, "Last name cannot be blank")
+    assert_includes(@cat4.get_errors, "Must choose a school")
+  end
+
+  def test_is_valid
+    @cat4.set_errors
+    assert_equal(false, @cat4.is_valid)
   end
 end

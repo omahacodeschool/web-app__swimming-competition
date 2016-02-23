@@ -54,6 +54,10 @@ class ResultTest < Minitest::Test
     @result_3.event_id = @event3.id
     @result_3.competitor_id = @cat2.id
     @result_3.save
+
+    @result_4 = Result.new
+    @result_4.time = ""
+    @result_4.save
   end
 
   def test_name_of_competitor
@@ -64,6 +68,20 @@ class ResultTest < Minitest::Test
   def test_name_of_event
     assert_includes(@result_1.name_of_event, @event1.name)
     refute_includes(@result_1.name_of_event, @event2.name)
+  end
+
+  def test_set_errors
+    assert_includes(@result_4.set_errors, "You must add a time")
+  end
+
+  def test_get_errors
+    @result_4.set_errors
+    assert_includes(@result_4.get_errors, "You must add a time")
+  end
+
+  def test_is_valid
+    @result_4.set_errors
+    assert_equal(false, @result_4.is_valid)
   end
 
 end

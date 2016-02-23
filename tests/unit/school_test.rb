@@ -63,6 +63,11 @@ class SchoolTest < Minitest::Test
     @result_3.event_id = @event3.id
     @result_3.competitor_id = @cat2.id
     @result_3.save
+
+    @school2 = School.new
+    @school2.name = ""
+    @school2.conference_id = nil
+    @school.save
   end
 
   def test_conference_name
@@ -81,4 +86,19 @@ class SchoolTest < Minitest::Test
     assert_nil(@school.school_members)
   end
 
+  def test_set_errors
+    assert_includes(@school2.set_errors, "School name cannot be blank")
+    assert_includes(@school2.set_errors, "You must choose a conference for this school")
+  end
+
+  def test_get_errors
+    @school2.set_errors
+    assert_includes(@school2.get_errors, "School name cannot be blank")
+    assert_includes(@school2.get_errors, "You must choose a conference for this school")
+  end
+
+  def test_is_valid
+    @school2.set_errors
+    assert_equal(false, @school2.is_valid)
+  end
 end

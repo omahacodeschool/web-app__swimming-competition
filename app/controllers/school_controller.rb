@@ -35,9 +35,15 @@ end
 
 MyApp.post "/edit_school/:school_id" do
 	@school = School.find(params[:school_id])
-	@school.update_attributes({name: params['school_name'], conference_id: params['conference_id']})
-	@school.save
-	redirect :"school_info/#{@school.id}"
+	@school.assign_attributes({name: params['school_name'], conference_id: params['conference_id']})
+  if @school.is_valid == true
+    @school.save
+    redirect :"school_info/#{@school.id}"
+  else
+    @error_object = @school
+    erb :"error"
+  end
+	
 end
 
 MyApp.post "/school_delete/:school_id" do

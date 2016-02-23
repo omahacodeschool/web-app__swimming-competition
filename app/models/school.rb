@@ -42,6 +42,9 @@ class School < ActiveRecord::Base
     	if self.name == ""
       	@errors << "School name cannot be blank"
     	end
+    	if self.conference_id == nil
+      	@errors << "You must choose a conference for this school"
+    	end
   	end
 
   # Checks if the record is valid.

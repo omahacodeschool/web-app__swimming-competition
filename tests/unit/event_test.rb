@@ -78,6 +78,10 @@ class EventTest < Minitest::Test
     @result_5.competitor_id = @cat2.id
     @result_5.time = 11
     @result_5.save
+
+    @event4 = Event.new
+    @event4.name = ""
+    @event4.save
   end
 
   def test_list_of_results
@@ -115,5 +119,19 @@ class EventTest < Minitest::Test
 
   def test_if_results_do_not_have_time
     assert_nil(@event3.top_three)
+  end
+
+    def test_set_errors
+    assert_includes(@event4.set_errors, "Event name cannot be blank")
+  end
+
+  def test_get_errors
+    @event4.set_errors
+    assert_includes(@event4.get_errors, "Event name cannot be blank")
+  end
+
+  def test_is_valid
+    @event4.set_errors
+    assert_equal(false, @event4.is_valid)
   end
 end
