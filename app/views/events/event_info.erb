@@ -11,7 +11,10 @@
 			<% @event.list_of_results.each do |c| %>
 				<li>
 					<a href="/profile/<%= c.id %>">
-						<b><%=c.first_name %> <%= c.last_name %></b>
+						<b><%=c.first_name %> <%= c.last_name %> -
+						<% if Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time != nil%>
+						<%= Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time %> seconds</b>
+						<% end %>
 					</a>
 <!-- 					add time next to name
  -->						:
