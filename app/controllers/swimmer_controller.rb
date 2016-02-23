@@ -4,7 +4,7 @@ MyApp.get "/add_swimmer" do
   swimmer_add.school_id = params[:swimmer_school]
   swimmer_add.save
   @schools = School.all
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/edit_swimmer/:place" do
   @swimmer = Swimmer.find_by_id(params[:place])
@@ -15,7 +15,7 @@ MyApp.get "/edit_swimmer/finish_update_swimmer/:place" do
   @swimmer.name = params[:edit_title]
   @swimmer.school_id = params[:edit_number]
   @swimmer.save
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/view_swimmers/:place" do
   @swimmer = Swimmer.find_by_id(params[:place])
@@ -28,5 +28,5 @@ MyApp.get "/delete_swimmers/:place" do
   @signup = Signup.where({swimmer_id => (params[:place])})
   @swimmer.delete
   @signup.delete
-  erb :"administrator"
+  erb :"follower"
 end

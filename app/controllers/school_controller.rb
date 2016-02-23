@@ -5,7 +5,7 @@ MyApp.get "/add_school" do
   school_add.save
   @schools = School.all
   @conferences = Conference.all
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/add_conference" do
   conference_add = Conference.new
@@ -13,7 +13,7 @@ MyApp.get "/add_conference" do
   conference_add.save
   conf = Conference.all
   @conference = conf.join(" ")
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/view_school/:holder" do
   @school = School.find_by_id(params[:holder])
@@ -41,7 +41,7 @@ MyApp.get "/delete_conference/:place" do
   else
     return nil
   end
-  erb :"administrator"
+  erb :"follower"
 end
 MyApp.get "/edit_school/:place" do
   @school = School.find_by_id(params[:place])
@@ -51,5 +51,5 @@ MyApp.get "/edit_school/finish_edit_school/:holder" do
   @school = School.find_by_id(params[:holder])
   @school.school_name = params[:edit_name]
   @school.save
-  erb :"administrator"
+  erb :"follower"
 end

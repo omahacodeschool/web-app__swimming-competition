@@ -2,7 +2,15 @@ class Swimmer < ActiveRecord::Base
   #returns all school information that I found relation to the school id
 
   #returns the school name when referencing the school id
-
+  def set_events(arr_of_event_ids)
+    arr_of_event_ids.each do |event_id|
+      signup_row = Signup.new
+      signup_row.event_id = event_id
+      signup_row.swimmer_id = self.id 
+      signup_row.save
+    end
+    return nil
+  end
   def name_school
     x = self.school_id
     y = School.find_by_id(x)

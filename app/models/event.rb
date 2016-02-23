@@ -14,4 +14,5 @@ class Event < ActiveRecord::Base
       y = Swimmer.find_by_id(x)
     return y.name
   end
+
 end

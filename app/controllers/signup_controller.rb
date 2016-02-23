@@ -2,8 +2,10 @@ MyApp.get "/add_signup_swimmer" do
   @signup_swimmer = Signup.new
   @signup_swimmer.swimmer_id = params[:new_signup]
   @signup_swimmer.event_id = params[:event_id]
-  @signup_swimmer.event_time = params[:time]
+  # @signup_swimmer.event_time = params[:time]
   @signup_swimmer.save
+
+  @signup_swimmer.set_events(params[:event_id])
   erb :"follower"
 end
 # MyApp.get "/add_signup_event" do

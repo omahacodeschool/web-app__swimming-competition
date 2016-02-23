@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-21T20:44:39-06:00">2016-02-21T20:44:39-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-22T22:06:27-06:00">2016-02-22T22:06:27-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">26.3%</span></span>
+    (<span class="covered_percent"><span class="red">25.27%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.31
+         0.28
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>14</b> files in total.
-    <b>270</b> relevant lines. 
+    <b>281</b> relevant lines. 
     <span class="green"><b>71</b> lines covered</span> and
-    <span class="red"><b>199</b> lines missed </span>
+    <span class="red"><b>210</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,31 +52,31 @@
       
       <tr>
         <td class="strong"><a href="#4eede2a03dd90e1ed8fd9323c35335cf927440a1" class="src_link" title="app/controllers/event_controller.rb">app/controllers/event_controller.rb</a></td>
-        <td class="red strong">15.91 %</td>
-        <td>63</td>
-        <td>44</td>
+        <td class="red strong">14.89 %</td>
+        <td>66</td>
+        <td>47</td>
         <td>7</td>
-        <td>37</td>
-        <td>0.2</td>
+        <td>40</td>
+        <td>0.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f5e608598f6cc59633f37363dfe13a1d62362eda" class="src_link" title="app/controllers/main_controller.rb">app/controllers/main_controller.rb</a></td>
-        <td class="red strong">26.92 %</td>
-        <td>35</td>
-        <td>26</td>
+        <td class="red strong">22.58 %</td>
+        <td>40</td>
+        <td>31</td>
         <td>7</td>
-        <td>19</td>
-        <td>0.3</td>
+        <td>24</td>
+        <td>0.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#b3cfe766ed965e39fbe632b8f8bf13c295a06621" class="src_link" title="app/controllers/school_controller.rb">app/controllers/school_controller.rb</a></td>
-        <td class="red strong">18.6 %</td>
-        <td>53</td>
-        <td>43</td>
+        <td class="red strong">17.78 %</td>
+        <td>55</td>
+        <td>45</td>
         <td>8</td>
-        <td>35</td>
+        <td>37</td>
         <td>0.2</td>
       </tr>
       
@@ -92,11 +92,11 @@
       
       <tr>
         <td class="strong"><a href="#f18e7f62aa43b6d55ea7fe0ce2d21a7a6e1575f3" class="src_link" title="app/controllers/swimmer_controller.rb">app/controllers/swimmer_controller.rb</a></td>
-        <td class="red strong">20.0 %</td>
-        <td>31</td>
-        <td>25</td>
+        <td class="red strong">19.23 %</td>
+        <td>32</td>
+        <td>26</td>
         <td>5</td>
-        <td>20</td>
+        <td>21</td>
         <td>0.2</td>
       </tr>
       
@@ -209,11 +209,11 @@
         <div class="source_table" id="4eede2a03dd90e1ed8fd9323c35335cf927440a1">
   <div class="header">
     <h3>app/controllers/event_controller.rb</h3>
-    <h4><span class="red">15.91 %</span> covered</h4>
+    <h4><span class="red">14.89 %</span> covered</h4>
     <div>
-      <b>44</b> relevant lines. 
+      <b>47</b> relevant lines. 
       <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>37</b> lines missed.</span>
+      <span class="red"><b>40</b> lines missed.</span>
     </div>
   </div>
   
@@ -265,334 +265,352 @@
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">  binding.pry</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
           <code class="ruby">  erb :&quot;winners&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/lock_event/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
           <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">  if @event.lock == false</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">  if @event.lock == false</code>
+          <code class="ruby">     @event.lock = true</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">     @event.lock = true</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
-          
           <code class="ruby">     @event.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
           <code class="ruby">    @event.lock = false</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="17">
           
           
           <code class="ruby">    @event.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
+          <code class="ruby">  erb :&quot;follower&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/add_event&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">    @event = Event.all</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
           <code class="ruby">    @event_add = Event.new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">    @event_add.event_name = params[:new_event]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
           <code class="ruby">    @event_add.first_place_swimmer = params[:first]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="26">
           
           
           <code class="ruby">    @event_add.second_place_swimmer = params[:second]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">    @event_add.third_place_swimmer = params[:third]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    @event_add.save</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">    @schools = School.new</code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
+          <code class="ruby">    @swimmers = Swimmer.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">    @conferences = Conference.new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">  erb :&quot;follower&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/view_event/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
-          
-          <code class="ruby">  @signup = Signup.where({&quot;event_id&quot; =&gt; (params[:place])})</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby">  erb :&quot;event_list&quot;</code>
+          <code class="ruby">  @signup = Signup.where({&quot;event_id&quot; =&gt; (params[:place])})</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">  erb :&quot;event_list&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/delete_event/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
+        <li class="missed" data-hits="0" data-linenumber="42">
           
           
           <code class="ruby">  if @event.lock == false</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
-          
-          <code class="ruby">    @event.delete</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">  else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby">    return nil</code>
+          <code class="ruby">    @event.delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
+          <code class="ruby">    return nil</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="47">
           
-          <code class="ruby">MyApp.get &quot;/edit_event/:place&quot; do</code>
+          
+          <code class="ruby">  @schools = School.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
+          <code class="ruby">  erb :&quot;follower&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="50">
-          
-          
-          <code class="ruby">  erb :&quot;edit_event&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">MyApp.get &quot;/edit_event/finish_update_event/:place&quot; do</code>
+          <code class="ruby">MyApp.get &quot;/edit_event/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="51">
           
           
           <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  if @event.lock == false</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
+        <li class="missed" data-hits="0" data-linenumber="53">
           
           
-          <code class="ruby">    @event.event_name = params[:edit_name]</code>
+          <code class="ruby">  erb :&quot;edit_event&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="56">
-          
-          
-          <code class="ruby">    @event.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">  else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="58">
-          
-          
-          <code class="ruby">    return nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="60">
-          
-          
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">end</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">MyApp.get &quot;/edit_event/finish_update_event/:place&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
+          <code class="ruby">  @event = Event.find_by_id(params[:place])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
+          
+          <code class="ruby">  if @event.lock == false</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
+          
+          <code class="ruby">    @event.event_name = params[:edit_name]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="59">
+          
+          
+          <code class="ruby">    @event.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="61">
+          
+          
+          <code class="ruby">    return nil</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
+          
+          <code class="ruby">  erb :&quot;follower&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
@@ -605,11 +623,11 @@
         <div class="source_table" id="f5e608598f6cc59633f37363dfe13a1d62362eda">
   <div class="header">
     <h3>app/controllers/main_controller.rb</h3>
-    <h4><span class="red">26.92 %</span> covered</h4>
+    <h4><span class="red">22.58 %</span> covered</h4>
     <div>
-      <b>26</b> relevant lines. 
+      <b>31</b> relevant lines. 
       <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>19</b> lines missed.</span>
+      <span class="red"><b>24</b> lines missed.</span>
     </div>
   </div>
   
@@ -715,73 +733,73 @@
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
+          <code class="ruby">  binding.pry</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
           <code class="ruby">  erb :&quot;signup&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/school&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
           <code class="ruby">  @schools = School.all</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">  @conference = Conference.all</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
           <code class="ruby">  erb :&quot;schools&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/administrator&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
+          <code class="ruby">  @schools = School.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">MyApp.get &quot;/all_tables&quot; do</code>
+          <code class="ruby">  @conferences = Conference.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">  @conferences = Conference.all</code>
+          <code class="ruby">  @swimmers = Swimmer.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="29">
@@ -793,34 +811,64 @@
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">  @schools = School.all</code>
+          <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  @signups = Signup.all</code>
+          <code class="ruby">end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  @swimmers = Swimmer.all</code>
+          <code class="ruby">MyApp.get &quot;/all_tables&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  @conferences = Conference.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
           
           
+          <code class="ruby">  @events = Event.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">  @schools = School.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">  @signups = Signup.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">  @swimmers = Swimmer.all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
           <code class="ruby">  erb :&quot;all_tables&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
@@ -833,11 +881,11 @@
         <div class="source_table" id="b3cfe766ed965e39fbe632b8f8bf13c295a06621">
   <div class="header">
     <h3>app/controllers/school_controller.rb</h3>
-    <h4><span class="red">18.6 %</span> covered</h4>
+    <h4><span class="red">17.78 %</span> covered</h4>
     <div>
-      <b>43</b> relevant lines. 
+      <b>45</b> relevant lines. 
       <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>35</b> lines missed.</span>
+      <span class="red"><b>37</b> lines missed.</span>
     </div>
   </div>
   
@@ -877,286 +925,298 @@
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
+          <code class="ruby">  @schools = School.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">  @conferences = Conference.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/add_conference&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
           <code class="ruby">  conference_add = Conference.new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="12">
           
           
           <code class="ruby">  conference_add.conference_name = params[:new_conference]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">  conference_add.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
           <code class="ruby">  conf = Conference.all</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="15">
           
           
           <code class="ruby">  @conference = conf.join(&quot; &quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/view_school/:holder&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
           <code class="ruby">  @school = School.find_by_id(params[:holder])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">  @schools = School.new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
           <code class="ruby">  erb :&quot;school_list&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/delete_school/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">  @school = School.find_by_id(params[:place])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">  @swimmer = Swimmer.where({&quot;school_id&quot; =&gt; (params[:place])})</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">  @signup = Signup.where(&quot;swimmer_id&quot; =&gt; @swimmer.id)</code>
+          <code class="ruby">  @school = School.find_by_id(params[:place])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">  @school.delete</code>
+          <code class="ruby">  @swimmer = Swimmer.where({&quot;school_id&quot; =&gt; (params[:place])})</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">  @swimmer.delete</code>
+          <code class="ruby">  @signup = Signup.where(&quot;swimmer_id&quot; =&gt; @swimmer.id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="27">
           
           
+          <code class="ruby">  @school.delete</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">  @swimmer.delete</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/view_conferences/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="32">
           
           
           <code class="ruby">  @conference = Conference.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
           <code class="ruby">  erb :&quot;conference_list&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/delete_conference/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">  @conference = Conference.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
           <code class="ruby">  @school = School.where({&quot;conference_id&quot; =&gt; @conference.id})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
           <code class="ruby">  if @school.conference_id == (params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">    @conference.delete</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="40">
           
           
           <code class="ruby">    @school.delete</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">  else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
+        <li class="missed" data-hits="0" data-linenumber="42">
           
           
           <code class="ruby">    return nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/edit_school/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="47">
           
           
           <code class="ruby">  @school = School.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
           <code class="ruby">  erb :&quot;edit_school&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/edit_school/finish_edit_school/:holder&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="51">
           
           
           <code class="ruby">  @school = School.find_by_id(params[:holder])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">  @school.school_name = params[:edit_name]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="53">
           
           
           <code class="ruby">  @school.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">end</code>
@@ -1219,7 +1279,7 @@
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">  erb :&quot;administrator&quot;</code>
+          <code class="ruby">  erb :&quot;follower&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -1367,11 +1427,11 @@
         <div class="source_table" id="f18e7f62aa43b6d55ea7fe0ce2d21a7a6e1575f3">
   <div class="header">
     <h3>app/controllers/swimmer_controller.rb</h3>
-    <h4><span class="red">20.0 %</span> covered</h4>
+    <h4><span class="red">19.23 %</span> covered</h4>
     <div>
-      <b>25</b> relevant lines. 
+      <b>26</b> relevant lines. 
       <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>20</b> lines missed.</span>
+      <span class="red"><b>21</b> lines missed.</span>
     </div>
   </div>
   
@@ -1411,154 +1471,160 @@
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
+          <code class="ruby">  @schools = School.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/edit_swimmer/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
           <code class="ruby">  @swimmer = Swimmer.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
           <code class="ruby">  erb :&quot;edit_swimmer&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/edit_swimmer/finish_update_swimmer/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
-          
-          <code class="ruby">  @swimmer = Swimmer.find_by_id(params[:place])</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">  @swimmer.name = params[:edit_title]</code>
+          <code class="ruby">  @swimmer = Swimmer.find_by_id(params[:place])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">  @swimmer.school_id = params[:edit_number]</code>
+          <code class="ruby">  @swimmer.name = params[:edit_title]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">  @swimmer.save</code>
+          <code class="ruby">  @swimmer.school_id = params[:edit_number]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
+          <code class="ruby">  @swimmer.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/view_swimmers/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
           <code class="ruby">  @swimmer = Swimmer.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">  @signup = Signup.where({&quot;swimmer_id&quot; =&gt; (params[:place])})</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">  erb :&quot;swimmer_list&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">MyApp.get &quot;/delete_swimmers/:place&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">  @swimmer = Swimmer.find_by_id(params[:place])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">  @signup = Signup.where({swimmer_id =&gt; (params[:place])})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
           <code class="ruby">  @swimmer.delete</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
           <code class="ruby">  @signup.delete</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
           <code class="ruby">  erb :&quot;administrator&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">end</code>

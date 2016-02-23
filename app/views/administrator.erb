@@ -1,10 +1,8 @@
 <h1>Here you can manipulate information in the Database</h1>
 
 
-<h3>Add Events, Schools, Conferences and Swimmers!</h3>
-
-
-<p>Enter a swimmer, along with that swimmers school ID that you would like to add to the comepition</p>
+<h3>Enter a swimmer, along with that swimmers school</h3>
+<p>
 <form action="/add_swimmer">
 <input type = "text" name = "new_swimmer">
 
@@ -22,8 +20,8 @@
 </body>
 </html>
 
-
-<p>Enter an event and the top three finishers by ID</p>
+<h3>Enter an event and the top three finishers</h3>
+<p>
 <form action="/add_event">
 Event:<input type = "text" name = "new_event">
 <select name="first">
@@ -59,8 +57,8 @@ Event:<input type = "text" name = "new_event">
 
 
 
-
-<p>Enter a school along with that schools Conference ID that you would like to add to the comepition</p>
+<h3>Enter a school along with that schools Conference</h3>
+<p>
 <form action="/add_school">
 <input type = "text" name = "new_school">
 
@@ -82,12 +80,13 @@ Event:<input type = "text" name = "new_event">
 
 
 
-
-<p>Enter a conference that you would like to add to the comepition</p>
+<h3>Enter a School Conference</h3>
+<p>
 <form action="/add_conference">
 <input type = "text" name = "new_conference">
 </form>
-<p>Enter a swimmers ID, the events ID and the time for an event</p>
+<h3>Enter a swimmer, the events, and time for that event</h3>
+<p>
 <form action="/add_signup_swimmer">
 
 
@@ -102,22 +101,17 @@ Event:<input type = "text" name = "new_event">
     <input type="checkbox" name="event_id[]" value="<%= event.id %>">
     <label><%= event.event_name %> 
 <% end %>
-
-
-<select name="event_id">
-    <option>Select an Event</option> 
-    <% @events.each do |event| %>
-        <option value="<%= event.id %>"><%= event.event_name %></option>
-    <% end %>
-
-</select>
-Input Time in seconds
-<input type = "number" name = "time">
 <input type = "submit">
 
 
-</form>
+<!-- Input Time in seconds
+<input type = "number" name = "time">
+<input type = "submit"> -->
 
+
+</form>
+</label>
+</p>
 -
 -
 -
