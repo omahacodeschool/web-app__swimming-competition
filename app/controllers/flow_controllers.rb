@@ -65,9 +65,19 @@ MyApp.get "/show_results" do
   erb :"display/display_results"
 end
 
-# Go to a view for adding times to a swimmer's event.
+# Go to a view showing all events with swimmers that don't have times.
 MyApp.get "/upcoming_events" do
-@registered_events = Result.where({"swimmer_time" => nil})
-erb :"display/upcoming_events"
+  events = Result.where({"swimmer_time" => nil})
+  @registered_events = events.select(:event_id)
+  binding.pry
+  erb :"display/upcoming_events"
 end
+
+# Go to a view showing all the swimmers in an event withouth times.
+MyApp.get "/upcoming_events/:id" do
+  @registered_events = Result.where({"event_id" => params[:id]})
+
+  erb :"display/upcoming_events"
+end
+
 

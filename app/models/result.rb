@@ -71,15 +71,6 @@ class Result < ActiveRecord::Base
     end
     return duplicates
   end
-#Takes params and finds just the swimmer id's and returns the values.
-
-#Takes argument "swimmer_hash". Pass in params.
-
-#Returns Array of the swimmers' id's.
-   def find_swimmer_ids(swimmer_hash)
-
-
-  end
 end
 
 

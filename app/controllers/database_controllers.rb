@@ -106,20 +106,17 @@ MyApp.post "/add_result" do
     end
   end
   if @message == "Swimmers successfully registered."
-    @registered_swimmers = Result.where({"swimmer_time" => nil})
-    erb :"/create/add_times"
-  else
     erb :"/success/success_event"
+  else
+    erb :"/display/error"
   end
 end
 
 #Add times to results.
 MyApp.post "/add_times" do
-binding.pry
-#r = Result.where({"swimmer_id" => params[]})
+  #put cool stuff here
 
-
-erb :"/success/success_event"
+  erb :"/success/success_event"
 end
 
 # Remove a result from results table
