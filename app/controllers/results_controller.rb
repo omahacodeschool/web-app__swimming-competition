@@ -89,6 +89,10 @@ MyApp.post "/update/result_updated/:stopsign" do
   @result.event_id = params[:event_id]
   @result.competitor_id = params[:competitor_id]
   @result.final_time = params[:final_time]
-  @result.save
-  erb :"main/update/result_updated"
+  if @result.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    @result.save
+    erb :"main/update/result_updated"
+  end
 end
