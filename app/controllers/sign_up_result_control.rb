@@ -2,7 +2,6 @@
  MyApp.get "/sign_up_form/new" do
   @swimmer = SwimmerInfo.all
   @event = Event.all
-
   erb :"sign_result/sign_up_form"
 end
 
@@ -36,7 +35,6 @@ MyApp.get "/edit_form/:id" do
   if @y.lock == true
     erb :"event/sorry_event_locked"
   else @info
-    binding.pry
     erb :"sign_result/edit_signup_form"
   end
 end

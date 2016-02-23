@@ -5,18 +5,14 @@
   <h1>Edit Sign Up Form</h1>
 
   <form action="/process_signup_form/<%= @info.id %>" method="post">
+    
+    Swimmer
+    <input type="number" name="swimmer" value="<%= @info.swimmer_name %>">
   
-    Swimmer ID
-    <input type="number" 
-    <select name="swimmer_info_id" value="<%= @info.swimmer_info_id %>">
-
-    <p>
-    <label for="Swimmer Name">Swimmer</label>
-  
-    Event ID
+    Event
     <input type="number" name="event_id" value="<%= @info.event_id %>">
 
-    <label for="username">Time:</label>
+    Time
 
       <input type="float" name="time" value="<%= @info.time %>">
 

@@ -15,16 +15,15 @@
       </select>
     </p> 
 
-    <p>
-      <label for="event">Event</label>
-      <select name="event">
-       <option>Select an event...</option>
-
-       <% @event.each do |event| %>
-         <option value="<%= event.id %>"><%= event.event_name %></option>
-       <% end %>
-      </select>
-    </p> 
+    
+    Events
+    
+    <% @event.each do |event| %>
+      <p>
+        <input type="checkbox" name="<%= event.id[] %>" value="<%= event.id %>"><label><%= event.event_name %></label>
+      </p> 
+    <% end %>
+    
     <label for="username">Time:</label>
     <input type="text" name="time">
     <label for="username">Rank:</label>
@@ -33,4 +32,4 @@
   </form>
 </center>
 
-<a href="/">Admin Page</a>
+<center><a href="/">Admin Page</a></center>
