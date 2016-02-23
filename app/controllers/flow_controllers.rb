@@ -73,10 +73,12 @@ MyApp.get "/upcoming_events" do
 end
 
 # Go to a view showing all the swimmers in an event withouth times.
-MyApp.get "/upcoming_events/:id" do
-  @registered_events = Result.where({"event_id" => params[:id]})
+MyApp.get "/add_times/:id" do
+  @event_name = Event.find_by_id(params[:id])
+  @event = Result.where({"event_id" => params[:id]})
+  binding.pry
 
-  erb :"display/upcoming_events"
+  erb :"create/add_times"
 end
 
 
