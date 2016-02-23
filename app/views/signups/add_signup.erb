@@ -18,7 +18,7 @@
         <th>Event</th>
         <th>Swim Time</th>
       </tr>
-      <% @all_signups.each do |n| %>   
+      <% @signups.each do |n| %>   
       <tr>  
         <td><%= n.id %></td>
         <td><%= n.get_swimmer_name %></td>
@@ -42,19 +42,34 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
     <form action="/add_signup_confirmation" method="post">
-      Swimmer name:
+      <select name="swim_signup_id">
+        <option>
+          Select a Swimmer...
+        </option>
+          <% @swimmers.each do |s| %>
+        <option value = "<%= s.id %>">
+          <%=s.swimmer_name%>
+        </option>
+          <% end %>
+      </select>
   <br>
   <br>
-      <input type="text" name="swim_signup_name">
   <br>
   <br>
   <br>
   <br>
-      Event name:
-  <br>
-  <br>
-      <input type="text" name="event_signup_name">
+      <select name="event_signup_id">
+      <option>Select an Event...</option>
+      <% @events.each do |e| %>
+      <option value = "<%= e.id %>"><%=e.event_name%></option>
+      <% end %>
+      </select>
   <br>
   <br>
   <br>
