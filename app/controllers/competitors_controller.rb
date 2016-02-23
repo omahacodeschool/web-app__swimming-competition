@@ -9,14 +9,14 @@ end
 
 MyApp.post "/competitor_added" do
   x = Competitor.new
+  x.first_name = params[:firstname]
+  x.last_name = params[:lastname]
+  x.school_name = params[:school]
+  x.conference_name = params[:conference]
+  x.gender = params[:gender]
   if x.is_valid? == false
     erb :"main/errors/generic_errors"
   else
-    x.first_name = params[:firstname]
-    x.last_name = params[:lastname]
-    x.school_name = params[:school]
-    x.conference_name = params[:conference]
-    x.gender = params[:gender]
     x.save
     erb :"main/add/competitor_added"
   end

@@ -12,7 +12,7 @@ class School <ActiveRecord::Base
   end
 
   def is_valid?
-    if self.school_name == nil
+    if self.school_name == nil || self.school_name == ""
       return false
     else
       return true

@@ -11,14 +11,14 @@ end
 
 MyApp.post "/event_added" do
   x = Event.new
-  if x.is_valid? == false
-    erb :"main/errors/generic_errors"
-  else
     x.gender = params[:gender]
     x.distance = params[:race_distance]
     @style_name = params[:style]
     @styleid = x.get_style_id(@style_name)
     x.style_id = @styleid
+  if x.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
     x.lock = false
     x.save
     erb :"main/add/event_added"

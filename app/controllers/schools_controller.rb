@@ -9,10 +9,10 @@ end
 
 MyApp.post "/school_added" do
   x = School.new
+  x.school_name = params[:school_name]
   if x.is_valid? == false
     erb :"main/errors/generic_errors"
   else
-    x.school_name = params[:school_name]
     x.save
     erb :"main/add/school_added"
   end
@@ -37,6 +37,10 @@ end
 MyApp.post "/update/school_updated/:stopsign" do
   @school = School.find_by_id(params[:stopsign])
   @school.school_name = params[:school_name]
-  @school.save
-  erb :"main/update/school_updated"
+  if @school.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    @school.save
+    erb :"main/update/school_updated"
+  end
 end
