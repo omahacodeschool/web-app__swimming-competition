@@ -10,16 +10,23 @@ end
 MyApp.post "/result_added" do
   @event_id = params[:event_id]
   @event = Event.find_by_id(@event_id)
+
+
+  binding.pry
   @lock_check = @event.lock
   if @lock_check == true
     erb :"main/locked_error_page"
   else
     x = Result.new
-    x.event_id = params[:event_id]
-    x.competitor_id = params[:competitor_id]
-    x.final_time = params[:final_time]
-    x.save
-    erb :"main/add/result_added"
+    if x.is_valid? == false
+      erb :"main/errors/generic_errors"
+    else
+      x.event_id = params[:event_id]
+      x.competitor_id = params[:competitor_id]
+      x.final_time = params[:final_time]
+      x.save
+      erb :"main/add/result_added"
+    end
   end
 end
 

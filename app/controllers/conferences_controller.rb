@@ -9,9 +9,13 @@ end
 
 MyApp.post "/conference_added" do
   x = Conference.new
-  x.conference_name = params[:conference_name]
-  x.save
-  erb :"main/add/conference_added"
+  if x.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    x.conference_name = params[:conference_name]
+    x.save
+    erb :"main/add/conference_added"
+  end
 end
 
 MyApp.get "/delete/conference_deleted/:dogfood" do

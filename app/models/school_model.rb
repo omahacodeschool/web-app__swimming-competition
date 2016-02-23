@@ -10,4 +10,13 @@ class School <ActiveRecord::Base
     end
     return lololol[0]
   end
+
+  def is_valid?
+    if self.school_name == nil
+      return false
+    else
+      return true
+    end
+  end
+
 end

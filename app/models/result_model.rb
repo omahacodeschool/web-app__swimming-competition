@@ -37,5 +37,13 @@ class Result <ActiveRecord::Base
     a = Style.find_by_id(z)
     return a.style
   end
+
+  def is_valid?
+    if self.event_id == nil || self.competitor_id == nil || self.final_time == nil
+      return false
+    else
+      return true
+    end
+  end
   
 end

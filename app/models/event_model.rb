@@ -11,6 +11,16 @@ class Event < ActiveRecord::Base
     x = Style.find_by_style(name)
     return x.id
   end
+
+  def is_valid?
+    if self.gender == nil || self.distance == nil || self.style_id == nil
+      return false
+    else
+      return true
+    end
+  end
+
+
 end
 
 

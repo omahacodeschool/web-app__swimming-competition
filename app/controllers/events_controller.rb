@@ -11,14 +11,18 @@ end
 
 MyApp.post "/event_added" do
   x = Event.new
-  x.gender = params[:gender]
-  x.distance = params[:race_distance]
-  @style_name = params[:style]
-  @styleid = x.get_style_id(@style_name)
-  x.style_id = @styleid
-  x.lock = false
-  x.save
-  erb :"main/add/event_added"
+  if x.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    x.gender = params[:gender]
+    x.distance = params[:race_distance]
+    @style_name = params[:style]
+    @styleid = x.get_style_id(@style_name)
+    x.style_id = @styleid
+    x.lock = false
+    x.save
+    erb :"main/add/event_added"
+  end
 end
 
 MyApp.get "/competitors_by_event/:blah" do

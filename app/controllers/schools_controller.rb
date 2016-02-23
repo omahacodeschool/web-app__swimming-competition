@@ -9,9 +9,13 @@ end
 
 MyApp.post "/school_added" do
   x = School.new
-  x.school_name = params[:school_name]
-  x.save
-  erb :"main/add/school_added"
+  if x.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    x.school_name = params[:school_name]
+    x.save
+    erb :"main/add/school_added"
+  end
 end
 
 MyApp.get "/delete/school_deleted/:dogfood" do

@@ -9,9 +9,13 @@ end
 
 MyApp.post "/style_added" do
   x = Style.new
-  x.style = params[:race_style]
-  x.save
-  erb :"main/add/style_added"
+  if x.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    x.style = params[:race_style]
+    x.save
+    erb :"main/add/style_added"
+  end
 end
 
 MyApp.get "/delete/style_deleted/:dogfood" do
