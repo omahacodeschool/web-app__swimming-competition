@@ -3,11 +3,11 @@ MyApp.get "/conferences/new" do
 end
 
 MyApp.post "/conferences/create" do
-  x = Conference.new
-  x.name = params["new_conference"]
+  @conference = Conference.new
+  @conference.name = params["new_conference"]
 
-  if x.is_valid
-    x.save
+  if @conference.is_valid
+    @conference.save
     redirect "/conferences"
   else 
     erb :"conferences/error"

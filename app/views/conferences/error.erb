@@ -1,1 +1,7 @@
-<p> This page will display when errors are detected! </p>
+Error.
+
+<% @conference.get_errors.each do |message| %>
+  <p><%= message %></p>
+  <% end %>
+
+  <a href="/conferences/edit/<%=@conference.id %>">Back to conference edit form</a>

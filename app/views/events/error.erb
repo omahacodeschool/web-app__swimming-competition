@@ -1,0 +1,7 @@
+Error.
+
+<% @event.get_errors.each do |message| %>
+  <p><%= message %></p>
+  <% end %>
+
+  <a href="/events/edit/<%=@event.id %>">Back to Event edit form</a>

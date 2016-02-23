@@ -3,12 +3,18 @@ MyApp.get "/events/new" do
 end
 
 MyApp.post "/events/create" do
-  x = Event.new
-  x.name = params["new_event"] 
-  x.num_entries = params["new_entries"]
-  x.start_time = params["new_time"]
-  x.save
-  redirect "/events"
+  @event = Event.new
+  @event.name = params["new_event"] 
+  @event.num_entries = params["new_entries"]
+  @event.start_time = params["new_time"]
+
+  if @event.is_valid
+    @event.save
+    redirect "/events"
+  else 
+    erb :"events/error"
+  end
+
 end
 
 MyApp.get "/events" do
@@ -26,9 +32,13 @@ MyApp.post "/events/process_edit/:id" do
   @event.name = params["edit_event"]
   @event.num_entries = params["edit_entries"]
   @event.start_time = params["edit_time"]
-  @event.save
-  erb :"updated"
-end
+  if @event.is_valid
+    @event.save
+    erb :"updated"
+  else 
+    erb :"events/error"
+  end
+end  
 
 MyApp.post "/events/delete/:id" do
   @event = Event.find_by_id(params[:id])
