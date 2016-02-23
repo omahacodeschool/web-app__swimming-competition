@@ -62,7 +62,6 @@ MyApp.get "/delete/result_deleted/:dogfood" do
   @result_object = Result.find_by_id(params[:dogfood])
   @results_event_id = @result_object.event_id
   @event_object = Event.find_by_id(@results_event_id)
-  binding.pry
   @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page/:dogfood"
@@ -73,9 +72,11 @@ MyApp.get "/delete/result_deleted/:dogfood" do
 end
 
 MyApp.get "/update/result_update_form/:popsicle" do
-  @result = Result.find_by_id(params[:popsicle])
-  @result = Event.find_by_id(@result)
-  @lock_check = @result.lock
+  @result_object = Result.find_by_id(params[:popsicle])
+  @results_event_id = @result_object.event_id
+  @event_object = Event.find_by_id(@results_event_id)
+  binding.pry
+  @lock_check = @event_object.lock
   if @lock_check == true
     erb :"main/locked_error_page/:popsicle"
   else
