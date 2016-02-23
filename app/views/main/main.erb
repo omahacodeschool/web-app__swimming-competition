@@ -1,6 +1,10 @@
 <center>
 <h1>Welcome Contestants!</h1>
 
+<p>
+  Competitors
+</p>
+
 <form action = "/competitors" method = "post">
   <p>
     First Name: <input type = "text" name = "fname">
@@ -10,12 +14,24 @@
     Last Name: <input type = "text" name = "lname">
   </p>
 
-  <p>
-    School_id: <input type = "number" name = "school">
-  </p>
+  <select name="school">
+
+    <option>Select a school...</option>
+
+      <% @schools.each do |school| %>
+          <option value="<%= school.id %>">
+            <%= school.school %>
+          </option>
+      <% end %>
+
+  </select>
 
   <input type = "submit">
 </form>
+
+<p>
+  Conferences
+</p>
 
 <form action = "/conferences" method = "post">
   <p>
@@ -24,6 +40,10 @@
   <input type = "submit">
 </form>
 
+<p>
+  Events
+</p>
+
 <form action = "/events" method = "post">
   <p>
     Event: <input type = "text" name = "event">
@@ -31,29 +51,63 @@
   <input type = "submit">
 </form>
 
-<form action = "/results" method = "post">
-  <p>
-    Event_id: <input type = "number" name = "event_id">
-  </p>
+<p>
+  Results
+</p>
 
-  <p>
-    Competitor: <input type = "number" name = "competitor_id">
-  </p>
+<form action = "/results" method = "post">
+  
+  <select name="event_id">
+
+    <option>Select an event...</option>
+
+      <% @events.each do |event| %>
+          <option value="<%= event.id %>">
+            <%= event.event %>
+          </option>
+      <% end %>
+
+  </select>
+
+  <select name="competitor_id">
+
+    <option>Select a competitor...</option>
+
+      <% @results.each do |result| %>
+          <option value="<%= result.competitor_id %>">
+            <%= result.competitor_name %>
+          </option>
+      <% end %>
+
+  </select>
 
   <p>
     Time: <input type = "number" name = "time">
   </p>
+
   <input type = "submit">
 </form>
+
+<p>
+  Schools
+</p>
 
 <form action = "/schools" method = "post">
   <p>
     School: <input type = "text" name = "school">
   </p>
 
-  <p>
-    Conference_id: <input type = "number" name = "conference_id"]>
-  </p>
+  <select name = "conference_id">
+
+    <option>Select a conference...</option>
+
+      <% @schools.each do |school| %>
+        <option value = "<%= school.conference_id %>">
+          <%= school.conference %>
+        </option>
+      <% end %>
+  </select>
+
   <input type = "submit">
 </form>
 
