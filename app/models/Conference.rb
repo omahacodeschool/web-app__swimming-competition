@@ -2,7 +2,7 @@ class Conference < ActiveRecord::Base
 
   def set_errors
     @errors = []
-    if self.name == "" || == nil
+    if self.name == "" || self.name == nil
       @errors << "Conference name cannot be blank!"
     end 
   end 
@@ -12,7 +12,7 @@ class Conference < ActiveRecord::Base
   end
 
   def is_valid
-    self.set_error
+    self.set_errors
     if @errors.length > 0
       return false
     else

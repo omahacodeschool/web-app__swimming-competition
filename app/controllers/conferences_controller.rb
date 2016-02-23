@@ -5,8 +5,14 @@ end
 MyApp.post "/conferences/create" do
   x = Conference.new
   x.name = params["new_conference"]
-  x.save 
-  redirect "/conferences"
+
+  if x.is_valid
+    x.save
+    redirect "/conferences"
+  else 
+    erb :"conferences/error"
+  end
+
 end 
 
 MyApp.get "/conferences" do
@@ -27,7 +33,8 @@ MyApp.post "/conferences/process_edit/:id" do
     @conference.save
     erb :"updated"
   else 
-    erb :"error"
+    erb :"conferences/error"
+  end
 end
 
 MyApp.post "/conferences/delete/:id" do
