@@ -12,12 +12,28 @@ class Event < ActiveRecord::Base
     return x.id
   end
 
+  def set_errors
+    @errors = []
+    if self.gender == nil
+      @errors << "Gender cannot be blank."
+    elsif self.distance == nil
+      @errors << "Distance cannot be blank."
+    elsif self.style_id == nil
+      @errors << "Style id cannot be blank."
+    end
+  end
+
   def is_valid?
-    if self.gender == nil || self.distance == nil || self.style_id == nil
+    self.set_errors
+    if @errors.length > 0
       return false
     else
       return true
     end
+  end
+
+  def get_errors
+    return @errors
   end
 
 

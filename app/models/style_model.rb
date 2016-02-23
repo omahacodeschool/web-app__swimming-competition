@@ -3,7 +3,7 @@ class Style <ActiveRecord::Base
   def set_errors
     @errors = []
     if self.style == nil || self.style == ""
-    @errors << "Style cannot be blank."
+      @errors << "Style cannot be blank."
     end
   end
 

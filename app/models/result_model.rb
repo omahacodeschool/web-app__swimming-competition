@@ -38,12 +38,27 @@ class Result <ActiveRecord::Base
     return a.style
   end
 
+  def set_errors
+    @errors = []
+    if self.event_id == nil || self.event_id == ""
+      @errors << "Event id cannot be blank."
+    elsif self.competitor_id == nil || self.competitor_id == ""
+      @errors << "Competitor id cannot be blank."
+    elsif self.final_time == nil || self.final_time == ""
+      @errors << "Final time cannot be blank."
+    end
+  end
+  
   def is_valid?
-    if self.event_id == nil || self.event_id == "" || self.competitor_id == nil || self.competitor_id == "" || self.final_time == nil || self.final_time == ""
+    self.set_errors
+    if @errors.length > 0
       return false
     else
       return true
     end
   end
-  
+
+  def get_errors
+    return @errors
+  end
 end
