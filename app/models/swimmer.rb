@@ -36,7 +36,7 @@ class Swimmer < ActiveRecord::Base
       return y.finish_time
     end
   end
-
+  #gonna add some stuff here so rewrite the test later
   def register(eventidarray)
     eventidarray.each do |event|
       s = Signup.new

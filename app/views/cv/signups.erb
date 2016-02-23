@@ -4,7 +4,7 @@
   <fieldset>
     <legend>Register for Events</legend>
     <select name = "swimmerid">
-      <option>Select a Kitty...</option>
+      <option disabled>Select a Kitty...</option>
       <% @swimmers.each do |post| %>
         <option value="<%= post.id %>"><%= post.swimmer_name %>
         </option>
