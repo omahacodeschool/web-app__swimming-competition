@@ -32,6 +32,10 @@ end
 MyApp.post "/update/style_updated/:stopsign" do
   @style = Style.find_by_id(params[:stopsign])
   @style.style = params[:race_style]
-  @style.save
-  erb :"main/update/style_updated"
+  if @style.is_valid? == false
+    erb :"main/errors/generic_errors"
+  else
+    @style.save
+    erb :"main/update/style_updated"
+  end
 end

@@ -7,12 +7,11 @@ MyApp.get "/add/result_form_add" do
   erb :"main/add/result_form_add"
 end
 
-MyApp.post "/result_added" do
+MyApp.post "/result_added" do #this isn't working when there's no event_id input
   @event_id = params[:event_id]
   @event = Event.find_by_id(@event_id)
 
 
-  binding.pry
   @lock_check = @event.lock
   if @lock_check == true
     erb :"main/locked_error_page"
