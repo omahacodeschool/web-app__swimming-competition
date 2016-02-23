@@ -19,12 +19,10 @@
     <label>Select Event</label>
     <select name ="edit_event_id">
       <% @events.each do |e| %>
-        <option value="<%= e.id%>">
+        <option value="<%= e.id%>" <% if e.id == @result.event_id %> selected <% end %>>
           <%= e.name%>
         </option>
-      <% end %>
-        <option selected> <%= @result.event_access.name %>
-        </option>    
+      <% end %>   
     </select>
 
     <label>Enter Time</label>
