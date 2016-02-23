@@ -10,12 +10,10 @@
     <label>Select Penguin Name</label>
     <select name ="edit_penguin_id">
       <% @penguins.each do |p| %>
-        <option value="<%= p.id%>">
+        <option value="<%= p.id%>" <% if p.id == @result.penguin_id %> selected <% end %> >
           <%= p.first_name%> <%=p.last_name %>
         </option>
-      <% end %>
-        <option selected> <%= @result.penguin_access.first_name %> <%=@result.penguin_access.last_name%>
-        </option>    
+      <% end %> 
     </select>
 
     <label>Select Event</label>
