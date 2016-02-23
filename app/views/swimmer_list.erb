@@ -16,7 +16,7 @@
         <td><%= @swimmer.school.school_name   %> </td>
         <td><%= @swimmer.school.conference_name  %></td>
         <% @signup.each do |signup| %>
-        <td><%= signup.event.event_name %>(:<%= signup.event_time %>)</td>
+        <td><%= signup.event_name %>(:<%= signup.event_time %>)</td>
 
         <% end %>
     

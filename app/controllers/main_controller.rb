@@ -14,7 +14,6 @@ MyApp.get "/event" do
 end
 MyApp.get "/signup" do
   @signup = Signup.all
-  binding.pry
   erb :"signup"
 end
 MyApp.get "/school" do
