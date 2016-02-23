@@ -4,6 +4,9 @@ MyApp.get "/competitors" do
 end
 
 MyApp.get "/add/competitor_form_add" do
+  @competitors = Competitor.all
+  @schools = School.all
+  @conferences = Conference.all
   erb :"main/add/competitor_form_add"
 end
 
@@ -32,6 +35,9 @@ MyApp.get "/delete/competitor_deleted/:dogfood" do
 end
 
 MyApp.get "/update/competitor_update_form/:popsicle" do
+  @competitors = Competitor.all
+  @schools = School.all
+  @conferences = Conference.all
   @competitor = Competitor.find_by_id(params[:popsicle])
   erb :"main/update/competitor_update_form"
 end

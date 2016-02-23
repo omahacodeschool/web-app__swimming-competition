@@ -25,7 +25,7 @@ MyApp.get "/delete/conference_deleted/:dogfood" do
   @competitors_in_conference = Competitor.find_by_conference_name(@conference_name)
   if @competitors_in_conference != nil
     @display_this = @competitors_in_conference.first_name + " " + @competitors_in_conference.last_name + ", " + @competitors_in_conference.school_name
-    erb :"main/delete/conference_contains_competitors"
+    erb :"main/errors/conference_contains_competitors"
   else
     @conference.delete
     erb :"main/delete/conference_deleted"

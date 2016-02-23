@@ -6,6 +6,7 @@ MyApp.get "/events" do
 end
 
 MyApp.get "/add/event_form_add" do
+  @styles = Style.all
   erb :"main/add/event_form_add"
 end
 
@@ -13,9 +14,7 @@ MyApp.post "/event_added" do
   x = Event.new
     x.gender = params[:gender]
     x.distance = params[:race_distance]
-    @style_name = params[:style]
-    @styleid = x.get_style_id(@style_name)
-    x.style_id = @styleid
+    x.style_id = params[:style]
     x.lock = false
   if x.is_valid? == false
     @error_object = x
@@ -44,7 +43,7 @@ MyApp.get "/delete/event_deleted/:dogfood" do
   @event = Event.find_by_id(params[:dogfood])
   @lock_check = @event.lock
   if @lock_check == true
-    erb :"main/locked_error_page"
+    erb :"main/errors/locked_error_page"
   else
     @event.delete
     erb :"main/delete/event_deleted"
@@ -53,9 +52,10 @@ end
 
 MyApp.get "/update/event_update_form/:popsicle" do
   @event = Event.find_by_id(params[:popsicle])
+  @styles = Style.all
   @lock_check = @event.lock
   if @lock_check == true
-    erb :"main/locked_error_page"
+    erb :"main/errors/locked_error_page"
   else
     erb :"main/update/event_update_form"
   end
@@ -66,7 +66,7 @@ MyApp.post "/update/event_updated/:stopsign" do
   @event.gender = params[:gender]
   @event.distance = params[:race_distance]
   @style_name = params[:style]
-  @event.style_id = @event.get_style_id(@style_name)
+  @event.style_id = params[:style] 
   if @event.is_valid? == false
     @error_object = @event
     erb :"main/errors/generic_errors"

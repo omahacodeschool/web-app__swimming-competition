@@ -8,11 +8,15 @@ Update an event here:
   </select>
   <br><br>
 
+  Style:<br>
+  <select name="style">
+    <% @styles.each do |s| %>
+      <option value="<%= s.id %>"> <%= s.style %> </option><br>
+    <% end %>
+  </select><br><br>
+
   Distance:<br>
   <input type="integer" name="race_distance" value="<%= @event.distance %>"> meters<br><br>
-
-  Style:<br>
-  <input type="string" name="style" value="<%= @event.display_style_of_event %>"><br><br>
 
   <input type="submit" value="Submit">
 </form><br><br>

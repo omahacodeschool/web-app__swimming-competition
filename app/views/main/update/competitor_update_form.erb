@@ -8,10 +8,18 @@ Update a competitor here:
   <input type="text" name="lastname" value="<%= @competitor.last_name %>"><br><br>
 
   School:<br>
-  <input type="text" name="school" value="<%= @competitor.school_name %>"><br><br>
+  <select name="school">
+    <% @schools.each do |s| %>
+      <option value="s.id"> <%= s.school_name %> </option><br>
+    <% end %>
+  </select><br><br>
 
   Conference:<br>
-  <input type="text" name="conference" value="<%= @competitor.conference_name %>"><br><br>
+  <select name="conference">
+    <% @conferences.each do |c| %>
+      <option value="c.id"> <%= c.conference_name %> </option><br>
+    <% end %>
+  </select><br><br>
 
   Gender:<br>
   <select name="gender">

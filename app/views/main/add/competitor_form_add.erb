@@ -9,17 +9,16 @@
 
   School:<br>
   <select name="school">
-    <option value="Creighton University">Creighton University</option>
-    <option value="Doane College">Doane College</option>
-    <option value="Wesleyan University">Wesleyan University</option>
-    <option value="Central Community College">Central Community College</option>
-    <option value="University of Nebraska-Lincoln">University of Nebraska-Lincoln</option>
+    <% @schools.each do |s| %>
+      <option value="s.id"> <%= s.school_name %> </option><br>
+    <% end %>
   </select><br><br>
 
   Conference:<br>
   <select name="conference">
-    <option value="East">East</option>
-    <option value="West">West</option>
+    <% @conferences.each do |c| %>
+      <option value="c.id"> <%= c.conference_name %> </option><br>
+    <% end %>
   </select><br><br>
 
   Gender:<br>

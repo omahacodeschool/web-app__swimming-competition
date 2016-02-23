@@ -16,7 +16,7 @@ MyApp.post "/result_added" do
   x.final_time = params[:final_time]
   @lock_check = @event_object.lock
   if @lock_check == true
-    erb :"main/locked_error_page"
+    erb :"main/errors/locked_error_page"
   else
     if x.is_valid? == false
       @error_object = x
@@ -32,7 +32,7 @@ MyApp.get "/results_top_three/:id" do
   @results = Result.where({"event_id" => params[:id]})
   @ordered_results = @results.order(:final_time).to_a
   if @ordered_results.length <= 2
-    erb :"main/no_top_three_yet"
+    erb :"main/errors/no_top_three_yet"
   else
     @three_best_times = []
     @ordered_results_competitor_id = []
@@ -48,7 +48,7 @@ MyApp.get "/results_top_three/:id" do
       end
       erb :"main/results_top_three"
     else
-      erb :"main/results_not_in_yet"
+      erb :"main/errors/results_not_in_yet"
     end
   end
 end
@@ -65,7 +65,7 @@ MyApp.get "/delete/result_deleted/:dogfood" do
   @event_object = Event.find_by_id(@results_event_id)
   @lock_check = @event_object.lock
   if @lock_check == true
-    erb :"main/locked_error_page/:dogfood"
+    erb :"main/errors/locked_error_page/:dogfood"
   else
     @result_object.delete
     erb :"main/delete/result_deleted"
@@ -78,7 +78,7 @@ MyApp.get "/update/result_update_form/:popsicle" do
   @event_object = Event.find_by_id(@results_event_id)
   @lock_check = @event_object.lock
   if @lock_check == true
-    erb :"main/locked_error_page/:popsicle"
+    erb :"main/errors/locked_error_page/:popsicle"
   else
     @result = @result_object
     erb :"main/update/result_update_form"

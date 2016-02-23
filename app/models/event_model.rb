@@ -6,12 +6,6 @@ class Event < ActiveRecord::Base
     return z.style
   end
 
-  #returns Integer (id number of Style object)
-  def get_style_id(name)
-    x = Style.find_by_style(name)
-    return x.id
-  end
-
   def set_errors
     @errors = []
     if self.gender == nil

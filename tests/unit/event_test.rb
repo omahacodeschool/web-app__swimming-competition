@@ -17,8 +17,4 @@ class EventTest < Minitest::Test
     @hundred_m_butterfly.save
   end
 
-  def test_display_style_of_event
-    assert_equal(@hundred_m_butterfly.display_style_of_event, "butterfly")
-    refute_equal(@hundred_m_butterfly.display_style_of_event, "backstroke")
-  end
 end
