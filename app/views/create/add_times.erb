@@ -1,7 +1,9 @@
-Add the swimmer's times.
+<h1>Add the swimmer's times.</h1>
 <form>
-  <p> Swimmer's Time for Event
-  <input type="decimal" name="input_time">
-  <p>
+  <p> Swimmer's Time for Event </p>
+  <%@registered_swimmers.each do |i|%>
+    <%= i.swimmer %>
+    <input type="decimal" name="input_time"><br>
+  <%end%>
   <input type="submit">
 </form>
