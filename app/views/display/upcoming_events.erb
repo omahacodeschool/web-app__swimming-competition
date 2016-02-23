@@ -1,4 +1,7 @@
-Event that haven't gone yet.
+<h1> Upcoming Events</h1>
+
+<p> These are the events where there are swimmers that are registered but don't have times. <br>
+Click on an event to add the results of the event. </p>
 
 <table border="1">
   <thead>
@@ -11,7 +14,6 @@ Event that haven't gone yet.
     <% @registered_events.each do |y| %>
       <tr>
         <td><a href="add_times/<%= y.event_id %>"> <%= y.event %> </td>
-        <td> <%= y.conference %> </td>
       </tr>
     <% end %>
   </tbody>
