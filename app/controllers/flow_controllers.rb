@@ -65,3 +65,9 @@ MyApp.get "/show_results" do
   erb :"display/display_results"
 end
 
+# Go to a view for adding times to a swimmer's event.
+MyApp.get "/upcoming_events" do
+@registered_events = Result.where({"swimmer_time" => nil})
+erb :"display/upcoming_events"
+end
+

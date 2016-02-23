@@ -76,8 +76,8 @@ class Result < ActiveRecord::Base
 #Takes argument "swimmer_hash". Pass in params.
 
 #Returns Array of the swimmers' id's.
-   def swimmer_id_array(swimmer_hash)
-    
+   def find_swimmer_ids(swimmer_hash)
+
 
   end
 end

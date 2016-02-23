@@ -82,6 +82,10 @@ MyApp.get "/delete_event/:id_of_event" do
   erb :"/success/delete_event"
 end
 
+
+#Adds Results with swimmers from the check boxes and the event selected.
+#If events are locked or there are duplicate swimmers, takes user to errors view. 
+#This controller is too smart!!! Make it do less.
 MyApp.post "/add_result" do
   e = Event.find_by_id(params[:event_id])
   swimmer_arr = params.fetch("swimmer_id")
@@ -92,7 +96,7 @@ MyApp.post "/add_result" do
       if e.event_locked == true
         @message = "This event is currently locked."
       else
-        @message = "Result successfully added."
+        @message = "Swimmers successfully registered."
         r.swimmer_id = id
         r.event_id = params[:event_id]
         r.save
@@ -101,17 +105,26 @@ MyApp.post "/add_result" do
       @message = "There is a duplicate swimmer"
     end
   end
-  if @message == "Result successfully added."
+  if @message == "Swimmers successfully registered."
     @registered_swimmers = Result.where({"swimmer_time" => nil})
     erb :"/create/add_times"
   else
-    erb :"/display/error"
+    erb :"/success/success_event"
   end
 end
+
+#Add times to results.
+MyApp.post "/add_times" do
+binding.pry
+#r = Result.where({"swimmer_id" => params[]})
+
+
+erb :"/success/success_event"
+end
+
 # Remove a result from results table
 MyApp.get "/delete_result/:id_of_result" do
   y = Result.find_by_id(params[:id_of_result])
-  #binding.pry
   if y.event_locked? == true
     @message = "This event is currently locked. Swimmers and results cannot be removed at this time."
   else
