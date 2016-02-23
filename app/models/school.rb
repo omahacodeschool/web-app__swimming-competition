@@ -28,4 +28,32 @@ class School < ActiveRecord::Base
 		Competitor.where("school_id" => self.id).delete_all
 	end
 
+	#Returns @errors
+  	def get_errors
+    	return @errors
+ 	end
+
+  	#Adds errors to Hash
+  	#
+  	#Returns Hash
+  	def set_errors
+    	@errors = []
+
+    	if self.name == ""
+      	@errors << "School name cannot be blank"
+    	end
+  	end
+
+  # Checks if the record is valid.
+  # 
+  # Returns Boolean.
+  	def is_valid
+    	self.set_errors
+    	if @errors.length > 0
+      	return false
+    	else
+      	return true
+    	end
+  	end
+
 end

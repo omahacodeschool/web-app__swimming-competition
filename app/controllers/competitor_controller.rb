@@ -14,8 +14,13 @@ MyApp.post "/add_competitor" do
 	@competitor.first_name = params[:first_name]
 	@competitor.last_name = params[:last_name]
 	@competitor.school_id = params[:school_id]
-	@competitor.save
-  redirect :"profile/#{@competitor.id}"
+	if @competitor.is_valid == true
+		@competitor.save
+		redirect :"profile/#{@competitor.id}"
+	else
+		@error_object = @competitor
+		erb :"error"
+	end
 end
 
 MyApp.get "/profile/:competitor_id" do

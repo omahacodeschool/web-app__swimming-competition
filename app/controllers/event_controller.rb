@@ -10,8 +10,13 @@ end
 MyApp.post "/add_event" do
 	event = Event.new
 	event.name = params[:name]
-	event.save
-  redirect :"event_info/#{event.id}"
+	if event.is_valid == true
+		event.save
+  		redirect :"event_info/#{event.id}"
+	else
+		@error_object = event
+		erb :"error"
+	end
 end
 
 MyApp.get "/event_info/:event_id" do

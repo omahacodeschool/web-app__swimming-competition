@@ -40,6 +40,10 @@ class Competitor < ActiveRecord::Base
 
 
 	#this method enters a competitor into events
+	#
+	# arr_of_event_ids - an Array of event ids
+	#
+	#returns nil
 	def set_events(arr_of_event_ids)
 		Result.where("competitor_id" => self.id).delete_all
 	    arr_of_event_ids.each do |event_id|
@@ -49,11 +53,41 @@ class Competitor < ActiveRecord::Base
 	        result_row.save
 	    end
 	end
-end
 
-	# event_id   | competitor_id  | time
-			#-------------------------------------
-			# 2 	     | 	1			  | 105
-			# 3 	     | 	1			  | 110
-			# 4 	     | 	1			  | 108
-			# 6 	     | 	1			  | 103
+	#Returns @errors
+  	def get_errors
+    	return @errors
+ 	end
+
+  	#Adds errors to Hash
+  	#
+  	#Returns Hash
+  	def set_errors
+    	@errors = []
+
+    	if self.first_name == ""
+      	@errors << "First name cannot be blank"
+    	end
+
+    	if self.last_name == ""
+      	@errors << "Last name cannot be blank"
+    	end
+
+    	if self.school_id == nil
+      	@errors << "Must choose a school"
+    	end
+  	end
+
+  # Checks if the record is valid.
+  # 
+  # Returns Boolean.
+  	def is_valid
+    	self.set_errors
+    	if @errors.length > 0
+      	return false
+    	else
+      	return true
+    	end
+  	end
+
+end

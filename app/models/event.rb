@@ -53,7 +53,10 @@ class Event < ActiveRecord::Base
 		end
 	end
 
- def results_for_event
+	#Lists the results for this event
+	#
+	#Returns Array
+ 	def results_for_event
  			@list_results = Result.where({"event_id" => self.id})
 		if @list_results.empty?
 			return nil
@@ -61,6 +64,35 @@ class Event < ActiveRecord::Base
 			return @list_results
 		end
 	end
+
+
+	#Returns @errors
+  	def get_errors
+    	return @errors
+ 	end
+
+  	#Adds errors to Hash
+  	#
+  	#Returns Hash
+  	def set_errors
+    	@errors = []
+
+    	if self.name == ""
+      	@errors << "Event name cannot be blank"
+    	end
+  	end
+
+  # Checks if the record is valid.
+  # 
+  # Returns Boolean.
+  	def is_valid
+    	self.set_errors
+    	if @errors.length > 0
+      	return false
+    	else
+      	return true
+    	end
+  	end
 
 end
 

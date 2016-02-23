@@ -10,8 +10,13 @@ end
 MyApp.post "/add_conference" do
 	conference = Conference.new
 	conference.name = params[:conference_name]
-	conference.save
-	redirect :"conference_info/#{conference.id}"
+	if conference.is_valid == true
+		conference.save
+		redirect :"conference_info/#{conference.id}"
+	else
+		@error_object = conference
+		erb :"error"
+	end
 end
 
 MyApp.get "/conference_info/:conference_id" do

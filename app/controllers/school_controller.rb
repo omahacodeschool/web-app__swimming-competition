@@ -12,8 +12,14 @@ MyApp.post "/add_school" do
 	school = School.new
 	school.name = params[:school_name]
 	school.conference_id = params[:conference_id]
-	school.save
-  redirect :"school_info/#{school.id}"
+  if school.is_valid == true
+    school.save
+    redirect :"school_info/#{school.id}"
+  else
+    @error_object = school
+    erb :"error"
+  end
+
 end
 
 MyApp.get "/school_info/:school_id" do
