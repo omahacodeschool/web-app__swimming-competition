@@ -1,6 +1,14 @@
 class Run < ActiveRecord::Base
   @runs = Run.all
 
+  def is_valid
+    if (self.event_id == nil || self.swimmer_id == nil || self.run_time == nil)
+      false
+    else
+      true
+    end    
+  end
+
   def run_swimmer
     a = self.swimmer_id
     b = Swimmer.find_by_id(a)

@@ -1,15 +1,20 @@
 MyApp.post "/swimmers_form" do
   @swimmers = Swimmer.all
-  @s        = Swimmer.new
+  @swimmer  = Swimmer.new
 
-  @s.swimmer_name           = (params["swimmer_name"])
-  @s.swimmer_dob            = (params["swimmer_dob"])
-  @s.swimmer_gender         = (params["swimmer_gender"])
-  @s.team_id                = (params["swimmer_team"].to_i)
-  @s.swimmer_payment_status = (params["swimmer_payment_status"])
-  @s.save
+  @swimmer.swimmer_name           = (params["swimmer_name"])
+  @swimmer.swimmer_dob            = (params["swimmer_dob"])
+  @swimmer.swimmer_gender         = (params["swimmer_gender"])
+  @swimmer.team_id                = (params["swimmer_team"].to_i)
+  @swimmer.swimmer_payment_status = (params["swimmer_payment_status"])
+
+  if @swimmer.is_valid
+    @swimmer.save
   
-  erb :"main/add_swimmers"
+    erb :"main/add_swimmers"
+  else
+    erb :"main/error"
+  end
 end
 
 MyApp.get "/delete_swimmer/:swimmer_id" do
@@ -37,7 +42,12 @@ MyApp.post "/process_swimmer_update/:swimmer_id" do
   @swimmer.swimmer_gender         = (params["swimmer_gender_update"])
   @swimmer.team_id                = (params["swimmer_team_update"].to_i)
   @swimmer.swimmer_payment_status = (params["swimmer_payment_status_update"])
-  @swimmer.save
 
-  erb :"main/add_swimmers"
+  if @swimmer.is_valid
+    @swimmer.save
+  
+    erb :"main/add_swimmers"
+  else
+    erb :"main/error"
+  end
 end

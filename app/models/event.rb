@@ -1,6 +1,14 @@
 class Event < ActiveRecord::Base
   @events = Event.all
 
+  def is_valid
+    if self.event_name == "" || self.event_best_time == nil
+      false
+    else
+      true
+    end    
+  end
+
   def event_runs
     Run.where({"event_id" => self.id})
   end

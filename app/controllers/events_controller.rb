@@ -1,12 +1,17 @@
 MyApp.post "/events_form" do
   @events = Event.all
-  @e      = Event.new
+  @event  = Event.new
 
-  @e.event_name      = (params["event_name"])
-  @e.event_best_time = (params["event_best_time"])
-  @e.save
+  @event.event_name      = (params["event_name"])
+  @event.event_best_time = (params["event_best_time"])
 
-  erb :"main/add_events"
+  if @event.is_valid
+    @event.save
+
+    erb :"main/add_events"
+  else
+    erb :"main/error"
+  end
 end
 
 MyApp.get "/delete_event/:event_id" do
@@ -30,9 +35,15 @@ MyApp.post "/process_event_update/:event_id" do
 
   @event.event_name      = (params["event_name_update"])
   @event.event_best_time = (params["event_time_update"])
-  @event.save
 
-  erb :"main/add_events"
+  if @event.is_valid
+    @event.save
+
+    erb :"main/add_events"
+  else
+
+    erb :"main/error"
+  end
 end
 
 MyApp.post "/event_complete_form/:event_id" do

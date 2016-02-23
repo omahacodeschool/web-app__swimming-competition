@@ -1,6 +1,14 @@
 class Swimmer < ActiveRecord::Base
   @swimmers = Swimmer.all
 
+  def is_valid
+    if (self.swimmer_name == "" || self.swimmer_dob == "" || self.swimmer_gender == "" || self.swimmer_team == nil || self.swimmer_payment_status == nil)
+      false
+    else
+      true
+    end    
+  end
+
   def swimmer_team
     x = self.team_id
     y = Team.find_by_id(x)

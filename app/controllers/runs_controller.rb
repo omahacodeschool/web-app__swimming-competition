@@ -1,13 +1,18 @@
 MyApp.post "/runs_form" do
   @runs = Run.all
-  @r    = Run.new
+  @run    = Run.new
   
-  @r.event_id   = (params["run_event"].to_i)
-  @r.swimmer_id = (params["run_swimmer"].to_i)
-  @r.run_time   = (params["run_time"].to_f)
-  @r.save
+  @run.event_id   = (params["run_event"].to_i)
+  @run.swimmer_id = (params["run_swimmer"].to_i)
+  @run.run_time   = (params["run_time"].to_f)
 
-  erb :"main/add_runs"
+  if @run.is_valid
+    @run.save
+
+    erb :"main/add_runs"
+  else
+    erb :"main/error"
+  end
 end
 
 MyApp.get "/delete_run/:run_id" do
@@ -31,7 +36,12 @@ MyApp.post "/process_run_update/:run_id" do
 
   @run.swimmer_id  = (params["run_swimmer_update"].to_i)
   @run.run_time    = (params["run_time_update"].to_f)
-  @run.save
 
-  erb :"main/add_runs"
+  if @run.is_valid
+    @run.save
+
+    erb :"main/add_runs"
+  else
+    erb :"main/error"
+  end
 end

@@ -1,11 +1,16 @@
 MyApp.post "/conferences_form" do
   @conferences = Conference.all
+  @conference = Conference.new
   
-  @c = Conference.new
-  @c.conference_name = (params["conference_name"])
-  @c.save
+  @conference.conference_name = (params["conference_name"])
 
-  erb :"main/add_conferences"
+  if @conference.is_valid
+    @conference.save
+  
+    erb :"main/add_conferences"
+  else
+    erb :"main/error"
+  end
 end
 
 MyApp.get "/delete_conference/:conference_id" do
@@ -33,7 +38,12 @@ MyApp.post "/process_conference_update/:conference_id" do
   @conference  = Conference.find_by_id(params[:conference_id])
 
   @conference.conference_name = (params["conference_name_update"])
-  @conference.save
 
-  erb :"main/add_conferences"
+  if @conference.is_valid
+    @conference.save
+
+    erb :"main/add_conferences"
+  else
+    erb :"main/error"
+  end
 end

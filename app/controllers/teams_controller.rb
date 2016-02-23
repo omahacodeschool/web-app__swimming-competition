@@ -1,12 +1,17 @@
 MyApp.post "/teams_form" do
   @teams = Team.all
-  @t     = Team.new
+  @team  = Team.new
 
-  @t.team_name     = (params["team_name"])
-  @t.conference_id = (params["select_conference"].to_i)  
-  @t.save
+  @team.team_name     = (params["team_name"])
+  @team.conference_id = (params["select_conference"].to_i) 
 
-  erb :"main/add_teams"
+  if @team.is_valid 
+    @team.save
+
+    erb :"main/add_teams"
+  else
+    erb :"main/error"
+  end
 end
 
 MyApp.get "/delete_team/:team_id" do
@@ -31,7 +36,12 @@ MyApp.post "/process_team_update/:team_id" do
 
   @team.team_name     = (params["team_name_update"])
   @team.conference_id = (params["select_conference_update"].to_i)
-  @team.save
 
-  erb :"main/add_teams"
+  if @team.is_valid 
+    @team.save
+
+    erb :"main/add_teams"
+  else
+    erb :"main/error"
+  end
 end
