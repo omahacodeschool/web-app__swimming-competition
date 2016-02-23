@@ -6,13 +6,15 @@
 
   <form action="/process_signup_form/<%= @info.id %>" method="post">
   
-    <label for="username">Swimmer ID:</label>
-    
-      <input type="number" name="swimmer_info_id" value="<%= @info.swimmer_info_id %>">
+    Swimmer ID
+    <input type="number" 
+    <select name="swimmer_info_id" value="<%= @info.swimmer_info_id %>">
+
+    <p>
+    <label for="Swimmer Name">Swimmer</label>
   
-    <label for="username">Event ID:</label>
-    
-      <input type="number" name="event_id" value="<%= @info.event_id %>">
+    Event ID
+    <input type="number" name="event_id" value="<%= @info.event_id %>">
 
     <label for="username">Time:</label>
 

@@ -3,10 +3,28 @@
 
 <center>
   <form action="/sign_up_form/create" method="post">
-    <label for="username">Swimmer ID:</label>
-    <input type="text" name="swimmer_info_id">
-    <label for="username">Event ID:</label>
-    <input type="text" name="event_id">
+
+    <p>
+      <label for="swimmer_name">Swimmer</label>
+      <select name="swimmer_name">
+       <option>Select a swimmer...</option>
+
+       <% @swimmer.each do |swimmer| %>
+         <option value="<%= swimmer.id %>"><%= swimmer.swimmer_name %></option>
+       <% end %>
+      </select>
+    </p> 
+
+    <p>
+      <label for="event">Event</label>
+      <select name="event">
+       <option>Select an event...</option>
+
+       <% @event.each do |event| %>
+         <option value="<%= event.id %>"><%= event.event_name %></option>
+       <% end %>
+      </select>
+    </p> 
     <label for="username">Time:</label>
     <input type="text" name="time">
     <label for="username">Rank:</label>
@@ -15,4 +33,4 @@
   </form>
 </center>
 
-<a href="http://localhost:9292/">Admin Page</a>
+<a href="/">Admin Page</a>

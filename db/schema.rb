@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "event_id"
     t.float    "time"
     t.integer  "rank"
-    t.boolean  "lock"
   end
 
   create_table "swimmer_infos", force: :cascade do |t|

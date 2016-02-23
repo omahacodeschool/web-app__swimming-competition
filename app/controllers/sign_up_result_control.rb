@@ -1,5 +1,8 @@
 #Creates new sign up form
  MyApp.get "/sign_up_form/new" do
+  @swimmer = SwimmerInfo.all
+  @event = Event.all
+
   erb :"sign_result/sign_up_form"
 end
 
