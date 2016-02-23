@@ -31,9 +31,12 @@
           </td>
         <td>
           <% if c.has_a_rookery? %>
-            <form action="/conferences/cannot_delete">
+            <form action="/conferences/cannot_update">
               <input type="submit" value="delete">
             </form>
+            <a href="/conferences/cannot_update">
+              <input type="submit" value="edit">
+            </a>
           <% else %>
             <form action="/conferences/delete/<%= c.id %>" method="post">
               <input type="submit" value="delete">

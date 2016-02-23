@@ -43,7 +43,7 @@ MyApp.post "/conferences/delete/:id" do
   erb :"updated"
 end
 
-MyApp.get "/conferences/cannot_delete" do
+MyApp.get "/conferences/cannot_update" do
   erb :"conferences/delete_rookeries_first"
 end
 
