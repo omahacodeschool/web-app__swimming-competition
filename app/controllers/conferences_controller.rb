@@ -22,8 +22,12 @@ end
 MyApp.post "/conferences/process_edit/:id" do
   @conference = Conference.find_by_id(params[:id])
   @conference.name = params["edit_conference"]
-  @conference.save
-  erb :"updated"
+
+  if @conference.is_valid
+    @conference.save
+    erb :"updated"
+  else 
+    erb :"error"
 end
 
 MyApp.post "/conferences/delete/:id" do
