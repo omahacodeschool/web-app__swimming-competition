@@ -1,5 +1,3 @@
-
-
 MyApp.get "/race" do
 
   # If a GET request is made to the root path, the following line of code
@@ -16,22 +14,13 @@ end
 MyApp.get "/race_view/:id" do
 
   @event = Race.find_by_id(params[:id])
-  # @records = []
-  # #locate object in races table
-  # @w = Race.find_by_id(params[:id])
-  # swimmer_ids = @w.swimmer_ids_one_race
-  # swimmer_ids.each do |number| 
-  #   record = Swimmer.find_by_id(number)
-  #   @records.push(record) #should return all of the relevant objects for display
-
-  # end 
-    #returns an array of IDs?
+  
   erb :"race_status"
 end
 
 
 
-   MyApp.get "/race/new" do
+MyApp.get "/race/new" do
 
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
@@ -63,7 +52,7 @@ MyApp.post "/lock_event/:id" do  #I KNOW THIS ISN'T IT.
   erb :"success_race_locked"
 end
 
-MyApp.get "/race/create" do
+MyApp.post "/race/create" do
 
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
@@ -74,11 +63,11 @@ MyApp.get "/race/create" do
 
   # Accepts the form entry data and creates the swimmer in the table. 
 
-  g = Race.new
-  g.event_name = (params[:event_name])
-  g.start_time = (params[:start_time])
-  g.save
+  @race = Race.new
+  @race.event_name = (params[:event_name])
+  @race.start_time = (params[:start])
+  @race.save
  
   
-  erb :"success_race_add"
+  erb :"process_race_new"
 end

@@ -5,9 +5,6 @@ MyApp.get "/college_delete/:id" do
   erb :"success_college_deleted"
 end
 
-
-
-
 MyApp.get "/form_for_editing_college/:id" do
   @college = College.find_by_id(params[:id])
 
@@ -35,8 +32,6 @@ MyApp.post "/lock_college/:id" do  #I KNOW THIS ISN'T IT.
 
   erb :"success_college_locked"
 end
-
-
 
 MyApp.get "/all_colleges" do
   @colleges = College.all
@@ -83,9 +78,7 @@ end
 
 MyApp.get "/college_view/:id" do
 
-#   @colleges = College.all#is this still going to work?
-# OR
-  @college = College.find(params[:id])#is this better for separate college pages? 
+  @college = College.find(params[:id]) 
   
 
   # If a GET request is made to the root path, the following line of code

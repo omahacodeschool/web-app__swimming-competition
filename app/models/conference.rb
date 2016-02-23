@@ -8,10 +8,5 @@ class Conference < ActiveRecord::Base
     return College.where({"conference_id" => confid})
   end
 
-  def list_of_conferences 
-    return ["something here", "please"]
-  end
-
-
 
 end

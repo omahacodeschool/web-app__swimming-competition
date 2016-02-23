@@ -4,7 +4,7 @@ MyApp.get "/" do
   # looks for a .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
   # 
-  # Then it will combine that view file with the layout file and sent the
+  # Then it will combine that view file with the layout file and send the
   # combined document back to the client.
   erb :"main" #/This should go to the main page, where the input is.
 end

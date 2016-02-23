@@ -1,11 +1,18 @@
-MyApp.post "/swimmer_delete" do
+MyApp.get "/all_swimmers" do
+  @swimmers = Swimmer.all
 
-  dq = Swimmer.find_by_id(params[:id])
-
-  erb :"success_swimmer_deleted"
+  erb :"swimmers_list"
 end
 
 
+MyApp.post "/swimmer_delete/:id" do
+
+  @dq = Swimmer.find_by_id(params[:id])
+  # @dq.delete_swimmer_from_race_results
+  @dq.delete_swimmer_from_swim_entries
+  @dq.delete
+  erb :"success_swimmer_deleted"
+end
 
 MyApp.get "/swimmer" do
 
@@ -47,11 +54,11 @@ MyApp.get "/swimmer/create" do
   # combined document back to the client.
 
   # Accepts the form entry data and creates the swimmer in the table. 
-  s = Swimmer.new
-  s.last_name = params[:last_name]
-  s.first_name = params[:first_name]
-  s.college_id = params[:college_id]
-  s.save
+  @swimmer = Swimmer.new
+  @swimmer.last_name = params[:last_name]
+  @swimmer.first_name = params[:first_name]
+  @swimmer.college_id = params[:college_id]
+  @swimmer.save
 
   
   erb :"success_new_swimmer_add"

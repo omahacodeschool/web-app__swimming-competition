@@ -5,16 +5,25 @@
 <h1>About Team <%= @college.college_name %></h1>
  
 
+  <p><strong>College Name:</strong> 
+    <%= @college.college_name %>
+  </p>
 
-<p><strong>College Name:</strong> <%= @college.college_name %></p>
+  <p><strong>Conference:</strong> 
+    <%= @college.conference.conference_name %>
+  </p>
 
-<p><strong>Conference:</strong> <%= @college.conference.conference_name %></p>
+  <p><strong>Contact:</strong> 
+    <%= @college.contact %>
+  </p>
 
-<p><strong>Contact:</strong> <%= @college.contact %></p>
+  <p><strong>Contact Email:</strong> 
+    <%= @college.contact_email %>
+  </p>
 
-<p><strong>Contact Email:</strong> <%= @college.contact_email %></p>
-
-<p><strong>Contact Phone:</strong> <%= @college.contact_ph %></p>
+  <p><strong>Contact Phone:</strong> 
+    <%= @college.contact_ph %>
+  </p>
 
 
 

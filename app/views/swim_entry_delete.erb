@@ -1,0 +1,40 @@
+<a href="/">Home</a><br>
+
+<h1>Swim Entry Delete</h1>
+<p>Do you want to delete this swim entry?</p>
+
+
+<form action = "/swim_entry/create">
+  <input type ="integer" name="swimmer_id" value=" ">
+  <input type ="integer" name="race_id" value=" ">
+  <input type ="submit">
+</form>
+
+
+<a href="/">Home</a><br>
+
+
+
+
+<a href= "/swim_entry_delete_/<%= swim_entry.id %>">Delete</a></h3>
+
+<% end %>
+
+<a href="/">Home</a><br>
+ 
+
+<h1>Participating Colleges</h1>
+
+<% @colleges.each do |college| %>
+
+<a href= "/college_view/<%= college.id %>">
+
+<h3><%= college.college_name %>
+
+</a>
+
+--
+
+<a href= "/college_delete/<%= college.id %>">Delete</a></h3>
+
+<% end %>

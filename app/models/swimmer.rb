@@ -14,14 +14,14 @@ class Swimmer < ActiveRecord::Base
   #   dq.id #array of swim_entry ids for the disqualified swimmer
   #   race_result = RaceResult.find_by_swim_entry_id(dq.id) #using swim entry ids to find race results for the disqualified swimmer 
 
-  def delete_swimmer_from_race_results
-    dq = RaceResults.where ({swimmer_id => self.id})
-    dq.delete.all #array of swim_entry ids for the disqualified swimmer
-  end
+  # def delete_swimmer_from_race_results
+  #   dq = RaceResult.where({"swimmer_id" => self.id})
+  #   dq.delete_all #array of swim_entry ids for the disqualified swimmer
+  # end
 
   def delete_swimmer_from_swim_entries
-    dq = SwimEntry.where ({swimmer_id => self.id})
-    dq.delete.all
+    dq = SwimEntry.where({"swimmer_id" => self.id})
+    dq.delete_all
   end
 
 end

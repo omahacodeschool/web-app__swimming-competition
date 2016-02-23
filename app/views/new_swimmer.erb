@@ -16,3 +16,20 @@
   <input type ="integer" name="college_id" placeholder="number_from_list"> 
   <input type ="submit">
 </form>
+
+
+
+<form action = "/swimmer/create">
+  <input type ="text" name="first_name" placeholder="first_name">
+  <input type ="text" name="last_name" placeholder="last_name">
+  <!-- <input type ="integer" name="college_id" placeholder="number_from_list">  -->
+
+  <select name = "college_id">College Name
+
+    <% @colleges.each do |college| %>
+    <option value ="<%=college_id %>"><%= college_name %><option>
+    <% end %>
+
+  <input type ="submit">
+</form>
+

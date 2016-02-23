@@ -5,15 +5,19 @@
 
 <% @colleges.each do |college| %>
 
+<p><%= college.id %> 
+
 <a href= "/college_view/<%= college.id %>">
 
-<h3><%= college.college_name %>
+
+<%= college.college_name %>
 
 </a>
 
+
 --
 
-<a href= "/college_delete/<%= college.id %>">Delete</a></h3>
+<a href= "/college_delete/<%= college.id %>">Delete</a></p>
 
 <% end %>
 

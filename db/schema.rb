@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.time     "swimmer_time"
     t.integer  "swimmer_race_rank"
     t.integer  "swimmer_done"
+    t.boolean  "locked"
   end
 
   create_table "races", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "event_name"
     t.time     "start_time"
     t.boolean  "locked"
+    t.string   "start"
   end
 
   create_table "swim_entries", force: :cascade do |t|

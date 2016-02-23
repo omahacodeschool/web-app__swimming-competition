@@ -4,19 +4,14 @@
 
 <h1>Race Status</h1>
 
-<!-- <p>Enter a race ID number from the list below to see results for all of the swimmers in that race.</p>
 
-<form action = "/race_view">
-  <input type ="integer" name="race_id" placeholder="Race ID Number">
-  <input type ="submit">
-</form> -->
 
 <%= @event.event_name %>
 
 <% @event.list_of_swimmers.each do |swimmer| %>
   <p>
     <%= swimmer.first_name %> <%= swimmer.last_name%> 
-    <%= swimmer.race_result(@event.id).swimmer_time %>
+    <%= swimmer.race_result(@event.id).swimmer_done %>
     <%= swimmer.race_result(@event.id).swimmer_race_rank %>
   </p>
 <% end%>

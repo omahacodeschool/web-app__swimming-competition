@@ -17,8 +17,7 @@ class Race < ActiveRecord::Base
       g.push(x) #push swimmer_ids "x" for race "r" into an Array
     end #end of each do loop
 
-    return Swimmer.where({"id" => g})
-    #return g   #array of swimmer ids for one race
+    return Swimmer.where({"id" => g})#array of swimmer ids for one race
   end #end of list_of_swimmers method
   
 end #end of Race class
