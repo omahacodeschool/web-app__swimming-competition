@@ -130,8 +130,16 @@ class EventTest < Minitest::Test
     assert_includes(@event4.get_errors, "Event name cannot be blank")
   end
 
-  def test_is_valid
+  def test_is_not_valid
     @event4.set_errors
     assert_equal(false, @event4.is_valid)
+  end
+
+  def test_is_valid
+    @event5 = Event.new
+    @event5.name = "Jumping"
+    @event5.save
+    @event5.set_errors
+    assert_equal(true, @event5.is_valid)
   end
 end

@@ -40,9 +40,13 @@ class ConferenceTest < Minitest::Test
     assert_includes(@conference3.get_errors, "Conference name cannot be blank")
   end
 
-  def test_is_valid
+  def test_is_not_valid
     @conference3.set_errors
     assert_equal(false, @conference3.is_valid)
   end
 
+  def test_is_valid
+    @conference1.set_errors
+    assert_equal(true, @conference1.is_valid)
+  end
 end

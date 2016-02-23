@@ -79,9 +79,16 @@ class ResultTest < Minitest::Test
     assert_includes(@result_4.get_errors, "You must add a time")
   end
 
-  def test_is_valid
+  def test_is_not_valid
     @result_4.set_errors
     assert_equal(false, @result_4.is_valid)
+  end
+
+  def test_is_valid
+    @result_1.time = 45
+    @result_1.save
+    @result_1.set_errors
+    assert_equal(true, @result_1.is_valid)
   end
 
 end

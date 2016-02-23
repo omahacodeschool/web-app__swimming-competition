@@ -97,8 +97,13 @@ class SchoolTest < Minitest::Test
     assert_includes(@school2.get_errors, "You must choose a conference for this school")
   end
 
-  def test_is_valid
+  def test_is_not_valid
     @school2.set_errors
     assert_equal(false, @school2.is_valid)
+  end
+
+  def test_is_valid
+    @school.set_errors
+    assert_equal(true, @school.is_valid)
   end
 end

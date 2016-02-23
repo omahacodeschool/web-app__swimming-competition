@@ -103,8 +103,13 @@ class CompetitorTest < Minitest::Test
     assert_includes(@cat4.get_errors, "Must choose a school")
   end
 
-  def test_is_valid
+  def test_is_not_valid
     @cat4.set_errors
     assert_equal(false, @cat4.is_valid)
   end
+
+   def test_is_valid
+    @cat.set_errors
+    assert_equal(true, @cat.is_valid)
+  end 
 end
