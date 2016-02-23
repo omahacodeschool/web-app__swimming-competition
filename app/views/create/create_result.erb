@@ -3,22 +3,21 @@
 
 
 <form action="/add_result" method="post">
-  <p>Name of Swimmer<p>
-  <select name="swimmer_id">
-    <% @swimmers.each do |y| %>
-      <option value="<%=y.id%>"><%=y.swimmer_name%> </option>
-    <% end %>
-  </select>
-  <p>Name of Event<p>
+
+  <p>First choose the name of the event.<p>
   <select name="event_id">
     <% @events.each do |y| %>
       <option value="<%=y.id%>"><%=y.event_name%> </option>
     <% end %>
   </select>
-  <p> Swimmer's Time for Event
-  <input type="decimal" name="input_time">
-  <p>
-  <input type="submit">
+  <input type="submit" value="Submit">
+
+    <p>Name of Swimmer<p>
+  <select name="swimmer_id">
+    <% @swimmers.each do |y| %>
+      <option value="<%=y.id%>"><%=y.swimmer_name%> </option>
+    <% end %>
+  </select>
 </form>
 
 

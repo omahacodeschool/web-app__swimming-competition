@@ -81,7 +81,7 @@ MyApp.get "/delete_event/:id_of_event" do
 
   erb :"/success/delete_event"
 end
-#WARNING! CODE IS BROKEN HERE!
+
 MyApp.post "/add_result" do
   r = Result.new
   e = Event.find_by_id(params[:event_id])
@@ -94,13 +94,12 @@ MyApp.post "/add_result" do
       @message = "Result successfully added."
       r.swimmer_id = params[:swimmer_id]
       r.event_id = params[:event_id]
-      r.swimmer_time = params["input_time"]
       r.save
     end
   else
     @message = "There is a duplicate swimmer" 
   end
-  erb :"/success/success_result"
+  erb :"/create/add_times"
 end
 # Remove a result from results table
 MyApp.get "/delete_result/:id_of_result" do
