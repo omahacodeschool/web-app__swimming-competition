@@ -16,9 +16,11 @@ class Event < ActiveRecord::Base
     @errors = []
     if self.gender == nil
       @errors << "Gender cannot be blank."
-    elsif self.distance == nil
+    end
+    if self.distance == nil
       @errors << "Distance cannot be blank."
-    elsif self.style_id == nil
+    end
+    if self.style_id == nil
       @errors << "Style id cannot be blank."
     end
   end

@@ -4,13 +4,17 @@ class Competitor <ActiveRecord::Base
     @errors = []
     if self.first_name == nil || self.first_name == ""
       @errors << "First name cannot be blank."
-    elsif self.last_name == nil || self.last_name == ""
+    end
+    if self.last_name == nil || self.last_name == ""
       @errors << "Last name cannot be blank."
-    elsif self.school_name == nil || self.school_name == ""
+    end
+    if self.school_name == nil || self.school_name == ""
       @errors << "School name cannot be blank."
-    elsif self.conference_name == nil || self.conference_name == ""
+    end
+    if self.conference_name == nil || self.conference_name == ""
       @errors << "Conference name cannot be blank."
-    elsif self.gender == nil || self.gender == ""
+    end
+    if self.gender == nil || self.gender == ""
       @errors << "Gender cannot be blank."
     end
   end

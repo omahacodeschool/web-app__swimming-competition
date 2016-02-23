@@ -42,9 +42,11 @@ class Result <ActiveRecord::Base
     @errors = []
     if self.event_id == nil || self.event_id == ""
       @errors << "Event id cannot be blank."
-    elsif self.competitor_id == nil || self.competitor_id == ""
+    end
+    if self.competitor_id == nil || self.competitor_id == ""
       @errors << "Competitor id cannot be blank."
-    elsif self.final_time == nil || self.final_time == ""
+    end
+    if self.final_time == nil || self.final_time == ""
       @errors << "Final time cannot be blank."
     end
   end
