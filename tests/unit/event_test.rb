@@ -17,44 +17,45 @@ class EventTest < Minitest::Test
     @breaststroke.save
 
     @butterfly = Event.new
-    @butterfly.event_name = "butterfly"
+    @butterfly.event_name = "Butterfly"
     @butterfly.save
 
     @r1 = Run.new
     @r1.event_id = @freestyle.id
+    @r1.run_time = 1
     @r1.save
 
     @r7 = Run.new
     @r7.event_id = @backstroke.id
+    @r7.run_time = 2
     @r7.save
 
     @r11 = Run.new
     @r11.event_id = @breaststroke.id
+    @r11.run_time = 3
     @r11.save
 
     @r16 = Run.new
     @r16.event_id = @butterfly.id
+    @r16.run_time = 4
     @r16.save
   end
 
   def test_event_runs
-    assert_includes(@freestyle.runs, @r1)
-    assert_includes(@backstroke.runs, @r7)
-    assert_includes(@breaststroke.runs, @r11)
-    assert_includes(@butterfly.runs, @r16)
-    refute_includes(@freestyle.runs, @r7)
-    refute_includes(@backstroke.runs, @r1)
+    assert_includes(@freestyle.event_runs, @r1)
+    assert_includes(@backstroke.event_runs, @r7)
+    assert_includes(@breaststroke.event_runs, @r11)
+    assert_includes(@butterfly.event_runs, @r16)
+    refute_includes(@freestyle.event_runs, @r7)
+    refute_includes(@backstroke.event_runs, @r1)
+  end
+
+  def test_event_top_runs
+    assert_includes(@freestyle.event_top_runs, @r1)
+    assert_includes(@backstroke.event_top_runs, @r7)
+    assert_includes(@breaststroke.event_top_runs, @r11)
+    assert_includes(@butterfly.event_top_runs, @r16)
+    refute_includes(@freestyle.event_top_runs, @r7)
+    refute_includes(@backstroke.event_top_runs, @r1)
   end
 end
-
-# Methods yet to test
-  # def event_runs
-  #   Run.where({"event_id" => self.id})
-  # end
-
-  # def event_top_runs
-  #   qualifier = Run.where({"event_id" => self.id})
-
-  #   x = qualifier.order(:run_time)
-  #   x[0..2]
-  # end
