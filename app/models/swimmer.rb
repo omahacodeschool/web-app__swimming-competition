@@ -36,13 +36,29 @@ class Swimmer < ActiveRecord::Base
       return y.finish_time
     end
   end
-  #gonna add some stuff here so rewrite the test later
-  def register(eventidarray)
+  #this is new so test it (so many swimmer tests!)
+  def register_errors(eventidarray)
     eventidarray.each do |event|
-      s = Signup.new
-      s.swimmer_id = self.id
-      s.event_id = event
-      s.save
+      a = Signup.find_by(swimmer_id: self.id, event_id: event)
+      if a
+        eventidarray - event
+      else
+      end
+    end 
+    binding.pry
+  end
+  #this now includes validation so rewrite that test
+  def register(eventidarray)
+    array = self.register_errors(eventidarray)
+    binding.pry
+    if array.empty? == false
+      array.each do |event|
+        s = Signup.new
+        s.swimmer_id = self.id
+        s.event_id = event
+        s.save
+      end
+    else
     end
   end
   

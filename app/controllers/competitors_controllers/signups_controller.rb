@@ -8,7 +8,6 @@ MyApp.get "/signups" do
 end
 
 MyApp.post "/newsignup" do
-  binding.pry
   @currentswimmer = Swimmer.find_by_id(params[:swimmerid])
   @currentswimmer.register(params[:events])
   @events = Event.unlocked_events
