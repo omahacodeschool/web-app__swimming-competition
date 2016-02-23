@@ -91,7 +91,7 @@ MyApp.post "/add_result" do
 
       if e.event_locked == true
         @message = "This event is currently locked."
-        erb :"success/success_result"
+        erb :"/display/error"
       else
         @message = "Result successfully added."
         r.swimmer_id = id
@@ -99,11 +99,11 @@ MyApp.post "/add_result" do
         r.save
       end
     else
-      @message = "There is a duplicate swimmer" 
-      erb :"success/success_result"
+      @message = "There is a duplicate swimmer"
+      erb :"/display/error"
     end
-    erb :"/create/add_times"
   end
+  erb :"/create/add_times"
 end
 # Remove a result from results table
 MyApp.get "/delete_result/:id_of_result" do
