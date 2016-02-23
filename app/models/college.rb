@@ -7,7 +7,7 @@ class College < ActiveRecord::Base
     return y.conference_name
   end  
 
-  #will need tests for get_errors, set_erros, is_valid
+  #will need tests for get_errors, set_errors, is_valid
   def get_errors
     self.set_errors
     return @errors

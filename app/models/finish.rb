@@ -10,7 +10,7 @@ class Finish < ActiveRecord::Base
       end
     return @finishes.sort
   end
-##this will require a new test##
+
   def self.this_event(eventid)
     x = Finish.where({"event_id" => eventid})
     @finishes = []

@@ -19,12 +19,12 @@ class Winner < ActiveRecord::Base
     return swimmer.swimmer_name
   end
   
-   def self.this_event 
+  def self.this_event 
     @finishes = []
-      x = Winner.all
-      x.each do |finishid|
-        @finishes << finishid.finish_id
-      end
+    x = Winner.all
+    x.each do |finishid|
+      @finishes << finishid.finish_id
+    end
     return @finishes
   end
 
