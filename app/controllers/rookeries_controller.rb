@@ -11,7 +11,8 @@ MyApp.post "/rookeries/create" do
     @rookery.save
     redirect "/rookeries"
   else 
-    erb :"rookeries/error"
+    @error_object = @rookery     
+    erb :"error"
   end
 end 
 
@@ -34,7 +35,8 @@ MyApp.post "/rookeries/process_edit/:id" do
     @rookery.save
     erb :"updated"
   else 
-    erb :"rookeries/error"
+    @error_object = @rookery    
+    erb :"error"
   end
 end 
 

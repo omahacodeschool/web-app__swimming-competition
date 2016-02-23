@@ -12,7 +12,8 @@ MyApp.post "/events/create" do
     @event.save
     redirect "/events"
   else 
-    erb :"events/error"
+    @error_object = @event
+    erb :"error"
   end
 
 end
@@ -35,8 +36,9 @@ MyApp.post "/events/process_edit/:id" do
   if @event.is_valid
     @event.save
     erb :"updated"
-  else 
-    erb :"events/error"
+  else
+    @error_object = @event   
+    erb :"error"
   end
 end  
 

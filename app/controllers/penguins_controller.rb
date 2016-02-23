@@ -13,7 +13,8 @@ MyApp.post "/penguins/create" do
     @penguin.save
     redirect "/penguins"
   else 
-    erb :"penguins/error"
+    @error_object = @penguin     
+    erb :"error"
   end
 
 end
@@ -40,7 +41,8 @@ MyApp.post "/penguins/process_edit/:id" do
     @penguin.save
     erb :"updated"
   else 
-    erb :"penguins/error"
+    @error_object = @penguin     
+    erb :"error"
   end
 
 end

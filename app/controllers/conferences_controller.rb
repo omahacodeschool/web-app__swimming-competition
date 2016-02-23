@@ -10,7 +10,8 @@ MyApp.post "/conferences/create" do
     @conference.save
     redirect "/conferences"
   else 
-    erb :"conferences/error"
+    @error_object = @conference
+    erb :"error"
   end
 
 end 
@@ -33,7 +34,8 @@ MyApp.post "/conferences/process_edit/:id" do
     @conference.save
     erb :"updated"
   else 
-    erb :"conferences/error"
+    @error_object = @conference
+    erb :"error"
   end
 end
 

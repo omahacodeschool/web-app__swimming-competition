@@ -15,10 +15,6 @@ class Penguin < ActiveRecord::Base
       @errors << "Penguin's age cannot be blank!"
     end
 
-    if self.rookery_id == "" || self.rookery_id == nil
-      @errors << "Rookery name cannot be blank!"
-    end    
-
   end 
 
   def get_errors
