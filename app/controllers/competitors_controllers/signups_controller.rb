@@ -14,7 +14,7 @@ MyApp.post "/newsignup" do
   @events = Event.unlocked_events
   @lockedevents = Event.locked_events
   @swimmers = Swimmer.all
-  redirect '/view_swimmer/1'
+  redirect '/view_swimmer/' + (params[:swimmerid])
 end
 
 MyApp.post "/remove_swimmer/:id" do
