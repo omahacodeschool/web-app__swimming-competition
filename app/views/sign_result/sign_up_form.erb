@@ -6,7 +6,7 @@
 
     <p>
       <label for="swimmer_name">Swimmer</label>
-      <select name="swimmer_name">
+      <select name="swimmer.id">
        <option>Select a swimmer...</option>
 
        <% @swimmer.each do |swimmer| %>
@@ -20,7 +20,7 @@
     
     <% @event.each do |event| %>
       <p>
-        <input type="checkbox" name="<%= event.id[] %>" value="<%= event.id %>"><label><%= event.event_name %></label>
+        <input type="checkbox" name="events[]" value="<%= event.id %>"><label><%= event.event_name %></label>
       </p> 
     <% end %>
     

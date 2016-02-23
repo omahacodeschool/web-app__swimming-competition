@@ -41,6 +41,7 @@ end
 
 #edits event
 MyApp.post "/process_signup_form/:id" do
+  binding.pry
   @info = SignupResult.find_by_id(params[:id])
   @info.swimmer_info_id = params["swimmer_info_id"]
   @info.event_id = params["event_id"]
