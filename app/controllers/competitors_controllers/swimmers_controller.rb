@@ -12,9 +12,15 @@ MyApp.post "/newswimmername" do
   s.first_name = params[:swimmerfirstname]
   s.last_name = params[:swimmerlastname]
   s.college_id= params[:collegeid]
-  s.save
-  @newswimmername = params[:swimmerfirstname] + " " + params[:swimmerlastname]
-  erb :"/cv/swimmeraddsuccess"
+  if s.is_valid == false
+    @errorobject = "swimmer"
+    @errors = s.get_errors
+    erb :"/cv/swimmer_validation_error"
+  elsif s.is_valid == true
+    s.save
+    @newswimmername = params[:swimmerfirstname] + " " + params[:swimmerlastname]
+    erb :"/cv/swimmeraddsuccess"
+  end
 end
 
 MyApp.get "/view_swimmer/:id" do

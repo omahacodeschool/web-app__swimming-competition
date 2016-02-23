@@ -12,6 +12,10 @@ MyApp.get "/" do
   erb :"admin"
 end
 
+MyApp.get "/back" do
+  redirect back
+end
+
 MyApp.get "/swimmingevents" do
   erb :"ev/swimmingevents"
 end

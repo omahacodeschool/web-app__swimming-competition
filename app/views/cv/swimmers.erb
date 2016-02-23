@@ -15,7 +15,7 @@
   <label for="last_name">Last Name</label>
   <input type="text" name="swimmerlastname">
   <select name = "collegeid">
-    <option>Select a College...</option>
+    <option disabled>Select a College...</option>
     <% @colleges.each do |post| %>
       <option value="<%= post.id %>"><%= post.college_name %>
       </option>
