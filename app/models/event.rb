@@ -14,12 +14,13 @@ class Event < ActiveRecord::Base
 			@list_results.each do |result|
 				id_arr << result.competitor_id
 			end
-		end
+
+	end
 
 		competitors = []
-		# if id_arr.empty?
-		# 	return nil
-		# else
+		if id_arr.empty?
+			return nil
+		else
 			#with the competitor.id find each Competitor object in the competitor table
 			 id_arr.each do |c|
 			 	x = Competitor.find_by_id(c)
@@ -27,7 +28,7 @@ class Event < ActiveRecord::Base
 			 	if x != nil
 					competitors << x
 				end
-			# end
+			end
 		end
 
 		return competitors
@@ -57,7 +58,7 @@ class Event < ActiveRecord::Base
 	#
 	#Returns Array
  	def results_for_event
- 			@list_results = Result.where({"event_id" => self.id})
+ 		@list_results = Result.where({"event_id" => self.id})
 		if @list_results.empty?
 			return nil
 		else

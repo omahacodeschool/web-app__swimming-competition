@@ -11,13 +11,12 @@
 			<% @event.list_of_results.each do |c| %>
 				<li>
 					<a href="/profile/<%= c.id %>">
-						<b><%=c.first_name %> <%= c.last_name %> -
+						<b><%=c.first_name %> <%= c.last_name %>
 						<% if Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time != nil%>
-						<%= Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time %> seconds</b>
+						- <%= Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time %> seconds</b>
 						<% end %>
 					</a>
-<!-- 					add time next to name
- -->						:
+					:
 					<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
 						<i>add/edit result</i>
 					</a>
@@ -32,8 +31,6 @@
 
 
 	<form action="/add_entry/<%= @event.id %>" method="post">
-<!-- add function so that you can't add competitor more than once
- -->
  	  <select name="competitor_id">
 
 		   <option selected disabled>Choose competitor</option>

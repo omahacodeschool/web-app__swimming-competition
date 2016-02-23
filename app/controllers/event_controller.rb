@@ -26,11 +26,15 @@ MyApp.get "/event_info/:event_id" do
 end
 
 MyApp.post "/add_entry/:event_id" do
-	x = Result.new
-	x.event_id = params[:event_id]
-	x.competitor_id = params[:competitor_id]
-	x.save
-  redirect :"event_info/#{x.event_id}"
+	if Result.where(competitor_id: params[:competitor_id], event_id: params[:event_id]).blank?
+		x = Result.new
+		x.event_id = params[:event_id]
+		x.competitor_id = params[:competitor_id]
+		x.save
+  	redirect :"event_info/#{x.event_id}"
+  else 
+  	erb :"events/already_entered"
+  end
 end
 
 MyApp.post "/entry_delete/:competitor_id/:event_id" do
