@@ -1,6 +1,6 @@
 class Award < ActiveRecord::Base
   def is_valid
-    if self.event_id == "" || self.rank == "" || self.competitor_id == "" 
+    if self.event_id == nil || self.rank == nil || self.competitor_id == nil 
       return false
     else
       return true
