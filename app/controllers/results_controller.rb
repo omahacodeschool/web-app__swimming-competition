@@ -75,7 +75,7 @@ MyApp.get "/delete/result_deleted/:dogfood" do
   @event_object = Event.find_by_id(@results_event_id)
   @lock_check = @event_object.lock
   if @lock_check == true
-    erb :"main/errors/locked_error_page/:dogfood"
+    erb :"main/errors/locked_error_page"
   else
     @result_object.delete
     erb :"main/delete/result_deleted"
@@ -91,7 +91,7 @@ MyApp.get "/update/result_update_form/:popsicle" do
   @event_object = Event.find_by_id(@results_event_id)
   @lock_check = @event_object.lock
   if @lock_check == true
-    erb :"main/errors/locked_error_page/:popsicle"
+    erb :"main/errors/locked_error_page"
   else
     @result = @result_object
     erb :"main/update/result_update_form"
@@ -100,8 +100,17 @@ end
 
 MyApp.post "/update/result_updated/:stopsign" do 
   @result = Result.find_by_id(params[:stopsign])
-  @result.event_id = params[:event_id]
-  @result.competitor_id = params[:competitor_id]
+  @event_gender = params[:gender]
+  @event_distance = params[:distance]
+  @event_style = params[:style]
+  @event_object_array = Event.where({"gender" => @event_gender, "distance" => @event_distance, "style_id" => @event_style})
+    @event_object = @event_object_array[0]
+  @result.event_id = @event_object.id
+  @first_name = params[:firstname]
+  @last_name = params[:lastname]
+  @competitor_object_array = Competitor.where ({"first_name" => @first_name, "last_name" => @last_name})
+  @competitor_object = @competitor_object_array[0]
+  @result.competitor_id = @competitor_object.id
   @result.final_time = params[:final_time]
   if @result.is_valid? == false
     @error_object = @result
