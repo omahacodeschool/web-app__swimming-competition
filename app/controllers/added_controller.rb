@@ -15,7 +15,9 @@ MyApp.post "/award_added" do
   end
 end
 
-#Processes the form for adding a college
+# Processes the form for adding a college
+#
+# Throws an error if necessary data missing
 MyApp.post "/college_added" do 
   @college = College.new
   @college.college_name = params["college_name"]
@@ -28,7 +30,9 @@ MyApp.post "/college_added" do
   end
 end
 
-#Processes the form for adding a competitor
+# Processes the form for adding a competitor
+#
+# Throws an error if necessary data missing
 MyApp.post "/competitor_added" do 
   @competitor = Competitor.new
   @competitor.competitor_name = params["competitor_name"]
@@ -41,7 +45,9 @@ MyApp.post "/competitor_added" do
   end
 end
 
-#Processes the form for adding a conference
+# Processes the form for adding a conference
+#
+# Throws an error if necessary data missing
 MyApp.post "/conference_added" do 
   @conference = Conference.new
   @conference.conference_name = params["conference_name"]
@@ -53,13 +59,19 @@ MyApp.post "/conference_added" do
   end
 end
 
-#Processes the form to add an event
+# Processes the form to add an event
+#
+# Throws an error if necessary data missing
 MyApp.post "/event_added" do 
-  x = Event.new
-  x.event_name = params["event_name"]
-  x.locked = false 
-  x.save
-  erb :"added/event_added"
+  @event = Event.new
+  @event.event_name = params["event_name"]
+  @event.locked = false 
+  if @event.is_valid == true
+    @event.save
+    erb :"added/event_added"
+  else
+    erb :"misc/event_error"
+  end
 end
 
 #Processes the form to add event details
