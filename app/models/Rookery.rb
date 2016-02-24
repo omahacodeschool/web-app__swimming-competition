@@ -22,23 +22,14 @@ class Rookery < ActiveRecord::Base
       return true
     end
   end 
-
-  def has_a_rookery?
-    x = Rookery.where("conference_id" => self.id).first
-      if x != nil
-        true
-      else 
-        false
-      end
-  end
   
-
 
   def conference_access
     x = self.conference_id
     y = Conference.find_by_id(x)
     y
   end
+
 
   def delete_penguins
     Penguin.where("rookery_id" => self.id).delete_all

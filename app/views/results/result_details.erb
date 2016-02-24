@@ -16,14 +16,19 @@
     <tbody>
       <% @results.each do |r|%>
         <tr>
+          <% if r.penguin_access != nil%>
           <td>
             <%= r.penguin_access.first_name %> 
             <%= r.penguin_access.last_name %>
           </td>
+          <% end %>
+          <% if r.event_access != nil || r.rookery_access != nil ||
+            r.conference_access != nil || r.penguin_access != nil %>
           <td><%= r.event_access.name %></td>
           <td><%= r.time %> (seconds)</td>
           <td><%= r.rookery_access.name %> (<%= r.rookery_access.conference_access.name %>)</td>
           <td>
+          <% end %>
             <form action="/results/delete/<%= r.id %>" method="post">
               <input type="submit" value="delete">
             </form>

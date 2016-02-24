@@ -32,7 +32,7 @@ MyApp.post "/rookeries/process_edit/:id" do
   @rookery.name = params["edit_rookery"]
   @rookery.conference_id = params["edit_conference_id"]
   if @rookery.is_valid
-    @rookery.save
+    @rookery.save 
     erb :"updated"
   else 
     @error_object = @rookery    

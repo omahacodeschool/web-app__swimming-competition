@@ -13,7 +13,6 @@ MyApp.post "/conferences/create" do
     @error_object = @conference
     erb :"error"
   end
-
 end 
 
 MyApp.get "/conferences" do
