@@ -1,0 +1,19 @@
+<p>To add a new rookery to the system, type the name of the rookery in the form below.</p>
+
+
+<form action="/rookeries/process_edit/<%= @rookery.id %>" method="post">
+
+Rookery Name:<br>
+<input type="text" name="edit_rookery" value="<%= @rookery.name %>">
+<br>
+
+
+Conference:<br>
+
+<select name="edit_conference_id">
+ <% @conferences.each do |c| %>
+  <option value="<%= c.id %>" <% if c.id == @rookery.conference_id%> selected <% end %>> <%= c.name %></option>
+  <% end %>
+</select>
+<input type="submit">
+</form>

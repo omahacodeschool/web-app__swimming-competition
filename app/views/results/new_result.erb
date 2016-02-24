@@ -1,0 +1,28 @@
+<p>To add a new result to the system, type the result information in the form below.</p>
+
+<form action="/results/create" method="post">
+  <label>Select Penguin Name</label>
+  <select name ="new_penguin_id">
+    <% @penguins.each do |p| %>
+      <option value="<%= p.id%>">
+        <%= p.first_name%> <%=p.last_name %>
+      </option>
+    <% end %>
+  </select>
+
+  <label>Select Event</label>
+  <select name ="new_event_id">
+    <% @events.each do |e| %>
+      <option value="<%= e.id%>">
+        <%= e.name%>
+      </option>
+    <% end %>
+  </select>
+
+  <label>Enter Time (in seconds)</label>
+  <input type="decimal" step="any" name="new_time">
+
+  <input type="submit">
+
+</form>
+

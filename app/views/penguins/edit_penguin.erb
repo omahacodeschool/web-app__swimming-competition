@@ -1,0 +1,23 @@
+<form action="/penguins/process_edit/<%= @penguin.id %>" method="post">
+  <label> Last Name </label>
+    <input type="text" name ="edit_last_name" value="<%= @penguin.last_name %>">
+
+  <label> First Name </label>
+    <input type="text" name ="edit_first_name" value="<%= @penguin.first_name %>">
+
+  <label>Age</label>
+  <input type="number" name="edit_age" value="<%= @penguin.age%>">
+
+  <p>
+    <label>Rookery</label>
+    <select name="edit_rookery_id">
+      <% @rookeries.each do |r| %>
+        <option value="<%= r.id %>" <% if @penguin.rookery_access != nil && r.id == @penguin.rookery_access.id %> selected <% end %>>
+          <%= r.name %>
+        </option>
+      <% end %>     
+    </select>
+    <input type="submit" value="update">
+  </p>
+</form>
+

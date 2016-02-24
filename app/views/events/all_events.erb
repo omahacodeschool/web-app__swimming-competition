@@ -1,0 +1,57 @@
+<h3>
+  <a href="/">
+    Home
+  </a>
+</h3>
+
+<h1>Events</h1>
+
+<p>
+  <a href="/events/new">
+    Click here to add a new event
+  </a>
+</p>
+
+<% if @events.empty? == false %>
+
+  <p>Click on an event to see the results for that event</p>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Number of Entries</th>
+        <th>Start Time</th>
+        <th>Edit/Delete</th>      
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |e| %>
+        <tr>      
+          <td><a href="/results/view/<%= e.id %>"> <%= e.name %></a>
+          </td>        
+          <td><%= e.num_entries %></td>
+          <td><%= e.start_time.strftime("%I:%M %p") %></td>
+          <td>
+            <% if e.id != nil %>
+              <form action="/events/delete/<%= e.id %>" method="post">
+                <input type="submit" value="delete">
+              </form>
+              <a href="/events/edit/<%= e.id %>">
+                <input type="submit" value="edit">
+              </a>
+              <form action="/events/lock/<%= e.id %>" method="post">
+              <input type="submit" value="LOCK">
+              </form>                        
+            <% end %>
+          </td>        
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+<p>There are currently no events in the system. Click on the link above to create an event.</p>
+<% end %>
+
+

@@ -1,0 +1,58 @@
+<h3>
+   <a href="/">
+    Home
+  </a>
+</h3>
+
+<h1>Conferences</h1>
+
+
+<p>
+  <a href="/conferences/new">
+    Click here to add a new conference
+  </a>
+</p>
+
+<% if @conferences.empty? == false %>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Conference</th>
+        <th>Edit/Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @conferences.each do |c| %>
+        <tr>
+          <td>
+            <%= c.name %>
+          </td>
+        <td>
+          <% if c.has_a_rookery? %>
+            <form action="/conferences/cannot_update">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/conferences/cannot_update">
+              <input type="submit" value="edit">
+            </a>
+          <% else %>
+            <form action="/conferences/delete/<%= c.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/conferences/edit/<%= c.id %>">
+              <input type="submit" value="edit">
+            </a>               
+          <% end %>       
+          </td>        
+        </tr>
+      <% end %>                  
+    </tbody>
+  </table>
+
+
+<% else %>
+<p>There are currently no conferences in the system. Click on the link above to create an conference.</p>
+<% end %>
+

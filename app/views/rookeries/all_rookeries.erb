@@ -1,0 +1,50 @@
+<h3>
+  <a href="/">
+    Home
+  </a>
+</h3>
+
+<h1>Rookeries</h1>
+
+<p>
+  <a href="/rookeries/new">
+    Click here to add a new rookery
+  </a>
+</p>
+
+<% if @rookeries.empty? == false %>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Edit/Delete</th>
+      <th>Rookery Name</th>
+      <th>Conference</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rookeries.each do |r| %>
+      <tr>
+        <td>
+          <% if r.id != nil %>
+            <form action="/rookeries/delete/<%= r.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/rookeries/edit/<%= r.id %>">
+              <input type="submit" value="edit">
+            </a>            
+          <% end %>
+        </td>       
+        <td><%= r.name %></td>
+        <% if r.conference_access != nil%>
+        <td><%= r.conference_access.name %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+<p>There are currently no rookeries in the system. Click on the link above to create a rookery.</p>
+<% end %>

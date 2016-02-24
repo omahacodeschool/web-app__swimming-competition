@@ -1,0 +1,77 @@
+<a href="/events">Back to all events</a>
+
+<% if @results.empty? == false %>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Penguin</th>
+        <th>Event</th>
+        <th>Time</th>
+        <th>Rookery</th>
+        <th>Edit/Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @results.each do |r|%>
+        <tr>
+          <% if r.penguin_access != nil%>
+          <td>
+            <%= r.penguin_access.first_name %> 
+            <%= r.penguin_access.last_name %>
+          </td>
+          <% end %>
+          <% if r.event_access != nil || r.rookery_access != nil ||
+            r.conference_access != nil || r.penguin_access != nil %>
+          <td><%= r.event_access.name %></td>
+          <td><%= r.time %> (seconds)</td>
+          <td><%= r.rookery_access.name %> (<%= r.rookery_access.conference_access.name %>)</td>
+          <td>
+          <% end %>
+            <form action="/results/delete/<%= r.id %>" method="post">
+              <input type="submit" value="delete">
+            </form>
+            <a href="/results/edit/<%= r.id %>">
+              <input type="submit" value="edit">
+            </a>            
+          </td>
+        </tr>           
+      <% end %>
+    </tbody>
+  </table>
+
+<h2> TOP 3 RESULTS </h2>
+
+  <% if @results.exists?(:time => nil) %>
+    <p style="color:red";> Please make sure results have been entered for each participant.</p>
+  <% else %>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Penguin</th>
+          <th>Event</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @ordered.first(3).each do |r|%>
+          <tr>
+            <td>
+              <%= r.penguin_access.first_name %> 
+              <%= r.penguin_access.last_name %>
+            </td>
+            <td><%= r.event_access.name %></td>
+            <td><%= r.time %> (seconds)</td>         
+          </tr>
+        <% end %> 
+      </tbody>
+    </table>
+  <% end %>
+
+<% else %>
+<p>There are currently no results saved for this event</p>
+<p><a href="/events">BACK</a>
+<% end %>

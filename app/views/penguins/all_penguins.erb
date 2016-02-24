@@ -1,0 +1,56 @@
+<h3>
+  <a href="/">
+    Home
+  </a>
+</h3>
+
+<h1>Penguins</h1>
+
+<p>
+  <a href="/penguins/new">
+    Click here to add a new penguin
+  </a>
+</p>
+
+<% if @penguins.empty? == false %>
+
+  <table border="1">
+    <thead>
+      <tr>    
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Age</th>
+        <th>Rookery</th>
+        <th>Edit/Delete</th>      
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @penguins.each do |p| %>
+        <tr>      
+          <td><%= p.last_name %></td>
+          <td><%= p.first_name %></td>
+          <td><%= p.age %></td>
+          <td>
+          <% if p.rookery_access != nil %>
+            <%= p.rookery_access.name %>
+          <% end %>
+          </td>
+          <td> 
+            <% if p.id != nil %>
+              <form action="/penguins/delete/<%= p.id %>" method="post">
+                <input type="submit" value="delete">
+              </form>
+              <a href="/penguins/edit/<%= p.id %>">
+                <input type="submit" value="edit">
+              </a>
+            <% end %>
+          </td>        
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+<p>There are currently no penguins in the system. Click on the link above to create an event.</p>
+<% end %>
