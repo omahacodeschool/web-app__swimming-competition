@@ -20,6 +20,10 @@ class SwimmerTest < Minitest::Test
     @andrew.college_id = @ocs.id
     @andrew.save
 
+    @b = Swimmer.new
+    @b.first_name = "Ted"
+    @b.save
+
     @event = Event.new
     @event.event_name = "Swim"
     @event.save
@@ -68,6 +72,17 @@ class SwimmerTest < Minitest::Test
     @andrew.register([@e2.id, @e3.id])
 
     assert_equal([@e2.id, @e3.id], @andrew.registered_events)
+  end
+
+  def test_get_and_set_errors
+    assert_equal(["Must include last name","Must choose a College"], @b.get_errors)
+    assert_equal(nil, @andrew.set_errors)
+  end
+
+  def test_is_valid
+    assert_equal(true, @shannon_jackson.is_valid)
+    refute_equal(false, @andrew.is_valid)
+    assert_equal(false,@b.is_valid)
   end
 
 
