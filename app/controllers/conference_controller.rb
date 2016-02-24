@@ -12,7 +12,6 @@ MyApp.post "/conference/create" do
     @confirm_message = "Success! Created #{@conference.conference_name}!"
     erb :"admin/confirm_submission"
   else
-    @confirm_message = "Please fix the following errors: #{@conference.get_errors}"
     erb :"admin/conference/add_conference"
   end
 end
@@ -25,9 +24,18 @@ end
 MyApp.post "/process_update_conference_form/:conference_id" do
   @conference = Conference.find_by_id(params[:conference_id])
   @conference.conference_name = params["conference_name"]
-  @conference.save
-  @confirm_message = "Success! Updated #{@conference.conference_name}!"
-  erb :"admin/confirm_submission"
+  if @conference.is_valid
+    @conference.save
+    @confirm_message = "Success! Updated #{@conference.conference_name}!"
+    erb :"admin/confirm_submission"
+  else
+    @invalid_conference = Conference.find_by_id(params[:conference_id])
+    @invalid_conference.conference_name = params["conference_name"]
+    @invalid_conference.is_valid
+    @conference = Conference.find_by_id(params[:conference_id])
+    @conference.conference_name = @conference.conference_name
+    erb :"admin/conference/update_conference"
+  end
 end
 
 MyApp.post "/delete/conference/:conference_id" do
