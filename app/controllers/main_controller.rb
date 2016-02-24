@@ -33,12 +33,15 @@ MyApp.get "/runners" do
   erb :"runners"
 end
 
-MyApp.get '/runner/:number' do
+MyApp.get "/runner/:number" do
   @runner = Runner.find_by_id(params[:number])
   @registrations = Registration.where({"runner_id" => params[:number]})
   erb :"runner"
 end
 
+MyApp.get "/results" do
+  @results = Result.all
+end
 
 
 

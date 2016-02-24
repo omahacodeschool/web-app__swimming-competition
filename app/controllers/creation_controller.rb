@@ -36,4 +36,9 @@ MyApp.post "/admin/registration_added" do
   erb :"admin/create/registration_added"
 end
 
+MyApp.post "/admin/result_added" do
+
+  erb :"admin/create/result_added"
+end
+
 

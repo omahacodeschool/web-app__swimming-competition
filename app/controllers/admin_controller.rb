@@ -32,6 +32,7 @@ MyApp.get "/admin/registrations" do
 end  
 
 MyApp.get "/admin/results" do
-  @results = Result.all
+  @events = Event.all
+
   erb :"admin/results_admin"
 end
