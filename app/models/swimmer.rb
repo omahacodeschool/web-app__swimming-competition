@@ -69,15 +69,15 @@ class Swimmer < ActiveRecord::Base
   def set_errors
     @errors = []
 
-    if self.first_name == ""
+    if self.first_name == "" || self.first_name == nil
       @errors << "Must include first name"
     end
 
-    if self.last_name == ""
+    if self.last_name == ""|| self.last_name == nil
       @errors << "Must include last name"
     end
 
-    if self.college_id == 0
+    if self.college_id == 0 || self.college_id == nil
       @errors << "Must choose a College"
     end
 

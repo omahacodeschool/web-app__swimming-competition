@@ -15,12 +15,11 @@ class College < ActiveRecord::Base
 
   def set_errors
     @errors = []
-
-    if self.college_name == ""
+    if self.college_name == "" || self.college_name == nil
       @errors << "Must include valid College name"
     end
 
-    if self.conference_id == 0
+    if self.conference_id == 0 || self.conference_id == nil
       @errors << "Must choose Conference"
     end
   end

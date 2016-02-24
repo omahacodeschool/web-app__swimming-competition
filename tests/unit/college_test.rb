@@ -37,17 +37,15 @@ class CollegeTest < Minitest::Test
     refute_equal("North", @harvard.find_conference_name)
   end
 
-  def test_set_errors
-    
+  def test_get_and_set_errors
     assert_equal(["Must include valid College name"], @a.get_errors)
     assert_equal(["Must choose Conference"], @b.get_errors)
-    assert_equal([], @stanford.set_errors)
-
-  end
-
-  def test_get_errors
+    assert_equal(nil, @stanford.set_errors)
   end
 
   def test_is_valid
+    assert_equal(true, @stanford.is_valid)
+    refute_equal(false, @harvard.is_valid)
+    assert_equal(false,@b.is_valid)
   end
 end
