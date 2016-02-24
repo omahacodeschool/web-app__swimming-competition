@@ -3,9 +3,13 @@ MyApp.post "/competitors" do
   x.first_name = params["fname"]
   x.last_name = params["lname"]
   x.school_id = params["school"]
-  x.save
-  @y = [x.first_name, x.last_name, x.school_id]
-  erb :"competitors/competitors"
+
+  if x.is_valid == true 
+    x.save
+    @y = [x.first_name, x.last_name, x.school_id]
+    erb :"competitors/competitors"
+  else
+    erb :"competitors/error"
 end
 
 MyApp.get "/all_competitors" do 

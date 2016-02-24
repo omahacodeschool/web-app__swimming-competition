@@ -1,5 +1,36 @@
 class Competitor < ActiveRecord::Base
 
+  def set_errors
+    @errors = []
+
+    if self.first_name == ""
+      @errors << "First Name cannot be blank."
+    end
+
+    if self.last_name == ""
+      @errors << "Last Name cannot be blank."
+    end
+
+    if self.school_id == ""
+      @errors << "Must select a school."
+    end
+  end
+
+  def get_errors
+    return @errors
+  end
+
+  def is_valid
+    self.set_errors
+
+    if @errors > 0
+      return false
+    else
+      return true
+    end
+  end
+
+
   def results
     r = Result.where("competitor_id" => self.id)
     return r
