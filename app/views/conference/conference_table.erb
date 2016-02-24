@@ -1,0 +1,29 @@
+<center>
+
+<TABLE  BORDER="5" WIDTH="25%" >
+   <TR>
+      
+    <H1><BR><SPAN>CONFERENCES</SPAN></H1>
+      
+   </TR>
+      <th>Conference</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info.each do |info| %>
+      <tr>
+        <td><%= info.conference %></td>
+        <td><a href="/process_edit_form/<%= info.id %>">Edit</a></td>
+        <td><a href="/delete_conference/<%= info.id %>">Delete</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</center>
+<br>
+<br>
+
+<center><a href="/">Admin Page</a></center>

@@ -1,0 +1,36 @@
+
+<center>
+
+  <h1>Edit Swimmer Info Form</h1>
+
+  <form action="/process_swimmer_form/<%= @info.id %>" method="post">
+  
+    <label for="username">Last Name:</label>
+    
+      <input type="text" name="last_name" value="<%= @info.last_name %>">
+  
+    <label for="username">First Name:</label>
+    
+      <input type="text" name="first_name" value="<%= @info.first_name %>">
+
+    <label for="username">Team:</label>
+
+      <input type="number" name="team_id" value="<%= @info.team_id %>">
+
+    <label for="username">Age:</label>
+
+      <input type="number" name="age" value="<%= @info.age %>">
+
+    <label for="username">Height:</label>
+
+      <input type="number" name="height" value="<%= @info.height %>">
+
+    <label for="username">Weight:</label>
+
+      <input type="number" name="weight" value="<%= @info.weight %>">
+
+    <input type="submit">
+  </form>
+  
+<
+</center>

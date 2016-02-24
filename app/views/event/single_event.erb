@@ -1,0 +1,23 @@
+
+<h1><%= @x.event_name %></h1>
+
+  <% @x.swimmers.each do |s| %> 
+    <p><%= s.swimmer_name %></p>
+  <% end %>
+
+<h1><%= @x.event_name %> Top Three</h1>
+
+  <% if @x.top_three == "Event not over" %>
+    <p><%= @x.top_three %></p>
+  <% else %> 
+    <% @x.top_three.each do |s| %> 
+    <p><%= s.swimmer_name %> - <%= s.rank %></p>
+    <% end %>
+  <% end %>
+
+
+<a href="/sign_up_table">Event Table</a>
+
+
+
+

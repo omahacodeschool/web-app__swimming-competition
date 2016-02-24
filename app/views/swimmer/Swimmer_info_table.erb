@@ -1,0 +1,43 @@
+
+<center>
+
+<TABLE  BORDER="5" WIDTH="80%" >
+   <TR>
+      
+    <H1><BR><SPAN>SWIMMER INFORMATION</SPAN></H1>
+      
+   </TR>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Team ID</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info.each do |info| %>
+      
+      <% if info.team_exist? == true %>
+        <tr>
+          <td><%= info.last_name %></td>
+          <td><%= info.first_name %></td>
+          <td><%= info.team_access.team %> - <%= info.team_access.conference_name %></td>
+          <td><%= info.age %></td>
+          <td><%= info.height %></td> 
+          <td><%= info.weight %></td>
+          <td><a href="/edit_swimmer_form/<%= info.id %>">Edit</a></td>
+          <td><a href="/delete_swimmer/<%= info.id%>">Delete</a></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+</center>
+<br>
+<br>
+
+<center><a href="/">Admin Page</a></center>

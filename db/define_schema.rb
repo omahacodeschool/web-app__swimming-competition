@@ -12,3 +12,31 @@ require_relative "./_configure"
 
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
+
+DB.define_table("swimmer_infos")
+DB.define_column("swimmer_infos", "last_name", "string")
+DB.define_column("swimmer_infos", "first_name", "string")
+DB.define_column("swimmer_infos", "team_id", "integer")
+DB.define_column("swimmer_infos", "age", "integer")
+DB.define_column("swimmer_infos", "height", "float")
+DB.define_column("swimmer_infos", "weight", "integer")
+
+
+DB.define_table("events")
+DB.define_column("events", "event_name", "string")
+DB.define_column("events", "lock", "boolean")
+
+
+DB.define_table("signup_results")
+DB.define_column("signup_results", "swimmer_info_id", "integer")
+DB.define_column("signup_results", "event_id", "integer")
+DB.define_column("signup_results", "time", "float")
+DB.define_column("signup_results", "rank", "integer")
+
+
+DB.define_table("teams")
+DB.define_column("teams", "team", "string")
+DB.define_column("teams", "conference_id", "integer")
+
+DB.define_table("conferences")
+DB.define_column("conferences", "conference", "string")

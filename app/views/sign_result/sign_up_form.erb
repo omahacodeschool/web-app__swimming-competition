@@ -1,0 +1,35 @@
+
+<center><h1>SIGN UP / RESULTS FORM</center>
+
+<center>
+  <form action="/sign_up_form/create" method="post">
+
+    <p>
+      <label for="swimmer">Swimmer</label>
+      <select name="swimmer_info_id">
+       <option>Select a swimmer...</option>
+
+       <% @swimmer.each do |swimmer| %>
+         <option value="<%= swimmer.id %>"><%= swimmer.swimmer_name %></option>
+       <% end %>
+      </select>
+    </p> 
+
+    
+    Events
+    
+    <% @event.each do |event| %>
+      <p>
+        <input type="checkbox" name="events[]" value="<%= event.id %>"><label><%= event.event_name %></label>
+      </p> 
+    <% end %>
+    
+    <label for="username">Time:</label>
+    <input type="text" name="time">
+    <label for="username">Rank:</label>
+    <input type="text" name="rank">
+    <p><input type="submit"></p>
+  </form>
+</center>
+
+<center><a href="/">Admin Page</a></center>

@@ -1,0 +1,27 @@
+
+
+<center>
+
+  <h1>Edit Sign Up Form</h1>
+
+  <form action="/process_signup_form/<%= @info.id %>" method="post">
+    
+    Swimmer
+    <input type="number" name="swimmer" value="<%= @info.swimmer_name %>">
+  
+    Event
+    <input type="number" name="event_id" value="<%= @info.event_id %>">
+
+    Time
+
+      <input type="float" name="time" value="<%= @info.time %>">
+
+    <label for="username">Rank:</label>
+
+      <input type="number" name="rank" value="<%= @info.rank %>">
+
+    <input type="submit">
+  </form>
+  
+<a href="/sign_up_table">Back</a>
+</center>

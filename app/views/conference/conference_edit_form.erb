@@ -1,0 +1,11 @@
+<center><h1>CONFERENCE EDIT FORM</h1></center>
+
+  <center>
+    <form action="/process_edit_form/<%= @info.id %>" method="post">
+      <input type="text" name="conference" value="<%= @info.conference %>">
+      <input type="submit">
+    </form>
+  </center>
+</center>
+
+<a href="/conference_table">Conference Table</a>

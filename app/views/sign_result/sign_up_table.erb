@@ -1,0 +1,43 @@
+
+<center>
+
+<TABLE  BORDER="5" WIDTH="80%" >
+   <TR>
+      
+    <H1><BR><SPAN>SPRING SWIMMING TOURNAMENT</SPAN></H1>
+      
+   </TR>
+      <th>Swimmer ID</th>
+      <th>Event ID</th>
+      <th>Time</th>
+      <th>Rank</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info.each do |info| %>
+
+      <% if (info.swimmer_exist?) && (info.event_exist?) %>
+
+        <tr>
+          <td><%= info.swimmer_name %></td>
+          <td>
+            <a href="/event/<%= info.event_id %>"><%= info.event_name %></a>
+          </td> 
+          <td><%= info.time %></td>
+          <td><%= info.rank %></td>
+          <td><a href="/edit_form/<%= info.id %>">Edit</a></td>
+          <td><a href="/delete_event_result/<%= info.id %>">Delete</td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+</center>
+<br>
+<br>
+
+
+<center><a href="/">Admin Page</a></center>

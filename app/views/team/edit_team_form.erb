@@ -1,0 +1,14 @@
+<center><h1>EDIT TEAM FORM</h1></center>
+
+  <center>
+   <form action="/process_edit_form/<%= @info.id %>" method="post">
+    
+    :Teams
+    <input type="text" name="Team Name" value="<%= @info.team %>">
+    Conference
+    <input type="text" name="Conference ID" value="<%= @info.conference_id %>">
+    <input type="submit">
+    </form>
+  </center>
+
+<p><a href="/team_table">Back</a></p>
