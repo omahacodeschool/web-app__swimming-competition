@@ -5,8 +5,8 @@
   <form action="/sign_up_form/create" method="post">
 
     <p>
-      <label for="swimmer_name">Swimmer</label>
-      <select name="swimmer.id">
+      <label for="swimmer">Swimmer</label>
+      <select name="swimmer_info_id">
        <option>Select a swimmer...</option>
 
        <% @swimmer.each do |swimmer| %>
@@ -28,7 +28,7 @@
     <input type="text" name="time">
     <label for="username">Rank:</label>
     <input type="text" name="rank">
-    <input type="submit">
+    <p><input type="submit"></p>
   </form>
 </center>
 

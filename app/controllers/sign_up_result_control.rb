@@ -7,13 +7,14 @@ end
 
 #Signs up new swimmer
 MyApp.post "/sign_up_form/create" do
+  binding.pry
   @s = SignupResult.new
   @s.swimmer_info_id = params["swimmer_info_id"]
   @s.event_id = params["event_id"]
   @s.time = params["time"]
   @s.rank = params["rank"]
   @s.save
-  erb :"sign_result/sign_up_form"
+  erb :"sign_result/success"
 end
 
 #Sign up table controller
@@ -41,7 +42,6 @@ end
 
 #edits event
 MyApp.post "/process_signup_form/:id" do
-  binding.pry
   @info = SignupResult.find_by_id(params[:id])
   @info.swimmer_info_id = params["swimmer_info_id"]
   @info.event_id = params["event_id"]
