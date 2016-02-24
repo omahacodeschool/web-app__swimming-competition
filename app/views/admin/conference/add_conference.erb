@@ -1,6 +1,11 @@
 <h1>Add Conference:</h1>
 
 <h2>Please enter the Conference information:</h2><br>
+<% if @conference != nil %>
+<% @conference.get_errors.each do |error| %>
+  <ul><li><%= error %></li></ul>
+  <%end%>
+<%end%>
 
   <p>
     <form method="post" action="/conference/create">

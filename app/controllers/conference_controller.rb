@@ -10,10 +10,11 @@ MyApp.post "/conference/create" do
   if @conference.is_valid
     @conference.save
     @confirm_message = "Success! Created #{@conference.conference_name}!"
+    erb :"admin/confirm_submission"
   else
     @confirm_message = "Please fix the following errors: #{@conference.get_errors}"
+    erb :"admin/conference/add_conference"
   end
-  erb :"admin/confirm_submission"
 end
 
 MyApp.get "/update/conference/:conference_id" do
