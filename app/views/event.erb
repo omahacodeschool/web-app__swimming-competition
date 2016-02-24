@@ -1,0 +1,17 @@
+<a href="/">home</a>
+<br>
+<a href="/events">back to events</a>
+<h1><%= @event.name %></h1>
+
+<ul>
+  <% @registrations.each do |registration| %>
+    <li><%= registration.runner.name %> - <%= registration.runner.school.name %></li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Events Admin</h1>
+
+<% @events.each do |event| %>
+  <p><%= event.id %> - <%= event.name %></p>
+<% end %>
+
+<form action="/admin/event_added" method="post">
+  <fieldset>
+    <legend>Add an Event:</legend>
+    Event Name:<br>
+    <input type="text" name="name"><br>
+    <input type="submit">
+  </fieldset>
+</form>

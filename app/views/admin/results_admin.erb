@@ -1,0 +1,11 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Enter Race Results</h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><a href="/admin/event_result/<%= event.id %>"><%= event.name %></a>
+    </li>
+  <% end %>
+</ul>

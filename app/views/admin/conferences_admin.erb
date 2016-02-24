@@ -1,0 +1,21 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Conferences Admin</h1>
+
+<% @conferences.each do |conference| %>
+  <p><%= conference.id %> - 
+  <%= conference.name %> - 
+  <a href="/admin/edit_conference/<%= conference.id%>">edit</a>
+  </p>
+<% end %>
+
+<form action="/admin/conference_added" method="post">
+  <fieldset>
+    <legend>Add a Conference:</legend>
+    Conference Name:<br>
+    <input type="text" name="name"><br>
+    <input type="submit">
+  </fieldset>
+</form>
+

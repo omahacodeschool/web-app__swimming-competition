@@ -1,0 +1,43 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Runners Admin</h1>
+
+<table style="width:50%">
+  <tr>
+    <td>ID:</td>
+    <td>Name:</td> 
+    <td>School:</td>
+  </tr>
+
+  <% @runners.each do |runner| %>
+  <tr>
+    <td><%= runner.id %></td>
+    <td><%= runner.name %></td>
+    <td><%= runner.school.name %></td>
+  </tr>
+  <% end %>
+
+
+</table>
+
+<form action="/admin/runner_added" method="post">
+  <fieldset>
+    <legend>Add a Runner:</legend>
+
+    <label>Runner Name:</label>
+    <input type="text" name="name"><br>
+
+    <label>School:</label>
+    <select name="school_id">
+      <option>select a school</option>
+
+      <% @schools.each do |school| %>
+        <option value="<%= school.id %>"><%= school.name %></option>
+      <% end %>
+    </select>
+
+    <input type="submit">
+
+  </fieldset>
+</form>
