@@ -1,6 +1,21 @@
 class Competitor < ActiveRecord::Base
+  def get_errors
+    return @errors
+  end
+
+  def set_errors
+    @errors = []
+    if self.competitor_name == ""
+      @errors << "Competitor name cannot be blank"
+    end
+    if self.college_id == nil
+      @errors << "College ID cannot be blank"
+    end
+  end
+
   def is_valid
-    if self.competitor_name == "" || self.college_id == ""
+    self.set_errors
+    if @errors.length > 0
       return false
     else
       return true

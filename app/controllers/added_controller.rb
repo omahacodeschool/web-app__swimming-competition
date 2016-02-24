@@ -30,19 +30,27 @@ end
 
 #Processes the form for adding a competitor
 MyApp.post "/competitor_added" do 
-  x = Competitor.new
-  x.competitor_name = params["competitor_name"]
-  x.college_id = params["college_id"]
-  x.save
-  erb :"added/competitor_added"
+  @competitor = Competitor.new
+  @competitor.competitor_name = params["competitor_name"]
+  @competitor.college_id = params["college_id"]
+  if @competitor.is_valid == true
+    @competitor.save
+    erb :"added/competitor_added"
+  else
+    erb :"misc/competitor_error"
+  end
 end
 
 #Processes the form for adding a conference
 MyApp.post "/conference_added" do 
-  x = Conference.new
-  x.conference_name = params["conference_name"]
-  x.save
-  erb :"added/conference_added"
+  @conference = Conference.new
+  @conference.conference_name = params["conference_name"]
+  if @conference.is_valid == true
+    @conference.save
+    erb :"added/conference_added"
+  else
+    erb :"misc/conference_error"
+  end
 end
 
 #Processes the form to add an event
