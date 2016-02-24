@@ -1,0 +1,24 @@
+<h1 style="color:green;">Edit school:</h1>
+
+<form action="/edit_school/<%= @school.id %>" method="post">
+
+  <input type="text" name="school_name" value="<%= @school.name %>">
+
+  <select name="conference_id">
+	   <option selected disabled>
+	   Choose conference
+	   </option>
+			<% @list_conferences.each do |c| %>
+				<option value= "<%=c.id%>"
+				<%= "selected" if @school.conference_name == c.name %>>
+				<%=c.name %>
+				</option>
+			<%end%>
+  </select>
+  <input type="submit">
+  
+</form>
+
+<p><a href="/schools"> Back </a></p>
+
+<p><a href="/"> Home </a></p>

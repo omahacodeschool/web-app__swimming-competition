@@ -1,0 +1,80 @@
+<h1 style="color:green;">Event Info</h1>
+
+<h3> <%= @event.name %> </h3>
+	<% if @event.locked == true %>
+		<h4 style="color:red;"> This event is locked. </h4>
+	<% else %>
+		<ul>
+		<% if @event.list_of_results == nil %>
+			No competitors have been added.
+			<% else %>
+			<% @event.list_of_results.each do |c| %>
+				<li>
+					<a href="/profile/<%= c.id %>">
+						<b><%=c.first_name %> <%= c.last_name %>
+						<% if Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time != nil%>
+						- <%= Result.where({"competitor_id" => c.id, "event_id" => @event.id}).first.time %> seconds</b>
+						<% end %>
+					</a>
+					:
+					<a href="/results/add_time/<%= c.id %> /<%= @event.id %>">
+						<i>add/edit result</i>
+					</a>
+						
+						<form action="/entry_delete/<%= c.id%>/<%= @event.id %>" method="post">
+		  				<input type="submit" value="delete">
+		  				</form>
+				</li>
+				<% end %>
+			<% end %>
+		</ul>
+
+
+	<form action="/add_entry/<%= @event.id %>" method="post">
+ 	  <select name="competitor_id">
+
+		   <option selected disabled>Choose competitor</option>
+				<% @list_competitors.each do |c| %>
+					<option value= "<%=c.id%>">
+						<%=c.first_name%> <%=c.last_name%>
+					</option>
+				<%end%>
+	  </select>
+	  
+	  <input type="submit">
+	  
+	</form>
+
+	<p>
+		<a href="/events/edit/<%= @event.id %>"> Edit this event.
+		</a>
+	</p>
+<% end %>
+
+
+<h4> Winners </h4>
+	<ol>
+		<% if @event.top_three == nil%>
+		This event is not over.
+			<% else %>
+				<% @event.top_three.each do |result| %>
+					<li>
+						<a href="/profile/<%= result.competitor_id %>">
+						<%= result.name_of_competitor %> - <%= result.time %> seconds
+						</a>
+					</li>
+			<% end %>
+		<% end %>
+	</ol>
+
+
+
+<form action="/lock_event/<%= @event.id %>" method="post">
+	<input type="submit" value="lock">
+</form>
+
+<p><a href="/events"> Back </a></p>
+
+
+<p><a href="/"> Home </a></p>
+

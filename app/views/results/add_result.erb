@@ -1,0 +1,23 @@
+<h1 style="color:green;">Add result:</h1>
+
+<form action="/add_result">
+
+  <select name="event_id">
+        <option selected disabled>Choose event</option>
+  			<% @list_events.each do |e| %>
+  				<option value= "<%=e.id%>"> <%=e.name%> </option>
+  			<%end%>
+  </select>
+
+  <select name="competitor_id">
+	   <option selected disabled>Choose competitor</option>
+			<% @list_competitors.each do |c| %>
+				<option value= "<%=c.id%>"> <%=c.first_name%> <%=c.last_name%> </option>
+			<%end%>
+  </select>
+
+  <input type="integer" name="time">
+  
+  <input type="submit">
+  
+</form>

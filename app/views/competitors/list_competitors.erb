@@ -1,0 +1,19 @@
+<h1 style="color:green;">Competitors</h1>
+
+<h3> List of Competitors: </h3>
+	<ul>
+		<% @list_competitors.each do |c| %>
+		  <li>
+		  	<a href = "/profile/<%= c.id %>">
+		  		<b><%= c.first_name %> <%= c.last_name %></b>
+		  	</a>
+		  </li>
+		  	<form action="competitor_delete/<%= c.id%>" method="post">
+		  	<input type="submit" value="delete">
+		  	</form>
+		<% end %>
+	</ul>
+
+<p><a href="/competitors/add_new"> Add new competitor. </a></p>
+
+<p><a href="/"> Home </a></p>

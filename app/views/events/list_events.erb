@@ -1,0 +1,24 @@
+<h1 style="color:green;"> Events </h1>
+
+<h3> List of Events: </h3>
+
+
+	<ul>
+		<% if @list_events == nil %>
+		<% else %>
+			<% @list_events.each do |e| %>
+				<li>
+					<a href = "/event_info/<%= e.id %>">
+					<b><%= e.name %></b>
+					</a>
+					<form action="event_delete/<%= e.id%>" method="post">
+			  			<input type="submit" value="delete">
+			  		</form>
+				</li>
+			<% end %>
+		<% end %>
+	</ul>
+	
+<p><a href="/events/add_new"> Add new event. </a></p>
+
+<p><a href="/"> Home </a></p>

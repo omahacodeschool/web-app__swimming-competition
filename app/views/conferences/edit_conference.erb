@@ -1,0 +1,13 @@
+<h1 style="color:green;">Edit conference:</h1>
+
+<form action="/edit_conference/<%= @conference.id %>" method="post">
+
+  <input type="text" name="name" value="<%= @conference.name %>">
+
+  <input type="submit">
+  
+</form>
+
+<p><a href="/conferences"> Back </a></p>
+
+<p><a href="/"> Home </a></p>

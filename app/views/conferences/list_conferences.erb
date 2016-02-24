@@ -1,0 +1,20 @@
+<h1 style="color:green;">Conferences</h1>
+
+<h3> List of Conferences: </h3>
+	<ul>
+		<% @list_conferences.each do |c| %>
+			<li>
+				<a href = "/conference_info/<%= c.id %>">
+				<b><%= c.name %> conference</b>
+				</a>
+				<form action="conference_delete/<%= c.id%>" method="post">
+		  			<input type="submit" value="delete">
+		  		</form>
+			</li>
+		<% end %>
+	</ul>
+
+<p><a href="/conferences/add_new"> Add new conference. </a></p>
+
+<p><a href="/"> Home </a></p>
+

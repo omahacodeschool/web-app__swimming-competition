@@ -1,0 +1,34 @@
+<h1 style="color:green;">School Info</h1>
+
+<h3> <%= @school.name %> </h3>
+ <h4>
+ 	<% if @school.conference_name == nil %>
+ 	<% else %>
+	 	<a href="/conference_info/<%= @school.conference_id %>">
+	 		<%= @school.conference_name %> 
+	 	Conference
+	 	</a>
+	 	<% end %>
+</h4>
+ 	<ul>
+		<% if @school.school_members == nil %>
+			<p>
+				<i> There are currently no competitors from this school. </i>
+			</p>
+	 	<% else %>
+
+	 	<% @school.school_members.each do |c| %>
+		 		<li> 
+		 			<a href="/profile/<%= c.id %>">
+		 				<%= c.first_name %> <%= c.last_name %>
+		 			</a>
+		 		</li>
+	 		<% end %>
+ 		<% end %>
+  	</ul>
+
+<p><a href="/school/edit/<%= @school.id %>"> Edit this school. </a></p>
+
+<p><a href="/schools"> Back </a></p>
+
+<p><a href="/"> Home </a></p>
