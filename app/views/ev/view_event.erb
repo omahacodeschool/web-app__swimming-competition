@@ -1,0 +1,25 @@
+<h1><%=@currentevent.event_name%><h1>
+
+<p>Event ID: <%=@currentevent.id%></p>
+<p>Event Status: <%=@currentevent.locked_status%><p>
+
+<p>Participating Kitties:<p>
+<ul>
+  <% @signups.each do |post| %>
+    <li><%= post.find_swimmer_name%> ////
+    <%=post.find_swimmer_college%> ////
+    <form action="/remove_swimmer/<%=post.id%>" method="post">
+      <input type="submit" value="REMOVE THIS KITTY FROM EVENT">
+    </form>
+  <% end %>
+</ul> 
+
+<a href="/lock_event/<%= @currentevent.id%>">LOCK THIS EVENT</a>
+<p></p>
+<p></p>
+<form action="/delete_event/<%=@currentevent.id%>" method="post">
+  <input type="submit" value="DELETE THIS EVENT">
+</form>
+<p></p>
+
+<a href="/">Home</a>

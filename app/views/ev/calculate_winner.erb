@@ -1,0 +1,11 @@
+<h1>The Winners of "<%=@currentevent.event_name%>" have yet to be calculated! </h1>
+
+<ul>
+  <form action="/calcwinners" method="post">
+    <input type="hidden" value="<%=@currentevent.id%>" name="eventid" />
+    <input type="Submit" value="Calculate Winners">
+  </form>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>

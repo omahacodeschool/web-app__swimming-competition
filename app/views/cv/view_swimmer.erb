@@ -1,0 +1,15 @@
+<h1><%=@currentswimmer.swimmer_name%><h1>
+
+<p>Swimmer ID: <%=@currentswimmer.id%></p>
+
+<p>College: <%=@currentswimmer.find_college_name%><p>
+
+<p>Upcoming Events:<p>
+<%= @events.join(", ") %>
+<p></p>
+<form action="/deleteswimmer/<%=@currentswimmer.id%>" method="post">
+  <input type="submit" value="DELETE THIS KITTY">
+</form>
+<p></p>
+<a href="/">Home</a>
+

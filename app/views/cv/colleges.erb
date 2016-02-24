@@ -1,0 +1,28 @@
+<h1>Colleges</h1>
+
+Schools Represented in the Tournament:
+<ol>
+  <% @colleges.each do |list| %>
+    <li><%=list.college_name%>///Conference: <%=list.find_conference_name%></li>
+  <% end %>
+</ol>
+
+<form action="/newcollege" method="post">
+  <fieldset>
+  <legend>Add New College</legend>
+  <label for="college_name">Name of College</label>
+  <input type="text" name="collegename">
+
+  <select name = "conferenceid">
+    <option disabled>Select a Conference...</option>
+    <% @conferences.each do |post| %>
+      <option value="<%= post.id %>"><%= post.conference_name %>
+      </option>
+    <% end%>
+  </select>
+  <input type="submit">
+  </fieldset>
+</form>
+
+
+<a href="/">Home</a>

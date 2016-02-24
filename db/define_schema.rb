@@ -12,3 +12,45 @@ require_relative "./_configure"
 
 # What table do you need to store the necessary information?
 # What columns do you need in that table?
+
+
+#the names of the swimming events
+DB.define_table("events")
+DB.define_column("events","event_name","string")
+DB.define_column("events","locked","boolean")
+
+#info about the swimmers
+DB.define_table("swimmers")
+DB.define_column("swimmers","first_name","string")
+DB.define_column("swimmers","last_name","string")
+DB.define_column("swimmers","college_id","integer")
+
+#what events the swimmers registered for
+DB.define_table("signups")
+DB.define_column("signups","event_id","integer")
+DB.define_column("signups","swimmer_id","integer")
+
+#the colleges participating in the tournament
+DB.define_table("colleges")
+DB.define_column("colleges","college_name","string")
+DB.define_column("colleges","conference_id","integer")
+
+#the conferences the colleges belong to
+DB.define_table("conferences")
+DB.define_column("conferences","conference_name","string")
+
+#finish refers to the TIME that the swimmer FINISHED a match
+DB.define_table("finishes")
+DB.define_column("finishes","swimmer_id","integer")
+DB.define_column("finishes","event_id","integer")
+DB.define_column("finishes","finish_time","integer")
+
+#who won in what order
+DB.define_table("ranks")
+DB.define_column("ranks","rank_name","string")
+
+#who won!
+DB.define_table("winners")
+DB.define_column("winners","rank_id","integer")
+DB.define_column("winners","finish_id","integer")
+

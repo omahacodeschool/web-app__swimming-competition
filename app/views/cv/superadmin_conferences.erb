@@ -1,0 +1,22 @@
+<h1>NEKO ATSWIME</h1>
+
+<p>Conferences</p>
+
+Here you can add another Conference, if you REALLY need to
+
+<form action="/newconference" method="post">
+  <fieldset>
+    <legend>Add New Conference</legend>
+      <label for="conference_name">New Conference Name</label>
+        <input type="text" name="conferencename">
+      <input type="submit">
+  </fieldset>
+</form>
+
+<ul>
+  <% @conferences.each do |post| %>
+    <li><%= post.id%>. <%=post.conference_name%></li>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>

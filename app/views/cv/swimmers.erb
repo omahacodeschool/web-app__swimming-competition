@@ -1,0 +1,28 @@
+<h1>Swimmers</h1>
+<h2>Enrolled Kitties:<h2>
+<ul>
+  <% @swimmers.each do |post| %>
+    <li><%= post.id%>. <%=post.swimmer_name%>
+    <a href="/view_swimmer/<%=post.id%>">see more</a></li>
+  <% end %>
+</ul>
+
+<form action="/newswimmername" method="post">
+  <fieldset>
+  <legend>Add New Kitty Swimmer</legend>
+  <label for="first_name">First Name</label>
+  <input type="text" name="swimmerfirstname">
+  <label for="last_name">Last Name</label>
+  <input type="text" name="swimmerlastname">
+  <select name = "collegeid">
+    <option disabled>Select a College...</option>
+    <% @colleges.each do |post| %>
+      <option value="<%= post.id %>"><%= post.college_name %>
+      </option>
+    <% end%>
+  </select>
+  <input type="submit">
+  </fieldset>
+</form>
+
+<a href="/">Home</a>

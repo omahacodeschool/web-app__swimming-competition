@@ -1,0 +1,15 @@
+<h1>Tournament Admin: Winners!</h1>
+<h2>Choose an Event to View Winners<h2>
+
+<h2>Tournament Events:<h2>
+<ul>
+  <% @events.each do |event| %>
+    <li><%=event.event_name%>
+    <form action="/viewwinners" method="get">
+      <input type="hidden" value="<%=event.id%>" name="eventid" />
+      <input type="Submit" value="View Winners">
+    </form>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>

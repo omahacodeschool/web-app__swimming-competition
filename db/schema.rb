@@ -15,4 +15,60 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "colleges", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "college_name"
+    t.integer  "conference_id"
+  end
+
+  create_table "conferences", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "conference_name"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "event_name"
+    t.boolean  "locked"
+  end
+
+  create_table "finishes", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "swimmer_id"
+    t.integer  "event_id"
+    t.integer  "finish_time"
+  end
+
+  create_table "ranks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "rank_name"
+  end
+
+  create_table "signups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "event_id"
+    t.integer  "swimmer_id"
+  end
+
+  create_table "swimmers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "college_id"
+  end
+
+  create_table "winners", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "rank_id"
+    t.integer  "finish_id"
+  end
+
 end

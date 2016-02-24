@@ -1,0 +1,31 @@
+<h1>Event Registration</h1>
+
+<form action="/newsignup" method="post">
+  <fieldset>
+    <legend>Register for Events</legend>
+    <select name = "swimmerid">
+      <option disabled>Select a Kitty...</option>
+      <% @swimmers.each do |post| %>
+        <option value="<%= post.id %>"><%= post.swimmer_name %>
+        </option>
+      <% end%>
+    </select>  
+    <br>
+    Events:<br>
+    <% @events.each do |event| %>
+      <input type="checkbox" name="events[]" value="<%= event.id %>">
+      <label><%= event.event_name %> 
+    <% end %>
+      <input type="submit">
+  </fieldset>
+</form>
+
+Locked Events:
+(The following events are locked and therefore not open for new registrations)
+<ul>
+  <% @lockedevents.each do |post| %>
+    <li><%=post.event_name%></li>
+  <% end %>
+</ul>
+
+<a href="/">Home</a>
