@@ -7,7 +7,12 @@ end
 MyApp.post "/conference/create" do
   @conference = Conference.new
   @conference.conference_name = params["conference_name"]
-  @conference.save
+  if @conference.is_valid
+    @conference.save
+    @confirm_message = "Success! Created #{@conference.conference_name}!"
+  else
+    @confirm_message = "Please fix the following errors: #{@conference.get_errors}"
+  end
   erb :"admin/confirm_submission"
 end
 
