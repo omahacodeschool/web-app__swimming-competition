@@ -4,15 +4,25 @@ MyApp.get "/results" do
 end
 
 MyApp.get "/add/result_form_add" do
+  @competitors = Competitor.all
+  @events = Event.all
+  @styles = Style.all
   erb :"main/add/result_form_add"
 end
 
 MyApp.post "/result_added" do
-  @event_id = params[:event_id]
-  @event_object = Event.find_by_id(@event_id)
+    @event_gender = params[:gender]
+    @event_distance = params[:distance]
+    @event_style = params[:style]
+    @event_object_array = Event.where({"gender" => @event_gender, "distance" => @event_distance, "style_id" => @event_style})
+    @event_object = @event_object_array[0]
   x = Result.new
-  x.event_id = params[:event_id]
-  x.competitor_id = params[:competitor_id]
+  x.event_id = @event_object.id
+    @first_name = params[:firstname]
+    @last_name = params[:lastname]
+    @competitor_object_array = Competitor.where ({"first_name" => @first_name, "last_name" => @last_name})
+    @competitor_object = @competitor_object_array[0]
+  x.competitor_id = @competitor_object.id
   x.final_time = params[:final_time]
   @lock_check = @event_object.lock
   if @lock_check == true
@@ -73,6 +83,9 @@ MyApp.get "/delete/result_deleted/:dogfood" do
 end
 
 MyApp.get "/update/result_update_form/:popsicle" do
+  @competitors = Competitor.all
+  @events = Event.all
+  @styles = Style.all
   @result_object = Result.find_by_id(params[:popsicle])
   @results_event_id = @result_object.event_id
   @event_object = Event.find_by_id(@results_event_id)

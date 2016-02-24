@@ -4,8 +4,19 @@ Update a result here:
   Event id:<br>
   <input type="integer" name="event_id" value="<%= @result.event_id %>"><br><br>
 
-  Competitor id:<br>
-  <input type="integer" name="competitor_id" value="<%= @result.competitor_id %>"><br><br>
+  Competitor's first name:<br>
+  <select name="school">
+    <% @competitors.each do |c| %>
+      <option value="c.id"> <%= c.first_name %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Competitor's last name:<br>
+  <select name="school">
+    <% @competitors.each do |c| %>
+      <option value="c.id"> <%= c.last_name %> </option><br>
+    <% end %>
+  </select><br><br>
 
   Result (in seconds):<br>
   <input type="decimal" name="final_time" value="<%= @result.final_time %>"><br><br>
