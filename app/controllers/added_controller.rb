@@ -17,14 +17,14 @@ end
 
 #Processes the form for adding a college
 MyApp.post "/college_added" do 
-  x = College.new
-  x.college_name = params["college_name"]
-  x.conference_id = params["conference_id"]
-  if x.is_valid == true
-    x.save
+  @college = College.new
+  @college.college_name = params["college_name"]
+  @college.conference_id = params["conference_id"]
+  if @college.is_valid == true
+    @college.save
     erb :"added/college_added"
   else
-    erb :"misc/error"
+    erb :"misc/college_error"
   end
 end
 

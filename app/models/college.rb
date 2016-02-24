@@ -1,6 +1,21 @@
 class College < ActiveRecord::Base
+  def get_errors
+    return @errors
+  end
+
+  def set_errors
+    @errors = []
+    if self.college_name == ""
+      @errors << "College name cannot be blank"
+    end
+    if self.conference_id == nil
+      @errors << "Conference ID cannot be blank"
+    end
+  end
+
   def is_valid
-    if self.college_name == "" || self.conference_id == nil
+    self.set_errors
+    if @errors.length > 0
       return false
     else
       return true
