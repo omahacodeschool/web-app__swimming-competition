@@ -10,6 +10,7 @@ MyApp.post "/competitors" do
     erb :"competitors/competitors"
   else
     erb :"competitors/error"
+  end
 end
 
 MyApp.get "/all_competitors" do 

@@ -11,7 +11,7 @@ class Competitor < ActiveRecord::Base
       @errors << "Last Name cannot be blank."
     end
 
-    if self.school_id == ""
+    if self.school_id == 0
       @errors << "Must select a school."
     end
   end
@@ -23,7 +23,7 @@ class Competitor < ActiveRecord::Base
   def is_valid
     self.set_errors
 
-    if @errors > 0
+    if @errors.count > 0
       return false
     else
       return true
