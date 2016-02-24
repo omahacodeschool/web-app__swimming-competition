@@ -20,6 +20,8 @@ MyApp.get "/swimmer/new" do
 
   @colleges = College.all
 
+  @events = Race.all
+
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
@@ -50,6 +52,7 @@ MyApp.get "/swimmer/create" do
   @swimmer.college_id = params[:college_id]
   @swimmer.save
 
+  @swimmer.swim_entries_one_swimmer(params[:event_id]) 
   
   erb :"success_new_swimmer_add"
 end

@@ -9,6 +9,21 @@ class Swimmer < ActiveRecord::Base
   end
 
 
+  #Set a swimmer's races. 
+  #takes input of an Array of race ids
+  #Return Nil
+  def swim_entries_one_swimmer(array_of_event_ids)
+    #make a new row in the swim-entry table with a race id and a swimmer id
+    array_of_race_ids.each do |event_id|
+      swim_entry_row = SwimEntry.new
+      swim_entry_row.event_id = event_id
+      swim_entry_row.swimmer_id = self.id
+      swim_entry_row.save
+    end
+    return nil
+  end
+
+
   # def delete_race_result(dqswimmer) 
   #   dq = SwimEntry.find_by_swimmer_id_and_race_id(self.id, dqswimmer) #return swim entry objects 
   #   dq.id #array of swim_entry ids for the disqualified swimmer

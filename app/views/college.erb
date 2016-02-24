@@ -12,8 +12,14 @@
   <input type ="text" name="college_name" 
     placeholder="College_Name">
 
-  <input type ="integer" name="conference_id" 
-    placeholder="Conference_ID">
+  <!-- <input type ="integer" name="conference_id" 
+    placeholder="Conference_ID"> -->
+
+  <select name = "conference_id">Conference Name
+    <option value=""disabled selected>Select Conference Name</option>
+    <% @conferences.each do |conference| %>
+    <option value ="<%= conference.id %>"><%= conference.conference_name %></option>
+    <% end %>
 
   <input type ="text" name="contact" 
     placeholder="Contact_Person">
@@ -27,3 +33,5 @@
   <input type ="submit">
 
 </form>
+
+

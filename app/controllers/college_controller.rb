@@ -41,7 +41,7 @@ end
 
 MyApp.get "/college/new" do
 
-  # If a GET request is made to the root path, the following line of code
+  @conferences = Conference.all# If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
   # 
@@ -64,13 +64,13 @@ MyApp.get "/college/create" do
 
   # Accepts the form entry data and creates the college in the table. 
 
-  c = College.new
-  c.college_name = params[:college_name]
-  c.conference_id = params[:conference_id]
-  c.contact = params[:contact]
-  c.contact_email = params[:contact_email]
-  c.contact_ph = params[:contact_ph]
-  c.save
+  @college = College.new
+  @college.college_name = params[:college_name]
+  @college.conference_id = params[:conference_id]
+  @college.contact = params[:contact]
+  @college.contact_email = params[:contact_email]
+  @college.contact_ph = params[:contact_ph]
+  @college.save
 
 
   erb :"success_college_add"

@@ -13,9 +13,17 @@
   <select name = "college_id">College Name
   <option value="" disabled selected>Select College Name</option>
     <% @colleges.each do |college| %>
-    <option value ="<%=college.id %>"><%= college.college_name %></option>
-    <% end %>
+    <option value ="<%=college.id %>"><%= college.college_name %></option><br>
+    <% end %><br>
 
+
+  <p><br>
+    <% @events.each do |event| %><br>
+    <input type ="checkbox" name="events[]" value="<%= event.id %>">
+    <label><%= event.event_name %></label>
+    <% end %>
+  </p>
+  
+  
   <input type ="submit">
 </form>
-
