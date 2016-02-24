@@ -46,7 +46,7 @@ class Swimmer < ActiveRecord::Base
       end
     end 
   end
-  #this now includes validation so rewrite that test
+  #does this need new test? check coverage
   def register(eventidarray)
     array = self.register_errors(eventidarray)
     if array.empty? == false

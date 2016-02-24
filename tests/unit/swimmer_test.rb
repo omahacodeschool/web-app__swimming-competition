@@ -21,7 +21,6 @@ class SwimmerTest < Minitest::Test
     @andrew.save
 
     @b = Swimmer.new
-    @b.first_name = "Ted"
     @b.save
 
     @event = Event.new
@@ -60,6 +59,7 @@ class SwimmerTest < Minitest::Test
 
   def test_finishtime
     assert_equal(100, @shannon_jackson.finishtime(@event.id))
+    assert_equal(0,@andrew.finishtime(@event.id))
   end
 
   def test_register
@@ -75,7 +75,7 @@ class SwimmerTest < Minitest::Test
   end
 
   def test_get_and_set_errors
-    assert_equal(["Must include last name","Must choose a College"], @b.get_errors)
+    assert_equal(["Must include first name","Must include last name","Must choose a College"], @b.get_errors)
     assert_equal(nil, @andrew.set_errors)
   end
 
@@ -85,6 +85,10 @@ class SwimmerTest < Minitest::Test
     assert_equal(false,@b.is_valid)
   end
 
-
+  def test_register_errors
+    arr = [@event.id, @event2.id]
+    assert_equal([@event2.id], @shannon_jackson.register_errors(arr))
+    assert_equal(arr, @andrew.register_errors(arr))
+  end
 
 end
