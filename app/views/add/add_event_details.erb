@@ -1,0 +1,30 @@
+<p>Please enter the event details:</p>
+
+<form action="/event_detail_added" method="post">
+  <fieldset>
+    <legend>Event Details</legend>
+    <br>Select the event id: <br>
+    <input type="number" name="event_id"> <br><br>    
+    Select the competitor's id:<br>
+    <input type="number" name="competitor_id"><br><br>
+    Enter the competitor's finish time <i>(format: 1.4532)</i>: <br>
+    <input type="number" step="any" name="finish_time"><br><br>
+    <input type="submit">
+  </fieldset>
+</form>
+
+Event IDs:
+<% @events.each do |x| %>
+  <p><%= x.id %> - <%= x.event_name %></p>
+<% end %>
+
+Competitor IDs:
+<% @competitors.each do |x| %>
+  <p><%= x.id %> - <%= x.competitor_name %></p>
+<% end %>
+
+<br>
+<br>
+<p><a href="/all_event_details">View all event details</a></p>
+<br>
+<p><a href="/">Home</a></p>

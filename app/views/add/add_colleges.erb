@@ -1,0 +1,23 @@
+<p>Please enter a college/university:</p>
+
+<form action="/college_added" method="post">
+  <fieldset>
+    <legend>College</legend>
+    <br>Enter the name of the collge or university: <br>
+    <input type="text" name="college_name"> <br><br>    
+    Select the college's conference id:<br>
+    <input type="number" name="conference_id"><br><br>
+    <input type="submit">
+  </fieldset>
+</form>
+
+Conference IDs:
+<% @conferences.each do |x| %>
+  <p><%= x.id %> - <%= x.conference_name %></p>
+<% end %>
+
+<br>
+<br>
+<p><a href="/all_colleges">View all colleges</a></p>
+<br>
+<p><a href="/">Home</a></p>

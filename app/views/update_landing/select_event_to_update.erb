@@ -1,0 +1,19 @@
+<p>Select an event to update:</p>
+
+<% @events.each do |x| %>
+  <p>
+    <a href="update_event/<%= x.id %>">
+      <%= x.event_name %>
+    </a>
+  </p>
+  <form action="/success_event_locked/<%= x.id %>" method "post">
+    <input type="submit" value="Lock">
+  </form>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>
+
+

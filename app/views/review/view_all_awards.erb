@@ -1,0 +1,21 @@
+<p>Here is a list of all of the awards enetered:</p>
+<br>
+<% @awards.each do |x| %>
+  <p>
+    <b>Event:</b>  
+      <a href="view_event/<%= x.event_id %>"><%= x.event_name %></a>
+    <b>Competitor:</b> 
+      <a href="view_competitor/<%= x.competitor_id %>"><%= x.competitor_name %></a>
+  </p>
+  <p>
+    Rank: 
+      <%= x.rank %>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>
+
+

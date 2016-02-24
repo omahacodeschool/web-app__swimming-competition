@@ -1,0 +1,18 @@
+<p>Here is a list of all of the conferences enetered:</p>
+
+<% @conferences.each do |x| %>
+  <p>
+    <a href="view_conference/<%= x.id %>">
+      <%= x.conference_name %>
+    </a>
+  </p>
+  <form action="delete_conference/<%= x.id %>" method "post">
+    <input type="submit" value="Delete">
+  </form>
+  <br>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

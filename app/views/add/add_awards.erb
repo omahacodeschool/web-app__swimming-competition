@@ -1,0 +1,30 @@
+<p>Please enter the award details:</p>
+
+<form action="/award_added" method="post">
+  <fieldset>
+    <legend>Award Details</legend>
+    <br>Select the event id: <br>
+    <input type="number" name="event_id"> <br><br>    
+    Select the competitor's id:<br>
+    <input type="number" name="competitor_id"><br><br>
+    Select the competitor's rank: <br>
+    <input type="number" name="rank"><br><br>
+    <input type="submit">
+  </fieldset>
+</form>
+
+Event IDs:
+<% @events.each do |x| %>
+  <p><%= x.id %> - <%= x.event_name %></p>
+<% end %>
+
+Competitor IDs:
+<% @competitors.each do |x| %>
+  <p><%= x.id %> - <%= x.competitor_name %></p>
+<% end %>
+
+<br>
+<br>
+<p><a href="/all_awards">View all awards</a></p>
+<br>
+<p><a href="/">Home</a></p>

@@ -1,0 +1,19 @@
+<p>Here is a list of all of the colleges enetered:</p>
+
+<% @colleges.each do |x| %>
+  <p>
+    <a href="view_college/<%= x.id %>">
+      <%= x.college_name %>
+    </a>
+  </p>
+    <form action="delete_college/<%= x.id %>" method "post">
+      <input type="submit" value="Delete">
+    </form>
+  </p>
+  <br>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

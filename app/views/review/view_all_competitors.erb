@@ -1,0 +1,18 @@
+<p>Here is a list of all of the competitors enetered:</p>
+
+<% @competitors.each do |x| %>
+  <p>
+    <a href="view_competitor/<%= x.id %>">
+      <%= x.competitor_name %>
+    </a>
+  </p>
+  <form action="delete_competitor/<%= x.id %>" method "post">
+    <input type="submit" value="Delete">
+  </form>
+  <br>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

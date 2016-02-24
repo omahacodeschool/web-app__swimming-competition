@@ -1,0 +1,23 @@
+<p>Please enter the competitor's name:</p>
+
+<form action="/competitor_added" method="post">
+  <fieldset>
+    <legend>Competitor</legend>
+    <br>Enter the competitor's name <br>
+    <input type="text" name="competitor_name"> <br><br>    
+    Select competitor's college id:<br>
+    <input type="number" name="college_id"><br><br>
+    <input type="submit">
+  </fieldset>
+</form>
+
+College IDs:
+<% @colleges.each do |x| %>
+  <p><%= x.id %> - <%= x.college_name %></p>
+<% end %>
+
+<br>
+<br>
+<p><a href="/all_competitors">View all competitors</a></p>
+<br>
+<p><a href="/">Home</a></p>

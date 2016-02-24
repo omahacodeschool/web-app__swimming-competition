@@ -1,0 +1,10 @@
+<b>Conference: </b>
+<%= @conferences.conference_name %>
+<p><b>Colleges:</b></p> 
+<% @conferences.conf_colleges.each do |x| %>
+  <p><%= x.college_name %></p>
+<% end %>
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

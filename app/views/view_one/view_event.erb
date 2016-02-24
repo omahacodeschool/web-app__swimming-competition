@@ -1,0 +1,15 @@
+<p>Event: <b><%= @events.event_name %></b></p>
+<br>
+<p><b>Competitors:</b></p>
+<% @events.event_details.each do |x| %>
+  <p> <%= x.competitor_name %> - <%= x.finish_time %> </p>
+<% end %>
+<br>
+<p><b>Ranks:</b></p>
+<% @events.awards.each do |x| %>
+  <p> <%= x.competitor_name %> - <%= x.rank %> </p>
+<% end %>
+
+<br>
+<br>
+<p><a href="/">Home</a></p>

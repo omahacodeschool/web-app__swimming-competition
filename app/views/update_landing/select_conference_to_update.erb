@@ -1,0 +1,14 @@
+<p>Select a conference to update:</p>
+
+<% @conferences.each do |x| %>
+  <p>
+    <a href="update_conference/<%= x.id %>">
+      <%= x.conference_name %>
+    </a>
+  </p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><a href="/">Home</a></p>

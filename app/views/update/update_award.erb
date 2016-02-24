@@ -1,0 +1,29 @@
+<p>Update award information:</p>
+<br>
+
+<form action="/award_updated/<%= @awards.id %>" method="post">
+  <p>
+    Event ID:
+    <input type="number" name="evnt_id" value="<%= @awards.event_id %>">
+  </p>
+  <p> 
+    Competitor ID:
+    <input type="number" name="comp_id" value="<%= @awards.competitor_id %>">
+  </p>
+  <p> 
+    Rank:
+    <input type="number" name="fnsh_time" value="<%= @awards.rank %>">
+  </p>
+  <input type ="submit">
+</form>
+<br>
+<u><b>Event IDs:</u></b>
+<% @events.each do |x| %>
+  <p><%= x.id %> - <%= x.event_name %></p>
+<% end %>
+<br>
+<u><b>Competitor IDs:</u></b>
+<% @competitors.each do |x| %>
+  <p><%= x.id %> - <%= x.competitor_name %></p>
+<% end %>
+<br>
