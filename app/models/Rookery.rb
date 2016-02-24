@@ -32,6 +32,10 @@ class Rookery < ActiveRecord::Base
 
 
   def delete_penguins
-    Penguin.where("rookery_id" => self.id).delete_all
+    penguins_to_delete = Penguin.where("rookery_id" => self.id)
+    penguins_to_delete.each do |penguin|
+      penguin.delete_results
+      penguin.delete
+    end
   end
 end
