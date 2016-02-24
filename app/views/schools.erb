@@ -1,0 +1,8 @@
+<a href="/">home</a>
+<h1>Schools</h1>
+
+<ul>
+  <% @schools.each do |school| %>
+    <li><a href="/school/<%= school.id %>"><%= school.name %> - <%= school.conference.name %></a></li>
+  <% end %>
+</ul>

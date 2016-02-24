@@ -14,25 +14,24 @@ require_relative "./_configure"
 # What columns do you need in that table?
 
 DB.define_table("events")
-DB.define_column("events", "event_name", "string")
-
-DB.define_table("competitors")
-DB.define_column("competitors", "competitor_name", "string")
-DB.define_column("competitors", "school_id", "integer")
-
-DB.define_table("schools")
-DB.define_column("schools", "school_name", "string")
-DB.define_column("schools", "conference_id", "integer")
+DB.define_column("events", "name", "string")
 
 DB.define_table("conferences")
-DB.define_column("conferences", "conference_name", "string")
+DB.define_column("conferences", "name", "string")
 
-DB.define_table("signups")
-DB.define_column("signups", "event_id", "integer")
-DB.define_column("signups", "competitor_id", "integer")
+DB.define_table("runners")
+DB.define_column("runners", "name", "string")
+DB.define_column("runners", "school_id", "integer")
+
+DB.define_table("schools")
+DB.define_column("schools", "name", "string")
+DB.define_column("schools", "conference_id", "integer")
+
+DB.define_table("registrations")
+DB.define_column("registrations", "runner_id", "integer")
+DB.define_column("registrations", "event_id", "integer")
 
 DB.define_table("results")
-DB.define_column("results", "signup_id", "integer")
+DB.define_column("results", "registration_id", "integer")
 DB.define_column("results", "time", "float")
-DB.define_column("results", "place", "integer")
 

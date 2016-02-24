@@ -1,15 +1,17 @@
 class Result < ActiveRecord::Base
 
-  def event
-    x = Signup.find_by_id(self.signup_id)
-    y = Event.find_by_id(x.event_id)
-    return y
+  def registration
+    return Registration.find_by_id(self.registration_id)
   end
 
-  def competitor
-    x = Signup.find_by_id(self.signup_id)
-    y = Competitor.find_by_id(x.competitor_id)
-    return y
-  end
+  # def event
+  #   registration = Registration.find_by_id(self.registration_id)
+  #   return Event.find_by_id(registration.event_id)
+  # end
+
+  # def runner
+  #   registration = Registration.find_by_id(self.registration_id)
+  #   return Runner.find_by_id(runner._id)
+  # end
 
 end

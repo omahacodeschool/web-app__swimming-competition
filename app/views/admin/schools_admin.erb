@@ -1,0 +1,29 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Schools Admin</h1>
+
+<% @schools.each do |school| %>
+  <p><%= school.id %> - <%= school.name %> (<%= school.conference.name %>)</p>
+<% end %>
+
+<form action="/admin/school_added" method="post">
+  <fieldset>
+    <legend>Add a School:</legend>
+
+    <label>School Name:</label>
+    <input type="text" name="name"><br>
+
+    <label>Conference:</label>
+    <select name="conference_id">
+      <option>select a conference</option>
+
+      <% @conferences.each do |conference| %>
+        <option value="<%= conference.id %>"><%= conference.name %></option>
+      <% end %>
+    </select>
+
+    <input type="submit">
+
+  </fieldset>
+</form>

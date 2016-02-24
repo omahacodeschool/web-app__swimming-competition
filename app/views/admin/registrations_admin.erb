@@ -1,0 +1,35 @@
+<a href="/">home</a>
+<br>
+<a href="/admin">back to admin</a>
+<h1>Register Runners</h1>
+
+<form action="/admin/registration_added" method="post">
+  <fieldset>
+    <legend>Add a Registration:</legend>
+
+    <label>Runner:</label>
+    <select name="runner_id">
+      <option>select a runner</option>
+      <% @runners.each do |runner| %>
+        <option value="<%= runner.id %>"><%= runner.name %> - <%= runner.school.name %></option>
+      <% end %>
+    </select>
+
+    <label>Event:</label>
+    <select name="event_id">
+      <option>select an event</option>
+      <% @events.each do |event| %>
+        <option value="<%= event.id %>"><%= event.name %></option>
+      <% end %>
+    </select>
+
+    <input type="submit">
+
+  </fieldset>
+</form>
+
+<ul>
+  <% @registrations.each do |registration| %>
+    <li><%= registration.runner.name %> - <%= registration.runner.school.name %> - <%= registration.event.name %></li>
+  <% end %>
+</ul>

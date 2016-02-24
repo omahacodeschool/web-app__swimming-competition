@@ -1,9 +1,0 @@
-<a href="/">home</a>
-<br>
-<a href="/create_conference">add a conference</a>
-
-<h1>All Conferences</h1>
-
-<% @conferences.each do |conf| %>
-  <p><%= conf.id %> - <%= conf.conference_name %></p>
-<% end %>

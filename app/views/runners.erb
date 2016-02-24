@@ -1,0 +1,10 @@
+<a href="/">home</a>
+<h1>Runners</h1>
+
+<ul>
+  <% @runners.each do |runner| %>
+    <li><a href="/runner/<%= runner.id %>">
+    <%= runner.name %> - <%= runner.school.name %>
+    </a></li>
+  <% end %>
+</ul>

@@ -15,45 +15,44 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "competitors", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "competitor_name"
-    t.integer  "school_id"
-  end
-
   create_table "conferences", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "conference_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "event_name"
+    t.string   "name"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "runner_id"
+    t.integer  "event_id"
   end
 
   create_table "results", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "registration_id"
+    t.float    "time"
+  end
+
+  create_table "runners", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "signup_id"
-    t.float    "time"
-    t.integer  "place"
+    t.string   "name"
+    t.integer  "school_id"
   end
 
   create_table "schools", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "school_name"
+    t.string   "name"
     t.integer  "conference_id"
-  end
-
-  create_table "signups", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "event_id"
-    t.integer  "competitor_id"
   end
 
 end
