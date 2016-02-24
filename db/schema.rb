@@ -15,4 +15,55 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "colleges", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "college_name"
+    t.integer  "conference_id"
+    t.string   "contact"
+    t.string   "contact_email"
+    t.string   "contact_ph"
+    t.boolean  "locked"
+  end
+
+  create_table "conferences", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "conference_name"
+  end
+
+  create_table "race_results", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "swim_entry_id"
+    t.time     "swimmer_time"
+    t.integer  "swimmer_race_rank"
+    t.integer  "swimmer_done"
+    t.boolean  "locked"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "event_name"
+    t.time     "start_time"
+    t.boolean  "locked"
+    t.string   "start"
+  end
+
+  create_table "swim_entries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "swimmer_id"
+    t.integer  "race_id"
+  end
+
+  create_table "swimmers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "last_name"
+    t.string   "first_name"
+    t.integer  "college_id"
+  end
+
 end

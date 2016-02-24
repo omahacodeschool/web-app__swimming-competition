@@ -1,0 +1,29 @@
+<!-- Drop-down menu for college_id? -->
+<a href="/">Home</a><br>
+
+<h1>Add a Swimmer</h1>
+<p>Please enter the following information about each swimmer.</p>
+<p>Select the swimmer's college from the dropdown menu.</p>
+
+
+<form action = "/swimmer/create">
+  <input type ="text" name="first_name" placeholder="first_name">
+  <input type ="text" name="last_name" placeholder="last_name">
+
+  <select name = "college_id">College Name
+  <option value="" disabled selected>Select College Name</option>
+    <% @colleges.each do |college| %>
+    <option value ="<%=college.id %>"><%= college.college_name %></option><br>
+    <% end %><br>
+
+
+  <p><br>
+    <% @events.each do |event| %><br>
+    <input type ="checkbox" name="events[]" value="<%= event.id %>">
+    <label><%= event.event_name %></label>
+    <% end %>
+  </p>
+  
+  
+  <input type ="submit">
+</form>

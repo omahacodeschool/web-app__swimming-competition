@@ -1,0 +1,16 @@
+<a href="/">Home</a><br>
+
+<h1>Participating Conferences</h1>
+
+<% @conferences.each do |conference| %>
+
+<!-- <a href= "/conference_view/<%= conference.id %>"> -->
+
+<p><%= conference.id %> <%= conference.conference_name %></p>
+
+</a>
+
+<% end %>
+
+
+

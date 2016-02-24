@@ -1,0 +1,24 @@
+
+
+
+<a href="/">Home</a><br>
+
+<h1>Race Schedule</h1>
+
+
+
+
+<% @events.each do |event| %>
+  <p>
+    <%= event.id %> <%= event.event_name %> <%= event.start %> 
+  </p>
+
+  <p>
+    <form action ="/lock_event/<%= event.id %>" method="post">
+      Lock This Event's Information
+    <input type ="submit" value="Lock">
+    </form><br>
+  </p>
+
+
+<% end%>

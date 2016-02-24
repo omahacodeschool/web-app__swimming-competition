@@ -1,0 +1,27 @@
+<a href="/">Home</a><br>
+ 
+
+<h1>Participating Colleges</h1>
+
+<% @colleges.each do |college| %>
+
+<p><%= college.id %> 
+
+<a href= "/college_view/<%= college.id %>">
+
+
+<%= college.college_name %>
+
+</a>
+
+
+--
+
+<a href= "/college_delete/<%= college.id %>">Delete</a></p>
+
+<% end %>
+
+
+
+
+

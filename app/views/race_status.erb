@@ -1,0 +1,17 @@
+
+
+<a href="/">Home</a><br>
+
+<h1>Race Status</h1>
+
+
+
+<%= @event.event_name %>
+
+<% @event.list_of_swimmers.each do |swimmer| %>
+  <p>
+    <%= swimmer.first_name %> <%= swimmer.last_name%> 
+    <%= swimmer.race_result(@event.id).swimmer_done %>
+    <%= swimmer.race_result(@event.id).swimmer_race_rank %>
+  </p>
+<% end%>

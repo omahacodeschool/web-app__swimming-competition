@@ -1,0 +1,21 @@
+<a href="/">Home</a><br>
+ 
+
+  <h1>Participating Swimmers</h1>
+
+    <% @swimmers.each do |swimmer| %>
+
+ 
+    <p>
+      <%= swimmer.id %> 
+      <%= swimmer.first_name %> <%= swimmer.last_name %>
+--
+    <p>
+      <form action ="/swimmer_delete/<%= swimmer.id %>" method="post">
+        Delete This Swimmer
+      <input type ="submit" value="delete">
+      </form><br>
+    </p>
+
+<% end %>
+

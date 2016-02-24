@@ -1,0 +1,37 @@
+
+
+
+<a href="/">Home</a><br>
+
+<h1>Add a College</h1>
+<p>Enter a participating college's information.</p>
+
+
+<form action = "/college/create">
+
+  <input type ="text" name="college_name" 
+    placeholder="College_Name">
+
+  <!-- <input type ="integer" name="conference_id" 
+    placeholder="Conference_ID"> -->
+
+  <select name = "conference_id">Conference Name
+    <option value=""disabled selected>Select Conference Name</option>
+    <% @conferences.each do |conference| %>
+    <option value ="<%= conference.id %>"><%= conference.conference_name %></option>
+    <% end %>
+
+  <input type ="text" name="contact" 
+    placeholder="Contact_Person">
+
+  <input type ="text" name="contact_email" 
+    placeholder="Contact_email">
+
+  <input type ="text" name="contact_ph" 
+    placeholder="Contact_phone">
+
+  <input type ="submit">
+
+</form>
+
+
