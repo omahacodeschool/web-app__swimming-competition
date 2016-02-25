@@ -6,19 +6,39 @@
   <p>Please type the last name of the contestant to be added</p>
   <p><input type="text" name="contestant_last_name"></p>
 
-  <p>Please type the city ID of the contestant's city from the table below.</p>
-  <p><input type="text" name="city_id"></p>
+  <select name="city_id">
+  <option>Select a city</option>
+  <% @regions.each do |x|%>
+    <option value="<%= x.id %>"> <%= x.city %></option>
+  <% end %>
+  </select>
 
   <p><input type="submit"></p>
 
 </form>
 
-<p>Here is a list of all of the cities in the database and their IDs:</p>
 
-<% @regions.each do |x|%>
-  <p>ID - <%= x.id %><br>
-     City - <%= x.city %></p>
-<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 <br>

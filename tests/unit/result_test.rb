@@ -1,7 +1,9 @@
 require 'test_helper'
 
-class ContestantTest < Minitest::Test
+class ResultTest < Minitest::Test
   def setup
+    super
+    
     @city1 = Region.new
     @city1.city = "Albuquerque"
     @city1.save

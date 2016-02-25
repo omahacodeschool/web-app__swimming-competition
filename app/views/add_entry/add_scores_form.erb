@@ -4,12 +4,12 @@
 <% else %>
   <form action="/submit_scores">
     <p>Please enter the Chili ID</p>
-    <p><input type="text" name="result_id"></p>
-
-    <% @all_chilis.each do |x|%>
-      <p><%= x.chili_name %>
-         <%= x.id %></p>
-    <%end%>
+    <select name="result_id">
+      <option>Select a chili</option>
+        <% @all_chilis.each do |x|%>
+          <option value="<%= x.id %>"> <%= x.chili_name %></option>
+        <% end %>
+    </select>
 
     <p>Please enter the rating for the Appearance Category</p>
     <p><input type="text" name="appearance"></p>
