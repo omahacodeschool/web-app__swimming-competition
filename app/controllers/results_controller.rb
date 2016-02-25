@@ -120,3 +120,27 @@ MyApp.post "/update/result_updated/:stopsign" do
     erb :"main/update/result_updated"
   end
 end
+
+MyApp.get "/add/competitor_to_event/:id" do
+  @competitor = Competitor.find_by_id(params[:id])
+  @events = Event.all
+  erb :"main/add/competitor_to_event"
+end
+
+MyApp.post "/add/competitor_to_event_added/:id" do
+  @events = params[:events]
+  @events.each do |e|
+    @event_object = Event.find_by_id(e)
+    @lock_check = @event_object.lock
+    binding.pry
+    if @lock_check == false
+      @new_result = Result.new
+      @new_result.event_id = e
+      @new_result.competitor_id = params[:id]
+      @new_result.save
+    else
+      next
+    end
+  end
+  erb :"main/add/competitor_to_event_added"
+end

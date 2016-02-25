@@ -32,7 +32,6 @@ class Event < ActiveRecord::Base
     return @errors
   end
 
-
 end
 
 

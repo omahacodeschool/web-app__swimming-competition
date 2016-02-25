@@ -7,7 +7,7 @@ Here is information about each competitor:
   from <%= c.school_name %> (<%= c.conference_name %> conference)
   has id # <%= c.id %>. - 
   <a href= "/delete/competitor_deleted/<%= c.id %>"> Delete competitor</a> - 
-  <a href= "/update/competitor_update_form/<%= c.id %>"> Update competitor</a>
+  <a href= "/update/competitor_update_form/<%= c.id %>"> Update competitor</a> - <a href= "/add/competitor_to_event/<%= c.id %>">Add competitor to event</a>
   <br>
 <% end %><br>
 <a href="/add/competitor_form_add">Add a competitor</a> | <a href="/">Home</a>
