@@ -4,7 +4,7 @@
 
 <form action="/update_results/<%= @result.id %>" method="post">
 
-    <label for="game_id"><sub><i>Game ID:</i></sub></label>
+    <label for="game_id"><sub><i>Game ID:</i></sub></label><br>
     <select name="game_id" value="<%= @result.game_id %>">
         <% @games.each do |g| %>
             <% if g.locked == true %>
@@ -16,22 +16,23 @@
             <% end %>
         <% end %>
     </select>
-    <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label>
+    <br>
+    <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label><br>
     <select name="gamer_id" value="<%= @result.gamer_id %>">
         <% @gamers.each do |m| %>
         <option value="<%=m.id%>"><%= m.id %>: <%= m.last_name %>, <%= m.first_name %></option>
         <% end %>
     </select>
-    <br>
-    <br>
-    <label for="completion_time"><sub><i>Completion Time:</i></sub></label>
+    <br><br>
+    <label for="completion_time"><sub><i>Completion Time:</i></sub></label><br>
     <input type="text" name="completion_time" 
            value="<%= @result.completion_time %>">
+    <br><br>
     <input type="submit">
 
 </form>
-<br>
-<br>
-<a href="/results_list">Back</a>
-<br>
+
+<br><br>
+
+<a href="/results_list">Back</a><br>
 <a href="/">Home</a>

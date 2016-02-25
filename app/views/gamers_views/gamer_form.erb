@@ -4,24 +4,25 @@
 
 <form action="/add_gamer" method="post">
 
-    <label for="last_name"><sub><i>Last Name:</i></sub></label>
+    <label for="last_name"><sub><i>Last Name:</i></sub></label><br>
     <input type="text" name="last_name">
-    <label for="first_name"><sub><i>First Name:</i></sub></label>
+    <br>
+    <label for="first_name"><sub><i>First Name:</i></sub></label><br>
     <input type="text" name="first_name">
     <br>
     <br>
-    <label for="squad_id"><sub><i>Squad ID:</i></sub></label>
+    <label for="squad_id"><sub><i>Squad ID:</i></sub></label><br>
     <select name="squad_id">
+        <option>Select a Squad...</option>
         <% @squads.each do |s| %>
-        <option value="<%=s.id%>"><%= s.id %>: <%= s.squad_name %></option>
+            <option value="<%=s.id%>"><%= s.id %>: <%= s.squad_name %></option>
         <% end %>
-    <br>
-    <br>
+    <br><br>
     <input type="submit">
 </form>
-<br>
-<br>
-<a href="/gamers_list">Gamer List</a>
-<br>
+
+<br><br>
+
+<a href="/gamers_list">Gamer List</a><br>
 <a href="/">Back</a>
 
