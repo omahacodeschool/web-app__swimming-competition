@@ -41,10 +41,12 @@ MyApp.get "/submit_scores" do
   erb :"successful/scores_was_added"
 end
 
-MyApp.get "/submit_contestant_to_competition/:result_id_num" do
-  @new_competitor = Result.find_by_id(params[:result_id_num])
-  @new_competitor.chili_id = params[:chili_id]
-  @new_competitor.save
+MyApp.get "/submit_contestant_to_competition" do
+  @new_entry = Result.new
+  @new_entry.chili_id = params[:chili_id]
+
+  params[:competition]
+  @new_entry.save
   erb :"successful/contestant_was_added_to_competition"
 end
 

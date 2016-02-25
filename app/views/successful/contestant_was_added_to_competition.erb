@@ -1,11 +1,17 @@
-The contestant <%= @new_competitor.chili_name %> was added to the <%= @new_competitor.competition %>.
+The contestant was added to those competitions
 
-<br>
-<br>
 
-<form action="/add_contestant_to_competition_form/<%= @new_competitor.competition_id %>">
-    <input type="submit" value="Add Another Contestant To This Competition">
-</form>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,7 +46,7 @@ The contestant <%= @new_competitor.chili_name %> was added to the <%= @new_compe
 <td>
   <form action="/add_contestant">
     <input type="submit" value="Add Contestant">
-  </form>
+</form>
 </td>
 
 <td>
@@ -53,6 +59,13 @@ The contestant <%= @new_competitor.chili_name %> was added to the <%= @new_compe
   <form action="/add_competition">
     <input type="submit" value="Add Competition">
   </form>
+</td>
+
+<td>
+  <form action="/add_contestant_to_competition_form">
+    <input type="submit" value="Enter Contestant in Competitions">
+  </form>
+</td>
 
 <td>
   <form action="/add_scores">

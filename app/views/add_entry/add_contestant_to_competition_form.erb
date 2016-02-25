@@ -1,24 +1,38 @@
-<p>Please enter the Chili ID to enter into the competition.</p>
-
-<p>The following chilis are already contestants in this competiton:</p>
-
-<% @all_contestants.each do |x| %>
-  <p>Chili #<%= x.chili_id %></p>
-<% end %>
-
-<% @chili_selection.each do |a| %>
-  <p>Chili #<%= a.id %><br> 
-     Chili Name - <%= a.name %>
-  </p>
-<% end %>
+<p>Please select a chili and any/all of the competitions you would like to enter it into.</p>
 
 
-<form action="/submit_contestant_to_competition/<%= @new_entry.id %>">
 
-  <input type="text" name="chili_id">
-  <input type="submit">
+<form action="/submit_contestant_to_competition">
+  <select name="chili_id">
+    <option>Select a chili</option>
+    <% @chili_selection.each do |a| %>
+      <option value="<%= a.id %>"> <%= a.name%></option>
+    <% end %>
+  </select>
 
+  <% @competitions.each do |x| %>
+    <p>
+      <input type="checkbox" name="competition[]" value="<%=x.id%>">
+      <%= x.name %>
+    </p>
+  <% end %>
+
+<input type="submit">
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -47,7 +61,7 @@
 <td>
   <form action="/add_contestant">
     <input type="submit" value="Add Contestant">
-  </form>
+</form>
 </td>
 
 <td>
@@ -60,6 +74,13 @@
   <form action="/add_competition">
     <input type="submit" value="Add Competition">
   </form>
+</td>
+
+<td>
+  <form action="/add_contestant_to_competition_form">
+    <input type="submit" value="Enter Contestant in Competitions">
+  </form>
+</td>
 
 <td>
   <form action="/add_scores">

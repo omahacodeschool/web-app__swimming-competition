@@ -27,14 +27,8 @@ MyApp.get "/add_scores" do
   erb :"add_entry/select_competition"
 end
 
-MyApp.get "/add_contestant_to_competition_form/:competition_id" do
+MyApp.get "/add_contestant_to_competition_form" do
   @chili_selection = Chili.all
-  @all_contestants = Result.where(competition_id: params[:competition_id])
-  
-  @new_entry = Result.new
-  @new_entry.chili_id = params[:chili_id]
-  @new_entry.competition_id = params[:competition_id]
-  @new_entry.lock = false
-  @new_entry.save
+  @competitions = Competition.all
   erb :"add_entry/add_contestant_to_competition_form"
 end
