@@ -42,11 +42,29 @@ MyApp.get "/submit_scores" do
 end
 
 MyApp.get "/submit_contestant_to_competition" do
-  @new_entry = Result.new
-  @new_entry.chili_id = params[:chili_id]
+  
+  @chili_id = params[:chili_id]
+  @competition_array = params[:competition]
+  @position = 0
+  @count = 0
 
-  params[:competition]
-  @new_entry.save
+  while @count <= @competition_array.count
+    x = Result.new
+    x.chili_id = @chili_id
+    x.save
+    @count += 1
+  end
+
+
+
+  @objects = Result.where({chili_id: @chili_id, competition_id: nil})
+  @objects.each do |x|
+    x.competition_id = @competition_array[@position]
+    x.save
+    @competition_array[@position += 1]
+  end
+
+
   erb :"successful/contestant_was_added_to_competition"
 end
 
