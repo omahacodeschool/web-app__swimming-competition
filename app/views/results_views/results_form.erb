@@ -1,0 +1,40 @@
+<h1>Add Results</h1>
+
+<p>This form can be used to add the final results of each event:</p>
+
+<form action="/add_results" method="post">
+
+    <label for="game_id"><sub><i>Game ID:</i></sub></label><br>
+    <select name="game_id">
+        <option>Select a Game...</option>
+        <% @games.each do |g| %>
+            <% if g.locked == true %>
+                <% next %>
+            <% else %>
+                <option value="<%=g.id%>">
+                        <%= g.id %>: <%= g.game_name %>
+                </option>
+            <% end %>
+        <% end %>
+    </select>
+    <br>
+    <label for="gamer_id"><sub><i>Gamer ID:</i></sub></label><br>
+    <select name="gamer_id">
+        <option>Select a Gamer</option>
+        <% @gamers.each do |m| %>
+            <option value="<%=m.id%>"><%= m.id %>: <%= m.last_name %>, <%= m.first_name %></option>
+        <% end %>
+    </select>
+    <br><br>
+    <label for="completion_time"><sub><i>Completion Time:</i></sub></label><br>
+    <input type="text" name="completion_time">
+    <br><br>
+    <input type="submit">
+
+</form>
+
+<br><br>
+
+<a href="/results_list">Results List</a><br>
+<a href="/">Back</a>
+

@@ -1,0 +1,45 @@
+<h1>Event Results</h1>
+<br>
+<table border="2">
+  <thead>
+    <tr>
+      <th colspan="3">Result ID</th>
+      <th>Game</th>
+      <th>Gamer</th>
+      <th>Completion Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |r| %>
+    <tr>
+      <td><center><%= r.id %></center></td>
+      <td><form action="/edit_results_form/<%=r.id%>">
+            <input type="submit" value="Edit"></form>
+      </td>    
+      <td><form action="/delete_result/<%=r.id%>" method="post">
+            <input type="submit" value="Delete"></form> 
+      </td>       
+      <td><a href="game/<%=r.game_id%>">
+          <%=r.game_access.game_name%></a>
+      </td>
+      <td><a href="gamer/<%=r.gamer_id%>">
+          <%= r.gamer_access.last_name %>, <%= r.gamer_access.first_name %></a>
+      </td>
+      <% if r.completion_time == 0 %>
+      <td><center>N/F</center></td>
+      <% else %>
+      <td><center>
+            <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
+          </center>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<a href="/results_form">Add Results</a>
+<br>
+<a href="/">Home</a>

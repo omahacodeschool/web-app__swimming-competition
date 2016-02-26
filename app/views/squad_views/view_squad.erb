@@ -1,0 +1,21 @@
+<h1><%= @squad.squad_name %></h1>
+
+<% if @squad.all_gamers.length == 1 %>
+  <p> 
+    This page lists the Gamers assigned to this Squad. Currently there is <b>
+    <%= @squad.all_gamers.length %></b> gamer assigned to this Squad. 
+  </p>
+<% else %>
+  <p>
+    This page lists the Gamers assigned to this Squad. Currently there are 
+    <b><%=@squad.all_gamers.length %></b> gamers assigned to this Squad.
+<% end %>
+
+<ul style="list-style-type: circle">
+  <% @squad.all_gamers.each do |g| %>
+  <li><%= g.first_name %> <%= g.last_name %></li>
+  <% end %>
+</ul>
+<br>
+<br>
+<a href="/">Home</a>

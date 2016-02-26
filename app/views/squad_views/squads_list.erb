@@ -1,0 +1,35 @@
+<h1>Competing Squads</h1>
+
+<br>
+
+<table border="2">
+  <thead>
+    <tr>
+      <th>Squad ID</th>
+      <th colspan="3">Squad Name</th>
+      <th>Division</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @squads.each do |s| %>
+    <tr>
+      <td><center><%=s.id%></center></td>
+      <td><a href="/squad/<%=s.id%>"><%= s.squad_name %></a></td>
+      <td><form action="/edit_squad_form/<%=s.id%>">
+            <input type="submit" value="Edit"></form>
+      </td>    
+      <td><form action="/delete_squad/<%=s.id%>" method="post">
+            <input type="submit" value="Delete"></form>  
+      </td>      
+      <td><center><a href="/division/<%=s.division_id%>">
+          <%=s.division_access.division%></center></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><br>
+
+<a href="/squad_form">Add a Squad</a><br>
+<a href="/">Home</a>

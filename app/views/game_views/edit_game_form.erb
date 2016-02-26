@@ -1,0 +1,15 @@
+<h1>Edit Game</h1>
+
+<form action="/update_game/<%= @game.id %>" method="post">
+
+    <label for="game_name"><sub><i>Game Name:</i></sub></label><br>
+    <input type="text" name="game_name" value="<%= @game.game_name %>">
+    <br><br>
+    <input type="submit">
+
+</form>
+
+<br><br>
+
+<a href="/games_list">Back</a><br>
+<a href="/">Home</a>

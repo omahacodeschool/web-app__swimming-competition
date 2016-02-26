@@ -1,0 +1,61 @@
+<h1><%= @game.game_name %></h1>
+
+<% if @game.all_results.length == 1 %>
+  <p> 
+    This page lists the Gamers signed up for this event. Currently there is 
+    <b><%= @game.all_results.length %></b> participant enrolled in this event. 
+  </p>
+<% else %>
+  <p>
+    This page lists the Gamers signed up for this event. Currently there are 
+    <b><%= @game.all_results.length %></b> participants enrolled in this event.
+  </p>
+<% end %>
+
+<table border="2">
+  <thead>
+    <tr>
+      <th>Participant Name</th>
+      <th>Completion Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game.all_results.each do |r| %>
+    <tr>
+      <td>
+        <a href="/gamer/<%=r.gamer_access.id%>">
+        <%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %>
+      </td>
+      <% if r.completion_time == 0 %>
+      <td><center>N/F</center></td>
+      <% else %>
+      <td>
+        <center>
+          <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
+        </center>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<% if @game.check_if_done != false  %>
+  <h1>Winners Circle</h1>
+  <ul style="list-style-type: circle">
+    <% @game.get_winners.each do |r| %>
+    <li>
+      <%= r.gamer_access.first_name %> <%= r.gamer_access.last_name %>
+      <%= r.completion_time / 60 %>:<%=r.completion_time % 60 %>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This event is not yet complete. Hang tight for results!<p>
+<% end %>
+
+<br>
+<br>
+<a href="/">Home</a>

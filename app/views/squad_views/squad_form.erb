@@ -1,0 +1,24 @@
+<h1>Add Squad</h1>
+
+<form action="/add_squad" method="post">
+
+    <label for="squad_name"><sub><i>Squad Name:</i></sub></label><br>
+    <input type="text" name="squad_name">
+    <br>
+    <label for="division_id"><sub><i>Division ID:</i></sub></label><br>
+    <select name="division_id">
+      <option>Select a Division...</option>
+      <% @divisions.each do |d| %>
+        <option value="<%=d.id %>"><%= d.id%>: <%= d.division %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <input type="submit">
+
+</form>
+
+<br><br>
+
+<a href="/squads_list">Squad List</a><br>
+<a href="/">Home</a>
+

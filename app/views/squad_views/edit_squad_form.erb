@@ -1,0 +1,22 @@
+<h1>Edit Squad</h1>
+
+<form action="/update_squad/<%= @squad.id %>" method="post">
+
+    <label for="squad_name"><sub><i>Squad Name:</i></sub></label><br>
+    <input type="text" name="squad_name" value="<%= @squad.squad_name %>">
+    <br>
+    <label for="division_id"><sub><i>Division ID:</i></sub></label><br>
+    <select name="division_id" vaule="<%= @squad.division_id %>">
+      <% @divisions.each do |d| %>
+      <option value="<%=d.id %>"><%= d.id%>: <%= d.division %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <input type="submit">
+
+</form>
+
+<br><br>
+
+<a href="/squads_list">Back</a><br>
+<a href="/">Home</a>
