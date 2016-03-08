@@ -1,8 +1,8 @@
 development:
   adapter: postgresql
-  database: competition
+  database: fib-primes
   host: localhost
 test:
   adapter: postgresql
-  database: competition-test
+  database: fib-primes-test
   host: localhost

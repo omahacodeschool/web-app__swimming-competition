@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'pry'
+gem 'prime'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
