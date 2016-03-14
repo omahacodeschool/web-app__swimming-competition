@@ -1,0 +1,13 @@
+Here is information about each style:
+
+<p>
+<% @styles.each do |s| %>
+  The style <%= s.style %>
+  has id # <%= s.id %>. - 
+  <a href= "/delete/style_deleted/<%= s.id %>"> Delete style</a> - 
+  <a href= "/update/style_update_form/<%= s.id %>"> Update style</a>
+  <br>
+<% end %>
+</p><br>
+<a href="/add/style_form_add">Add a style</a> | <a href="/">Home</a>
+</p>

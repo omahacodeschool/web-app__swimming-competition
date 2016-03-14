@@ -1,0 +1,15 @@
+Add <%= @competitor.first_name %> <%= @competitor.last_name %> to events here:
+<br>
+<br>
+<form action="/add/competitor_to_event_added/<%= @competitor.id %>" method="post">
+
+<% @events.each do |e| %>
+  <input type="checkbox" name="events[]" value="<%= e.id %>">
+    <%= e.gender %> <%= e.distance %> <%= e.display_style_of_event %><br>
+    <br>
+<% end %>
+
+<input type="submit" value="Submit">
+
+
+</form><br><br>

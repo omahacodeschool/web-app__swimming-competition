@@ -1,0 +1,22 @@
+Update an event here: 
+
+<form action="/update/event_updated/<%= @event.id %>" method="post">>
+  Gender:<br>
+  <select name="gender">
+    <option value="F">F</option>
+    <option value="M">M</option>
+  </select>
+  <br><br>
+
+  Style:<br>
+  <select name="style">
+    <% @styles.each do |s| %>
+      <option value="<%= s.id %>"> <%= s.style %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Distance:<br>
+  <input type="integer" name="race_distance" value="<%= @event.distance %>"> meters<br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>

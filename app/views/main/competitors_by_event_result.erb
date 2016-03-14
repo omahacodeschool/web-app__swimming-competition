@@ -1,0 +1,10 @@
+Here are the competitors in this event:
+
+<p>
+<% @competitor_objects.each do |c| %>
+  <%= c.first_name + " " + c.last_name %>
+  (competitor # <%= c.id %>), from 
+  <%= c.school_name %>
+  (<%= c.conference_name %> Conference).
+  <br>
+<% end %>

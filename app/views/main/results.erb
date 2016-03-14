@@ -1,0 +1,21 @@
+Here are the results for each event:
+
+<p>
+<% @results.each do |r| %>
+  In the event 
+  <%= r.display_event_gender %>
+  <%= r.display_event_distance %>m
+  <%= r.display_event_style %> 
+  (id # <%= r.event_id %>),
+  the competitor
+  <%= r.display_competitor_first_name %>
+  <%= r.display_competitor_last_name %>
+  (id # <%= r.competitor_id %>)
+  finished in <%= r.final_time %> seconds. - 
+  <a href= "/delete/result_deleted/<%= r.id %>"> Delete result</a> - 
+  <a href= "/update/result_update_form/<%= r.id %>"> Update result</a>
+  <br>
+<% end %>
+</p><br>
+<a href="/add/result_form_add">Add a result</a> | <a href="/">Home</a>
+</p>

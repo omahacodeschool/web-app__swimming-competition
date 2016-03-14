@@ -1,0 +1,21 @@
+Here is information about each event:
+
+<p>
+<% @events.each do |e| %>
+  <%= e.gender %> 
+  <%= e.display_style_of_event %>
+  <%= e.distance %> meters
+  (id # <%= e.id %>) - 
+  <a href= "/delete/event_deleted/<%= e.id %>"> Delete event</a> - 
+  <a href= "/update/event_update_form/<%= e.id %>"> Update event</a> - 
+  <a href="competitors_by_event/<%= e.id %>">View all competitors in event</a> - 
+  <a href="/results_top_three/<%= e.id %>">View top three finishers in event
+  </a> - 
+  <a href="/results_by_event/<%= e.id %>">View all finishers in event</a> - 
+  <a href="/event_locked/<%= e.id %>">Lock event</a> - 
+  <a href="/event_unlocked/<%= e.id %>">Unlock event</a>
+  <br>
+<% end %>
+</p><br>
+<a href="/add/event_form_add">Add an event</a> | <a href="/">Home</a>
+</p>

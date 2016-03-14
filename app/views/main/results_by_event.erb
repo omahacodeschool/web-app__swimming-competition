@@ -1,0 +1,11 @@
+The finishers in this event are:
+
+<p> 
+<% @ordered_results.each do |i| %>
+Competitor # 
+ <%= i.competitor_id %>:
+ finished in <%= i.final_time %> seconds.<br>
+<% end %>
+</p>
+
+<a href="/events">View all events</a> | <a href="/">Home</a>

@@ -1,0 +1,44 @@
+Update a result here:
+
+<form action="/update/result_updated/<%= @result.id %>" method="post">
+
+  Event gender:<br>
+  <select name="gender">
+    <option value="F">F</option>
+    <option value="M">M</option>
+  </select>
+  <br><br>
+
+Event distance:<br>
+  <select name="distance">
+    <% @events.each do |e| %>
+      <option value="<%= e.distance %>"> <%= e.distance %> </option> meters<br>
+    <% end %>
+  </select><br><br>
+
+  Event style:<br>
+  <select name="style">
+    <% @styles.each do |s| %>
+      <option value="<%= s.id %>"> <%= s.style %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Competitor's first name:<br>
+  <select name="firstname">
+    <% @competitors.each do |c| %>
+      <option value="<%= c.first_name %>"> <%= c.first_name %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Competitor's last name:<br>
+  <select name="lastname">
+    <% @competitors.each do |c| %>
+      <option value="<%= c.last_name %>"> <%= c.last_name %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Result (in seconds):<br>
+  <input type="decimal" name="final_time" value="<%= @result.final_time %>"><br><br>
+
+  <input type="submit" value="Submit">
+</form><br><br>

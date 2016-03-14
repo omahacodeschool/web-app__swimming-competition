@@ -1,0 +1,31 @@
+Update a competitor here: 
+
+<form action="/update/competitor_updated/<%= @competitor.id %>" method="post">
+  First name:<br>
+  <input type="text" name="firstname" value="<%= @competitor.first_name %>"><br><br>
+
+  Last name:<br>
+  <input type="text" name="lastname" value="<%= @competitor.last_name %>"><br><br>
+
+  School:<br>
+  <select name="school">
+    <% @schools.each do |s| %>
+      <option value="s.id"> <%= s.school_name %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Conference:<br>
+  <select name="conference">
+    <% @conferences.each do |c| %>
+      <option value="c.id"> <%= c.conference_name %> </option><br>
+    <% end %>
+  </select><br><br>
+
+  Gender:<br>
+  <select name="gender">
+    <option value="f">F</option>
+    <option value="m">M</option>
+  </select><br><br>
+
+  <input type="submit" value="Submit">
+</form> <br>

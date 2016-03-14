@@ -1,0 +1,11 @@
+The top three finishers in this event are:
+
+<p> 
+<% @three_best_times.each do |i| %>
+Competitor # 
+ <%= i.competitor_id %> 
+ finished in <%= i.final_time %> seconds.<br>
+<% end %>
+</p>
+
+<a href="/results_by_event/<%= params[:id] %>">View all finishers</a> | <a href="/events">View all events</a> | <a href="/">Home</a>
