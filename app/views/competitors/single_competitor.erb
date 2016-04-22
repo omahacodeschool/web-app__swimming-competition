@@ -1,0 +1,45 @@
+<center>
+
+<h1><%= @competitor.first_name.capitalize + " " + @competitor.last_name.capitalize %></h1>
+
+<table border = 1px style="width:50%">
+  <tr>
+    <th>School</th>
+    <th>Conference</th>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <a href = "/view_school/<%= @competitor.school_id %>">
+        <%= @competitor.school_name.capitalize %>
+      </a>  
+    </td>
+
+    <td align="center">
+      <a href = "/view_conference/<%= @competitor.conference_id %>">
+        <%= @competitor.conference_name.capitalize %>
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table border = 1px style="width:50%">
+  <tr>
+    <th>Events</th>
+  </tr>
+
+  <tr>
+    <% @competitor.results.each do |c| %>
+      <td align="center">
+        <!-- <a href = "/view_result/<%=  %>"> -->
+        <%= c.event_name.capitalize %>
+      </td>
+  </tr>
+    <% end %>
+</table>
+
+
+<p><a href="/all_competitors">Back</a></p>
+<p><a href="/">Home</a></p>
+
+</center>

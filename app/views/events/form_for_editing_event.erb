@@ -1,0 +1,9 @@
+<h1>Edit Event</h1>
+
+<form action = "/process_event_edit_form/<%= @event.id %>" method = "post">
+  <p>
+    Conference:
+      <input type = "text" name = "event" value = "<%= @event.event %>">
+  </p>
+    <input type = "submit">
+</form>

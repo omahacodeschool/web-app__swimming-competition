@@ -1,0 +1,36 @@
+<center>
+
+<h1>Conference List</h1>
+
+<table border = 1px style="width:50%">
+
+  <tr>
+    <th>Conference</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+
+  <tr>
+    <% @conferences.each do |conference| %>
+      <td align="center">
+        <a href = "/view_conference/<%= conference.id %>">
+          <%= conference.conference %>
+        </a>
+      </td>
+      <td align="center"> 
+        <form action = "/delete_conference/<%= conference.id %>" method = "post">
+          <input type = "submit" value = "Delete">
+        </form>
+      </td>
+      <td align="center">
+        <form action = "/edit_conference/<%= conference.id %>" method = "get">
+          <input type = "submit" value = "Edit">
+        </form>
+      </td>
+  </tr>
+    <% end %>
+</table>
+
+<p><a href = "/">Home</a></p>
+
+</center>
