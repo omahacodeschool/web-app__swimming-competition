@@ -1,0 +1,80 @@
+<center>
+<h1>Welcome Contestants!</h1>
+
+<form action = "/competitors" method = "post">
+  <p>
+    First Name: <input type = "text" name = "fname">
+  </p>
+
+  <p>
+    Last Name: <input type = "text" name = "lname">
+  </p>
+
+  <p>
+    School_id: <input type = "number" name = "school">
+  </p>
+
+  <input type = "submit">
+</form>
+
+<form action = "/conferences" method = "post">
+  <p>
+    Conference: <input type = "text" name = "conference">
+  </p>
+  <input type = "submit">
+</form>
+
+<form action = "/events" method = "post">
+  <p>
+    Event: <input type = "text" name = "event">
+  </p>
+  <input type = "submit">
+</form>
+
+<form action = "/results" method = "post">
+  <p>
+    Event_id: <input type = "number" name = "event_id">
+  </p>
+
+  <p>
+    Competitor: <input type = "number" name = "competitor_id">
+  </p>
+
+  <p>
+    Time: <input type = "number" name = "time">
+  </p>
+  <input type = "submit">
+</form>
+
+<form action = "/schools" method = "post">
+  <p>
+    School: <input type = "text" name = "school">
+  </p>
+
+  <p>
+    Conference_id: <input type = "number" name = "conference_id"]>
+  </p>
+  <input type = "submit">
+</form>
+
+
+<table border = 1px style="width:50%">
+  <tr>
+    <td align ="center">
+      <a href = "/all_competitors">Competitors</a>
+    </td>
+    <td align ="center">
+      <a href = "/all_conferences">Conferences</a>
+    </td>
+    <td align ="center">
+      <a href = "/all_events">Events</a>
+    </td>
+    <td align ="center">
+      <a href = "/all_results">Results</a>
+    </td>
+    <td align ="center">
+      <a href = "/all_schools">Schools</a>
+    </td>
+  </tr>
+
+</center>
