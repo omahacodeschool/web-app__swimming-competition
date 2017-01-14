@@ -1,0 +1,63 @@
+<h2>Update <%= @swimmer.swimmer_name %>'s Info:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_swimmers">Back</a>
+<br />
+
+<form action="/process_swimmer_update/<%= @swimmer.id %>" method="post">
+  <p>
+  Swimmer Name:
+  <br /> 
+  <input type="text" name="swimmer_name_update" 
+    placeholder="<%= @swimmer.swimmer_name %>" required>
+  </p>
+
+  <p>
+  Date of Birth:
+  <br />
+  <input type="date" name="swimmer_dob_update" value="<%= @swimmer.swimmer_dob %>" required>
+  </p>
+<!--Figure out 'checked if' code-->
+  <p>
+  Gender:
+  <br />
+  <input type="radio" name="swimmer_gender_update" value="Male"
+  <%= "checked" if @swimmer.swimmer_gender == "Male" %>> Male<br />
+  <input type="radio" name="swimmer_gender_update" value="Female"
+  <%= "checked" if @swimmer.swimmer_gender == "Female" %>> Female<br />
+  <input type="radio" name="swimmer_gender_update" value="Other"
+  <%= "checked" if @swimmer.swimmer_gender == "Other" %>> Other<br />
+  </p>
+
+  <p>
+  Team:
+  <br />
+  <select name="swimmer_team_update">
+    <% Team.all.each do |team| %>
+      <option value="<%= team.id %>"
+      <%= "selected" if @swimmer.team_id == team.id %>>
+      <%= team.team_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+<!--Figure out 'checked if' code-->
+  <p>
+  Payment?:
+  <br />
+  <input type="radio" name="swimmer_payment_status_update" value="true" 
+  <%= "checked" if @swimmer.swimmer_payment_status == true %>> 
+  Pay Now
+  <br />
+  <input type="radio" name="swimmer_payment_status_update" value="false"
+  <%= "checked" if @swimmer.swimmer_payment_status == false %>> 
+  Pay Later
+  <br />
+  </p>  
+
+  <p>
+  <input type="submit" value="Update Swimmer">
+  </p>
+</form>

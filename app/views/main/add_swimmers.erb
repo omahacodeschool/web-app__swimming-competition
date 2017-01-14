@@ -1,0 +1,100 @@
+<h2>Sign Up Them Swimmers</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_teams">Back</a>
+<br />
+
+<form action="/swimmers_form" method="post">
+  <p>
+  Name:
+  <br />
+  <input type="text" name="swimmer_name" required>
+  </p>
+  
+  <p>
+  Date of Birth:
+  <br />
+  <input type="date" name="swimmer_dob" required>
+  </p>
+  
+  <p>
+  Gender:
+  <br />
+  <input type="radio" name="swimmer_gender" value="Male"> Male<br />
+  <input type="radio" name="swimmer_gender" value="Female"> Female<br />
+  <input type="radio" name="swimmer_gender" value="Other" checked> Other<br />
+  </p>
+  
+  <p>
+  Team:
+  <br />
+  <select name="swimmer_team">
+    <option>Select a team...</option>
+    <% Team.all.each do |team| %>
+      <option value="<%= team.id %>">
+        <%= team.team_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+  
+  <p>
+  Payment?:
+  <br />
+  <input type="radio" name="swimmer_payment_status" value="true" checked> 
+  Pay Now
+  <br />
+  <input type="radio" name="swimmer_payment_status" value="false"> 
+  Pay Later
+  <br />
+  </p>
+  
+  <p>
+  <input type="submit" value="Sign Up">
+  </p>
+</form>
+
+<p>
+Then:
+<br />
+  
+  <% if Swimmer.ids.any? %>
+    <a href="/add_runs">Add Runs</a>
+  <% else %>
+    <strong style="color:red">
+      Please add swimmers before moving forward
+    </strong>
+  <% end %>
+
+</p>
+
+<br />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="5"> ADDED SWIMMERS </th>
+    </tr>
+    <tr>
+      <th> Swimmer </th>
+      <th> Team </th>
+      <th> Conference </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swimmers.each do |swimmer| %>
+      <tr>
+        <td><%= swimmer.swimmer_name %></td>
+        <td><center><%= swimmer.swimmer_team %></center></td>
+        <td><center><%= swimmer.swimmer_conference %></center></td>
+        <td><center><a href="/delete_swimmer/<%= swimmer.id %>"> delete
+        </a></center></td>
+        <td><center><a href="/update_swimmer/<%= swimmer.id %>"> update
+        </a></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<center><h1>Swim Competition Sign-Up</h1></center>
+
+<center>
+<p>
+<strong>Start Here:</strong>
+<br />
+<a href="/add_events">Add Events</a>
+</p>
+
+
+<p>
+<strong>Go To:</strong>
+<br />
+
+<% if Conference.ids.any? %>
+  <a href="/add_conferences">Add Conferences</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Team.ids.any? %>
+  <a href="/add_teams">Add Teams</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Swimmer.ids.any? %>
+  <a href="/add_swimmers">Add Swimmers</a>
+  <br />
+<% else %>
+<% end %>
+
+<% if Run.ids.any? %>
+  <a href="/add_runs">Add Runs</a>
+  <br />
+<% else %>
+<% end %>
+</p>
+</center>

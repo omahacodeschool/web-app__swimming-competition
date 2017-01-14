@@ -1,0 +1,31 @@
+<h2>Update Info for <%= @team.team_name %>:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_teams">Back</a>
+<br />
+
+<form action="/process_team_update/<%= @team.id %>" method="post">
+  <p>
+  Team Name:
+  <br /> 
+  <input type="text" name="team_name_update" 
+    placeholder="<%= @team.team_name %>" required>
+  </p>
+
+  <p>
+  Conference:
+  <br />
+    <% Conference.all.each do |conference| %>
+      <input type="radio" name="select_conference_update" 
+      placeholder="<%= conference.id %>" 
+      <%= "checked" if @team.conference_id == conference.id %> required> 
+      <%= conference.conference_name %>
+      <br />
+    <% end %>
+  </p>
+
+  <p>
+  <input type="submit" value="Update Team">
+  </p>
+</form>

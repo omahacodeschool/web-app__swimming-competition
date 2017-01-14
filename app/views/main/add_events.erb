@@ -1,0 +1,60 @@
+<h2>Add Events Below:</h2>
+
+<a href="/">Home</a>
+<br />
+
+<form action="/events_form" method="post">
+  <p>
+  Event Name:
+  <br />
+  <input type="text" name="event_name" required>
+  </p>
+  
+  <p>
+  Standing Record (in seconds):
+  <br />
+  <input type="number" step="any" name="event_best_time" required>
+  </p>
+  <p>
+  <input type="submit" value="Add Event">
+  </p>
+</form>
+
+<p>
+Then:
+<br />
+  <% if Event.ids.any? %>
+    <a href="/add_conferences">Add Conferences</a>
+  <% else %>
+    <strong style="color:red">
+      Please add events before moving forward
+    </strong>
+  <% end %>
+</p>
+
+<br />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="4"> ADDED EVENTS </th>
+    </tr>
+    <tr>
+      <th> Event </th>
+      <th> Current Record (sec.) </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_name %></td>
+        <td><center><%= event.event_best_time %></center></td>
+        <td><center><a href="/delete_event/<%= event.id %>"> delete</a>
+        </center></td>
+        <td><center><a href="/update_event/<%= event.id %>"> update</a>
+        </center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

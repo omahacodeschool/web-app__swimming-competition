@@ -1,0 +1,171 @@
+<h2>Add Run Info Below</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_swimmers">Back</a>
+<br />
+
+<form action="/runs_form" method="post">
+
+  <p>
+  Swimmer:
+  <br />
+  <select name="run_swimmer">
+    <option>Select a swimmer...</option>
+    <% Swimmer.all.each do |swimmer| %>
+      <option value="<%= swimmer.id %>">
+      <%= swimmer.swimmer_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p>
+
+<!--   <p>
+  Event:
+  <br />
+  <select name="run_event">
+    <option>Select an event...</option>
+    <% Event.all.each do |event| %>
+      <option value="<%= event.id %>">
+      <%= event.event_name %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  </p> -->
+
+<!--Have swimmers sign up for their events on the add_swimmers view. On this view, have the admin select an event and a dropdown below will dynamically populate with swimmers who have signed up for that event. Then add times one at a time for each swimmer of that particular event-->
+
+<!--Passing multiple values: name = ARRAY-->
+  <p>
+  Event:
+  <br />
+    <% Event.all.each do |event| %>
+    <input type="checkbox" name="event_name[]" value="<%= event.id %>"><%= event.event_name %>
+    <br />
+    <% end %>
+  </p>
+
+  <p>
+  Run Time (in seconds):
+  <br />
+    <input type="number" step="any" name="run_time" required>
+  </p>
+  
+  <p>
+    <input type="submit" value="Add Run">
+  </p>
+
+</form>
+
+<br />
+
+<p>
+
+  <% if Run.ids.any? %>
+    <p>
+    <h2 style="color:green">
+      THANK YOU!
+    </h2>
+    </p>
+    <a href="/add_events">Go To Add Events</a>
+    <br />
+    <a href="/add_conferences">Go To Add Conferences</a>
+    <br />
+    <a href="/add_teams">Go To Add Teams</a>
+    <br />
+    <a href="/add_swimmers">Go To Add Swimmers</a>
+  <% else %>
+    <strong style="color:red">
+      Please add runs
+    </strong>
+  <% end %>
+
+</p>
+
+<br />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="5"> ADDED RUNS </th>
+    </tr>
+  </thead>
+
+<% Event.all.each do |e| %>
+  <p>
+    <thead>
+      <tr>
+        <th colspan="2"><%= e.event_name %></th>
+      </tr>
+
+      <tr>
+        <th> Swimmer </th>
+        <th> Run Time (sec.) </th>
+      </tr>
+    </thead>
+    
+    <% e.event_runs.each do |r| %>
+      <tbody>
+        <tr>
+          <td><center><%= r.run_swimmer %></center></td>
+          <td><center><%= r.run_time %></center></td>
+
+        <% if e.event_complete == false %>
+          
+          <td>
+          <center>
+            <a href="/delete_run/<%= r.id %>">delete</a>
+          </center>
+          </td>
+          <td>
+          <center>
+            <a href="/update_run/<%= r.id %>"> update</a>
+          </center>
+          </td>
+
+        <% else %>
+        <% end %>
+
+        </tr>
+    <% end %>
+
+        <form action="/event_complete_form/<%= e.id %>" method="post">
+          
+          <tr>
+            <td colspan="2">
+              Run complete?: 
+              <input type="radio" name="event_complete_check" value="true"> 
+              Yes
+              <input type="radio" name="event_complete_check" value="false" 
+              checked> No
+              <input type="submit">
+            </td>
+          </tr>
+
+          <% if e.event_complete == true %>
+              
+            <tr>
+              <td colspan="2">
+                <a href="/event_top_runs/<%= e.id %>">
+                <center>Go to <%= e.event_name %> Top 3</center>
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" style="color:red">
+                <center><strong>LOCKED</strong></center>
+              </td>
+            </tr>
+
+          <% else %>
+          <% end %>
+
+        </form>
+      
+      </tbody>
+  </p>
+<% end %>
+</table>

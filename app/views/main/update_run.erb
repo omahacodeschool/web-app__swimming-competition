@@ -1,0 +1,30 @@
+<h2>Update <%= @run.run_event %> Run for <%= @run.run_swimmer %>:</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_runs">Back</a>
+<br />
+
+<form action="/process_run_update/<%= @run.id %>" method="post">
+  <p>
+  Swimmer:
+  <br />
+    <select name="run_swimmer_update">
+    <% Swimmer.all.each do |swimmer| %>
+      <option value="<%= swimmer.id %>"
+      <%= "selected" if @run.swimmer_id == swimmer.id %>>
+      <%= swimmer.swimmer_name %>
+      </option>
+    <% end %>
+  </select>
+  </p>
+  <p>
+  Run Time (in seconds):
+  <br />
+  <input type="number" step="any" name="run_time_update" 
+  placeholder="<%= @run.run_time %>">
+  </p>
+  <p>
+  <input type="submit" value="Update Run">
+  </p>
+</form>

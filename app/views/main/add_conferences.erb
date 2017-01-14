@@ -1,0 +1,57 @@
+<h2>Add the Conferences Below</h2>
+
+<a href="/">Home</a>
+<br />
+<a href="/add_events">Back</a>
+<br />
+
+<form action="/conferences_form" method="post">
+  <p>
+  Conference Name:
+  <br />
+  <input type="text" name="conference_name" required>
+  </p>
+  <p>
+  <input type="submit" value="Add Conference">
+  </p>
+</form>
+
+<p>
+Then:
+<br />
+  
+  <% if Conference.ids.any? %>
+    <a href="/add_teams">Add Teams</a>
+  <% else %>
+    <strong style="color:red">
+      Please add conferences before moving forward
+    </strong>
+  <% end %>
+  
+</p>
+
+<br />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="3"> ADDED CONFERENCES </th>
+    </tr>
+    <tr>
+      <th> Name </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |conference| %>
+      <tr>
+        <td><%= conference.conference_name %></td>
+        <td><center><a href="/delete_conference/<%= conference.id %>"> delete
+        </a></center></td>
+        <td><center><a href="/update_conference/<%= conference.id %>"> update
+        </a></center></td>
+      </tr>
+    <% end %>
+    <%= @error %>
+  </tbody>
+</table>
